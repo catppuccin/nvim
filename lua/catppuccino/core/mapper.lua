@@ -235,6 +235,8 @@ function M.apply()
         -- Illuminate
         illuminatedWord = {bg = t.fg_gutter},
         illuminatedCurWord = {bg = t.fg_gutter},
+		-- IndentBlankline
+		IndentBlanklineChar = {fg = t.gray},
         -- diff
         diffAdded = {fg = t.git.add},
         diffRemoved = {fg = t.git.delete},
