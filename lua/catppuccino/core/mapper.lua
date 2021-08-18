@@ -137,31 +137,38 @@ function M.apply()
         -- These groups are for the native LSP client. Some other LSP clients may
         -- use these groups, or use their own. Consult your LSP client's
         -- documentation.
-        LspReferenceText = {bg = t.fg_gutter}, -- used for highlighting "text" references
-        LspReferenceRead = {bg = t.fg_gutter}, -- used for highlighting "read" references
-        LspReferenceWrite = {bg = t.fg_gutter}, -- used for highlighting "write" references
-        LspDiagnosticsDefaultError = {fg = t.error}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspDiagnosticsDefaultWarning = {fg = t.warning}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspDiagnosticsDefaultInformation = {fg = t.info}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspDiagnosticsDefaultHint = {fg = t.hint}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspDiagnosticsVirtualTextError = {bg = util.darken(t.error, 0.1), fg = t.error}, -- Used for "Error" diagnostic virtual text
-        LspDiagnosticsVirtualTextWarning = {bg = util.darken(t.warning, 0.1), fg = t.warning}, -- Used for "Warning" diagnostic virtual text
-        LspDiagnosticsVirtualTextInformation = {bg = util.darken(t.info, 0.1), fg = t.info}, -- Used for "Information" diagnostic virtual text
-        LspDiagnosticsVirtualTextHint = {bg = util.darken(t.hint, 0.1), fg = t.hint}, -- Used for "Hint" diagnostic virtual text
-        LspDiagnosticsUnderlineError = {style = "undercurl", sp = t.error}, -- Used to underline "Error" diagnostics
-        LspDiagnosticsUnderlineWarning = {style = "undercurl", sp = t.warning}, -- Used to underline "Warning" diagnostics
-        LspDiagnosticsUnderlineInformation = {style = "undercurl", sp = t.info}, -- Used to underline "Information" diagnostics
-        LspDiagnosticsUnderlineHint = {style = "undercurl", sp = t.hint}, -- Used to underline "Hint" diagnostics
-        LspSignatureActiveParameter = {fg = t.orange},
+        -- LspReferenceText = {bg = t.fg_gutter}, -- used for highlighting "text" references
+        -- LspReferenceRead = {bg = t.fg_gutter}, -- used for highlighting "read" references
+        -- LspReferenceWrite = {bg = t.fg_gutter}, -- used for highlighting "write" references
+        -- LspDiagnosticsDefaultError = {fg = t.error}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspDiagnosticsDefaultWarning = {fg = t.warning}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspDiagnosticsDefaultInformation = {fg = t.info}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspDiagnosticsDefaultHint = {fg = t.hint}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspSignatureActiveParameter = {fg = t.orange},
         -- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingHint          = { }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
-        -- LspDiagnosticsSignError             = { }, -- Used for "Error" signs in sign column
-        -- LspDiagnosticsSignWarning           = { }, -- Used for "Warning" signs in sign column
-        -- LspDiagnosticsSignInformation       = { }, -- Used for "Information" signs in sign column
-        -- LspDiagnosticsSignHint              = { }, -- Used for "Hint" signs in sign column
+        LspDiagnosticsError = {fg = t.error},
+        LspDiagnosticsWarning = {fg = t.warning},
+        LspDiagnosticsInformation = {fg = t.info},
+        LspDiagnosticsHint = {fg = t.hint},
+
+        LspDiagnosticsVirtualTextError = {fg = t.error, style = opts.styles.fuctions}, -- Used for "Error" diagnostic virtual text
+        LspDiagnosticsVirtualTextWarning = {fg = t.warning, style = opts.styles.fuctions}, -- Used for "Warning" diagnostic virtual text
+        LspDiagnosticsVirtualTextInformation = {fg = t.info, style = opts.styles.fuctions}, -- Used for "Information" diagnostic virtual text
+        LspDiagnosticsVirtualTextHint = {fg = t.hint, style = opts.styles.fuctions}, -- Used for "Hint" diagnostic virtual text
+
+        -- LspDiagnosticsUnderlineError = {style = "undercurl", sp = t.error}, -- Used to underline "Error" diagnostics
+        -- LspDiagnosticsUnderlineWarning = {style = "undercurl", sp = t.warning}, -- Used to underline "Warning" diagnostics
+        -- LspDiagnosticsUnderlineInformation = {style = "undercurl", sp = t.info}, -- Used to underline "Information" diagnostics
+        LspDiagnosticsUnderlineHint = {style = "undercurl", sp = t.hint}, -- Used to underline "Hint" diagnostics
+
+        -- LspDiagnosticsVirtualTextError = {bg = util.darken(t.error, 0.1), fg = t.error}, -- Used for "Error" diagnostic virtual text
+        -- LspDiagnosticsVirtualTextWarning = {bg = util.darken(t.warning, 0.1), fg = t.warning}, -- Used for "Warning" diagnostic virtual text
+        -- LspDiagnosticsVirtualTextInformation = {bg = util.darken(t.info, 0.1), fg = t.info}, -- Used for "Information" diagnostic virtual text
+        -- LspDiagnosticsVirtualTextHint = {bg = util.darken(t.hint, 0.1), fg = t.hint}, -- Used for "Hint" diagnostic virtual text
 
         -- These groups are for the neovim tree-sitter highlights.
         -- As of writing, tree-sitter support is a WIP, group names may change.
@@ -282,10 +289,6 @@ function M.apply()
         NvimTreeSpecialFile = {fg = t.cyan},
         NvimTreeIndentMarker = {fg = t.fg_gutter},
         NvimTreeImageFile = {fg = t.fg_sidebar},
-        LspDiagnosticsError = {fg = t.error},
-        LspDiagnosticsWarning = {fg = t.warning},
-        LspDiagnosticsInformation = {fg = t.info},
-        LspDiagnosticsHint = {fg = t.hint},
         -- Fern
         FernBranchText = {fg = t.blue},
         -- glyph palette

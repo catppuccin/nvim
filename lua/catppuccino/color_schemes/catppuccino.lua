@@ -24,7 +24,7 @@ local colors = {
     blue_br = "#84CEE4",
     magenta_br = "#B8A1E3",
     cyan_br = "#59F0FF",
-    white_br = "#fef6e3",
+    white_br = "#FDEBC3",
     orange_br = "#F6A878",
     pink_br = "#DF97DB",
     comment = "#526175",
@@ -80,10 +80,10 @@ colors.bg_visual = util.darken(colors.blue, 0.2)
 colors.bg_search = util.darken(colors.cyan, 0.3)
 colors.fg_sidebar = colors.fg_alt
 
-colors.error = colors.red
+colors.error = colors.red_bg
 colors.warning = colors.yellow
 colors.info = colors.blue
-colors.hint = colors.cyan
+colors.hint = colors.white_br
 
 colors.variable = colors.white
 

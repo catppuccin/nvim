@@ -13,7 +13,15 @@ config.options = {
 	},
 	integrations = {
 		treesitter = true,
-		native_lsp = true,
+		native_lsp = {
+			enabled = true,
+			styles = {
+				errors = "italic",
+				hints = "italic",
+				warnings = "italic",
+				information = "italic"
+			}
+		},
 		lsp_trouble = false,
 		illuminate = false,
 		diff = false,
