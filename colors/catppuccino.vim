@@ -8,5 +8,5 @@ package.loaded['catppuccino.config'] = nil
 package.loaded['catppuccino.main'] = nil
 package.loaded['catppuccino.core.mapper'] = nil
 
-require('catppuccino').set()
+require('catppuccino').load()
 EOF
