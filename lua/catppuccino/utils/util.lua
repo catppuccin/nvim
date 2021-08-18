@@ -1,4 +1,5 @@
 local hsluv = require("catppuccino.utils.hsluv")
+local opts = require("catppuccino.config").options
 
 local g = vim.g
 local o = vim.o
@@ -9,6 +10,7 @@ util.bg = "#000000"
 util.fg = "#ffffff"
 util.day_brightness = 0.3
 
+---@param hex_str string hexadecimal value of a color
 local hex_to_rgb = function(hex_str)
     local hex = "[abcdef0-9][abcdef0-9]"
     local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
@@ -169,9 +171,9 @@ function util.load(theme)
     util.syntax(theme.base)
     util.syntax(theme.plugins)
 
-    if theme.config.terminal_colors then
-        util.terminal(theme)
-    end
+    -- if opts.ui.terminal then
+    --     util.terminal(theme)
+    -- end
 end
 
 return util
