@@ -81,7 +81,7 @@ function M.apply()
         Float = {fg = t.orange_br}, --    a floating point constant: 2.3e10
         Boolean = {fg = t.orange_br}, --  a boolean constant: TRUE, false
         Identifier = {fg = t.cyan, style = opts.styles.variables}, -- (preferred) any variable name
-        Function = {fg = t.red, style = opts.styles.fuctions}, -- function name (also: methods for classes)
+        Function = {fg = t.blue, style = opts.styles.fuctions}, -- function name (also: methods for classes)
         Statement = {fg = t.magenta_br}, -- (preferred) any statement
         Conditional = {fg = t.magenta_br}, --  if, then, else, endif, switch, ett.
         Repeat = {fg = t.magenta_br}, --   for, do, while, ett.
