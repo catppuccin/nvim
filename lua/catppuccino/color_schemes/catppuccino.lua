@@ -1,14 +1,13 @@
 local util = require("catppuccino.utils.util")
 local opts = require("catppuccino.config").options
 
-
 local colors = {
     none = "NONE",
     bg = "#0e171c", -- nvim bg
     fg = "#abb2bf", -- fg color (text)
     fg_gutter = "#3b4261",
     black = "#393b44",
-	gray = "#2a2e36",
+    gray = "#2a2e36",
     red = "#c94f6d",
     green = "#97c374",
     yellow = "#dbc074",
@@ -19,7 +18,7 @@ local colors = {
     orange = "#F4A261",
     pink = "#D67AD2",
     black_br = "#7f8c98",
-    red_br = "#D6616B",
+    red_br = "#e06c75",
     green_br = "#58cd8b",
     yellow_br = "#FFE37E",
     blue_br = "#84CEE4",

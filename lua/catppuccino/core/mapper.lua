@@ -201,7 +201,7 @@ function M.apply()
         TSOperator = {fg = t.fg_alt}, -- For any operator: `+`, but also `->` and `*` in t.
         TSParameter = {fg = t.orange_br}, -- For parameters of a function.
         -- TSParameterReference= { };    -- For references to parameters of a function.
-        TSProperty = {fg = t.green}, -- Same as `TSField`.
+        TSProperty = {fg = t.red_bg}, -- Same as `TSField`.
         tomlTSProperty = {fg = t.blue}, -- Differentiates between string and properties
         TSPunctDelimiter = {fg = util.string_to_color(t, "", t.fg_alt)}, -- For delimiters ie: `.`
         TSPunctBracket = {fg = t.fg_alt}, -- For brackets and parens.
