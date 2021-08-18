@@ -81,7 +81,7 @@ function M.apply()
         Float = {fg = t.orange_br}, --    a floating point constant: 2.3e10
         Boolean = {fg = t.orange_br}, --  a boolean constant: TRUE, false
         Identifier = {fg = t.cyan, style = opts.styles.variables}, -- (preferred) any variable name
-        Function = {fg = t.blue, style = opts.styles.fuctions}, -- function name (also: methods for classes)
+        Function = {fg = t.red, style = opts.styles.fuctions}, -- function name (also: methods for classes)
         Statement = {fg = t.magenta_br}, -- (preferred) any statement
         Conditional = {fg = t.magenta_br}, --  if, then, else, endif, switch, ett.
         Repeat = {fg = t.magenta_br}, --   for, do, while, ett.
@@ -203,7 +203,7 @@ function M.apply()
         -- TSParameterReference= { };    -- For references to parameters of a function.
         TSProperty = {fg = t.green}, -- Same as `TSField`.
         tomlTSProperty = {fg = t.blue}, -- Differentiates between string and properties
-        TSPunctDelimiter = {fg = util.string_to_color(c, "", t.fg_alt)}, -- For delimiters ie: `.`
+        TSPunctDelimiter = {fg = util.string_to_color(t, "", t.fg_alt)}, -- For delimiters ie: `.`
         TSPunctBracket = {fg = t.fg_alt}, -- For brackets and parens.
         TSPunctSpecial = {fg = t.white}, -- For special punctutation that does not fall in the catagories before.
         -- TSRepeat            = { };    -- For keywords related to loops.
