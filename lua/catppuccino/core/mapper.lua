@@ -155,10 +155,10 @@ function M.apply()
         LspDiagnosticsInformation = {fg = t.info},
         LspDiagnosticsHint = {fg = t.hint},
 
-        LspDiagnosticsVirtualTextError = {fg = t.error, style = opts.styles.fuctions}, -- Used for "Error" diagnostic virtual text
-        LspDiagnosticsVirtualTextWarning = {fg = t.warning, style = opts.styles.fuctions}, -- Used for "Warning" diagnostic virtual text
-        LspDiagnosticsVirtualTextInformation = {fg = t.info, style = opts.styles.fuctions}, -- Used for "Information" diagnostic virtual text
-        LspDiagnosticsVirtualTextHint = {fg = t.hint, style = opts.styles.fuctions}, -- Used for "Hint" diagnostic virtual text
+        LspDiagnosticsVirtualTextError = {fg = t.error, style = opts.integrations.native_lsp.styles.errors}, -- Used for "Error" diagnostic virtual text
+        LspDiagnosticsVirtualTextWarning = {fg = t.warning, style = opts.integrations.native_lsp.styles.warnings}, -- Used for "Warning" diagnostic virtual text
+        LspDiagnosticsVirtualTextInformation = {fg = t.info, style = opts.integrations.native_lsp.styles.information}, -- Used for "Information" diagnostic virtual text
+        LspDiagnosticsVirtualTextHint = {fg = t.hint, style = opts.integrations.native_lsp.styles.hints}, -- Used for "Hint" diagnostic virtual text
 
         -- LspDiagnosticsUnderlineError = {style = "undercurl", sp = t.error}, -- Used to underline "Error" diagnostics
         -- LspDiagnosticsUnderlineWarning = {style = "undercurl", sp = t.warning}, -- Used to underline "Warning" diagnostics
