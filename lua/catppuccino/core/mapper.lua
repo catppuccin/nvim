@@ -137,14 +137,17 @@ function M.apply()
         -- These groups are for the native LSP client. Some other LSP clients may
         -- use these groups, or use their own. Consult your LSP client's
         -- documentation.
-        -- LspReferenceText = {bg = t.fg_gutter}, -- used for highlighting "text" references
-        -- LspReferenceRead = {bg = t.fg_gutter}, -- used for highlighting "read" references
-        -- LspReferenceWrite = {bg = t.fg_gutter}, -- used for highlighting "write" references
-        -- LspDiagnosticsDefaultError = {fg = t.error}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        -- LspDiagnosticsDefaultWarning = {fg = t.warning}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        -- LspDiagnosticsDefaultInformation = {fg = t.info}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        -- LspDiagnosticsDefaultHint = {fg = t.hint}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        -- LspSignatureActiveParameter = {fg = t.orange},
+        LspReferenceText = {bg = t.fg_gutter}, -- used for highlighting "text" references
+        LspReferenceRead = {bg = t.fg_gutter}, -- used for highlighting "read" references
+        LspReferenceWrite = {bg = t.fg_gutter}, -- used for highlighting "write" references
+
+		-- hightlight diagnostics in numberline
+        LspDiagnosticsDefaultError = {fg = t.error}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        LspDiagnosticsDefaultWarning = {fg = t.warning}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        LspDiagnosticsDefaultInformation = {fg = t.info}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        LspDiagnosticsDefaultHint = {fg = t.hint}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        LspSignatureActiveParameter = {fg = t.orange},
+
         -- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float
@@ -160,15 +163,10 @@ function M.apply()
         LspDiagnosticsVirtualTextInformation = {fg = t.info, style = opts.integrations.native_lsp.styles.information}, -- Used for "Information" diagnostic virtual text
         LspDiagnosticsVirtualTextHint = {fg = t.hint, style = opts.integrations.native_lsp.styles.hints}, -- Used for "Hint" diagnostic virtual text
 
-        -- LspDiagnosticsUnderlineError = {style = "undercurl", sp = t.error}, -- Used to underline "Error" diagnostics
-        -- LspDiagnosticsUnderlineWarning = {style = "undercurl", sp = t.warning}, -- Used to underline "Warning" diagnostics
-        -- LspDiagnosticsUnderlineInformation = {style = "undercurl", sp = t.info}, -- Used to underline "Information" diagnostics
-        LspDiagnosticsUnderlineHint = {style = "undercurl", sp = t.hint}, -- Used to underline "Hint" diagnostics
-
-        -- LspDiagnosticsVirtualTextError = {bg = util.darken(t.error, 0.1), fg = t.error}, -- Used for "Error" diagnostic virtual text
-        -- LspDiagnosticsVirtualTextWarning = {bg = util.darken(t.warning, 0.1), fg = t.warning}, -- Used for "Warning" diagnostic virtual text
-        -- LspDiagnosticsVirtualTextInformation = {bg = util.darken(t.info, 0.1), fg = t.info}, -- Used for "Information" diagnostic virtual text
-        -- LspDiagnosticsVirtualTextHint = {bg = util.darken(t.hint, 0.1), fg = t.hint}, -- Used for "Hint" diagnostic virtual text
+        LspDiagnosticsUnderlineError = {style = "underline", sp = t.error}, -- Used to underline "Error" diagnostics
+        LspDiagnosticsUnderlineWarning = {style = "underline", sp = t.warning}, -- Used to underline "Warning" diagnostics
+        LspDiagnosticsUnderlineInformation = {style = "underline", sp = t.info}, -- Used to underline "Information" diagnostics
+        LspDiagnosticsUnderlineHint = {style = "underline", sp = t.hint}, -- Used to underline "Hint" diagnostics
 
         -- These groups are for the neovim tree-sitter highlights.
         -- As of writing, tree-sitter support is a WIP, group names may change.
@@ -191,7 +189,7 @@ function M.apply()
         -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in t.
         -- TSError             = { };    -- For syntax/parser errors.
         -- TSException         = { };    -- For exception related keywords.
-        TSField = {fg = t.blue}, -- For fields.
+        TSField = {fg = t.red}, -- For fields.
         rustTSField = {fg = util.darken(t.white, 0.75)}, -- For fields.
         -- TSFloat             = { };    -- For floats.
         -- TSFunction = { fg = t.fg_gutter }, -- For function (calls and definitions).
