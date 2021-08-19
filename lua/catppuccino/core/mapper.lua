@@ -3,11 +3,8 @@ local opts = require("catppuccino.config").options
 
 local M = {}
 
-function M.apply()
-    local theme = {}
-	local t = require("catppuccino.color_schemes." .. opts.colorscheme)
-
-    theme.base = {
+local function get_base(t)
+	return {
         Comment = {fg = t.comment, style = opts.styles.comments}, -- any comment
         ColorColumn = {bg = t.bg_visual}, -- used for the columns set with 'colorcolumn'
         Conceal = {fg = t.black}, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -231,6 +228,13 @@ function M.apply()
         -- TSLiteral           = { };    -- Literal text.
         -- TSURI               = { };    -- Any URI like a link or email.
     }
+end
+
+function M.apply()
+    local theme = {}
+	local t = require("catppuccino.color_schemes." .. opts.colorscheme)
+
+    theme.base = get_base(t)
 
     theme.plugins = {
         -- LspTrouble

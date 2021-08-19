@@ -23,22 +23,21 @@ config.options = {
 			}
 		},
 		lsp_trouble = false,
-		illuminate = false,
-		diff = false,
 		lsp_saga = false,
-		neogit = false,
 		gitgutter = false,
 		gitsigns = false,
 		telescope = false,
 		nvimtree = false,
-		fern = false,
-		dashboard = false,
 		which_key = false,
-		bufferline = false,
+		indent_blankline = false,
+		dashboard = false,
+		lualine = false,
+		lightline = false,
+		neogit = false,
+		vim_sneak = false,
+		fern = false,
 		barbar = false,
-		sneak = false,
-		hop = false,
-
+		bufferline = false,
 	}
 }
 
