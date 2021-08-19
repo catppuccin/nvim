@@ -31,7 +31,7 @@ local function get_base()
         CursorLineNr = {fg = cpt.fg_alt}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         MatchParen = {fg = cpt.orange, style = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg = {fg = cpt.fg_alt, style = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
-        MsgArea = {fg = cpt.fg_alt}, -- Area for messages and cmdline
+        MsgArea = {fg = cpt.white_br}, -- Area for messages and cmdline
         MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
         MoreMsg = {fg = cpt.blue}, -- |more-prompt|
         NonText = {fg = cpt.comment}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -393,7 +393,7 @@ function M.apply()
         LightspeedGreyWash = {fg = cpt.comment}
     }
 
-	-- uninstantiated to avoid poluting global scope and because they are not needed anymore
+	-- uninstantiate to avoid poluting global scope and because they are not needed anymore
 	_G.cpc = nil
 	_G.cpt = nil
 
