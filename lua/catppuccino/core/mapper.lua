@@ -205,7 +205,7 @@ local function get_base()
         TSProperty = {fg = cpt.red_bg}, -- Same as `TSField`.
         tomlTSProperty = {fg = cpt.blue}, -- Differentiates between string and properties
         TSPunctDelimiter = {fg = util.string_to_color(cpt, "", cpt.fg_alt)}, -- For delimiters ie: `.`
-        TSPunctBracket = {fg = cpt.fg_alt}, -- For brackets and parens.
+        TSPunctBracket = {fg = cpt.red}, -- For brackets and parenthesis.
         TSPunctSpecial = {fg = cpt.white}, -- For special punctutation that does not fall in the catagories before.
         -- TSRepeat            = { };    -- For keywords related to loops.
         -- TSString            = { };    -- For strings.
