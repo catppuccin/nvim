@@ -393,6 +393,10 @@ function M.apply()
         LightspeedGreyWash = {fg = cpt.comment}
     }
 
+	-- uninstantiated to avoid poluting global scope and because they are not needed anymore
+	_G.cpc = nil
+	_G.cpt = nil
+
     return theme
 end
 
