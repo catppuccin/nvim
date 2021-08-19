@@ -283,8 +283,8 @@ function M.apply()
         NeogitHunkHeader = {bg = cpt.bg_highlight, fg = cpt.fg},
         NeogitHunkHeaderHighlight = {bg = cpt.fg_gutter, fg = cpt.blue},
         NeogitDiffContextHighlight = {bg = util.darken(cpt.fg_gutter, 0.5), fg = cpt.fg_alt},
-        NeogitDiffDeleteHighlight = {fg = cpt.gicpt.delete, bg = cpt.diff.delete},
-        NeogitDiffAddHighlight = {fg = cpt.gicpt.add, bg = cpt.diff.add},
+        NeogitDiffDeleteHighlight = {fg = cpt.git.delete, bg = cpt.diff.delete},
+        NeogitDiffAddHighlight = {fg = cpt.git.add, bg = cpt.diff.add},
         -- GitGutter
         GitGutterAdd = {fg = cpt.gitSigns.add}, -- diff mode: Added line |diff.txt|
         GitGutterChange = {fg = cpt.gitSigns.change}, -- diff mode: Changed line |diff.txt|
