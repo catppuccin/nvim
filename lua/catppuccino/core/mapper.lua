@@ -307,9 +307,9 @@ function M.apply()
         NvimTreeEmptyFolderName = {fg = cpt.comment},
         NvimTreeOpenedFolderName = {fg = cpt.blue_br},
         NvimTreeOpenedFile = {fg = cpt.magenta}, -- TODO: not working
-        NvimTreeGitDirty = {fg = cpt.gicpt.change},
-        NvimTreeGitNew = {fg = cpt.gicpt.add},
-        NvimTreeGitDeleted = {fg = cpt.gicpt.delete},
+        NvimTreeGitDirty = {fg = cpt.git.change},
+        NvimTreeGitNew = {fg = cpt.git.add},
+        NvimTreeGitDeleted = {fg = cpt.git.delete},
         NvimTreeSpecialFile = {fg = cpt.cyan},
         NvimTreeIndentMarker = {fg = cpt.fg_gutter},
         NvimTreeImageFile = {fg = cpt.fg_sidebar},
@@ -362,7 +362,7 @@ function M.apply()
         healthSuccess = {fg = cpt.green_br},
         healthWarning = {fg = cpt.warning},
         -- BufferLine
-        BufferLineIndicatorSelected = {fg = cpt.gicpt.change},
+        BufferLineIndicatorSelected = {fg = cpt.git.change},
         BufferLineFill = {bg = cpt.black},
         -- Barbar
         BufferCurrent = {bg = cpt.fg_gutter, fg = cpt.fg},
