@@ -269,9 +269,9 @@ function M.apply()
 		-- IndentBlankline
 		IndentBlanklineChar = {fg = cpt.gray},
         -- diff
-        diffAdded = {fg = cpt.gicpt.add},
-        diffRemoved = {fg = cpt.gicpt.delete},
-        diffChanged = {fg = cpt.gicpt.change},
+        diffAdded = {fg = cpt.git.add},
+        diffRemoved = {fg = cpt.git.delete},
+        diffChanged = {fg = cpt.git.change},
         diffOldFile = {fg = cpt.yellow},
         diffNewFile = {fg = cpt.orange},
         diffFile = {fg = cpt.blue},
