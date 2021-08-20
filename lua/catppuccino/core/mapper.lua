@@ -80,7 +80,7 @@ local function get_base()
         Function = {fg = cpt.blue, style = cpc.styles.fuctions}, -- function name (also: methods for classes)
         Statement = {fg = cpt.magenta_br}, -- (preferred) any statement
         Conditional = {fg = cpt.red}, --  if, then, else, endif, switch, etcpt.
-        Repeat = {fg = cpt.magenta_br}, --   for, do, while, etcpt.
+        Repeat = {fg = cpt.red}, --   for, do, while, etcpt.
         Label = {fg = cpt.magenta_br}, --    case, default, etcpt.
         Operator = {fg = cpt.fg_alt}, -- "sizeof", "+", "*", etcpt.
         Keyword = {fg = cpt.magenta, style = cpc.styles.keywords}, --  any other keyword
