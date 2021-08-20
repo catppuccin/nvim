@@ -134,7 +134,13 @@ end
 
 function util.syntax(tbl)
     for group, colors in pairs(tbl) do
-        util.highlight(group, colors)
+        if (type(group) == "number") then
+            for inner_group, clrs in pairs(colors) do
+                util.highlight(inner_group, clrs)
+            end
+        else
+            util.highlight(group, colors)
+        end
     end
 end
 
