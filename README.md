@@ -4,9 +4,15 @@ An eye-candy and full-featured Neovim theme with support for native LSP, Trees-s
 ## WIP
 The project is under active development. Currently what is being worked on is:
 
-+ Integrations (Trees-sitter, native LSP, plugins (e.g. nvim-tree, lsp-saga), ...)
-+ Multiple colorschemes based on the Catppuccino theme
 + Core
++ Integrations (Trees-sitter, native LSP, plugins (e.g. nvim-tree, lsp-saga), ...)
++ Create theme variants based on Catppuccino color palette ( = done;  = dev;  = under consideration):
+	+ Dark 
+	+ Neon 
+	+ Light 
+	+ Aquamarine 
+	+ Pale 
+	+ Nord 
 
 ## Sneak Peeks!
 
