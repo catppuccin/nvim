@@ -7,3 +7,10 @@ The project is under active development. Currently what is being worked on is:
 + Integrations (Trees-sitter, native LSP, plugins, ...)
 + Multiple colorschemes based on the Catppuccino theme
 + Core
+
+## Sneak Peeks!
+
+<kbd><img src ="https://i.imgur.com/yIimuJF.png"></kbd>
+<p align="center">
+	Ataraxis Mode
+</p><hr>
