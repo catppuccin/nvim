@@ -38,6 +38,7 @@ config.options = {
 		fern = false,
 		barbar = false,
 		bufferline = false,
+		markdown = false,
 	}
 }
 
