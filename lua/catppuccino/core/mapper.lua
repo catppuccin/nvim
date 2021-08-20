@@ -182,11 +182,13 @@ local function get_integrations()
 	return final_integrations
 end
 
-function M.apply()
-    local theme = {}
+function M.apply(cs)
 	_G.cpc = require("catppuccino.config").options
-	_G.cpt = require("catppuccino.color_schemes." .. cpc.colorscheme)
+	cs = cs or cpc.colorscheme
+	-- _G.cpt = require("catppuccino.color_schemes." .. cs)
+	_G.cpt = require("catppuccino.core.cs").get_color_scheme(cs)
 
+    local theme = {}
     theme.base = get_base()
 	theme.plugins = get_integrations()
 

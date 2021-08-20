@@ -15,8 +15,10 @@ function M.load()
     end
 end
 
-function M.setup(custom_opts)
+function M.setup(custom_opts, remaps)
+	remaps = remaps or {}
     require("catppuccino.config").set_options(custom_opts)
+	require("catppuccino.core.cs").set_remaps(remaps)
 end
 
 return M
