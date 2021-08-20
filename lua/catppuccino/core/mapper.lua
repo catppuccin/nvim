@@ -68,6 +68,8 @@ local function get_base()
         -- default,
         -- Uncomment and edit if you want more specific syntax highlighting.
 
+		-- code itself
+
         Constant = {fg = cpt.orange}, -- (preferred) any constant
         String = {fg = cpt.green, style = cpc.styles.strings}, -- a string constant: "this is a string"
         Character = {fg = cpt.green}, --  a character constant: 'c', '\n'
@@ -120,8 +122,39 @@ local function get_base()
         mkdCodeEnd = {fg = cpt.cyan, style = "bold"},
         -- mkdLink = { fg = cpt.blue, style = "underline" },
 
+		-- debugging
         debugPC = {bg = cpt.bg_sidebar}, -- used for highlighting the current line in terminal-debug
         debugBreakpoint = {bg = util.darken(cpt.info, 0.1), fg = cpt.info}, -- used for breakpoint colors in terminal-debug
+
+        -- illuminate
+        illuminatedWord = {bg = cpt.fg_gutter},
+        illuminatedCurWord = {bg = cpt.fg_gutter},
+
+        -- diff
+        diffAdded = {fg = cpt.git.add},
+        diffRemoved = {fg = cpt.git.delete},
+        diffChanged = {fg = cpt.git.change},
+        diffOldFile = {fg = cpt.yellow},
+        diffNewFile = {fg = cpt.orange},
+        diffFile = {fg = cpt.blue},
+        diffLine = {fg = cpt.comment},
+        diffIndexLine = {fg = cpt.magenta},
+
+        -- NeoVim
+        healthError = {fg = cpt.error},
+        healthSuccess = {fg = cpt.green_br},
+        healthWarning = {fg = cpt.warning},
+
+		-- misc
+
+		-- glyphs
+        GlyphPalette1 = {fg = cpt.red},
+        GlyphPalette2 = {fg = cpt.green},
+        GlyphPalette3 = {fg = cpt.yellow},
+        GlyphPalette4 = {fg = cpt.blue},
+        GlyphPalette6 = {fg = cpt.green_br},
+        GlyphPalette7 = {fg = cpt.fg},
+        GlyphPalette9 = {fg = cpt.red},
     }
 end
 
@@ -156,76 +189,6 @@ function M.apply()
 
     theme.base = get_base()
 	theme.plugins = get_integrations()
-
-    -- theme.plugins = {
-    --     -- LspTrouble
-    --     -- Illuminate
-    --     illuminatedWord = {bg = cpt.fg_gutter},
-    --     illuminatedCurWord = {bg = cpt.fg_gutter},
-		-- -- IndentBlankline
-    --     -- diff
-    --     diffAdded = {fg = cpt.git.add},
-    --     diffRemoved = {fg = cpt.git.delete},
-    --     diffChanged = {fg = cpt.git.change},
-    --     diffOldFile = {fg = cpt.yellow},
-    --     diffNewFile = {fg = cpt.orange},
-    --     diffFile = {fg = cpt.blue},
-    --     diffLine = {fg = cpt.comment},
-    --     diffIndexLine = {fg = cpt.magenta},
-    --     -- Neogit
-    --     -- GitGutter
-    --     -- GitSigns
-    --     -- Telescope
-    --     -- NvimTree
-    --     -- Fern
-    --     FernBranchText = {fg = cpt.blue},
-    --     -- glyph palette
-    --     GlyphPalette1 = {fg = cpt.red},
-    --     GlyphPalette2 = {fg = cpt.green},
-    --     GlyphPalette3 = {fg = cpt.yellow},
-    --     GlyphPalette4 = {fg = cpt.blue},
-    --     GlyphPalette6 = {fg = cpt.green_br},
-    --     GlyphPalette7 = {fg = cpt.fg},
-    --     GlyphPalette9 = {fg = cpt.red},
-    --     -- Dashboard
-    --     -- WhichKey
-    --     -- LspSaga
-    --     -- NeoVim
-    --     healthError = {fg = cpt.error},
-    --     healthSuccess = {fg = cpt.green_br},
-    --     healthWarning = {fg = cpt.warning},
-    --     -- BufferLine
-    --     BufferLineIndicatorSelected = {fg = cpt.git.change},
-    --     BufferLineFill = {bg = cpt.black},
-    --     -- Barbar
-    --     BufferCurrent = {bg = cpt.fg_gutter, fg = cpt.fg},
-    --     BufferCurrentIndex = {bg = cpt.fg_gutter, fg = cpt.info},
-    --     BufferCurrentMod = {bg = cpt.fg_gutter, fg = cpt.warning},
-    --     BufferCurrentSign = {bg = cpt.fg_gutter, fg = cpt.info},
-    --     BufferCurrentTarget = {bg = cpt.fg_gutter, fg = cpt.red},
-    --     BufferVisible = {bg = cpt.bg_statusline, fg = cpt.fg},
-    --     BufferVisibleIndex = {bg = cpt.bg_statusline, fg = cpt.info},
-    --     BufferVisibleMod = {bg = cpt.bg_statusline, fg = cpt.warning},
-    --     BufferVisibleSign = {bg = cpt.bg_statusline, fg = cpt.info},
-    --     BufferVisibleTarget = {bg = cpt.bg_statusline, fg = cpt.red},
-    --     BufferInactive = {bg = cpt.bg_statusline, fg = cpt.comment},
-    --     BufferInactiveIndex = {bg = cpt.bg_statusline, fg = cpt.comment},
-    --     BufferInactiveMod = {bg = cpt.bg_statusline, fg = util.darken(cpt.warning, 0.7)},
-    --     BufferInactiveSign = {bg = cpt.bg_statusline, fg = cpt.border_highlight},
-    --     BufferInactiveTarget = {bg = cpt.bg_statusline, fg = cpt.red},
-    --     BufferTabpages = {bg = cpt.bg_statusline, fg = cpt.none},
-    --     BufferTabpage = {bg = cpt.bg_statusline, fg = cpt.border_highlight},
-    --     -- Sneak
-    --     Sneak = {fg = cpt.bg_highlight, bg = cpt.magenta},
-    --     SneakScope = {bg = cpt.bg_visual},
-    --     -- Hop
-    --     HopNextKey = {fg = cpt.cyan, style = "bold"},
-    --     HopNextKey1 = {fg = cpt.blue, style = "bold"},
-    --     HopNextKey2 = {fg = util.darken(cpt.blue, 0.3)},
-    --     HopUnmatched = {fg = cpt.comment},
-    --     LightspeedGreyWash = {fg = cpt.comment}
-    -- }
-
 
 	-- uninstantiate to avoid poluting global scope and because they are not needed anymore
 	_G.cpc = nil
