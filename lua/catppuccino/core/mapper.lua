@@ -26,7 +26,7 @@ local function get_base()
         SignColumnSB = {bg = cpt.bg_sidebar, fg = cpt.fg_gutter}, -- column where |signs| are displayed
         Substitute = {bg = cpt.red, fg = cpt.black}, -- |:substitute| replacement text highlighting
         LineNr = {fg = cpt.fg_gutter}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secpt.
-        CursorLineNr = {fg = cpt.fg_alt}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+        CursorLineNr = {fg = cpt.fg_alt}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
         MatchParen = {fg = cpt.orange, style = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg = {fg = cpt.fg_alt, style = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
         MsgArea = {fg = cpt.white_br}, -- Area for messages and cmdline
