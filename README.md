@@ -15,7 +15,7 @@ The project is under active development. Currently what is being worked on is:
 	Preview
 </p><hr>
 
-<kbd><img src ="https://i.imgur.com/yIimuJF.png"></kbd>
+<kbd><img src ="https://i.imgur.com/wXadql8.png"></kbd>
 <p align="center">
 	Catppuccino, the theme
 </p><hr>
