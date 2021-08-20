@@ -18,8 +18,6 @@ local function get_base()
         DiffDelete = {bg = cpt.diff.delete}, -- diff mode: Deleted line |diff.txt|
         DiffText = {bg = cpt.diff.text}, -- diff mode: Changed text within a changed line |diff.txt|
         EndOfBuffer = {fg = cpt.bg}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-        TermCursor = {}, -- cursor in a focused terminal
-        TermCursorNC = {}, -- cursor in an unfocused terminal
         ErrorMsg = {fg = cpt.error}, -- error messages on the command line
         VertSplit = {fg = cpt.border}, -- the column separating vertically split windows
         Folded = {fg = cpt.blue, bg = cpt.fg_gutter}, -- line used for closed folds
@@ -161,14 +159,10 @@ function M.apply()
 
     -- theme.plugins = {
     --     -- LspTrouble
-    --     LspTroubleText = {fg = cpt.fg_alt},
-    --     LspTroubleCount = {fg = cpt.magenta, bg = cpt.fg_gutter},
-    --     LspTroubleNormal = {fg = cpt.fg_sidebar, bg = cpt.bg_sidebar},
     --     -- Illuminate
     --     illuminatedWord = {bg = cpt.fg_gutter},
     --     illuminatedCurWord = {bg = cpt.fg_gutter},
 		-- -- IndentBlankline
-		-- IndentBlanklineChar = {fg = cpt.gray},
     --     -- diff
     --     diffAdded = {fg = cpt.git.add},
     --     diffRemoved = {fg = cpt.git.delete},
@@ -179,41 +173,10 @@ function M.apply()
     --     diffLine = {fg = cpt.comment},
     --     diffIndexLine = {fg = cpt.magenta},
     --     -- Neogit
-    --     NeogitBranch = {fg = cpt.magenta},
-    --     NeogitRemote = {fg = cpt.pink},
-    --     NeogitHunkHeader = {bg = cpt.bg_highlight, fg = cpt.fg},
-    --     NeogitHunkHeaderHighlight = {bg = cpt.fg_gutter, fg = cpt.blue},
-    --     NeogitDiffContextHighlight = {bg = util.darken(cpt.fg_gutter, 0.5), fg = cpt.fg_alt},
-    --     NeogitDiffDeleteHighlight = {fg = cpt.git.delete, bg = cpt.diff.delete},
-    --     NeogitDiffAddHighlight = {fg = cpt.git.add, bg = cpt.diff.add},
     --     -- GitGutter
-    --     GitGutterAdd = {fg = cpt.gitSigns.add}, -- diff mode: Added line |diff.txt|
-    --     GitGutterChange = {fg = cpt.gitSigns.change}, -- diff mode: Changed line |diff.txt|
-    --     GitGutterDelete = {fg = cpt.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
     --     -- GitSigns
-    --     GitSignsAdd = {fg = cpt.gitSigns.add}, -- diff mode: Added line |diff.txt|
-    --     GitSignsChange = {fg = cpt.gitSigns.change}, -- diff mode: Changed line |diff.txt|
-    --     GitSignsDelete = {fg = cpt.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
     --     -- Telescope
-    --     TelescopeBorder = {fg = cpt.border_highlight},
-    --     TelescopeSelectionCaret = {fg = cpt.cyan},
-    --     TelescopeSelection = {fg = cpt.cyan, bg = cpt.bg_highlight},
-    --     TelescopeMatching = {fg = cpt.blue},
     --     -- NvimTree
-    --     NvimTreeNormal = {fg = cpt.fg_sidebar, bg = cpt.bg_sidebar},
-    --     NvimTreeFolderIcon = {fg = cpt.comment},
-    --     NvimTreeRootFolder = {fg = cpt.orange, style = "bold"},
-    --     NvimTreeSymlink = {fg = cpt.magenta},
-    --     NvimTreeFolderName = {fg = cpt.blue},
-    --     NvimTreeEmptyFolderName = {fg = cpt.comment},
-    --     NvimTreeOpenedFolderName = {fg = cpt.blue_br},
-    --     NvimTreeOpenedFile = {fg = cpt.magenta}, -- TODO: not working
-    --     NvimTreeGitDirty = {fg = cpt.git.change},
-    --     NvimTreeGitNew = {fg = cpt.git.add},
-    --     NvimTreeGitDeleted = {fg = cpt.git.delete},
-    --     NvimTreeSpecialFile = {fg = cpt.cyan},
-    --     NvimTreeIndentMarker = {fg = cpt.fg_gutter},
-    --     NvimTreeImageFile = {fg = cpt.fg_sidebar},
     --     -- Fern
     --     FernBranchText = {fg = cpt.blue},
     --     -- glyph palette
@@ -225,39 +188,8 @@ function M.apply()
     --     GlyphPalette7 = {fg = cpt.fg},
     --     GlyphPalette9 = {fg = cpt.red},
     --     -- Dashboard
-    --     DashboardShortCut = {fg = cpt.cyan},
-    --     DashboardHeader = {fg = cpt.yellow},
-    --     DashboardCenter = {fg = cpt.green},
-    --     DashboardFooter = {fg = cpt.orange, style = "italic"},
     --     -- WhichKey
-    --     WhichKey = {fg = cpt.cyan},
-    --     WhichKeyGroup = {fg = cpt.blue},
-    --     WhichKeyDesc = {fg = cpt.magenta},
-    --     WhichKeySeperator = {fg = cpt.comment},
-    --     WhichKeySeparator = {fg = cpt.comment},
-    --     WhichKeyFloat = {bg = cpt.bg_sidebar},
-    --     WhichKeyValue = {fg = cpt.comment},
     --     -- LspSaga
-    --     DiagnosticError = {fg = cpt.error},
-    --     DiagnosticWarning = {fg = cpt.warning},
-    --     DiagnosticInformation = {fg = cpt.info},
-    --     DiagnosticHint = {fg = cpt.hint},
-    --     LspFloatWinNormal = {bg = cpt.bg_float},
-    --     LspFloatWinBorder = {fg = cpt.border_highlight},
-    --     LspSagaBorderTitle = {fg = cpt.cyan},
-    --     LspSagaHoverBorder = {fg = cpt.blue},
-    --     LspSagaRenameBorder = {fg = cpt.green},
-    --     LspSagaDefPreviewBorder = {fg = cpt.green},
-    --     LspSagaCodeActionBorder = {fg = cpt.blue},
-    --     LspSagaFinderSelection = {fg = cpt.bg_visual},
-    --     LspSagaCodeActionTitle = {fg = cpt.blue1},
-    --     LspSagaCodeActionContent = {fg = cpt.purple},
-    --     LspSagaSignatureHelpBorder = {fg = cpt.red},
-    --     ReferencesCount = {fg = cpt.purple},
-    --     DefinitionCount = {fg = cpt.purple},
-    --     DefinitionIcon = {fg = cpt.blue},
-    --     ReferencesIcon = {fg = cpt.blue},
-    --     TargetWord = {fg = cpt.cyan},
     --     -- NeoVim
     --     healthError = {fg = cpt.error},
     --     healthSuccess = {fg = cpt.green_br},
