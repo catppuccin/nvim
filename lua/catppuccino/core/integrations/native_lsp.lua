@@ -27,5 +27,6 @@ return {
     LspDiagnosticsUnderlineError = {style = "underline", sp = cpt.error}, -- Used to underline "Error" diagnostics
     LspDiagnosticsUnderlineWarning = {style = "underline", sp = cpt.warning}, -- Used to underline "Warning" diagnostics
     LspDiagnosticsUnderlineInformation = {style = "underline", sp = cpt.info}, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint = {style = "underline", sp = cpt.hint} -- Used to underline "Hint" diagnostics
+    LspDiagnosticsUnderlineHint = {style = "underline", sp = cpt.hint}, -- Used to underline "Hint" diagnostics
+	LspCodeLens = { fg = cpt.comment }, -- virtual text of the codelens
 }
