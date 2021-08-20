@@ -1,7 +1,7 @@
 return {
     NvimTreeFolderName = {fg = cpt.blue},
     NvimTreeFolderIcon = {fg = cpt.blue},
-    NvimTreeNormal = {fg = cpt.fg_sidebar, bg = cpt.bg_sidebar},
+    NvimTreeNormal = {fg = cpt.fg, bg = cpt.bg_sidebar},
     NvimTreeOpenedFolderName = {fg = cpt.blue},
     NvimTreeEmptyFolderName = {fg = cpt.blue_br},
     NvimTreeIndentMarker = {fg = cpt.comment},
@@ -13,7 +13,6 @@ return {
     NvimTreeGitNew = {fg = cpt.git.add},
     NvimTreeGitDeleted = {fg = cpt.git.delete},
     NvimTreeSpecialFile = {fg = cpt.cyan},
-    NvimTreeImageFile = {fg = cpt.fg_sidebar}
-
-    -- NvimTreeOpenedFile = {fg = cpt.magenta},
+    NvimTreeImageFile = {fg = cpt.fg_sidebar},
+    NvimTreeOpenedFile = {fg = cpt.magenta},
 }

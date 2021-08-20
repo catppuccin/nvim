@@ -29,10 +29,10 @@ local colors = {
     pink_br = "#DF97DB",
     comment = "#526175",
     git = {
-        add = "#70a288",
-        change = "#A58155",
-        delete = "#904A6A",
-        conflict = "#C07A6D"
+        add = "#dfdfe0",
+        change = "#F6A878",
+        delete = "#e06c75",
+        conflict = "#FFE37E"
     },
     gitSigns = {
         add = "#164846",
