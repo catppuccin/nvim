@@ -6,13 +6,13 @@ The project is under active development. Currently what is being worked on is:
 
 + Core
 + Integrations (Trees-sitter, native LSP, plugins (e.g. nvim-tree, lsp-saga), ...)
-+ Create theme variants based on Catppuccino color palette ( = done;  = dev;  = under consideration):
-	+ Dark 
-	+ Neon 
-	+ Light 
-	+ Aquamarine 
-	+ Pale 
-	+ Nord 
++ Create theme variants based on Catppuccino color palette (✅ = done; 👌 = dev; ❓ = under consideration):
+	+ Dark ✅
+	+ Neon 👌
+	+ Light 👌
+	+ Aquamarine ❓
+	+ Pale ❓
+	+ Nord ❓
 
 ## Sneak Peeks!
 
