@@ -1,5 +1,4 @@
 local util = require("catppuccino.utils.util")
-local opts = require("catppuccino.config").options
 
 local colors = {
     none = "NONE",

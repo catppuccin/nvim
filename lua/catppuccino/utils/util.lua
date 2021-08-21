@@ -1,5 +1,4 @@
 local hsluv = require("catppuccino.utils.hsluv")
-local opts = require("catppuccino.config").options
 
 local g = vim.g
 local o = vim.o
