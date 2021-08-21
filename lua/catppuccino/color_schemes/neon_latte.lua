@@ -71,9 +71,6 @@ colors.error = colors.red_bg
 colors.warning = colors.yellow
 colors.info = colors.blue
 colors.hint = colors.white_br
-
 colors.variable = colors.white
-
-util.color_overrides(colors, opts)
 
 return colors

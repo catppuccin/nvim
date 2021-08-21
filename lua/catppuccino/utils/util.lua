@@ -67,35 +67,6 @@ function util.invertColor(color)
     return color
 end
 
-function util.color_overrides(colors, config)
-    if type(config.colors) == "table" then
-        for key, value in pairs(config.colors) do
-            if not colors[key] then
-                error("Color " .. key .. " does not exist")
-            end
-
-            -- Patch: https://github.com/ful1e5/onedark.nvim/issues/6
-            if type(colors[key]) == "table" then
-                util.color_overrides(colors[key], {colors = value})
-            else
-                if value:lower() == "none" then
-                    -- set to none
-                    colors[key] = "NONE"
-                elseif string.sub(value, 1, 1) == "#" then
-                    -- hex override
-                    colors[key] = value
-                else
-                    -- another group
-                    if not colors[value] then
-                        error("Color " .. value .. " does not exist")
-                    end
-                    colors[key] = colors[value]
-                end
-            end
-        end
-    end
-end
-
 function util.string_to_color(colors, value, default)
     if not value or value == "" then
         return default
