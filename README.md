@@ -18,10 +18,16 @@ The project is under active development. Currently what is being worked on is:
 
 <kbd><img src ="https://i.imgur.com/EFwifF5.png"></kbd>
 <p align="center">
-	Preview
+	Catppuccino Dark
+</p><hr>
+
+https://user-images.githubusercontent.com/58336662/130311239-1392a1aa-8a3f-42ff-8882-5d7cf59df030.mp4
+<p align="center">
+	Neon Latte flavor + new CLI theme switcher
 </p><hr>
 
 <kbd><img src ="https://i.imgur.com/wXadql8.png"></kbd>
 <p align="center">
-	Catppuccino, the theme
+	Color palette
 </p><hr>
+
