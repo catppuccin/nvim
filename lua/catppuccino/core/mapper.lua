@@ -187,8 +187,14 @@ end
 function M.apply(cs)
 	_G.cpc = require("catppuccino.config").options
 	cs = cs or cpc.colorscheme
-	-- _G.cpt = require("catppuccino.color_schemes." .. cs)
-	_G.cpt = require("catppuccino.core.cs").get_color_scheme(cs)
+	local good, color_scheme = require("catppuccino.core.cs").get_color_scheme(cs)
+
+	if not good then
+		print(color_scheme) -- error message
+		return
+	end
+
+	_G.cpt = color_scheme
 
     local theme = {}
     theme.base = get_base()

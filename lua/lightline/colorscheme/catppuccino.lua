@@ -1,4 +1,11 @@
-local cpt = require("catppuccino.core.cs").get_color_scheme(require("catppuccino.config").options["cptcheme"])
+local good, color_scheme = require("catppuccino.core.cs").get_color_scheme(require("catppuccino.config").options["cptcheme"])
+
+if not good then
+    print(color_scheme) -- error message
+    return
+end
+
+local cpt = color_scheme
 local catppuccino = {}
 
 catppuccino.normal = {

@@ -12,10 +12,16 @@ end
 
 function M.get_color_scheme(cs)
 	local remaps = M.get_remaps()
+	local good, color_scheme = pcall(require, "catppuccino.color_schemes." .. cs)
+
+	if not good then
+		return false, "Catppuccino: the colorscheme '" .. cs .. "' was not recognized."
+	end
+
 	if not (next(remaps) == nil) then
-		return vim.tbl_deep_extend("force", require("catppuccino.color_schemes." .. cs), remaps)
+		return true, vim.tbl_deep_extend("force", color_scheme, remaps)
 	else
-		return require("catppuccino.color_schemes." .. cs)
+		return true, color_scheme
 	end
 end
 
