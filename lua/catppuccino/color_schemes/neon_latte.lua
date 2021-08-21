@@ -34,31 +34,18 @@ local colors = {
         delete = "#e06c75",
         conflict = "#FFE070"
     },
-    gitSigns = {
-        add = "#164846",
-        change = "#394b70",
-        delete = "#823c41"
-    }
 }
 
 util.bg = colors.bg
-
 colors.bg_alt = util.darken(colors.bg, 0.75, "#000000")
 colors.bg_highlight = util.brighten(colors.bg, 0.05)
-
 colors.fg_alt = util.darken(colors.fg, 0.80, "#000000")
 
-colors.diff = {
-    add = util.darken(colors.green, 0.15),
-    delete = util.darken(colors.red, 0.15),
-    change = util.darken(colors.blue, 0.15),
+colors.diff = { -- also used for gitsigns
+    add = util.darken(colors.blue, 0.50),
+    delete = util.darken(colors.red, 0.50),
+    change = util.darken(colors.yellow, 0.50),
     text = colors.blue
-}
-
-colors.gitSigns = {
-    add = util.brighten(colors.gitSigns.add, 0.2),
-    change = util.brighten(colors.gitSigns.change, 0.2),
-    delete = util.brighten(colors.gitSigns.delete, 0.2)
 }
 
 colors.git.ignore = colors.black

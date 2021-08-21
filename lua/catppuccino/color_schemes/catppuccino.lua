@@ -37,10 +37,8 @@ local colors = {
 }
 
 util.bg = colors.bg
-
 colors.bg_alt = util.darken(colors.bg, 0.75, "#000000")
 colors.bg_highlight = util.brighten(colors.bg, 0.05)
-
 colors.fg_alt = util.darken(colors.fg, 0.80, "#000000")
 
 colors.diff = { -- also used for gitsigns
