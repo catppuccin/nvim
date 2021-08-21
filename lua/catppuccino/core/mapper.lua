@@ -13,10 +13,6 @@ local function get_base()
         CursorColumn = {bg = cpt.bg_highlight}, -- Screen-column at the cursor, when 'cursorcolumn' is secpt.
         CursorLine = {bg = cpt.bg_highlight}, -- Screen-line at the cursor, when 'cursorline' is secpt.  Low-priority if foreground (ctermfg OR guifg) is not secpt.
         Directory = {fg = cpt.blue}, -- directory names (and other special names in listings)
-        DiffAdd = {bg = cpt.diff.add}, -- diff mode: Added line |diff.txt|
-        DiffChange = {bg = cpt.diff.change}, -- diff mode: Changed line |diff.txt|
-        DiffDelete = {bg = cpt.diff.delete}, -- diff mode: Deleted line |diff.txt|
-        DiffText = {bg = cpt.diff.text}, -- diff mode: Changed text within a changed line |diff.txt|
         EndOfBuffer = {fg = cpt.bg}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         ErrorMsg = {fg = cpt.error}, -- error messages on the command line
         VertSplit = {fg = cpt.border}, -- the column separating vertically split windows
@@ -139,6 +135,12 @@ local function get_base()
         diffFile = {fg = cpt.blue},
         diffLine = {fg = cpt.comment},
         diffIndexLine = {fg = cpt.magenta},
+
+		-- git diff
+        DiffAdd = {fg = cpt.diff.add, bg = cpt.bg}, -- diff mode: Added line |diff.txt|
+        DiffChange = {fg = cpt.diff.change, bg = cpt.bg}, -- diff mode: Changed line |diff.txt|
+        DiffDelete = {fg  = cpt.diff.delete, bg = cpt.bg}, -- diff mode: Deleted line |diff.txt|
+        DiffText = {fg = cpt.diff.text, bg = cpt.bg}, -- diff mode: Changed text within a changed line |diff.txt|
 
         -- NeoVim
         healthError = {fg = cpt.error},
