@@ -46,7 +46,7 @@ colors.fg_alt = util.darken(colors.fg, 0.80, "#000000")
 colors.diff = { -- also used for gitsigns
     add = util.darken(colors.blue, 0.15),
     delete = util.darken(colors.red, 0.15),
-    change = util.darken(colors.orange, 0.15),
+    change = util.darken(colors.magenta, 0.15),
     text = colors.blue
 }
 
