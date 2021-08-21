@@ -190,8 +190,7 @@ function M.apply(cs)
 	local good, color_scheme = require("catppuccino.core.cs").get_color_scheme(cs)
 
 	if not good then
-		print(color_scheme) -- error message
-		return
+		return false, color_scheme -- error message
 	end
 
 	_G.cpt = color_scheme
@@ -204,7 +203,7 @@ function M.apply(cs)
 	_G.cpc = nil
 	_G.cpt = nil
 
-    return theme
+    return true, theme
 end
 
 return M
