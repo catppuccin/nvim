@@ -36,7 +36,7 @@ return {
     TSNamespace = {fg = cpt.cyan}, -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
-    TSOperator = {fg = cpt.fg_alt}, -- For any operator: `+`, but also `->` and `*` in cpt.
+    TSOperator = {fg = cpt.fg}, -- For any operator: `+`, but also `->` and `*` in cpt.
     TSParameter = {fg = cpt.orange_br}, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
     TSProperty = {fg = cpt.red_bg}, -- Same as `TSField`.
