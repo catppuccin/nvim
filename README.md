@@ -33,7 +33,25 @@
 
 # 🎁 Features
 
-- ...
+-   Multiple colorschemes available.
+-   Handy CLI for loading colorschemes.
+-   Allows user remaps.
+-   Extensible for many use cases.
+-   Integrations with a lot of stuff:
+    -   Treesitter
+    -   Native LSP
+    -   Telescope
+    -   LSP Saga
+    -   LSP Trouble
+    -   WhichKey
+    -   Git signs
+    -   BarBar
+    -   NvimTree
+    -   Lualine
+    -   Git Gutter
+    -   Fern
+    -   Lightline
+    -   And Many more...
 
 # 📺 Notices
 
@@ -275,7 +293,7 @@ This settings are unrelated to any group and are independent.
 ### List of colorschemes
 
 | Colorschemes     | Code Names    |
-|------------------|---------------|
+| ---------------- | ------------- |
 | Catppuccino Dark | `catppuccino` |
 | Neon Latte       | `neon_latte`  |
 | Light Melya      | `light_melya` |
@@ -298,10 +316,10 @@ This settings are unrelated to any group and are independent.
 # 🙋 FAQ
 
 -   Q: **_"How can I view the doc from NeoVim?"_**
-A: Use `:help Catppuccino.nvim`
+    A: Use `:help Catppuccino.nvim`
 
 -   Q: **_"Why are the colorschemes named like that? Do they follow any convention(s)?"_**
-A: A colorscheme's name is constructed by two words: the first one is a word that represents the tonalities in the colors used and the second one is the name of a coffee drink from [this list](https://en.wikipedia.org/wiki/List_of_coffee_drinks).
+    A: A colorscheme's name is constructed by two words: the first one is a word that represents the tonalities in the colors used and the second one is the name of a coffee drink from [this list](https://en.wikipedia.org/wiki/List_of_coffee_drinks).
 
 # 🫂 Contribute
 
