@@ -2,7 +2,20 @@ local util = require("catppuccino.utils.util")
 
 local M = {}
 
+local _cs
+
+local function get_cs() -- return a cleaned and parsed colorscheme
+	return _cs
+end
+
+local function set_cs(val)
+	_cs = val
+end
+
 local function get_base()
+
+	local cpt = get_cs()
+
 	return {
         Comment = {fg = cpt.comment, style = cpc.styles.comments}, -- any comment
         ColorColumn = {bg = cpt.bg_visual}, -- used for the columns set with 'colorcolumn'
@@ -163,6 +176,7 @@ end
 local function get_integrations()
     local integrations = cpc["integrations"]
 	local final_integrations = {}
+	local cpt = get_cs()
 
     for integration in pairs(integrations) do
         local cot = false
@@ -177,12 +191,13 @@ local function get_integrations()
         end
 
         if (cot) then
-			table.insert(final_integrations, require("catppuccino.core.integrations." .. integration))
+			table.insert(final_integrations, require("catppuccino.core.integrations." .. integration).get(cpt))
         end
     end
 
 	return final_integrations
 end
+
 
 function M.apply(cs)
 	_G.cpc = require("catppuccino.config").options
@@ -193,7 +208,7 @@ function M.apply(cs)
 		return false, color_scheme -- error message
 	end
 
-	_G.cpt = color_scheme
+	set_cs(color_scheme)
 
     local theme = {}
     theme.base = get_base()
@@ -201,7 +216,6 @@ function M.apply(cs)
 
 	-- uninstantiate to avoid poluting global scope and because they are not needed anymore
 	_G.cpc = nil
-	_G.cpt = nil
 
     return true, theme
 end
