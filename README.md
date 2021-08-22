@@ -336,7 +336,7 @@ require('lualine').setup {
 }
 ```
 
--   **Lightline:** use this to set it up (Note: `catppuccino` is the only valid theme name. It will pick the one set in your config):
+-   **Lightline:** use this to set it up (Note: `catppuccino` is the only valid colorscheme name. It will pick the one set in your config):
 
 ```lua
 let g:lightline = {'colorscheme': 'catppuccino'}
