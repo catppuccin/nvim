@@ -86,7 +86,7 @@ local function get_base()
         Float = {fg = cpt.orange_br}, --    a floating point constant: 2.3e10
         Boolean = {fg = cpt.orange_br}, --  a boolean constant: TRUE, false
         Identifier = {fg = cpt.cyan, style = cpc.styles.variables}, -- (preferred) any variable name
-        Function = {fg = cpt.blue, style = cpc.styles.fuctions}, -- function name (also: methods for classes)
+        Function = {fg = cpt.blue, style = cpc.styles.functions}, -- function name (also: methods for classes)
         Statement = {fg = cpt.magenta_br}, -- (preferred) any statement
         Conditional = {fg = cpt.red}, --  if, then, else, endif, switch, etcpt.
         Repeat = {fg = cpt.red}, --   for, do, while, etcpt.
