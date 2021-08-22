@@ -274,6 +274,27 @@ This settings are unrelated to any group and are independent.
 
 ### List of colorschemes
 
+| Colorschemes     | Code Names    |
+|------------------|---------------|
+| Catppuccino Dark | `catppuccino` |
+| Neon Latte       | `neon_latte`  |
+| Light Melya      | `light_melya` |
+
+<img src ="https://i.imgur.com/qdTDwaC.png">
+<p align="center">
+	Catppuccino Dark
+</p><hr>
+
+<img src ="https://i.imgur.com/WlzSh2v.png">
+<p align="center">
+	Neon Latte
+</p><hr>
+
+<img src ="https://i.imgur.com/r2XNdh5.png">
+<p align="center">
+	Light Melya
+</p><hr>
+
 # 🙋 FAQ
 
 -   Q: **_"How can I view the doc from NeoVim?"_**
