@@ -53,11 +53,11 @@
 -   Allows user remaps.
 -   Extensible for many use cases.
 -   Integrations with a lot of stuff:
-    -   Treesitter
-    -   Native LSP
-    -   Telescope
-    -   LSP Saga
-    -   LSP Trouble
+    -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
+    -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
+    -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+    -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
+    -   [Trouble](https://github.com/folke/trouble.nvim)
     -   WhichKey
     -   Git signs
     -   BarBar
