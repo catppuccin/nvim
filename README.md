@@ -298,6 +298,8 @@ This settings are unrelated to any group and are independent.
 | Neon Latte       | `neon_latte`  |
 | Light Melya      | `light_melya` |
 
+&nbsp;
+
 <img src ="https://i.imgur.com/qdTDwaC.png">
 <p align="center">
 	Catppuccino Dark
