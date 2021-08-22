@@ -10,12 +10,13 @@
 
 # 🌲 Table of Contents
 
+-   [Flavors](#-flavors)
 -   [Features](#-features)
 -   [Notices](#-notices)
 -   [Installation](#-installation)
     -   [Prerequisites](#prerequisites)
     -   [Adding the plugin](#adding-the-plugin)
-    -   [Setup Configuration](#setup-configuration)
+    -   [Setup](#setup)
         -   [For init.lua](#for-initlua)
         -   [For init.vim](#for-initvim)
     -   [Updating](#updating)
@@ -31,9 +32,23 @@
 -   [FAQ](#-faq)
 -   [To-Do](#-to-do)
 
+# 🍨 Flavors
+
+## Catppuccino Dark
+
+<img src ="https://i.imgur.com/qdTDwaC.png">
+
+## Neon Latte
+
+<img src ="https://i.imgur.com/WlzSh2v.png">
+
+## Light Melya
+
+<img src ="https://i.imgur.com/r2XNdh5.png">
+
 # 🎁 Features
 
--   Multiple colorschemes available.
+-   Multiple colorschemes (AKA [flavors](#-flavors)) available!
 -   Handy CLI for loading colorschemes.
 -   Allows user remaps.
 -   Extensible for many use cases.
@@ -112,7 +127,7 @@ colorscheme = "catppuccino",
 transparency = false,
 styles = {
 	comments = "italic",
-	fuctions = "italic",
+	functions = "italic",
 	keywords = "italic",
 	strings = "NONE",
 	variables = "NONE",
@@ -162,7 +177,7 @@ catppuccino.setup(
 		transparency = false,
 		styles = {
 			comments = "italic",
-			fuctions = "italic",
+			functions = "italic",
 			keywords = "italic",
 			strings = "NONE",
 			variables = "NONE",
@@ -219,7 +234,7 @@ catppuccino.setup(
 		transparency = false,
 		styles = {
 			comments = "italic",
-			fuctions = "italic",
+			functions = "italic",
 			keywords = "italic",
 			strings = "NONE",
 			variables = "NONE",
@@ -289,8 +304,45 @@ Although settings already have self-explanatory names, here is where you can fin
 This settings are unrelated to any group and are independent.
 
 -   `colorscheme`: (String) code name of the color-scheme to be used. All of them can be found in the section below.
+-   `transparency`: (Boolean) if true, disables setting the background color.
 
-### List of colorschemes
+## Styles
+
+Handles the style of general hi groups:
+
+-   `comments`: (String) changed the style of the comments.
+-   `functions`: (String) changed the style of the functions.
+-   `keywords`: (String) changed the style of the keywords.
+-   `strings`: (String) changed the style of the strings.
+-   `variables`: (String) changed the style of the variables.
+
+## Integrations
+
+These integrations allow Catppuccino to set the theme of varios plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
+
+If you'd like to know which highlight groups are being affected by Catppuccino, checkout this directory: [`lua/catppuccino/core/integrations/`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/core/integrations).
+
+### Special Integrations
+
+-   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inner table (`styles`) you can set that the style for virtual diagnostics.
+-   **Lualine:** use this to set it up (Note: `catppuccino` is the only valid theme name. It will pick the one set in your config):
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = "catppuccino"
+	-- ... the rest of your lualine config
+  }
+}
+```
+
+-   **Lightline:** use this to set it up (Note: `catppuccino` is the only valid colorscheme name. It will pick the one set in your config):
+
+```lua
+let g:lightline = {'colorscheme': 'catppuccino'}
+```
+
+## List of colorschemes
 
 | Colorschemes     | Code Names    |
 | ---------------- | ------------- |
@@ -298,22 +350,101 @@ This settings are unrelated to any group and are independent.
 | Neon Latte       | `neon_latte`  |
 | Light Melya      | `light_melya` |
 
-&nbsp;
+## Overriding colors
 
-<img src ="https://i.imgur.com/qdTDwaC.png">
-<p align="center">
-	Catppuccino Dark
-</p><hr>
+To override the colors for the Catppuccino theme you are using you'll pass the parameters to the `setup()` function you already used for configuring the plugin. This is the structure:
 
-<img src ="https://i.imgur.com/WlzSh2v.png">
-<p align="center">
-	Neon Latte
-</p><hr>
+```
+local catppuccino = require("catppuccino")
+catppuccino.setup({<your_settings>}, {your_color_overrides})
+```
 
-<img src ="https://i.imgur.com/r2XNdh5.png">
-<p align="center">
-	Light Melya
-</p><hr>
+Example: setting the colorscheme to `Neon Latte` and changing the color `red` to `#ffffff` (white).
+
+```
+local catppuccino = require("catppuccino")
+catppuccino.setup(
+    {
+		colorscheme = "neon_latte",
+	},
+	{
+		red = "#ffffff"
+	}
+)
+```
+
+<details>
+    <summary>Available colors</summary>
+<p>
+
+- `bg`: nvim background color.
+- `fg`: color of the text.
+- `fg_gutter`
+- `black`
+- `gray`
+- `red`
+- `green`
+- `yellow`
+- `blue`
+- `magenta`
+- `cyan`
+- `white`
+- `orange`
+- `pink`
+- `black_br`
+- `red_bg`
+- `green_br`
+- `yellow_br`
+- `blue_br`
+- `magenta_br`
+- `cyan_br`
+- `white_br`
+- `orange_br`
+- `pink_br`
+- `comment`
+- `git`:
+
+```
+	git = {
+		add
+		change
+		delete
+		conflict
+	},
+```
+
+- `bg_alt`
+- `bg_highlight`
+- `fg_alt`
+- `git.ignore`
+- `diff`:
+
+```
+diff = { -- also used for gitsigns
+    add,
+    delete,
+    change,
+    text,
+}
+```
+
+- `border_highlight`
+- `border`
+- `bg_popup`
+- `bg_statusline`
+- `bg_sidebar`
+- `bg_float`
+- `bg_visual`
+- `bg_search`
+- `fg_sidebar`
+- `error`
+- `warning`
+- `info`
+- `hint`
+- `variable`
+
+<br />
+</details>
 
 # 🙋 FAQ
 
@@ -323,7 +454,7 @@ This settings are unrelated to any group and are independent.
 -   Q: **_"Why are the colorschemes named like that? Do they follow any convention(s)?"_**
     A: A colorscheme's name is constructed by two words: the first one is a word that represents the tonalities in the colors used and the second one is the name of a coffee drink from [this list](https://en.wikipedia.org/wiki/List_of_coffee_drinks).
 
-# 🫂 Contribute
+# 👐 Contribute
 
 Pull Requests are welcomed as long as they are properly justified and there are no conflicts. If your PR has something to do with the README or in general related with the documentation, I'll gladly merge it! Also, when writing code for the project **you must** use the [.editorconfig](https://github.com/Pocco81/Catppuccino.nvim/blob/main/.editorconfig) file on your editor so as to "maintain consistent coding styles". For instructions on how to use this file refer to [EditorConfig's website](https://editorconfig.org/).
 
