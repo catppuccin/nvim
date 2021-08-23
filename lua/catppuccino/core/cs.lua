@@ -11,7 +11,7 @@ function M.set_remaps(val)
 end
 
 function M.get_color_scheme(cs)
-	local remaps = M.get_remaps()
+	local remaps = M.get_remaps() or {}
 	local good, color_scheme = pcall(require, "catppuccino.color_schemes." .. cs)
 
 	if not good then
