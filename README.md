@@ -58,15 +58,19 @@
     -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
     -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
     -   [Trouble](https://github.com/folke/trouble.nvim)
-    -   WhichKey
-    -   Git signs
-    -   BarBar
-    -   NvimTree
-    -   Lualine
-    -   Git Gutter
-    -   Fern
-    -   Lightline
-    -   And Many more...
+    -   [WhichKey](https://github.com/folke/which-key.nvim)
+    -   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
+    -   [BarBar](https://github.com/romgrk/barbar.nvim)
+    -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+    -   [Lualine](https://github.com/hoob3rt/lualine.nvim)
+    -   [Git Gutter](https://github.com/airblade/vim-gitgutter)
+    -   [Fern](https://github.com/lambdalisue/fern.vim)
+    -   [Lightline](https://github.com/itchyny/lightline.vim)
+    -   [Dashboard](https://github.com/glepnir/dashboard-nvim)
+    -   [Markdown](https://www.markdownguide.org/)
+    -   [Sneak](https://github.com/justinmk/vim-sneak)
+    -   [Neogit](https://github.com/TimUntersberger/neogit)
+    -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 # 📺 Notices
 
@@ -308,7 +312,7 @@ This settings are unrelated to any group and are independent.
 
 ## Styles
 
-Handles the style of general hi groups:
+Handles the style of general hi groups (see `:h highlight-args`):
 
 -   `comments`: (String) changed the style of the comments.
 -   `functions`: (String) changed the style of the functions.
@@ -318,7 +322,7 @@ Handles the style of general hi groups:
 
 ## Integrations
 
-These integrations allow Catppuccino to set the theme of varios plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
+These integrations allow Catppuccino to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
 If you'd like to know which highlight groups are being affected by Catppuccino, checkout this directory: [`lua/catppuccino/core/integrations/`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/core/integrations).
 
@@ -373,36 +377,38 @@ catppuccino.setup(
 )
 ```
 
+You could use an existing color scheme as a template if you will ([`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes))
+
 <details>
     <summary>Available colors</summary>
 <p>
 
-- `bg`: nvim background color.
-- `fg`: color of the text.
-- `fg_gutter`
-- `black`
-- `gray`
-- `red`
-- `green`
-- `yellow`
-- `blue`
-- `magenta`
-- `cyan`
-- `white`
-- `orange`
-- `pink`
-- `black_br`
-- `red_bg`
-- `green_br`
-- `yellow_br`
-- `blue_br`
-- `magenta_br`
-- `cyan_br`
-- `white_br`
-- `orange_br`
-- `pink_br`
-- `comment`
-- `git`:
+-   `bg`: nvim background color.
+-   `fg`: color of the text.
+-   `fg_gutter`
+-   `black`
+-   `gray`
+-   `red`
+-   `green`
+-   `yellow`
+-   `blue`
+-   `magenta`
+-   `cyan`
+-   `white`
+-   `orange`
+-   `pink`
+-   `black_br`
+-   `red_bg`
+-   `green_br`
+-   `yellow_br`
+-   `blue_br`
+-   `magenta_br`
+-   `cyan_br`
+-   `white_br`
+-   `orange_br`
+-   `pink_br`
+-   `comment`
+-   `git`:
 
 ```
 	git = {
@@ -413,11 +419,11 @@ catppuccino.setup(
 	},
 ```
 
-- `bg_alt`
-- `bg_highlight`
-- `fg_alt`
-- `git.ignore`
-- `diff`:
+-   `bg_alt`
+-   `bg_highlight`
+-   `fg_alt`
+-   `git.ignore`
+-   `diff`:
 
 ```
 diff = { -- also used for gitsigns
@@ -428,20 +434,20 @@ diff = { -- also used for gitsigns
 }
 ```
 
-- `border_highlight`
-- `border`
-- `bg_popup`
-- `bg_statusline`
-- `bg_sidebar`
-- `bg_float`
-- `bg_visual`
-- `bg_search`
-- `fg_sidebar`
-- `error`
-- `warning`
-- `info`
-- `hint`
-- `variable`
+-   `border_highlight`
+-   `border`
+-   `bg_popup`
+-   `bg_statusline`
+-   `bg_sidebar`
+-   `bg_float`
+-   `bg_visual`
+-   `bg_search`
+-   `fg_sidebar`
+-   `error`
+-   `warning`
+-   `info`
+-   `hint`
+-   `variable`
 
 <br />
 </details>
