@@ -122,7 +122,7 @@ Plugin 'Pocco81/Catppuccino.nvim'
 NeoBundleFetch 'Pocco81/Catppuccino.nvim'
 ```
 
-## Setup (configuration)
+## Setup
 
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
 
@@ -451,6 +451,25 @@ diff = { -- also used for gitsigns
 
 <br />
 </details>
+
+## Hooks
+
+Use them to execute code at certain events [described by their names]. These are the ones available:
+
+| Function           | Description                  |
+|--------------------|------------------------------|
+| `before_loading()` | Before loading a colorscheme |
+| `after_loading()`  | After loading a colorscheme  |
+
+They can be used like so:
+
+```
+local catppuccino = require("catppuccino")
+
+catppuccino.before_loading = function ()
+	print("I ran before setting a colorscheme!")
+end
+```
 
 # 🙋 FAQ
 
