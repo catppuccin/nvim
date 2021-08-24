@@ -1,0 +1,35 @@
+# Catppuccino Light Melya
+colors:
+  # Default colors
+  primary:
+    background: '0xfbfbfb'
+    foreground: '0x0e171c'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0e171c'
+    cursor: '0xfbfbfb'
+
+  # Normal colors
+  normal:
+    black:   '0x393b44'
+    red:     '0xb0304e'
+    green:   '0x76ab49'
+    yellow:  '0xffce1f'
+    blue:    '0x157c8e'
+    magenta: '0xa414cc'
+    cyan:    '0x63cdcf'
+    white:   '0xdfdfe0'
+
+  # Bright colors
+  bright:
+    black:   '0x7f8c98'
+    red:     '0xd84652'
+    green:   '0x58cd8b'
+    yellow:  '0xffe37e'
+    blue:    '0x84cee4'
+    magenta: '0xb8a1e3'
+    cyan:    '0x59f0ff'
+    white:   '0x0e171c'
+
+  # indexed_colors: []
