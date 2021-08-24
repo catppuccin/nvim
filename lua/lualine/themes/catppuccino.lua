@@ -1,4 +1,4 @@
-local good, color_scheme = require("catppuccino.core.cs").get_color_scheme(require("catppuccino.config").options["cptcheme"])
+local good, color_scheme = require("catppuccino.core.cs").get_color_scheme(require("catppuccino.config").options["colorscheme"])
 
 if not good then
     print(color_scheme) -- error message
