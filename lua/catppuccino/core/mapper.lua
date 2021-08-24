@@ -202,10 +202,10 @@ end
 function M.apply(cs)
 	_G.cpc = require("catppuccino.config").options
 	cs = cs or cpc.colorscheme
-	local good, color_scheme = require("catppuccino.core.cs").get_color_scheme(cs)
+	local err, color_scheme = require("catppuccino.core.cs").get_color_scheme(cs)
 
-	if not good then
-		return false, color_scheme -- error message
+	if not err.status then
+		vim.api.nvim_err_writeln(err.msg)
 	end
 
 	set_cs(color_scheme)
@@ -217,7 +217,7 @@ function M.apply(cs)
 	-- uninstantiate to avoid poluting global scope and because they are not needed anymore
 	_G.cpc = nil
 
-    return true, theme
+    return theme
 end
 
 return M

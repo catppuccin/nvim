@@ -1,8 +1,7 @@
-local good, color_scheme = require("catppuccino.core.cs").get_color_scheme(require("catppuccino.config").options["colorscheme"])
+local err, color_scheme = require("catppuccino.core.cs").get_color_scheme(require("catppuccino.config").options["colorscheme"])
 
-if not good then
-    print(color_scheme) -- error message
-    return
+if not err.status then
+	vim.api.nvim_err_writeln(err.msg)
 end
 
 local cpt = color_scheme

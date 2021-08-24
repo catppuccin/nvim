@@ -9,13 +9,7 @@ local function load(args)
         catppuccino.before_loading()
     end
 
-	local good, theme = require("catppuccino.core.mapper").apply(args)
-
-	if not good then
-		print(theme) -- error message
-		return
-	end
-
+	local theme = require("catppuccino.core.mapper").apply(args)
 	utils.load(theme)
 
     if (catppuccino.after_loading ~= nil) then
