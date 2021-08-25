@@ -197,11 +197,11 @@ local function get_properties()
     local cpt = get_cs()
     local props = {
         termguicolors = true,
-        background = "light"
+        background = "dark"
     }
 
     if (colors_util.assert_brightness(cpt.bg)) then
-        props["background"] = "dark"
+        props["background"] = "light"
     end
 
     return props
