@@ -114,6 +114,12 @@ function util.syntax(tbl)
     end
 end
 
+function util.properties(tbl)
+    for property, value in pairs(tbl) do
+        vim.o[property] = value
+    end
+end
+
 function util.terminal(theme)
     g.terminal_color_0 = theme.colors.black
     g.terminal_color_1 = theme.colors.red
@@ -140,12 +146,11 @@ function util.load(theme)
         vim.cmd("syntax reset")
     end
 
-    o.background = "dark"
-    o.termguicolors = true
     g.colors_name = "catppuccino"
 
+	util.properties(theme.properties)
     util.syntax(theme.base)
-    util.syntax(theme.plugins)
+    util.syntax(theme.integrations)
 
     -- if opts.ui.terminal then
     --     util.terminal(theme)

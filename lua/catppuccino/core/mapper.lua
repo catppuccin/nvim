@@ -1,22 +1,22 @@
 local util = require("catppuccino.utils.util")
+local colors_util = require("catppuccino.utils.colors")
 
 local M = {}
 
 local _cs
 
 local function get_cs() -- return a cleaned and parsed colorscheme
-	return _cs
+    return _cs
 end
 
 local function set_cs(val)
-	_cs = val
+    _cs = val
 end
 
 local function get_base()
+    local cpt = get_cs()
 
-	local cpt = get_cs()
-
-	return {
+    return {
         Comment = {fg = cpt.comment, style = cpc.styles.comments}, -- any comment
         ColorColumn = {bg = cpt.bg_visual}, -- used for the columns set with 'colorcolumn'
         Conceal = {fg = cpt.black}, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -77,7 +77,7 @@ local function get_base()
         -- default,
         -- Uncomment and edit if you want more specific syntax highlighting.
 
-		-- code itself
+        -- code itself
 
         Constant = {fg = cpt.orange}, -- (preferred) any constant
         String = {fg = cpt.green, style = cpc.styles.strings}, -- a string constant: "this is a string"
@@ -131,14 +131,12 @@ local function get_base()
         mkdCodeEnd = {fg = cpt.cyan, style = "bold"},
         -- mkdLink = { fg = cpt.blue, style = "underline" },
 
-		-- debugging
+        -- debugging
         debugPC = {bg = cpt.bg_sidebar}, -- used for highlighting the current line in terminal-debug
         debugBreakpoint = {bg = util.darken(cpt.info, 0.1), fg = cpt.info}, -- used for breakpoint colors in terminal-debug
-
         -- illuminate
         illuminatedWord = {bg = cpt.fg_gutter},
         illuminatedCurWord = {bg = cpt.fg_gutter},
-
         -- diff
         diffAdded = {fg = cpt.git.add},
         diffRemoved = {fg = cpt.git.delete},
@@ -148,35 +146,32 @@ local function get_base()
         diffFile = {fg = cpt.blue},
         diffLine = {fg = cpt.comment},
         diffIndexLine = {fg = cpt.magenta},
-
-		-- git diff
+        -- git diff
         DiffAdd = {fg = cpt.diff.add, bg = cpt.bg}, -- diff mode: Added line |diff.txt|
         DiffChange = {fg = cpt.diff.change, bg = cpt.bg}, -- diff mode: Changed line |diff.txt|
-        DiffDelete = {fg  = cpt.diff.delete, bg = cpt.bg}, -- diff mode: Deleted line |diff.txt|
+        DiffDelete = {fg = cpt.diff.delete, bg = cpt.bg}, -- diff mode: Deleted line |diff.txt|
         DiffText = {fg = cpt.diff.text, bg = cpt.bg}, -- diff mode: Changed text within a changed line |diff.txt|
-
         -- NeoVim
         healthError = {fg = cpt.error},
         healthSuccess = {fg = cpt.green_br},
         healthWarning = {fg = cpt.warning},
+        -- misc
 
-		-- misc
-
-		-- glyphs
+        -- glyphs
         GlyphPalette1 = {fg = cpt.red},
         GlyphPalette2 = {fg = cpt.green},
         GlyphPalette3 = {fg = cpt.yellow},
         GlyphPalette4 = {fg = cpt.blue},
         GlyphPalette6 = {fg = cpt.green_br},
         GlyphPalette7 = {fg = cpt.fg},
-        GlyphPalette9 = {fg = cpt.red},
+        GlyphPalette9 = {fg = cpt.red}
     }
 end
 
 local function get_integrations()
     local integrations = cpc["integrations"]
-	local final_integrations = {}
-	local cpt = get_cs()
+    local final_integrations = {}
+    local cpt = get_cs()
 
     for integration in pairs(integrations) do
         local cot = false
@@ -191,31 +186,45 @@ local function get_integrations()
         end
 
         if (cot) then
-			table.insert(final_integrations, require("catppuccino.core.integrations." .. integration).get(cpt))
+            table.insert(final_integrations, require("catppuccino.core.integrations." .. integration).get(cpt))
         end
     end
 
-	return final_integrations
+    return final_integrations
 end
 
+local function get_properties()
+    local cpt = get_cs()
+    local props = {
+        termguicolors = true,
+        background = "light"
+    }
+
+    if (colors_util.assert_brightness(cpt.bg)) then
+        props["background"] = "dark"
+    end
+
+    return props
+end
 
 function M.apply(cs)
-	_G.cpc = require("catppuccino.config").options
-	cs = cs or cpc.colorscheme
-	local err, color_scheme = require("catppuccino.core.cs").get_color_scheme(cs)
+    _G.cpc = require("catppuccino.config").options
+    cs = cs or cpc.colorscheme
+    local err, color_scheme = require("catppuccino.core.cs").get_color_scheme(cs)
 
-	if not err.status then
-		vim.api.nvim_err_writeln(err.msg)
-	end
+    if not err.status then
+        vim.api.nvim_err_writeln(err.msg)
+    end
 
-	set_cs(color_scheme)
+    set_cs(color_scheme)
 
     local theme = {}
     theme.base = get_base()
-	theme.plugins = get_integrations()
+    theme.integrations = get_integrations()
+    theme.properties = get_properties()
 
-	-- uninstantiate to avoid poluting global scope and because they are not needed anymore
-	_G.cpc = nil
+    -- uninstantiate to avoid poluting global scope and because they are not needed anymore
+    _G.cpc = nil
 
     return theme
 end
