@@ -152,7 +152,7 @@ integrations = {
 	gitgutter = false,
 	gitsigns = false,
 	telescope = false,
-	nvimtree = false, -- boolean, or { enabled = [true/false], show_root = [true/false] }, show_root makes root folder not transparent
+	nvimtree = false,
 	which_key = false,
 	indent_blankline = false,
 	dashboard = false,
@@ -344,6 +344,22 @@ require('lualine').setup {
 
 ```lua
 let g:lightline = {'colorscheme': 'catppuccino'}
+```
+
+-  **nvim-tree:** can be configured in either of the following ways:
+
+```lua
+integrations = {
+  nvimtree = true
+}
+```
+```lua
+integration = {
+  nvimtree = {
+    enabled = true,
+    show_root = true, -- makes the root folder not transparent
+  }
+}
 ```
 
 ## List of colorschemes
