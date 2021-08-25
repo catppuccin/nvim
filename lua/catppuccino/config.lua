@@ -27,7 +27,10 @@ config.options = {
 		gitgutter = false,
 		gitsigns = false,
 		telescope = false,
-		nvimtree = false,
+		nvimtree = {
+		    enabled = false,
+		    show_root = false,
+		},
 		which_key = false,
 		indent_blankline = false,
 		dashboard = false,
