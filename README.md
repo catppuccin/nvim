@@ -152,7 +152,7 @@ integrations = {
 	gitgutter = false,
 	gitsigns = false,
 	telescope = false,
-	nvimtree = false,
+	nvimtree = false, -- boolean, or { enabled = [true/false], show_root = [true/false] }, show_root makes root folder not transparent
 	which_key = false,
 	indent_blankline = false,
 	dashboard = false,
