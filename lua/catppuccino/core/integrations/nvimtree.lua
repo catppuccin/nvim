@@ -1,6 +1,14 @@
 local M = {}
 
 function M.get(cpt)
+    local config = require("catppuccino.config").options
+
+    local root_dir_color = cpt.bg_sidebar
+
+    if (config.integrations.nvimtree.show_root) then
+        root_dir_color = cpt.blue
+    end
+
     return {
         NvimTreeFolderName = {fg = cpt.blue},
         NvimTreeFolderIcon = {fg = cpt.blue},
@@ -9,7 +17,7 @@ function M.get(cpt)
         NvimTreeEmptyFolderName = {fg = cpt.blue_br},
         NvimTreeIndentMarker = {fg = cpt.comment},
         NvimTreeVertSplit = {fg = cpt.black, bg = cpt.black},
-        NvimTreeRootFolder = {fg = cpt.black, style = "bold"},
+        NvimTreeRootFolder = {fg = root_dir_color, style = "bold"},
         NvimTreeSymlink = {fg = cpt.magenta},
         NvimTreeStatuslineNc = {fg = cpt.black, bg = cpt.black},
         NvimTreeGitDirty = {fg = cpt.git.change},
