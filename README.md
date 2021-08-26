@@ -152,7 +152,10 @@ integrations = {
 	gitgutter = false,
 	gitsigns = false,
 	telescope = false,
-	nvimtree = false,
+	nvimtree = {
+		enabled = false,
+		show_root = false,
+	},
 	which_key = false,
 	indent_blankline = false,
 	dashboard = false,
@@ -202,7 +205,10 @@ catppuccino.setup(
 			gitgutter = false,
 			gitsigns = false,
 			telescope = false,
-			nvimtree = false,
+			nvimtree = {
+				enabled = false,
+				show_root = false,
+			},
 			which_key = false,
 			indent_blankline = false,
 			dashboard = false,
@@ -259,7 +265,10 @@ catppuccino.setup(
 			gitgutter = false,
 			gitsigns = false,
 			telescope = false,
-			nvimtree = false,
+			nvimtree = {
+				enabled = false,
+				show_root = false,
+			},
 			which_key = false,
 			indent_blankline = false,
 			dashboard = false,
@@ -346,13 +355,8 @@ require('lualine').setup {
 let g:lightline = {'colorscheme': 'catppuccino'}
 ```
 
--  **nvim-tree:** can be configured in either of the following ways:
+-   **NvimTree:** setting `enabled` to `true` enables this integration:
 
-```lua
-integrations = {
-  nvimtree = true
-}
-```
 ```lua
 integration = {
   nvimtree = {
@@ -473,7 +477,7 @@ diff = { -- also used for gitsigns
 Use them to execute code at certain events [described by their names]. These are the ones available:
 
 | Function           | Description                  |
-|--------------------|------------------------------|
+| ------------------ | ---------------------------- |
 | `before_loading()` | Before loading a colorscheme |
 | `after_loading()`  | After loading a colorscheme  |
 
