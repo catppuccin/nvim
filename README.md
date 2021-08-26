@@ -154,7 +154,10 @@ integrations = {
 	gitgutter = false,
 	gitsigns = false,
 	telescope = false,
-	nvimtree = false,
+	nvimtree = {
+		enabled = false,
+		show_root = false,
+	},
 	which_key = false,
 	indent_blankline = false,
 	dashboard = false,
@@ -204,7 +207,10 @@ catppuccino.setup(
 			gitgutter = false,
 			gitsigns = false,
 			telescope = false,
-			nvimtree = false,
+			nvimtree = {
+				enabled = false,
+				show_root = false,
+			},
 			which_key = false,
 			indent_blankline = false,
 			dashboard = false,
@@ -261,7 +267,10 @@ catppuccino.setup(
 			gitgutter = false,
 			gitsigns = false,
 			telescope = false,
-			nvimtree = false,
+			nvimtree = {
+				enabled = false,
+				show_root = false,
+			},
 			which_key = false,
 			indent_blankline = false,
 			dashboard = false,
@@ -350,6 +359,17 @@ let g:lightline = {'colorscheme': 'catppuccino'}
 
 -   **Kitty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/kitty) on your Kitty config.
 -   **Alacritty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/alacritty) on your Alacritty config.
+-   **NvimTree:** setting `enabled` to `true` enables this integration:
+
+```lua
+integration = {
+  nvimtree = {
+    enabled = true,
+    show_root = true, -- makes the root folder not transparent
+  }
+}
+```
+>>>>>>> main
 
 ## List of colorschemes
 

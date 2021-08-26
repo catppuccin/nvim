@@ -14,51 +14,51 @@ function M.get(cpt)
 		-- TSBoolean           = { };    -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TSComment           = { };    -- For comment blocks.
-		TSNote = {fg = cpt.bg, bg = cpt.info},
-		TSWarning = {fg = cpt.bg, bg = cpt.warning},
-		TSDanger = {fg = cpt.bg, bg = cpt.error},
-		TSConstructor = {fg = cpt.magenta}, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSNote = { fg = cpt.bg, bg = cpt.info },
+		TSWarning = { fg = cpt.bg, bg = cpt.warning },
+		TSDanger = { fg = cpt.bg, bg = cpt.error },
+		TSConstructor = { fg = cpt.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		-- TSConditional       = { };    -- For keywords related to conditionnals.
-		TSConstant = {fg = cpt.orange}, -- For constants
-		TSConstBuiltin = {fg = cpt.orange_br}, -- For constant that are built in the language: `nil` in Lua.
+		TSConstant = { fg = cpt.orange }, -- For constants
+		TSConstBuiltin = { fg = cpt.orange_br }, -- For constant that are built in the language: `nil` in Lua.
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cpt.
 		-- TSError             = { };    -- For syntax/parser errors.
 		-- TSException         = { };    -- For exception related keywords.
-		TSField = {fg = cpt.red}, -- For fields.
-		rustTSField = {fg = util.darken(cpt.white, 0.75)}, -- For fields.
+		TSField = { fg = cpt.red }, -- For fields.
+		rustTSField = { fg = util.darken(cpt.white, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		-- TSFunction = { fg = cpt.fg_gutter }, -- For function (calls and definitions).
-		TSFuncBuiltin = {fg = cpt.cyan}, -- For builtin functions: `table.insert` in Lua.
-		TSFuncMacro = {fg = cpt.red}, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscpt.
+		TSFuncBuiltin = { fg = cpt.cyan }, -- For builtin functions: `table.insert` in Lua.
+		TSFuncMacro = { fg = cpt.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscpt.
 		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSKeyword = {fg = cpt.magenta, style = cpc.styles.keywords}, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = {fg = cpt.magenta, style = cpc.styles.functions}, -- For keywords used to define a fuction.
-		TSLabel = {fg = cpt.blue}, -- For labels: `label:` in C and `:label:` in Lua.
+		TSKeyword = { fg = cpt.magenta, style = cpc.styles.keywords }, -- For keywords that don't fall in previous categories.
+		TSKeywordFunction = { fg = cpt.magenta, style = cpc.styles.functions }, -- For keywords used to define a fuction.
+		TSLabel = { fg = cpt.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
-		TSNamespace = {fg = cpt.cyan}, -- For identifiers referring to modules and namespaces.
+		TSNamespace = { fg = cpt.cyan }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		TSOperator = {fg = cpt.fg}, -- For any operator: `+`, but also `->` and `*` in cpt.
-		TSParameter = {fg = cpt.orange_br}, -- For parameters of a function.
+		TSOperator = { fg = cpt.fg }, -- For any operator: `+`, but also `->` and `*` in cpt.
+		TSParameter = { fg = cpt.orange_br }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
-		TSProperty = {fg = cpt.red_br}, -- Same as `TSField`.
-		tomlTSProperty = {fg = cpt.blue}, -- Differentiates between string and properties
-		TSPunctDelimiter = {fg = util.string_to_color(cpt, "", cpt.fg_alt)}, -- For delimiters ie: `.`
-		TSPunctBracket = {fg = cpt.red}, -- For brackets and parenthesis.
-		TSPunctSpecial = {fg = cpt.white}, -- For special punctutation that does not fall in the catagories before.
+		TSProperty = { fg = cpt.red_br }, -- Same as `TSField`.
+		tomlTSProperty = { fg = cpt.blue }, -- Differentiates between string and properties
+		TSPunctDelimiter = { fg = util.string_to_color(cpt, "", cpt.fg_alt) }, -- For delimiters ie: `.`
+		TSPunctBracket = { fg = cpt.red }, -- For brackets and parenthesis.
+		TSPunctSpecial = { fg = cpt.white }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
-		TSStringRegex = {fg = cpt.blue, style = cpc.styles.strings}, -- For regexes.
-		TSStringEscape = {fg = cpt.magenta, style = cpc.styles.strings}, -- For escape characters within a string.
+		TSStringRegex = { fg = cpt.blue, style = cpc.styles.strings }, -- For regexes.
+		TSStringEscape = { fg = cpt.magenta, style = cpc.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
-		TSTypeBuiltin = {fg = cpt.cyan}, -- For builtin types.
-		TSVariable = {style = cpc.styles.variables}, -- Any variable name that does not have another highlighcpt.
-		TSVariableBuiltin = {fg = cpt.red}, -- Variable names that are defined by the languages, like `this` or `self`.
+		TSTypeBuiltin = { fg = cpt.cyan }, -- For builtin types.
+		TSVariable = { style = cpc.styles.variables }, -- Any variable name that does not have another highlighcpt.
+		TSVariableBuiltin = { fg = cpt.red }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings considered text in a markup language.
-		TSTextReference = {fg = cpt.cyan}
+		TSTextReference = { fg = cpt.cyan },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough texcpt.
@@ -69,4 +69,3 @@ function M.get(cpt)
 end
 
 return M
-
