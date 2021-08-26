@@ -2,8 +2,8 @@
 local config = {}
 
 config.options = {
-    colorscheme = "catppuccino",
-    transparency = false,
+	colorscheme = "catppuccino",
+	transparency = false,
 	styles = {
 		comments = "italic",
 		functions = "italic",
@@ -19,8 +19,8 @@ config.options = {
 				errors = "italic",
 				hints = "italic",
 				warnings = "italic",
-				information = "italic"
-			}
+				information = "italic",
+			},
 		},
 		lsp_trouble = false,
 		lsp_saga = false,
@@ -28,8 +28,8 @@ config.options = {
 		gitsigns = false,
 		telescope = false,
 		nvimtree = {
-		    enabled = false,
-		    show_root = false,
+			enabled = false,
+			show_root = false,
 		},
 		which_key = false,
 		indent_blankline = false,
@@ -40,12 +40,12 @@ config.options = {
 		barbar = false,
 		bufferline = false,
 		markdown = false,
-	}
+	},
 }
 
 function config.set_options(opts)
-    opts = opts or {}
-    config.options = vim.tbl_deep_extend("force", config.options, opts)
+	opts = opts or {}
+	config.options = vim.tbl_deep_extend("force", config.options, opts)
 end
 
 return config
