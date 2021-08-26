@@ -358,23 +358,20 @@ let g:lightline = {'colorscheme': 'catppuccino'}
 
 To override the colors for the Catppuccino theme you are using you'll pass the parameters to the `setup()` function you already used for configuring the plugin. This is the structure:
 
-```
+```lua
 local catppuccino = require("catppuccino")
 catppuccino.setup({<your_settings>}, {your_color_overrides})
 ```
 
 Example: setting the colorscheme to `Neon Latte` and changing the color `red` to `#ffffff` (white).
 
-```
+```lua
 local catppuccino = require("catppuccino")
-catppuccino.setup(
-    {
-		colorscheme = "neon_latte",
-	},
-	{
-		red = "#ffffff"
-	}
-)
+catppuccino.setup({
+  colorscheme = "neon_latte",
+}, {
+  red = "#ffffff",
+})
 ```
 
 You could use an existing color scheme as a template if you will ([`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes))
@@ -410,7 +407,7 @@ You could use an existing color scheme as a template if you will ([`lua/catppucc
 -   `comment`
 -   `git`:
 
-```
+```lua
 	git = {
 		add
 		change
@@ -425,7 +422,7 @@ You could use an existing color scheme as a template if you will ([`lua/catppucc
 -   `git.ignore`
 -   `diff`:
 
-```
+```lua
 diff = { -- also used for gitsigns
     add,
     delete,
@@ -463,7 +460,7 @@ Use them to execute code at certain events [described by their names]. These are
 
 They can be used like so:
 
-```
+```lua
 local catppuccino = require("catppuccino")
 
 catppuccino.before_loading = function ()
