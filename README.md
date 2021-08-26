@@ -71,6 +71,8 @@
     -   [Sneak](https://github.com/justinmk/vim-sneak)
     -   [Neogit](https://github.com/TimUntersberger/neogit)
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+    -   [Kitty](https://github.com/kovidgoyal/kitty)
+    -   [Alacritty](https://github.com/alacritty/alacritty)
 
 # 📺 Notices
 
@@ -346,6 +348,9 @@ require('lualine').setup {
 let g:lightline = {'colorscheme': 'catppuccino'}
 ```
 
+-   **Kitty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/kitty) on your Kitty config.
+-   **Alacritty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/alacritty) on your Alacritty config.
+
 ## List of colorschemes
 
 | Colorschemes     | Code Names    |
@@ -454,7 +459,7 @@ diff = { -- also used for gitsigns
 Use them to execute code at certain events [described by their names]. These are the ones available:
 
 | Function           | Description                  |
-|--------------------|------------------------------|
+| ------------------ | ---------------------------- |
 | `before_loading()` | Before loading a colorscheme |
 | `after_loading()`  | After loading a colorscheme  |
 
