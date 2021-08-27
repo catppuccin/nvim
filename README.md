@@ -369,7 +369,6 @@ integration = {
   }
 }
 ```
->>>>>>> main
 
 ## List of colorschemes
 
