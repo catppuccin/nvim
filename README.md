@@ -527,10 +527,12 @@ For more convoluted language, see the [LICENSE file](https://github.com/Pocco81/
 **High Priority**
 
 -   Add Aquamarine Frappé
+-   Get rid of `CPLoad` and use the native `colorscheme` command
 
 **Low Priority**
 
 -   Finish DOC
+-   Make TODO Comments bold
 -   Add more integrations
 
 <hr>
