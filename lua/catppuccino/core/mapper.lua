@@ -119,7 +119,7 @@ local function get_base()
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
 		Error = { fg = cpt.error }, -- (preferred) any erroneous construct
-		Todo = { bg = cpt.yellow, fg = cpt.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { bg = cpt.yellow, fg = cpt.bg, style = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cpt.yellow },
 		qfFileName = { fg = cpt.blue },
 		htmlH1 = { fg = cpt.magenta, style = "bold" },
