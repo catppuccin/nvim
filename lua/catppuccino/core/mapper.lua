@@ -138,15 +138,14 @@ local function get_base()
 		illuminatedWord = { bg = cpt.fg_gutter },
 		illuminatedCurWord = { bg = cpt.fg_gutter },
 		-- diff
-		diffAdded = { fg = cpt.git.add },
-		diffRemoved = { fg = cpt.git.delete },
-		diffChanged = { fg = cpt.git.change },
+		diffAdded = { fg = cpt.diff.add },
+		diffRemoved = { fg = cpt.diff.remove },
+		diffChanged = { fg = cpt.diff.change },
 		diffOldFile = { fg = cpt.yellow },
 		diffNewFile = { fg = cpt.orange },
 		diffFile = { fg = cpt.blue },
 		diffLine = { fg = cpt.comment },
 		diffIndexLine = { fg = cpt.magenta },
-		-- git diff
 		DiffAdd = { fg = cpt.diff.add, bg = cpt.bg }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = cpt.diff.change, bg = cpt.bg }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = cpt.diff.delete, bg = cpt.bg }, -- diff mode: Deleted line |diff.txt|
