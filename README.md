@@ -283,6 +283,8 @@ catppuccino.setup(
 )
 EOF
 ```
+<br />
+</details>
 
 After setting things up, you can load Catppuccino like so:
 
@@ -298,9 +300,6 @@ For VimScript:
 colorscheme catppuccino
 ```
 Passing `catppuccino` to the `colorscheme` command will pick the colorscheme in the config. Optionally you may pass the one you want to use by its code name (e.g. `colorscheme neon_latte`).
-
-<br />
-</details>
 
 For instructions on how to configure the plugin, check out the [configuration](#configuration) section.
 
