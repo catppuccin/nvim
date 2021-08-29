@@ -34,7 +34,7 @@
 
 # 🍨 Flavors
 
-## Catppuccino Dark
+## Dark Catppuccino
 
 <img src ="https://i.imgur.com/qdTDwaC.png">
 
@@ -49,7 +49,7 @@
 # 🎁 Features
 
 -   Multiple colorschemes (AKA [flavors](#-flavors)) available!
--   Handy CLI for loading colorschemes.
+-   Handy CLI.
 -   Allows user remaps.
 -   Extensible for many use cases.
 -   Integrations with a lot of stuff:
@@ -309,8 +309,8 @@ This depends on your plugin manager. If, for example, you are using Packer.nvim,
 
 The provides commands that follows the _camel casing_ naming convention and have the `CP` prefix so that it's easy to remember that they are part of Catppuccino.nvim:
 
--   `:CPLoad <colorscheme>` loads the passed `<colorscheme>`.
 -   `:CPClear` clear all highlight groups.
+-   `:colorscheme <colorscheme_name>` load a colorscheme, not necessarily a Catppuccino one. (Note: this is a built-in NVim command).
 
 # 🐬 Configuration
 
@@ -374,11 +374,11 @@ integration = {
 
 ## List of colorschemes
 
-| Colorschemes     | Code Names    |
-| ---------------- | ------------- |
-| Catppuccino Dark | `catppuccino` |
-| Neon Latte       | `neon_latte`  |
-| Light Melya      | `light_melya` |
+| Colorschemes     | Code Names         |
+| ---------------- | ------------------ |
+| Dark Catppuccino | `dark_catppuccino` |
+| Neon Latte       | `neon_latte`       |
+| Light Melya      | `light_melya`      |
 
 ## Overriding colors
 
@@ -459,7 +459,6 @@ For more convoluted language, see the [LICENSE file](https://github.com/Pocco81/
 **High Priority**
 
 -   Add Aquamarine Frappé
--   Get rid of `CPLoad` and use the native `colorscheme` command
 
 **Low Priority**
 
