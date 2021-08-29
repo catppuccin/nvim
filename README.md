@@ -306,9 +306,10 @@ This depends on your plugin manager. If, for example, you are using Packer.nvim,
 
 ## Commands
 
-The only command provided follows the _camel casing_ naming convention and has the `CP` prefix so that it's easy to remember that it's part of Catppuccino.nvim:
+The provides commands that follows the _camel casing_ naming convention and have the `CP` prefix so that it's easy to remember that they are part of Catppuccino.nvim:
 
 -   `:CPLoad <colorscheme>` loads the passed `<colorscheme>`.
+-   `:CPClear` clear all highlight groups.
 
 # 🐬 Configuration
 
