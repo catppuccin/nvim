@@ -19,7 +19,7 @@ function M.get_color_scheme(cs)
 			status = false,
 			msg = "Catppuccino: the colorscheme '" .. cs .. "' was not recognized. Defaulting to Catppuccino Dark.",
 		},
-			require("catppuccino.color_schemes.catppuccino")
+			require("catppuccino.color_schemes.dark_catppuccino")
 	end
 
 	if not (next(remaps) == nil) then
