@@ -17,7 +17,7 @@ function M.get_color_scheme(cs)
 	if not good then
 		return {
 			status = false,
-			msg = "Catppuccino: the colorscheme '" .. cs .. "' was not recognized. Defaulting to Catppuccino Dark.",
+			msg = "Catppuccino: the colorscheme '" .. cs .. "' was not recognized. Defaulting to Dark Catppuccino.",
 		},
 			require("catppuccino.color_schemes.dark_catppuccino")
 	end
