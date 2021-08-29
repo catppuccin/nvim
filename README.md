@@ -130,7 +130,7 @@ NeoBundleFetch 'Pocco81/Catppuccino.nvim'
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
 
 ```lua
-colorscheme = "catppuccino",
+colorscheme = "dark_catppuccino",
 transparency = false,
 styles = {
 	comments = "italic",
@@ -183,7 +183,7 @@ local catppuccino = require("catppuccino")
 -- configure it
 catppuccino.setup(
     {
-		colorscheme = "catppuccino",
+		colorscheme = "dark_catppuccino",
 		transparency = false,
 		styles = {
 			comments = "italic",
@@ -224,9 +224,6 @@ catppuccino.setup(
 		}
 	}
 )
-
--- load it
-catppuccino.load()
 ```
 
 <br />
@@ -243,7 +240,7 @@ local catppuccino = require("catppuccino")
 -- configure it
 catppuccino.setup(
     {
-		colorscheme = "catppuccino",
+		colorscheme = "dark_catppuccino",
 		transparency = false,
 		styles = {
 			comments = "italic",
@@ -284,11 +281,23 @@ catppuccino.setup(
 		}
 	}
 )
-
--- load it
-catppuccino.load()
 EOF
 ```
+
+After setting things up, you can load Catppuccino like so:
+
+For Lua:
+```lua
+catppuccino.load(<colorscheme_name>)
+```
+If `<colorscheme_name>` is not passed then it'll pick the one in the config.
+
+
+For VimScript:
+```lua
+colorscheme catppuccino
+```
+Passing `catppuccino` to the `colorscheme` command will pick the colorscheme in the config. Optionally you may pass the one you want to use by its code name (e.g. `colorscheme neon_latte`).
 
 <br />
 </details>
