@@ -79,6 +79,7 @@
 Checkout the [CHANGELOG.md](https://github.com/Pocco81/Catppuccino.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
 
 <ul>
+  <li><b>29-08-21</b>: Refactored diffs and git related stuff + added the `CPClear` command.</li>
   <li><b>22-08-21</b>: Just released!</li>
 </ul>
 
@@ -306,9 +307,10 @@ This depends on your plugin manager. If, for example, you are using Packer.nvim,
 
 ## Commands
 
-The only command provided follows the _camel casing_ naming convention and has the `CP` prefix so that it's easy to remember that it's part of Catppuccino.nvim:
+The provides commands that follows the _camel casing_ naming convention and have the `CP` prefix so that it's easy to remember that they are part of Catppuccino.nvim:
 
 -   `:CPLoad <colorscheme>` loads the passed `<colorscheme>`.
+-   `:CPClear` clear all highlight groups.
 
 # 🐬 Configuration
 
