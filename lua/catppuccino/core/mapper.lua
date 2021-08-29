@@ -55,7 +55,7 @@ local function get_base()
 		QuickFixLine = { bg = cpt.bg_visual, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = cpt.bg_search, fg = cpt.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucpt.
 		IncSearch = { bg = cpt.cyan, fg = cpt.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		SpecialKey = { fg = cpt.black }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpecialKey = { fg = cpt.fg }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cpt.error, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cpt.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cpt.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
