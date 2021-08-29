@@ -398,77 +398,7 @@ catppuccino.setup({
 })
 ```
 
-You could use an existing color scheme as a template if you will ([`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes))
-
-<details>
-    <summary>Available colors</summary>
-<p>
-
--   `bg`: nvim background color.
--   `fg`: color of the text.
--   `fg_gutter`
--   `black`
--   `gray`
--   `red`
--   `green`
--   `yellow`
--   `blue`
--   `magenta`
--   `cyan`
--   `white`
--   `orange`
--   `pink`
--   `black_br`
--   `red_bg`
--   `green_br`
--   `yellow_br`
--   `blue_br`
--   `magenta_br`
--   `cyan_br`
--   `white_br`
--   `orange_br`
--   `pink_br`
--   `comment`
--   `git`:
-
-```lua
-	git = {
-		add
-		change
-		delete
-		conflict
-	},
-```
-
--   `bg_alt`
--   `bg_highlight`
--   `fg_alt`
--   `git.ignore`
--   `diff`:
-
-```lua
-diff = { -- also used for gitsigns
-    add,
-    delete,
-    change,
-    text,
-}
-```
-
--   `border_highlight`
--   `border`
--   `bg_popup`
--   `bg_statusline`
--   `bg_sidebar`
--   `bg_float`
--   `bg_visual`
--   `bg_search`
--   `fg_sidebar`
--   `error`
--   `warning`
--   `info`
--   `hint`
--   `variable`
+All editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes). You could also use one as a template, if you will.
 
 <br />
 </details>
@@ -527,6 +457,7 @@ For more convoluted language, see the [LICENSE file](https://github.com/Pocco81/
 **High Priority**
 
 -   Add Aquamarine Frappé
+-   Get rid of `CPLoad` and use the native `colorscheme` command
 
 **Low Priority**
 
