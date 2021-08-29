@@ -27,6 +27,7 @@ endfunction
 
 " Interface {{{
 command! -nargs=+ -complete=custom,s:complete_args_flavors CPLoad call v:lua.require'catppuccino.main'.main('load',cpcmds#get_first_arg(<f-args>))
+command! -nargs=0 CPClear call v:lua.require'catppuccino.main'.main('clear')
 " }}}
 
 let &cpo = s:save_cpo " restore after

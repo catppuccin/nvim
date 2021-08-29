@@ -17,13 +17,19 @@ local function load(args)
 	end
 end
 
+local function clear()
+	vim.cmd("hi clear")
+end
+
 function M.main(option, args)
 	option = option or "load"
 
 	if option == "load" then
 		load(args)
+	elseif option == "clear" then
+		clear()
 	else
-		print("Catppuccino: command was not recognized")
+		print("Catppuccino: option was not recognized")
 	end
 end
 
