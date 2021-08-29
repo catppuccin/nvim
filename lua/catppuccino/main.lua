@@ -2,14 +2,15 @@ local M = {}
 
 local utils = require("catppuccino.utils.util")
 
-local function load(args)
+local function load(colorscheme)
 	local catppuccino = require("catppuccino")
 
 	if catppuccino.before_loading ~= nil then
 		catppuccino.before_loading()
 	end
 
-	local theme = require("catppuccino.core.mapper").apply(args)
+	-- colorscheme gets evaluated from mapper.lua
+	local theme = require("catppuccino.core.mapper").apply(colorscheme)
 	utils.load(theme)
 
 	if catppuccino.after_loading ~= nil then

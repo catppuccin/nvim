@@ -1,7 +1,7 @@
 local M = {}
 
-function M.load()
-	require("catppuccino.main").main("load")
+function M.load(args)
+	require("catppuccino.main").main("load", args)
 end
 
 function M.setup(custom_opts, remaps)
