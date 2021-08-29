@@ -79,6 +79,7 @@
 Checkout the [CHANGELOG.md](https://github.com/Pocco81/Catppuccino.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
 
 <ul>
+  <li><b>29-08-21</b>: Refactored diffs and git related stuff + added the `CPClear` command.</li>
   <li><b>22-08-21</b>: Just released!</li>
 </ul>
 
