@@ -152,9 +152,9 @@ function util.load(theme)
 	util.syntax(theme.base)
 	util.syntax(theme.integrations)
 
-	-- if opts.ui.terminal then
-	--     util.terminal(theme)
-	-- end
+	if require("catppuccino.config").options["term_colors"] then
+		util.terminal(theme)
+	end
 end
 
 return util

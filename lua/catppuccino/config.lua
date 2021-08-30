@@ -4,6 +4,7 @@ local config = {}
 config.options = {
 	colorscheme = "dark_catppuccino",
 	transparency = false,
+	term_colors = false,
 	styles = {
 		comments = "italic",
 		functions = "italic",
