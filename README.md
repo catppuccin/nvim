@@ -79,7 +79,7 @@
 Checkout the [CHANGELOG.md](https://github.com/Pocco81/Catppuccino.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
 
 <ul>
-  <li><b>29-08-21</b>: Refactored diffs and git related stuff + added the `CPClear` command.</li>
+  <li><b>29-08-21</b>: Refactored diffs and git related stuff, added the `CPClear` command and added option to set terminal colors</li>
   <li><b>22-08-21</b>: Just released!</li>
 </ul>
 
@@ -132,6 +132,7 @@ There are already some sane defaults that you may like, however you can change t
 ```lua
 colorscheme = "dark_catppuccino",
 transparency = false,
+term_colors = false,
 styles = {
 	comments = "italic",
 	functions = "italic",
@@ -185,6 +186,7 @@ catppuccino.setup(
     {
 		colorscheme = "dark_catppuccino",
 		transparency = false,
+		term_colors = false,
 		styles = {
 			comments = "italic",
 			functions = "italic",
@@ -242,6 +244,7 @@ catppuccino.setup(
     {
 		colorscheme = "dark_catppuccino",
 		transparency = false,
+		term_colors = false,
 		styles = {
 			comments = "italic",
 			functions = "italic",
@@ -283,22 +286,26 @@ catppuccino.setup(
 )
 EOF
 ```
+
 <br />
 </details>
 
 After setting things up, you can load Catppuccino like so:
 
 For Lua:
+
 ```lua
 catppuccino.load(<colorscheme_name>)
 ```
+
 If `<colorscheme_name>` is not passed then it'll pick the one in the config.
 
-
 For VimScript:
+
 ```lua
 colorscheme catppuccino
 ```
+
 Passing `catppuccino` to the `colorscheme` command will pick the colorscheme in the config. Optionally, you could pass one by its code name (e.g. `colorscheme neon_latte`).
 
 For instructions on how to configure the plugin, check out the [configuration](#configuration) section.
@@ -330,6 +337,7 @@ This settings are unrelated to any group and are independent.
 
 -   `colorscheme`: (String) code name of the color-scheme to be used. All of them can be found in the section below.
 -   `transparency`: (Boolean) if true, disables setting the background color.
+-   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
 
 ## Styles
 
