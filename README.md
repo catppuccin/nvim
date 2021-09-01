@@ -22,11 +22,16 @@
     -   [Updating](#updating)
 -   [Usage](#usage)
     -   [Commands](#commands)
-	- [API](#api)
-		- [Modules](#modules)
+    -   [API](#api)
+        -   [Modules](#modules)
 -   [Configuration](#-configuration)
     -   [General](#general)
+    -   [Styles](#styles)
+    -   [Integrations](#integrations)
+        -   [Special Integrations](#special-integrations)
     -   [List of Colorschemes](#list-of-colorschemes)
+    -   [Overwriting colors & hi groups](overwriting-colors--hi-groups)
+    -   [Hooks](#hooks)
 -   [Contribute](#-contribute)
     -   [Need Help](#need-help)
 -   [Inspirations](#-inspirations)
@@ -340,11 +345,12 @@ local cp_api = require("catppuccino.api.<module>")
 
 ### Modules
 
-+ `colors`
+-   `colors`
 
 ```lua
 cp_api.get_colors(<colorscheme>)
 ```
+
 > Gets the colors from `<colorscheme>`. Returns two values: the first one is a table with a `status` field (for the exit status) and a `msg` field with an error message in case `status` is `false` (error), and the second value is a table with the colors. If it fails, it will return the colors from `dark_catppuccino`.
 
 # 🐬 Configuration
@@ -446,9 +452,8 @@ if err.status then -- good
 end
 ```
 
-+ For colorschemes: all editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes). You could also use one as a template, if you will.
-+ For highlight groups: all the highlight groups have three editable fields: `fg` for the foreground, `bg` for the background and `style` for the style.
-
+-   For colorschemes: all editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes). You could also use one as a template, if you will.
+-   For highlight groups: all the highlight groups have three editable fields: `fg` for the foreground, `bg` for the background and `style` for the style.
 
 <br />
 </details>
