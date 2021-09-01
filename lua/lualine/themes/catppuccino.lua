@@ -31,8 +31,8 @@ catppuccino.visual = {
 }
 
 catppuccino.replace = {
-	a = { bg = cpt.red_bg, fg = cpt.black },
-	b = { bg = cpt.fg_gutter, fg = cpt.red_bg },
+	a = { bg = cpt.red_br, fg = cpt.black },
+	b = { bg = cpt.fg_gutter, fg = cpt.red_br },
 }
 
 catppuccino.inactive = {
