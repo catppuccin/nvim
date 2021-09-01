@@ -22,6 +22,8 @@
     -   [Updating](#updating)
 -   [Usage](#usage)
     -   [Commands](#commands)
+	- [API](#api)
+		- [Modules](#modules)
 -   [Configuration](#-configuration)
     -   [General](#general)
     -   [List of Colorschemes](#list-of-colorschemes)
@@ -79,6 +81,7 @@
 Checkout the [CHANGELOG.md](https://github.com/Pocco81/Catppuccino.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
 
 <ul>
+  <li><b>01-09-21</b>: Added API and functionality for remapping colors and highlight groups.</li>
   <li><b>29-08-21</b>: Refactored diffs and git related stuff, added the `CPClear` command and added option to set terminal colors</li>
   <li><b>22-08-21</b>: Just released!</li>
 </ul>
@@ -326,6 +329,23 @@ The provides commands that follows the _camel casing_ naming convention and have
 
 -   `:CPClear` clear all highlight groups.
 -   `:colorscheme <colorscheme_name>` load a colorscheme, not necessarily a Catppuccino one. (Note: this is a built-in NVim command).
+
+## API
+
+The API allows you fetch data from Catppuccino. It can be required as a Lua module:
+
+```lua
+local cp_api = require("catppuccino.api.<module>")
+```
+
+### Modules
+
++ `colors`
+
+```lua
+cp_api.get_colors(<colorscheme>)
+```
+> Gets the colors from `<colorscheme>`. Returns two values: the first one is a table with a `status` field (for the exit status) and a `msg` field with an error message in case `status` is `false` (error), and the second value is a table with the colors. If it fails, it will return the colors from `dark_catppuccino`.
 
 # 🐬 Configuration
 
