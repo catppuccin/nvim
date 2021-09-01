@@ -416,27 +416,39 @@ integration = {
 | Neon Latte       | `neon_latte`       |
 | Light Melya      | `light_melya`      |
 
-## Overriding colors
+## Overwriting colors & hi groups
 
-To override the colors for the Catppuccino theme you are using you'll pass the parameters to the `setup()` function you already used for configuring the plugin. This is the structure:
-
-```lua
-local catppuccino = require("catppuccino")
-catppuccino.setup({<your_settings>}, {your_color_overrides})
-```
-
-Example: setting the colorscheme to `Neon Latte` and changing the color `red` to `#ffffff` (white).
+Both colors and highlight groups can be overwritten like so:
 
 ```lua
-local catppuccino = require("catppuccino")
-catppuccino.setup({
-  colorscheme = "neon_latte",
-}, {
-  red = "#ffffff",
-})
+catppuccino.remap({<colors>},{<hi_groups>})
 ```
 
-All editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes). You could also use one as a template, if you will.
+Since you want to overwrite hi groups, then it's likely that you'll want to use the API to get the colors from x colorscheme as well:
+
+```lua
+local err, colors = cp_api.get_colors("neon_latte")
+```
+
+Here is an example using the API to overwrite the color green and change the style of the comments:
+
+```lua
+local cp_api = require("catppuccino.api.colors")
+local err, colors = cp_api.get_colors("neon_latte")
+
+if err.status then -- good
+	catppuccino.remap({
+		green = "#ffffff"
+	},
+	{
+		Comment = { fg = colors.comment, style = "bold" }, -- any comment
+	})
+end
+```
+
++ For colorschemes: all editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes). You could also use one as a template, if you will.
++ For highlight groups: all the highlight groups have three editable fields: `fg` for the foreground, `bg` for the background and `style` for the style.
+
 
 <br />
 </details>
