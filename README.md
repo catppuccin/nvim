@@ -22,9 +22,16 @@
     -   [Updating](#updating)
 -   [Usage](#usage)
     -   [Commands](#commands)
+    -   [API](#api)
+        -   [Modules](#modules)
 -   [Configuration](#-configuration)
     -   [General](#general)
+    -   [Styles](#styles)
+    -   [Integrations](#integrations)
+        -   [Special Integrations](#special-integrations)
     -   [List of Colorschemes](#list-of-colorschemes)
+    -   [Overwriting colors & hi groups](overwriting-colors--hi-groups)
+    -   [Hooks](#hooks)
 -   [Contribute](#-contribute)
     -   [Need Help](#need-help)
 -   [Inspirations](#-inspirations)
@@ -79,6 +86,7 @@
 Checkout the [CHANGELOG.md](https://github.com/Pocco81/Catppuccino.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
 
 <ul>
+  <li><b>01-09-21</b>: Added API and functionality for remapping colors and highlight groups.</li>
   <li><b>29-08-21</b>: Refactored diffs and git related stuff, added the `CPClear` command and added option to set terminal colors</li>
   <li><b>22-08-21</b>: Just released!</li>
 </ul>
@@ -327,6 +335,24 @@ The provides commands that follows the _camel casing_ naming convention and have
 -   `:CPClear` clear all highlight groups.
 -   `:colorscheme <colorscheme_name>` load a colorscheme, not necessarily a Catppuccino one. (Note: this is a built-in NVim command).
 
+## API
+
+The API allows you fetch data from Catppuccino. It can be required as a Lua module:
+
+```lua
+local cp_api = require("catppuccino.api.<module>")
+```
+
+### Modules
+
+-   `colors`
+
+```lua
+cp_api.get_colors(<colorscheme>)
+```
+
+> Gets the colors from `<colorscheme>`. Returns two values: the first one is a table with a `status` field (for the exit status) and a `msg` field with an error message in case `status` is `false` (error), and the second value is a table with the colors. If it fails, it will return the colors from `dark_catppuccino`.
+
 # 🐬 Configuration
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
@@ -396,27 +422,38 @@ integration = {
 | Neon Latte       | `neon_latte`       |
 | Light Melya      | `light_melya`      |
 
-## Overriding colors
+## Overwriting colors & hi groups
 
-To override the colors for the Catppuccino theme you are using you'll pass the parameters to the `setup()` function you already used for configuring the plugin. This is the structure:
-
-```lua
-local catppuccino = require("catppuccino")
-catppuccino.setup({<your_settings>}, {your_color_overrides})
-```
-
-Example: setting the colorscheme to `Neon Latte` and changing the color `red` to `#ffffff` (white).
+Both colors and highlight groups can be overwritten like so:
 
 ```lua
-local catppuccino = require("catppuccino")
-catppuccino.setup({
-  colorscheme = "neon_latte",
-}, {
-  red = "#ffffff",
-})
+catppuccino.remap({<colors>},{<hi_groups>})
 ```
 
-All editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes). You could also use one as a template, if you will.
+Since you want to overwrite hi groups, then it's likely that you'll want to use the API to get the colors from x colorscheme as well:
+
+```lua
+local err, colors = cp_api.get_colors("neon_latte")
+```
+
+Here is an example using the API to overwrite the color green and change the style of the comments:
+
+```lua
+local cp_api = require("catppuccino.api.colors")
+local err, colors = cp_api.get_colors("neon_latte")
+
+if err.status then -- good
+	catppuccino.remap({
+		green = "#ffffff"
+	},
+	{
+		Comment = { fg = colors.comment, style = "bold" }, -- any comment
+	})
+end
+```
+
+-   For colorschemes: all editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccino/color_schemes`](https://github.com/Pocco81/Catppuccino.nvim/tree/main/lua/catppuccino/color_schemes). You could also use one as a template, if you will.
+-   For highlight groups: all the highlight groups have three editable fields: `fg` for the foreground, `bg` for the background and `style` for the style.
 
 <br />
 </details>
