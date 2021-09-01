@@ -185,7 +185,7 @@ local function get_integrations()
 		end
 
 		if cot then
-			table.insert(final_integrations, require("catppuccino.core.integrations." .. integration).get(cpt))
+			final_integrations = vim.tbl_deep_extend("force", final_integrations, require("catppuccino.core.integrations." .. integration).get(cpt))
 		end
 	end
 
