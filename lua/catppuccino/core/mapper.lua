@@ -223,7 +223,7 @@ function M.apply(cs)
 	theme.integrations = get_integrations()
 	theme.properties = get_properties()
 
-	-- uninstantiate to avoid poluting global scope and because they are not needed anymore
+	-- uninstantiate to avoid poluting global scope and because it's not needed anymore
 	_G.cpc = nil
 
 	return theme
