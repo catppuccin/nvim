@@ -2,29 +2,29 @@ local util = require("catppuccino.utils.util")
 
 local colors = {
 	none = "NONE",
-	bg = "#212222", -- nvim bg
-	fg = "#abb2bf", -- fg color (text)
-	fg_gutter = "#3b4261",
+	bg = "#222424", -- nvim bg
+	fg = "#B9BFCA", -- fg color (text)
+	fg_gutter = "#3b415c",
 	black = "#393b44",
-	gray = "#2a2e36",
-	red = "#c94f6d",
-	green = "#97c374",
+	gray = "#353B45",
+	red = "#CF637E",
+	green = "#AACE8D",
 	yellow = "#dbc074",
-	blue = "#61afef",
-	magenta = "#c678dd",
-	cyan = "#63cdcf",
+	blue = "#90C7F4",
+	magenta = "#D59EE6",
+	cyan = "#73D2D4",
 	white = "#dfdfe0",
 	orange = "#F4A261",
 	pink = "#D67AD2",
 	black_br = "#7f8c98",
-	red_br = "#e06c75",
-	green_br = "#58cd8b",
+	red_br = "#E68991",
+	green_br = "#95C270",
 	yellow_br = "#FFE37E",
 	blue_br = "#84CEE4",
 	magenta_br = "#B8A1E3",
-	cyan_br = "#59F0FF",
+	cyan_br = "#70F3FF",
 	white_br = "#FDEBC3",
-	orange_br = "#F6A878",
+	orange_br = "#F8B58C",
 	pink_br = "#DF97DB",
 	comment = "#526175",
 }
@@ -32,7 +32,7 @@ local colors = {
 util.bg = colors.bg
 colors.bg_alt = util.darken(colors.bg, 0.75, "#000000")
 colors.bg_highlight = util.brighten(colors.bg, 0.05)
-colors.fg_alt = util.darken(colors.fg, 0.80, "#000000")
+colors.fg_alt = util.darken(colors.fg, 0.60, "#000000")
 
 colors.diff = { -- git and native diffs
 	add = colors.blue,
@@ -51,7 +51,7 @@ colors.bg_popup = colors.bg_alt
 colors.bg_statusline = colors.bg_alt
 
 -- Sidebar and Floats
-colors.bg_sidebar = "#2a2b2b"
+colors.bg_sidebar = colors.bg_alt
 colors.bg_float = colors.bg_alt
 
 colors.bg_visual = util.darken(colors.blue, 0.2)
