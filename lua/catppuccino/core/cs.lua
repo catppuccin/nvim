@@ -1,17 +1,8 @@
 local M = {}
-
-local cs_remaps
-
-function M.get_remaps()
-	return cs_remaps
-end
-
-function M.set_remaps(val)
-	cs_remaps = val
-end
+local remaps_mod = require("catppuccino.core.remaps")
 
 function M.get_color_scheme(cs)
-	local remaps = M.get_remaps() or {}
+	local remaps = remaps_mod.get_cs_remaps() or {}
 	local good, color_scheme = pcall(require, "catppuccino.color_schemes." .. cs)
 
 	if not good then

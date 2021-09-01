@@ -189,6 +189,7 @@ local function get_integrations()
 		end
 	end
 
+	final_integrations = vim.tbl_deep_extend("force", final_integrations, require("catppuccino.core.remaps").get_hig_remaps())
 	return final_integrations
 end
 
