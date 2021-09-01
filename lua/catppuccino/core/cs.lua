@@ -2,6 +2,7 @@ local M = {}
 local remaps_mod = require("catppuccino.core.remaps")
 
 function M.get_color_scheme(cs)
+	cs = cs or "dark_catppuccino"
 	local remaps = remaps_mod.get_cs_remaps() or {}
 	local good, color_scheme = pcall(require, "catppuccino.color_schemes." .. cs)
 
