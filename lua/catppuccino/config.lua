@@ -42,6 +42,7 @@ config.options = {
 		bufferline = false,
 		markdown = false,
 		lightspeed = false,
+		ts_rainbow = false,
 	},
 }
 
