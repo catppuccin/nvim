@@ -219,6 +219,7 @@ function M.apply(cs)
 	set_cs(color_scheme)
 
 	local theme = {}
+	theme.colors = get_cs()
 	theme.base = get_base()
 	theme.integrations = get_integrations()
 	theme.properties = get_properties()

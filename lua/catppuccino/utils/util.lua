@@ -114,24 +114,24 @@ function util.properties(tbl)
 	end
 end
 
-function util.terminal(theme)
-	g.terminal_color_0 = theme.colors.black
-	g.terminal_color_1 = theme.colors.red
-	g.terminal_color_2 = theme.colors.green
-	g.terminal_color_3 = theme.colors.yellow
-	g.terminal_color_4 = theme.colors.blue
-	g.terminal_color_5 = theme.colors.magenta
-	g.terminal_color_6 = theme.colors.cyan
-	g.terminal_color_7 = theme.colors.white
+function util.terminal(clrs)
+	g.terminal_color_0 = clrs.black
+	g.terminal_color_1 = clrs.red
+	g.terminal_color_2 = clrs.green
+	g.terminal_color_3 = clrs.yellow
+	g.terminal_color_4 = clrs.blue
+	g.terminal_color_5 = clrs.magenta
+	g.terminal_color_6 = clrs.cyan
+	g.terminal_color_7 = clrs.white
 
-	g.terminal_color_8 = theme.colors.black_br
-	g.terminal_color_9 = theme.colors.red_br
-	g.terminal_color_10 = theme.colors.green_br
-	g.terminal_color_11 = theme.colors.yellow_br
-	g.terminal_color_12 = theme.colors.blue_br
-	g.terminal_color_13 = theme.colors.magenta_br
-	g.terminal_color_14 = theme.colors.cyan_br
-	g.terminal_color_15 = theme.colors.white_br
+	g.terminal_color_8 = clrs.black_br
+	g.terminal_color_9 = clrs.red_br
+	g.terminal_color_10 = clrs.green_br
+	g.terminal_color_11 = clrs.yellow_br
+	g.terminal_color_12 = clrs.blue_br
+	g.terminal_color_13 = clrs.magenta_br
+	g.terminal_color_14 = clrs.cyan_br
+	g.terminal_color_15 = clrs.white_br
 end
 
 function util.load(theme)
@@ -147,7 +147,7 @@ function util.load(theme)
 	util.syntax(theme.integrations)
 
 	if require("catppuccino.config").options["term_colors"] then
-		util.terminal(theme)
+		util.terminal(theme.colors)
 	end
 end
 
