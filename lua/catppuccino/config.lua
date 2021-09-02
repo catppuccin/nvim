@@ -1,3 +1,5 @@
+
+local lightspeed = require "lightspeed"
 ---@class Config
 local config = {}
 
@@ -41,6 +43,7 @@ config.options = {
 		barbar = false,
 		bufferline = false,
 		markdown = false,
+		lightspeed = false,
 	},
 }
 
