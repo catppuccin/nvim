@@ -49,6 +49,10 @@
 
 <img src ="https://i.imgur.com/WlzSh2v.png">
 
+## Soft Manilo
+
+<img src ="https://i.imgur.com/J51jWId.png">
+
 ## Light Melya
 
 <img src ="https://i.imgur.com/r2XNdh5.png">
@@ -420,6 +424,7 @@ integration = {
 | ---------------- | ------------------ |
 | Dark Catppuccino | `dark_catppuccino` |
 | Neon Latte       | `neon_latte`       |
+| Soft Manilo      | `soft_manilo`      |
 | Light Melya      | `light_melya`      |
 
 ## Overwriting colors & hi groups
