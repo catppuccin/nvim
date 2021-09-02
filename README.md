@@ -79,6 +79,7 @@
     -   [Lightline](https://github.com/itchyny/lightline.vim)
     -   [Dashboard](https://github.com/glepnir/dashboard-nvim)
     -   [Markdown](https://www.markdownguide.org/)
+    -   [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
     -   [Sneak](https://github.com/justinmk/vim-sneak)
     -   [Neogit](https://github.com/TimUntersberger/neogit)
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
@@ -90,7 +91,7 @@
 Checkout the [CHANGELOG.md](https://github.com/Pocco81/Catppuccino.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
 
 <ul>
-  <li><b>01-09-21</b>: Added API and functionality for remapping colors and highlight groups.</li>
+  <li><b>01-09-21</b>: Added API and functionality for remapping colors and highlight groups + added lightspeed.nvim integration.</li>
   <li><b>29-08-21</b>: Refactored diffs and git related stuff, added the `CPClear` command and added option to set terminal colors</li>
   <li><b>22-08-21</b>: Just released!</li>
 </ul>
@@ -181,6 +182,7 @@ integrations = {
 	barbar = false,
 	bufferline = false,
 	markdown = false,
+	lightspeed = false,
 }
 ```
 
@@ -235,6 +237,7 @@ catppuccino.setup(
 			barbar = false,
 			bufferline = false,
 			markdown = false,
+			lightspeed = false,
 		}
 	}
 )
@@ -293,6 +296,7 @@ catppuccino.setup(
 			barbar = false,
 			bufferline = false,
 			markdown = false,
+			lightspeed = false,
 		}
 	}
 )
