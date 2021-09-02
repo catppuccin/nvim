@@ -80,6 +80,7 @@
     -   [Dashboard](https://github.com/glepnir/dashboard-nvim)
     -   [Markdown](https://www.markdownguide.org/)
     -   [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
+    -   [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
     -   [Sneak](https://github.com/justinmk/vim-sneak)
     -   [Neogit](https://github.com/TimUntersberger/neogit)
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
@@ -183,6 +184,7 @@ integrations = {
 	bufferline = false,
 	markdown = false,
 	lightspeed = false,
+	ts_rainbow = false,
 }
 ```
 
@@ -238,6 +240,7 @@ catppuccino.setup(
 			bufferline = false,
 			markdown = false,
 			lightspeed = false,
+			ts_rainbow = false,
 		}
 	}
 )
@@ -297,6 +300,7 @@ catppuccino.setup(
 			bufferline = false,
 			markdown = false,
 			lightspeed = false,
+			ts_rainbow = false,
 		}
 	}
 )
