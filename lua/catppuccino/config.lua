@@ -1,5 +1,3 @@
-
-local lightspeed = require "lightspeed"
 ---@class Config
 local config = {}
 
