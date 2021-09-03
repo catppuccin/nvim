@@ -82,6 +82,7 @@
     -   [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
     -   [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
     -   [Sneak](https://github.com/justinmk/vim-sneak)
+    -   [Hop](https://github.com/phaazon/hop.nvim)
     -   [Neogit](https://github.com/TimUntersberger/neogit)
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
     -   [Kitty](https://github.com/kovidgoyal/kitty)
@@ -185,6 +186,7 @@ integrations = {
 	markdown = false,
 	lightspeed = false,
 	ts_rainbow = false,
+	hop = false,
 }
 ```
 
@@ -241,6 +243,7 @@ catppuccino.setup(
 			markdown = false,
 			lightspeed = false,
 			ts_rainbow = false,
+			hop = false,
 		}
 	}
 )
@@ -301,6 +304,7 @@ catppuccino.setup(
 			markdown = false,
 			lightspeed = false,
 			ts_rainbow = false,
+			hop = false,
 		}
 	}
 )
