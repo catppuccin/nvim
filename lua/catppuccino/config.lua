@@ -43,6 +43,7 @@ config.options = {
 		markdown = false,
 		lightspeed = false,
 		ts_rainbow = false,
+		hop = false,
 	},
 }
 
