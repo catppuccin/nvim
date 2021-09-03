@@ -186,6 +186,7 @@ integrations = {
 	markdown = false,
 	lightspeed = false,
 	ts_rainbow = false,
+	hop = false,
 }
 ```
 
@@ -242,6 +243,7 @@ catppuccino.setup(
 			markdown = false,
 			lightspeed = false,
 			ts_rainbow = false,
+			hop = false,
 		}
 	}
 )
@@ -302,6 +304,7 @@ catppuccino.setup(
 			markdown = false,
 			lightspeed = false,
 			ts_rainbow = false,
+			hop = false,
 		}
 	}
 )
