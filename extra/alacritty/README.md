@@ -24,4 +24,6 @@ set-option -ga terminal-overrides ",xterm-256color:Tc"
 
 Now you should be all set!
 
-See https://github.com/Pocco81/Catppuccino.nvim/pull/9 for more info.
+## References
++ Original issue with discussion: https://github.com/Pocco81/Catppuccino.nvim/pull/9
++ Alacritty-tmux true colors: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
