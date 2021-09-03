@@ -57,6 +57,22 @@
 
 <img src ="https://i.imgur.com/r2XNdh5.png">
 
+# 📷 Extra
+
+## Tmux Ports
+
+<p align="center">
+  <img alt="Neon Latte" src="https://i.imgur.com/JblSone.png" width="47%">
+&nbsp; &nbsp; &nbsp;
+  <img alt="Dark Catppuccino" src="https://i.imgur.com/rBXjPbL.png" width="47%">
+</p>
+
+<p align="center">
+  <img alt="Soft Manilo" src="https://i.imgur.com/6PZgZPs.png" width="47%">
+&nbsp; &nbsp; &nbsp;
+  <img alt="Light Melya" src="https://i.imgur.com/WdUUS4V.png" width="47%">
+</p>
+
 # 🎁 Features
 
 -   Multiple colorschemes (AKA [flavors](#-flavors)) available!
