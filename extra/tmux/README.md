@@ -4,7 +4,7 @@ Making your Tmux multiplexer colors match your Catppucino colors is easy! Simply
 
 ## Base config
 
-In this directory you'd also find a [base config for Tmux](<pending>) with useful comment to get you started if you don't already have one. 
+In this directory you'd also find a [base config for Tmux](https://github.com/Pocco81/Catppuccino.nvim/blob/dev/extra/tmux/.tmux.conf) with useful comment to get you started if you don't already have one. 
 
 ## Alacritty/Kitty Incompatibility
 
