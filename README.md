@@ -101,6 +101,7 @@
     -   [Hop](https://github.com/phaazon/hop.nvim)
     -   [Neogit](https://github.com/TimUntersberger/neogit)
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+    -   [Tmux](https://github.com/tmux/tmux)
     -   [Kitty](https://github.com/kovidgoyal/kitty)
     -   [Alacritty](https://github.com/alacritty/alacritty)
 
