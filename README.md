@@ -465,6 +465,7 @@ let g:lightline = {'colorscheme': 'catppuccino'}
 -   **Kitty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/kitty) on your Kitty config.
 -   **Alacritty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/alacritty) on your Alacritty config.
 -   **Tmux**: Follow the instructions [here](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/tmux)
+-   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
 -   **NvimTree:** setting `enabled` to `true` enables this integration:
 
 ```lua
