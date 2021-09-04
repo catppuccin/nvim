@@ -27,7 +27,7 @@ config.options = {
 				hints = "underline",
 				warnings = "underline",
 				information = "underline",
-			}
+			},
 		},
 		lsp_trouble = false,
 		lsp_saga = false,
@@ -39,7 +39,10 @@ config.options = {
 			show_root = false,
 		},
 		which_key = false,
-		indent_blankline = false,
+		indent_blankline = {
+			enabled = false,
+			colored_indent_levels = false,
+		},
 		dashboard = false,
 		neogit = false,
 		vim_sneak = false,
