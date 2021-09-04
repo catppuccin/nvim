@@ -200,7 +200,10 @@ integrations = {
 		show_root = false,
 	},
 	which_key = false,
-	indent_blankline = false,
+	indent_blankline = {
+		enabled = false,
+		colored_indent_levels = false,
+	},
 	dashboard = false,
 	neogit = false,
 	vim_sneak = false,
@@ -263,7 +266,10 @@ catppuccino.setup(
 				show_root = false,
 			},
 			which_key = false,
-			indent_blankline = false,
+			indent_blankline = {
+				enabled = false,
+				colored_indent_levels = false,
+			},
 			dashboard = false,
 			neogit = false,
 			vim_sneak = false,
@@ -330,7 +336,10 @@ catppuccino.setup(
 				show_root = false,
 			},
 			which_key = false,
-			indent_blankline = false,
+			indent_blankline = {
+				enabled = false,
+				colored_indent_levels = false,
+			},
 			dashboard = false,
 			neogit = false,
 			vim_sneak = false,
@@ -455,6 +464,7 @@ let g:lightline = {'colorscheme': 'catppuccino'}
 
 -   **Kitty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/kitty) on your Kitty config.
 -   **Alacritty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/alacritty) on your Alacritty config.
+-   **Tmux**: Follow the instructions [here](https://github.com/Pocco81/Catppuccino.nvim/tree/main/extra/tmux)
 -   **NvimTree:** setting `enabled` to `true` enables this integration:
 
 ```lua
