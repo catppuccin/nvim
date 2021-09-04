@@ -177,11 +177,17 @@ integrations = {
 	treesitter = true,
 	native_lsp = {
 		enabled = true,
-		styles = {
+		virtual_text = {
 			errors = "italic",
 			hints = "italic",
 			warnings = "italic",
-			information = "italic"
+			information = "italic",
+		},
+		underlines = {
+			errors = "underline",
+			hints = "underline",
+			warnings = "underline",
+			information = "underline",
 		}
 	},
 	lsp_trouble = false,
@@ -234,11 +240,17 @@ catppuccino.setup(
 			treesitter = true,
 			native_lsp = {
 				enabled = true,
-				styles = {
+				virtual_text = {
 					errors = "italic",
 					hints = "italic",
 					warnings = "italic",
-					information = "italic"
+					information = "italic",
+				},
+				underlines = {
+					errors = "underline",
+					hints = "underline",
+					warnings = "underline",
+					information = "underline",
 				}
 			},
 			lsp_trouble = false,
@@ -295,11 +307,17 @@ catppuccino.setup(
 			treesitter = true,
 			native_lsp = {
 				enabled = true,
-				styles = {
+				virtual_text = {
 					errors = "italic",
 					hints = "italic",
 					warnings = "italic",
-					information = "italic"
+					information = "italic",
+				},
+				underlines = {
+					errors = "underline",
+					hints = "underline",
+					warnings = "underline",
+					information = "underline",
 				}
 			},
 			lsp_trouble = false,
@@ -417,7 +435,7 @@ If you'd like to know which highlight groups are being affected by Catppuccino, 
 
 ### Special Integrations
 
--   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inner table (`styles`) you can set that the style for virtual diagnostics.
+-   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 -   **Lualine:** use this to set it up (Note: `catppuccino` is the only valid theme name. It will pick the one set in your config):
 
 ```lua
