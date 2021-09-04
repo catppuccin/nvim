@@ -16,12 +16,18 @@ config.options = {
 		treesitter = true,
 		native_lsp = {
 			enabled = true,
-			styles = {
+			virtual_text = {
 				errors = "italic",
 				hints = "italic",
 				warnings = "italic",
 				information = "italic",
 			},
+			underlines = {
+				errors = "underline",
+				hints = "underline",
+				warnings = "underline",
+				information = "underline",
+			}
 		},
 		lsp_trouble = false,
 		lsp_saga = false,

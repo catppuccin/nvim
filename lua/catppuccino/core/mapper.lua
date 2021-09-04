@@ -212,6 +212,9 @@ function M.apply(cs)
 	cs = cs or cpc.colorscheme
 	local err, color_scheme = require("catppuccino.core.cs").get_color_scheme(cs)
 
+	-- cpc (global): config; exists while settings are applied
+	-- cs (local): colorscheme; usually passed to integrations
+
 	if not err.status then
 		vim.api.nvim_err_writeln(err.msg)
 	end

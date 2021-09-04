@@ -1,6 +1,10 @@
 local M = {}
 
 function M.get(cpt)
+
+	local virtual_text = cpc.integrations.native_lsp.virtual_text
+	local underlines = cpc.integrations.native_lsp.underlines
+
 	return {
 		-- These groups are for the native LSP cliencpt. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
@@ -23,14 +27,14 @@ function M.get(cpt)
 		LspDiagnosticsWarning = { fg = cpt.warning },
 		LspDiagnosticsInformation = { fg = cpt.info },
 		LspDiagnosticsHint = { fg = cpt.hint },
-		LspDiagnosticsVirtualTextError = { fg = cpt.error, style = cpc.integrations.native_lsp.styles.errors }, -- Used for "Error" diagnostic virtual text
-		LspDiagnosticsVirtualTextWarning = { fg = cpt.warning, style = cpc.integrations.native_lsp.styles.warnings }, -- Used for "Warning" diagnostic virtual text
-		LspDiagnosticsVirtualTextInformation = { fg = cpt.info, style = cpc.integrations.native_lsp.styles.information }, -- Used for "Information" diagnostic virtual text
-		LspDiagnosticsVirtualTextHint = { fg = cpt.hint, style = cpc.integrations.native_lsp.styles.hints }, -- Used for "Hint" diagnostic virtual text
-		LspDiagnosticsUnderlineError = { style = "underline", sp = cpt.error }, -- Used to underline "Error" diagnostics
-		LspDiagnosticsUnderlineWarning = { style = "underline", sp = cpt.warning }, -- Used to underline "Warning" diagnostics
-		LspDiagnosticsUnderlineInformation = { style = "underline", sp = cpt.info }, -- Used to underline "Information" diagnostics
-		LspDiagnosticsUnderlineHint = { style = "underline", sp = cpt.hint }, -- Used to underline "Hint" diagnostics
+		LspDiagnosticsVirtualTextError = { fg = cpt.error, style = virtual_text.errors }, -- Used for "Error" diagnostic virtual text
+		LspDiagnosticsVirtualTextWarning = { fg = cpt.warning, style = virtual_text.warnings }, -- Used for "Warning" diagnostic virtual text
+		LspDiagnosticsVirtualTextInformation = { fg = cpt.info, style = virtual_text.warnings }, -- Used for "Information" diagnostic virtual text
+		LspDiagnosticsVirtualTextHint = { fg = cpt.hint, style = virtual_text.hints }, -- Used for "Hint" diagnostic virtual text
+		LspDiagnosticsUnderlineError = { style = underlines.errors, sp = cpt.error }, -- Used to underline "Error" diagnostics
+		LspDiagnosticsUnderlineWarning = { style = underlines.warnings, sp = cpt.warning }, -- Used to underline "Warning" diagnostics
+		LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = cpt.info }, -- Used to underline "Information" diagnostics
+		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = cpt.hint }, -- Used to underline "Hint" diagnostics
 		LspCodeLens = { fg = cpt.comment }, -- virtual text of the codelens
 	}
 end
