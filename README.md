@@ -361,20 +361,15 @@ EOF
 
 After setting things up, you can load Catppuccino like so:
 
-For Lua:
-
-```lua
-catppuccino.load(<colorscheme_name>)
-```
-
-If `<colorscheme_name>` is not passed then it'll pick the one in the config.
-
-For VimScript:
-
-```lua
+```vim
+" Vim Script
 colorscheme catppuccino
 ```
 
+```lua
+-- Lua
+vim.cmd[[colorscheme catppuccino]]
+```
 Passing `catppuccino` to the `colorscheme` command will pick the colorscheme in the config. Optionally, you could pass one by its code name (e.g. `colorscheme neon_latte`).
 
 For instructions on how to configure the plugin, check out the [configuration](#configuration) section.
