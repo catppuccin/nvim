@@ -13,6 +13,11 @@ function M.get(cpt)
 		LspReferenceRead = { bg = cpt.fg_gutter }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = cpt.fg_gutter }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
+		DiagnosticError = { fg = cpt.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { fg = cpt.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { fg = cpt.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { fg = cpt.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+
 		LspDiagnosticsDefaultError = { fg = cpt.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultWarning = { fg = cpt.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultInformation = { fg = cpt.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
