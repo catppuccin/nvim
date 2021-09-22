@@ -546,7 +546,7 @@ end
 
 # 👐 Contribute
 
-Pull Requests are welcomed as long as they are properly justified and there are no conflicts. If your PR has something to do with the README or in general related with the documentation, I'll gladly merge it! Also, when writing code for the project **you must** use the [.editorconfig](https://github.com/Pocco81/Catppuccino.nvim/blob/main/.editorconfig) file on your editor so as to "maintain consistent coding styles". For instructions on how to use this file refer to [EditorConfig's website](https://editorconfig.org/).
+See	[CONTRIBUTING.md]().
 
 # 💭 Inspirations
 
