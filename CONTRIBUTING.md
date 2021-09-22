@@ -21,4 +21,4 @@ The following is a set of guidelines for contributing to this project. Use your 
 
 ## License
 
-Any contribution will be published under the same licensing terms indicated on the project's README.
+Any contribution will be published under the same licensing terms as the project itself.
