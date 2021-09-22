@@ -546,7 +546,7 @@ end
 
 # 👐 Contribute
 
-See	[CONTRIBUTING.md]().
+See [CONTRIBUTING.md](https://github.com/Pocco81/Catppuccino.nvim/blob/dev/CONTRIBUTING.md).
 
 # 💭 Inspirations
 
