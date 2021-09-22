@@ -32,7 +32,7 @@ function M.get(cpt)
 		TSFuncMacro = { fg = cpt.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscpt.
 		-- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cpt.magenta, style = cpc.styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = { fg = cpt.magenta, style = cpc.styles.functions }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = cpt.magenta_br, style = cpc.styles.functions }, -- For keywords used to define a fuction.
 		TSLabel = { fg = cpt.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
 		TSNamespace = { fg = cpt.cyan }, -- For identifiers referring to modules and namespaces.
