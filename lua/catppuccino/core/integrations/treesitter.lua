@@ -43,7 +43,7 @@ function M.get(cpt)
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cpt.red_br }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cpt.blue }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = util.string_to_color(cpt, "", cpt.fg_alt) }, -- For delimiters ie: `.`
+		TSPunctDelimiter = { fg = cpt.green_br }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cpt.red }, -- For brackets and parenthesis.
 		TSPunctSpecial = { fg = cpt.white }, -- For special punctutation that does not fall in the catagories before.
 		-- TSRepeat            = { };    -- For keywords related to loops.
