@@ -27,12 +27,12 @@ function M.get(cpt)
 		TSField = { fg = cpt.red }, -- For fields.
 		rustTSField = { fg = util.darken(cpt.white, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
-		-- TSFunction = { fg = cpt.fg_gutter }, -- For function (calls and definitions).
+		TSFunction = { fg = cpt.blue, style = cpc.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cpt.cyan }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cpt.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscpt.
 		TSInclude = { fg = cpt.magenta, style = cpc.styles.keywords };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cpt.magenta, style = cpc.styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = { fg = cpt.magenta_br, style = cpc.styles.functions }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = cpt.magenta_br, style = cpc.styles.keywords }, -- For keywords used to define a fuction.
 		TSLabel = { fg = cpt.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
 		TSNamespace = { fg = cpt.cyan }, -- For identifiers referring to modules and namespaces.
