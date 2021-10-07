@@ -139,7 +139,7 @@ local function get_base()
 		illuminatedCurWord = { bg = cpt.fg_gutter },
 		-- diff
 		diffAdded = { fg = cpt.diff.add },
-		diffRemoved = { fg = cpt.diff.remove },
+		diffRemoved = { fg = cpt.diff.delete },
 		diffChanged = { fg = cpt.diff.change },
 		diffOldFile = { fg = cpt.yellow },
 		diffNewFile = { fg = cpt.orange },
