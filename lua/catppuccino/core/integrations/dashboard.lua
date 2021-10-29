@@ -5,7 +5,7 @@ function M.get(cp)
 		DashboardShortCut = { fg = cp.catppuccino3 },
 		DashboardHeader = { fg = cp.yellow },
 		DashboardCenter = { fg = cp.green },
-		DashboardFooter = { fg = cp.orange, style = "italic" },
+		DashboardFooter = { fg = cp.catppuccino7, style = "italic" },
 	}
 end
 

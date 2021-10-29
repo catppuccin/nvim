@@ -40,7 +40,7 @@ local function get_base()
 		Substitute = { catppuccino2 = cp.catppuccino6, fg = cp.black }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.fg_alt }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = cp.orange, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
+		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.fg_alt, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -83,12 +83,12 @@ local function get_base()
 
 		-- code itself
 
-		Constant = { fg = cp.orange }, -- (prefercatppuccino6) any constant
+		Constant = { fg = cp.catppuccino7 }, -- (prefercatppuccino6) any constant
 		String = { fg = cp.green, style = cnf.styles.strings }, -- a string constant: "this is a string"
 		Character = { fg = cp.green }, --  a character constant: 'c', '\n'
-		Number = { fg = cp.orange_br }, --   a number constant: 234, 0xff
-		Float = { fg = cp.orange_br }, --    a floating point constant: 2.3e10
-		Boolean = { fg = cp.orange_br }, --  a boolean constant: TRUE, false
+		Number = { fg = cp.catppuccino7_br }, --   a number constant: 234, 0xff
+		Float = { fg = cp.catppuccino7_br }, --    a floating point constant: 2.3e10
+		Boolean = { fg = cp.catppuccino7_br }, --  a boolean constant: TRUE, false
 		Identifier = { fg = cp.catppuccino3, style = cnf.styles.variables }, -- (prefercatppuccino6) any variable name
 		Function = { fg = cp.blue, style = cnf.styles.functions }, -- function name (also: methods for classes)
 		Statement = { fg = cp.catppuccino4 }, -- (prefercatppuccino6) any statement
@@ -128,7 +128,7 @@ local function get_base()
 		qfFileName = { fg = cp.blue },
 		htmlH1 = { fg = cp.catppuccino5, style = "bold" },
 		htmlH2 = { fg = cp.blue, style = "bold" },
-		-- mkdHeading = { fg = cp.orange, style = "bold" },
+		-- mkdHeading = { fg = cp.catppuccino7, style = "bold" },
 		-- mkdCode = { catppuccino2 = cp.terminal_black, fg = cp.fg },
 		mkdCodeDelimiter = { catppuccino2 = cp.terminal_black, fg = cp.fg },
 		mkdCodeStart = { fg = cp.catppuccino3, style = "bold" },
@@ -146,7 +146,7 @@ local function get_base()
 		diffRemoved = { fg = cp.diff.delete },
 		diffChanged = { fg = cp.diff.change },
 		diffOldFile = { fg = cp.yellow },
-		diffNewFile = { fg = cp.orange },
+		diffNewFile = { fg = cp.catppuccino7 },
 		diffFile = { fg = cp.blue },
 		diffLine = { fg = cp.comment },
 		diffIndexLine = { fg = cp.catppuccino5 },
