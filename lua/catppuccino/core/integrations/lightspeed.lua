@@ -28,20 +28,20 @@ function M.get(cp)
 	end
 
 	return {
-		LightspeedLabel = {catppuccino2 = cp.catppuccino2_search, fg = cp.fg},
-		LightspeedOverlapped = {catppuccino2 = cp.catppuccino2_visual, fg = cp.fg},
-		LightspeedLabelDistant = {catppuccino2 = cp.catppuccino4, fg = cp.fg},
-		LightspeedLabelDistantOverlapped = {catppuccino2 = cp.catppuccino4, fg = cp.fg},
-		LightspeedShortcut = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino7, style = "italic"},
-		LightspeedShortcutOverlapped = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino7, style = "bold"},
-		LightspeedMaskedChar = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino6, style = "undercurl"},
-		LightspeedGreyWash = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino12},
-		LightspeedUnlabeledMatch = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino6, style = "underline"},
-		LightspeedOneCharMatch = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino6, style = "underline"},
-		LightspeedUniqueChar = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedPendingOpArea = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedPendingChangeOpArea = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedCursor = {fg = cp.catppuccino2, catppuccino2 = cp.fg},
+		LightspeedLabel = {bg = cp.catppuccino2_search, fg = cp.catppuccino11},
+		LightspeedOverlapped = {bg = cp.catppuccino2_visual, fg = cp.catppuccino11},
+		LightspeedLabelDistant = {bg = cp.catppuccino4, fg = cp.catppuccino11},
+		LightspeedLabelDistantOverlapped = {bg = cp.catppuccino4, fg = cp.catppuccino11},
+		LightspeedShortcut = {bg = cp.catppuccino2, fg = cp.catppuccino7, style = "italic"},
+		LightspeedShortcutOverlapped = {bg = cp.catppuccino2, fg = cp.catppuccino7, style = "bold"},
+		LightspeedMaskedChar = {bg = cp.catppuccino2, fg = cp.catppuccino6, style = "undercurl"},
+		LightspeedGreyWash = {bg = cp.catppuccino2, fg = cp.catppuccino12},
+		LightspeedUnlabeledMatch = {bg = cp.catppuccino2, fg = cp.catppuccino6, style = "underline"},
+		LightspeedOneCharMatch = {bg = cp.catppuccino2, fg = cp.catppuccino6, style = "underline"},
+		LightspeedUniqueChar = {bg = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
+		LightspeedPendingOpArea = {bg = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
+		LightspeedPendingChangeOpArea = {bg = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
+		LightspeedCursor = {fg = cp.catppuccino2, bg = cp.catppuccino11},
 	}
 end
 

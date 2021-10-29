@@ -12,19 +12,19 @@ function M.get(cp)
 	return {
 		NvimTreeFolderName = { fg = cp.catppuccino10 },
 		NvimTreeFolderIcon = { fg = cp.catppuccino10 },
-		NvimTreeNormal = { fg = cp.fg, catppuccino2 = cp.catppuccino2_sidebar },
+		NvimTreeNormal = { fg = cp.catppuccino11, bg = cp.catppuccino2_sidebar },
 		NvimTreeOpenedFolderName = { fg = cp.catppuccino10 },
 		NvimTreeEmptyFolderName = { fg = cp.catppuccino10 },
 		NvimTreeIndentMarker = { fg = cp.catppuccino12 },
-		NvimTreeVertSplit = { fg = cp.black, catppuccino2 = cp.black },
+		NvimTreeVertSplit = { fg = cp.black, bg = cp.black },
 		NvimTreeRootFolder = { fg = root_dir_color, style = "bold" },
 		NvimTreeSymlink = { fg = cp.catppuccino5 },
-		NvimTreeStatuslineNc = { fg = cp.black, catppuccino2 = cp.black },
+		NvimTreeStatuslineNc = { fg = cp.black, bg = cp.black },
 		NvimTreeGitDirty = { fg = cp.diff.change },
 		NvimTreeGitNew = { fg = cp.diff.add },
 		NvimTreeGitDeleted = { fg = cp.diff.delete },
 		NvimTreeSpecialFile = { fg = cp.catppuccino3 },
-		NvimTreeImageFile = { fg = cp.fg_sidebar },
+		NvimTreeImageFile = { fg = cp.catppuccino11_sidebar },
 		NvimTreeOpenedFile = { fg = cp.catppuccino5 },
 	}
 end

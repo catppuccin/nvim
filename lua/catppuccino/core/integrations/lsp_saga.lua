@@ -6,7 +6,7 @@ function M.get(cp)
 		DiagnosticWarning = { fg = cp.warning },
 		DiagnosticInformation = { fg = cp.info },
 		DiagnosticHint = { fg = cp.hint },
-		LspFloatWinNormal = { catppuccino2 = cp.catppuccino2_float },
+		LspFloatWinNormal = { bg = cp.catppuccino2_float },
 		LspFloatWinBorder = { fg = cp.border_highlight },
 		LspSagaBorderTitle = { fg = cp.catppuccino3 },
 		LspSagaHoverBorder = { fg = cp.catppuccino10 },

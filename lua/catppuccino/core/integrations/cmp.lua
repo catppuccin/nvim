@@ -5,10 +5,10 @@ function M.get(cp)
 	return {
 		CmpItemAbbr = { fg = util.darken(cp.catppuccino0, 0.56) },
 		CmpItemAbbrDeprecated = { fg = util.darken(cp.catppuccino0, 0.56), stlye = "strikethrough" },
-		CmpItemAbbrMatch = { fg = cp.fg, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = cp.fg, style = "bold" },
+		CmpItemAbbrMatch = { fg = cp.catppuccino11, style = "bold" },
+		CmpItemAbbrMatchFuzzy = { fg = cp.catppuccino11, style = "bold" },
 		CmpItemKind = { fg = cp.catppuccino10 },
-		CmpItemMenu = { fg = cp.fg },
+		CmpItemMenu = { fg = cp.catppuccino11 },
 	}
 end
 

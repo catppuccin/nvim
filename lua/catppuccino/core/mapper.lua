@@ -10,7 +10,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assertightness(color_palette.catppuccino2) then
+	if colors_util.assertightness(color_palette.bg) then
 		props["background"] = "light"
 	end
 
@@ -21,60 +21,60 @@ local function get_base()
 	local cp = color_palette
 
 	return {
-		catppuccino12 = { fg = cp.catppuccino12, style = cnf.styles.catppuccino12s }, -- any catppuccino12
-		ColorColumn = { catppuccino2 = cp.catppuccino2_visual }, -- used for the columns set with 'colorcolumn'
+		Comment = { fg = cp.catppuccino12, style = cnf.styles.comments }, -- just comments
+		ColorColumn = { bg = cp.catppuccino2_visual }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = cp.catppuccino2, catppuccino2 = cp.fg }, -- character under the cursor
-		lCursor = { fg = cp.catppuccino2, catppuccino2 = cp.fg }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { fg = cp.catppuccino2, catppuccino2 = cp.fg }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn = { catppuccino2 = cp.catppuccino2_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { catppuccino2 = cp.catppuccino2_highlight }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		Cursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- character under the cursor
+		lCursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- like Cursor, but used when in IME mode |CursorIM|
+		CursorColumn = { bg = cp.catppuccino2_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
+		CursorLine = { bg = cp.catppuccino2_highlight }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.catppuccino10 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccino2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.error }, -- error messages on the command line
 		VertSplit = { fg = cp.border }, -- the column separating vertically split windows
-		Folded = { fg = cp.catppuccino10, catppuccino2 = cp.fg_gutter }, -- line used for closed folds
-		FoldColumn = { catppuccino2 = cp.catppuccino2, fg = cp.catppuccino12 }, -- 'foldcolumn'
-		SignColumn = { catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.fg_gutter }, -- column where |signs| are displayed
-		SignColumnSB = { catppuccino2 = cp.catppuccino2_sidebar, fg = cp.fg_gutter }, -- column where |signs| are displayed
-		Substitute = { catppuccino2 = cp.catppuccino6, fg = cp.black }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = cp.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
-		CursorLineNr = { fg = cp.fg_alt }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
+		Folded = { fg = cp.catppuccino10, bg = cp.catppuccino13 }, -- line used for closed folds
+		FoldColumn = { bg = cp.catppuccino2, fg = cp.catppuccino12 }, -- 'foldcolumn'
+		SignColumn = { bg = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.catppuccino13 }, -- column where |signs| are displayed
+		SignColumnSB = { bg = cp.catppuccino2_sidebar, fg = cp.catppuccino13 }, -- column where |signs| are displayed
+		Substitute = { bg = cp.catppuccino6, fg = cp.black }, -- |:substitute| replacement text highlighting
+		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		CursorLineNr = { fg = cp.catppuccino11_alt }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = cp.fg_alt, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		ModeMsg = { fg = cp.catppuccino11_alt, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.catppuccino10 }, -- |more-prompt|
 		NonText = { fg = cp.catppuccino12 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = cp.fg, catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text
-		NormalNC = { fg = cp.fg, catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text in non-current windows
-		NormalSB = { fg = cp.fg_sidebar, catppuccino2 = cp.catppuccino2_sidebar }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.fg, catppuccino2 = cp.catppuccino2_float }, -- Normal text in floating windows.
+		Normal = { fg = cp.catppuccino11, bg = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text
+		NormalNC = { fg = cp.catppuccino11, bg = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text in non-current windows
+		NormalSB = { fg = cp.catppuccino11_sidebar, bg = cp.catppuccino2_sidebar }, -- normal text in non-current windows
+		NormalFloat = { fg = cp.catppuccino11, bg = cp.catppuccino2_float }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.border_highlight },
-		Pmenu = { catppuccino2 = cp.catppuccino2_popup, fg = cp.fg }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.catppuccino3, catppuccino2 = util.darken(cp.fg_gutter, 0.8) }, -- Popup menu: selected item.
-		PmenuSbar = { catppuccino2 = util.lighten(cp.catppuccino2_popup, 0.95) }, -- Popup menu: scrollbar.
-		PmenuThumb = { catppuccino2 = cp.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
+		Pmenu = { bg = cp.catppuccino2_popup, fg = cp.catppuccino11 }, -- Popup menu: normal item.
+		PmenuSel = { fg = cp.catppuccino3, bg = util.darken(cp.catppuccino13, 0.8) }, -- Popup menu: selected item.
+		PmenuSbar = { bg = util.lighten(cp.catppuccino2_popup, 0.95) }, -- Popup menu: scrollbar.
+		PmenuThumb = { bg = cp.catppuccino13 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.catppuccino10 }, -- |hit-enter| prompt and yes/no questions
-		QuickFixLine = { catppuccino2 = cp.catppuccino2_visual, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { catppuccino2 = cp.catppuccino2_search, fg = cp.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { catppuccino2 = cp.catppuccino3, fg = cp.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		SpecialKey = { fg = cp.fg }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		QuickFixLine = { bg = cp.catppuccino2_visual, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Search = { bg = cp.catppuccino2_search, fg = cp.catppuccino11 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		IncSearch = { bg = cp.catppuccino3, fg = cp.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cp.error, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = cp.fg_sidebar, catppuccino2 = cp.catppuccino2_statusline }, -- status line of current window
-		StatusLineNC = { fg = cp.fg_gutter, catppuccino2 = cp.catppuccino2_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { catppuccino2 = cp.catppuccino2_statusline, fg = cp.fg_gutter }, -- tab pages line, not active tab page label
-		TabLineFill = { catppuccino2 = cp.black }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = cp.fg_alt, catppuccino2 = cp.fg_gutter }, -- tab pages line, active tab page label
+		StatusLine = { fg = cp.catppuccino11_sidebar, bg = cp.catppuccino2_statusline }, -- status line of current window
+		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino2_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
+		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
+		TabLineSel = { fg = cp.catppuccino11_alt, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { catppuccino2 = cp.catppuccino2_visual }, -- Visual mode selection
-		VisualNOS = { catppuccino2 = cp.catppuccino2_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
+		Visual = { bg = cp.catppuccino2_visual }, -- Visual mode selection
+		VisualNOS = { bg = cp.catppuccino2_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.warning }, -- warning messages
-		Whitespace = { fg = cp.fg_gutter }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu = { catppuccino2 = cp.catppuccino2_visual }, -- current match in 'wildmenu' completion
+		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WildMenu = { bg = cp.catppuccino2_visual }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
 		-- catppuccino12ed out groups should chain up to their "prefercatppuccino6" group by
@@ -95,7 +95,7 @@ local function get_base()
 		Conditional = { fg = cp.catppuccino6 }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.catppuccino6 }, --   for, do, while, etcp.
 		Label = { fg = cp.catppuccino4 }, --    case, default, etcp.
-		Operator = { fg = cp.fg_alt }, -- "sizeof", "+", "*", etcp.
+		Operator = { fg = cp.catppuccino11_alt }, -- "sizeof", "+", "*", etcp.
 		Keyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
@@ -123,24 +123,24 @@ local function get_base()
 		-- Ignore = { }, -- (prefercatppuccino6) left blank, hidden  |hl-Ignore|
 
 		Error = { fg = cp.error }, -- (prefercatppuccino6) any erroneous construct
-		Todo = { catppuccino2 = cp.catppuccino9, fg = cp.catppuccino2, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { bg = cp.catppuccino9, fg = cp.catppuccino2, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.catppuccino9 },
 		qfFileName = { fg = cp.catppuccino10 },
 		htmlH1 = { fg = cp.catppuccino5, style = "bold" },
 		htmlH2 = { fg = cp.catppuccino10, style = "bold" },
 		-- mkdHeading = { fg = cp.catppuccino7, style = "bold" },
-		-- mkdCode = { catppuccino2 = cp.terminal_black, fg = cp.fg },
-		mkdCodeDelimiter = { catppuccino2 = cp.terminal_black, fg = cp.fg },
+		-- mkdCode = { bg = cp.terminal_black, fg = cp.catppuccino11 },
+		mkdCodeDelimiter = { bg = cp.terminal_black, fg = cp.catppuccino11 },
 		mkdCodeStart = { fg = cp.catppuccino3, style = "bold" },
 		mkdCodeEnd = { fg = cp.catppuccino3, style = "bold" },
 		-- mkdLink = { fg = cp.catppuccino10, style = "underline" },
 
 		-- debugging
-		debugPC = { catppuccino2 = cp.catppuccino2_sidebar }, -- used for highlighting the current line in terminal-debug
-		debugBreakpoint = { catppuccino2 = util.darken(cp.info, 0.1), fg = cp.info }, -- used for breakpoint colors in terminal-debug
+		debugPC = { bg = cp.catppuccino2_sidebar }, -- used for highlighting the current line in terminal-debug
+		debugBreakpoint = { bg = util.darken(cp.info, 0.1), fg = cp.info }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
-		illuminatedWord = { catppuccino2 = cp.fg_gutter },
-		illuminatedCurWord = { catppuccino2 = cp.fg_gutter },
+		illuminatedWord = { bg = cp.catppuccino13 },
+		illuminatedCurWord = { bg = cp.catppuccino13 },
 		-- diff
 		diffAdded = { fg = cp.diff.add },
 		diffRemoved = { fg = cp.diff.delete },
@@ -150,10 +150,10 @@ local function get_base()
 		diffFile = { fg = cp.catppuccino10 },
 		diffLine = { fg = cp.catppuccino12 },
 		diffIndexLine = { fg = cp.catppuccino5 },
-		DiffAdd = { fg = cp.diff.add, catppuccino2 = cp.catppuccino2 }, -- diff mode: Added line |diff.txt|
-		DiffChange = { fg = cp.diff.change, catppuccino2 = cp.catppuccino2 }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = cp.diff.delete, catppuccino2 = cp.catppuccino2 }, -- diff mode: Deleted line |diff.txt|
-		DiffText = { fg = cp.diff.text, catppuccino2 = cp.catppuccino2 }, -- diff mode: Changed text within a changed line |diff.txt|
+		DiffAdd = { fg = cp.diff.add, bg = cp.catppuccino2 }, -- diff mode: Added line |diff.txt|
+		DiffChange = { fg = cp.diff.change, bg = cp.catppuccino2 }, -- diff mode: Changed line |diff.txt|
+		DiffDelete = { fg = cp.diff.delete, bg = cp.catppuccino2 }, -- diff mode: Deleted line |diff.txt|
+		DiffText = { fg = cp.diff.text, bg = cp.catppuccino2 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.error },
 		healthSuccess = { fg = cp.catppuccino8 },
@@ -166,7 +166,7 @@ local function get_base()
 		GlyphPalette3 = { fg = cp.catppuccino9 },
 		GlyphPalette4 = { fg = cp.catppuccino10 },
 		GlyphPalette6 = { fg = cp.catppuccino8 },
-		GlyphPalette7 = { fg = cp.fg },
+		GlyphPalette7 = { fg = cp.catppuccino11 },
 		GlyphPalette9 = { fg = cp.catppuccino6 },
 	}
 end

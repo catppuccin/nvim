@@ -6,22 +6,22 @@ function M.get(cp)
 	local inactive_clr = util.darken("#000000", 0.56)
 
 	return {
-		BufferLineFill = { catppuccino2 = util.brighten(cp.catppuccino2, 0.05) },
-		BufferLineBackground = { fg = cp.catppuccino1, catppuccino2 = inactive_clr },
-		BufferLineBufferVisible = { fg = cp.catppuccino1, catppuccino2 = inactive_clr },
-		BufferLineBufferSelected = { fg = cp.fg, catppuccino2 = cp.catppuccino2 },
-		BufferLineTab = { fg = cp.catppuccino1, catppuccino2 = cp.catppuccino2 },
-		BufferLineTabSelected = { fg = cp.catppuccino6, catppuccino2 = cp.catppuccino10 },
-		BufferLineTabClose = { fg = cp.catppuccino6, catppuccino2 = inactive_clr },
-		BufferLineIndicatorSelected = { fg = cp.catppuccino2, catppuccino2 = cp.catppuccino2 },
+		BufferLineFill = { bg = util.brighten(cp.catppuccino2, 0.05) },
+		BufferLineBackground = { fg = cp.catppuccino1, bg = inactive_clr },
+		BufferLineBufferVisible = { fg = cp.catppuccino1, bg = inactive_clr },
+		BufferLineBufferSelected = { fg = cp.catppuccino11, bg = cp.catppuccino2 },
+		BufferLineTab = { fg = cp.catppuccino1, bg = cp.catppuccino2 },
+		BufferLineTabSelected = { fg = cp.catppuccino6, bg = cp.catppuccino10 },
+		BufferLineTabClose = { fg = cp.catppuccino6, bg = inactive_clr },
+		BufferLineIndicatorSelected = { fg = cp.catppuccino2, bg = cp.catppuccino2 },
 		-- separators
-		BufferLineSeparator = { fg = inactive_clr, catppuccino2 = inactive_clr },
-		BufferLineSeparatorVisible = { fg = inactive_clr, catppuccino2 = inactive_clr },
-		BufferLineSeparatorSelected = { fg = inactive_clr, catppuccino2 = inactive_clr },
+		BufferLineSeparator = { fg = inactive_clr, bg = inactive_clr },
+		BufferLineSeparatorVisible = { fg = inactive_clr, bg = inactive_clr },
+		BufferLineSeparatorSelected = { fg = inactive_clr, bg = inactive_clr },
 		-- close buttons
-		BufferLineCloseButton = { fg = cp.catppuccino1, catppuccino2 = inactive_clr },
-		BufferLineCloseButtonVisible = { fg = cp.catppuccino1, catppuccino2 = inactive_clr },
-		BufferLineCloseButtonSelected = { fg = cp.catppuccino6, catppuccino2 = cp.catppuccino2 },
+		BufferLineCloseButton = { fg = cp.catppuccino1, bg = inactive_clr },
+		BufferLineCloseButtonVisible = { fg = cp.catppuccino1, bg = inactive_clr },
+		BufferLineCloseButtonSelected = { fg = cp.catppuccino6, bg = cp.catppuccino2 },
 	}
 end
 
