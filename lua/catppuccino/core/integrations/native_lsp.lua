@@ -2,8 +2,8 @@ local M = {}
 
 function M.get(cpt)
 
-	local virtual_text = cpc.integrations.native_lsp.virtual_text
-	local underlines = cpc.integrations.native_lsp.underlines
+	local virtual_text = cnf.integrations.native_lsp.virtual_text
+	local underlines = cnf.integrations.native_lsp.underlines
 
 	return {
 		-- These groups are for the native LSP cliencpt. Some other LSP clients may

@@ -2,7 +2,7 @@ local M = {}
 
 local utils = require("catppuccino.utils.util")
 
-local function load(colorscheme)
+local function load()
 	local catppuccino = require("catppuccino")
 
 	if catppuccino.before_loading ~= nil then
@@ -10,7 +10,7 @@ local function load(colorscheme)
 	end
 
 	-- colorscheme gets evaluated from mapper.lua
-	local theme = require("catppuccino.core.mapper").apply(colorscheme)
+	local theme = require("catppuccino.core.mapper").apply()
 	utils.load(theme)
 
 	if catppuccino.after_loading ~= nil then
@@ -22,11 +22,11 @@ local function clear()
 	vim.cmd("hi clear")
 end
 
-function M.main(option, args)
+function M.main(option)
 	option = option or "load"
 
 	if option == "load" then
-		load(args)
+		load()
 	elseif option == "clear" then
 		clear()
 	else

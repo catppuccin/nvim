@@ -6,7 +6,7 @@ function M.get(cpt)
 		IndentBlanklineChar = { fg = cpt.gray },
 	}
 
-	if cpc.integrations.indent_blankline.colored_indent_levels then
+	if cnf.integrations.indent_blankline.colored_indent_levels then
 		hi["IndentBlanklineIndent6"] = {blend = "nocombine", fg = cpt.yellow}
 		hi["IndentBlanklineIndent5"] = {blend = "nocombine", fg = cpt.red}
 		hi["IndentBlanklineIndent4"] = {blend = "nocombine", fg = cpt.green}

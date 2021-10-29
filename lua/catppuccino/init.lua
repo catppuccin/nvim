@@ -1,17 +1,12 @@
 local M = {}
 
-function M.load(args)
-	require("catppuccino.main").main("load", args)
+function M.load()
+	require("catppuccino.main").main("load")
 end
 
-function M.remap(colorscheme, hi_groups)
-	colorscheme = colorscheme or {}
+function M.remap(hi_groups)
 	hi_groups = hi_groups or {}
-
-	local remaps_mod = require("catppuccino.core.remaps")
-
-	remaps_mod.set_cs_remaps(colorscheme)
-	remaps_mod.set_hig_remaps(hi_groups)
+	require("catppuccino.core.remaps").set_hig_remaps(hi_groups)
 end
 
 function M.setup(custom_opts)
