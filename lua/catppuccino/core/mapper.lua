@@ -37,10 +37,10 @@ local function get_base()
 		FoldColumn = { catppuccino2 = cp.catppuccino2, fg = cp.comment }, -- 'foldcolumn'
 		SignColumn = { catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.fg_gutter }, -- column where |signs| are displayed
 		SignColumnSB = { catppuccino2 = cp.catppuccino2_sidebar, fg = cp.fg_gutter }, -- column where |signs| are displayed
-		Substitute = { catppuccino2 = cp.red, fg = cp.black }, -- |:substitute| replacement text highlighting
+		Substitute = { catppuccino2 = cp.catppuccino6, fg = cp.black }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.fg_alt }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = cp.orange, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen = { fg = cp.orange, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.fg_alt, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -77,53 +77,53 @@ local function get_base()
 		WildMenu = { catppuccino2 = cp.catppuccino2_visual }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
-		-- commented out groups should chain up to their "preferred" group by
+		-- commented out groups should chain up to their "prefercatppuccino6" group by
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
 		-- code itself
 
-		Constant = { fg = cp.orange }, -- (preferred) any constant
+		Constant = { fg = cp.orange }, -- (prefercatppuccino6) any constant
 		String = { fg = cp.green, style = cnf.styles.strings }, -- a string constant: "this is a string"
 		Character = { fg = cp.green }, --  a character constant: 'c', '\n'
 		Number = { fg = cp.orange_br }, --   a number constant: 234, 0xff
 		Float = { fg = cp.orange_br }, --    a floating point constant: 2.3e10
 		Boolean = { fg = cp.orange_br }, --  a boolean constant: TRUE, false
-		Identifier = { fg = cp.catppuccino3, style = cnf.styles.variables }, -- (preferred) any variable name
+		Identifier = { fg = cp.catppuccino3, style = cnf.styles.variables }, -- (prefercatppuccino6) any variable name
 		Function = { fg = cp.blue, style = cnf.styles.functions }, -- function name (also: methods for classes)
-		Statement = { fg = cp.catppuccino4 }, -- (preferred) any statement
-		Conditional = { fg = cp.red }, --  if, then, else, endif, switch, etcp.
-		Repeat = { fg = cp.red }, --   for, do, while, etcp.
+		Statement = { fg = cp.catppuccino4 }, -- (prefercatppuccino6) any statement
+		Conditional = { fg = cp.catppuccino6 }, --  if, then, else, endif, switch, etcp.
+		Repeat = { fg = cp.catppuccino6 }, --   for, do, while, etcp.
 		Label = { fg = cp.catppuccino4 }, --    case, default, etcp.
 		Operator = { fg = cp.fg_alt }, -- "sizeof", "+", "*", etcp.
 		Keyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = cp.catppuccino5 }, -- (preferred) generic Preprocessor
+		PreProc = { fg = cp.catppuccino5 }, -- (prefercatppuccino6) generic Preprocessor
 		Include = { fg = cp.catppuccino5 }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
 
-		Type = { fg = cp.yellow }, -- (preferred) int, long, char, etcp.
+		Type = { fg = cp.yellow }, -- (prefercatppuccino6) int, long, char, etcp.
 		StorageClass = { fg = cp.yellow }, -- static, register, volatile, etcp.
 		Structure = { fg = cp.yellow }, --  struct, union, enum, etcp.
 		Typedef = { fg = cp.yellow }, --  A typedef
-		Special = { fg = cp.blue }, -- (preferred) any special symbol
+		Special = { fg = cp.blue }, -- (prefercatppuccino6) any special symbol
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
 		-- SpecialComment= { }, -- special things inside a comment
 		-- Debug         = { }, --    debugging statements
 
-		Underlined = { style = "underline" }, -- (preferred) text that stands out, HTML links
+		Underlined = { style = "underline" }, -- (prefercatppuccino6) text that stands out, HTML links
 		Bold = { style = "bold" },
 		Italic = { style = "italic" },
 		-- ("Ignore", below, may be invisible...)
-		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
+		-- Ignore = { }, -- (prefercatppuccino6) left blank, hidden  |hl-Ignore|
 
-		Error = { fg = cp.error }, -- (preferred) any erroneous construct
-		Todo = { catppuccino2 = cp.yellow, fg = cp.catppuccino2, style = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Error = { fg = cp.error }, -- (prefercatppuccino6) any erroneous construct
+		Todo = { catppuccino2 = cp.yellow, fg = cp.catppuccino2, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.yellow },
 		qfFileName = { fg = cp.blue },
 		htmlH1 = { fg = cp.catppuccino5, style = "bold" },
@@ -161,13 +161,13 @@ local function get_base()
 		-- misc
 
 		-- glyphs
-		GlyphPalette1 = { fg = cp.red },
+		GlyphPalette1 = { fg = cp.catppuccino6 },
 		GlyphPalette2 = { fg = cp.green },
 		GlyphPalette3 = { fg = cp.yellow },
 		GlyphPalette4 = { fg = cp.blue },
 		GlyphPalette6 = { fg = cp.green_br },
 		GlyphPalette7 = { fg = cp.fg },
-		GlyphPalette9 = { fg = cp.red },
+		GlyphPalette9 = { fg = cp.catppuccino6 },
 	}
 end
 

@@ -18,18 +18,18 @@ function M.get(cp)
 		TSWarning = { fg = cp.catppuccino2, catppuccino2 = cp.warning },
 		TSDanger = { fg = cp.catppuccino2, catppuccino2 = cp.error },
 		TSConstructor = { fg = cp.catppuccino5 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		TSConditional = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
+		TSConditional = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
 		TSConstant = { fg = cp.orange }, -- For constants
 		TSConstBuiltin = { fg = cp.orange_br, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cp.
 		-- TSError             = { };    -- For syntax/parser errors.
 		TSException = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For exception related keywords.
-		TSField = { fg = cp.red }, -- For fields.
+		TSField = { fg = cp.catppuccino6 }, -- For fields.
 		rustTSField = { fg = util.darken(cp.catppuccino0, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.catppuccino3 }, -- For builtin functions: `table.insert` in Lua.
-		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
+		TSFuncMacro = { fg = cp.catppuccino6 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
@@ -42,12 +42,12 @@ function M.get(cp)
 		TSOperator = { fg = cp.catppuccino3 }, -- For any operator: `+`, but also `->` and `*` in cp.
 		TSParameter = { fg = cp.orange_br }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
-		TSProperty = { fg = cp.red_br }, -- Same as `TSField`.
+		TSProperty = { fg = cp.catppuccino6 }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.green_br }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = cp.red }, -- For brackets and parenthesis.
+		TSPunctBracket = { fg = cp.catppuccino6 }, -- For brackets and parenthesis.
 		TSPunctSpecial = { fg = cp.catppuccino0 }, -- For special punctutation that does not fall in the catagories before.
-		TSRepeat = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to loops.
+		TSRepeat = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		TSStringRegex = { fg = cp.blue, style = cnf.styles.strings }, -- For regexes.
 		TSStringEscape = { fg = cp.catppuccino5, style = cnf.styles.strings }, -- For escape characters within a string.
@@ -55,10 +55,10 @@ function M.get(cp)
 		-- TSType              = { };    -- For types.
 		TSTypeBuiltin = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For builtin types.
 		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
-		TSVariableBuiltin = { fg = cp.red, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
+		TSVariableBuiltin = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
-		-- TSText              = { };    -- For strings considered text in a markup language.
+		-- TSText              = { };    -- For strings considecatppuccino6 text in a markup language.
 		TSTextReference = { fg = cp.catppuccino3 },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.

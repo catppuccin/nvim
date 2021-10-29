@@ -16,7 +16,7 @@ function M.get(cp)
 		LspSagaFinderSelection = { fg = cp.catppuccino2_visual },
 		LspSagaCodeActionTitle = { fg = cp.blue1 },
 		LspSagaCodeActionContent = { fg = cp.purple },
-		LspSagaSignatureHelpBorder = { fg = cp.red },
+		LspSagaSignatureHelpBorder = { fg = cp.catppuccino6 },
 		ReferencesCount = { fg = cp.purple },
 		DefinitionCount = { fg = cp.purple },
 		DefinitionIcon = { fg = cp.blue },

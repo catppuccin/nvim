@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	return {
-		rainbowcol1 = {catppuccino2 = cp.catppuccino2, fg = cp.red},
+		rainbowcol1 = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino6},
 		rainbowcol2 = {catppuccino2 = cp.catppuccino2, fg = cp.green},
 		rainbowcol3 = {catppuccino2 = cp.catppuccino2, fg = cp.yellow},
 		rainbowcol4 = {catppuccino2 = cp.catppuccino2, fg = cp.blue},
