@@ -10,7 +10,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(color_palette.catppuccino2) then
+	if colors_util.assertightness(color_palette.catppuccino2) then
 		props["background"] = "light"
 	end
 
@@ -86,9 +86,9 @@ local function get_base()
 		Constant = { fg = cp.catppuccino7 }, -- (prefercatppuccino6) any constant
 		String = { fg = cp.catppuccino8, style = cnf.styles.strings }, -- a string constant: "this is a string"
 		Character = { fg = cp.catppuccino8 }, --  a character constant: 'c', '\n'
-		Number = { fg = cp.catppuccino7_br }, --   a number constant: 234, 0xff
-		Float = { fg = cp.catppuccino7_br }, --    a floating point constant: 2.3e10
-		Boolean = { fg = cp.catppuccino7_br }, --  a boolean constant: TRUE, false
+		Number = { fg = cp.catppuccino7 }, --   a number constant: 234, 0xff
+		Float = { fg = cp.catppuccino7 }, --    a floating point constant: 2.3e10
+		Boolean = { fg = cp.catppuccino7 }, --  a boolean constant: TRUE, false
 		Identifier = { fg = cp.catppuccino3, style = cnf.styles.variables }, -- (prefercatppuccino6) any variable name
 		Function = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- function name (also: methods for classes)
 		Statement = { fg = cp.catppuccino4 }, -- (prefercatppuccino6) any statement
@@ -156,7 +156,7 @@ local function get_base()
 		DiffText = { fg = cp.diff.text, catppuccino2 = cp.catppuccino2 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.error },
-		healthSuccess = { fg = cp.catppuccino8_br },
+		healthSuccess = { fg = cp.catppuccino8 },
 		healthWarning = { fg = cp.warning },
 		-- misc
 
@@ -165,7 +165,7 @@ local function get_base()
 		GlyphPalette2 = { fg = cp.catppuccino8 },
 		GlyphPalette3 = { fg = cp.catppuccino9 },
 		GlyphPalette4 = { fg = cp.catppuccino10 },
-		GlyphPalette6 = { fg = cp.catppuccino8_br },
+		GlyphPalette6 = { fg = cp.catppuccino8 },
 		GlyphPalette7 = { fg = cp.fg },
 		GlyphPalette9 = { fg = cp.catppuccino6 },
 	}

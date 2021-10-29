@@ -12,5 +12,4 @@ function M.get(cp)
 	}
 end
 
-print("llo )
 return M
