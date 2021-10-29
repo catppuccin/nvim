@@ -1,10 +1,10 @@
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 	return {
-		GitSignsAdd = { fg = cpt.diff.add, bg = cnf.transparency and cpt.none or cpt.bg }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = cpt.diff.change, bg = cnf.transparency and cpt.none or cpt.bg }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = cpt.diff.remove, bg = cnf.transparency and cpt.none or cpt.bg }, -- diff mode: Deleted line |diff.txt|
+		GitSignsAdd = { fg = cp.diff.add, bg = cnf.transparency and cp.none or cp.bg }, -- diff mode: Added line |diff.txt|
+		GitSignsChange = { fg = cp.diff.change, bg = cnf.transparency and cp.none or cp.bg }, -- diff mode: Changed line |diff.txt|
+		GitSignsDelete = { fg = cp.diff.remove, bg = cnf.transparency and cp.none or cp.bg }, -- diff mode: Deleted line |diff.txt|
 	}
 end
 

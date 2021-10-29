@@ -1,7 +1,7 @@
 local util = require("catppuccino.utils.util")
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 	return {
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -11,60 +11,60 @@ function M.get(cpt)
 
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
-		TSBoolean = { fg = cpt.orange_br, style = cnf.styles.keywords }, -- For booleans.
+		TSBoolean = { fg = cp.orange_br, style = cnf.styles.keywords }, -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TSComment           = { };    -- For comment blocks.
-		TSNote = { fg = cpt.bg, bg = cpt.info },
-		TSWarning = { fg = cpt.bg, bg = cpt.warning },
-		TSDanger = { fg = cpt.bg, bg = cpt.error },
-		TSConstructor = { fg = cpt.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		TSConditional = { fg = cpt.red, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
-		TSConstant = { fg = cpt.orange }, -- For constants
-		TSConstBuiltin = { fg = cpt.orange_br, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
-		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cpt.
+		TSNote = { fg = cp.bg, bg = cp.info },
+		TSWarning = { fg = cp.bg, bg = cp.warning },
+		TSDanger = { fg = cp.bg, bg = cp.error },
+		TSConstructor = { fg = cp.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConditional = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
+		TSConstant = { fg = cp.orange }, -- For constants
+		TSConstBuiltin = { fg = cp.orange_br, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
+		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cp.
 		-- TSError             = { };    -- For syntax/parser errors.
-		TSException = { fg = cpt.magenta_br, style = cnf.styles.keywords }, -- For exception related keywords.
-		TSField = { fg = cpt.red }, -- For fields.
-		rustTSField = { fg = util.darken(cpt.white, 0.75) }, -- For fields.
+		TSException = { fg = cp.magenta_br, style = cnf.styles.keywords }, -- For exception related keywords.
+		TSField = { fg = cp.red }, -- For fields.
+		rustTSField = { fg = util.darken(cp.white, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
-		TSFunction = { fg = cpt.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
-		TSFuncBuiltin = { fg = cpt.cyan }, -- For builtin functions: `table.insert` in Lua.
-		TSFuncMacro = { fg = cpt.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscpt.
-		TSInclude = { fg = cpt.magenta, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSKeyword = { fg = cpt.magenta, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = { fg = cpt.magenta_br, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
-		TSKeywordOperator = { fg = cpt.cyan, style = cnf.styles.keywords }, -- For `new` keyword operator
-		TSLabel = { fg = cpt.blue }, -- For labels: `label:` in C and `:label:` in Lua.
+		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
+		TSFuncBuiltin = { fg = cp.cyan }, -- For builtin functions: `table.insert` in Lua.
+		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
+		TSInclude = { fg = cp.magenta, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSKeyword = { fg = cp.magenta, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
+		TSKeywordFunction = { fg = cp.magenta_br, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSKeywordOperator = { fg = cp.cyan, style = cnf.styles.keywords }, -- For `new` keyword operator
+		TSLabel = { fg = cp.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
-		TSNamespace = { fg = cpt.cyan }, -- For identifiers referring to modules and namespaces.
+		TSNamespace = { fg = cp.cyan }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		TSOperator = { fg = cpt.cyan }, -- For any operator: `+`, but also `->` and `*` in cpt.
-		TSParameter = { fg = cpt.orange_br }, -- For parameters of a function.
+		TSOperator = { fg = cp.cyan }, -- For any operator: `+`, but also `->` and `*` in cp.
+		TSParameter = { fg = cp.orange_br }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
-		TSProperty = { fg = cpt.red_br }, -- Same as `TSField`.
-		tomlTSProperty = { fg = cpt.blue }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = cpt.green_br }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = cpt.red }, -- For brackets and parenthesis.
-		TSPunctSpecial = { fg = cpt.white }, -- For special punctutation that does not fall in the catagories before.
-		TSRepeat = { fg = cpt.red, style = cnf.styles.keywords }, -- For keywords related to loops.
+		TSProperty = { fg = cp.red_br }, -- Same as `TSField`.
+		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
+		TSPunctDelimiter = { fg = cp.green_br }, -- For delimiters ie: `.`
+		TSPunctBracket = { fg = cp.red }, -- For brackets and parenthesis.
+		TSPunctSpecial = { fg = cp.white }, -- For special punctutation that does not fall in the catagories before.
+		TSRepeat = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
-		TSStringRegex = { fg = cpt.blue, style = cnf.styles.strings }, -- For regexes.
-		TSStringEscape = { fg = cpt.magenta, style = cnf.styles.strings }, -- For escape characters within a string.
+		TSStringRegex = { fg = cp.blue, style = cnf.styles.strings }, -- For regexes.
+		TSStringEscape = { fg = cp.magenta, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
-		TSTypeBuiltin = { fg = cpt.cyan, style = cnf.styles.keywords }, -- For builtin types.
-		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcpt.
-		TSVariableBuiltin = { fg = cpt.red, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
+		TSTypeBuiltin = { fg = cp.cyan, style = cnf.styles.keywords }, -- For builtin types.
+		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
+		TSVariableBuiltin = { fg = cp.red, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings considered text in a markup language.
-		TSTextReference = { fg = cpt.cyan },
+		TSTextReference = { fg = cp.cyan },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
-		-- TSStrike            = { };    -- For strikethrough texcpt.
+		-- TSStrike            = { };    -- For strikethrough texcp.
 		-- TSTitle             = { };    -- Text that is part of a title.
-		-- TSLiteral           = { };    -- Literal texcpt.
+		-- TSLiteral           = { };    -- Literal texcp.
 		-- TSURI               = { };    -- Any URI like a link or email.
 	}
 end

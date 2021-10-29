@@ -1,15 +1,15 @@
 local M = {}
 local util = require("catppuccino.utils.util")
 
-function M.get(cpt)
+function M.get(cp)
 	return {
-		NeogitBranch = { fg = cpt.magenta },
-		NeogitRemote = { fg = cpt.pink },
-		NeogitHunkHeader = { bg = cpt.bg_highlight, fg = cpt.fg },
-		NeogitHunkHeaderHighlight = { bg = cpt.fg_gutter, fg = cpt.blue },
-		NeogitDiffContextHighlight = { bg = util.darken(cpt.fg_gutter, 0.5), fg = cpt.fg_alt },
-		NeogitDiffDeleteHighlight = { fg = cpt.diff.delete, bg = cpt.bg },
-		NeogitDiffAddHighlight = { fg = cpt.diff.add, bg = cpt.bg },
+		NeogitBranch = { fg = cp.magenta },
+		NeogitRemote = { fg = cp.pink },
+		NeogitHunkHeader = { bg = cp.bg_highlight, fg = cp.fg },
+		NeogitHunkHeaderHighlight = { bg = cp.fg_gutter, fg = cp.blue },
+		NeogitDiffContextHighlight = { bg = util.darken(cp.fg_gutter, 0.5), fg = cp.fg_alt },
+		NeogitDiffDeleteHighlight = { fg = cp.diff.delete, bg = cp.bg },
+		NeogitDiffAddHighlight = { fg = cp.diff.add, bg = cp.bg },
 	}
 end
 

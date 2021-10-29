@@ -1,8 +1,8 @@
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 	return {
-		FernBranchText = { fg = cpt.blue },
+		FernBranchText = { fg = cp.blue },
 	}
 end
 

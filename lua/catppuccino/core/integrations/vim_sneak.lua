@@ -1,9 +1,9 @@
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 	return {
-		Sneak = { fg = cpt.bg_highlight, bg = cpt.magenta },
-		SneakScope = { bg = cpt.bg_visual },
+		Sneak = { fg = cp.bg_highlight, bg = cp.magenta },
+		SneakScope = { bg = cp.bg_visual },
 	}
 end
 

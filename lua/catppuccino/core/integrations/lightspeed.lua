@@ -10,7 +10,7 @@ local function get_prepared()
 	return is_prepared
 end
 
-function M.get(cpt)
+function M.get(cp)
 
 	if not get_prepared() then
 		local catppuccino = require("catppuccino")
@@ -28,20 +28,20 @@ function M.get(cpt)
 	end
 
 	return {
-		LightspeedLabel = {bg = cpt.bg_search, fg = cpt.fg},
-		LightspeedOverlapped = {bg = cpt.bg_visual, fg = cpt.fg},
-		LightspeedLabelDistant = {bg = cpt.magenta_br, fg = cpt.fg},
-		LightspeedLabelDistantOverlapped = {bg = cpt.magenta_br, fg = cpt.fg},
-		LightspeedShortcut = {bg = cpt.bg, fg = cpt.orange, style = "italic"},
-		LightspeedShortcutOverlapped = {bg = cpt.bg, fg = cpt.orange, style = "bold"},
-		LightspeedMaskedChar = {bg = cpt.bg, fg = cpt.red, style = "undercurl"},
-		LightspeedGreyWash = {bg = cpt.bg, fg = cpt.comment},
-		LightspeedUnlabeledMatch = {bg = cpt.bg, fg = cpt.red_br, style = "underline"},
-		LightspeedOneCharMatch = {bg = cpt.bg, fg = cpt.red_br, style = "underline"},
-		LightspeedUniqueChar = {bg = cpt.bg, fg = cpt.white_br, style = "strikethrough"},
-		LightspeedPendingOpArea = {bg = cpt.bg, fg = cpt.white_br, style = "strikethrough"},
-		LightspeedPendingChangeOpArea = {bg = cpt.bg, fg = cpt.white_br, style = "strikethrough"},
-		LightspeedCursor = {fg = cpt.bg, bg = cpt.fg},
+		LightspeedLabel = {bg = cp.bg_search, fg = cp.fg},
+		LightspeedOverlapped = {bg = cp.bg_visual, fg = cp.fg},
+		LightspeedLabelDistant = {bg = cp.magenta_br, fg = cp.fg},
+		LightspeedLabelDistantOverlapped = {bg = cp.magenta_br, fg = cp.fg},
+		LightspeedShortcut = {bg = cp.bg, fg = cp.orange, style = "italic"},
+		LightspeedShortcutOverlapped = {bg = cp.bg, fg = cp.orange, style = "bold"},
+		LightspeedMaskedChar = {bg = cp.bg, fg = cp.red, style = "undercurl"},
+		LightspeedGreyWash = {bg = cp.bg, fg = cp.comment},
+		LightspeedUnlabeledMatch = {bg = cp.bg, fg = cp.red_br, style = "underline"},
+		LightspeedOneCharMatch = {bg = cp.bg, fg = cp.red_br, style = "underline"},
+		LightspeedUniqueChar = {bg = cp.bg, fg = cp.white_br, style = "strikethrough"},
+		LightspeedPendingOpArea = {bg = cp.bg, fg = cp.white_br, style = "strikethrough"},
+		LightspeedPendingChangeOpArea = {bg = cp.bg, fg = cp.white_br, style = "strikethrough"},
+		LightspeedCursor = {fg = cp.bg, bg = cp.fg},
 	}
 end
 

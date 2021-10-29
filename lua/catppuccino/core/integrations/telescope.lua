@@ -1,11 +1,11 @@
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 	return {
-		TelescopeBorder = { fg = cpt.border_highlight },
-		TelescopeSelectionCaret = { fg = cpt.cyan },
-		TelescopeSelection = { fg = cpt.cyan, bg = cpt.bg_highlight },
-		TelescopeMatching = { fg = cpt.blue },
+		TelescopeBorder = { fg = cp.border_highlight },
+		TelescopeSelectionCaret = { fg = cp.cyan },
+		TelescopeSelection = { fg = cp.cyan, bg = cp.bg_highlight },
+		TelescopeMatching = { fg = cp.blue },
 	}
 end
 

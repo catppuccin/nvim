@@ -1,10 +1,10 @@
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 	return {
-		LspTroubleText = { fg = cpt.fg_alt },
-		LspTroubleCount = { fg = cpt.magenta, bg = cpt.fg_gutter },
-		LspTroubleNormal = { fg = cpt.fg_sidebar, bg = cpt.bg_sidebar },
+		LspTroubleText = { fg = cp.fg_alt },
+		LspTroubleCount = { fg = cp.magenta, bg = cp.fg_gutter },
+		LspTroubleNormal = { fg = cp.fg_sidebar, bg = cp.bg_sidebar },
 	}
 end
 

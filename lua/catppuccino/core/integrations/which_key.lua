@@ -1,14 +1,14 @@
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 	return {
-		WhichKey = { fg = cpt.cyan },
-		WhichKeyGroup = { fg = cpt.blue },
-		WhichKeyDesc = { fg = cpt.magenta },
-		WhichKeySeperator = { fg = cpt.comment },
-		WhichKeySeparator = { fg = cpt.comment },
-		WhichKeyFloat = { bg = cpt.bg_sidebar },
-		WhichKeyValue = { fg = cpt.comment },
+		WhichKey = { fg = cp.cyan },
+		WhichKeyGroup = { fg = cp.blue },
+		WhichKeyDesc = { fg = cp.magenta },
+		WhichKeySeperator = { fg = cp.comment },
+		WhichKeySeparator = { fg = cp.comment },
+		WhichKeyFloat = { bg = cp.bg_sidebar },
+		WhichKeyValue = { fg = cp.comment },
 	}
 end
 

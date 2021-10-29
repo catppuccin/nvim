@@ -1,18 +1,18 @@
 local M = {}
 
-function M.get(cpt)
+function M.get(cp)
 
 	local hi = {
-		IndentBlanklineChar = { fg = cpt.gray },
+		IndentBlanklineChar = { fg = cp.gray },
 	}
 
 	if cnf.integrations.indent_blankline.colored_indent_levels then
-		hi["IndentBlanklineIndent6"] = {blend = "nocombine", fg = cpt.yellow}
-		hi["IndentBlanklineIndent5"] = {blend = "nocombine", fg = cpt.red}
-		hi["IndentBlanklineIndent4"] = {blend = "nocombine", fg = cpt.green}
-		hi["IndentBlanklineIndent3"] = {blend = "nocombine", fg = cpt.orange}
-		hi["IndentBlanklineIndent2"] = {blend = "nocombine", fg = cpt.blue}
-		hi["IndentBlanklineIndent1"] = {blend = "nocombine", fg = cpt.magenta}
+		hi["IndentBlanklineIndent6"] = {blend = "nocombine", fg = cp.yellow}
+		hi["IndentBlanklineIndent5"] = {blend = "nocombine", fg = cp.red}
+		hi["IndentBlanklineIndent4"] = {blend = "nocombine", fg = cp.green}
+		hi["IndentBlanklineIndent3"] = {blend = "nocombine", fg = cp.orange}
+		hi["IndentBlanklineIndent2"] = {blend = "nocombine", fg = cp.blue}
+		hi["IndentBlanklineIndent1"] = {blend = "nocombine", fg = cp.magenta}
 	end
 
 	return hi
