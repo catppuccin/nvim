@@ -25,7 +25,7 @@ function M.get(cp)
 		-- TSError             = { };    -- For syntax/parser errors.
 		TSException = { fg = cp.magenta_br, style = cnf.styles.keywords }, -- For exception related keywords.
 		TSField = { fg = cp.red }, -- For fields.
-		rustTSField = { fg = util.darken(cp.white, 0.75) }, -- For fields.
+		rustTSField = { fg = util.darken(cp.catppuccino0, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.cyan }, -- For builtin functions: `table.insert` in Lua.
@@ -46,7 +46,7 @@ function M.get(cp)
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.green_br }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.red }, -- For brackets and parenthesis.
-		TSPunctSpecial = { fg = cp.white }, -- For special punctutation that does not fall in the catagories before.
+		TSPunctSpecial = { fg = cp.catppuccino0 }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		TSStringRegex = { fg = cp.blue, style = cnf.styles.strings }, -- For regexes.

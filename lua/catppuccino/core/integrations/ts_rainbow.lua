@@ -8,7 +8,7 @@ function M.get(cp)
 		rainbowcol4 = {bg = cp.bg, fg = cp.blue},
 		rainbowcol5 = {bg = cp.bg, fg = cp.magenta},
 		rainbowcol6 = {bg = cp.bg, fg = cp.cyan},
-		rainbowcol7 = {bg = cp.bg, fg = cp.white},
+		rainbowcol7 = {bg = cp.bg, fg = cp.catppuccino0},
 	}
 end
 
