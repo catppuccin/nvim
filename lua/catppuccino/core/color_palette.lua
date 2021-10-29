@@ -10,6 +10,8 @@ local color_palette = {
 	catppuccino8 = "#ADD692",		-- Granny Smith Apple
 	catppuccino9 = "#E3DAA3",		-- Megium Champagne
 	catppuccino10 = "#7EA1C8",		-- Cerulean Frost
+	catppuccino11 = "#A7B6DC",		-- Wild Blue Yonder
+	catppuccino12 = "#63718B",		-- Queen Blue
 }
 
 return color_palette
