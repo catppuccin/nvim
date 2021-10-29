@@ -27,14 +27,14 @@ function M.get(cp)
 		TSField = { fg = cp.catppuccino6 }, -- For fields.
 		rustTSField = { fg = util.darken(cp.catppuccino0, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
-		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
+		TSFunction = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.catppuccino3 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.catppuccino6 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For `new` keyword operator
-		TSLabel = { fg = cp.blue }, -- For labels: `label:` in C and `:label:` in Lua.
+		TSLabel = { fg = cp.catppuccino10 }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
 		TSNamespace = { fg = cp.catppuccino3 }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
@@ -43,13 +43,13 @@ function M.get(cp)
 		TSParameter = { fg = cp.catppuccino7_br }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.catppuccino6 }, -- Same as `TSField`.
-		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
+		tomlTSProperty = { fg = cp.catppuccino10 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccino8_br }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.catppuccino6 }, -- For brackets and parenthesis.
 		TSPunctSpecial = { fg = cp.catppuccino0 }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
-		TSStringRegex = { fg = cp.blue, style = cnf.styles.strings }, -- For regexes.
+		TSStringRegex = { fg = cp.catppuccino10, style = cnf.styles.strings }, -- For regexes.
 		TSStringEscape = { fg = cp.catppuccino5, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.

@@ -6,8 +6,8 @@ function M.get(cp)
 		markdownCode = { fg = cp.catppuccino3 },
 		markdownCodeBlock = { fg = cp.catppuccino3 },
 		markdownH1 = { fg = cp.catppuccino5, style = "bold" },
-		markdownH2 = { fg = cp.blue, style = "bold" },
-		markdownLinkText = { fg = cp.blue, style = "underline" },
+		markdownH2 = { fg = cp.catppuccino10, style = "bold" },
+		markdownLinkText = { fg = cp.catppuccino10, style = "underline" },
 	}
 end
 

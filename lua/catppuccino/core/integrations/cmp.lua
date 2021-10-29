@@ -7,7 +7,7 @@ function M.get(cp)
 		CmpItemAbbrDeprecated = { fg = util.darken(cp.catppuccino0, 0.56), stlye = "strikethrough" },
 		CmpItemAbbrMatch = { fg = cp.fg, style = "bold" },
 		CmpItemAbbrMatchFuzzy = { fg = cp.fg, style = "bold" },
-		CmpItemKind = { fg = cp.blue_br },
+		CmpItemKind = { fg = cp.catppuccino10 },
 		CmpItemMenu = { fg = cp.fg },
 	}
 end

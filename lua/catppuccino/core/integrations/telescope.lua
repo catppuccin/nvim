@@ -5,7 +5,7 @@ function M.get(cp)
 		TelescopeBorder = { fg = cp.border_highlight },
 		TelescopeSelectionCaret = { fg = cp.catppuccino3 },
 		TelescopeSelection = { fg = cp.catppuccino3, catppuccino2 = cp.catppuccino2_highlight },
-		TelescopeMatching = { fg = cp.blue },
+		TelescopeMatching = { fg = cp.catppuccino10 },
 	}
 end
 

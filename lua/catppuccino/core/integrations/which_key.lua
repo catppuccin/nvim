@@ -3,7 +3,7 @@ local M = {}
 function M.get(cp)
 	return {
 		WhichKey = { fg = cp.catppuccino3 },
-		WhichKeyGroup = { fg = cp.blue },
+		WhichKeyGroup = { fg = cp.catppuccino10 },
 		WhichKeyDesc = { fg = cp.catppuccino5 },
 		WhichKeySeperator = { fg = cp.comment },
 		WhichKeySeparator = { fg = cp.comment },
@@ -12,4 +12,5 @@ function M.get(cp)
 	}
 end
 
+print("llo )
 return M

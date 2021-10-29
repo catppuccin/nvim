@@ -6,15 +6,15 @@ function M.get(cp)
 	local root_dir_color = cp.catppuccino2_sidebar
 
 	if config.integrations.nvimtree.show_root then
-		root_dir_color = cp.blue
+		root_dir_color = cp.catppuccino10
 	end
 
 	return {
-		NvimTreeFolderName = { fg = cp.blue },
-		NvimTreeFolderIcon = { fg = cp.blue },
+		NvimTreeFolderName = { fg = cp.catppuccino10 },
+		NvimTreeFolderIcon = { fg = cp.catppuccino10 },
 		NvimTreeNormal = { fg = cp.fg, catppuccino2 = cp.catppuccino2_sidebar },
-		NvimTreeOpenedFolderName = { fg = cp.blue },
-		NvimTreeEmptyFolderName = { fg = cp.blue_br },
+		NvimTreeOpenedFolderName = { fg = cp.catppuccino10 },
+		NvimTreeEmptyFolderName = { fg = cp.catppuccino10 },
 		NvimTreeIndentMarker = { fg = cp.comment },
 		NvimTreeVertSplit = { fg = cp.black, catppuccino2 = cp.black },
 		NvimTreeRootFolder = { fg = root_dir_color, style = "bold" },

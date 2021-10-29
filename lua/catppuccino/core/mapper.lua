@@ -29,11 +29,11 @@ local function get_base()
 		CursorIM = { fg = cp.catppuccino2, catppuccino2 = cp.fg }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { catppuccino2 = cp.catppuccino2_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
 		CursorLine = { catppuccino2 = cp.catppuccino2_highlight }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
-		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
+		Directory = { fg = cp.catppuccino10 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccino2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.error }, -- error messages on the command line
 		VertSplit = { fg = cp.border }, -- the column separating vertically split windows
-		Folded = { fg = cp.blue, catppuccino2 = cp.fg_gutter }, -- line used for closed folds
+		Folded = { fg = cp.catppuccino10, catppuccino2 = cp.fg_gutter }, -- line used for closed folds
 		FoldColumn = { catppuccino2 = cp.catppuccino2, fg = cp.comment }, -- 'foldcolumn'
 		SignColumn = { catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.fg_gutter }, -- column where |signs| are displayed
 		SignColumnSB = { catppuccino2 = cp.catppuccino2_sidebar, fg = cp.fg_gutter }, -- column where |signs| are displayed
@@ -44,7 +44,7 @@ local function get_base()
 		ModeMsg = { fg = cp.fg_alt, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
-		MoreMsg = { fg = cp.blue }, -- |more-prompt|
+		MoreMsg = { fg = cp.catppuccino10 }, -- |more-prompt|
 		NonText = { fg = cp.comment }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.fg, catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text
 		NormalNC = { fg = cp.fg, catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text in non-current windows
@@ -55,7 +55,7 @@ local function get_base()
 		PmenuSel = { fg = cp.catppuccino3, catppuccino2 = util.darken(cp.fg_gutter, 0.8) }, -- Popup menu: selected item.
 		PmenuSbar = { catppuccino2 = util.lighten(cp.catppuccino2_popup, 0.95) }, -- Popup menu: scrollbar.
 		PmenuThumb = { catppuccino2 = cp.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
-		Question = { fg = cp.blue }, -- |hit-enter| prompt and yes/no questions
+		Question = { fg = cp.catppuccino10 }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { catppuccino2 = cp.catppuccino2_visual, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { catppuccino2 = cp.catppuccino2_search, fg = cp.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { catppuccino2 = cp.catppuccino3, fg = cp.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -69,7 +69,7 @@ local function get_base()
 		TabLine = { catppuccino2 = cp.catppuccino2_statusline, fg = cp.fg_gutter }, -- tab pages line, not active tab page label
 		TabLineFill = { catppuccino2 = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.fg_alt, catppuccino2 = cp.fg_gutter }, -- tab pages line, active tab page label
-		Title = { fg = cp.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
+		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
 		Visual = { catppuccino2 = cp.catppuccino2_visual }, -- Visual mode selection
 		VisualNOS = { catppuccino2 = cp.catppuccino2_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.warning }, -- warning messages
@@ -90,7 +90,7 @@ local function get_base()
 		Float = { fg = cp.catppuccino7_br }, --    a floating point constant: 2.3e10
 		Boolean = { fg = cp.catppuccino7_br }, --  a boolean constant: TRUE, false
 		Identifier = { fg = cp.catppuccino3, style = cnf.styles.variables }, -- (prefercatppuccino6) any variable name
-		Function = { fg = cp.blue, style = cnf.styles.functions }, -- function name (also: methods for classes)
+		Function = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- function name (also: methods for classes)
 		Statement = { fg = cp.catppuccino4 }, -- (prefercatppuccino6) any statement
 		Conditional = { fg = cp.catppuccino6 }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.catppuccino6 }, --   for, do, while, etcp.
@@ -109,7 +109,7 @@ local function get_base()
 		StorageClass = { fg = cp.catppuccino9 }, -- static, register, volatile, etcp.
 		Structure = { fg = cp.catppuccino9 }, --  struct, union, enum, etcp.
 		Typedef = { fg = cp.catppuccino9 }, --  A typedef
-		Special = { fg = cp.blue }, -- (prefercatppuccino6) any special symbol
+		Special = { fg = cp.catppuccino10 }, -- (prefercatppuccino6) any special symbol
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
@@ -125,15 +125,15 @@ local function get_base()
 		Error = { fg = cp.error }, -- (prefercatppuccino6) any erroneous construct
 		Todo = { catppuccino2 = cp.catppuccino9, fg = cp.catppuccino2, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.catppuccino9 },
-		qfFileName = { fg = cp.blue },
+		qfFileName = { fg = cp.catppuccino10 },
 		htmlH1 = { fg = cp.catppuccino5, style = "bold" },
-		htmlH2 = { fg = cp.blue, style = "bold" },
+		htmlH2 = { fg = cp.catppuccino10, style = "bold" },
 		-- mkdHeading = { fg = cp.catppuccino7, style = "bold" },
 		-- mkdCode = { catppuccino2 = cp.terminal_black, fg = cp.fg },
 		mkdCodeDelimiter = { catppuccino2 = cp.terminal_black, fg = cp.fg },
 		mkdCodeStart = { fg = cp.catppuccino3, style = "bold" },
 		mkdCodeEnd = { fg = cp.catppuccino3, style = "bold" },
-		-- mkdLink = { fg = cp.blue, style = "underline" },
+		-- mkdLink = { fg = cp.catppuccino10, style = "underline" },
 
 		-- debugging
 		debugPC = { catppuccino2 = cp.catppuccino2_sidebar }, -- used for highlighting the current line in terminal-debug
@@ -147,7 +147,7 @@ local function get_base()
 		diffChanged = { fg = cp.diff.change },
 		diffOldFile = { fg = cp.catppuccino9 },
 		diffNewFile = { fg = cp.catppuccino7 },
-		diffFile = { fg = cp.blue },
+		diffFile = { fg = cp.catppuccino10 },
 		diffLine = { fg = cp.comment },
 		diffIndexLine = { fg = cp.catppuccino5 },
 		DiffAdd = { fg = cp.diff.add, catppuccino2 = cp.catppuccino2 }, -- diff mode: Added line |diff.txt|
@@ -164,7 +164,7 @@ local function get_base()
 		GlyphPalette1 = { fg = cp.catppuccino6 },
 		GlyphPalette2 = { fg = cp.catppuccino8 },
 		GlyphPalette3 = { fg = cp.catppuccino9 },
-		GlyphPalette4 = { fg = cp.blue },
+		GlyphPalette4 = { fg = cp.catppuccino10 },
 		GlyphPalette6 = { fg = cp.catppuccino8_br },
 		GlyphPalette7 = { fg = cp.fg },
 		GlyphPalette9 = { fg = cp.catppuccino6 },
