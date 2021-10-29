@@ -91,16 +91,16 @@ local function get_base()
 		Boolean = { fg = cp.orange_br }, --  a boolean constant: TRUE, false
 		Identifier = { fg = cp.catppuccino3, style = cnf.styles.variables }, -- (preferred) any variable name
 		Function = { fg = cp.blue, style = cnf.styles.functions }, -- function name (also: methods for classes)
-		Statement = { fg = cp.magenta_br }, -- (preferred) any statement
+		Statement = { fg = cp.catppuccino4 }, -- (preferred) any statement
 		Conditional = { fg = cp.red }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.red }, --   for, do, while, etcp.
-		Label = { fg = cp.magenta_br }, --    case, default, etcp.
+		Label = { fg = cp.catppuccino4 }, --    case, default, etcp.
 		Operator = { fg = cp.fg_alt }, -- "sizeof", "+", "*", etcp.
-		Keyword = { fg = cp.magenta, style = cnf.styles.keywords }, --  any other keyword
+		Keyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = cp.pink }, -- (preferred) generic Preprocessor
-		Include = { fg = cp.pink }, --  preprocessor #include
+		PreProc = { fg = cp.catppuccino5 }, -- (preferred) generic Preprocessor
+		Include = { fg = cp.catppuccino5 }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
@@ -126,7 +126,7 @@ local function get_base()
 		Todo = { catppuccino2 = cp.yellow, fg = cp.catppuccino2, style = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.yellow },
 		qfFileName = { fg = cp.blue },
-		htmlH1 = { fg = cp.magenta, style = "bold" },
+		htmlH1 = { fg = cp.catppuccino5, style = "bold" },
 		htmlH2 = { fg = cp.blue, style = "bold" },
 		-- mkdHeading = { fg = cp.orange, style = "bold" },
 		-- mkdCode = { catppuccino2 = cp.terminal_black, fg = cp.fg },
@@ -149,7 +149,7 @@ local function get_base()
 		diffNewFile = { fg = cp.orange },
 		diffFile = { fg = cp.blue },
 		diffLine = { fg = cp.comment },
-		diffIndexLine = { fg = cp.magenta },
+		diffIndexLine = { fg = cp.catppuccino5 },
 		DiffAdd = { fg = cp.diff.add, catppuccino2 = cp.catppuccino2 }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = cp.diff.change, catppuccino2 = cp.catppuccino2 }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = cp.diff.delete, catppuccino2 = cp.catppuccino2 }, -- diff mode: Deleted line |diff.txt|

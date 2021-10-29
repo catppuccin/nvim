@@ -6,7 +6,7 @@ function M.get(cp)
 		rainbowcol2 = {catppuccino2 = cp.catppuccino2, fg = cp.green},
 		rainbowcol3 = {catppuccino2 = cp.catppuccino2, fg = cp.yellow},
 		rainbowcol4 = {catppuccino2 = cp.catppuccino2, fg = cp.blue},
-		rainbowcol5 = {catppuccino2 = cp.catppuccino2, fg = cp.magenta},
+		rainbowcol5 = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino5},
 		rainbowcol6 = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino3},
 		rainbowcol7 = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0},
 	}

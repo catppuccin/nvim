@@ -30,8 +30,8 @@ function M.get(cp)
 	return {
 		LightspeedLabel = {catppuccino2 = cp.catppuccino2_search, fg = cp.fg},
 		LightspeedOverlapped = {catppuccino2 = cp.catppuccino2_visual, fg = cp.fg},
-		LightspeedLabelDistant = {catppuccino2 = cp.magenta_br, fg = cp.fg},
-		LightspeedLabelDistantOverlapped = {catppuccino2 = cp.magenta_br, fg = cp.fg},
+		LightspeedLabelDistant = {catppuccino2 = cp.catppuccino4, fg = cp.fg},
+		LightspeedLabelDistantOverlapped = {catppuccino2 = cp.catppuccino4, fg = cp.fg},
 		LightspeedShortcut = {catppuccino2 = cp.catppuccino2, fg = cp.orange, style = "italic"},
 		LightspeedShortcutOverlapped = {catppuccino2 = cp.catppuccino2, fg = cp.orange, style = "bold"},
 		LightspeedMaskedChar = {catppuccino2 = cp.catppuccino2, fg = cp.red, style = "undercurl"},

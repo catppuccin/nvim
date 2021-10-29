@@ -17,22 +17,22 @@ function M.get(cp)
 		TSNote = { fg = cp.catppuccino2, catppuccino2 = cp.info },
 		TSWarning = { fg = cp.catppuccino2, catppuccino2 = cp.warning },
 		TSDanger = { fg = cp.catppuccino2, catppuccino2 = cp.error },
-		TSConstructor = { fg = cp.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConstructor = { fg = cp.catppuccino5 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConditional = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
 		TSConstant = { fg = cp.orange }, -- For constants
 		TSConstBuiltin = { fg = cp.orange_br, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cp.
 		-- TSError             = { };    -- For syntax/parser errors.
-		TSException = { fg = cp.magenta_br, style = cnf.styles.keywords }, -- For exception related keywords.
+		TSException = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For exception related keywords.
 		TSField = { fg = cp.red }, -- For fields.
 		rustTSField = { fg = util.darken(cp.catppuccino0, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.catppuccino3 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
-		TSInclude = { fg = cp.magenta, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSKeyword = { fg = cp.magenta, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = { fg = cp.magenta_br, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSInclude = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSKeyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
+		TSKeywordFunction = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For `new` keyword operator
 		TSLabel = { fg = cp.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
@@ -50,7 +50,7 @@ function M.get(cp)
 		TSRepeat = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		TSStringRegex = { fg = cp.blue, style = cnf.styles.strings }, -- For regexes.
-		TSStringEscape = { fg = cp.magenta, style = cnf.styles.strings }, -- For escape characters within a string.
+		TSStringEscape = { fg = cp.catppuccino5, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		TSTypeBuiltin = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For builtin types.

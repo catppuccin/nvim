@@ -18,14 +18,14 @@ function M.get(cp)
 		NvimTreeIndentMarker = { fg = cp.comment },
 		NvimTreeVertSplit = { fg = cp.black, catppuccino2 = cp.black },
 		NvimTreeRootFolder = { fg = root_dir_color, style = "bold" },
-		NvimTreeSymlink = { fg = cp.magenta },
+		NvimTreeSymlink = { fg = cp.catppuccino5 },
 		NvimTreeStatuslineNc = { fg = cp.black, catppuccino2 = cp.black },
 		NvimTreeGitDirty = { fg = cp.diff.change },
 		NvimTreeGitNew = { fg = cp.diff.add },
 		NvimTreeGitDeleted = { fg = cp.diff.delete },
 		NvimTreeSpecialFile = { fg = cp.catppuccino3 },
 		NvimTreeImageFile = { fg = cp.fg_sidebar },
-		NvimTreeOpenedFile = { fg = cp.magenta },
+		NvimTreeOpenedFile = { fg = cp.catppuccino5 },
 	}
 end
 
