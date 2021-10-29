@@ -2,8 +2,7 @@
 local config = {}
 
 config.options = {
-	colorscheme = "dark_catppuccino",
-	transparency = false,
+	transparent_background = false,
 	term_colors = false,
 	styles = {
 		comments = "italic",
