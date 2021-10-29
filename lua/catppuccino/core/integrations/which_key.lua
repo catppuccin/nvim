@@ -2,12 +2,12 @@ local M = {}
 
 function M.get(cp)
 	return {
-		WhichKey = { fg = cp.cyan },
+		WhichKey = { fg = cp.catppuccino3 },
 		WhichKeyGroup = { fg = cp.blue },
 		WhichKeyDesc = { fg = cp.magenta },
 		WhichKeySeperator = { fg = cp.comment },
 		WhichKeySeparator = { fg = cp.comment },
-		WhichKeyFloat = { bg = cp.bg_sidebar },
+		WhichKeyFloat = { catppuccino2 = cp.catppuccino2_sidebar },
 		WhichKeyValue = { fg = cp.comment },
 	}
 end

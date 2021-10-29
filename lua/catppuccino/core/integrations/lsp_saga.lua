@@ -6,14 +6,14 @@ function M.get(cp)
 		DiagnosticWarning = { fg = cp.warning },
 		DiagnosticInformation = { fg = cp.info },
 		DiagnosticHint = { fg = cp.hint },
-		LspFloatWinNormal = { bg = cp.bg_float },
+		LspFloatWinNormal = { catppuccino2 = cp.catppuccino2_float },
 		LspFloatWinBorder = { fg = cp.border_highlight },
-		LspSagaBorderTitle = { fg = cp.cyan },
+		LspSagaBorderTitle = { fg = cp.catppuccino3 },
 		LspSagaHoverBorder = { fg = cp.blue },
 		LspSagaRenameBorder = { fg = cp.green },
 		LspSagaDefPreviewBorder = { fg = cp.green },
 		LspSagaCodeActionBorder = { fg = cp.blue },
-		LspSagaFinderSelection = { fg = cp.bg_visual },
+		LspSagaFinderSelection = { fg = cp.catppuccino2_visual },
 		LspSagaCodeActionTitle = { fg = cp.blue1 },
 		LspSagaCodeActionContent = { fg = cp.purple },
 		LspSagaSignatureHelpBorder = { fg = cp.red },
@@ -21,7 +21,7 @@ function M.get(cp)
 		DefinitionCount = { fg = cp.purple },
 		DefinitionIcon = { fg = cp.blue },
 		ReferencesIcon = { fg = cp.blue },
-		TargetWord = { fg = cp.cyan },
+		TargetWord = { fg = cp.catppuccino3 },
 	}
 end
 return M

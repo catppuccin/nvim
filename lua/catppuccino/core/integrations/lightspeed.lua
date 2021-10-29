@@ -28,20 +28,20 @@ function M.get(cp)
 	end
 
 	return {
-		LightspeedLabel = {bg = cp.bg_search, fg = cp.fg},
-		LightspeedOverlapped = {bg = cp.bg_visual, fg = cp.fg},
-		LightspeedLabelDistant = {bg = cp.magenta_br, fg = cp.fg},
-		LightspeedLabelDistantOverlapped = {bg = cp.magenta_br, fg = cp.fg},
-		LightspeedShortcut = {bg = cp.bg, fg = cp.orange, style = "italic"},
-		LightspeedShortcutOverlapped = {bg = cp.bg, fg = cp.orange, style = "bold"},
-		LightspeedMaskedChar = {bg = cp.bg, fg = cp.red, style = "undercurl"},
-		LightspeedGreyWash = {bg = cp.bg, fg = cp.comment},
-		LightspeedUnlabeledMatch = {bg = cp.bg, fg = cp.red_br, style = "underline"},
-		LightspeedOneCharMatch = {bg = cp.bg, fg = cp.red_br, style = "underline"},
-		LightspeedUniqueChar = {bg = cp.bg, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedPendingOpArea = {bg = cp.bg, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedPendingChangeOpArea = {bg = cp.bg, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedCursor = {fg = cp.bg, bg = cp.fg},
+		LightspeedLabel = {catppuccino2 = cp.catppuccino2_search, fg = cp.fg},
+		LightspeedOverlapped = {catppuccino2 = cp.catppuccino2_visual, fg = cp.fg},
+		LightspeedLabelDistant = {catppuccino2 = cp.magenta_br, fg = cp.fg},
+		LightspeedLabelDistantOverlapped = {catppuccino2 = cp.magenta_br, fg = cp.fg},
+		LightspeedShortcut = {catppuccino2 = cp.catppuccino2, fg = cp.orange, style = "italic"},
+		LightspeedShortcutOverlapped = {catppuccino2 = cp.catppuccino2, fg = cp.orange, style = "bold"},
+		LightspeedMaskedChar = {catppuccino2 = cp.catppuccino2, fg = cp.red, style = "undercurl"},
+		LightspeedGreyWash = {catppuccino2 = cp.catppuccino2, fg = cp.comment},
+		LightspeedUnlabeledMatch = {catppuccino2 = cp.catppuccino2, fg = cp.red_br, style = "underline"},
+		LightspeedOneCharMatch = {catppuccino2 = cp.catppuccino2, fg = cp.red_br, style = "underline"},
+		LightspeedUniqueChar = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
+		LightspeedPendingOpArea = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
+		LightspeedPendingChangeOpArea = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
+		LightspeedCursor = {fg = cp.catppuccino2, catppuccino2 = cp.fg},
 	}
 end
 

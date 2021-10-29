@@ -14,9 +14,9 @@ function M.get(cp)
 		TSBoolean = { fg = cp.orange_br, style = cnf.styles.keywords }, -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TSComment           = { };    -- For comment blocks.
-		TSNote = { fg = cp.bg, bg = cp.info },
-		TSWarning = { fg = cp.bg, bg = cp.warning },
-		TSDanger = { fg = cp.bg, bg = cp.error },
+		TSNote = { fg = cp.catppuccino2, catppuccino2 = cp.info },
+		TSWarning = { fg = cp.catppuccino2, catppuccino2 = cp.warning },
+		TSDanger = { fg = cp.catppuccino2, catppuccino2 = cp.error },
 		TSConstructor = { fg = cp.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConditional = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
 		TSConstant = { fg = cp.orange }, -- For constants
@@ -28,18 +28,18 @@ function M.get(cp)
 		rustTSField = { fg = util.darken(cp.catppuccino0, 0.75) }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
-		TSFuncBuiltin = { fg = cp.cyan }, -- For builtin functions: `table.insert` in Lua.
+		TSFuncBuiltin = { fg = cp.catppuccino3 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.magenta, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.magenta, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = cp.magenta_br, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
-		TSKeywordOperator = { fg = cp.cyan, style = cnf.styles.keywords }, -- For `new` keyword operator
+		TSKeywordOperator = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For `new` keyword operator
 		TSLabel = { fg = cp.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
-		TSNamespace = { fg = cp.cyan }, -- For identifiers referring to modules and namespaces.
+		TSNamespace = { fg = cp.catppuccino3 }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		TSOperator = { fg = cp.cyan }, -- For any operator: `+`, but also `->` and `*` in cp.
+		TSOperator = { fg = cp.catppuccino3 }, -- For any operator: `+`, but also `->` and `*` in cp.
 		TSParameter = { fg = cp.orange_br }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.red_br }, -- Same as `TSField`.
@@ -53,13 +53,13 @@ function M.get(cp)
 		TSStringEscape = { fg = cp.magenta, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
-		TSTypeBuiltin = { fg = cp.cyan, style = cnf.styles.keywords }, -- For builtin types.
+		TSTypeBuiltin = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For builtin types.
 		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSVariableBuiltin = { fg = cp.red, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings considered text in a markup language.
-		TSTextReference = { fg = cp.cyan },
+		TSTextReference = { fg = cp.catppuccino3 },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough texcp.

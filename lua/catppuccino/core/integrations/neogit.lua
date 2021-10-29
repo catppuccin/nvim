@@ -5,11 +5,11 @@ function M.get(cp)
 	return {
 		NeogitBranch = { fg = cp.magenta },
 		NeogitRemote = { fg = cp.pink },
-		NeogitHunkHeader = { bg = cp.bg_highlight, fg = cp.fg },
-		NeogitHunkHeaderHighlight = { bg = cp.fg_gutter, fg = cp.blue },
-		NeogitDiffContextHighlight = { bg = util.darken(cp.fg_gutter, 0.5), fg = cp.fg_alt },
-		NeogitDiffDeleteHighlight = { fg = cp.diff.delete, bg = cp.bg },
-		NeogitDiffAddHighlight = { fg = cp.diff.add, bg = cp.bg },
+		NeogitHunkHeader = { catppuccino2 = cp.catppuccino2_highlight, fg = cp.fg },
+		NeogitHunkHeaderHighlight = { catppuccino2 = cp.fg_gutter, fg = cp.blue },
+		NeogitDiffContextHighlight = { catppuccino2 = util.darken(cp.fg_gutter, 0.5), fg = cp.fg_alt },
+		NeogitDiffDeleteHighlight = { fg = cp.diff.delete, catppuccino2 = cp.catppuccino2 },
+		NeogitDiffAddHighlight = { fg = cp.diff.add, catppuccino2 = cp.catppuccino2 },
 	}
 end
 

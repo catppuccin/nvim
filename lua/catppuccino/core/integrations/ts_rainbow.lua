@@ -2,13 +2,13 @@ local M = {}
 
 function M.get(cp)
 	return {
-		rainbowcol1 = {bg = cp.bg, fg = cp.red},
-		rainbowcol2 = {bg = cp.bg, fg = cp.green},
-		rainbowcol3 = {bg = cp.bg, fg = cp.yellow},
-		rainbowcol4 = {bg = cp.bg, fg = cp.blue},
-		rainbowcol5 = {bg = cp.bg, fg = cp.magenta},
-		rainbowcol6 = {bg = cp.bg, fg = cp.cyan},
-		rainbowcol7 = {bg = cp.bg, fg = cp.catppuccino0},
+		rainbowcol1 = {catppuccino2 = cp.catppuccino2, fg = cp.red},
+		rainbowcol2 = {catppuccino2 = cp.catppuccino2, fg = cp.green},
+		rainbowcol3 = {catppuccino2 = cp.catppuccino2, fg = cp.yellow},
+		rainbowcol4 = {catppuccino2 = cp.catppuccino2, fg = cp.blue},
+		rainbowcol5 = {catppuccino2 = cp.catppuccino2, fg = cp.magenta},
+		rainbowcol6 = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino3},
+		rainbowcol7 = {catppuccino2 = cp.catppuccino2, fg = cp.catppuccino0},
 	}
 end
 

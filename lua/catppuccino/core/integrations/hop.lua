@@ -2,10 +2,10 @@ local M = {}
 
 function M.get(cp)
 	return {
-		HopNextKey = { bg = cp.bg, fg = cp.orange, style = "bold,underline" },
-		HopNextKey1 = { bg = cp.bg, fg = cp.blue, style = "bold" },
-		HopNextKey2 = { bg = cp.bg, fg = cp.green, style = "bold,italic" },
-		HopUnmatched = { bg = cp.bg, fg = cp.comment },
+		HopNextKey = { catppuccino2 = cp.catppuccino2, fg = cp.orange, style = "bold,underline" },
+		HopNextKey1 = { catppuccino2 = cp.catppuccino2, fg = cp.blue, style = "bold" },
+		HopNextKey2 = { catppuccino2 = cp.catppuccino2, fg = cp.green, style = "bold,italic" },
+		HopUnmatched = { catppuccino2 = cp.catppuccino2, fg = cp.comment },
 	}
 end
 
