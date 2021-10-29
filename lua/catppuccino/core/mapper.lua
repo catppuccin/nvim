@@ -21,7 +21,7 @@ local function get_base()
 	local cp = color_palette
 
 	return {
-		Comment = { fg = cp.comment, style = cnf.styles.comments }, -- any comment
+		catppuccino12 = { fg = cp.catppuccino12, style = cnf.styles.catppuccino12s }, -- any catppuccino12
 		ColorColumn = { catppuccino2 = cp.catppuccino2_visual }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = cp.catppuccino2, catppuccino2 = cp.fg }, -- character under the cursor
@@ -34,7 +34,7 @@ local function get_base()
 		ErrorMsg = { fg = cp.error }, -- error messages on the command line
 		VertSplit = { fg = cp.border }, -- the column separating vertically split windows
 		Folded = { fg = cp.catppuccino10, catppuccino2 = cp.fg_gutter }, -- line used for closed folds
-		FoldColumn = { catppuccino2 = cp.catppuccino2, fg = cp.comment }, -- 'foldcolumn'
+		FoldColumn = { catppuccino2 = cp.catppuccino2, fg = cp.catppuccino12 }, -- 'foldcolumn'
 		SignColumn = { catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.fg_gutter }, -- column where |signs| are displayed
 		SignColumnSB = { catppuccino2 = cp.catppuccino2_sidebar, fg = cp.fg_gutter }, -- column where |signs| are displayed
 		Substitute = { catppuccino2 = cp.catppuccino6, fg = cp.black }, -- |:substitute| replacement text highlighting
@@ -45,7 +45,7 @@ local function get_base()
 		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.catppuccino10 }, -- |more-prompt|
-		NonText = { fg = cp.comment }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		NonText = { fg = cp.catppuccino12 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.fg, catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text
 		NormalNC = { fg = cp.fg, catppuccino2 = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text in non-current windows
 		NormalSB = { fg = cp.fg_sidebar, catppuccino2 = cp.catppuccino2_sidebar }, -- normal text in non-current windows
@@ -77,9 +77,9 @@ local function get_base()
 		WildMenu = { catppuccino2 = cp.catppuccino2_visual }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
-		-- commented out groups should chain up to their "prefercatppuccino6" group by
+		-- catppuccino12ed out groups should chain up to their "prefercatppuccino6" group by
 		-- default,
-		-- Uncomment and edit if you want more specific syntax highlighting.
+		-- Uncatppuccino12 and edit if you want more specific syntax highlighting.
 
 		-- code itself
 
@@ -113,7 +113,7 @@ local function get_base()
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
-		-- SpecialComment= { }, -- special things inside a comment
+		-- Specialcatppuccino12= { }, -- special things inside a catppuccino12
 		-- Debug         = { }, --    debugging statements
 
 		Underlined = { style = "underline" }, -- (prefercatppuccino6) text that stands out, HTML links
@@ -148,7 +148,7 @@ local function get_base()
 		diffOldFile = { fg = cp.catppuccino9 },
 		diffNewFile = { fg = cp.catppuccino7 },
 		diffFile = { fg = cp.catppuccino10 },
-		diffLine = { fg = cp.comment },
+		diffLine = { fg = cp.catppuccino12 },
 		diffIndexLine = { fg = cp.catppuccino5 },
 		DiffAdd = { fg = cp.diff.add, catppuccino2 = cp.catppuccino2 }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = cp.diff.change, catppuccino2 = cp.catppuccino2 }, -- diff mode: Changed line |diff.txt|

@@ -15,7 +15,7 @@ function M.get(cp)
 		NvimTreeNormal = { fg = cp.fg, catppuccino2 = cp.catppuccino2_sidebar },
 		NvimTreeOpenedFolderName = { fg = cp.catppuccino10 },
 		NvimTreeEmptyFolderName = { fg = cp.catppuccino10 },
-		NvimTreeIndentMarker = { fg = cp.comment },
+		NvimTreeIndentMarker = { fg = cp.catppuccino12 },
 		NvimTreeVertSplit = { fg = cp.black, catppuccino2 = cp.black },
 		NvimTreeRootFolder = { fg = root_dir_color, style = "bold" },
 		NvimTreeSymlink = { fg = cp.catppuccino5 },

@@ -13,7 +13,7 @@ function M.get(cp)
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
 		TSBoolean = { fg = cp.catppuccino7, style = cnf.styles.keywords }, -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
-		-- TSComment           = { };    -- For comment blocks.
+		-- TScatppuccino12           = { };    -- For catppuccino12 blocks.
 		TSNote = { fg = cp.catppuccino2, catppuccino2 = cp.info },
 		TSWarning = { fg = cp.catppuccino2, catppuccino2 = cp.warning },
 		TSDanger = { fg = cp.catppuccino2, catppuccino2 = cp.error },

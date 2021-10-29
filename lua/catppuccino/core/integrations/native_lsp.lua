@@ -40,7 +40,7 @@ function M.get(cp)
 		LspDiagnosticsUnderlineWarning = { style = underlines.warnings, sp = cp.warning }, -- Used to underline "Warning" diagnostics
 		LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = cp.info }, -- Used to underline "Information" diagnostics
 		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = cp.hint }, -- Used to underline "Hint" diagnostics
-		LspCodeLens = { fg = cp.comment }, -- virtual text of the codelens
+		LspCodeLens = { fg = cp.catppuccino12 }, -- virtual text of the codelens
 	}
 end
 
