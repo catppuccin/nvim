@@ -84,8 +84,8 @@ local function get_base()
 		-- code itself
 
 		Constant = { fg = cp.catppuccino7 }, -- (prefercatppuccino6) any constant
-		String = { fg = cp.green, style = cnf.styles.strings }, -- a string constant: "this is a string"
-		Character = { fg = cp.green }, --  a character constant: 'c', '\n'
+		String = { fg = cp.catppuccino8, style = cnf.styles.strings }, -- a string constant: "this is a string"
+		Character = { fg = cp.catppuccino8 }, --  a character constant: 'c', '\n'
 		Number = { fg = cp.catppuccino7_br }, --   a number constant: 234, 0xff
 		Float = { fg = cp.catppuccino7_br }, --    a floating point constant: 2.3e10
 		Boolean = { fg = cp.catppuccino7_br }, --  a boolean constant: TRUE, false
@@ -156,16 +156,16 @@ local function get_base()
 		DiffText = { fg = cp.diff.text, catppuccino2 = cp.catppuccino2 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.error },
-		healthSuccess = { fg = cp.green_br },
+		healthSuccess = { fg = cp.catppuccino8_br },
 		healthWarning = { fg = cp.warning },
 		-- misc
 
 		-- glyphs
 		GlyphPalette1 = { fg = cp.catppuccino6 },
-		GlyphPalette2 = { fg = cp.green },
+		GlyphPalette2 = { fg = cp.catppuccino8 },
 		GlyphPalette3 = { fg = cp.yellow },
 		GlyphPalette4 = { fg = cp.blue },
-		GlyphPalette6 = { fg = cp.green_br },
+		GlyphPalette6 = { fg = cp.catppuccino8_br },
 		GlyphPalette7 = { fg = cp.fg },
 		GlyphPalette9 = { fg = cp.catppuccino6 },
 	}
