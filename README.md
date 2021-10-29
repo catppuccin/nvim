@@ -1,6 +1,5 @@
-<p align="center">
-<img src ="https://i.imgur.com/q8xbTsC.png">
-</p><hr>
+# Read this:
+Hello there and thanks for following the development of Catppuccino.nvim: remastered version. This branch is meant to hopefully end up being merged to main. As of now, all of the development discussions are carried out on #44, so feel free to leave your suggestions and ideas there :)
 
 # About
 
