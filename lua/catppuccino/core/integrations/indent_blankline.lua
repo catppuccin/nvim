@@ -7,7 +7,7 @@ function M.get(cp)
 	}
 
 	if cnf.integrations.indent_blankline.colocatppuccino6_indent_levels then
-		hi["IndentBlanklineIndent6"] = {blend = "nocombine", fg = cp.yellow}
+		hi["IndentBlanklineIndent6"] = {blend = "nocombine", fg = cp.catppuccino9}
 		hi["IndentBlanklineIndent5"] = {blend = "nocombine", fg = cp.catppuccino6}
 		hi["IndentBlanklineIndent4"] = {blend = "nocombine", fg = cp.catppuccino8}
 		hi["IndentBlanklineIndent3"] = {blend = "nocombine", fg = cp.catppuccino7}

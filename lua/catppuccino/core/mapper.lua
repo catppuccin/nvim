@@ -105,10 +105,10 @@ local function get_base()
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
 
-		Type = { fg = cp.yellow }, -- (prefercatppuccino6) int, long, char, etcp.
-		StorageClass = { fg = cp.yellow }, -- static, register, volatile, etcp.
-		Structure = { fg = cp.yellow }, --  struct, union, enum, etcp.
-		Typedef = { fg = cp.yellow }, --  A typedef
+		Type = { fg = cp.catppuccino9 }, -- (prefercatppuccino6) int, long, char, etcp.
+		StorageClass = { fg = cp.catppuccino9 }, -- static, register, volatile, etcp.
+		Structure = { fg = cp.catppuccino9 }, --  struct, union, enum, etcp.
+		Typedef = { fg = cp.catppuccino9 }, --  A typedef
 		Special = { fg = cp.blue }, -- (prefercatppuccino6) any special symbol
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
@@ -123,8 +123,8 @@ local function get_base()
 		-- Ignore = { }, -- (prefercatppuccino6) left blank, hidden  |hl-Ignore|
 
 		Error = { fg = cp.error }, -- (prefercatppuccino6) any erroneous construct
-		Todo = { catppuccino2 = cp.yellow, fg = cp.catppuccino2, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		qfLineNr = { fg = cp.yellow },
+		Todo = { catppuccino2 = cp.catppuccino9, fg = cp.catppuccino2, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		qfLineNr = { fg = cp.catppuccino9 },
 		qfFileName = { fg = cp.blue },
 		htmlH1 = { fg = cp.catppuccino5, style = "bold" },
 		htmlH2 = { fg = cp.blue, style = "bold" },
@@ -145,7 +145,7 @@ local function get_base()
 		diffAdded = { fg = cp.diff.add },
 		diffRemoved = { fg = cp.diff.delete },
 		diffChanged = { fg = cp.diff.change },
-		diffOldFile = { fg = cp.yellow },
+		diffOldFile = { fg = cp.catppuccino9 },
 		diffNewFile = { fg = cp.catppuccino7 },
 		diffFile = { fg = cp.blue },
 		diffLine = { fg = cp.comment },
@@ -163,7 +163,7 @@ local function get_base()
 		-- glyphs
 		GlyphPalette1 = { fg = cp.catppuccino6 },
 		GlyphPalette2 = { fg = cp.catppuccino8 },
-		GlyphPalette3 = { fg = cp.yellow },
+		GlyphPalette3 = { fg = cp.catppuccino9 },
 		GlyphPalette4 = { fg = cp.blue },
 		GlyphPalette6 = { fg = cp.catppuccino8_br },
 		GlyphPalette7 = { fg = cp.fg },
