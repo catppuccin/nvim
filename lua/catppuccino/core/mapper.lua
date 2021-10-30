@@ -36,10 +36,10 @@ local function get_base()
 		Folded = { fg = cp.catppuccino10, bg = cp.catppuccino13 }, -- line used for closed folds
 		FoldColumn = { bg = cp.catppuccino2, fg = cp.catppuccino12 }, -- 'foldcolumn'
 		SignColumn = { bg = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.catppuccino13 }, -- column where |signs| are displayed
-		SignColumnSB = { bg = cp.catppuccino2_sidebar, fg = cp.catppuccino13 }, -- column where |signs| are displayed
+		SignColumnSB = { bg = cp.catppuccino14, fg = cp.catppuccino13 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.catppuccino6, fg = cp.black }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
-		CursorLineNr = { fg = cp.catppuccino11_alt }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
+		CursorLineNr = { fg = cp.catppuccino16 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.catppuccino11_alt, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
@@ -48,7 +48,7 @@ local function get_base()
 		NonText = { fg = cp.catppuccino12 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.catppuccino11, bg = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text
 		NormalNC = { fg = cp.catppuccino11, bg = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text in non-current windows
-		NormalSB = { fg = cp.catppuccino11_sidebar, bg = cp.catppuccino2_sidebar }, -- normal text in non-current windows
+		NormalSB = { fg = cp.fg, bg = cp.catppuccino14 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.catppuccino11, bg = cp.catppuccino2_float }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.border_highlight },
 		Pmenu = { bg = cp.catppuccino2_popup, fg = cp.catppuccino11 }, -- Popup menu: normal item.
@@ -64,7 +64,7 @@ local function get_base()
 		SpellCap = { sp = cp.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = cp.catppuccino11_sidebar, bg = cp.catppuccino2_statusline }, -- status line of current window
+		StatusLine = { fg = cp.catppuccino11, bg = cp.catppuccino15 }, -- status line of current window
 		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino2_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
@@ -136,7 +136,7 @@ local function get_base()
 		-- mkdLink = { fg = cp.catppuccino10, style = "underline" },
 
 		-- debugging
-		debugPC = { bg = cp.catppuccino2_sidebar }, -- used for highlighting the current line in terminal-debug
+		debugPC = { bg = cp.catppuccino14 }, -- used for highlighting the current line in terminal-debug
 		debugBreakpoint = { bg = util.darken(cp.info, 0.1), fg = cp.info }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
 		illuminatedWord = { bg = cp.catppuccino13 },

@@ -12,7 +12,10 @@ local color_palette = {
 	catppuccino10 = "#7EA1C8",		-- Cerulean Frost
 	catppuccino11 = "#A7B6DC",		-- Wild Blue Yonder
 	catppuccino12 = "#63718B",		-- Queen Blue
-	catppuccino
+	catppuccino13 = "#3e4058",		-- Independence
+	catppuccino14 = "#110E17",
+	catppuccino15 = "#1B1927",
+	catppuccino16 = "#201C2B",
 }
 
 return color_palette
