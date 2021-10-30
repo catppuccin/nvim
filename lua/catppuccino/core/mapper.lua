@@ -142,18 +142,18 @@ local function get_base()
 		illuminatedWord = { bg = cp.catppuccino13 },
 		illuminatedCurWord = { bg = cp.catppuccino13 },
 		-- diff
-		diffAdded = { fg = cp.diff.add },
-		diffRemoved = { fg = cp.diff.delete },
-		diffChanged = { fg = cp.diff.change },
+		diffAdded = { fg = cp.catppuccino10 },
+		diffRemoved = { fg = cp.catppuccino6 },
+		diffChanged = { fg = cp.catppuccino9 },
 		diffOldFile = { fg = cp.catppuccino9 },
 		diffNewFile = { fg = cp.catppuccino7 },
 		diffFile = { fg = cp.catppuccino10 },
 		diffLine = { fg = cp.catppuccino12 },
 		diffIndexLine = { fg = cp.catppuccino5 },
-		DiffAdd = { fg = cp.diff.add, bg = cp.catppuccino2 }, -- diff mode: Added line |diff.txt|
-		DiffChange = { fg = cp.diff.change, bg = cp.catppuccino2 }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = cp.diff.delete, bg = cp.catppuccino2 }, -- diff mode: Deleted line |diff.txt|
-		DiffText = { fg = cp.diff.text, bg = cp.catppuccino2 }, -- diff mode: Changed text within a changed line |diff.txt|
+		DiffAdd = { fg = cp.catppuccino10, bg = cp.catppuccino2 }, -- diff mode: Added line |diff.txt|
+		DiffChange = { fg = cp.catppuccino9, bg = cp.catppuccino2 }, -- diff mode: Changed line |diff.txt|
+		DiffDelete = { fg = cp.catppuccino6, bg = cp.catppuccino2 }, -- diff mode: Deleted line |diff.txt|
+		DiffText = { fg = cp.catppuccino10, bg = cp.catppuccino2 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.error },
 		healthSuccess = { fg = cp.catppuccino8 },

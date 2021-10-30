@@ -2,9 +2,9 @@ local M = {}
 
 function M.get(cp)
 	return {
-		GitGutterAdd = { fg = cp.diff.add },
-		GitGutterChange = { fg = cp.diff.change },
-		GitGutterDelete = { fg = cp.diff.delete },
+		GitGutterAdd = { fg = cp.catppuccino10 },
+		GitGutterChange = { fg = cp.catppuccino9 },
+		GitGutterDelete = { fg = cp.catppuccino6 },
 	}
 end
 return M
