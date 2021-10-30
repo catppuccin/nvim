@@ -65,8 +65,8 @@ local function get_base()
 		SpellLocal = { sp = cp.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = cp.catppuccino11, bg = cp.catppuccino15 }, -- status line of current window
-		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino2_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
+		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = cp.catppuccino15, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.catppuccino11_alt, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
