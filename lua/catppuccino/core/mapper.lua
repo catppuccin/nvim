@@ -27,8 +27,8 @@ local function get_base()
 		Cursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- character under the cursor
 		lCursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn = { bg = cp.catppuccino2_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = cp.catppuccino2_highlight }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		CursorColumn = { bg = cp.catppuccino16 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
+		CursorLine = { bg = cp.catppuccino16 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.catppuccino10 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccino2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.error }, -- error messages on the command line
@@ -50,7 +50,7 @@ local function get_base()
 		NormalNC = { fg = cp.catppuccino11, bg = cnf.transparency and cp.none or cp.catppuccino2 }, -- normal text in non-current windows
 		NormalSB = { fg = cp.fg, bg = cp.catppuccino14 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.catppuccino11, bg = cp.catppuccino2_float }, -- Normal text in floating windows.
-		FloatBorder = { fg = cp.border_highlight },
+		FloatBorder = { fg = cp.catppuccino10 },
 		Pmenu = { bg = cp.catppuccino2_popup, fg = cp.catppuccino11 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.catppuccino3, bg = util.darken(cp.catppuccino13, 0.8) }, -- Popup menu: selected item.
 		PmenuSbar = { bg = util.lighten(cp.catppuccino2_popup, 0.95) }, -- Popup menu: scrollbar.

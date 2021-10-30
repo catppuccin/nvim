@@ -17,10 +17,10 @@ function M.get(cp)
 		BufferInactive = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino12 },
 		BufferInactiveIndex = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino12 },
 		BufferInactiveMod = { bg = cp.catppuccino2_statusline, fg = util.darken(cp.warning, 0.7) },
-		BufferInactiveSign = { bg = cp.catppuccino2_statusline, fg = cp.border_highlight },
+		BufferInactiveSign = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino10 },
 		BufferInactiveTarget = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino6 },
 		BufferTabpages = { bg = cp.catppuccino2_statusline, fg = cp.none },
-		BufferTabpage = { bg = cp.catppuccino2_statusline, fg = cp.border_highlight },
+		BufferTabpage = { bg = cp.catppuccino2_statusline, fg = cp.catppuccino10 },
 	}
 end
 
