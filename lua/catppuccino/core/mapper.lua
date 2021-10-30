@@ -32,7 +32,7 @@ local function get_base()
 		Directory = { fg = cp.catppuccino10 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccino2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.catppuccino6 }, -- error messages on the command line
-		VertSplit = { fg = cp.border }, -- the column separating vertically split windows
+		VertSplit = { fg = cp.catppuccino14 }, -- the column separating vertically split windows
 		Folded = { fg = cp.catppuccino10, bg = cp.catppuccino13 }, -- line used for closed folds
 		FoldColumn = { bg = cp.catppuccino2, fg = cp.catppuccino12 }, -- 'foldcolumn'
 		SignColumn = { bg = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.catppuccino13 }, -- column where |signs| are displayed
