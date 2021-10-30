@@ -51,9 +51,9 @@ local function get_base()
 		NormalSB = { fg = cp.fg, bg = cp.catppuccino14 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.catppuccino11, bg = cp.catppuccino14 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.catppuccino10 },
-		Pmenu = { bg = cp.catppuccino2_popup, fg = cp.catppuccino11 }, -- Popup menu: normal item.
+		Pmenu = { bg = cp.catppuccino14, fg = cp.catppuccino11 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.catppuccino3, bg = util.darken(cp.catppuccino13, 0.8) }, -- Popup menu: selected item.
-		PmenuSbar = { bg = util.lighten(cp.catppuccino2_popup, 0.95) }, -- Popup menu: scrollbar.
+		PmenuSbar = { bg = util.lighten(cp.catppuccino14, 0.95) }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.catppuccino13 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.catppuccino10 }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = cp.util.darken(cp.catppuccino10, 0.2), style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
