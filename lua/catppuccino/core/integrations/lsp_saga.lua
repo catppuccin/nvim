@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	return {
-		DiagnosticError = { fg = cp.error },
+		DiagnosticError = { fg = cp.catppuccino6 },
 		DiagnosticWarning = { fg = cp.warning },
 		DiagnosticInformation = { fg = cp.info },
 		DiagnosticHint = { fg = cp.hint },

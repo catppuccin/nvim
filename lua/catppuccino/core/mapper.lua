@@ -31,7 +31,7 @@ local function get_base()
 		CursorLine = { bg = cp.catppuccino16 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.catppuccino10 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccino2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg = { fg = cp.error }, -- error messages on the command line
+		ErrorMsg = { fg = cp.catppuccino6 }, -- error messages on the command line
 		VertSplit = { fg = cp.border }, -- the column separating vertically split windows
 		Folded = { fg = cp.catppuccino10, bg = cp.catppuccino13 }, -- line used for closed folds
 		FoldColumn = { bg = cp.catppuccino2, fg = cp.catppuccino12 }, -- 'foldcolumn'
@@ -60,7 +60,7 @@ local function get_base()
 		Search = { bg = util.darken(cp.catppuccino10, 0.3), fg = cp.catppuccino11 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = cp.catppuccino3, fg = cp.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad = { sp = cp.error, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellBad = { sp = cp.catppuccino6, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
@@ -122,7 +122,7 @@ local function get_base()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore = { }, -- (prefercatppuccino6) left blank, hidden  |hl-Ignore|
 
-		Error = { fg = cp.error }, -- (prefercatppuccino6) any erroneous construct
+		Error = { fg = cp.catppuccino6 }, -- (prefercatppuccino6) any erroneous construct
 		Todo = { bg = cp.catppuccino9, fg = cp.catppuccino2, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.catppuccino9 },
 		qfFileName = { fg = cp.catppuccino10 },
@@ -155,7 +155,7 @@ local function get_base()
 		DiffDelete = { fg = cp.catppuccino6, bg = cp.catppuccino2 }, -- diff mode: Deleted line |diff.txt|
 		DiffText = { fg = cp.catppuccino10, bg = cp.catppuccino2 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
-		healthError = { fg = cp.error },
+		healthError = { fg = cp.catppuccino6 },
 		healthSuccess = { fg = cp.catppuccino8 },
 		healthWarning = { fg = cp.warning },
 		-- misc
