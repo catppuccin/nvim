@@ -63,7 +63,7 @@ local function get_base()
 		SpellBad = { sp = cp.catppuccino6, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.catppuccino9, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = cp.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = cp.catppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = cp.catppuccino11, bg = cp.catppuccino15 }, -- status line of current window
 		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine = { bg = cp.catppuccino15, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
