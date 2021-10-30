@@ -7,7 +7,7 @@ function M.get(cp)
 		NeogitRemote = { fg = cp.catppuccino5 },
 		NeogitHunkHeader = { bg = cp.catppuccino10, fg = cp.catppuccino11 },
 		NeogitHunkHeaderHighlight = { bg = cp.catppuccino13, fg = cp.catppuccino10 },
-		NeogitDiffContextHighlight = { bg = util.darken(cp.catppuccino13, 0.5), fg = cp.catppuccino11_alt },
+		NeogitDiffContextHighlight = { bg = util.darken(cp.catppuccino13, 0.5), fg = cp.catppuccino0 },
 		NeogitDiffDeleteHighlight = { fg = cp.diff.delete, bg = cp.catppuccino2 },
 		NeogitDiffAddHighlight = { fg = cp.diff.add, bg = cp.catppuccino2 },
 	}

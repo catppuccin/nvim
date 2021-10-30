@@ -41,7 +41,7 @@ local function get_base()
 		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.catppuccino16 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = cp.catppuccino11_alt, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		ModeMsg = { fg = cp.catppuccino0, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.catppuccino10 }, -- |more-prompt|
@@ -68,7 +68,7 @@ local function get_base()
 		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine = { bg = cp.catppuccino15, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = cp.catppuccino11_alt, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
+		TabLineSel = { fg = cp.catppuccino0, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
 		Visual = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection
 		VisualNOS = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -95,7 +95,7 @@ local function get_base()
 		Conditional = { fg = cp.catppuccino6 }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.catppuccino6 }, --   for, do, while, etcp.
 		Label = { fg = cp.catppuccino4 }, --    case, default, etcp.
-		Operator = { fg = cp.catppuccino11_alt }, -- "sizeof", "+", "*", etcp.
+		Operator = { fg = cp.catppuccino3 }, -- "sizeof", "+", "*", etcp.
 		Keyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
