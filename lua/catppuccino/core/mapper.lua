@@ -130,7 +130,7 @@ local function get_base()
 		htmlH2 = { fg = cp.catppuccino10, style = "bold" },
 		-- mkdHeading = { fg = cp.catppuccino7, style = "bold" },
 		-- mkdCode = { bg = cp.terminal_black, fg = cp.catppuccino11 },
-		mkdCodeDelimiter = { bg = cp.terminal_black, fg = cp.catppuccino11 },
+		mkdCodeDelimiter = { bg = cp.catppuccino2, fg = cp.catppuccino11 },
 		mkdCodeStart = { fg = cp.catppuccino3, style = "bold" },
 		mkdCodeEnd = { fg = cp.catppuccino3, style = "bold" },
 		-- mkdLink = { fg = cp.catppuccino10, style = "underline" },
