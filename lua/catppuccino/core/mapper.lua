@@ -61,7 +61,7 @@ local function get_base()
 		IncSearch = { bg = cp.catppuccino3, fg = cp.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cp.catppuccino6, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap = { sp = cp.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = cp.catppuccino9, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = cp.catppuccino11, bg = cp.catppuccino15 }, -- status line of current window
@@ -72,7 +72,7 @@ local function get_base()
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
 		Visual = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection
 		VisualNOS = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg = { fg = cp.warning }, -- warning messages
+		WarningMsg = { fg = cp.catppuccino9 }, -- warning messages
 		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
@@ -157,7 +157,7 @@ local function get_base()
 		-- NeoVim
 		healthError = { fg = cp.catppuccino6 },
 		healthSuccess = { fg = cp.catppuccino8 },
-		healthWarning = { fg = cp.warning },
+		healthWarning = { fg = cp.catppuccino9 },
 		-- misc
 
 		-- glyphs
