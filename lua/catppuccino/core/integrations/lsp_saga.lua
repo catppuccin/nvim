@@ -4,7 +4,7 @@ function M.get(cp)
 	return {
 		DiagnosticError = { fg = cp.catppuccino6 },
 		DiagnosticWarning = { fg = cp.catppuccino9 },
-		DiagnosticInformation = { fg = cp.info },
+		DiagnosticInformation = { fg = cp.catppuccino10 },
 		DiagnosticHint = { fg = cp.hint },
 		LspFloatWinNormal = { bg = cp.catppuccino14 },
 		LspFloatWinBorder = { fg = cp.catppuccino10 },
