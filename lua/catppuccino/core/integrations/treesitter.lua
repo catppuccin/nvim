@@ -44,7 +44,7 @@ function M.get(cp)
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.catppuccino6 }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cp.catppuccino10 }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = cp.catppuccino8 }, -- For delimiters ie: `.`
+		TSPunctDelimiter = { fg = cp.catppuccino3 }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.catppuccino6 }, -- For brackets and parenthesis.
 		TSPunctSpecial = { fg = cp.catppuccino0 }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to loops.
