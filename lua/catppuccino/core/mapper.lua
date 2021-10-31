@@ -10,7 +10,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(color_palette.bg) then
+	if colors_util.assert_brightness(color_palette.catppuccino2) then
 		props["background"] = "light"
 	end
 
