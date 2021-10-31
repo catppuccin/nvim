@@ -22,7 +22,7 @@ local function get_base()
 
 	return {
 		Comment = { fg = cp.catppuccino12, style = cnf.styles.comments }, -- just comments
-		ColorColumn = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- used for the columns set with 'colorcolumn'
+		ColorColumn = { bg = util.darken(cp.catppuccino10, 0.2) }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- character under the cursor
 		lCursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -56,7 +56,7 @@ local function get_base()
 		PmenuSbar = { bg = util.lighten(cp.catppuccino14, 0.95) }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.catppuccino13 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.catppuccino10 }, -- |hit-enter| prompt and yes/no questions
-		QuickFixLine = { bg = cp.util.darken(cp.catppuccino10, 0.2), style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { bg = util.darken(cp.catppuccino10, 0.2), style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = util.darken(cp.catppuccino10, 0.3), fg = cp.catppuccino11 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = cp.catppuccino3, fg = cp.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
@@ -70,11 +70,11 @@ local function get_base()
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.catppuccino0, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection
-		VisualNOS = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection when vim is "Not Owning the Selection".
+		Visual = { bg = util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection
+		VisualNOS = { bg = util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.catppuccino9 }, -- warning messages
 		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu = { bg = cp.util.darken(cp.catppuccino10, 0.2) }, -- current match in 'wildmenu' completion
+		WildMenu = { bg = util.darken(cp.catppuccino10, 0.2) }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
 		-- catppuccino12ed out groups should chain up to their "prefercatppuccino6" group by
