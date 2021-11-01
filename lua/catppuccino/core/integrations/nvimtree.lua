@@ -22,7 +22,7 @@ function M.get(cp)
 		NvimTreeStatuslineNc = { fg = cp.black, bg = cp.black },
 		NvimTreeGitDirty = { fg = cp.catppuccino9 },
 		NvimTreeGitNew = { fg = cp.catppuccino10 },
-		NvimTreeGitDeleted = { fg = cp.catppuccino6 },
+		NvimTreeGitDeleted = { fg = cp.katppuccino5 },
 		NvimTreeSpecialFile = { fg = cp.katppuccino2 },
 		NvimTreeImageFile = { fg = cp.catppuccino11 },
 		NvimTreeOpenedFile = { fg = cp.katppuccino4 },

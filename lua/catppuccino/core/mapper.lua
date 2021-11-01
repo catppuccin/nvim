@@ -30,7 +30,7 @@ local function get_base()
 		CursorLine = { bg = cp.catppuccino16 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.catppuccino10 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.katppuccino1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg = { fg = cp.catppuccino6 }, -- error messages on the command line
+		ErrorMsg = { fg = cp.katppuccino5 }, -- error messages on the command line
 		VertSplit = { fg = cp.catppuccino14 }, -- the column separating vertically split windows
 		Folded = { fg = cp.catppuccino10, bg = cp.catppuccino13 }, -- line used for closed folds
 		FoldColumn = { bg = cp.katppuccino1, fg = cp.catppuccino12 }, -- 'foldcolumn'
@@ -39,7 +39,7 @@ local function get_base()
 		Substitute = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.katppuccino0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
+		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paikatppuccino5 bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.katppuccino0, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.katppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -59,7 +59,7 @@ local function get_base()
 		Search = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = cp.katppuccino4, fg = cp.catppuccino13 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad = { sp = cp.catppuccino6, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellBad = { sp = cp.katppuccino5, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.catppuccino9, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.catppuccino10, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.katppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
@@ -76,53 +76,53 @@ local function get_base()
 		WildMenu = { bg = cp.catppuccino12 }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
-		-- catppuccino12ed out groups should chain up to their "prefercatppuccino6" group by
+		-- catppuccino12ed out groups should chain up to their "preferkatppuccino5" group by
 		-- default,
 		-- Uncatppuccino12 and edit if you want more specific syntax highlighting.
 
 		-- code itself
 
-		Constant = { fg = cp.catppuccino7 }, -- (prefercatppuccino6) any constant
+		Constant = { fg = cp.catppuccino7 }, -- (preferkatppuccino5) any constant
 		String = { fg = cp.catppuccino8, style = cnf.styles.strings }, -- a string constant: "this is a string"
 		Character = { fg = cp.catppuccino8 }, --  a character constant: 'c', '\n'
 		Number = { fg = cp.catppuccino7 }, --   a number constant: 234, 0xff
 		Float = { fg = cp.catppuccino7 }, --    a floating point constant: 2.3e10
 		Boolean = { fg = cp.catppuccino7 }, --  a boolean constant: TRUE, false
-		Identifier = { fg = cp.katppuccino2, style = cnf.styles.variables }, -- (prefercatppuccino6) any variable name
+		Identifier = { fg = cp.katppuccino2, style = cnf.styles.variables }, -- (preferkatppuccino5) any variable name
 		Function = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- function name (also: methods for classes)
-		Statement = { fg = cp.katppuccino3 }, -- (prefercatppuccino6) any statement
-		Conditional = { fg = cp.catppuccino6 }, --  if, then, else, endif, switch, etcp.
-		Repeat = { fg = cp.catppuccino6 }, --   for, do, while, etcp.
+		Statement = { fg = cp.katppuccino3 }, -- (preferkatppuccino5) any statement
+		Conditional = { fg = cp.katppuccino5 }, --  if, then, else, endif, switch, etcp.
+		Repeat = { fg = cp.katppuccino5 }, --   for, do, while, etcp.
 		Label = { fg = cp.katppuccino3 }, --    case, default, etcp.
 		Operator = { fg = cp.katppuccino2 }, -- "sizeof", "+", "*", etcp.
 		Keyword = { fg = cp.katppuccino4, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = cp.katppuccino4 }, -- (prefercatppuccino6) generic Preprocessor
+		PreProc = { fg = cp.katppuccino4 }, -- (preferkatppuccino5) generic Preprocessor
 		Include = { fg = cp.katppuccino4 }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
 
-		Type = { fg = cp.catppuccino9 }, -- (prefercatppuccino6) int, long, char, etcp.
+		Type = { fg = cp.catppuccino9 }, -- (preferkatppuccino5) int, long, char, etcp.
 		StorageClass = { fg = cp.catppuccino9 }, -- static, register, volatile, etcp.
 		Structure = { fg = cp.catppuccino9 }, --  struct, union, enum, etcp.
 		Typedef = { fg = cp.catppuccino9 }, --  A typedef
-		Special = { fg = cp.catppuccino10 }, -- (prefercatppuccino6) any special symbol
+		Special = { fg = cp.catppuccino10 }, -- (preferkatppuccino5) any special symbol
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
 		-- Specialcatppuccino12= { }, -- special things inside a catppuccino12
 		-- Debug         = { }, --    debugging statements
 
-		Underlined = { style = "underline" }, -- (prefercatppuccino6) text that stands out, HTML links
+		Underlined = { style = "underline" }, -- (preferkatppuccino5) text that stands out, HTML links
 		Bold = { style = "bold" },
 		Italic = { style = "italic" },
 		-- ("Ignore", below, may be invisible...)
-		-- Ignore = { }, -- (prefercatppuccino6) left blank, hidden  |hl-Ignore|
+		-- Ignore = { }, -- (preferkatppuccino5) left blank, hidden  |hl-Ignore|
 
-		Error = { fg = cp.catppuccino6 }, -- (prefercatppuccino6) any erroneous construct
-		Todo = { bg = cp.catppuccino9, fg = cp.katppuccino1, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Error = { fg = cp.katppuccino5 }, -- (preferkatppuccino5) any erroneous construct
+		Todo = { bg = cp.catppuccino9, fg = cp.katppuccino1, style = "bold" }, -- (preferkatppuccino5) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.catppuccino9 },
 		qfFileName = { fg = cp.catppuccino10 },
 		htmlH1 = { fg = cp.katppuccino4, style = "bold" },
@@ -142,7 +142,7 @@ local function get_base()
 		illuminatedCurWord = { bg = cp.catppuccino13 },
 		-- diff
 		diffAdded = { fg = cp.catppuccino10 },
-		diffRemoved = { fg = cp.catppuccino6 },
+		diffRemoved = { fg = cp.katppuccino5 },
 		diffChanged = { fg = cp.catppuccino9 },
 		diffOldFile = { fg = cp.catppuccino9 },
 		diffNewFile = { fg = cp.catppuccino7 },
@@ -151,22 +151,22 @@ local function get_base()
 		diffIndexLine = { fg = cp.katppuccino4 },
 		DiffAdd = { fg = cp.catppuccino10, bg = cp.katppuccino1 }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = cp.catppuccino9, bg = cp.katppuccino1 }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = cp.catppuccino6, bg = cp.katppuccino1 }, -- diff mode: Deleted line |diff.txt|
+		DiffDelete = { fg = cp.katppuccino5, bg = cp.katppuccino1 }, -- diff mode: Deleted line |diff.txt|
 		DiffText = { fg = cp.catppuccino10, bg = cp.katppuccino1 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
-		healthError = { fg = cp.catppuccino6 },
+		healthError = { fg = cp.katppuccino5 },
 		healthSuccess = { fg = cp.catppuccino8 },
 		healthWarning = { fg = cp.catppuccino9 },
 		-- misc
 
 		-- glyphs
-		GlyphPalette1 = { fg = cp.catppuccino6 },
+		GlyphPalette1 = { fg = cp.katppuccino5 },
 		GlyphPalette2 = { fg = cp.catppuccino8 },
 		GlyphPalette3 = { fg = cp.catppuccino9 },
 		GlyphPalette4 = { fg = cp.catppuccino10 },
 		GlyphPalette6 = { fg = cp.catppuccino8 },
 		GlyphPalette7 = { fg = cp.catppuccino11 },
-		GlyphPalette9 = { fg = cp.catppuccino6 },
+		GlyphPalette9 = { fg = cp.katppuccino5 },
 	}
 end
 
@@ -213,7 +213,7 @@ local function get_terminal()
 	g.terminal_color_3 = cp.katppuccino2
 	g.terminal_color_4 = cp.katppuccino3
 	g.terminal_color_5 = cp.katppuccino4
-	g.terminal_color_6 = cp.catppuccino6
+	g.terminal_color_6 = cp.katppuccino5
 	g.terminal_color_7 = cp.catppuccino7
 	g.terminal_color_8 = cp.catppuccino8
 	g.terminal_color_9 = cp.catppuccino9
