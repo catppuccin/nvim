@@ -16,7 +16,7 @@ function M.get(cp)
 		TSNote = { fg = cp.katppuccino1, bg = cp.catppuccino10 },
 		TSWarning = { fg = cp.katppuccino1, bg = cp.catppuccino9 },
 		TSDanger = { fg = cp.katppuccino1, bg = cp.catppuccino6 },
-		TSConstructor = { fg = cp.catppuccino5 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConstructor = { fg = cp.katppuccino4 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConditional = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
 		TSConstant = { fg = cp.catppuccino7 }, -- For constants
 		TSConstBuiltin = { fg = cp.catppuccino7, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
@@ -29,8 +29,8 @@ function M.get(cp)
 		TSFunction = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.katppuccino2 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.catppuccino6 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
-		TSInclude = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSKeyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
+		TSInclude = { fg = cp.katppuccino4, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSKeyword = { fg = cp.katppuccino4, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = cp.katppuccino3, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = cp.katppuccino2, style = cnf.styles.keywords }, -- For `new` keyword operator
 		TSLabel = { fg = cp.catppuccino10 }, -- For labels: `label:` in C and `:label:` in Lua.
@@ -49,7 +49,7 @@ function M.get(cp)
 		TSRepeat = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		TSStringRegex = { fg = cp.catppuccino10, style = cnf.styles.strings }, -- For regexes.
-		TSStringEscape = { fg = cp.catppuccino5, style = cnf.styles.strings }, -- For escape characters within a string.
+		TSStringEscape = { fg = cp.katppuccino4, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		TSTypeBuiltin = { fg = cp.katppuccino2, style = cnf.styles.keywords }, -- For builtin types.

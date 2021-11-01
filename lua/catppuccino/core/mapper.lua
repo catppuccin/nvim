@@ -36,7 +36,7 @@ local function get_base()
 		FoldColumn = { bg = cp.katppuccino1, fg = cp.catppuccino12 }, -- 'foldcolumn'
 		SignColumn = { bg = cnf.transparency and cp.none or cp.katppuccino1, fg = cp.catppuccino13 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.catppuccino14, fg = cp.catppuccino13 }, -- column where |signs| are displayed
-		Substitute = { bg = cp.catppuccino13, fg = cp.catppuccino5 }, -- |:substitute| replacement text highlighting
+		Substitute = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.katppuccino0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
@@ -51,13 +51,13 @@ local function get_base()
 		NormalFloat = { fg = cp.catppuccino11, bg = cp.catppuccino14 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.catppuccino10 },
 		Pmenu = { bg = cp.catppuccino15, fg = cp.catppuccino11 }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.catppuccino5, bg = cp.catppuccino13 }, -- Popup menu: selected item.
+		PmenuSel = { fg = cp.katppuccino4, bg = cp.catppuccino13 }, -- Popup menu: selected item.
 		PmenuSbar = { bg = cp.catppuccino13 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.catppuccino12 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.catppuccino10 }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = cp.catppuccino13, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = cp.catppuccino13, fg = cp.catppuccino5 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { bg = cp.catppuccino5, fg = cp.catppuccino13 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		Search = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		IncSearch = { bg = cp.katppuccino4, fg = cp.catppuccino13 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cp.catppuccino6, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.catppuccino9, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -95,11 +95,11 @@ local function get_base()
 		Repeat = { fg = cp.catppuccino6 }, --   for, do, while, etcp.
 		Label = { fg = cp.katppuccino3 }, --    case, default, etcp.
 		Operator = { fg = cp.katppuccino2 }, -- "sizeof", "+", "*", etcp.
-		Keyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, --  any other keyword
+		Keyword = { fg = cp.katppuccino4, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = cp.catppuccino5 }, -- (prefercatppuccino6) generic Preprocessor
-		Include = { fg = cp.catppuccino5 }, --  preprocessor #include
+		PreProc = { fg = cp.katppuccino4 }, -- (prefercatppuccino6) generic Preprocessor
+		Include = { fg = cp.katppuccino4 }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
@@ -125,7 +125,7 @@ local function get_base()
 		Todo = { bg = cp.catppuccino9, fg = cp.katppuccino1, style = "bold" }, -- (prefercatppuccino6) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.catppuccino9 },
 		qfFileName = { fg = cp.catppuccino10 },
-		htmlH1 = { fg = cp.catppuccino5, style = "bold" },
+		htmlH1 = { fg = cp.katppuccino4, style = "bold" },
 		htmlH2 = { fg = cp.catppuccino10, style = "bold" },
 		-- mkdHeading = { fg = cp.catppuccino7, style = "bold" },
 		-- mkdCode = { bg = cp.terminal_black, fg = cp.catppuccino11 },
@@ -148,7 +148,7 @@ local function get_base()
 		diffNewFile = { fg = cp.catppuccino7 },
 		diffFile = { fg = cp.catppuccino10 },
 		diffLine = { fg = cp.catppuccino12 },
-		diffIndexLine = { fg = cp.catppuccino5 },
+		diffIndexLine = { fg = cp.katppuccino4 },
 		DiffAdd = { fg = cp.catppuccino10, bg = cp.katppuccino1 }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = cp.catppuccino9, bg = cp.katppuccino1 }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = cp.catppuccino6, bg = cp.katppuccino1 }, -- diff mode: Deleted line |diff.txt|
@@ -212,7 +212,7 @@ local function get_terminal()
 	g.terminal_color_2 = cp.katppuccino2
 	g.terminal_color_3 = cp.katppuccino2
 	g.terminal_color_4 = cp.katppuccino3
-	g.terminal_color_5 = cp.catppuccino5
+	g.terminal_color_5 = cp.katppuccino4
 	g.terminal_color_6 = cp.catppuccino6
 	g.terminal_color_7 = cp.catppuccino7
 	g.terminal_color_8 = cp.catppuccino8

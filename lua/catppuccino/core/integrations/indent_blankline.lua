@@ -12,7 +12,7 @@ function M.get(cp)
 		hi["IndentBlanklineIndent4"] = {blend = "nocombine", fg = cp.catppuccino8}
 		hi["IndentBlanklineIndent3"] = {blend = "nocombine", fg = cp.catppuccino7}
 		hi["IndentBlanklineIndent2"] = {blend = "nocombine", fg = cp.catppuccino10}
-		hi["IndentBlanklineIndent1"] = {blend = "nocombine", fg = cp.catppuccino5}
+		hi["IndentBlanklineIndent1"] = {blend = "nocombine", fg = cp.katppuccino4}
 	end
 
 	return hi

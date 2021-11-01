@@ -3,7 +3,7 @@ local M = {}
 function M.get(cp)
 	local config = require("catppuccino.config").options
 
-	local root_dir_color = cp.catppuccino5
+	local root_dir_color = cp.katppuccino4
 
 	if config.integrations.nvimtree.show_root then
 		root_dir_color = cp.catppuccino10
@@ -18,14 +18,14 @@ function M.get(cp)
 		NvimTreeIndentMarker = { fg = cp.catppuccino12 },
 		NvimTreeVertSplit = { fg = cp.black, bg = cp.black },
 		NvimTreeRootFolder = { fg = root_dir_color, style = "bold" },
-		NvimTreeSymlink = { fg = cp.catppuccino5 },
+		NvimTreeSymlink = { fg = cp.katppuccino4 },
 		NvimTreeStatuslineNc = { fg = cp.black, bg = cp.black },
 		NvimTreeGitDirty = { fg = cp.catppuccino9 },
 		NvimTreeGitNew = { fg = cp.catppuccino10 },
 		NvimTreeGitDeleted = { fg = cp.catppuccino6 },
 		NvimTreeSpecialFile = { fg = cp.katppuccino2 },
 		NvimTreeImageFile = { fg = cp.catppuccino11 },
-		NvimTreeOpenedFile = { fg = cp.catppuccino5 },
+		NvimTreeOpenedFile = { fg = cp.katppuccino4 },
 	}
 end
 
