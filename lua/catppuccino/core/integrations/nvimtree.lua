@@ -20,7 +20,7 @@ function M.get(cp)
 		NvimTreeRootFolder = { fg = root_dir_color, style = "bold" },
 		NvimTreeSymlink = { fg = cp.katppuccino4 },
 		NvimTreeStatuslineNc = { fg = cp.black, bg = cp.black },
-		NvimTreeGitDirty = { fg = cp.catppuccino9 },
+		NvimTreeGitDirty = { fg = cp.katppuccino8 },
 		NvimTreeGitNew = { fg = cp.catppuccino10 },
 		NvimTreeGitDeleted = { fg = cp.katppuccino5 },
 		NvimTreeSpecialFile = { fg = cp.katppuccino2 },

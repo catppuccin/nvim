@@ -60,7 +60,7 @@ local function get_base()
 		IncSearch = { bg = cp.katppuccino4, fg = cp.catppuccino13 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cp.katppuccino5, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap = { sp = cp.catppuccino9, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = cp.katppuccino8, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.catppuccino10, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.katppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = cp.catppuccino11, bg = cp.catppuccino15 }, -- status line of current window
@@ -71,7 +71,7 @@ local function get_base()
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
 		Visual = { bg = cp.catppuccino16 }, -- Visual mode selection
 		VisualNOS = { bg = cp.catppuccino16 }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg = { fg = cp.catppuccino9 }, -- warning messages
+		WarningMsg = { fg = cp.katppuccino8 }, -- warning messages
 		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = cp.catppuccino12 }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
@@ -104,10 +104,10 @@ local function get_base()
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
 
-		Type = { fg = cp.catppuccino9 }, -- (preferkatppuccino5) int, long, char, etcp.
-		StorageClass = { fg = cp.catppuccino9 }, -- static, register, volatile, etcp.
-		Structure = { fg = cp.catppuccino9 }, --  struct, union, enum, etcp.
-		Typedef = { fg = cp.catppuccino9 }, --  A typedef
+		Type = { fg = cp.katppuccino8 }, -- (preferkatppuccino5) int, long, char, etcp.
+		StorageClass = { fg = cp.katppuccino8 }, -- static, register, volatile, etcp.
+		Structure = { fg = cp.katppuccino8 }, --  struct, union, enum, etcp.
+		Typedef = { fg = cp.katppuccino8 }, --  A typedef
 		Special = { fg = cp.catppuccino10 }, -- (preferkatppuccino5) any special symbol
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
@@ -122,8 +122,8 @@ local function get_base()
 		-- Ignore = { }, -- (preferkatppuccino5) left blank, hidden  |hl-Ignore|
 
 		Error = { fg = cp.katppuccino5 }, -- (preferkatppuccino5) any erroneous construct
-		Todo = { bg = cp.catppuccino9, fg = cp.katppuccino1, style = "bold" }, -- (preferkatppuccino5) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		qfLineNr = { fg = cp.catppuccino9 },
+		Todo = { bg = cp.katppuccino8, fg = cp.katppuccino1, style = "bold" }, -- (preferkatppuccino5) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		qfLineNr = { fg = cp.katppuccino8 },
 		qfFileName = { fg = cp.catppuccino10 },
 		htmlH1 = { fg = cp.katppuccino4, style = "bold" },
 		htmlH2 = { fg = cp.catppuccino10, style = "bold" },
@@ -143,26 +143,26 @@ local function get_base()
 		-- diff
 		diffAdded = { fg = cp.catppuccino10 },
 		diffRemoved = { fg = cp.katppuccino5 },
-		diffChanged = { fg = cp.catppuccino9 },
-		diffOldFile = { fg = cp.catppuccino9 },
+		diffChanged = { fg = cp.katppuccino8 },
+		diffOldFile = { fg = cp.katppuccino8 },
 		diffNewFile = { fg = cp.katppuccino6 },
 		diffFile = { fg = cp.catppuccino10 },
 		diffLine = { fg = cp.catppuccino12 },
 		diffIndexLine = { fg = cp.katppuccino4 },
 		DiffAdd = { fg = cp.catppuccino10, bg = cp.katppuccino1 }, -- diff mode: Added line |diff.txt|
-		DiffChange = { fg = cp.catppuccino9, bg = cp.katppuccino1 }, -- diff mode: Changed line |diff.txt|
+		DiffChange = { fg = cp.katppuccino8, bg = cp.katppuccino1 }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = cp.katppuccino5, bg = cp.katppuccino1 }, -- diff mode: Deleted line |diff.txt|
 		DiffText = { fg = cp.catppuccino10, bg = cp.katppuccino1 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.katppuccino5 },
 		healthSuccess = { fg = cp.katppuccino7 },
-		healthWarning = { fg = cp.catppuccino9 },
+		healthWarning = { fg = cp.katppuccino8 },
 		-- misc
 
 		-- glyphs
 		GlyphPalette1 = { fg = cp.katppuccino5 },
 		GlyphPalette2 = { fg = cp.katppuccino7 },
-		GlyphPalette3 = { fg = cp.catppuccino9 },
+		GlyphPalette3 = { fg = cp.katppuccino8 },
 		GlyphPalette4 = { fg = cp.catppuccino10 },
 		GlyphPalette6 = { fg = cp.katppuccino7 },
 		GlyphPalette7 = { fg = cp.catppuccino11 },
@@ -216,7 +216,7 @@ local function get_terminal()
 	g.terminal_color_6 = cp.katppuccino5
 	g.terminal_color_7 = cp.katppuccino6
 	g.terminal_color_8 = cp.katppuccino7
-	g.terminal_color_9 = cp.catppuccino9
+	g.terminal_color_9 = cp.katppuccino8
 	g.terminal_color_10 = cp.catppuccino10
 end
 

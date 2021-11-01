@@ -14,7 +14,7 @@ function M.get(cp)
 		-- TSCharacter         = { };    -- For characters.
 		-- TScatppuccino12           = { };    -- For catppuccino12 blocks.
 		TSNote = { fg = cp.katppuccino1, bg = cp.catppuccino10 },
-		TSWarning = { fg = cp.katppuccino1, bg = cp.catppuccino9 },
+		TSWarning = { fg = cp.katppuccino1, bg = cp.katppuccino8 },
 		TSDanger = { fg = cp.katppuccino1, bg = cp.katppuccino5 },
 		TSConstructor = { fg = cp.katppuccino4 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConditional = { fg = cp.katppuccino5, style = cnf.styles.keywords }, -- For keywords related to conditionnals.

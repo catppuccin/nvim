@@ -3,7 +3,7 @@ local M = {}
 function M.get(cp)
 	return {
 		DiagnosticError = { fg = cp.katppuccino5 },
-		DiagnosticWarning = { fg = cp.catppuccino9 },
+		DiagnosticWarning = { fg = cp.katppuccino8 },
 		DiagnosticInformation = { fg = cp.catppuccino10 },
 		DiagnosticHint = { fg = cp.hint },
 		LspFloatWinNormal = { bg = cp.catppuccino14 },
