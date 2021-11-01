@@ -70,8 +70,8 @@ local function get_base()
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.catppuccino0, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection
-		VisualNOS = { bg = util.darken(cp.catppuccino10, 0.2) }, -- Visual mode selection when vim is "Not Owning the Selection".
+		Visual = { bg = cp.catppuccino16 }, -- Visual mode selection
+		VisualNOS = { bg = cp.catppuccino16 }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.catppuccino9 }, -- warning messages
 		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = util.darken(cp.catppuccino10, 0.2) }, -- current match in 'wildmenu' completion
