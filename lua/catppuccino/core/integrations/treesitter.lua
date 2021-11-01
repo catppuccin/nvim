@@ -45,7 +45,7 @@ function M.get(cp)
 		tomlTSProperty = { fg = cp.catppuccino10 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccino3 }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.catppuccino6 }, -- For brackets and parenthesis.
-		TSPunctSpecial = { fg = cp.catppuccino0 }, -- For special punctutation that does not fall in the catagories before.
+		TSPunctSpecial = { fg = cp.katppuccino0 }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
 		TSStringRegex = { fg = cp.catppuccino10, style = cnf.styles.strings }, -- For regexes.

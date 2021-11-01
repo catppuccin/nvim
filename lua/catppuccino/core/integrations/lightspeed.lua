@@ -38,9 +38,9 @@ function M.get(cp)
 		LightspeedGreyWash = {bg = cp.catppuccino2, fg = cp.catppuccino12},
 		LightspeedUnlabeledMatch = {bg = cp.catppuccino2, fg = cp.catppuccino6, style = "underline"},
 		LightspeedOneCharMatch = {bg = cp.catppuccino2, fg = cp.catppuccino6, style = "underline"},
-		LightspeedUniqueChar = {bg = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedPendingOpArea = {bg = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
-		LightspeedPendingChangeOpArea = {bg = cp.catppuccino2, fg = cp.catppuccino0, style = "strikethrough"},
+		LightspeedUniqueChar = {bg = cp.catppuccino2, fg = cp.katppuccino0, style = "strikethrough"},
+		LightspeedPendingOpArea = {bg = cp.catppuccino2, fg = cp.katppuccino0, style = "strikethrough"},
+		LightspeedPendingChangeOpArea = {bg = cp.catppuccino2, fg = cp.katppuccino0, style = "strikethrough"},
 		LightspeedCursor = {fg = cp.catppuccino2, bg = cp.catppuccino11},
 	}
 end

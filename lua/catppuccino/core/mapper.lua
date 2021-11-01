@@ -38,10 +38,10 @@ local function get_base()
 		SignColumnSB = { bg = cp.catppuccino14, fg = cp.catppuccino13 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.catppuccino13, fg = cp.catppuccino5 }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
-		CursorLineNr = { fg = cp.catppuccino0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
+		CursorLineNr = { fg = cp.katppuccino0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = cp.catppuccino0, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea = { fg = cp.catppuccino0 }, -- Area for messages and cmdline
+		ModeMsg = { fg = cp.katppuccino0, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea = { fg = cp.katppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.catppuccino10 }, -- |more-prompt|
 		NonText = { fg = cp.catppuccino12 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -62,12 +62,12 @@ local function get_base()
 		SpellBad = { sp = cp.catppuccino6, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.catppuccino9, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.catppuccino10, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = cp.catppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = cp.katppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = cp.catppuccino11, bg = cp.catppuccino15 }, -- status line of current window
 		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine = { bg = cp.catppuccino15, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = cp.catppuccino0, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
+		TabLineSel = { fg = cp.katppuccino0, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
 		Title = { fg = cp.catppuccino10, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
 		Visual = { bg = cp.catppuccino16 }, -- Visual mode selection
 		VisualNOS = { bg = cp.catppuccino16 }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -207,7 +207,7 @@ local function get_terminal()
 	local g = vim.g
 	local cp = color_palette
 
-	g.terminal_color_0 = cp.catppuccino0
+	g.terminal_color_0 = cp.katppuccino0
 	g.terminal_color_1 = cp.catppuccino1
 	g.terminal_color_2 = cp.catppuccino2
 	g.terminal_color_3 = cp.catppuccino3
