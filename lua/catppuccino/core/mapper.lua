@@ -74,7 +74,7 @@ local function get_base()
 		VisualNOS = { bg = cp.catppuccino16 }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.catppuccino9 }, -- warning messages
 		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu = { bg = util.darken(cp.catppuccino10, 0.2) }, -- current match in 'wildmenu' completion
+		WildMenu = { bg = cp.catppuccino12 }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
 		-- catppuccino12ed out groups should chain up to their "prefercatppuccino6" group by
@@ -137,7 +137,7 @@ local function get_base()
 
 		-- debugging
 		debugPC = { bg = cp.catppuccino14 }, -- used for highlighting the current line in terminal-debug
-		debugBreakpoint = { bg = util.darken(cp.catppuccino10, 0.1), fg = cp.catppuccino10 }, -- used for breakpoint colors in terminal-debug
+		debugBreakpoint = { bg = cp.catppuccino2, fg = cp.catppuccino12 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
 		illuminatedWord = { bg = cp.catppuccino13 },
 		illuminatedCurWord = { bg = cp.catppuccino13 },
