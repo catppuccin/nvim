@@ -1,4 +1,3 @@
-local util = require("catppuccino.utils.util")
 local M = {}
 
 function M.get(cp)
@@ -25,7 +24,7 @@ function M.get(cp)
 		-- TSError             = { };    -- For syntax/parser errors.
 		TSException = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For exception related keywords.
 		TSField = { fg = cp.catppuccino6 }, -- For fields.
-		rustTSField = { fg = util.darken(cp.catppuccino0, 0.75) }, -- For fields.
+		-- rustTSField = { fg = cp.catppuccino13 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.catppuccino3 }, -- For builtin functions: `table.insert` in Lua.
