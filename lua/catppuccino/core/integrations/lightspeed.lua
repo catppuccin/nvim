@@ -1,7 +1,5 @@
 local M = {}
 
-local util = require("catppuccino.utils.util")
-
 local is_prepacatppuccino6
 
 local function set_prepacatppuccino6(val)
@@ -30,8 +28,8 @@ function M.get(cp)
 	end
 
 	return {
-		LightspeedLabel = {bg = util.darken(cp.catppuccino10, 0.3), fg = cp.catppuccino11},
-		LightspeedOverlapped = {bg = cp.util.darken(cp.catppuccino10, 0.2), fg = cp.catppuccino11},
+		LightspeedLabel = {bg = cp.catppuccino13, fg = cp.catppuccino11},
+		LightspeedOverlapped = {bg = cp.catppuccino13, fg = cp.catppuccino11},
 		LightspeedLabelDistant = {bg = cp.catppuccino4, fg = cp.catppuccino11},
 		LightspeedLabelDistantOverlapped = {bg = cp.catppuccino4, fg = cp.catppuccino11},
 		LightspeedShortcut = {bg = cp.catppuccino2, fg = cp.catppuccino7, style = "italic"},
