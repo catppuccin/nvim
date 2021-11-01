@@ -24,7 +24,7 @@ function M.get(cp)
 		-- TSError             = { };    -- For syntax/parser errors.
 		TSException = { fg = cp.katppuccino3, style = cnf.styles.keywords }, -- For exception related keywords.
 		TSField = { fg = cp.katppuccino5 }, -- For fields.
-		-- rustTSField = { fg = cp.catppuccino13 }, -- For fields.
+		-- rustTSField = { fg = cp.katppuccino12 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.katppuccino9, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.katppuccino2 }, -- For builtin functions: `table.insert` in Lua.

@@ -3,7 +3,7 @@ local M = {}
 function M.get(cp)
 
 	local hi = {
-		IndentBlanklineChar = { fg = cp.catppuccino13 },
+		IndentBlanklineChar = { fg = cp.katppuccino12 },
 	}
 
 	if cnf.integrations.indent_blankline.colored_indent_levels then

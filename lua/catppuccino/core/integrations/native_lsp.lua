@@ -9,9 +9,9 @@ function M.get(cp)
 		-- These groups are for the native LSP cliencp. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText = { bg = cp.catppuccino13 }, -- used for highlighting "text" references
-		LspReferenceRead = { bg = cp.catppuccino13 }, -- used for highlighting "read" references
-		LspReferenceWrite = { bg = cp.catppuccino13 }, -- used for highlighting "write" references
+		LspReferenceText = { bg = cp.katppuccino12 }, -- used for highlighting "text" references
+		LspReferenceRead = { bg = cp.katppuccino12 }, -- used for highlighting "read" references
+		LspReferenceWrite = { bg = cp.katppuccino12 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
 		DiagnosticError = { fg = cp.katppuccino5 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn = { fg = cp.katppuccino8 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default

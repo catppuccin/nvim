@@ -32,12 +32,12 @@ local function get_base()
 		EndOfBuffer = { fg = cp.katppuccino1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.katppuccino5 }, -- error messages on the command line
 		VertSplit = { fg = cp.catppuccino14 }, -- the column separating vertically split windows
-		Folded = { fg = cp.katppuccino9, bg = cp.catppuccino13 }, -- line used for closed folds
+		Folded = { fg = cp.katppuccino9, bg = cp.katppuccino12 }, -- line used for closed folds
 		FoldColumn = { bg = cp.katppuccino1, fg = cp.katppuccino11 }, -- 'foldcolumn'
-		SignColumn = { bg = cnf.transparency and cp.none or cp.katppuccino1, fg = cp.catppuccino13 }, -- column where |signs| are displayed
-		SignColumnSB = { bg = cp.catppuccino14, fg = cp.catppuccino13 }, -- column where |signs| are displayed
-		Substitute = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		SignColumn = { bg = cnf.transparency and cp.none or cp.katppuccino1, fg = cp.katppuccino12 }, -- column where |signs| are displayed
+		SignColumnSB = { bg = cp.catppuccino14, fg = cp.katppuccino12 }, -- column where |signs| are displayed
+		Substitute = { bg = cp.katppuccino12, fg = cp.katppuccino4 }, -- |:substitute| replacement text highlighting
+		LineNr = { fg = cp.katppuccino12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.katppuccino0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.katppuccino6, style = "bold" }, -- The character under the cursor or just before it, if it is a paikatppuccino5 bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.katppuccino0, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -51,28 +51,28 @@ local function get_base()
 		NormalFloat = { fg = cp.katppuccino10, bg = cp.catppuccino14 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.katppuccino9 },
 		Pmenu = { bg = cp.catppuccino15, fg = cp.katppuccino10 }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.katppuccino4, bg = cp.catppuccino13 }, -- Popup menu: selected item.
-		PmenuSbar = { bg = cp.catppuccino13 }, -- Popup menu: scrollbar.
+		PmenuSel = { fg = cp.katppuccino4, bg = cp.katppuccino12 }, -- Popup menu: selected item.
+		PmenuSbar = { bg = cp.katppuccino12 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.katppuccino11 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.katppuccino9 }, -- |hit-enter| prompt and yes/no questions
-		QuickFixLine = { bg = cp.catppuccino13, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { bg = cp.katppuccino4, fg = cp.catppuccino13 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		QuickFixLine = { bg = cp.katppuccino12, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Search = { bg = cp.katppuccino12, fg = cp.katppuccino4 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		IncSearch = { bg = cp.katppuccino4, fg = cp.katppuccino12 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.katppuccino10 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cp.katppuccino5, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.katppuccino8, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.katppuccino9, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.katppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = cp.katppuccino10, bg = cp.catppuccino15 }, -- status line of current window
-		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { bg = cp.catppuccino15, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
+		StatusLineNC = { fg = cp.katppuccino12, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = cp.catppuccino15, fg = cp.katppuccino12 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = cp.katppuccino0, bg = cp.catppuccino13 }, -- tab pages line, active tab page label
+		TabLineSel = { fg = cp.katppuccino0, bg = cp.katppuccino12 }, -- tab pages line, active tab page label
 		Title = { fg = cp.katppuccino9, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
 		Visual = { bg = cp.catppuccino16 }, -- Visual mode selection
 		VisualNOS = { bg = cp.catppuccino16 }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.katppuccino8 }, -- warning messages
-		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		Whitespace = { fg = cp.katppuccino12 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = cp.katppuccino11 }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
@@ -138,8 +138,8 @@ local function get_base()
 		debugPC = { bg = cp.catppuccino14 }, -- used for highlighting the current line in terminal-debug
 		debugBreakpoint = { bg = cp.katppuccino1, fg = cp.katppuccino11 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
-		illuminatedWord = { bg = cp.catppuccino13 },
-		illuminatedCurWord = { bg = cp.catppuccino13 },
+		illuminatedWord = { bg = cp.katppuccino12 },
+		illuminatedCurWord = { bg = cp.katppuccino12 },
 		-- diff
 		diffAdded = { fg = cp.katppuccino9 },
 		diffRemoved = { fg = cp.katppuccino5 },

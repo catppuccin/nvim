@@ -6,10 +6,10 @@ function M.get(cp)
 
 	return {
 		BufferLineFill = { bg = cp.catppuccino16 },
-		BufferLineBackground = { fg = cp.catppuccino13, bg = inactive_clr },
-		BufferLineBufferVisible = { fg = cp.catppuccino13, bg = inactive_clr },
+		BufferLineBackground = { fg = cp.katppuccino12, bg = inactive_clr },
+		BufferLineBufferVisible = { fg = cp.katppuccino12, bg = inactive_clr },
 		BufferLineBufferSelected = { fg = cp.katppuccino0, bg = cp.katppuccino1 },
-		BufferLineTab = { fg = cp.catppuccino13, bg = cp.katppuccino1 },
+		BufferLineTab = { fg = cp.katppuccino12, bg = cp.katppuccino1 },
 		BufferLineTabSelected = { fg = cp.katppuccino5, bg = cp.katppuccino9 },
 		BufferLineTabClose = { fg = cp.katppuccino5, bg = inactive_clr },
 		BufferLineIndicatorSelected = { fg = cp.katppuccino1, bg = cp.katppuccino1 },
@@ -18,8 +18,8 @@ function M.get(cp)
 		BufferLineSeparatorVisible = { fg = inactive_clr, bg = inactive_clr },
 		BufferLineSeparatorSelected = { fg = inactive_clr, bg = inactive_clr },
 		-- close buttons
-		BufferLineCloseButton = { fg = cp.catppuccino13, bg = inactive_clr },
-		BufferLineCloseButtonVisible = { fg = cp.catppuccino13, bg = inactive_clr },
+		BufferLineCloseButton = { fg = cp.katppuccino12, bg = inactive_clr },
+		BufferLineCloseButtonVisible = { fg = cp.katppuccino12, bg = inactive_clr },
 		BufferLineCloseButtonSelected = { fg = cp.katppuccino5, bg = cp.katppuccino1 },
 	}
 end

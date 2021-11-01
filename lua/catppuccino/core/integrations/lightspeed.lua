@@ -28,8 +28,8 @@ function M.get(cp)
 	end
 
 	return {
-		LightspeedLabel = {bg = cp.catppuccino13, fg = cp.katppuccino10},
-		LightspeedOverlapped = {bg = cp.catppuccino13, fg = cp.katppuccino10},
+		LightspeedLabel = {bg = cp.katppuccino12, fg = cp.katppuccino10},
+		LightspeedOverlapped = {bg = cp.katppuccino12, fg = cp.katppuccino10},
 		LightspeedLabelDistant = {bg = cp.katppuccino3, fg = cp.katppuccino10},
 		LightspeedLabelDistantOverlapped = {bg = cp.katppuccino3, fg = cp.katppuccino10},
 		LightspeedShortcut = {bg = cp.katppuccino1, fg = cp.katppuccino6, style = "italic"},

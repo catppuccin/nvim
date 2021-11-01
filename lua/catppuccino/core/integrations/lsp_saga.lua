@@ -13,7 +13,7 @@ function M.get(cp)
 		LspSagaRenameBorder = { fg = cp.katppuccino7 },
 		LspSagaDefPreviewBorder = { fg = cp.katppuccino7 },
 		LspSagaCodeActionBorder = { fg = cp.katppuccino9 },
-		LspSagaFinderSelection = { fg = cp.catppuccino13 },
+		LspSagaFinderSelection = { fg = cp.katppuccino12 },
 		LspSagaCodeActionTitle = { fg = cp.katppuccino91 },
 		LspSagaCodeActionContent = { fg = cp.purple },
 		LspSagaSignatureHelpBorder = { fg = cp.katppuccino5 },
