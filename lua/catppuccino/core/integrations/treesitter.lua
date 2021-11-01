@@ -13,7 +13,7 @@ function M.get(cp)
 		TSBoolean = { fg = cp.katppuccino6, style = cnf.styles.keywords }, -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TScatppuccino12           = { };    -- For catppuccino12 blocks.
-		TSNote = { fg = cp.katppuccino1, bg = cp.catppuccino10 },
+		TSNote = { fg = cp.katppuccino1, bg = cp.katppuccino9 },
 		TSWarning = { fg = cp.katppuccino1, bg = cp.katppuccino8 },
 		TSDanger = { fg = cp.katppuccino1, bg = cp.katppuccino5 },
 		TSConstructor = { fg = cp.katppuccino4 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
@@ -26,14 +26,14 @@ function M.get(cp)
 		TSField = { fg = cp.katppuccino5 }, -- For fields.
 		-- rustTSField = { fg = cp.catppuccino13 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
-		TSFunction = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- For function (calls and definitions).
+		TSFunction = { fg = cp.katppuccino9, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.katppuccino2 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.katppuccino5 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.katppuccino4, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.katppuccino4, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = cp.katppuccino3, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = cp.katppuccino2, style = cnf.styles.keywords }, -- For `new` keyword operator
-		TSLabel = { fg = cp.catppuccino10 }, -- For labels: `label:` in C and `:label:` in Lua.
+		TSLabel = { fg = cp.katppuccino9 }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
 		TSNamespace = { fg = cp.katppuccino2 }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
@@ -42,13 +42,13 @@ function M.get(cp)
 		TSParameter = { fg = cp.katppuccino6 }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.katppuccino5 }, -- Same as `TSField`.
-		tomlTSProperty = { fg = cp.catppuccino10 }, -- Differentiates between string and properties
+		tomlTSProperty = { fg = cp.katppuccino9 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.katppuccino2 }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.katppuccino5 }, -- For brackets and parenthesis.
 		TSPunctSpecial = { fg = cp.katppuccino0 }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = cp.katppuccino5, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
-		TSStringRegex = { fg = cp.catppuccino10, style = cnf.styles.strings }, -- For regexes.
+		TSStringRegex = { fg = cp.katppuccino9, style = cnf.styles.strings }, -- For regexes.
 		TSStringEscape = { fg = cp.katppuccino4, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.

@@ -10,7 +10,7 @@ function M.get(cp)
 		BufferLineBufferVisible = { fg = cp.catppuccino13, bg = inactive_clr },
 		BufferLineBufferSelected = { fg = cp.katppuccino0, bg = cp.katppuccino1 },
 		BufferLineTab = { fg = cp.catppuccino13, bg = cp.katppuccino1 },
-		BufferLineTabSelected = { fg = cp.katppuccino5, bg = cp.catppuccino10 },
+		BufferLineTabSelected = { fg = cp.katppuccino5, bg = cp.katppuccino9 },
 		BufferLineTabClose = { fg = cp.katppuccino5, bg = inactive_clr },
 		BufferLineIndicatorSelected = { fg = cp.katppuccino1, bg = cp.katppuccino1 },
 		-- separators

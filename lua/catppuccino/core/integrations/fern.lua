@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	return {
-		FernBranchText = { fg = cp.catppuccino10 },
+		FernBranchText = { fg = cp.katppuccino9 },
 	}
 end
 

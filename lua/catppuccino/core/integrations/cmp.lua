@@ -6,7 +6,7 @@ function M.get(cp)
 		CmpItemAbbrDeprecated = { fg = cp.catppuccino12, stlye = "strikethrough" },
 		CmpItemAbbrMatch = { fg = cp.catppuccino11, style = "bold" },
 		CmpItemAbbrMatchFuzzy = { fg = cp.catppuccino11, style = "bold" },
-		CmpItemKind = { fg = cp.catppuccino10 },
+		CmpItemKind = { fg = cp.katppuccino9 },
 		CmpItemMenu = { fg = cp.catppuccino11 },
 	}
 end
