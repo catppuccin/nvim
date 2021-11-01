@@ -21,13 +21,13 @@ local function get_base()
 
 	return {
 		Comment = { fg = cp.katppuccino11, style = cnf.styles.comments }, -- just comments
-		ColorColumn = { bg = cp.catppuccino16 }, -- used for the columns set with 'colorcolumn'
+		ColorColumn = { bg = cp.katppuccino15 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = cp.katppuccino1, bg = cp.katppuccino10 }, -- character under the cursor
 		lCursor = { fg = cp.katppuccino1, bg = cp.katppuccino10 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.katppuccino1, bg = cp.katppuccino10 }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn = { bg = cp.catppuccino16 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = cp.catppuccino16 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		CursorColumn = { bg = cp.katppuccino15 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
+		CursorLine = { bg = cp.katppuccino15 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.katppuccino9 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.katppuccino1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.katppuccino5 }, -- error messages on the command line
@@ -69,8 +69,8 @@ local function get_base()
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.katppuccino0, bg = cp.katppuccino12 }, -- tab pages line, active tab page label
 		Title = { fg = cp.katppuccino9, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = cp.catppuccino16 }, -- Visual mode selection
-		VisualNOS = { bg = cp.catppuccino16 }, -- Visual mode selection when vim is "Not Owning the Selection".
+		Visual = { bg = cp.katppuccino15 }, -- Visual mode selection
+		VisualNOS = { bg = cp.katppuccino15 }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.katppuccino8 }, -- warning messages
 		Whitespace = { fg = cp.katppuccino12 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = cp.katppuccino11 }, -- current match in 'wildmenu' completion
