@@ -22,7 +22,7 @@ function M.get(cp)
 		LspDiagnosticsDefaultWarning = { fg = cp.catppuccino9 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultInformation = { fg = cp.catppuccino10 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultHint = { fg = cp.hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspSignatureActiveParameter = { fg = cp.catppuccino7 },
+		LspSignatureActiveParameter = { fg = cp.katppuccino6 },
 		-- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
 		-- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
 		-- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float

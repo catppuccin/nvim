@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	return {
-		markdownHeadingDelimiter = { fg = cp.catppuccino7, style = "bold" },
+		markdownHeadingDelimiter = { fg = cp.katppuccino6, style = "bold" },
 		markdownCode = { fg = cp.katppuccino2 },
 		markdownCodeBlock = { fg = cp.katppuccino2 },
 		markdownH1 = { fg = cp.katppuccino4, style = "bold" },

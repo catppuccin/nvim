@@ -10,7 +10,7 @@ function M.get(cp)
 
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
-		TSBoolean = { fg = cp.catppuccino7, style = cnf.styles.keywords }, -- For booleans.
+		TSBoolean = { fg = cp.katppuccino6, style = cnf.styles.keywords }, -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TScatppuccino12           = { };    -- For catppuccino12 blocks.
 		TSNote = { fg = cp.katppuccino1, bg = cp.catppuccino10 },
@@ -18,8 +18,8 @@ function M.get(cp)
 		TSDanger = { fg = cp.katppuccino1, bg = cp.katppuccino5 },
 		TSConstructor = { fg = cp.katppuccino4 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConditional = { fg = cp.katppuccino5, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
-		TSConstant = { fg = cp.catppuccino7 }, -- For constants
-		TSConstBuiltin = { fg = cp.catppuccino7, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
+		TSConstant = { fg = cp.katppuccino6 }, -- For constants
+		TSConstBuiltin = { fg = cp.katppuccino6, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cp.
 		-- TSError             = { };    -- For syntax/parser errors.
 		TSException = { fg = cp.katppuccino3, style = cnf.styles.keywords }, -- For exception related keywords.
@@ -39,7 +39,7 @@ function M.get(cp)
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
 		TSOperator = { fg = cp.katppuccino2 }, -- For any operator: `+`, but also `->` and `*` in cp.
-		TSParameter = { fg = cp.catppuccino7 }, -- For parameters of a function.
+		TSParameter = { fg = cp.katppuccino6 }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.katppuccino5 }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cp.catppuccino10 }, -- Differentiates between string and properties
