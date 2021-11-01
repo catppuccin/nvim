@@ -50,7 +50,7 @@ local function get_base()
 		NormalSB = { fg = cp.fg, bg = cp.katppuccino13 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.katppuccino10, bg = cp.katppuccino13 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.katppuccino9 },
-		Pmenu = { bg = cp.catppuccino15, fg = cp.katppuccino10 }, -- Popup menu: normal item.
+		Pmenu = { bg = cp.katppuccino14, fg = cp.katppuccino10 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.katppuccino4, bg = cp.katppuccino12 }, -- Popup menu: selected item.
 		PmenuSbar = { bg = cp.katppuccino12 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.katppuccino11 }, -- Popup menu: Thumb of the scrollbar.
@@ -63,9 +63,9 @@ local function get_base()
 		SpellCap = { sp = cp.katppuccino8, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.katppuccino9, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.katppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = cp.katppuccino10, bg = cp.catppuccino15 }, -- status line of current window
-		StatusLineNC = { fg = cp.katppuccino12, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { bg = cp.catppuccino15, fg = cp.katppuccino12 }, -- tab pages line, not active tab page label
+		StatusLine = { fg = cp.katppuccino10, bg = cp.katppuccino14 }, -- status line of current window
+		StatusLineNC = { fg = cp.katppuccino12, bg = cp.katppuccino14 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = cp.katppuccino14, fg = cp.katppuccino12 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.katppuccino0, bg = cp.katppuccino12 }, -- tab pages line, active tab page label
 		Title = { fg = cp.katppuccino9, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
