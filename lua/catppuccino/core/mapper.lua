@@ -22,7 +22,7 @@ local function get_base()
 
 	return {
 		Comment = { fg = cp.catppuccino12, style = cnf.styles.comments }, -- just comments
-		ColorColumn = { bg = util.darken(cp.catppuccino10, 0.2) }, -- used for the columns set with 'colorcolumn'
+		ColorColumn = { bg = cp.catppuccino16 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- character under the cursor
 		lCursor = { fg = cp.catppuccino2, bg = cp.catppuccino11 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -51,10 +51,10 @@ local function get_base()
 		NormalSB = { fg = cp.fg, bg = cp.catppuccino14 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.catppuccino11, bg = cp.catppuccino14 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.catppuccino10 },
-		Pmenu = { bg = cp.catppuccino14, fg = cp.catppuccino11 }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.catppuccino3, bg = util.darken(cp.catppuccino13, 0.8) }, -- Popup menu: selected item.
-		PmenuSbar = { bg = util.lighten(cp.catppuccino14, 0.95) }, -- Popup menu: scrollbar.
-		PmenuThumb = { bg = cp.catppuccino13 }, -- Popup menu: Thumb of the scrollbar.
+		Pmenu = { bg = cp.catppuccino15, fg = cp.catppuccino11 }, -- Popup menu: normal item.
+		PmenuSel = { fg = cp.catppuccino5, bg = cp.catppuccino13 }, -- Popup menu: selected item.
+		PmenuSbar = { bg = cp.catppuccino13 }, -- Popup menu: scrollbar.
+		PmenuThumb = { bg = cp.catppuccino12 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.catppuccino10 }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = util.darken(cp.catppuccino10, 0.2), style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = cp.catppuccino13, fg = cp.catppuccino5 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
