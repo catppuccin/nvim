@@ -28,10 +28,10 @@ function M.get(cp)
 	end
 
 	return {
-		LightspeedLabel = {bg = cp.catppuccino13, fg = cp.catppuccino11},
-		LightspeedOverlapped = {bg = cp.catppuccino13, fg = cp.catppuccino11},
-		LightspeedLabelDistant = {bg = cp.katppuccino3, fg = cp.catppuccino11},
-		LightspeedLabelDistantOverlapped = {bg = cp.katppuccino3, fg = cp.catppuccino11},
+		LightspeedLabel = {bg = cp.catppuccino13, fg = cp.katppuccino10},
+		LightspeedOverlapped = {bg = cp.catppuccino13, fg = cp.katppuccino10},
+		LightspeedLabelDistant = {bg = cp.katppuccino3, fg = cp.katppuccino10},
+		LightspeedLabelDistantOverlapped = {bg = cp.katppuccino3, fg = cp.katppuccino10},
 		LightspeedShortcut = {bg = cp.katppuccino1, fg = cp.katppuccino6, style = "italic"},
 		LightspeedShortcutOverlapped = {bg = cp.katppuccino1, fg = cp.katppuccino6, style = "bold"},
 		LightspeedMaskedChar = {bg = cp.katppuccino1, fg = cp.katppuccino5, style = "undercurl"},
@@ -41,7 +41,7 @@ function M.get(cp)
 		LightspeedUniqueChar = {bg = cp.katppuccino1, fg = cp.katppuccino0, style = "strikethrough"},
 		LightspeedPendingOpArea = {bg = cp.katppuccino1, fg = cp.katppuccino0, style = "strikethrough"},
 		LightspeedPendingChangeOpArea = {bg = cp.katppuccino1, fg = cp.katppuccino0, style = "strikethrough"},
-		LightspeedCursor = {fg = cp.katppuccino1, bg = cp.catppuccino11},
+		LightspeedCursor = {fg = cp.katppuccino1, bg = cp.katppuccino10},
 	}
 end
 

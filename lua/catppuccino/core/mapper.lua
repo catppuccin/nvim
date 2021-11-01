@@ -23,9 +23,9 @@ local function get_base()
 		Comment = { fg = cp.catppuccino12, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.catppuccino16 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = cp.katppuccino1, bg = cp.catppuccino11 }, -- character under the cursor
-		lCursor = { fg = cp.katppuccino1, bg = cp.catppuccino11 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { fg = cp.katppuccino1, bg = cp.catppuccino11 }, -- like Cursor, but used when in IME mode |CursorIM|
+		Cursor = { fg = cp.katppuccino1, bg = cp.katppuccino10 }, -- character under the cursor
+		lCursor = { fg = cp.katppuccino1, bg = cp.katppuccino10 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = cp.katppuccino1, bg = cp.katppuccino10 }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.catppuccino16 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
 		CursorLine = { bg = cp.catppuccino16 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.katppuccino9 }, -- directory names (and other special names in listings)
@@ -45,12 +45,12 @@ local function get_base()
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.katppuccino9 }, -- |more-prompt|
 		NonText = { fg = cp.catppuccino12 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = cp.catppuccino11, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text
-		NormalNC = { fg = cp.catppuccino11, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text in non-current windows
+		Normal = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text
+		NormalNC = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text in non-current windows
 		NormalSB = { fg = cp.fg, bg = cp.catppuccino14 }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.catppuccino11, bg = cp.catppuccino14 }, -- Normal text in floating windows.
+		NormalFloat = { fg = cp.katppuccino10, bg = cp.catppuccino14 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.katppuccino9 },
-		Pmenu = { bg = cp.catppuccino15, fg = cp.catppuccino11 }, -- Popup menu: normal item.
+		Pmenu = { bg = cp.catppuccino15, fg = cp.katppuccino10 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.katppuccino4, bg = cp.catppuccino13 }, -- Popup menu: selected item.
 		PmenuSbar = { bg = cp.catppuccino13 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.catppuccino12 }, -- Popup menu: Thumb of the scrollbar.
@@ -58,12 +58,12 @@ local function get_base()
 		QuickFixLine = { bg = cp.catppuccino13, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = cp.katppuccino4, fg = cp.catppuccino13 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		SpecialKey = { fg = cp.catppuccino11 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpecialKey = { fg = cp.katppuccino10 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cp.katppuccino5, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.katppuccino8, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.katppuccino9, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.katppuccino0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = cp.catppuccino11, bg = cp.catppuccino15 }, -- status line of current window
+		StatusLine = { fg = cp.katppuccino10, bg = cp.catppuccino15 }, -- status line of current window
 		StatusLineNC = { fg = cp.catppuccino13, bg = cp.catppuccino15 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine = { bg = cp.catppuccino15, fg = cp.catppuccino13 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
@@ -128,8 +128,8 @@ local function get_base()
 		htmlH1 = { fg = cp.katppuccino4, style = "bold" },
 		htmlH2 = { fg = cp.katppuccino9, style = "bold" },
 		-- mkdHeading = { fg = cp.katppuccino6, style = "bold" },
-		-- mkdCode = { bg = cp.terminal_black, fg = cp.catppuccino11 },
-		mkdCodeDelimiter = { bg = cp.katppuccino1, fg = cp.catppuccino11 },
+		-- mkdCode = { bg = cp.terminal_black, fg = cp.katppuccino10 },
+		mkdCodeDelimiter = { bg = cp.katppuccino1, fg = cp.katppuccino10 },
 		mkdCodeStart = { fg = cp.katppuccino2, style = "bold" },
 		mkdCodeEnd = { fg = cp.katppuccino2, style = "bold" },
 		-- mkdLink = { fg = cp.katppuccino9, style = "underline" },
@@ -165,7 +165,7 @@ local function get_base()
 		GlyphPalette3 = { fg = cp.katppuccino8 },
 		GlyphPalette4 = { fg = cp.katppuccino9 },
 		GlyphPalette6 = { fg = cp.katppuccino7 },
-		GlyphPalette7 = { fg = cp.catppuccino11 },
+		GlyphPalette7 = { fg = cp.katppuccino10 },
 		GlyphPalette9 = { fg = cp.katppuccino5 },
 	}
 end
