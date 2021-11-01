@@ -1,5 +1,5 @@
-local colors_util = require("catppuccino.utils.colors")
-local color_palette = require("catppuccino.core.color_palette")
+local colors_util = require("katppuccino.utils.colors")
+local color_palette = require("katppuccino.core.color_palette")
 
 local M = {}
 
@@ -190,7 +190,7 @@ local function get_integrations()
 			final_integrations = vim.tbl_deep_extend(
 				"force",
 				final_integrations,
-				require("catppuccino.core.integrations." .. integration).get(color_palette)
+				require("katppuccino.core.integrations." .. integration).get(color_palette)
 			)
 		end
 	end
@@ -198,7 +198,7 @@ local function get_integrations()
 	final_integrations = vim.tbl_deep_extend(
 		"force",
 		final_integrations,
-		require("catppuccino.core.remaps").get_hig_remaps() or {}
+		require("katppuccino.core.remaps").get_hig_remaps() or {}
 	)
 	return final_integrations
 end
@@ -208,7 +208,7 @@ local function get_terminal()
 	local cp = color_palette
 
 	g.terminal_color_0 = cp.katppuccino0
-	g.terminal_color_1 = cp.catppuccino1
+	g.terminal_color_1 = cp.katppuccino1
 	g.terminal_color_2 = cp.katppuccino2
 	g.terminal_color_3 = cp.katppuccino3
 	g.terminal_color_4 = cp.katppuccino4
@@ -221,7 +221,7 @@ local function get_terminal()
 end
 
 function M.apply()
-	_G.cnf = require("catppuccino.config").options
+	_G.cnf = require("katppuccino.config").options
 
 	local theme = {}
 	theme.properties = get_properties() -- nvim settings

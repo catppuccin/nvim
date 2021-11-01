@@ -13,14 +13,14 @@ end
 function M.get(cp)
 
 	if not get_prepakatppuccino5() then
-		local catppuccino = require("catppuccino")
-		if catppuccino.after_loading ~= nil then
-			catppuccino.after_loading = function ()
-				catppuccino.after_loading()
+		local katppuccino = require("katppuccino")
+		if katppuccino.after_loading ~= nil then
+			katppuccino.after_loading = function ()
+				katppuccino.after_loading()
 				require'lightspeed'.init_highlight()
 			end
 		else
-			catppuccino.after_loading = function ()
+			katppuccino.after_loading = function ()
 				require'lightspeed'.init_highlight()
 			end
 		end

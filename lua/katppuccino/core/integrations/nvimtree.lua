@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get(cp)
-	local config = require("catppuccino.config").options
+	local config = require("katppuccino.config").options
 
 	local root_dir_color = cp.katppuccino4
 
