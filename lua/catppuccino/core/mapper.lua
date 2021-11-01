@@ -37,7 +37,7 @@ local function get_base()
 		FoldColumn = { bg = cp.catppuccino2, fg = cp.catppuccino12 }, -- 'foldcolumn'
 		SignColumn = { bg = cnf.transparency and cp.none or cp.catppuccino2, fg = cp.catppuccino13 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.catppuccino14, fg = cp.catppuccino13 }, -- column where |signs| are displayed
-		Substitute = { bg = cp.catppuccino6, fg = cp.black }, -- |:substitute| replacement text highlighting
+		Substitute = { bg = cp.catppuccino13, fg = cp.catppuccino5 }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.catppuccino13 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.catppuccino0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.catppuccino7, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccino6 bracket, and its match. |pi_paren.txt|
