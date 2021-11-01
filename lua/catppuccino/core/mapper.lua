@@ -1,4 +1,3 @@
-local util = require("catppuccino.utils.util")
 local colors_util = require("catppuccino.utils.colors")
 local color_palette = require("catppuccino.core.color_palette")
 
