@@ -31,11 +31,11 @@ local function get_base()
 		Directory = { fg = cp.katppuccino9 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.katppuccino1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.katppuccino5 }, -- error messages on the command line
-		VertSplit = { fg = cp.catppuccino14 }, -- the column separating vertically split windows
+		VertSplit = { fg = cp.katppuccino13 }, -- the column separating vertically split windows
 		Folded = { fg = cp.katppuccino9, bg = cp.katppuccino12 }, -- line used for closed folds
 		FoldColumn = { bg = cp.katppuccino1, fg = cp.katppuccino11 }, -- 'foldcolumn'
 		SignColumn = { bg = cnf.transparency and cp.none or cp.katppuccino1, fg = cp.katppuccino12 }, -- column where |signs| are displayed
-		SignColumnSB = { bg = cp.catppuccino14, fg = cp.katppuccino12 }, -- column where |signs| are displayed
+		SignColumnSB = { bg = cp.katppuccino13, fg = cp.katppuccino12 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.katppuccino12, fg = cp.katppuccino4 }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.katppuccino12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.katppuccino0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
@@ -47,8 +47,8 @@ local function get_base()
 		NonText = { fg = cp.katppuccino11 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text
 		NormalNC = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text in non-current windows
-		NormalSB = { fg = cp.fg, bg = cp.catppuccino14 }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.katppuccino10, bg = cp.catppuccino14 }, -- Normal text in floating windows.
+		NormalSB = { fg = cp.fg, bg = cp.katppuccino13 }, -- normal text in non-current windows
+		NormalFloat = { fg = cp.katppuccino10, bg = cp.katppuccino13 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.katppuccino9 },
 		Pmenu = { bg = cp.catppuccino15, fg = cp.katppuccino10 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.katppuccino4, bg = cp.katppuccino12 }, -- Popup menu: selected item.
@@ -135,7 +135,7 @@ local function get_base()
 		-- mkdLink = { fg = cp.katppuccino9, style = "underline" },
 
 		-- debugging
-		debugPC = { bg = cp.catppuccino14 }, -- used for highlighting the current line in terminal-debug
+		debugPC = { bg = cp.katppuccino13 }, -- used for highlighting the current line in terminal-debug
 		debugBreakpoint = { bg = cp.katppuccino1, fg = cp.katppuccino11 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
 		illuminatedWord = { bg = cp.katppuccino12 },

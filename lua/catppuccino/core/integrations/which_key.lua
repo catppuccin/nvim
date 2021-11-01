@@ -7,7 +7,7 @@ function M.get(cp)
 		WhichKeyDesc = { fg = cp.katppuccino4 },
 		WhichKeySeperator = { fg = cp.katppuccino11 },
 		WhichKeySeparator = { fg = cp.katppuccino11 },
-		WhichKeyFloat = { bg = cp.catppuccino14 },
+		WhichKeyFloat = { bg = cp.katppuccino13 },
 		WhichKeyValue = { fg = cp.katppuccino11 },
 	}
 end

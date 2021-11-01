@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 
-	local inactive_clr = cp.catppuccino14
+	local inactive_clr = cp.katppuccino13
 
 	return {
 		BufferLineFill = { bg = cp.catppuccino16 },

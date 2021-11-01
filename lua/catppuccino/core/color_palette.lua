@@ -12,7 +12,7 @@ local color_palette = {
 	katppuccino10 = "#A7B6DC",		-- Wild Blue Yonder
 	katppuccino11 = "#6F6A8A",		-- Rhythm
 	katppuccino12 = "#3e4058",		-- Independence
-	catppuccino14 = "#110E17",
+	katppuccino13 = "#110E17",
 	catppuccino15 = "#1B1927",
 	catppuccino16 = "#201C2B",
 }
