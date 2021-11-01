@@ -35,7 +35,7 @@ function M.get(cp)
 		LightspeedShortcut = {bg = cp.katppuccino1, fg = cp.katppuccino6, style = "italic"},
 		LightspeedShortcutOverlapped = {bg = cp.katppuccino1, fg = cp.katppuccino6, style = "bold"},
 		LightspeedMaskedChar = {bg = cp.katppuccino1, fg = cp.katppuccino5, style = "undercurl"},
-		LightspeedGreyWash = {bg = cp.katppuccino1, fg = cp.catppuccino12},
+		LightspeedGreyWash = {bg = cp.katppuccino1, fg = cp.katppuccino11},
 		LightspeedUnlabeledMatch = {bg = cp.katppuccino1, fg = cp.katppuccino5, style = "underline"},
 		LightspeedOneCharMatch = {bg = cp.katppuccino1, fg = cp.katppuccino5, style = "underline"},
 		LightspeedUniqueChar = {bg = cp.katppuccino1, fg = cp.katppuccino0, style = "strikethrough"},

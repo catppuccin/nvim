@@ -20,7 +20,7 @@ local function get_base()
 	local cp = color_palette
 
 	return {
-		Comment = { fg = cp.catppuccino12, style = cnf.styles.comments }, -- just comments
+		Comment = { fg = cp.katppuccino11, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.catppuccino16 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = cp.katppuccino1, bg = cp.katppuccino10 }, -- character under the cursor
@@ -33,7 +33,7 @@ local function get_base()
 		ErrorMsg = { fg = cp.katppuccino5 }, -- error messages on the command line
 		VertSplit = { fg = cp.catppuccino14 }, -- the column separating vertically split windows
 		Folded = { fg = cp.katppuccino9, bg = cp.catppuccino13 }, -- line used for closed folds
-		FoldColumn = { bg = cp.katppuccino1, fg = cp.catppuccino12 }, -- 'foldcolumn'
+		FoldColumn = { bg = cp.katppuccino1, fg = cp.katppuccino11 }, -- 'foldcolumn'
 		SignColumn = { bg = cnf.transparency and cp.none or cp.katppuccino1, fg = cp.catppuccino13 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.catppuccino14, fg = cp.catppuccino13 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- |:substitute| replacement text highlighting
@@ -44,7 +44,7 @@ local function get_base()
 		MsgArea = { fg = cp.katppuccino0 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.katppuccino9 }, -- |more-prompt|
-		NonText = { fg = cp.catppuccino12 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		NonText = { fg = cp.katppuccino11 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text
 		NormalNC = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text in non-current windows
 		NormalSB = { fg = cp.fg, bg = cp.catppuccino14 }, -- normal text in non-current windows
@@ -53,7 +53,7 @@ local function get_base()
 		Pmenu = { bg = cp.catppuccino15, fg = cp.katppuccino10 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.katppuccino4, bg = cp.catppuccino13 }, -- Popup menu: selected item.
 		PmenuSbar = { bg = cp.catppuccino13 }, -- Popup menu: scrollbar.
-		PmenuThumb = { bg = cp.catppuccino12 }, -- Popup menu: Thumb of the scrollbar.
+		PmenuThumb = { bg = cp.katppuccino11 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.katppuccino9 }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = cp.catppuccino13, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = cp.catppuccino13, fg = cp.katppuccino4 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
@@ -73,12 +73,12 @@ local function get_base()
 		VisualNOS = { bg = cp.catppuccino16 }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.katppuccino8 }, -- warning messages
 		Whitespace = { fg = cp.catppuccino13 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu = { bg = cp.catppuccino12 }, -- current match in 'wildmenu' completion
+		WildMenu = { bg = cp.katppuccino11 }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
-		-- catppuccino12ed out groups should chain up to their "preferkatppuccino5" group by
+		-- katppuccino11ed out groups should chain up to their "preferkatppuccino5" group by
 		-- default,
-		-- Uncatppuccino12 and edit if you want more specific syntax highlighting.
+		-- Unkatppuccino11 and edit if you want more specific syntax highlighting.
 
 		-- code itself
 
@@ -112,7 +112,7 @@ local function get_base()
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
-		-- Specialcatppuccino12= { }, -- special things inside a catppuccino12
+		-- Specialkatppuccino11= { }, -- special things inside a katppuccino11
 		-- Debug         = { }, --    debugging statements
 
 		Underlined = { style = "underline" }, -- (preferkatppuccino5) text that stands out, HTML links
@@ -136,7 +136,7 @@ local function get_base()
 
 		-- debugging
 		debugPC = { bg = cp.catppuccino14 }, -- used for highlighting the current line in terminal-debug
-		debugBreakpoint = { bg = cp.katppuccino1, fg = cp.catppuccino12 }, -- used for breakpoint colors in terminal-debug
+		debugBreakpoint = { bg = cp.katppuccino1, fg = cp.katppuccino11 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
 		illuminatedWord = { bg = cp.catppuccino13 },
 		illuminatedCurWord = { bg = cp.catppuccino13 },
@@ -147,7 +147,7 @@ local function get_base()
 		diffOldFile = { fg = cp.katppuccino8 },
 		diffNewFile = { fg = cp.katppuccino6 },
 		diffFile = { fg = cp.katppuccino9 },
-		diffLine = { fg = cp.catppuccino12 },
+		diffLine = { fg = cp.katppuccino11 },
 		diffIndexLine = { fg = cp.katppuccino4 },
 		DiffAdd = { fg = cp.katppuccino9, bg = cp.katppuccino1 }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = cp.katppuccino8, bg = cp.katppuccino1 }, -- diff mode: Changed line |diff.txt|
@@ -210,14 +210,14 @@ local function get_terminal()
 	g.terminal_color_0 = cp.katppuccino0
 	g.terminal_color_1 = cp.catppuccino1
 	g.terminal_color_2 = cp.katppuccino2
-	g.terminal_color_3 = cp.katppuccino2
-	g.terminal_color_4 = cp.katppuccino3
-	g.terminal_color_5 = cp.katppuccino4
-	g.terminal_color_6 = cp.katppuccino5
-	g.terminal_color_7 = cp.katppuccino6
-	g.terminal_color_8 = cp.katppuccino7
-	g.terminal_color_9 = cp.katppuccino8
-	g.terminal_color_10 = cp.katppuccino9
+	g.terminal_color_3 = cp.katppuccino3
+	g.terminal_color_4 = cp.katppuccino4
+	g.terminal_color_5 = cp.katppuccino5
+	g.terminal_color_6 = cp.katppuccino6
+	g.terminal_color_7 = cp.katppuccino7
+	g.terminal_color_8 = cp.katppuccino8
+	g.terminal_color_9 = cp.katppuccino9
+	g.terminal_color_10 = cp.katppuccino10
 end
 
 function M.apply()

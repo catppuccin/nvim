@@ -5,10 +5,10 @@ function M.get(cp)
 		WhichKey = { fg = cp.katppuccino2 },
 		WhichKeyGroup = { fg = cp.katppuccino9 },
 		WhichKeyDesc = { fg = cp.katppuccino4 },
-		WhichKeySeperator = { fg = cp.catppuccino12 },
-		WhichKeySeparator = { fg = cp.catppuccino12 },
+		WhichKeySeperator = { fg = cp.katppuccino11 },
+		WhichKeySeparator = { fg = cp.katppuccino11 },
 		WhichKeyFloat = { bg = cp.catppuccino14 },
-		WhichKeyValue = { fg = cp.catppuccino12 },
+		WhichKeyValue = { fg = cp.katppuccino11 },
 	}
 end
 
