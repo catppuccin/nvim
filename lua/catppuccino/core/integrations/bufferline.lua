@@ -1,5 +1,4 @@
 local M = {}
-local util = require("catppuccino.utils.util")
 
 function M.get(cp)
 
