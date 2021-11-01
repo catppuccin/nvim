@@ -1,7 +1,7 @@
 local color_palette = {
 	katppuccino0 = "#F2F2F7",		-- Ghost White
-	catppuccino2 = "#16131F",		-- Xiketic
-	catppuccino3 = "#EA31B5",		-- Fashion Fuchsia
+	katppuccino1 = "#16131F",		-- Xiketic
+	katppuccino2 = "#EA31B5",		-- Fashion Fuchsia
 	catppuccino4 = "#AE9AD6",		-- Blue Shell
 	catppuccino5 = "#F0A8E4",		-- Orchid Crayola
 	catppuccino6 = "#E28D8D",		-- New York Pink

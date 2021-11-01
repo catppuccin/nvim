@@ -13,9 +13,9 @@ function M.get(cp)
 		TSBoolean = { fg = cp.catppuccino7, style = cnf.styles.keywords }, -- For booleans.
 		-- TSCharacter         = { };    -- For characters.
 		-- TScatppuccino12           = { };    -- For catppuccino12 blocks.
-		TSNote = { fg = cp.catppuccino2, bg = cp.catppuccino10 },
-		TSWarning = { fg = cp.catppuccino2, bg = cp.catppuccino9 },
-		TSDanger = { fg = cp.catppuccino2, bg = cp.catppuccino6 },
+		TSNote = { fg = cp.katppuccino1, bg = cp.catppuccino10 },
+		TSWarning = { fg = cp.katppuccino1, bg = cp.catppuccino9 },
+		TSDanger = { fg = cp.katppuccino1, bg = cp.catppuccino6 },
 		TSConstructor = { fg = cp.catppuccino5 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConditional = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
 		TSConstant = { fg = cp.catppuccino7 }, -- For constants
@@ -27,23 +27,23 @@ function M.get(cp)
 		-- rustTSField = { fg = cp.catppuccino13 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- For function (calls and definitions).
-		TSFuncBuiltin = { fg = cp.catppuccino3 }, -- For builtin functions: `table.insert` in Lua.
+		TSFuncBuiltin = { fg = cp.katppuccino2 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.catppuccino6 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
-		TSKeywordOperator = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For `new` keyword operator
+		TSKeywordOperator = { fg = cp.katppuccino2, style = cnf.styles.keywords }, -- For `new` keyword operator
 		TSLabel = { fg = cp.catppuccino10 }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
-		TSNamespace = { fg = cp.catppuccino3 }, -- For identifiers referring to modules and namespaces.
+		TSNamespace = { fg = cp.katppuccino2 }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		TSOperator = { fg = cp.catppuccino3 }, -- For any operator: `+`, but also `->` and `*` in cp.
+		TSOperator = { fg = cp.katppuccino2 }, -- For any operator: `+`, but also `->` and `*` in cp.
 		TSParameter = { fg = cp.catppuccino7 }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.catppuccino6 }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cp.catppuccino10 }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = cp.catppuccino3 }, -- For delimiters ie: `.`
+		TSPunctDelimiter = { fg = cp.katppuccino2 }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.catppuccino6 }, -- For brackets and parenthesis.
 		TSPunctSpecial = { fg = cp.katppuccino0 }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- For keywords related to loops.
@@ -52,13 +52,13 @@ function M.get(cp)
 		TSStringEscape = { fg = cp.catppuccino5, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
-		TSTypeBuiltin = { fg = cp.catppuccino3, style = cnf.styles.keywords }, -- For builtin types.
+		TSTypeBuiltin = { fg = cp.katppuccino2, style = cnf.styles.keywords }, -- For builtin types.
 		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSVariableBuiltin = { fg = cp.catppuccino6, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings considecatppuccino6 text in a markup language.
-		TSTextReference = { fg = cp.catppuccino3 },
+		TSTextReference = { fg = cp.katppuccino2 },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough texcp.

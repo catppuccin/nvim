@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	return {
-		WhichKey = { fg = cp.catppuccino3 },
+		WhichKey = { fg = cp.katppuccino2 },
 		WhichKeyGroup = { fg = cp.catppuccino10 },
 		WhichKeyDesc = { fg = cp.catppuccino5 },
 		WhichKeySeperator = { fg = cp.catppuccino12 },

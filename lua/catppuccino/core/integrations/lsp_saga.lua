@@ -8,7 +8,7 @@ function M.get(cp)
 		DiagnosticHint = { fg = cp.hint },
 		LspFloatWinNormal = { bg = cp.catppuccino14 },
 		LspFloatWinBorder = { fg = cp.catppuccino10 },
-		LspSagaBorderTitle = { fg = cp.catppuccino3 },
+		LspSagaBorderTitle = { fg = cp.katppuccino2 },
 		LspSagaHoverBorder = { fg = cp.catppuccino10 },
 		LspSagaRenameBorder = { fg = cp.catppuccino8 },
 		LspSagaDefPreviewBorder = { fg = cp.catppuccino8 },
@@ -21,7 +21,7 @@ function M.get(cp)
 		DefinitionCount = { fg = cp.purple },
 		DefinitionIcon = { fg = cp.catppuccino10 },
 		ReferencesIcon = { fg = cp.catppuccino10 },
-		TargetWord = { fg = cp.catppuccino3 },
+		TargetWord = { fg = cp.katppuccino2 },
 	}
 end
 return M
