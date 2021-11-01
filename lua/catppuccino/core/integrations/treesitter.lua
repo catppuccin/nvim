@@ -22,7 +22,7 @@ function M.get(cp)
 		TSConstBuiltin = { fg = cp.catppuccino7, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cp.
 		-- TSError             = { };    -- For syntax/parser errors.
-		TSException = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For exception related keywords.
+		TSException = { fg = cp.katppuccino3, style = cnf.styles.keywords }, -- For exception related keywords.
 		TSField = { fg = cp.catppuccino6 }, -- For fields.
 		-- rustTSField = { fg = cp.catppuccino13 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
@@ -31,7 +31,7 @@ function M.get(cp)
 		TSFuncMacro = { fg = cp.catppuccino6 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = { fg = cp.catppuccino4, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = cp.katppuccino3, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = cp.katppuccino2, style = cnf.styles.keywords }, -- For `new` keyword operator
 		TSLabel = { fg = cp.catppuccino10 }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.

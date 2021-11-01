@@ -90,10 +90,10 @@ local function get_base()
 		Boolean = { fg = cp.catppuccino7 }, --  a boolean constant: TRUE, false
 		Identifier = { fg = cp.katppuccino2, style = cnf.styles.variables }, -- (prefercatppuccino6) any variable name
 		Function = { fg = cp.catppuccino10, style = cnf.styles.functions }, -- function name (also: methods for classes)
-		Statement = { fg = cp.catppuccino4 }, -- (prefercatppuccino6) any statement
+		Statement = { fg = cp.katppuccino3 }, -- (prefercatppuccino6) any statement
 		Conditional = { fg = cp.catppuccino6 }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.catppuccino6 }, --   for, do, while, etcp.
-		Label = { fg = cp.catppuccino4 }, --    case, default, etcp.
+		Label = { fg = cp.katppuccino3 }, --    case, default, etcp.
 		Operator = { fg = cp.katppuccino2 }, -- "sizeof", "+", "*", etcp.
 		Keyword = { fg = cp.catppuccino5, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
@@ -211,7 +211,7 @@ local function get_terminal()
 	g.terminal_color_1 = cp.catppuccino1
 	g.terminal_color_2 = cp.katppuccino2
 	g.terminal_color_3 = cp.katppuccino2
-	g.terminal_color_4 = cp.catppuccino4
+	g.terminal_color_4 = cp.katppuccino3
 	g.terminal_color_5 = cp.catppuccino5
 	g.terminal_color_6 = cp.catppuccino6
 	g.terminal_color_7 = cp.catppuccino7
