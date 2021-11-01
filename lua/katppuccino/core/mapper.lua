@@ -47,7 +47,7 @@ local function get_base()
 		NonText = { fg = cp.katppuccino11 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text
 		NormalNC = { fg = cp.katppuccino10, bg = cnf.transparency and cp.none or cp.katppuccino1 }, -- normal text in non-current windows
-		NormalSB = { fg = cp.fg, bg = cp.katppuccino13 }, -- normal text in non-current windows
+		NormalSB = { fg = cp.katppuccino10, bg = cp.katppuccino13 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.katppuccino10, bg = cp.katppuccino13 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.katppuccino9 },
 		Pmenu = { bg = cp.katppuccino14, fg = cp.katppuccino10 }, -- Popup menu: normal item.
