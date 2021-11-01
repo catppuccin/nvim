@@ -3,13 +3,13 @@ local util = require("catppuccino.utils.util")
 
 function M.get(cp)
 
-	local inactive_clr = util.darken("#000000", 0.56)
+	local inactive_clr = cp.catppuccino14
 
 	return {
-		BufferLineFill = { bg = util.brighten(cp.catppuccino2, 0.05) },
+		BufferLineFill = { bg = cp.catppuccino16 },
 		BufferLineBackground = { fg = cp.catppuccino13, bg = inactive_clr },
 		BufferLineBufferVisible = { fg = cp.catppuccino13, bg = inactive_clr },
-		BufferLineBufferSelected = { fg = cp.catppuccino11, bg = cp.catppuccino2 },
+		BufferLineBufferSelected = { fg = cp.catppuccino0, bg = cp.catppuccino2 },
 		BufferLineTab = { fg = cp.catppuccino13, bg = cp.catppuccino2 },
 		BufferLineTabSelected = { fg = cp.catppuccino6, bg = cp.catppuccino10 },
 		BufferLineTabClose = { fg = cp.catppuccino6, bg = inactive_clr },

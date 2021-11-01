@@ -1,5 +1,3 @@
-local util = require("catppuccino.utils.util")
-
 local M = {}
 
 function M.get(cp)
@@ -16,7 +14,7 @@ function M.get(cp)
 		BufferVisibleTarget = { bg = cp.catppuccino15, fg = cp.catppuccino6 },
 		BufferInactive = { bg = cp.catppuccino15, fg = cp.catppuccino12 },
 		BufferInactiveIndex = { bg = cp.catppuccino15, fg = cp.catppuccino12 },
-		BufferInactiveMod = { bg = cp.catppuccino15, fg = util.darken(cp.catppuccino9, 0.7) },
+		BufferInactiveMod = { bg = cp.catppuccino15, fg = cp.catppuccino9 },
 		BufferInactiveSign = { bg = cp.catppuccino15, fg = cp.catppuccino10 },
 		BufferInactiveTarget = { bg = cp.catppuccino15, fg = cp.catppuccino6 },
 		BufferTabpages = { bg = cp.catppuccino15, fg = cp.none },
