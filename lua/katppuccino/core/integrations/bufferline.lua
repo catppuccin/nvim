@@ -12,7 +12,7 @@ function M.get(cp)
 		BufferLineTab = { fg = cp.katppuccino12, bg = cp.katppuccino1 },
 		BufferLineTabSelected = { fg = cp.katppuccino5, bg = cp.katppuccino9 },
 		BufferLineTabClose = { fg = cp.katppuccino5, bg = inactive_clr },
-		BufferLineIndicatorSelected = { fg = cp.katppuccino1, bg = cp.katppuccino1 },
+		BufferLineIndicatorSelected = { fg = cp.katppuccino6, bg = cp.katppuccino1 },
 		-- separators
 		BufferLineSeparator = { fg = inactive_clr, bg = inactive_clr },
 		BufferLineSeparatorVisible = { fg = inactive_clr, bg = inactive_clr },
