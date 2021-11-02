@@ -18,7 +18,7 @@ end
 
 local function get_base()
 	local cp = color_palette
-    cp.none = "NONE"
+	cp.none = "NONE"
 
 	return {
 		Comment = { fg = cp.katppuccino11, style = cnf.styles.comments }, -- just comments
