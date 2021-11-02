@@ -2,11 +2,11 @@ local M = {}
 
 function M.get(cp)
 
-	local inactive_clr = cp.katppuccino13
+	local inactive_clr = cp.katppuccino14
 
 	return {
-		BufferLineFill = { bg = cp.katppuccino14 },
-		BufferLineBackground = { fg = cp.katppuccino12, bg = inactive_clr },
+		BufferLineFill = { bg = cp.katppuccino13 },
+		BufferLineBackground = { fg = cp.katppuccino10, bg = inactive_clr },
 		BufferLineBufferVisible = { fg = cp.katppuccino12, bg = inactive_clr },
 		BufferLineBufferSelected = { fg = cp.katppuccino0, bg = cp.katppuccino1 },
 		BufferLineTab = { fg = cp.katppuccino12, bg = cp.katppuccino1 },
