@@ -1,20 +1,20 @@
 local M = {}
 
-local utils = require("catppucin.utils.util")
+local utils = require("catppuccin.utils.util")
 
 local function load()
-	local catppucin = require("catppucin")
+	local catppuccin = require("catppuccin")
 
-	if catppucin.before_loading ~= nil then
-		catppucin.before_loading()
+	if catppuccin.before_loading ~= nil then
+		catppuccin.before_loading()
 	end
 
 	-- colorscheme gets evaluated from mapper.lua
-	local theme = require("catppucin.core.mapper").apply()
+	local theme = require("catppuccin.core.mapper").apply()
 	utils.load(theme)
 
-	if catppucin.after_loading ~= nil then
-		catppucin.after_loading()
+	if catppuccin.after_loading ~= nil then
+		catppuccin.after_loading()
 	end
 end
 
@@ -30,7 +30,7 @@ function M.main(option)
 	elseif option == "clear" then
 		clear()
 	else
-		print("catppucin: option was not recognized")
+		print("catppuccin: option was not recognized")
 	end
 end
 

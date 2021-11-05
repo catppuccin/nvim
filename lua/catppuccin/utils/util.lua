@@ -1,4 +1,4 @@
-local hsluv = require("katppuccino.utils.hsluv")
+local hsluv = require("catppuccin.utils.hsluv")
 
 local g = vim.g
 local o = vim.o
@@ -142,13 +142,13 @@ function util.load(theme)
 		vim.cmd("syntax reset")
 	end
 
-	g.colors_name = "katppuccino"
+	g.colors_name = "catppuccin"
 
 	util.properties(theme.properties)
 	util.syntax(theme.base)
 	util.syntax(theme.integrations)
 
-	if require("katppuccino.config").options["term_colors"] then
+	if require("catppuccin.config").options["term_colors"] then
 		util.terminal(theme.terminal)
 	end
 end
