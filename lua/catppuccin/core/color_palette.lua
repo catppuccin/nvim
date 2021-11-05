@@ -13,7 +13,7 @@ local color_palette = {
 	catppuccin11 = "#6F6A8A",		-- Rhythm
 	catppuccin12 = "#3e4058",		-- Independence
 	catppuccin13 = "#0E0C13",		-- Xiketic
-	catppuccin14 = "#201C2B",		-- Raisin Black
+	catppuccin14 = "#221E2F",		-- Raisin Black
 	catppuccin15 = "#312C44",		-- Space Cadet
 }
 
