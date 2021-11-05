@@ -2,10 +2,10 @@ local M = {}
 
 function M.get(cp)
 	return {
-		DashboardShortCut = { fg = cp.katppuccino2 },
-		DashboardHeader = { fg = cp.katppuccino8 },
-		DashboardCenter = { fg = cp.katppuccino7 },
-		DashboardFooter = { fg = cp.katppuccino6, style = "italic" },
+		DashboardShortCut = { fg = cp.catppuccin2 },
+		DashboardHeader = { fg = cp.catppuccin8 },
+		DashboardCenter = { fg = cp.catppuccin7 },
+		DashboardFooter = { fg = cp.catppuccin6, style = "italic" },
 	}
 end
 
