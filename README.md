@@ -1,10 +1,10 @@
 # Read this:
-Hello there and thanks for following the development of Katppuccino.nvim: remastered version. This branch is meant to hopefully end up being merged to main. As of now, all of the development discussions are carried out on #44, so feel free to leave your suggestions and ideas there :)
+Hello there and thanks for following the development of Catppuccin.nvim: remastered version. This branch is meant to hopefully end up being merged to main. As of now, all of the development discussions are carried out on #44, so feel free to leave your suggestions and ideas there :)
 
 # About
 
 <div style="text-align: justify">
-	Katppuccino.nvim is a NeoVim plugin that provides multiple colorschemes based on the katppuccino color palette but varying their properties. Apart from the eye-candy colorschemes, Katppuccino.nvim also provides integrations with multiple plugins and tools you are probably already using (e.g. Treesitter, Native LSP, ...).
+	Catppuccin.nvim is a NeoVim plugin that provides multiple colorschemes based on the catppuccin color palette but varying their properties. Apart from the eye-candy colorschemes, Catppuccin.nvim also provides integrations with multiple plugins and tools you are probably already using (e.g. Treesitter, Native LSP, ...).
 </div>
 
 # 🌲 Table of Contents
@@ -40,7 +40,7 @@ Hello there and thanks for following the development of Katppuccino.nvim: remast
 
 # 🍨 Flavors
 
-## Dark katppuccino
+## Dark catppuccin
 
 <img src ="https://i.imgur.com/qdTDwaC.png">
 
@@ -63,7 +63,7 @@ Hello there and thanks for following the development of Katppuccino.nvim: remast
 <p align="center">
   <img alt="Neon Latte" src="https://i.imgur.com/JblSone.png" width="47%">
 &nbsp; &nbsp; &nbsp;
-  <img alt="Dark katppuccino" src="https://i.imgur.com/rBXjPbL.png" width="47%">
+  <img alt="Dark catppuccin" src="https://i.imgur.com/rBXjPbL.png" width="47%">
 </p>
 
 <p align="center">
@@ -106,10 +106,10 @@ Hello there and thanks for following the development of Katppuccino.nvim: remast
 
 # 📺 Notices
 
-Checkout the [CHANGELOG.md](https://github.com/Pocco81/Katppuccino.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
+Checkout the [CHANGELOG.md](https://github.com/Pocco81/Catppuccin.nvim/blob/main/CHANGELOG.md) file for more information on the notices below:
 
 <ul>
-  <li><b>03-09-21</b>: Ported katppuccino themes to Tmux!</li>
+  <li><b>03-09-21</b>: Ported catppuccin themes to Tmux!</li>
   <li><b>01-09-21</b>: Added API and functionality for remapping colors and highlight groups + added lightspeed.nvim integration.</li>
   <li><b>29-08-21</b>: Refactored diffs and git related stuff, added the `CPClear` command and added option to set terminal colors</li>
   <li><b>22-08-21</b>: Just released!</li>
@@ -136,25 +136,25 @@ You can use your favorite plugin manager for this. Here are some examples with t
 ### Vim-plug
 
 ```lua
-Plug 'Pocco81/Katppuccino.nvim'
+Plug 'Pocco81/Catppuccin.nvim'
 ```
 
 ### Packer.nvim
 
 ```lua
-use "Pocco81/Katppuccino.nvim"
+use "Pocco81/Catppuccin.nvim"
 ```
 
 ### Vundle
 
 ```lua
-Plugin 'Pocco81/Katppuccino.nvim'
+Plugin 'Pocco81/Catppuccin.nvim'
 ```
 
 ### NeoBundle
 
 ```lua
-NeoBundleFetch 'Pocco81/Katppuccino.nvim'
+NeoBundleFetch 'Pocco81/Catppuccin.nvim'
 ```
 
 ## Setup
@@ -162,7 +162,7 @@ NeoBundleFetch 'Pocco81/Katppuccino.nvim'
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
 
 ```lua
-colorscheme = "dark_katppuccino",
+colorscheme = "dark_catppuccin",
 transparency = false,
 term_colors = false,
 styles = {
@@ -223,12 +223,12 @@ The way you setup the settings on your configuration varies on whether you are u
 <p>
 
 ```lua
-local katppuccino = require("katppuccino")
+local catppuccin = require("catppuccin")
 
 -- configure it
-katppuccino.setup(
+catppuccin.setup(
     {
-		colorscheme = "dark_katppuccino",
+		colorscheme = "dark_catppuccin",
 		transparency = false,
 		term_colors = false,
 		styles = {
@@ -293,12 +293,12 @@ katppuccino.setup(
 
 ```lua
 lua << EOF
-local katppuccino = require("katppuccino")
+local catppuccin = require("catppuccin")
 
 -- configure it
-katppuccino.setup(
+catppuccin.setup(
     {
-		colorscheme = "dark_katppuccino",
+		colorscheme = "dark_catppuccin",
 		transparency = false,
 		term_colors = false,
 		styles = {
@@ -358,18 +358,18 @@ EOF
 <br />
 </details>
 
-After setting things up, you can load katppuccino like so:
+After setting things up, you can load catppuccin like so:
 
 ```vim
 " Vim Script
-colorscheme katppuccino
+colorscheme catppuccin
 ```
 
 ```lua
 -- Lua
-vim.cmd[[colorscheme katppuccino]]
+vim.cmd[[colorscheme catppuccin]]
 ```
-Passing `katppuccino` to the `colorscheme` command will pick the colorscheme in the config. Optionally, you could pass one by its code name (e.g. `colorscheme neon_latte`).
+Passing `catppuccin` to the `colorscheme` command will pick the colorscheme in the config. Optionally, you could pass one by its code name (e.g. `colorscheme neon_latte`).
 
 For instructions on how to configure the plugin, check out the [configuration](#configuration) section.
 
@@ -385,17 +385,17 @@ This depends on your plugin manager. If, for example, you are using Packer.nvim,
 
 ## Commands
 
-The provides commands that follows the _camel casing_ naming convention and have the `CP` prefix so that it's easy to remember that they are part of Katppuccino.nvim:
+The provides commands that follows the _camel casing_ naming convention and have the `CP` prefix so that it's easy to remember that they are part of Catppuccin.nvim:
 
 -   `:CPClear` clear all highlight groups.
--   `:colorscheme <colorscheme_name>` load a colorscheme, not necessarily a katppuccino one. (Note: this is a built-in NVim command).
+-   `:colorscheme <colorscheme_name>` load a colorscheme, not necessarily a catppuccin one. (Note: this is a built-in NVim command).
 
 ## API
 
-The API allows you fetch data from katppuccino. It can be required as a Lua module:
+The API allows you fetch data from catppuccin. It can be required as a Lua module:
 
 ```lua
-local cp_api = require("katppuccino.api.<module>")
+local cp_api = require("catppuccin.api.<module>")
 ```
 
 ### Modules
@@ -406,7 +406,7 @@ local cp_api = require("katppuccino.api.<module>")
 cp_api.get_colors(<colorscheme>)
 ```
 
-> Gets the colors from `<colorscheme>`. Returns two values: the first one is a table with a `status` field (for the exit status) and a `msg` field with an error message in case `status` is `false` (error), and the second value is a table with the colors. If it fails, it will return the colors from `dark_katppuccino`.
+> Gets the colors from `<colorscheme>`. Returns two values: the first one is a table with a `status` field (for the exit status) and a `msg` field with an error message in case `status` is `false` (error), and the second value is a table with the colors. If it fails, it will return the colors from `dark_catppuccin`.
 
 # 🐬 Configuration
 
@@ -432,33 +432,33 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 ## Integrations
 
-These integrations allow katppuccino to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
+These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
-If you'd like to know which highlight groups are being affected by katppuccino, checkout this directory: [`lua/katppuccino/core/integrations/`](https://github.com/Pocco81/Katppuccino.nvim/tree/main/lua/katppuccino/core/integrations).
+If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/core/integrations/`](https://github.com/Pocco81/Catppuccin.nvim/tree/main/lua/catppuccin/core/integrations).
 
 ### Special Integrations
 
 -   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
--   **Lualine:** use this to set it up (Note: `katppuccino` is the only valid theme name. It will pick the one set in your config):
+-   **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
 ```lua
 require('lualine').setup {
   options = {
-    theme = "katppuccino"
+    theme = "catppuccin"
 	-- ... the rest of your lualine config
   }
 }
 ```
 
--   **Lightline:** use this to set it up (Note: `katppuccino` is the only valid colorscheme name. It will pick the one set in your config):
+-   **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
 ```lua
-let g:lightline = {'colorscheme': 'katppuccino'}
+let g:lightline = {'colorscheme': 'catppuccin'}
 ```
 
--   **Kitty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Katppuccino.nvim/tree/main/extra/kitty) on your Kitty config.
--   **Alacritty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Katppuccino.nvim/tree/main/extra/alacritty) on your Alacritty config.
--   **Tmux**: Follow the instructions [here](https://github.com/Pocco81/Katppuccino.nvim/tree/main/extra/tmux)
+-   **Kitty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccin.nvim/tree/main/extra/kitty) on your Kitty config.
+-   **Alacritty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/Pocco81/Catppuccin.nvim/tree/main/extra/alacritty) on your Alacritty config.
+-   **Tmux**: Follow the instructions [here](https://github.com/Pocco81/Catppuccin.nvim/tree/main/extra/tmux)
 -   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
 -   **NvimTree:** setting `enabled` to `true` enables this integration:
 
@@ -475,7 +475,7 @@ integration = {
 
 | Colorschemes     | Code Names         |
 | ---------------- | ------------------ |
-| Dark katppuccino | `dark_katppuccino` |
+| Dark catppuccin | `dark_catppuccin` |
 | Neon Latte       | `neon_latte`       |
 | Soft Manilo      | `soft_manilo`      |
 | Light Melya      | `light_melya`      |
@@ -485,7 +485,7 @@ integration = {
 Both colors and highlight groups can be overwritten like so:
 
 ```lua
-katppuccino.remap({<colors>},{<hi_groups>})
+catppuccin.remap({<colors>},{<hi_groups>})
 ```
 
 Since you want to overwrite hi groups, then it's likely that you'll want to use the API to get the colors from x colorscheme as well:
@@ -497,11 +497,11 @@ local err, colors = cp_api.get_colors("neon_latte")
 Here is an example using the API to overwrite the color green and change the style of the comments:
 
 ```lua
-local cp_api = require("katppuccino.api.colors")
+local cp_api = require("catppuccin.api.colors")
 local err, colors = cp_api.get_colors("neon_latte")
 
 if err.status then -- good
-	katppuccino.remap({
+	catppuccin.remap({
 		green = "#ffffff"
 	},
 	{
@@ -510,7 +510,7 @@ if err.status then -- good
 end
 ```
 
--   For colorschemes: all editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/katppuccino/color_schemes`](https://github.com/Pocco81/Katppuccino.nvim/tree/main/lua/katppuccino/color_schemes). You could also use one as a template, if you will.
+-   For colorschemes: all editable fields are the same as the ones mentioned in any of the colorschemes found at: [`lua/catppuccin/color_schemes`](https://github.com/Pocco81/Catppuccin.nvim/tree/main/lua/catppuccin/color_schemes). You could also use one as a template, if you will.
 -   For highlight groups: all the highlight groups have three editable fields: `fg` for the foreground, `bg` for the background and `style` for the style.
 
 <br />
@@ -528,9 +528,9 @@ Use them to execute code at certain events [described by their names]. These are
 They can be used like so:
 
 ```lua
-local katppuccino = require("katppuccino")
+local catppuccin = require("catppuccin")
 
-katppuccino.before_loading = function ()
+catppuccin.before_loading = function ()
 	print("I ran before setting a colorscheme!")
 end
 ```
@@ -538,32 +538,32 @@ end
 # 🙋 FAQ
 
 -   Q: **_"How can I view the doc from NeoVim?"_**
-    A: Use `:help Katppuccino.nvim`
+    A: Use `:help Catppuccin.nvim`
 
 -   Q: **_"Why are the colorschemes named like that? Do they follow any convention(s)?"_**
     A: A colorscheme's name is constructed by two words: the first one is a word that represents the tonalities in the colors used and the second one is the name of a coffee drink from [this list](https://en.wikipedia.org/wiki/List_of_coffee_drinks).
 
 # 👐 Contribute
 
-See [CONTRIBUTING.md](https://github.com/Pocco81/Katppuccino.nvim/blob/dev/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/Pocco81/Catppuccin.nvim/blob/dev/CONTRIBUTING.md).
 
 # 💭 Inspirations
 
-The following projects inspired the creation of Katppuccino.nvim. If possible, go check them out to see why they are so amazing :]
+The following projects inspired the creation of Catppuccin.nvim. If possible, go check them out to see why they are so amazing :]
 
 -   [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim): A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish.
 -   [norcalli/nvim-base16.lua](https://github.com/norcalli/nvim-base16.lua): Programmatic lua library for setting base16 themes in Neovim.
 
 # 📜 License
 
-Katppuccino.nvim is released under the GPL v3.0 license. It grants open-source permissions for users including:
+Catppuccin.nvim is released under the GPL v3.0 license. It grants open-source permissions for users including:
 
 -   The right to download and run the software freely
 -   The right to make changes to the software as desired
 -   The right to redistribute copies of the software
 -   The right to modify and distribute copies of new versions of the software
 
-For more convoluted language, see the [LICENSE file](https://github.com/Pocco81/Katppuccino.nvim/blob/main/LICENSE.md).
+For more convoluted language, see the [LICENSE file](https://github.com/Pocco81/Catppuccin.nvim/blob/main/LICENSE.md).
 
 # 📋 TO-DO
 
