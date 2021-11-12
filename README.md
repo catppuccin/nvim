@@ -342,5 +342,5 @@ integration = {
 
 ## 💝 Thanks to
 
-- [LuisxSullivaN](https://github.com/LuisxSullivaN)
 - [Pocco81](https://github.com/Pocco81)
+- [LuisxSullivaN](https://github.com/LuisxSullivaN)
