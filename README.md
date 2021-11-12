@@ -277,14 +277,14 @@ vim.cmd[[colorscheme catppuccin]]
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
 
-## General
+#### General
 
 This settings are unrelated to any group and are independent.
 
 - `transparent_background`: (Boolean) if true, disables setting the background color.
 - `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
 
-## Styles
+#### Styles
 
 Handles the style of general hi groups (see `:h highlight-args`):
 
@@ -294,13 +294,13 @@ Handles the style of general hi groups (see `:h highlight-args`):
 - `strings`: (String) changed the style of the strings.
 - `variables`: (String) changed the style of the variables.
 
-## Integrations
+#### Integrations
 
 These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
 If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/core/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/core/integrations).
 
-### Special Integrations
+##### Special Integrations
 
 - **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 - **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
