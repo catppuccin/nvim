@@ -11,7 +11,6 @@
 # 🎁 Features
 
 - Handy CLI.
-- Allows user remaps.
 - Extensible for many use cases.
 - Integrations with a bunch of plugins:
   - [Treesitter](https://github.com/tree-sitter/tree-sitter)
