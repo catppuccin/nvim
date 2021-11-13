@@ -16,7 +16,7 @@ function M.get(cp)
 		DiagnosticError = { fg = cp.catppuccin5 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn = { fg = cp.catppuccin8 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticInfo = { fg = cp.catppuccin9 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { fg = cp.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { fg = cp.catppuccin6 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
 		LspDiagnosticsDefaultError = { fg = cp.catppuccin5 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultWarning = { fg = cp.catppuccin8 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
