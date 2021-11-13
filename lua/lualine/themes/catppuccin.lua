@@ -4,7 +4,7 @@ local catppuccin = {}
 catppuccin.normal = {
 	a = { bg = cp.catppuccin9, fg = cp.catppuccin14 },
 	b = { bg = cp.catppuccin12, fg = cp.catppuccin9 },
-	c = { bg = cp.catppuccin14, fg = cp.catppuccin13 },
+	c = { bg = cp.catppuccin14, fg = cp.catppuccin10 },
 }
 
 catppuccin.insert = {
@@ -30,7 +30,7 @@ catppuccin.replace = {
 catppuccin.inactive = {
 	a = { bg = cp.catppuccin14, fg = cp.catppuccin9 },
 	b = { bg = cp.catppuccin14, fg = cp.catppuccin12, gui = "bold" },
-	c = { bg = cp.catppuccin14, fg = cp.catppuccin12 },
+	c = { bg = cp.catppuccin14, fg = cp.catppuccin11 },
 }
 
 return catppuccin
