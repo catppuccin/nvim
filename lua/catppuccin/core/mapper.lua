@@ -35,7 +35,7 @@ local function get_base()
 		VertSplit = { fg = cp.catppuccin13 }, -- the column separating vertically split windows
 		Folded = { fg = cp.catppuccin9, bg = cp.catppuccin12 }, -- line used for closed folds
 		FoldColumn = { bg = cp.catppuccin1, fg = cp.catppuccin11 }, -- 'foldcolumn'
-		SignColumn = { bg = cnf.transparency and cp.none or cp.catppuccin1, fg = cp.catppuccin12 }, -- column where |signs| are displayed
+		SignColumn = { bg = cnf.transparent_background and cp.none or cp.catppuccin1, fg = cp.catppuccin12 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.catppuccin13, fg = cp.catppuccin12 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.catppuccin12, fg = cp.catppuccin4 }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.catppuccin12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
@@ -46,8 +46,8 @@ local function get_base()
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.catppuccin9 }, -- |more-prompt|
 		NonText = { fg = cp.catppuccin11 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = cp.catppuccin10, bg = cnf.transparency and cp.none or cp.catppuccin1 }, -- normal text
-		NormalNC = { fg = cp.catppuccin10, bg = cnf.transparency and cp.none or cp.catppuccin1 }, -- normal text in non-current windows
+		Normal = { fg = cp.catppuccin10, bg = cnf.transparent_background and cp.none or cp.catppuccin1 }, -- normal text
+		NormalNC = { fg = cp.catppuccin10, bg = cnf.transparent_background and cp.none or cp.catppuccin1 }, -- normal text in non-current windows
 		NormalSB = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.catppuccin9 },
