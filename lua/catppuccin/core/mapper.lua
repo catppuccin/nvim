@@ -205,20 +205,7 @@ local function get_integrations()
 end
 
 local function get_terminal()
-	local g = vim.g
-	local cp = color_palette
-
-	g.terminal_color_0 = cp.catppuccin0
-	g.terminal_color_1 = cp.catppuccin1
-	g.terminal_color_2 = cp.catppuccin2
-	g.terminal_color_3 = cp.catppuccin3
-	g.terminal_color_4 = cp.catppuccin4
-	g.terminal_color_5 = cp.catppuccin5
-	g.terminal_color_6 = cp.catppuccin6
-	g.terminal_color_7 = cp.catppuccin7
-	g.terminal_color_8 = cp.catppuccin8
-	g.terminal_color_9 = cp.catppuccin9
-	g.terminal_color_10 = cp.catppuccin10
+	return color_palette
 end
 
 function M.apply()

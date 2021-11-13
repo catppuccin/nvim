@@ -116,24 +116,24 @@ function util.properties(tbl)
 	end
 end
 
-function util.terminal(clrs)
-	g.terminal_color_0 = clrs.black
-	g.terminal_color_1 = clrs.red
-	g.terminal_color_2 = clrs.green
-	g.terminal_color_3 = clrs.yellow
-	g.terminal_color_4 = clrs.blue
-	g.terminal_color_5 = clrs.magenta
-	g.terminal_color_6 = clrs.cyan
-	g.terminal_color_7 = clrs.white
+function util.terminal(cp)
+	g.terminal_color_0 = cp.catppuccin1
+	g.terminal_color_1 = cp.catppuccin5
+	g.terminal_color_2 = cp.catppuccin7
+	g.terminal_color_3 = cp.catppuccin8
+	g.terminal_color_4 = cp.catppuccin9
+	g.terminal_color_5 = cp.catppuccin3
+	g.terminal_color_6 = cp.catppuccin4
+	g.terminal_color_7 = cp.catppuccin0
 
-	g.terminal_color_8 = clrs.black_br
-	g.terminal_color_9 = clrs.red_br
-	g.terminal_color_10 = clrs.green_br
-	g.terminal_color_11 = clrs.yellow_br
-	g.terminal_color_12 = clrs.blue_br
-	g.terminal_color_13 = clrs.magenta_br
-	g.terminal_color_14 = clrs.cyan_br
-	g.terminal_color_15 = clrs.white_br
+	g.terminal_color_8 = cp.catppuccin1
+	g.terminal_color_9 = cp.catppuccin5
+	g.terminal_color_10 = cp.catppuccin7
+	g.terminal_color_11 = cp.catppuccin8
+	g.terminal_color_12 = cp.catppuccin9
+	g.terminal_color_13 = cp.catppuccin3
+	g.terminal_color_14 = cp.catppuccin4
+	g.terminal_color_15 = cp.catppuccin0
 end
 
 function util.load(theme)
