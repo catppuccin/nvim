@@ -38,13 +38,13 @@ function M.get(cp)
 		TSNamespace = { fg = cp.catppuccin2 }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
-		TSOperator = { fg = cp.catppuccin2 }, -- For any operator: `+`, but also `->` and `*` in cp.
+		TSOperator = { fg = cp.catppuccin4 }, -- For any operator: `+`, but also `->` and `*` in cp.
 		TSParameter = { fg = cp.catppuccin6 }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.catppuccin5 }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cp.catppuccin9 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccin2 }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = cp.catppuccin5 }, -- For brackets and parenthesis.
+		TSPunctBracket = { fg = cp.catppuccin11 }, -- For brackets and parenthesis.
 		TSPunctSpecial = { fg = cp.catppuccin0 }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = cp.catppuccin5, style = cnf.styles.keywords }, -- For keywords related to loops.
 		-- TSString            = { };    -- For strings.
