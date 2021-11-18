@@ -1,6 +1,6 @@
 local color_palette = {
 	catppuccin0 = "#faf8f6",		-- Ghost White
-	catppuccin1 = "#1F1A28",		-- Xiketic
+	catppuccin1 = "#201D29",		-- Xiketic
 	catppuccin2 = "#ECBFBD",		-- Fashion Fuchsia
 	catppuccin3 = "#B6A1DD",		-- Blue Shell
 	catppuccin4 = "#E9A3DA",		-- Orchid Crayola
