@@ -28,7 +28,7 @@ local function get_base()
 		lCursor = { fg = cp.catppuccin1, bg = cp.catppuccin10 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.catppuccin1, bg = cp.catppuccin10 }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.catppuccin14 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = cp.catppuccin14 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		CursorLine = { bg = cp.catppuccin15 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.catppuccin9 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccin1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.catppuccin5 }, -- error messages on the command line
@@ -41,8 +41,8 @@ local function get_base()
 		LineNr = { fg = cp.catppuccin12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.catppuccin0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.catppuccin6, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccin5 bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = cp.catppuccin0, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea = { fg = cp.catppuccin0 }, -- Area for messages and cmdline
+		ModeMsg = { fg = cp.catppuccin10, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea = { fg = cp.catppuccin10 }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.catppuccin9 }, -- |more-prompt|
 		NonText = { fg = cp.catppuccin11 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -51,7 +51,7 @@ local function get_base()
 		NormalSB = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.catppuccin9 },
-		Pmenu = { bg = cp.catppuccin14, fg = cp.catppuccin10 }, -- Popup menu: normal item.
+		Pmenu = { bg = cp.catppuccin15, fg = cp.catppuccin10 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.catppuccin4, bg = cp.catppuccin12 }, -- Popup menu: selected item.
 		PmenuSbar = { bg = cp.catppuccin12 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.catppuccin11 }, -- Popup menu: Thumb of the scrollbar.
