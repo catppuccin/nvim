@@ -12,7 +12,7 @@ function M.get(cp)
 	return {
 		NvimTreeFolderName = { fg = cp.catppuccin9 },
 		NvimTreeFolderIcon = { fg = cp.catppuccin9 },
-		NvimTreeNormal = { fg = cp.catppuccin10, bg = cp.catppuccin13 },
+		NvimTreeNormal = { fg = cp.catppuccin10, bg = cp.catppuccin14 },
 		NvimTreeOpenedFolderName = { fg = cp.catppuccin9 },
 		NvimTreeEmptyFolderName = { fg = cp.catppuccin9 },
 		NvimTreeIndentMarker = { fg = cp.catppuccin11 },
