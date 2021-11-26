@@ -26,7 +26,7 @@ function M.get(cp)
 		TSField = { fg = cp.catppuccin5 }, -- For fields.
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
-		TSFunction = { fg = cp.catppuccin2, style = cnf.styles.functions }, -- For function (calls and definitions).
+		TSFunction = { fg = cp.catppuccin0, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncBuiltin = { fg = cp.catppuccin2 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.catppuccin5 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.catppuccin4, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
