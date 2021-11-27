@@ -306,9 +306,14 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ##### Special Integrations
 
-- **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
+- **Alacritty:** [Instructions](https://github.com/catppuccin/alacritty)
+- **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
+- **Kitty:** [Instructions](https://github.com/catppuccin/kitty)
+- **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+```lua
+let g:lightline = {'colorscheme': 'catppuccin'}
+```
 - **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
-
 ```lua
 require('lualine').setup {
   options = {
@@ -317,17 +322,7 @@ require('lualine').setup {
   }
 }
 ```
-
-- **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
-
-```lua
-let g:lightline = {'colorscheme': 'catppuccin'}
-```
-
-- **Kitty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/catppuccin/nvim/tree/main/extra/kitty) on your Kitty config.
-- **Alacritty:** Copy and paste the file corresponding to theme you want to use from [this directory](https://github.com/catppuccin/nvim/tree/main/extra/alacritty) on your Alacritty config.
-- **Tmux**: Follow the instructions [here](https://github.com/catppuccin/nvim/tree/main/extra/tmux)
-- **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
+- **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 - **NvimTree:** setting `enabled` to `true` enables this integration:
 
 ```lua
@@ -338,6 +333,9 @@ integration = {
   }
 }
 ```
+- **Termux**: [Instructions](https://github.com/catppuccin/termux)
+- **Tmux**: [Instructions](https://github.com/catppuccin/tmux)
+- **Xresources**: [Instructions](https://github.com/catppuccin/xresources)
 
 ## 🙋 FAQ
 
