@@ -1,6 +1,6 @@
 local color_palette = {
 	catppuccin0 = "#C2E7F0",		-- Ghost White
-	catppuccin1 = "#1F1E29",    -- Xiketic
+	catppuccin1 = "#1E1E28",    -- Xiketic
 	catppuccin2 = "#ECBFBD",		-- Fashion Fuchsia
 	catppuccin3 = "#C6AAE8",		-- Blue Shell
 	catppuccin4 = "#F0AFE1",
@@ -13,7 +13,7 @@ local color_palette = {
 	catppuccin11 = "#7B788A",		-- Rhythm
 	catppuccin12 = "#3e4058",		-- Independence
 	catppuccin13 = "#15121C",
-	catppuccin14 = "#1A1823",		-- Raisin Black
+	catppuccin14 = "#1A1822",		-- Raisin Black
 	catppuccin15 = "#2D293B",		-- Space Cadet
 }
 
