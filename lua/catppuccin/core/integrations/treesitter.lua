@@ -26,8 +26,8 @@ function M.get(cp)
 		TSField = { fg = cp.catppuccin5 }, -- For fields.
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
-		TSFunction = { fg = cp.catppuccin0, style = cnf.styles.functions }, -- For function (calls and definitions).
-		TSFuncBuiltin = { fg = cp.catppuccin2 }, -- For builtin functions: `table.insert` in Lua.
+		TSFunction = { fg = cp.catppuccin9, style = cnf.styles.functions }, -- For function (calls and definitions).
+		TSFuncBuiltin = { fg = cp.catppuccin5 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.catppuccin5 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
 		TSInclude = { fg = cp.catppuccin4, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.catppuccin4, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
@@ -39,7 +39,7 @@ function M.get(cp)
 		-- TSNone              = { };    -- TODO: docs
 		-- TSNumber            = { };    -- For all numbers
 		TSOperator = { fg = cp.catppuccin4 }, -- For any operator: `+`, but also `->` and `*` in cp.
-		TSParameter = { fg = cp.catppuccin9, style = "italic" }, -- For parameters of a function.
+		TSParameter = { fg = cp.catppuccin2, style = "italic" }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		TSProperty = { fg = cp.catppuccin5 }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cp.catppuccin9 }, -- Differentiates between string and properties
@@ -52,7 +52,7 @@ function M.get(cp)
 		TSStringEscape = { fg = cp.catppuccin4, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
-		TSTypeBuiltin = { fg = cp.catppuccin6, style = cnf.styles.keywords }, -- For builtin types.
+		TSTypeBuiltin = { fg = cp.catppuccin8, style = cnf.styles.keywords }, -- For builtin types.
 		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSVariableBuiltin = { fg = cp.catppuccin5, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- TSTag               = { };    -- Tags like html tag names.
