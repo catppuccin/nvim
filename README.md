@@ -52,7 +52,10 @@ Plug 'catppuccin/nvim'
 #### Packer.nvim
 
 ```lua
-use "catppuccin/nvim"
+use({
+	"catppuccin/nvim",
+	as = "catppuccin"
+})
 ```
 
 #### Vundle
