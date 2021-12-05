@@ -5,7 +5,7 @@
 <p align="center">Warm mid-tone dark theme to show off your vibrant self!</p>
 
 <p align="center">
-  <img src="https://github.com/catppuccin/nvim/blob/dev-rc/assets/ss.png"/>
+  <img src="https://raw.githubusercontent.com/catppuccin/nvim/dev/assets/ss.png"/>
 </p>
 
 # About
