@@ -1,5 +1,5 @@
 local color_palette = {
-	catppuccin0 = "#C2E7F0",		-- Ghost White
+	catppuccin0 = "#9DDDCB",		-- Ghost White
 	catppuccin1 = "#1E1E28",    -- Xiketic
 	catppuccin2 = "#ECBFBD",		-- Fashion Fuchsia
 	catppuccin3 = "#C6AAE8",		-- Blue Shell

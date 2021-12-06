@@ -23,16 +23,16 @@ function M.get(cp)
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cp.
 		-- TSError             = { };    -- For syntax/parser errors.
 		TSException = { fg = cp.catppuccin3, style = cnf.styles.keywords }, -- For exception related keywords.
-		TSField = { fg = cp.catppuccin5 }, -- For fields.
+		TSField = { fg = cp.catppuccin0 }, -- For fields.
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSFunction = { fg = cp.catppuccin9, style = cnf.styles.functions }, -- For function (calls and definitions).
-		TSFuncBuiltin = { fg = cp.catppuccin5 }, -- For builtin functions: `table.insert` in Lua.
+		TSFuncBuiltin = { fg = cp.catppuccin6 }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = cp.catppuccin5 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
-		TSInclude = { fg = cp.catppuccin4, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSInclude = { fg = cp.catppuccin0, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = cp.catppuccin4, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = cp.catppuccin3, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
-		TSKeywordOperator = { fg = cp.catppuccin2, style = cnf.styles.keywords }, -- For `new` keyword operator
+		TSKeywordOperator = { fg = cp.catppuccin4, style = cnf.styles.keywords }, -- For `new` keyword operator
 		TSLabel = { fg = cp.catppuccin9 }, -- For labels: `label:` in C and `:label:` in Lua.
 		-- TSMethod            = { };    -- For method calls and definitions.
 		TSNamespace = { fg = cp.catppuccin3, style = "italic" }, -- For identifiers referring to modules and namespaces.
@@ -41,7 +41,7 @@ function M.get(cp)
 		TSOperator = { fg = cp.catppuccin4 }, -- For any operator: `+`, but also `->` and `*` in cp.
 		TSParameter = { fg = cp.catppuccin2, style = "italic" }, -- For parameters of a function.
 		-- TSParameterReference= { };    -- For references to parameters of a function.
-		TSProperty = { fg = cp.catppuccin5 }, -- Same as `TSField`.
+		TSProperty = { fg = cp.catppuccin0, style = "italic" }, -- Same as `TSField`.
 		tomlTSProperty = { fg = cp.catppuccin9 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccin11 }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.catppuccin11 }, -- For brackets and parenthesis.
