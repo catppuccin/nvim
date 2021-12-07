@@ -94,7 +94,7 @@ local function get_base()
 		Statement = { fg = cp.catppuccin3 }, -- (prefercatppuccin5) any statement
 		Conditional = { fg = cp.catppuccin5 }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.catppuccin5 }, --   for, do, while, etcp.
-		Label = { fg = cp.catppuccin3 }, --    case, default, etcp.
+		Label = { fg = cp.catppuccin6 }, --    case, default, etcp.
 		Operator = { fg = cp.catppuccin2 }, -- "sizeof", "+", "*", etcp.
 		Keyword = { fg = cp.catppuccin4, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw

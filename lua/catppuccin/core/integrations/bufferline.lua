@@ -8,7 +8,7 @@ function M.get(cp)
 		BufferLineFill = { bg = cp.catppuccin13 },
 		BufferLineBackground = { fg = cp.catppuccin10, bg = inactive_clr },
 		BufferLineBufferVisible = { fg = cp.catppuccin12, bg = inactive_clr },
-		BufferLineBufferSelected = { fg = cp.catppuccin0, bg = cp.catppuccin1 },
+		BufferLineBufferSelected = { fg = cp.catppuccin0, bg = cp.catppuccin1, style = "bold,italic" },
 		BufferLineTab = { fg = cp.catppuccin12, bg = cp.catppuccin1 },
 		BufferLineTabSelected = { fg = cp.catppuccin5, bg = cp.catppuccin9 },
 		BufferLineTabClose = { fg = cp.catppuccin5, bg = inactive_clr },
