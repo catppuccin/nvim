@@ -10,9 +10,10 @@ function M.get(cp)
 		CmpItemAbbrMatchFuzzy = { fg = cp.catppuccin10, style = "bold" },
 
 		-- kind support
+		CmpItemKindSnippet = { fg = cp.catppuccin3 },
+		CmpItemKindKeyword = { fg = cp.catppuccin5 },
 		CmpItemKindText = { fg = cp.catppuccin7 },
 		CmpItemKindMethod = { fg = cp.catppuccin9 },
-		CmpItemKindSnippet = { fg = cp.catppuccin9 },
 		CmpItemKindConstructor = { fg = cp.catppuccin9 },
 		CmpItemKindFunction = { fg = cp.catppuccin9 },
 		CmpItemKindFolder = { fg = cp.catppuccin9 },
@@ -22,7 +23,6 @@ function M.get(cp)
 		CmpItemKindProperty = { fg = cp.catppuccin0 },
 		CmpItemKindEnum = { fg = cp.catppuccin0 },
 		CmpItemKindUnit = { fg = cp.catppuccin0 },
-		CmpItemKindKeyword = { fg = cp.catppuccin3 },
 		CmpItemKindClass = { fg = cp.catppuccin8 },
 		CmpItemKindVariable = { fg = cp.catppuccin2 },
 		CmpItemKindFile = { fg = cp.catppuccin9 },
