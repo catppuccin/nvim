@@ -14,31 +14,31 @@ This port of Catppuccin is special because it was the first one and the one that
 
 # 🎁 Features
 
-- Handy CLI.
-- Extensible for many use cases.
-- Integrations with a bunch of plugins:
-  - [Treesitter](https://github.com/tree-sitter/tree-sitter)
-  - [Native LSP](https://github.com/neovim/nvim-lspconfig)
-  - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-  - [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
-  - [Trouble](https://github.com/folke/trouble.nvim)
-  - [WhichKey](https://github.com/folke/which-key.nvim)
-  - [Git signs](https://github.com/lewis6991/gitsigns.nvim)
-  - [BarBar](https://github.com/romgrk/barbar.nvim)
-  - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-  - [Lualine](https://github.com/hoob3rt/lualine.nvim)
-  - [Git Gutter](https://github.com/airblade/vim-gitgutter)
-  - [Fern](https://github.com/lambdalisue/fern.vim)
-  - [Lightline](https://github.com/itchyny/lightline.vim)
-  - [Dashboard](https://github.com/glepnir/dashboard-nvim)
-  - [Markdown](https://www.markdownguide.org/)
-  - [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
-  - [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
-  - [Sneak](https://github.com/justinmk/vim-sneak)
-  - [Hop](https://github.com/phaazon/hop.nvim)
-  - [Neogit](https://github.com/TimUntersberger/neogit)
-  - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-  - [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+-   Handy CLI.
+-   Extensible for many use cases.
+-   Integrations with a bunch of plugins:
+    -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
+    -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
+    -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+    -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
+    -   [Trouble](https://github.com/folke/trouble.nvim)
+    -   [WhichKey](https://github.com/folke/which-key.nvim)
+    -   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
+    -   [BarBar](https://github.com/romgrk/barbar.nvim)
+    -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+    -   [Lualine](https://github.com/hoob3rt/lualine.nvim)
+    -   [Git Gutter](https://github.com/airblade/vim-gitgutter)
+    -   [Fern](https://github.com/lambdalisue/fern.vim)
+    -   [Lightline](https://github.com/itchyny/lightline.vim)
+    -   [Dashboard](https://github.com/glepnir/dashboard-nvim)
+    -   [Markdown](https://www.markdownguide.org/)
+    -   [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
+    -   [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
+    -   [Sneak](https://github.com/justinmk/vim-sneak)
+    -   [Hop](https://github.com/phaazon/hop.nvim)
+    -   [Neogit](https://github.com/TimUntersberger/neogit)
+    -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+    -   [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 ## Usage
 
@@ -290,18 +290,18 @@ Although settings already have self-explanatory names, here is where you can fin
 
 This settings are unrelated to any group and are independent.
 
-- `transparent_background`: (Boolean) if true, disables setting the background color.
-- `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+-   `transparent_background`: (Boolean) if true, disables setting the background color.
+-   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
 
 #### Styles
 
 Handles the style of general hi groups (see `:h highlight-args`):
 
-- `comments`: (String) changed the style of the comments.
-- `functions`: (String) changed the style of the functions.
-- `keywords`: (String) changed the style of the keywords.
-- `strings`: (String) changed the style of the strings.
-- `variables`: (String) changed the style of the variables.
+-   `comments`: (String) changed the style of the comments.
+-   `functions`: (String) changed the style of the functions.
+-   `keywords`: (String) changed the style of the keywords.
+-   `strings`: (String) changed the style of the strings.
+-   `variables`: (String) changed the style of the variables.
 
 #### Integrations
 
@@ -311,14 +311,16 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ##### Special Integrations
 
-- **Alacritty:** [Instructions](https://github.com/catppuccin/alacritty)
-- **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
-- **Kitty:** [Instructions](https://github.com/catppuccin/kitty)
-- **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+-   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
+-   **Kitty:** [Instructions](https://github.com/catppuccin/kitty)
+-   **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+
 ```lua
 let g:lightline = {'colorscheme': 'catppuccin'}
 ```
-- **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
+
+-   **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
+
 ```lua
 require('lualine').setup {
   options = {
@@ -327,8 +329,9 @@ require('lualine').setup {
   }
 }
 ```
-- **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
-- **NvimTree:** setting `enabled` to `true` enables this integration:
+
+-   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
+-   **NvimTree:** setting `enabled` to `true` enables this integration:
 
 ```lua
 integration = {
@@ -338,16 +341,12 @@ integration = {
   }
 }
 ```
-- **Termux**: [Instructions](https://github.com/catppuccin/termux)
-- **Tmux**: [Instructions](https://github.com/catppuccin/tmux)
-- **Xresources**: [Instructions](https://github.com/catppuccin/xresources)
 
 ## 🙋 FAQ
 
-- Q: **_"How can I view the doc from NeoVim?"_**
-  A: Use `:help catppuccin`
+-   Q: **_"How can I view the doc from NeoVim?"_**
+    A: Use `:help catppuccin`
 
 ## 💝 Thanks to
 
-- [Pocco81](https://github.com/Pocco81)
-- [LuisxSullivaN](https://github.com/LuisxSullivaN)
+-   [Pocco81](https://github.com/Pocco81)
