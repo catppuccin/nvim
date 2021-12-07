@@ -29,6 +29,7 @@ config.options = {
 			},
 		},
 		lsp_trouble = false,
+		cmp = true,
 		lsp_saga = false,
 		gitgutter = false,
 		gitsigns = false,
