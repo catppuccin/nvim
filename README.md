@@ -38,6 +38,7 @@ This port of Catppuccin is special because it was the first one and the one that
   - [Hop](https://github.com/phaazon/hop.nvim)
   - [Neogit](https://github.com/TimUntersberger/neogit)
   - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+  - [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 ## Usage
 
@@ -125,6 +126,7 @@ integrations = {
 	lightspeed = false,
 	ts_rainbow = false,
 	hop = false,
+	cmp = false,
 },
 ```
 
