@@ -42,7 +42,7 @@ config.options = {
 			enabled = false,
 			colored_indent_levels = false,
 		},
-		dashboard = false,
+		dashboard = true,
 		neogit = false,
 		vim_sneak = false,
 		fern = false,
