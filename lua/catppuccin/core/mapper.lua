@@ -31,7 +31,7 @@ local function get_base()
 		CursorLine = { bg = cp.catppuccin15 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.catppuccin9 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccin1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg = { fg = cp.catppuccin5 }, -- error messages on the command line
+		ErrorMsg = { fg = cp.catppuccin5, style = "bold,italic" }, -- error messages on the command line
 		VertSplit = { fg = cp.catppuccin13 }, -- the column separating vertically split windows
 		Folded = { fg = cp.catppuccin9, bg = cp.catppuccin12 }, -- line used for closed folds
 		FoldColumn = { bg = cp.catppuccin1, fg = cp.catppuccin11 }, -- 'foldcolumn'
