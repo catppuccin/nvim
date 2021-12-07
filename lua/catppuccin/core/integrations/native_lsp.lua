@@ -13,10 +13,10 @@ function M.get(cp)
 		LspReferenceRead = { bg = cp.catppuccin12 }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = cp.catppuccin12 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
-		DiagnosticError = { fg = cp.catppuccin5 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { fg = cp.catppuccin8 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { fg = cp.catppuccin9 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { fg = cp.catppuccin0 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { fg = cp.catppuccin5, style = virtual_text.errors }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { fg = cp.catppuccin8, style = virtual_text.warnings }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { fg = cp.catppuccin9, style = virtual_text.information }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { fg = cp.catppuccin0, style = virtual_text.hints }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
 		-- for nvim nightly
 		DiagnosticUnderlineError = { style = underlines.errors, sp = cp.catppuccin5 },
