@@ -49,7 +49,7 @@ local function get_base()
 		Normal = { fg = cp.catppuccin10, bg = cnf.transparent_background and cp.none or cp.catppuccin1 }, -- normal text
 		NormalNC = { fg = cp.catppuccin10, bg = cnf.transparent_background and cp.none or cp.catppuccin1 }, -- normal text in non-current windows
 		NormalSB = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- Normal text in floating windows.
+		NormalFloat = { fg = cp.catppuccin10, bg = cp.catppuccin14 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.catppuccin9 },
 		Pmenu = { bg = cp.catppuccin15, fg = cp.catppuccin10 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.catppuccin4, bg = cp.catppuccin12 }, -- Popup menu: selected item.
