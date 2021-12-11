@@ -16,7 +16,7 @@ function M.get(cp)
 		TSNote = { fg = cp.catppuccin1, bg = cp.catppuccin9 },
 		TSWarning = { fg = cp.catppuccin1, bg = cp.catppuccin8 },
 		TSDanger = { fg = cp.catppuccin1, bg = cp.catppuccin5 },
-		TSConstructor = { fg = cp.catppuccin4 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConstructor = { fg = cp.catppuccin8 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConditional = { fg = cp.catppuccin5, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
 		TSConstant = { fg = cp.catppuccin6 }, -- For constants
 		TSConstBuiltin = { fg = cp.catppuccin6, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
