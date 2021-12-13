@@ -45,10 +45,10 @@ function M.get(cp)
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSLabel = { fg = cp.catppuccin9 }, -- For labels: `label:` in C and `:label:` in Lua.
-		-- TSMethod            = { };    -- For method calls and definitions.
+		TSMethod = { fg = cp.catppuccin0, style = "italic" };    -- For method calls and definitions.
 		TSNamespace = { fg = cp.catppuccin3, style = "italic" }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
-		-- TSNumber            = { };    -- For all numbers
+		TSNumber = { fg = cp.catppuccin8 };    -- For all numbers
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.catppuccin9 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccin11 }, -- For delimiters ie: `.`
@@ -59,6 +59,7 @@ function M.get(cp)
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
+		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" };    -- Tags like html tag names.
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings considecatppuccin5 text in a markup language.
