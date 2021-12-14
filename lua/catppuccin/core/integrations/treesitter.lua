@@ -8,7 +8,7 @@ function M.get(cp)
 		-- By default, most of these groups link to an appropriate Vim group,
 		-- TSError -> Error for example, so you do not have to define these unless
 		-- you explicitly want to support Treesitter's improved syntax awareness.
-		TSField = { fg = cp.catppuccin10 }, -- For fields.
+		TSField = { fg = cp.catppuccin2 }, -- For fields.
 		TSProperty = { fg = cp.catppuccin5, style = "italic" }, -- Same as `TSField`.
 		TSInclude = { fg = cp.catppuccin0, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSOperator = { fg = cp.catppuccin0 }, -- For any operator: `+`, but also `->` and `*` in cp.
