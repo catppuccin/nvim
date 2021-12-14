@@ -1,6 +1,7 @@
 local M = {}
 
 function M.get(cp)
+	local keywords = cp.catppuccin3
 	return {
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -9,16 +10,12 @@ function M.get(cp)
 		-- you explicitly want to support Treesitter's improved syntax awareness.
 		TSField = { fg = cp.catppuccin10 }, -- For fields.
 		TSProperty = { fg = cp.catppuccin5, style = "italic" }, -- Same as `TSField`.
-		TSParameter = { fg = cp.catppuccin2, style = "italic" }, -- For parameters of a function.
 		TSInclude = { fg = cp.catppuccin0, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSOperator = { fg = cp.catppuccin0 }, -- For any operator: `+`, but also `->` and `*` in cp.
 		TSKeywordOperator = { fg = cp.catppuccin0, style = cnf.styles.keywords }, -- For `new` keyword operator
-		TSKeyword = { fg = cp.catppuccin4, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSBoolean = { fg = cp.catppuccin6, style = cnf.styles.keywords }, -- For booleans.
 		TSPunctSpecial = { fg = cp.catppuccin5 }, -- For special punctutation that does not fall in the catagories before.
 
-		TSRepeat = { fg = cp.catppuccin3, style = cnf.styles.keywords }, -- For keywords related to loops.
-		TSConditional = { fg = cp.catppuccin3, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
 		TSConstructor = { fg = cp.catppuccin9 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 
 		-- builtin
@@ -29,7 +26,12 @@ function M.get(cp)
 
 		TSFunction = { fg = cp.catppuccin9, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncMacro = { fg = cp.catppuccin5 }, -- For macro defined functions (calls and definitions): each `macro_rules` in Ruscp.
-		TSKeywordFunction = { fg = cp.catppuccin5, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+
+		TSParameter = { fg = cp.catppuccin2, style = "italic" }, -- For parameters of a function.
+		TSKeywordFunction = { fg = keywords, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSKeyword = { fg = keywords, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
+		TSConditional = { fg = keywords, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
+		TSRepeat = { fg = keywords, style = cnf.styles.keywords }, -- For keywords related to loops.
 
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
@@ -45,10 +47,10 @@ function M.get(cp)
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
 		-- TSFloat             = { };    -- For floats.
 		TSLabel = { fg = cp.catppuccin9 }, -- For labels: `label:` in C and `:label:` in Lua.
-		TSMethod = { fg = cp.catppuccin0, style = "italic" };    -- For method calls and definitions.
-		TSNamespace = { fg = cp.catppuccin3, style = "italic" }, -- For identifiers referring to modules and namespaces.
+		TSMethod = { fg = cp.catppuccin9, style = "italic" };    -- For method calls and definitions.
+		TSNamespace = { fg = cp.catppuccin2, style = "italic" }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
-		TSNumber = { fg = cp.catppuccin8 };    -- For all numbers
+		TSNumber = { fg = cp.catppuccin6 };    -- For all numbers
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.catppuccin9 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccin11 }, -- For delimiters ie: `.`
