@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get(cp)
-	local keywords = cp.catppuccin3
+	local keywords = cp.catppuccin4
 	return {
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
