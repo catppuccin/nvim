@@ -19,7 +19,7 @@ local color_palette = {
 	catppuccin11 = "#6E6C7E",
 	catppuccin17 = "#988BA2",
 	catppuccin15 = "#C3BAC6",
-	catppuccin10 = "#D9DCE2",
+	catppuccin10 = "#DDDDEB",
 }
 
 return color_palette
