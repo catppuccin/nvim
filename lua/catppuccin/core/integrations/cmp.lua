@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	return {
-		CmpItemAbbr = { fg = cp.catppuccin11 },
+		CmpItemAbbr = { fg = cp.catppuccin15 },
 		CmpItemAbbrDeprecated = { fg = cp.catppuccin11, stlye = "strikethrough" },
 		CmpItemKind = { fg = cp.catppuccin9 },
 		CmpItemMenu = { fg = cp.catppuccin10 },
