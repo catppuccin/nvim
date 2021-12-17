@@ -13,14 +13,14 @@ function M.get(cp)
 		TSInclude = { fg = cp.catppuccin0, style = cnf.styles.keywords }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSOperator = { fg = cp.catppuccin0 }, -- For any operator: `+`, but also `->` and `*` in cp.
 		TSKeywordOperator = { fg = cp.catppuccin0, style = cnf.styles.keywords }, -- For `new` keyword operator
-		TSBoolean = { fg = cp.catppuccin6, style = cnf.styles.keywords }, -- For booleans.
+		TSBoolean = { fg = cp.catppuccin8, style = cnf.styles.keywords }, -- For booleans.
 		TSPunctSpecial = { fg = cp.catppuccin5 }, -- For special punctutation that does not fall in the catagories before.
 
 		TSConstructor = { fg = cp.catppuccin9 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 
 		-- builtin
 		TSConstBuiltin = { fg = cp.catppuccin6, style = cnf.styles.keywords }, -- For constant that are built in the language: `nil` in Lua.
-		TSFuncBuiltin = { fg = cp.catppuccin6 }, -- For builtin functions: `table.insert` in Lua.
+		TSFuncBuiltin = { fg = cp.catppuccin7 }, -- For builtin functions: `table.insert` in Lua.
 		TSTypeBuiltin = { fg = cp.catppuccin8, style = cnf.styles.keywords }, -- For builtin types.
 		TSVariableBuiltin = { fg = cp.catppuccin8, style = cnf.styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
 
@@ -40,7 +40,7 @@ function M.get(cp)
 		TSNote = { fg = cp.catppuccin1, bg = cp.catppuccin9 },
 		TSWarning = { fg = cp.catppuccin1, bg = cp.catppuccin8 },
 		TSDanger = { fg = cp.catppuccin1, bg = cp.catppuccin5 },
-		TSConstant = { fg = cp.catppuccin6 }, -- For constants
+		TSConstant = { fg = cp.catppuccin2 }, -- For constants
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in cp.
 		-- TSError             = { };    -- For syntax/parser errors.
 		TSException = { fg = cp.catppuccin3, style = cnf.styles.keywords }, -- For exception related keywords.
@@ -55,22 +55,22 @@ function M.get(cp)
 		tomlTSProperty = { fg = cp.catppuccin9 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccin11 }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = cp.catppuccin11 }, -- For brackets and parenthesis.
-		-- TSString            = { };    -- For strings.
+		TSString = { fg = cp.catppuccin7 };    -- For strings.
 		TSStringRegex = { fg = cp.catppuccin9, style = cnf.styles.strings }, -- For regexes.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
-		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
+		TSVariable = { fg = cp.catppuccin10, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" };    -- Tags like html tag names.
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
-		-- TSText              = { };    -- For strings considecatppuccin5 text in a markup language.
+		TSText = { fg = cp.catppuccin10 };    -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough texcp.
 		-- TSTitle             = { };    -- Text that is part of a title.
 		-- TSLiteral           = { };    -- Literal texcp.
 		-- TSURI               = { };    -- Any URI like a link or email.
-
+		--
 		-- Markdown tresitter parser support
 		TSURI = { fg = cp.catppuccin6 }, -- urls
 		TSLiteral = { fg = cp.catppuccin0 }, -- like inline code
