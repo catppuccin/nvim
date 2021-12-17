@@ -28,7 +28,7 @@ local function get_base()
 		lCursor = { fg = cp.catppuccin1, bg = cp.catppuccin10 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.catppuccin1, bg = cp.catppuccin10 }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.catppuccin14 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = cp.catppuccin15 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		CursorLine = { bg = cp.catppuccin16 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.catppuccin9 }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.catppuccin1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.catppuccin5, style = "bold,italic" }, -- error messages on the command line
@@ -51,13 +51,13 @@ local function get_base()
 		NormalSB = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.catppuccin10, bg = cp.catppuccin14 }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.catppuccin9 },
-		Pmenu = { bg = cp.catppuccin15, fg = cp.catppuccin10 }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.catppuccin4, bg = cp.catppuccin12 }, -- Popup menu: selected item.
+		Pmenu = { bg = cp.catppuccin16, fg = cp.catppuccin15 }, -- Popup menu: normal item.
+		PmenuSel = { fg = cp.catppuccin10, bg = cp.catppuccin12, style = "bold" }, -- Popup menu: selected item.
 		PmenuSbar = { bg = cp.catppuccin12 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.catppuccin11 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.catppuccin9 }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = cp.catppuccin12, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = cp.catppuccin12, fg = cp.catppuccin4 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		Search = { bg = cp.catppuccin12, fg = cp.catppuccin4, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = cp.catppuccin4, fg = cp.catppuccin12 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.catppuccin10 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { sp = cp.catppuccin5, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
@@ -70,8 +70,8 @@ local function get_base()
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.catppuccin0, bg = cp.catppuccin12 }, -- tab pages line, active tab page label
 		Title = { fg = cp.catppuccin9, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = cp.catppuccin15 }, -- Visual mode selection
-		VisualNOS = { bg = cp.catppuccin15 }, -- Visual mode selection when vim is "Not Owning the Selection".
+		Visual = { bg = cp.catppuccin12, style = "bold" }, -- Visual mode selection
+		VisualNOS = { bg = cp.catppuccin12, style = "bold" }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.catppuccin8 }, -- warning messages
 		Whitespace = { fg = cp.catppuccin12 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = cp.catppuccin11 }, -- current match in 'wildmenu' completion
