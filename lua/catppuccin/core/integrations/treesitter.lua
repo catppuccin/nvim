@@ -57,6 +57,7 @@ function M.get(cp)
 		TSPunctBracket = { fg = cp.catppuccin11 }, -- For brackets and parenthesis.
 		-- TSString            = { };    -- For strings.
 		TSStringRegex = { fg = cp.catppuccin9, style = cnf.styles.strings }, -- For regexes.
+		TSStringEscape = { fg = cp.catppuccin4, style = cnf.styles.strings }, -- For escape characters within a string.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		-- TSType              = { };    -- For types.
 		TSVariable = { style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
@@ -64,21 +65,13 @@ function M.get(cp)
 		-- TSTag               = { };    -- Tags like html tag names.
 		-- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
 		-- TSText              = { };    -- For strings considecatppuccin5 text in a markup language.
+		TSTextReference = { fg = cp.catppuccin2 },
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough texcp.
 		-- TSTitle             = { };    -- Text that is part of a title.
 		-- TSLiteral           = { };    -- Literal texcp.
 		-- TSURI               = { };    -- Any URI like a link or email.
-
-		-- Markdown tresitter parser support
-		TSURI = { fg = cp.catppuccin6 }, -- urls
-		TSLiteral = { fg = cp.catppuccin0 }, -- like inline code
-		TSTextReference = { fg = cp.catppuccin2 }, -- references
-		TSTitle = { fg = cp.catppuccin9, style = "bold" }, -- titles like: # Example
-		TSEmphasis = { fg = cp.catppuccin5, style = "bold" }, -- bold
-		TSStrong = { fg = cp.catppuccin4, style = "italic,bold" }, -- italic
-		TSStringEscape = { fg = cp.catppuccin4, style = cnf.styles.strings }, -- For escape characters within a string.
 	}
 end
 
