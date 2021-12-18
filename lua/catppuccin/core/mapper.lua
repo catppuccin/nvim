@@ -84,7 +84,7 @@ local function get_base()
 		-- code itself
 
 		Constant = { fg = cp.catppuccin6 }, -- (prefercatppuccin5) any constant
-		String = { fg = cp.catppuccin7, style = cnf.styles.strings }, -- a string constant: "this is a string"
+		String = { fg = cp.catppuccin0, style = cnf.styles.strings }, -- a string constant: "this is a string"
 		Character = { fg = cp.catppuccin7 }, --  a character constant: 'c', '\n'
 		Number = { fg = cp.catppuccin6 }, --   a number constant: 234, 0xff
 		Float = { fg = cp.catppuccin6 }, --    a floating point constant: 2.3e10
@@ -105,11 +105,11 @@ local function get_base()
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
 
-		Type = { fg = cp.catppuccin8 }, -- (prefercatppuccin5) int, long, char, etcp.
 		StorageClass = { fg = cp.catppuccin8 }, -- static, register, volatile, etcp.
 		Structure = { fg = cp.catppuccin8 }, --  struct, union, enum, etcp.
 		Typedef = { fg = cp.catppuccin8 }, --  A typedef
-		Special = { fg = cp.catppuccin9 }, -- (prefercatppuccin5) any special symbol
+		Special = { fg = cp.catppuccin4 }, -- (prefercatppuccin5) any special symbol
+		Type = { fg = cp.catppuccin9 }, -- (prefercatppuccin5) int, long, char, etcp.
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
