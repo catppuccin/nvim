@@ -44,7 +44,7 @@ function M.get(cp)
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: NULL in cp.
 		TSError = { fg = cp.catppuccin5 }, -- For syntax/parser errors.
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
-		-- TSFloat             = { };    -- For floats.
+		TSFloat             = { fg = cp.catppuccin6 };    -- For floats.
 		TSLabel = { fg = cp.catppuccin9 }, -- For labels: label: in C and :label: in Lua.
 		TSMethod = { fg = cp.catppuccin9, style = "italic" }, -- For method calls and definitions.
 		TSNamespace = { fg = cp.catppuccin2, style = "italic" }, -- For identifiers referring to modules and namespaces.
@@ -60,8 +60,8 @@ function M.get(cp)
 		TSType = { fg = cp.catppuccin8 };    -- For types.
 		TSVariable = { fg = cp.catppuccin10, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" }, -- Tags like html tag names.
-		-- TSTag               = { };    -- Tags like html tag names.
-		-- TSTagDelimiter      = { };    -- Tag delimiter like < > /
+		TSTag               = { fg = cp.catppuccin6 };    -- Tags like html tag names.
+		TSTagDelimiter      = { fg = cp.catppuccin5 };    -- Tag delimiter like < > /
 		TSText = { fg = cp.catppuccin10 }, -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
