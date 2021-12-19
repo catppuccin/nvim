@@ -72,9 +72,9 @@ function M.get(cp)
 		-- TSURI               = { };    -- Any URI like a link or email.
 		--
 		-- Markdown tresitter parser support
-		TSURI = { fg = cp.catppuccin6 }, -- urls
+		TSURI = { fg = cp.catppuccin2, style = "italic" }, -- urls
 		TSLiteral = { fg = cp.catppuccin0 }, -- like inline code
-		TSTextReference = { fg = cp.catppuccin2 }, -- references
+		TSTextReference = { fg = cp.catppuccin7, style = "bold" }, -- references
 		TSTitle = { fg = cp.catppuccin9, style = "bold" }, -- titles like: # Example
 		TSEmphasis = { fg = cp.catppuccin5, style = "bold" }, -- bold
 		TSStrong = { fg = cp.catppuccin4, style = "italic,bold" }, -- italic
