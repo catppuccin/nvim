@@ -2,7 +2,7 @@ local color_palette = {
 	-- morning palette
 	catppuccin0 = "#AFE3B3", -- Teal
 	catppuccin2 = "#F2CECF", -- Flamingo
-	catppuccin3 = "#CCA5E5", -- Magenta
+	catppuccin3 = "#C6AAE8", -- Magenta
 	catppuccin4 = "#E5B4E2", -- Pink
 	catppuccin5 = "#E38C8F", -- Red
 	catppuccin6 = "#F9C096", -- Orange
