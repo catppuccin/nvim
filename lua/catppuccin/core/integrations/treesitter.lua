@@ -14,8 +14,11 @@ function M.get(cp)
 		TSInclude = { fg = cp.catppuccin5, style = "italic" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		TSOperator = { fg = operators, style = "bold" }, -- For any operator: +, but also -> and * in cp.
 		TSKeywordOperator = { fg = operators, style = "bold" }, -- For new keyword operator
-		TSBoolean = { fg = cp.catppuccin8, style = cnf.styles.keywords }, -- For booleans.
 		TSPunctSpecial = { fg = cp.catppuccin5 }, -- For special punctutation that does not fall in the catagories before.
+
+		TSFloat = { fg = cp.catppuccin6, style = "italic" }, -- For floats.
+		TSNumber = { fg = cp.catppuccin6, style = "italic" }, -- For all numbers
+		TSBoolean = { fg = cp.catppuccin6, style = "italic" }, -- For booleans.
 
 		TSConstructor = { fg = cp.catppuccin9 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.catppuccin2 }, -- For constants
@@ -44,12 +47,10 @@ function M.get(cp)
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: NULL in cp.
 		TSError = { fg = cp.catppuccin5 }, -- For syntax/parser errors.
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
-		TSFloat             = { fg = cp.catppuccin6 };    -- For floats.
 		TSLabel = { fg = cp.catppuccin9 }, -- For labels: label: in C and :label: in Lua.
 		TSMethod = { fg = cp.catppuccin9, style = "italic" }, -- For method calls and definitions.
 		TSNamespace = { fg = cp.catppuccin2, style = "italic" }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
-		TSNumber = { fg = cp.catppuccin8 }, -- For all numbers
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.catppuccin9 }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.catppuccin11 }, -- For delimiters ie: .
@@ -57,11 +58,11 @@ function M.get(cp)
 		TSString = { fg = cp.catppuccin0 }, -- For strings.
 		TSStringRegex = { fg = cp.catppuccin6, style = cnf.styles.strings }, -- For regexes.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
-		TSType = { fg = cp.catppuccin8 };    -- For types.
+		TSType = { fg = cp.catppuccin8 }, -- For types.
 		TSVariable = { fg = cp.catppuccin10, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" }, -- Tags like html tag names.
-		TSTag               = { fg = cp.catppuccin6 };    -- Tags like html tag names.
-		TSTagDelimiter      = { fg = cp.catppuccin5 };    -- Tag delimiter like < > /
+		TSTag = { fg = cp.catppuccin6 }, -- Tags like html tag names.
+		TSTagDelimiter = { fg = cp.catppuccin5 }, -- Tag delimiter like < > /
 		TSText = { fg = cp.catppuccin10 }, -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
