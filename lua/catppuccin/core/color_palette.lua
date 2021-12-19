@@ -1,6 +1,6 @@
 local color_palette = {
 	-- morning palette
-	catppuccin0 = "#B1E3AC", -- Green
+	catppuccin0 = "#B1E3AD", -- Green
 	catppuccin2 = "#F2CECF", -- Flamingo
 	catppuccin3 = "#C6AAE8", -- Magenta
 	catppuccin4 = "#E5B4E2", -- Pink
