@@ -1,13 +1,13 @@
 local color_palette = {
 	-- morning palette
-	catppuccin0 = "#AEE3B8", -- Teal
+	catppuccin0 = "#AFE3B3", -- Teal
 	catppuccin2 = "#F2CECF", -- Flamingo
 	catppuccin3 = "#CCA5E5", -- Magenta
 	catppuccin4 = "#E5B4E2", -- Pink
 	catppuccin5 = "#E28A8D", -- Red
 	catppuccin6 = "#F9C096", -- Orange
 	catppuccin7 = "#BEE4ED", -- Light Blue
-	catppuccin8 = "#EBDDAD", -- Yellow
+	catppuccin8 = "#EBDDAA", -- Yellow
 	catppuccin9 = "#A4B9EF", -- Blue
 
 	-- night palette
@@ -19,7 +19,7 @@ local color_palette = {
 	catppuccin11 = "#6E6C7E", -- Gray0
 	catppuccin17 = "#988BA2", -- Gray1
 	catppuccin15 = "#C3BAC6", -- Gray2
-	catppuccin10 = "#D6D7E5", -- White
+	catppuccin10 = "#DADAE8", -- White
 }
 
 return color_palette
