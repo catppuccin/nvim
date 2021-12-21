@@ -331,7 +331,7 @@ They can be used like so:
 ```lua
 local catppuccin = require("catppuccin")
 
-catppuccino.before_loading = function ()
+catppuccin.before_loading = function ()
 	print("I ran before loading Catppuccin!")
 end
 ```
