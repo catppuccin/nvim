@@ -298,7 +298,7 @@ local cp_api = require("catppuccin.api.<module>")
 cp_api.get_colors()
 ```
 
-> Gets the colors. Returns a table where the key is the name of the color and the value is its hex value.
+> Returns a table where the key is the name of the color and the value is its hex value.
 
 ### Configuration
 
