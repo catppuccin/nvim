@@ -304,7 +304,7 @@ cp_api.get_colors()
 
 #### Overwriting highlight groups
 
-Both colors and highlight groups can be overwritten like so:
+Highlight groups can be overwritten like so:
 
 ```lua
 catppuccin.remap({ <hi_group> = { <fields> }, })
