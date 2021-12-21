@@ -79,6 +79,10 @@ function M.get(cp)
 		TSEmphasis = { fg = cp.catppuccin5, style = "bold" }, -- bold
 		TSStrong = { fg = cp.catppuccin4, style = "italic,bold" }, -- italic
 		TSStringEscape = { fg = cp.catppuccin4, style = cnf.styles.strings }, -- For escape characters within a string.
+
+		-- bash
+		bashTSFuncBuiltin = { fg = cp.catppuccin5, style = "italic" },
+		bashTSParameter = { fg = cp.catppuccin8, style = "italic" },
 	}
 end
 
