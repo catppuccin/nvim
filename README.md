@@ -282,6 +282,24 @@ colorscheme catppuccin
 vim.cmd[[colorscheme catppuccin]]
 ```
 
+#### API
+
+The API allows you fetch data from Catppuccin. It can be required as a Lua module:
+
+```lua
+local cp_api = require("catppuccin.api.<module>")
+```
+
+##### Modules
+
+-   `colors`
+
+```lua
+cp_api.get_colors()
+```
+
+> Gets the colors. Returns a table where the key is the name of the color and the value is its hex value.
+
 ### Configuration
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
