@@ -282,60 +282,6 @@ colorscheme catppuccin
 vim.cmd[[colorscheme catppuccin]]
 ```
 
-### Extra
-
-#### API
-
-The API allows you fetch data from Catppuccin. It can be required as a Lua module:
-
-```lua
-local cp_api = require("catppuccin.api.<module>")
-```
-
-##### Modules
-
--   `colors`
-
-```lua
-cp_api.get_colors()
-```
-
-> Returns a table where the key is the name of the color and the value is its hex value.
-
-#### Overwriting highlight groups
-
-Highlight groups can be overwritten like so:
-
-```lua
-catppuccin.remap({ <hi_group> = { <fields> }, })
-```
-
-Here is an example:
-
-```lua
-local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with API
-catppuccin.remap({ Comment = { fg = colors.catppuccin2 }, })
-```
-
-#### Hooks
-
-Use them to execute code at certain events. These are the ones available:
-
-| Function           | Description                  |
-| ------------------ | ---------------------------- |
-| `before_loading()` | Before loading a colorscheme |
-| `after_loading()`  | After loading a colorscheme  |
-
-They can be used like so:
-
-```lua
-local catppuccin = require("catppuccin")
-
-catppuccin.before_loading = function ()
-	print("I ran before loading Catppuccin!")
-end
-```
-
 ### Configuration
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
@@ -396,10 +342,59 @@ integration = {
 }
 ```
 
-## 🙋 FAQ
+### Extra
 
--   Q: **_"How can I view the doc from NeoVim?"_**
-    A: Use `:help catppuccin`
+#### API
+
+The API allows you fetch data from Catppuccin. It can be required as a Lua module:
+
+```lua
+local cp_api = require("catppuccin.api.<module>")
+```
+
+##### Modules
+
+-   `colors`
+
+```lua
+cp_api.get_colors()
+```
+
+> Returns a table where the key is the name of the color and the value is its hex value.
+
+#### Overwriting highlight groups
+
+Highlight groups can be overwritten like so:
+
+```lua
+catppuccin.remap({ <hi_group> = { <fields> }, })
+```
+
+Here is an example:
+
+```lua
+local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with API
+catppuccin.remap({ Comment = { fg = colors.catppuccin2 }, })
+```
+
+#### Hooks
+
+Use them to execute code at certain events. These are the ones available:
+
+| Function           | Description                  |
+| ------------------ | ---------------------------- |
+| `before_loading()` | Before loading a colorscheme |
+| `after_loading()`  | After loading a colorscheme  |
+
+They can be used like so:
+
+```lua
+local catppuccin = require("catppuccin")
+
+catppuccin.before_loading = function ()
+	print("I ran before loading Catppuccin!")
+end
+```
 
 ## 💝 Thanks to
 
