@@ -73,7 +73,7 @@ function M.get(cp)
 		--
 		-- Markdown tresitter parser support
 		TSURI = { fg = cp.catppuccin2, style = "italic" }, -- urls
-		TSLiteral = { fg = cp.catppuccin0 }, -- like inline code
+		TSLiteral = { fg = cp.catppuccin0, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
 		TSTextReference = { fg = cp.catppuccin7, style = "bold" }, -- references
 		TSTitle = { fg = cp.catppuccin9, style = "bold" }, -- titles like: # Example
 		TSEmphasis = { fg = cp.catppuccin5, style = "bold" }, -- bold
