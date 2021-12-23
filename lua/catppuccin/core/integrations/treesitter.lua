@@ -45,7 +45,7 @@ function M.get(cp)
 		TSWarning = { fg = cp.catppuccin1, bg = cp.catppuccin8 },
 		TSDanger = { fg = cp.catppuccin1, bg = cp.catppuccin5 },
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: NULL in cp.
-		TSError = { fg = cp.catppuccin5 }, -- For syntax/parser errors.
+		-- TSError = { fg = cp.catppuccin5 }, -- For syntax/parser errors.
 		-- rustTSField = { fg = cp.catppuccin12 }, -- For fields.
 		TSLabel = { fg = cp.catppuccin9 }, -- For labels: label: in C and :label: in Lua.
 		TSMethod = { fg = cp.catppuccin9, style = "italic" }, -- For method calls and definitions.
