@@ -2,7 +2,8 @@ local M = {}
 
 function M.get(cp)
 	local keywords = cp.catppuccin4
-	local operators = cp.catppuccin7
+	local operators = cp.catppuccin19
+	local math_logic = cp.catppuccin18
 	return {
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -16,20 +17,21 @@ function M.get(cp)
 		TSKeywordOperator = { fg = operators, style = "bold" }, -- For new keyword operator
 		TSPunctSpecial = { fg = cp.catppuccin5 }, -- For special punctutation that does not fall in the catagories before.
 
-		TSFloat = { fg = cp.catppuccin6, style = "italic" }, -- For floats.
-		TSNumber = { fg = cp.catppuccin6, style = "italic" }, -- For all numbers
-		TSBoolean = { fg = cp.catppuccin6, style = "italic" }, -- For booleans.
+		TSFloat = { fg = math_logic, style = "italic" }, -- For floats.
+		TSNumber = { fg = cp.catppuccin5, style = "italic" }, -- For all numbers
+		TSBoolean = { fg = math_logic, style = "italic" }, -- For booleans.
 
 		TSConstructor = { fg = cp.catppuccin9 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		TSConstant = { fg = cp.catppuccin2 }, -- For constants
-		TSConditional = { fg = keywords, style = cnf.styles.keywords }, -- For keywords related to conditionnals.
-		TSRepeat = { fg = keywords, style = cnf.styles.keywords }, -- For keywords related to loops.
-		TSException = { fg = cp.catppuccin6, style = cnf.styles.keywords }, -- For exception related keywords.
+		TSConstant = { fg = cp.catppuccin2, style = "NONE" }, -- For constants
+		TSConditional = { fg = keywords, style = "bold" }, -- For keywords related to conditionnals.
+		TSRepeat = { fg = keywords }, -- For keywords related to loops.
+		TSException = { fg = cp.catppuccin6, style = "italic" }, -- For exception related keywords.
+		TSKeywordReturn = { fg = cp.catppuccin5 },
 
 		-- builtin
-		TSConstBuiltin = { fg = cp.catppuccin6, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
+		TSConstBuiltin = { fg = cp.catppuccin18, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
 		TSFuncBuiltin = { fg = cp.catppuccin6, style = "italic" }, -- For builtin functions: table.insert in Lua.
-		TSTypeBuiltin = { fg = cp.catppuccin5, style = "italic" }, -- For builtin types.
+		TSTypeBuiltin = { fg = cp.catppuccin18, style = "italic" }, -- For builtin types.
 		TSVariableBuiltin = { fg = cp.catppuccin5, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.catppuccin9, style = cnf.styles.functions }, -- For function (calls and definitions).
@@ -60,19 +62,20 @@ function M.get(cp)
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		TSType = { fg = cp.catppuccin8 }, -- For types.
 		TSVariable = { fg = cp.catppuccin10, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
-		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" }, -- Tags like html tag names.
-		TSTag = { fg = cp.catppuccin6 }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = cp.catppuccin5 }, -- Tag delimiter like < > /
-		TSText = { fg = cp.catppuccin10 }, -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough texcp.
 		-- TSTitle             = { };    -- Text that is part of a title.
 		-- TSLiteral           = { };    -- Literal texcp.
-		-- TSURI               = { };    -- Any URI like a link or email.
-		--
+	
+		-- html
+		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" }, -- Tags like html tag names.
+		TSTag = { fg = cp.catppuccin6 }, -- Tags like html tag names.
+		TSTagDelimiter = { fg = cp.catppuccin18 }, -- Tag delimiter like < > /
+		TSText = { fg = cp.catppuccin10 }, -- For strings considerated text in a markup language.
+
 		-- Markdown tresitter parser support
-		TSURI = { fg = cp.catppuccin2, style = "italic" }, -- urls
+		TSURI = { fg = cp.catppuccin2, style = "italic,underline" }, -- urls, links and emails
 		TSLiteral = { fg = cp.catppuccin0, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
 		TSTextReference = { fg = cp.catppuccin7, style = "bold" }, -- references
 		TSTitle = { fg = cp.catppuccin9, style = "bold" }, -- titles like: # Example
