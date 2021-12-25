@@ -18,7 +18,7 @@ function M.get(cp)
 		TSPunctSpecial = { fg = cp.catppuccin5 }, -- For special punctutation that does not fall in the catagories before.
 
 		TSFloat = { fg = math_logic, style = "italic" }, -- For floats.
-		TSNumber = { fg = cp.catppuccin5, style = "italic" }, -- For all numbers
+		TSNumber = { fg = math_logic, style = "italic" }, -- For all numbers
 		TSBoolean = { fg = math_logic, style = "italic" }, -- For booleans.
 
 		TSConstructor = { fg = cp.catppuccin9 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
@@ -67,11 +67,11 @@ function M.get(cp)
 		-- TSStrike            = { };    -- For strikethrough texcp.
 		-- TSTitle             = { };    -- Text that is part of a title.
 		-- TSLiteral           = { };    -- Literal texcp.
-	
+
 		-- html
 		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" }, -- Tags like html tag names.
 		TSTag = { fg = cp.catppuccin6 }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = cp.catppuccin18 }, -- Tag delimiter like < > /
+		TSTagDelimiter = { fg = cp.catppuccin7 }, -- Tag delimiter like < > /
 		TSText = { fg = cp.catppuccin10 }, -- For strings considerated text in a markup language.
 
 		-- Markdown tresitter parser support

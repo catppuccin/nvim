@@ -3,16 +3,14 @@ local color_palette = {
 	catppuccin0 = "#B0DFA4", -- Green
 	catppuccin2 = "#F0C7C7", -- Flamingo
 	catppuccin3 = "#C7B3EE", -- Magenta
-	catppuccin4 = "#E2B2E1", -- Pink
+	catppuccin4 = "#DCAEDF", -- Pink
 	catppuccin5 = "#E38C8F", -- Red
-	catppuccin7 = "#BEE4ED", -- Teal
+	catppuccin7 = "#C6D5F9", -- Teal
 	catppuccin8 = "#F1D49B", -- Yellow
 	catppuccin9 = "#A0B6ED", -- Blue
 	catppuccin18 = "#95C6C1",
 	catppuccin6 = "#F0B58F", -- Peach
-
-	-- haven't found a good match for catppuccin19. It's mostly used on operators and symbols
-	catppuccin19 = "#FF7171",
+	catppuccin19 = "#EA8DAA",
 	-- catppuccin19 = "#C9CBFF",
 	-- catppuccin19 = "#ECAA9F",
 
