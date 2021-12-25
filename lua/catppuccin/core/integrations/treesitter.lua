@@ -24,7 +24,7 @@ function M.get(cp)
 		TSConstructor = { fg = cp.catppuccin9 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.catppuccin2, style = "NONE" }, -- For constants
 		TSConditional = { fg = keywords, style = "bold" }, -- For keywords related to conditionnals.
-		TSRepeat = { fg = keywords }, -- For keywords related to loops.
+		TSRepeat = { fg = keywords, style = "bold" }, -- For keywords related to loops.
 		TSException = { fg = cp.catppuccin6, style = "italic" }, -- For exception related keywords.
 		TSKeywordReturn = { fg = cp.catppuccin5 },
 
