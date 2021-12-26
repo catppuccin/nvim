@@ -3,7 +3,7 @@ local M = {}
 function M.get(cp)
 	local keywords = cp.catppuccin4
 	local operators = cp.catppuccin19
-	local math_logic = cp.catppuccin18
+	local math_logic = cp.catppuccin7
 	return {
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
