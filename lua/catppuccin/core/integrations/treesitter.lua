@@ -15,7 +15,7 @@ function M.get(cp)
 		TSInclude = { fg = cp.catppuccin19, style = "italic" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		TSOperator = { fg = operators, style = "bold" }, -- For any operator: +, but also -> and * in cp.
 		TSKeywordOperator = { fg = operators, style = "bold" }, -- For new keyword operator
-		TSPunctSpecial = { fg = cp.catppuccin5 }, -- For special punctutation that does not fall in the catagories before.
+		TSPunctSpecial = { fg = cp.catppuccin19, style = "bold" }, -- For special punctutation that does not fall in the catagories before.
 
 		TSFloat = { fg = math_logic, style = "bold,italic" }, -- For floats.
 		TSNumber = { fg = math_logic, style = "bold,italic" }, -- For all numbers
@@ -30,7 +30,7 @@ function M.get(cp)
 		-- builtin
 		TSConstBuiltin = { fg = cp.catppuccin20, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
 		TSFuncBuiltin = { fg = cp.catppuccin6, style = "italic" }, -- For builtin functions: table.insert in Lua.
-		TSTypeBuiltin = { fg = cp.catppuccin5, style = "italic" }, -- For builtin types.
+		TSTypeBuiltin = { fg = cp.catppuccin20, style = "italic" }, -- For builtin types.
 		TSVariableBuiltin = { fg = cp.catppuccin5, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.catppuccin9, style = cnf.styles.functions }, -- For function (calls and definitions).
@@ -64,7 +64,7 @@ function M.get(cp)
 		TSVariable = { fg = cp.catppuccin10, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" }, -- Tags like html tag names.
 		TSTag = { fg = cp.catppuccin6 }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = cp.catppuccin5 }, -- Tag delimiter like < > /
+		TSTagDelimiter = { fg = cp.catppuccin18 }, -- Tag delimiter like < > /
 		TSText = { fg = cp.catppuccin10 }, -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
@@ -74,12 +74,12 @@ function M.get(cp)
 		-- TSURI               = { };    -- Any URI like a link or email.
 		--
 		-- Markdown tresitter parser support
-		TSURI = { fg = cp.catppuccin2, style = "italic" }, -- urls
+		TSURI = { fg = cp.catppuccin2, style = "italic,underline" }, -- urls, links and emails
 		TSLiteral = { fg = cp.catppuccin0, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
 		TSTextReference = { fg = cp.catppuccin7, style = "bold" }, -- references
 		TSTitle = { fg = cp.catppuccin9, style = "bold" }, -- titles like: # Example
-		TSEmphasis = { fg = cp.catppuccin5, style = "bold" }, -- bold
-		TSStrong = { fg = cp.catppuccin4, style = "italic,bold" }, -- italic
+		TSEmphasis = { fg = cp.catppuccin19, style = "italic" }, -- bold
+		TSStrong = { fg = cp.catppuccin19, style = "bold" }, -- italic
 		TSStringEscape = { fg = cp.catppuccin4, style = cnf.styles.strings }, -- For escape characters within a string.
 
 		-- bash
@@ -87,7 +87,10 @@ function M.get(cp)
 		bashTSParameter = { fg = cp.catppuccin8, style = "italic" },
 
 		-- lua
-		luaTSField = { fg = cp.catppuccin8 },
+		luaTSField = { fg = cp.catppuccin7 },
+
+		-- java
+		javaTSConstant = { fg = cp.catppuccin7 },
 	}
 end
 
