@@ -1,6 +1,6 @@
 local color_palette = {
 	catppuccin21 = "#F5E0DC", -- Rosewater
-	catppuccin2 = "#F1CBCB", -- Flamingo
+	catppuccin2 = "#F2CDCD", -- Flamingo
 	catppuccin3 = "#C6AAE8", -- Magenta
 	catppuccin4 = "#E5B4E2", -- Pink
 	catppuccin5 = "#E38C8F", -- Red
