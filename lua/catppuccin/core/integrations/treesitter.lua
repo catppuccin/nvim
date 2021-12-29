@@ -21,7 +21,7 @@ function M.get(cp)
 		TSNumber = { fg = math_logic, style = "bold,italic" }, -- For all numbers
 		TSBoolean = { fg = math_logic, style = "bold,italic" }, -- For booleans.
 
-		TSConstructor = { fg = cp.catppuccin18 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		TSConstructor = { fg = cp.catppuccin20 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.catppuccin6 }, -- For constants
 		TSConditional = { fg = keywords, style = "bold" }, -- For keywords related to conditionnals.
 		TSRepeat = { fg = keywords, style = "bold" }, -- For keywords related to loops.
@@ -64,7 +64,7 @@ function M.get(cp)
 		TSVariable = { fg = cp.catppuccin10, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
 		TSTagAttribute = { fg = cp.catppuccin3, style = "italic" }, -- Tags like html tag names.
 		TSTag = { fg = cp.catppuccin6 }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = cp.catppuccin18 }, -- Tag delimiter like < > /
+		TSTagDelimiter = { fg = cp.catppuccin19 }, -- Tag delimiter like < > /
 		TSText = { fg = cp.catppuccin10 }, -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
@@ -88,9 +88,17 @@ function M.get(cp)
 
 		-- lua
 		luaTSField = { fg = cp.catppuccin7 },
+		luaTSConstructor = { fg = cp.catppuccin18 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
 		-- java
 		javaTSConstant = { fg = cp.catppuccin7 },
+
+		-- typescript
+		typescriptTSProperty = { fg = cp.catppuccin3, style = "italic" }, -- Same as TSField.
+
+		-- css
+		cssTSType = { fg = cp.catppuccin18 },
+		cssTSProperty = { fg = cp.catppuccin8, style = "italic" }, -- Same as TSField.
 	}
 end
 
