@@ -54,7 +54,7 @@ You can use your favorite plugin manager for this. Here are some examples with t
 #### Vim-plug
 
 ```lua
-Plug 'catppuccin/nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 ```
 
 #### Packer.nvim
@@ -69,7 +69,7 @@ use({
 #### Vundle
 
 ```lua
-Plugin 'catppuccin/nvim'
+Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 ```
 
 #### NeoBundle
