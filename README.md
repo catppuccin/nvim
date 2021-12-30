@@ -72,12 +72,6 @@ use({
 Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 ```
 
-#### NeoBundle
-
-```lua
-NeoBundleFetch 'catppuccin/nvim'
-```
-
 ### Setup
 
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
