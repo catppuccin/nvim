@@ -2,13 +2,13 @@ local M = {}
 
 function M.get(cp)
 	return {
-		NeogitBranch = { fg = cp.catppuccin4 },
-		NeogitRemote = { fg = cp.catppuccin4 },
-		NeogitHunkHeader = { bg = cp.catppuccin9, fg = cp.catppuccin10 },
-		NeogitHunkHeaderHighlight = { bg = cp.catppuccin12, fg = cp.catppuccin9 },
-		NeogitDiffContextHighlight = { bg = cp.catppuccin15, fg = cp.catppuccin0 },
-		NeogitDiffDeleteHighlight = { fg = cp.catppuccin5, bg = cp.catppuccin1 },
-		NeogitDiffAddHighlight = { fg = cp.catppuccin9, bg = cp.catppuccin1 },
+		NeogitBranch = { fg = cp.pink },
+		NeogitRemote = { fg = cp.pink },
+		NeogitHunkHeader = { bg = cp.blue, fg = cp.white },
+		NeogitHunkHeaderHighlight = { bg = cp.black4, fg = cp.blue },
+		NeogitDiffContextHighlight = { bg = cp.gray2, fg = cp.green },
+		NeogitDiffDeleteHighlight = { fg = cp.red, bg = cp.black2 },
+		NeogitDiffAddHighlight = { fg = cp.blue, bg = cp.black2 },
 	}
 end
 

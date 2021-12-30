@@ -3,29 +3,29 @@ local M = {}
 function M.get(cp)
 	local config = require("catppuccin.config").options
 
-	local root_dir_color = cp.catppuccin4
+	local root_dir_color = cp.pink
 
 	if config.integrations.nvimtree.show_root then
-		root_dir_color = cp.catppuccin9
+		root_dir_color = cp.blue
 	end
 
 	return {
-		NvimTreeFolderName = { fg = cp.catppuccin9 },
-		NvimTreeFolderIcon = { fg = cp.catppuccin9 },
-		NvimTreeNormal = { fg = cp.catppuccin10, bg = cp.catppuccin14 },
-		NvimTreeOpenedFolderName = { fg = cp.catppuccin9 },
-		NvimTreeEmptyFolderName = { fg = cp.catppuccin9 },
-		NvimTreeIndentMarker = { fg = cp.catppuccin11 },
-		NvimTreeVertSplit = { fg = cp.catppuccin1, bg = cp.catppuccin1 },
+		NvimTreeFolderName = { fg = cp.blue },
+		NvimTreeFolderIcon = { fg = cp.blue },
+		NvimTreeNormal = { fg = cp.white, bg = cp.black1 },
+		NvimTreeOpenedFolderName = { fg = cp.blue },
+		NvimTreeEmptyFolderName = { fg = cp.blue },
+		NvimTreeIndentMarker = { fg = cp.gray0 },
+		NvimTreeVertSplit = { fg = cp.black2, bg = cp.black2 },
 		NvimTreeRootFolder = { fg = root_dir_color, style = "bold" },
-		NvimTreeSymlink = { fg = cp.catppuccin4 },
-		NvimTreeStatuslineNc = { fg = cp.catppuccin14, bg = cp.catppuccin14 },
-		NvimTreeGitDirty = { fg = cp.catppuccin8 },
-		NvimTreeGitNew = { fg = cp.catppuccin9 },
-		NvimTreeGitDeleted = { fg = cp.catppuccin5 },
-		NvimTreeSpecialFile = { fg = cp.catppuccin2 },
-		NvimTreeImageFile = { fg = cp.catppuccin10 },
-		NvimTreeOpenedFile = { fg = cp.catppuccin4 },
+		NvimTreeSymlink = { fg = cp.pink },
+		NvimTreeStatuslineNc = { fg = cp.black1, bg = cp.black1 },
+		NvimTreeGitDirty = { fg = cp.yellow },
+		NvimTreeGitNew = { fg = cp.blue },
+		NvimTreeGitDeleted = { fg = cp.red },
+		NvimTreeSpecialFile = { fg = cp.flamingo },
+		NvimTreeImageFile = { fg = cp.white },
+		NvimTreeOpenedFile = { fg = cp.pink },
 	}
 end
 
