@@ -313,7 +313,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ##### Special Integrations
 
-- **Feline.nvim**: Catppuccin provides this integration as a compoenent that you can select on your Feline config:
+- **Feline.nvim**: Catppuccin provides this integration as a component that you can select on your Feline config:
 
 ```lua
 require("feline").setup({
