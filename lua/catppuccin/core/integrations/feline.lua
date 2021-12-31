@@ -26,7 +26,7 @@ local assets = {
 	slim_dot = '•',
 }
 
-local clrs = require("catppuccin.api.colors").get_colors()
+local clrs = require("catppuccin.core.color_palette")
 
 -- settings
 local sett = {
