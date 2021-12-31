@@ -2,12 +2,12 @@ local M = {}
 
 function M.get(cp)
 	return {
-		markdownHeadingDelimiter = { fg = cp.catppuccin6, style = "bold" },
-		markdownCode = { fg = cp.catppuccin2 },
-		markdownCodeBlock = { fg = cp.catppuccin2 },
-		markdownH1 = { fg = cp.catppuccin4, style = "bold" },
-		markdownH2 = { fg = cp.catppuccin9, style = "bold" },
-		markdownLinkText = { fg = cp.catppuccin9, style = "underline" },
+		markdownHeadingDelimiter = { fg = cp.peach, style = "bold" },
+		markdownCode = { fg = cp.flamingo },
+		markdownCodeBlock = { fg = cp.flamingo },
+		markdownH1 = { fg = cp.pink, style = "bold" },
+		markdownH2 = { fg = cp.blue, style = "bold" },
+		markdownLinkText = { fg = cp.blue, style = "underline" },
 	}
 end
 

@@ -1,18 +1,18 @@
 local M = {}
 
-local is_prepacatppuccin5
+local is_prepared
 
-local function set_prepacatppuccin5(val)
-	is_prepacatppuccin5 = val
+local function set_prepared(val)
+	is_prepared = val
 end
 
-local function get_prepacatppuccin5()
-	return is_prepacatppuccin5
+local function get_prepared()
+	return is_prepared
 end
 
 function M.get(cp)
 
-	if not get_prepacatppuccin5() then
+	if not get_prepared() then
 		local catppuccin = require("catppuccin")
 		if catppuccin.after_loading ~= nil then
 			catppuccin.after_loading = function ()
@@ -24,24 +24,24 @@ function M.get(cp)
 				require'lightspeed'.init_highlight()
 			end
 		end
-		set_prepacatppuccin5(true)
+		set_prepared(true)
 	end
 
 	return {
-		LightspeedLabel = {bg = cp.catppuccin12, fg = cp.catppuccin10},
-		LightspeedOverlapped = {bg = cp.catppuccin12, fg = cp.catppuccin10},
-		LightspeedLabelDistant = {bg = cp.catppuccin3, fg = cp.catppuccin10},
-		LightspeedLabelDistantOverlapped = {bg = cp.catppuccin3, fg = cp.catppuccin10},
-		LightspeedShortcut = {bg = cp.catppuccin1, fg = cp.catppuccin6, style = "italic"},
-		LightspeedShortcutOverlapped = {bg = cp.catppuccin1, fg = cp.catppuccin6, style = "bold"},
-		LightspeedMaskedChar = {bg = cp.catppuccin1, fg = cp.catppuccin5, style = "undercurl"},
-		LightspeedGreyWash = {bg = cp.catppuccin1, fg = cp.catppuccin11},
-		LightspeedUnlabeledMatch = {bg = cp.catppuccin1, fg = cp.catppuccin5, style = "underline"},
-		LightspeedOneCharMatch = {bg = cp.catppuccin1, fg = cp.catppuccin5, style = "underline"},
-		LightspeedUniqueChar = {bg = cp.catppuccin1, fg = cp.catppuccin0, style = "strikethrough"},
-		LightspeedPendingOpArea = {bg = cp.catppuccin1, fg = cp.catppuccin0, style = "strikethrough"},
-		LightspeedPendingChangeOpArea = {bg = cp.catppuccin1, fg = cp.catppuccin0, style = "strikethrough"},
-		LightspeedCursor = {fg = cp.catppuccin1, bg = cp.catppuccin10},
+		LightspeedLabel = {bg = cp.black4, fg = cp.white},
+		LightspeedOverlapped = {bg = cp.black4, fg = cp.white},
+		LightspeedLabelDistant = {bg = cp.magenta, fg = cp.white},
+		LightspeedLabelDistantOverlapped = {bg = cp.magenta, fg = cp.white},
+		LightspeedShortcut = {bg = cp.black2, fg = cp.peach, style = "italic"},
+		LightspeedShortcutOverlapped = {bg = cp.black2, fg = cp.peach, style = "bold"},
+		LightspeedMaskedChar = {bg = cp.black2, fg = cp.red, style = "undercurl"},
+		LightspeedGreyWash = {bg = cp.black2, fg = cp.gray0},
+		LightspeedUnlabeledMatch = {bg = cp.black2, fg = cp.red, style = "underline"},
+		LightspeedOneCharMatch = {bg = cp.black2, fg = cp.red, style = "underline"},
+		LightspeedUniqueChar = {bg = cp.black2, fg = cp.green, style = "strikethrough"},
+		LightspeedPendingOpArea = {bg = cp.black2, fg = cp.green, style = "strikethrough"},
+		LightspeedPendingChangeOpArea = {bg = cp.black2, fg = cp.green, style = "strikethrough"},
+		LightspeedCursor = {fg = cp.black2, bg = cp.white},
 	}
 end
 

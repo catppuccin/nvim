@@ -2,35 +2,35 @@ local cp = require("catppuccin.core.color_palette")
 local catppuccin = {}
 
 catppuccin.normal = {
-	a = { bg = cp.catppuccin9, fg = cp.catppuccin14, gui = "bold" },
-	b = { bg = cp.catppuccin12, fg = cp.catppuccin9 },
-	c = { bg = cp.catppuccin1, fg = cp.catppuccin1 },
+	a = { bg = cp.blue, fg = cp.black1, gui = "bold" },
+	b = { bg = cp.black4, fg = cp.blue },
+	c = { bg = cp.black1, fg = cp.white },
 }
 
 catppuccin.insert = {
-	a = { bg = cp.catppuccin0, fg = cp.catppuccin1, gui = "bold" },
-	b = { bg = cp.catppuccin12, fg = cp.catppuccin7 },
+	a = { bg = cp.green, fg = cp.black2, gui = "bold" },
+	b = { bg = cp.black4, fg = cp.teal },
 }
 
 catppuccin.command = {
-	a = { bg = cp.catppuccin6, fg = cp.catppuccin1, gui = "bold" },
-	b = { bg = cp.catppuccin12, fg = cp.catppuccin6 },
+	a = { bg = cp.peach, fg = cp.black2, gui = "bold" },
+	b = { bg = cp.black4, fg = cp.peach },
 }
 
 catppuccin.visual = {
-	a = { bg = cp.catppuccin3, fg = cp.catppuccin1, gui = "bold" },
-	b = { bg = cp.catppuccin12, fg = cp.catppuccin3 },
+	a = { bg = cp.magenta, fg = cp.black2, gui = "bold" },
+	b = { bg = cp.black4, fg = cp.magenta },
 }
 
 catppuccin.replace = {
-	a = { bg = cp.catppuccin5, fg = cp.catppuccin1, gui = "bold" },
-	b = { bg = cp.catppuccin12, fg = cp.catppuccin5 },
+	a = { bg = cp.red, fg = cp.black2, gui = "bold" },
+	b = { bg = cp.black4, fg = cp.red },
 }
 
 catppuccin.inactive = {
-	a = { bg = cp.catppuccin1, fg = cp.catppuccin9 },
-	b = { bg = cp.catppuccin1, fg = cp.catppuccin12, gui = "bold" },
-	c = { bg = cp.catppuccin1, fg = cp.catppuccin11 },
+	a = { bg = cp.black2, fg = cp.blue },
+	b = { bg = cp.black2, fg = cp.black4, gui = "bold" },
+	c = { bg = cp.black2, fg = cp.gray0 },
 }
 
 return catppuccin

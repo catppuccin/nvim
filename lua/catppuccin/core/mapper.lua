@@ -9,7 +9,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(color_palette.catppuccin1) then
+	if colors_util.assert_brightness(color_palette.black2) then
 		props["background"] = "light"
 	end
 
@@ -21,153 +21,153 @@ local function get_base()
 	cp.none = "NONE"
 
 	return {
-		Comment = { fg = cp.catppuccin11, style = cnf.styles.comments }, -- just comments
-		ColorColumn = { bg = cp.catppuccin15 }, -- used for the columns set with 'colorcolumn'
+		Comment = { fg = cp.gray0, style = cnf.styles.comments }, -- just comments
+		ColorColumn = { bg = cp.gray2 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = cp.catppuccin1, bg = cp.catppuccin10 }, -- character under the cursor
-		lCursor = { fg = cp.catppuccin1, bg = cp.catppuccin10 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { fg = cp.catppuccin1, bg = cp.catppuccin10 }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn = { bg = cp.catppuccin14 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = cp.catppuccin16 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
-		Directory = { fg = cp.catppuccin9 }, -- directory names (and other special names in listings)
-		EndOfBuffer = { fg = cp.catppuccin1 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg = { fg = cp.catppuccin5, style = "bold,italic" }, -- error messages on the command line
-		VertSplit = { fg = cp.catppuccin13 }, -- the column separating vertically split windows
-		Folded = { fg = cp.catppuccin9, bg = cp.catppuccin12 }, -- line used for closed folds
-		FoldColumn = { bg = cp.catppuccin1, fg = cp.catppuccin11 }, -- 'foldcolumn'
-		SignColumn = { bg = cnf.transparent_background and cp.none or cp.catppuccin1, fg = cp.catppuccin12 }, -- column where |signs| are displayed
-		SignColumnSB = { bg = cp.catppuccin13, fg = cp.catppuccin12 }, -- column where |signs| are displayed
-		Substitute = { bg = cp.catppuccin12, fg = cp.catppuccin4 }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = cp.catppuccin12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
-		CursorLineNr = { fg = cp.catppuccin0 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = cp.catppuccin6, style = "bold" }, -- The character under the cursor or just before it, if it is a paicatppuccin5 bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = cp.catppuccin10, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea = { fg = cp.catppuccin10 }, -- Area for messages and cmdline
+		Cursor = { fg = cp.black2, bg = cp.white }, -- character under the cursor
+		lCursor = { fg = cp.black2, bg = cp.white }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = cp.black2, bg = cp.white }, -- like Cursor, but used when in IME mode |CursorIM|
+		CursorColumn = { bg = cp.black1 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
+		CursorLine = { bg = cp.black3 }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
+		EndOfBuffer = { fg = cp.black2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
+		VertSplit = { fg = cp.black0 }, -- the column separating vertically split windows
+		Folded = { fg = cp.blue, bg = cp.black4 }, -- line used for closed folds
+		FoldColumn = { bg = cp.black2, fg = cp.gray0 }, -- 'foldcolumn'
+		SignColumn = { bg = cnf.transparent_background and cp.none or cp.black2, fg = cp.black4 }, -- column where |signs| are displayed
+		SignColumnSB = { bg = cp.black0, fg = cp.black4 }, -- column where |signs| are displayed
+		Substitute = { bg = cp.black4, fg = cp.pink }, -- |:substitute| replacement text highlighting
+		LineNr = { fg = cp.black4 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		CursorLineNr = { fg = cp.green }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
+		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg = { fg = cp.white, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea = { fg = cp.white }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
-		MoreMsg = { fg = cp.catppuccin9 }, -- |more-prompt|
-		NonText = { fg = cp.catppuccin11 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = cp.catppuccin10, bg = cnf.transparent_background and cp.none or cp.catppuccin1 }, -- normal text
-		NormalNC = { fg = cp.catppuccin10, bg = cnf.transparent_background and cp.none or cp.catppuccin1 }, -- normal text in non-current windows
-		NormalSB = { fg = cp.catppuccin10, bg = cp.catppuccin13 }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.catppuccin10, bg = cp.catppuccin14 }, -- Normal text in floating windows.
-		FloatBorder = { fg = cp.catppuccin9 },
-		Pmenu = { bg = cp.catppuccin16, fg = cp.catppuccin15 }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.catppuccin10, bg = cp.catppuccin12, style = "bold" }, -- Popup menu: selected item.
-		PmenuSbar = { bg = cp.catppuccin12 }, -- Popup menu: scrollbar.
-		PmenuThumb = { bg = cp.catppuccin11 }, -- Popup menu: Thumb of the scrollbar.
-		Question = { fg = cp.catppuccin9 }, -- |hit-enter| prompt and yes/no questions
-		QuickFixLine = { bg = cp.catppuccin12, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = cp.catppuccin12, fg = cp.catppuccin4, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { bg = cp.catppuccin4, fg = cp.catppuccin12 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		SpecialKey = { fg = cp.catppuccin10 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad = { sp = cp.catppuccin5, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap = { sp = cp.catppuccin8, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal = { sp = cp.catppuccin9, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = cp.catppuccin0, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = cp.catppuccin10, bg = cp.catppuccin14 }, -- status line of current window
-		StatusLineNC = { fg = cp.catppuccin12, bg = cp.catppuccin14 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { bg = cp.catppuccin14, fg = cp.catppuccin12 }, -- tab pages line, not active tab page label
+		MoreMsg = { fg = cp.blue }, -- |more-prompt|
+		NonText = { fg = cp.gray0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal = { fg = cp.white, bg = cnf.transparent_background and cp.none or cp.black2 }, -- normal text
+		NormalNC = { fg = cp.white, bg = cnf.transparent_background and cp.none or cp.black2 }, -- normal text in non-current windows
+		NormalSB = { fg = cp.white, bg = cp.black0 }, -- normal text in non-current windows
+		NormalFloat = { fg = cp.white, bg = cp.black1 }, -- Normal text in floating windows.
+		FloatBorder = { fg = cp.blue },
+		Pmenu = { bg = cp.black3, fg = cp.gray2 }, -- Popup menu: normal item.
+		PmenuSel = { fg = cp.white, bg = cp.black4, style = "bold" }, -- Popup menu: selected item.
+		PmenuSbar = { bg = cp.black4 }, -- Popup menu: scrollbar.
+		PmenuThumb = { bg = cp.gray0 }, -- Popup menu: Thumb of the scrollbar.
+		Question = { fg = cp.blue }, -- |hit-enter| prompt and yes/no questions
+		QuickFixLine = { bg = cp.black4, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Search = { bg = cp.black4, fg = cp.pink, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		IncSearch = { bg = cp.pink, fg = cp.black4 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		SpecialKey = { fg = cp.white }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpellBad = { sp = cp.red, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal = { sp = cp.blue, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = cp.green, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		StatusLine = { fg = cp.white, bg = cp.black1 }, -- status line of current window
+		StatusLineNC = { fg = cp.black4, bg = cp.black1 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = cp.black1, fg = cp.black4 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = cp.catppuccin0, bg = cp.catppuccin12 }, -- tab pages line, active tab page label
-		Title = { fg = cp.catppuccin9, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = cp.catppuccin12, style = "bold" }, -- Visual mode selection
-		VisualNOS = { bg = cp.catppuccin12, style = "bold" }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg = { fg = cp.catppuccin8 }, -- warning messages
-		Whitespace = { fg = cp.catppuccin12 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu = { bg = cp.catppuccin11 }, -- current match in 'wildmenu' completion
+		TabLineSel = { fg = cp.green, bg = cp.black4 }, -- tab pages line, active tab page label
+		Title = { fg = cp.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
+		Visual = { bg = cp.black4, style = "bold" }, -- Visual mode selection
+		VisualNOS = { bg = cp.black4, style = "bold" }, -- Visual mode selection when vim is "Not Owning the Selection".
+		WarningMsg = { fg = cp.yellow }, -- warning messages
+		Whitespace = { fg = cp.black4 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WildMenu = { bg = cp.gray0 }, -- current match in 'wildmenu' completion
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
-		-- catppuccin11ed out groups should chain up to their "prefercatppuccin5" group by
+		-- gray0ed out groups should chain up to their "preferred" group by
 		-- default,
-		-- Uncatppuccin11 and edit if you want more specific syntax highlighting.
+		-- Ungray0 and edit if you want more specific syntax highlighting.
 
 		-- code itself
 
-		Constant = { fg = cp.catppuccin6 }, -- (prefercatppuccin5) any constant
-		String = { fg = cp.catppuccin0, style = cnf.styles.strings }, -- a string constant: "this is a string"
-		Character = { fg = cp.catppuccin7 }, --  a character constant: 'c', '\n'
-		Number = { fg = cp.catppuccin6 }, --   a number constant: 234, 0xff
-		Float = { fg = cp.catppuccin6 }, --    a floating point constant: 2.3e10
-		Boolean = { fg = cp.catppuccin6 }, --  a boolean constant: TRUE, false
-		Identifier = { fg = cp.catppuccin2, style = cnf.styles.variables }, -- (prefercatppuccin5) any variable name
-		Function = { fg = cp.catppuccin9, style = cnf.styles.functions }, -- function name (also: methods for classes)
-		Statement = { fg = cp.catppuccin3 }, -- (prefercatppuccin5) any statement
-		Conditional = { fg = cp.catppuccin5 }, --  if, then, else, endif, switch, etcp.
-		Repeat = { fg = cp.catppuccin5 }, --   for, do, while, etcp.
-		Label = { fg = cp.catppuccin6 }, --    case, default, etcp.
-		Operator = { fg = cp.catppuccin2 }, -- "sizeof", "+", "*", etcp.
-		Keyword = { fg = cp.catppuccin4, style = cnf.styles.keywords }, --  any other keyword
+		Constant = { fg = cp.peach }, -- (preferred) any constant
+		String = { fg = cp.green, style = cnf.styles.strings }, -- a string constant: "this is a string"
+		Character = { fg = cp.teal }, --  a character constant: 'c', '\n'
+		Number = { fg = cp.peach }, --   a number constant: 234, 0xff
+		Float = { fg = cp.peach }, --    a floating point constant: 2.3e10
+		Boolean = { fg = cp.peach }, --  a boolean constant: TRUE, false
+		Identifier = { fg = cp.flamingo, style = cnf.styles.variables }, -- (preferred) any variable name
+		Function = { fg = cp.blue, style = cnf.styles.functions }, -- function name (also: methods for classes)
+		Statement = { fg = cp.magenta }, -- (preferred) any statement
+		Conditional = { fg = cp.red }, --  if, then, else, endif, switch, etcp.
+		Repeat = { fg = cp.red }, --   for, do, while, etcp.
+		Label = { fg = cp.peach }, --    case, default, etcp.
+		Operator = { fg = cp.flamingo }, -- "sizeof", "+", "*", etcp.
+		Keyword = { fg = cp.pink, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = cp.catppuccin4 }, -- (prefercatppuccin5) generic Preprocessor
-		Include = { fg = cp.catppuccin4 }, --  preprocessor #include
+		PreProc = { fg = cp.pink }, -- (preferred) generic Preprocessor
+		Include = { fg = cp.pink }, --  preprocessor #include
 		-- Define        = { }, --   preprocessor #define
 		-- Macro         = { }, --    same as Define
 		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
 
-		StorageClass = { fg = cp.catppuccin8 }, -- static, register, volatile, etcp.
-		Structure = { fg = cp.catppuccin8 }, --  struct, union, enum, etcp.
-		Typedef = { fg = cp.catppuccin8 }, --  A typedef
-		Special = { fg = cp.catppuccin4 }, -- (prefercatppuccin5) any special symbol
-		Type = { fg = cp.catppuccin9 }, -- (prefercatppuccin5) int, long, char, etcp.
+		StorageClass = { fg = cp.yellow }, -- static, register, volatile, etcp.
+		Structure = { fg = cp.yellow }, --  struct, union, enum, etcp.
+		Typedef = { fg = cp.yellow }, --  A typedef
+		Special = { fg = cp.pink }, -- (preferred) any special symbol
+		Type = { fg = cp.blue }, -- (preferred) int, long, char, etcp.
 		-- SpecialChar   = { }, --  special character in a constant
 		-- Tag           = { }, --    you can use CTRL-] on this
 		-- Delimiter     = { }, --  character that needs attention
-		-- Specialcatppuccin11= { }, -- special things inside a catppuccin11
+		-- Specialgray0= { }, -- special things inside a gray0
 		-- Debug         = { }, --    debugging statements
 
-		Underlined = { style = "underline" }, -- (prefercatppuccin5) text that stands out, HTML links
+		Underlined = { style = "underline" }, -- (preferred) text that stands out, HTML links
 		Bold = { style = "bold" },
 		Italic = { style = "italic" },
 		-- ("Ignore", below, may be invisible...)
-		-- Ignore = { }, -- (prefercatppuccin5) left blank, hidden  |hl-Ignore|
+		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-		Error = { fg = cp.catppuccin5 }, -- (prefercatppuccin5) any erroneous construct
-		Todo = { bg = cp.catppuccin8, fg = cp.catppuccin1, style = "bold" }, -- (prefercatppuccin5) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		qfLineNr = { fg = cp.catppuccin8 },
-		qfFileName = { fg = cp.catppuccin9 },
-		htmlH1 = { fg = cp.catppuccin4, style = "bold" },
-		htmlH2 = { fg = cp.catppuccin9, style = "bold" },
-		-- mkdHeading = { fg = cp.catppuccin6, style = "bold" },
-		-- mkdCode = { bg = cp.terminal_black, fg = cp.catppuccin10 },
-		mkdCodeDelimiter = { bg = cp.catppuccin1, fg = cp.catppuccin10 },
-		mkdCodeStart = { fg = cp.catppuccin2, style = "bold" },
-		mkdCodeEnd = { fg = cp.catppuccin2, style = "bold" },
-		-- mkdLink = { fg = cp.catppuccin9, style = "underline" },
+		Error = { fg = cp.red }, -- (preferred) any erroneous construct
+		Todo = { bg = cp.yellow, fg = cp.black2, style = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		qfLineNr = { fg = cp.yellow },
+		qfFileName = { fg = cp.blue },
+		htmlH1 = { fg = cp.pink, style = "bold" },
+		htmlH2 = { fg = cp.blue, style = "bold" },
+		-- mkdHeading = { fg = cp.peach, style = "bold" },
+		-- mkdCode = { bg = cp.terminal_black, fg = cp.white },
+		mkdCodeDelimiter = { bg = cp.black2, fg = cp.white },
+		mkdCodeStart = { fg = cp.flamingo, style = "bold" },
+		mkdCodeEnd = { fg = cp.flamingo, style = "bold" },
+		-- mkdLink = { fg = cp.blue, style = "underline" },
 
 		-- debugging
-		debugPC = { bg = cp.catppuccin13 }, -- used for highlighting the current line in terminal-debug
-		debugBreakpoint = { bg = cp.catppuccin1, fg = cp.catppuccin11 }, -- used for breakpoint colors in terminal-debug
+		debugPC = { bg = cp.black0 }, -- used for highlighting the current line in terminal-debug
+		debugBreakpoint = { bg = cp.black2, fg = cp.gray0 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
-		illuminatedWord = { bg = cp.catppuccin12 },
-		illuminatedCurWord = { bg = cp.catppuccin12 },
+		illuminatedWord = { bg = cp.black4 },
+		illuminatedCurWord = { bg = cp.black4 },
 		-- diff
-		diffAdded = { fg = cp.catppuccin9 },
-		diffRemoved = { fg = cp.catppuccin5 },
-		diffChanged = { fg = cp.catppuccin8 },
-		diffOldFile = { fg = cp.catppuccin8 },
-		diffNewFile = { fg = cp.catppuccin6 },
-		diffFile = { fg = cp.catppuccin9 },
-		diffLine = { fg = cp.catppuccin11 },
-		diffIndexLine = { fg = cp.catppuccin4 },
-		DiffAdd = { fg = cp.catppuccin9, bg = cp.catppuccin1 }, -- diff mode: Added line |diff.txt|
-		DiffChange = { fg = cp.catppuccin8, bg = cp.catppuccin1 }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = cp.catppuccin5, bg = cp.catppuccin1 }, -- diff mode: Deleted line |diff.txt|
-		DiffText = { fg = cp.catppuccin9, bg = cp.catppuccin1 }, -- diff mode: Changed text within a changed line |diff.txt|
+		diffAdded = { fg = cp.blue },
+		diffRemoved = { fg = cp.red },
+		diffChanged = { fg = cp.yellow },
+		diffOldFile = { fg = cp.yellow },
+		diffNewFile = { fg = cp.peach },
+		diffFile = { fg = cp.blue },
+		diffLine = { fg = cp.gray0 },
+		diffIndexLine = { fg = cp.pink },
+		DiffAdd = { fg = cp.blue, bg = cp.black2 }, -- diff mode: Added line |diff.txt|
+		DiffChange = { fg = cp.yellow, bg = cp.black2 }, -- diff mode: Changed line |diff.txt|
+		DiffDelete = { fg = cp.red, bg = cp.black2 }, -- diff mode: Deleted line |diff.txt|
+		DiffText = { fg = cp.blue, bg = cp.black2 }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
-		healthError = { fg = cp.catppuccin5 },
-		healthSuccess = { fg = cp.catppuccin7 },
-		healthWarning = { fg = cp.catppuccin8 },
+		healthError = { fg = cp.red },
+		healthSuccess = { fg = cp.teal },
+		healthWarning = { fg = cp.yellow },
 		-- misc
 
 		-- glyphs
-		GlyphPalette1 = { fg = cp.catppuccin5 },
-		GlyphPalette2 = { fg = cp.catppuccin7 },
-		GlyphPalette3 = { fg = cp.catppuccin8 },
-		GlyphPalette4 = { fg = cp.catppuccin9 },
-		GlyphPalette6 = { fg = cp.catppuccin7 },
-		GlyphPalette7 = { fg = cp.catppuccin10 },
-		GlyphPalette9 = { fg = cp.catppuccin5 },
+		GlyphPalette1 = { fg = cp.red },
+		GlyphPalette2 = { fg = cp.teal },
+		GlyphPalette3 = { fg = cp.yellow },
+		GlyphPalette4 = { fg = cp.blue },
+		GlyphPalette6 = { fg = cp.teal },
+		GlyphPalette7 = { fg = cp.white },
+		GlyphPalette9 = { fg = cp.red },
 	}
 end
 

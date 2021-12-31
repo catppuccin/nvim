@@ -2,36 +2,36 @@ local cp = require("catppuccin.core.color_palette")
 local catppuccin = {}
 
 catppuccin.normal = {
-	left = { { cp.catppuccin14, cp.catppuccin9 }, { cp.catppuccin9, cp.catppuccin1 } },
-	middle = { { cp.catppuccin9, cp.catppuccin12 } },
-	right = { { cp.catppuccin13, cp.catppuccin1 }, { cp.catppuccin9, cp.catppuccin1 } },
-	error = { { cp.catppuccin14, cp.catppuccin5 } },
-	warning = { { cp.catppuccin14, cp.catppuccin8 } },
+	left = { { cp.black1, cp.blue }, { cp.blue, cp.black2 } },
+	middle = { { cp.blue, cp.black4 } },
+	right = { { cp.black0, cp.black2 }, { cp.blue, cp.black2 } },
+	error = { { cp.black1, cp.red } },
+	warning = { { cp.black1, cp.yellow } },
 }
 
 catppuccin.insert = {
-	left = { { cp.catppuccin14, cp.catppuccin7 }, { cp.catppuccin9, cp.catppuccin1 } },
+	left = { { cp.black1, cp.teal }, { cp.blue, cp.black2 } },
 }
 
 catppuccin.visual = {
-	left = { { cp.catppuccin14, cp.catppuccin3 }, { cp.catppuccin9, cp.catppuccin1 } },
+	left = { { cp.black1, cp.magenta }, { cp.blue, cp.black2 } },
 }
 
 catppuccin.replace = {
-	left = { { cp.catppuccin14, cp.catppuccin5 }, { cp.catppuccin9, cp.catppuccin1 } },
+	left = { { cp.black1, cp.red }, { cp.blue, cp.black2 } },
 }
 
 catppuccin.inactive = {
-	left = { { cp.catppuccin9, cp.catppuccin1 }, { cp.catppuccin11, cp.catppuccin1 } },
-	middle = { { cp.catppuccin12, cp.catppuccin1 } },
-	right = { { cp.catppuccin12, cp.catppuccin1 }, { cp.catppuccin11, cp.catppuccin1 } },
+	left = { { cp.blue, cp.black2 }, { cp.gray0, cp.black2 } },
+	middle = { { cp.black4, cp.black2 } },
+	right = { { cp.black4, cp.black2 }, { cp.gray0, cp.black2 } },
 }
 
 catppuccin.tabline = {
-	left = { { cp.catppuccin11, cp.catppuccin1 }, { cp.catppuccin11, cp.catppuccin1 } },
-	middle = { { cp.catppuccin12, cp.catppuccin1 } },
-	right = { { cp.catppuccin12, cp.catppuccin1 }, { cp.catppuccin11, cp.catppuccin1 } },
-	tabsel = { { cp.catppuccin9, cp.catppuccin12 }, { cp.catppuccin11, cp.catppuccin1 } },
+	left = { { cp.gray0, cp.black2 }, { cp.gray0, cp.black2 } },
+	middle = { { cp.black4, cp.black2 } },
+	right = { { cp.black4, cp.black2 }, { cp.gray0, cp.black2 } },
+	tabsel = { { cp.blue, cp.black4 }, { cp.gray0, cp.black2 } },
 }
 
 return catppuccin

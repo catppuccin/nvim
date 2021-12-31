@@ -27,6 +27,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
     -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
     -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+	- [Feline](https://github.com/feline-nvim/feline.nvim)
     -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
     -   [Trouble](https://github.com/folke/trouble.nvim)
     -   [WhichKey](https://github.com/folke/which-key.nvim)
@@ -312,8 +313,15 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ##### Special Integrations
 
+- **Feline.nvim**: Catppuccin provides this integration as a component that you can select on your Feline config:
+
+```lua
+require("feline").setup({
+	components = require('catppuccin.core.integrations.feline'),
+})
+```
+
 -   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
--   **Kitty:** [Instructions](https://github.com/catppuccin/kitty)
 -   **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
 ```lua
