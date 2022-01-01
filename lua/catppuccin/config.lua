@@ -9,7 +9,7 @@ config.options = {
 		functions = "italic",
 		keywords = "italic",
 		strings = "NONE",
-		variables = "NONE",
+		variables = "italic",
 	},
 	integrations = {
 		treesitter = true,
@@ -32,7 +32,7 @@ config.options = {
 		cmp = true,
 		lsp_saga = false,
 		gitgutter = false,
-		gitsigns = false,
+		gitsigns = true,
 		telescope = false,
 		nvimtree = {
 			enabled = false,
@@ -40,7 +40,7 @@ config.options = {
 		},
 		which_key = false,
 		indent_blankline = {
-			enabled = false,
+			enabled = true,
 			colored_indent_levels = false,
 		},
 		dashboard = true,
@@ -48,8 +48,8 @@ config.options = {
 		vim_sneak = false,
 		fern = false,
 		barbar = false,
-		bufferline = false,
-		markdown = false,
+		bufferline = true,
+		markdown = true,
 		lightspeed = false,
 		ts_rainbow = false,
 		hop = false,
