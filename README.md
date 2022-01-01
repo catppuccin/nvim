@@ -27,14 +27,16 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
     -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
     -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-	- [Feline](https://github.com/feline-nvim/feline.nvim)
+    -   [Feline](https://github.com/feline-nvim/feline.nvim)
+    -   [Lualine](https://github.com/hoob3rt/lualine.nvim)
+    -   [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
     -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
+    -   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
+    -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
     -   [Trouble](https://github.com/folke/trouble.nvim)
     -   [WhichKey](https://github.com/folke/which-key.nvim)
-    -   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
     -   [BarBar](https://github.com/romgrk/barbar.nvim)
     -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-    -   [Lualine](https://github.com/hoob3rt/lualine.nvim)
     -   [Git Gutter](https://github.com/airblade/vim-gitgutter)
     -   [Fern](https://github.com/lambdalisue/fern.vim)
     -   [Lightline](https://github.com/itchyny/lightline.vim)
@@ -45,8 +47,8 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Sneak](https://github.com/justinmk/vim-sneak)
     -   [Hop](https://github.com/phaazon/hop.nvim)
     -   [Neogit](https://github.com/TimUntersberger/neogit)
-    -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-    -   [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+    -   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
+    -   [Notify](https://github.com/rcarriga/nvim-notify)
 
 ## Usage
 
@@ -313,7 +315,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ##### Special Integrations
 
-- **Feline.nvim**: Catppuccin provides this integration as a component that you can select on your Feline config:
+-   **Feline.nvim**: Catppuccin provides this integration as a component that you can select on your Feline config:
 
 ```lua
 require("feline").setup({
