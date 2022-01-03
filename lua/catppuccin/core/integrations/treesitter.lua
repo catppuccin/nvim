@@ -1,8 +1,11 @@
 local M = {}
 
 function M.get(cp)
-	local keywords = cp.red
+	local delimeters = cp.gray1
 	local operators = cp.sky
+	local cl = cp.magenta -- conditionals, loops
+	local keywords = cp.red
+
 	local math_logic = cp.peach
 	return {
 		-- These groups are for the neovim tree-sitter highlights.
@@ -23,20 +26,20 @@ function M.get(cp)
 
 		TSConstructor = { fg = cp.white }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
-		TSConditional = { fg = cp.magenta, style = "bold" }, -- For keywords related to conditionnals.
-		TSRepeat = { fg = cp.magenta, style = "bold" }, -- For keywords related to loops.
+		TSConditional = { fg = cl, style = "bold" }, -- For keywords related to conditionnals.
+		TSRepeat = { fg = cl, style = "bold" }, -- For keywords related to loops.
 		TSException = { fg = cp.peach, style = cnf.styles.keywords }, -- For exception related keywords.
 
 		-- builtin
-		TSConstBuiltin = { fg = cp.white, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
+		TSConstBuiltin = { fg = cp.teal, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
 		TSFuncBuiltin = { fg = cp.peach, style = "italic" }, -- For builtin functions: table.insert in Lua.
 		TSTypeBuiltin = { fg = cp.maroon, style = "italic" }, -- For builtin types.
-		TSVariableBuiltin = { fg = cp.maroon, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
+		TSVariableBuiltin = { fg = cp.teal, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
 		TSParameter = { fg = cp.rosewater, style = "italic" }, -- For parameters of a function.
-		TSKeywordFunction = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = keywords, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeyword = { fg = keywords, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordReturn = { fg = cp.pink },
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
@@ -55,8 +58,8 @@ function M.get(cp)
 		-- TSNone              = { };    -- TODO: docs
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = cp.gray0 }, -- For delimiters ie: .
-		TSPunctBracket = { fg = cp.gray0 }, -- For brackets and parenthesis.
+		TSPunctDelimiter = { fg = delimeters }, -- For delimiters ie: .
+		TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
 		TSString = { fg = cp.green }, -- For strings.
 		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings }, -- For regexes.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
