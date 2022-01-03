@@ -1,18 +1,18 @@
 local M = {}
 
 function M.get(cp)
-	local keywords = cp.pink
-	local operators = cp.maroon
-	local math_logic = cp.lavender
+	local keywords = cp.red
+	local operators = cp.sky
+	local math_logic = cp.peach
 	return {
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
 		-- By default, most of these groups link to an appropriate Vim group,
 		-- TSError -> Error for example, so you do not have to define these unless
 		-- you explicitly want to support Treesitter's improved syntax awareness.
-		TSField = { fg = cp.flamingo }, -- For fields.
+		TSField = { fg = cp.rosewater }, -- For fields.
 		TSProperty = { fg = cp.yellow, style = "italic" }, -- Same as TSField.
-		TSInclude = { fg = cp.maroon, style = "italic" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+		TSInclude = { fg = cp.teal, style = "italic" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		TSOperator = { fg = operators, style = "bold" }, -- For any operator: +, but also -> and * in cp.
 		TSKeywordOperator = { fg = operators, style = "bold" }, -- For new keyword operator
 		TSPunctSpecial = { fg = cp.maroon, style = "bold" }, -- For special punctutation that does not fall in the catagories before.
@@ -21,24 +21,24 @@ function M.get(cp)
 		TSNumber = { fg = math_logic, style = "bold,italic" }, -- For all numbers
 		TSBoolean = { fg = math_logic, style = "bold,italic" }, -- For booleans.
 
-		TSConstructor = { fg = cp.sky }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		TSConstructor = { fg = cp.white }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
-		TSConditional = { fg = keywords, style = "bold" }, -- For keywords related to conditionnals.
-		TSRepeat = { fg = keywords, style = "bold" }, -- For keywords related to loops.
+		TSConditional = { fg = cp.magenta, style = "bold" }, -- For keywords related to conditionnals.
+		TSRepeat = { fg = cp.magenta, style = "bold" }, -- For keywords related to loops.
 		TSException = { fg = cp.peach, style = cnf.styles.keywords }, -- For exception related keywords.
 
 		-- builtin
-		TSConstBuiltin = { fg = cp.sky, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
+		TSConstBuiltin = { fg = cp.white, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
 		TSFuncBuiltin = { fg = cp.peach, style = "italic" }, -- For builtin functions: table.insert in Lua.
-		TSTypeBuiltin = { fg = cp.sky, style = "italic" }, -- For builtin types.
-		TSVariableBuiltin = { fg = cp.red, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
+		TSTypeBuiltin = { fg = cp.maroon, style = "italic" }, -- For builtin types.
+		TSVariableBuiltin = { fg = cp.maroon, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
 		TSParameter = { fg = cp.rosewater, style = "italic" }, -- For parameters of a function.
-		TSKeywordFunction = { fg = cp.pink, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeyword = { fg = keywords, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordReturn = { fg = cp.red },
+		TSKeywordReturn = { fg = cp.pink },
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
 		-- TSCharacter         = { };    -- For characters.
