@@ -142,7 +142,7 @@ local function get_base()
 		illuminatedWord = { bg = cp.black4 },
 		illuminatedCurWord = { bg = cp.black4 },
 		-- diff
-		diffAdded = { fg = cp.blue },
+		diffAdded = { fg = cp.green },
 		diffRemoved = { fg = cp.red },
 		diffChanged = { fg = cp.yellow },
 		diffOldFile = { fg = cp.yellow },
@@ -150,7 +150,7 @@ local function get_base()
 		diffFile = { fg = cp.blue },
 		diffLine = { fg = cp.gray0 },
 		diffIndexLine = { fg = cp.pink },
-		DiffAdd = { fg = cp.blue, bg = cp.black2 }, -- diff mode: Added line |diff.txt|
+		DiffAdd = { fg = cp.green, bg = cp.black2 }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = cp.yellow, bg = cp.black2 }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = cp.red, bg = cp.black2 }, -- diff mode: Deleted line |diff.txt|
 		DiffText = { fg = cp.blue, bg = cp.black2 }, -- diff mode: Changed text within a changed line |diff.txt|
