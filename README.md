@@ -111,9 +111,9 @@ integrations = {
 	lsp_saga = false,
 	gitgutter = false,
 	gitsigns = true,
-	telescope = false,
+	telescope = true,
 	nvimtree = {
-		enabled = false,
+		enabled = true,
 		show_root = false,
 	},
 	which_key = false,
