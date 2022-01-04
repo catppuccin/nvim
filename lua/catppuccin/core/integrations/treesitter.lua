@@ -90,8 +90,8 @@ function M.get(cp)
 		bashTSParameter = { fg = cp.yellow, style = "italic" },
 
 		-- lua
-		luaTSField = { fg = cp.teal },
-		luaTSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		luaTSField = { fg = cp.lavender },
+		luaTSConstructor = { fg = cp.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
 		-- java
 		javaTSConstant = { fg = cp.teal },
