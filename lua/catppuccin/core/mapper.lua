@@ -95,7 +95,7 @@ local function get_base()
 		Conditional = { fg = cp.red }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.red }, --   for, do, while, etcp.
 		Label = { fg = cp.peach }, --    case, default, etcp.
-		Operator = { fg = cp.flamingo }, -- "sizeof", "+", "*", etcp.
+		Operator = { fg = cp.sky }, -- "sizeof", "+", "*", etcp.
 		Keyword = { fg = cp.pink, style = cnf.styles.keywords }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 

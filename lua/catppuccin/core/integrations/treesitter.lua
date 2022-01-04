@@ -33,7 +33,7 @@ function M.get(cp)
 		-- builtin
 		TSConstBuiltin = { fg = cp.teal, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
 		TSFuncBuiltin = { fg = cp.peach, style = "italic" }, -- For builtin functions: table.insert in Lua.
-		TSTypeBuiltin = { fg = cp.maroon, style = "italic" }, -- For builtin types.
+		TSTypeBuiltin = { fg = cp.yellow, style = "italic" }, -- For builtin types.
 		TSVariableBuiltin = { fg = cp.teal, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
