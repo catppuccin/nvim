@@ -8,7 +8,7 @@ function M.get(cp)
 		NeogitHunkHeaderHighlight = { bg = cp.black4, fg = cp.blue },
 		NeogitDiffContextHighlight = { bg = cp.gray2, fg = cp.green },
 		NeogitDiffDeleteHighlight = { fg = cp.red, bg = cp.black2 },
-		NeogitDiffAddHighlight = { fg = cp.blue, bg = cp.black2 },
+		NeogitDiffAddHighlight = { fg = cp.green, bg = cp.black2 },
 	}
 end
 
