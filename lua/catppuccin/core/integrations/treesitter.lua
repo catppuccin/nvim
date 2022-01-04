@@ -39,7 +39,7 @@ function M.get(cp)
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
 		TSParameter = { fg = cp.rosewater, style = "italic" }, -- For parameters of a function.
-		TSKeywordFunction = { fg = keywords, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = cp.maroon, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeyword = { fg = keywords, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordReturn = { fg = cp.pink },
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
@@ -54,7 +54,7 @@ function M.get(cp)
 		-- rustTSField = { fg = cp.black4 }, -- For fields.
 		TSLabel = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
 		TSMethod = { fg = cp.blue, style = "italic" }, -- For method calls and definitions.
-		TSNamespace = { fg = cp.flamingo, style = "italic" }, -- For identifiers referring to modules and namespaces.
+		TSNamespace = { fg = cp.rosewater, style = "italic" }, -- For identifiers referring to modules and namespaces.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
