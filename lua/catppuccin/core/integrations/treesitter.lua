@@ -24,7 +24,7 @@ function M.get(cp)
 		TSNumber = { fg = math_logic, style = "bold,italic" }, -- For all numbers
 		TSBoolean = { fg = math_logic, style = "bold,italic" }, -- For booleans.
 
-		TSConstructor = { fg = cp.white }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		TSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
 		TSConditional = { fg = cl, style = "bold" }, -- For keywords related to conditionnals.
 		TSRepeat = { fg = cl, style = "bold" }, -- For keywords related to loops.
