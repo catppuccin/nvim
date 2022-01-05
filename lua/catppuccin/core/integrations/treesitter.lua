@@ -3,7 +3,7 @@ local M = {}
 function M.get(cp)
 	local delimeters = cp.gray1
 	local operators = cp.sky
-	local cl = cp.magenta -- conditionals, loops
+	local cl = cp.mauve -- conditionals, loops
 	local keywords = cp.red
 
 	local math_logic = cp.peach
@@ -65,7 +65,7 @@ function M.get(cp)
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		TSType = { fg = cp.yellow }, -- For types.
 		TSVariable = { fg = cp.white, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
-		TSTagAttribute = { fg = cp.magenta, style = "italic" }, -- Tags like html tag names.
+		TSTagAttribute = { fg = cp.mauve, style = "italic" }, -- Tags like html tag names.
 		TSTag = { fg = cp.peach }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = cp.maroon }, -- Tag delimiter like < > /
 		TSText = { fg = cp.white }, -- For strings considerated text in a markup language.
@@ -97,7 +97,7 @@ function M.get(cp)
 		javaTSConstant = { fg = cp.teal },
 
 		-- typescript
-		typescriptTSProperty = { fg = cp.magenta, style = "italic" }, -- Same as TSField.
+		typescriptTSProperty = { fg = cp.mauve, style = "italic" }, -- Same as TSField.
 
 		-- css
 		cssTSType = { fg = cp.lavender },

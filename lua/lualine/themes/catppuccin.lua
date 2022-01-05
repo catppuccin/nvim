@@ -18,8 +18,8 @@ catppuccin.command = {
 }
 
 catppuccin.visual = {
-	a = { bg = cp.magenta, fg = cp.black2, gui = "bold" },
-	b = { bg = cp.black4, fg = cp.magenta },
+	a = { bg = cp.mauve, fg = cp.black2, gui = "bold" },
+	b = { bg = cp.black4, fg = cp.mauve },
 }
 
 catppuccin.replace = {

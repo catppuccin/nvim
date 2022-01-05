@@ -91,7 +91,7 @@ local function get_base()
 		Boolean = { fg = cp.peach }, --  a boolean constant: TRUE, false
 		Identifier = { fg = cp.flamingo, style = cnf.styles.variables }, -- (preferred) any variable name
 		Function = { fg = cp.blue, style = cnf.styles.functions }, -- function name (also: methods for classes)
-		Statement = { fg = cp.magenta }, -- (preferred) any statement
+		Statement = { fg = cp.mauve }, -- (preferred) any statement
 		Conditional = { fg = cp.red }, --  if, then, else, endif, switch, etcp.
 		Repeat = { fg = cp.red }, --   for, do, while, etcp.
 		Label = { fg = cp.peach }, --    case, default, etcp.

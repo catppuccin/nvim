@@ -31,7 +31,7 @@ local clrs = require("catppuccin.core.color_palette")
 -- settings
 local sett = {
 	bkg = clrs.black3,
-	diffs = clrs.magenta,
+	diffs = clrs.mauve,
 	extras = clrs.gray1,
 	curr_file = clrs.maroon,
 	curr_dir = clrs.flamingo,
@@ -56,7 +56,7 @@ local mode_colors = {
 	["ce"] = { "COMMAND", clrs.peach },
 	["r"] = { "PROMPT", clrs.teal },
 	["rm"] = { "MORE", clrs.teal },
-	["r?"] = { "CONFIRM", clrs.magenta },
+	["r?"] = { "CONFIRM", clrs.mauve },
 	["!"] = { "SHELL", clrs.green },
 }
 
@@ -136,8 +136,8 @@ components.active[1][3] = {
 
 -- there is a dilema: we need to hide Diffs if ther is no git info. We can do that, but this will
 -- leave the right_semicircle colored with purple, and since we can't change the color conditonally
--- then the solution is to create two right_semicircles: one with a magenta sett.bkg and the other one normal
--- sett.bkg; both have the same fg (vi mode). The magenta one appears if there is git info, else the one with
+-- then the solution is to create two right_semicircles: one with a mauve sett.bkg and the other one normal
+-- sett.bkg; both have the same fg (vi mode). The mauve one appears if there is git info, else the one with
 -- the normal sett.bkg appears. Fixed :)
 
 -- enable if git diffs are not available

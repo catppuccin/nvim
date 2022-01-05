@@ -10,7 +10,7 @@ function M.get(cp)
 		CmpItemAbbrMatchFuzzy = { fg = cp.white, style = "bold" },
 
 		-- kind support
-		CmpItemKindSnippet = { fg = cp.magenta },
+		CmpItemKindSnippet = { fg = cp.mauve },
 		CmpItemKindKeyword = { fg = cp.red },
 		CmpItemKindText = { fg = cp.teal },
 		CmpItemKindMethod = { fg = cp.blue },

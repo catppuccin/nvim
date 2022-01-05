@@ -14,7 +14,7 @@ catppuccin.insert = {
 }
 
 catppuccin.visual = {
-	left = { { cp.black1, cp.magenta }, { cp.blue, cp.black2 } },
+	left = { { cp.black1, cp.mauve }, { cp.blue, cp.black2 } },
 }
 
 catppuccin.replace = {

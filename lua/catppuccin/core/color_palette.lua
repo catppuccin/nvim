@@ -1,7 +1,7 @@
 local color_palette = {
 	rosewater = "#F5E0DC", -- Rosewater
 	flamingo = "#F2CDCD", -- Flamingo
-	magenta = "#DFB1EB", -- Magenta
+	mauve = "#DFB1EB", -- Mauve
 	pink = "#F5C2E7", -- Pink
 	red = "#F08FA9", -- Red
 	maroon = "#E8A2AF", -- Maroon
