@@ -77,9 +77,9 @@ function M.get(cp)
 		-- TSURI               = { };    -- Any URI like a link or email.
 		--
 		-- Markdown tresitter parser support
-		TSURI = { fg = cp.flamingo, style = "italic,underline" }, -- urls, links and emails
-		TSLiteral = { fg = cp.green, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
-		TSTextReference = { fg = cp.teal, style = "bold" }, -- references
+		TSURI = { fg = cp.rosewater, style = "italic,underline" }, -- urls, links and emails
+		TSLiteral = { fg = cp.teal, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
+		TSTextReference = { fg = cp.lavender, style = "bold" }, -- references
 		TSTitle = { fg = cp.blue, style = "bold" }, -- titles like: # Example
 		TSEmphasis = { fg = cp.maroon, style = "italic" }, -- bold
 		TSStrong = { fg = cp.maroon, style = "bold" }, -- italic
