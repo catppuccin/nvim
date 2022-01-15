@@ -5,10 +5,10 @@ function M.get(cp)
 		NeogitBranch = { fg = cp.pink },
 		NeogitRemote = { fg = cp.pink },
 		NeogitHunkHeader = { bg = cp.blue, fg = cp.white },
-		NeogitHunkHeaderHighlight = { bg = cp.black4, fg = cp.blue },
-		NeogitDiffContextHighlight = { bg = cp.gray2, fg = cp.green },
-		NeogitDiffDeleteHighlight = { fg = cp.red, bg = cp.black2 },
-		NeogitDiffAddHighlight = { fg = cp.green, bg = cp.black2 },
+		NeogitHunkHeaderHighlight = { bg = cp.black2, fg = cp.blue },
+		NeogitDiffContextHighlight = { bg = cp.black1, fg = cp.gray2 },
+		NeogitDiffDeleteHighlight = { bg = cp.black1, fg = cp.red },
+		NeogitDiffAddHighlight = { bg = cp.black1, fg = cp.green },
 	}
 end
 
