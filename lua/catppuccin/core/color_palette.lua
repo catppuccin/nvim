@@ -18,9 +18,9 @@ local color_palette = {
 	gray0 = "#6E6C7E", -- Gray0
 	black4 = "#575268", -- Black4
 	black3 = "#302D41", -- Black3
-	black2 = "#1E1D2F", -- Black2
-	black1 = "#1A1823", -- Black1
-	black0 = "#131020", -- Black0
+	black2 = "#1E1E2E", -- Black2
+	black1 = "#1A1826", -- Black1
+	black0 = "#161320", -- Black0
 }
 
 return color_palette
