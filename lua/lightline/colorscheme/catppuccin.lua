@@ -4,7 +4,7 @@ local catppuccin = {}
 catppuccin.normal = {
 	left = { { cp.black1, cp.blue }, { cp.blue, cp.black2 } },
 	middle = { { cp.blue, cp.black4 } },
-	right = { { cp.black0, cp.black2 }, { cp.blue, cp.black2 } },
+	right = { { cp.gray0, cp.black2 }, { cp.blue, cp.black3 } },
 	error = { { cp.black1, cp.red } },
 	warning = { { cp.black1, cp.yellow } },
 }
