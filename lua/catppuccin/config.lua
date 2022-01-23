@@ -37,6 +37,7 @@ config.options = {
 		nvimtree = {
 			enabled = true,
 			show_root = false,
+			transparent_panel = false,
 		},
 		which_key = false,
 		indent_blankline = {
@@ -53,8 +54,8 @@ config.options = {
 		lightspeed = false,
 		ts_rainbow = false,
 		hop = false,
-        notify = true,
-        telekasten = true,
+		notify = true,
+		telekasten = true,
 	},
 }
 
