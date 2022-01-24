@@ -24,7 +24,7 @@ function M.get(cp)
 		TSNumber = { fg = math_logic, style = "bold,italic" }, -- For all numbers
 		TSBoolean = { fg = math_logic, style = "bold,italic" }, -- For booleans.
 
-		TSConstructor = { fg = cp.white }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		TSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
 		TSConditional = { fg = cl, style = "bold" }, -- For keywords related to conditionnals.
 		TSRepeat = { fg = cl, style = "bold" }, -- For keywords related to loops.
@@ -58,7 +58,7 @@ function M.get(cp)
 		-- TSNone              = { };    -- TODO: docs
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = delimeters }, -- For delimiters ie: .
+		TSPunctDelimiter = { fg = cp.teal }, -- For delimiters ie: .
 		TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
 		TSString = { fg = cp.green }, -- For strings.
 		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings }, -- For regexes.
@@ -77,9 +77,9 @@ function M.get(cp)
 		-- TSURI               = { };    -- Any URI like a link or email.
 		--
 		-- Markdown tresitter parser support
-		TSURI = { fg = cp.flamingo, style = "italic,underline" }, -- urls, links and emails
-		TSLiteral = { fg = cp.green, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
-		TSTextReference = { fg = cp.teal, style = "bold" }, -- references
+		TSURI = { fg = cp.rosewater, style = "italic,underline" }, -- urls, links and emails
+		TSLiteral = { fg = cp.teal, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
+		TSTextReference = { fg = cp.lavender, style = "bold" }, -- references
 		TSTitle = { fg = cp.blue, style = "bold" }, -- titles like: # Example
 		TSEmphasis = { fg = cp.maroon, style = "italic" }, -- bold
 		TSStrong = { fg = cp.maroon, style = "bold" }, -- italic
@@ -97,7 +97,7 @@ function M.get(cp)
 		javaTSConstant = { fg = cp.teal },
 
 		-- typescript
-		typescriptTSProperty = { fg = cp.mauve, style = "italic" }, -- Same as TSField.
+		typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
 
 		-- css
 		cssTSType = { fg = cp.lavender },
