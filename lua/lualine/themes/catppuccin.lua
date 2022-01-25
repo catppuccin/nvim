@@ -28,9 +28,9 @@ catppuccin.replace = {
 }
 
 catppuccin.inactive = {
-	a = { bg = cp.black2, fg = cp.blue },
-	b = { bg = cp.black2, fg = cp.black4, gui = "bold" },
-	c = { bg = cp.black2, fg = cp.gray0 },
+	a = { bg = cp.black1, fg = cp.blue },
+	b = { bg = cp.black1, fg = cp.black4, gui = "bold" },
+	c = { bg = cp.black1, fg = cp.gray0 },
 }
 
 return catppuccin
