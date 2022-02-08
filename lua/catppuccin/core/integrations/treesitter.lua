@@ -102,6 +102,9 @@ function M.get(cp)
 		-- css
 		cssTSType = { fg = cp.lavender },
 		cssTSProperty = { fg = cp.yellow, style = "italic" }, -- Same as TSField.
+
+		-- cpp
+		cppTSProperty = { fg = cp.white },
 	}
 end
 
