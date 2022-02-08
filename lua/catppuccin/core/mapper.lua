@@ -22,8 +22,8 @@ local function get_base()
 
 	return {
 		Comment = { fg = cp.gray0, style = cnf.styles.comments }, -- just comments
-		ColorColumn = { bg = cp.gray2 }, -- used for the columns set with 'colorcolumn'
-		Conceal = { fg = cp.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		ColorColumn = { bg = cp.black3 }, -- used for the columns set with 'colorcolumn'
+		Conceal = { fg = cp.gray1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = cp.black2, bg = cp.white }, -- character under the cursor
 		lCursor = { fg = cp.black2, bg = cp.white }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.black2, bg = cp.white }, -- like Cursor, but used when in IME mode |CursorIM|
