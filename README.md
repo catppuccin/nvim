@@ -281,7 +281,7 @@ Here is an example:
 
 ```lua
 local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with API
-catppuccin.remap({ Comment = { fg = colors.catppuccin2 }, })
+catppuccin.remap({ Comment = { fg = colors.flamingo }, })
 ```
 
 #### Hooks
