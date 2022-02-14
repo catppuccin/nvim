@@ -39,6 +39,11 @@ config.options = {
 			show_root = false,
 			transparent_panel = false,
 		},
+		neotree = {
+			enabled = false,
+			show_root = false,
+			transparent_panel = false,
+		},
 		which_key = false,
 		indent_blankline = {
 			enabled = true,
