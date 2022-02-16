@@ -37,6 +37,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [WhichKey](https://github.com/folke/which-key.nvim)
     -   [BarBar](https://github.com/romgrk/barbar.nvim)
     -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+    -   [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
     -   [Git Gutter](https://github.com/airblade/vim-gitgutter)
     -   [Fern](https://github.com/lambdalisue/fern.vim)
     -   [Lightline](https://github.com/itchyny/lightline.vim)
@@ -114,6 +115,11 @@ integrations = {
 	telescope = true,
 	nvimtree = {
 		enabled = true,
+		show_root = false,
+		transparent_panel = false,
+	},
+	neotree = {
+		enabled = false,
 		show_root = false,
 		transparent_panel = false,
 	},
@@ -242,6 +248,17 @@ require('lualine').setup {
 ```lua
 integration = {
   nvimtree = {
+    enabled = true,
+    show_root = true, -- makes the root folder not transparent
+	transparent_panel = false, -- make the panel transparent
+  }
+}
+```
+-   **Neo-tree:** setting `enabled` to `true` enables this integration:
+
+```lua
+integration = {
+  neotree = {
     enabled = true,
     show_root = true, -- makes the root folder not transparent
 	transparent_panel = false, -- make the panel transparent
