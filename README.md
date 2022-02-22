@@ -50,6 +50,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Neogit](https://github.com/TimUntersberger/neogit)
     -   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
     -   [Notify](https://github.com/rcarriga/nvim-notify)
+    -   [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
 
 ## Usage
 
@@ -140,6 +141,7 @@ integrations = {
 	hop = false,
 	notify = true,
 	telekasten = true,
+	symbols_outline = true,
 }
 ```
 
