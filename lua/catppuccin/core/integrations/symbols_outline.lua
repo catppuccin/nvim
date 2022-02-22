@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	return {
-		FocusedSymbol = { fg = cp.lavender, bg = cp.black2 },
+		FocusedSymbol = { fg = cp.yellow, bg = cp.black2 },
 	}
 end
 
