@@ -3,7 +3,7 @@ local M = {}
 function M.get(cp)
 	return {
 		CmpItemAbbr = { fg = cp.gray2 },
-		CmpItemAbbrDeprecated = { fg = cp.gray0, stlye = "strikethrough" },
+		CmpItemAbbrDeprecated = { fg = cp.gray0, style = "strikethrough" },
 		CmpItemKind = { fg = cp.blue },
 		CmpItemMenu = { fg = cp.white },
 		CmpItemAbbrMatch = { fg = cp.white, style = "bold" },
