@@ -61,6 +61,7 @@ config.options = {
 		hop = false,
 		notify = true,
 		telekasten = true,
+		symbols_outline = true,
 	},
 }
 
