@@ -1,10 +1,10 @@
 local M = {}
 
 function M.get(cp)
-	local delimeters = cp.gray1
+	local delimeters = cp.gray2
 	local operators = cp.sky
 	local cl = cp.mauve -- conditionals, loops
-	local keywords = cp.red
+	local keywords = cp.mauve
 
 	local math_logic = cp.peach
 	return {
@@ -28,18 +28,18 @@ function M.get(cp)
 		TSConstant = { fg = cp.peach }, -- For constants
 		TSConditional = { fg = cl, style = "bold" }, -- For keywords related to conditionnals.
 		TSRepeat = { fg = cl, style = "bold" }, -- For keywords related to loops.
-		TSException = { fg = cp.peach, style = cnf.styles.keywords }, -- For exception related keywords.
+		TSException = { fg = cp.mauve, style = cnf.styles.keywords }, -- For exception related keywords.
 
 		-- builtin
-		TSConstBuiltin = { fg = cp.lavender, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
-		TSFuncBuiltin = { fg = cp.peach, style = "italic" }, -- For builtin functions: table.insert in Lua.
+		TSConstBuiltin = { fg = cp.teal, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
+		TSFuncBuiltin = { fg = cp.teal, style = "italic" }, -- For builtin functions: table.insert in Lua.
 		TSTypeBuiltin = { fg = cp.yellow, style = "italic" }, -- For builtin types.
-		TSVariableBuiltin = { fg = cp.teal, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
+		TSVariableBuiltin = { fg = cp.red, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
 		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
-		TSParameter = { fg = cp.rosewater, style = "italic" }, -- For parameters of a function.
-		TSKeywordFunction = { fg = cp.maroon, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
+		TSParameter = { fg = cp.yellow, style = "italic" }, -- For parameters of a function.
+		TSKeywordFunction = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
 		TSKeyword = { fg = keywords, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordReturn = { fg = cp.pink },
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
@@ -58,7 +58,7 @@ function M.get(cp)
 		-- TSNone              = { };    -- TODO: docs
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = cp.teal }, -- For delimiters ie: .
+		TSPunctDelimiter = { fg = cp.sky }, -- For delimiters ie: .
 		TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
 		TSString = { fg = cp.green }, -- For strings.
 		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings }, -- For regexes.
@@ -86,15 +86,16 @@ function M.get(cp)
 		TSStringEscape = { fg = cp.pink, style = cnf.styles.strings }, -- For escape characters within a string.
 
 		-- bash
-		bashTSFuncBuiltin = { fg = cp.red, style = "italic" },
-		bashTSParameter = { fg = cp.yellow, style = "italic" },
+		-- bashTSFuncBuiltin = { fg = cp.red, style = "italic" },
+		-- bashTSParameter = { fg = cp.yellow, style = "italic" },
 
 		-- lua
-		luaTSField = { fg = cp.lavender },
-		luaTSConstructor = { fg = cp.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		luaTSField = { fg = cp.rosewater },
+		-- luaTSConstructor = { fg = cp.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		luaTSFuncBuiltin = { fg = cp.teal, style = "italic" }, -- For builtin functions: table.insert in Lua.
 
 		-- java
-		javaTSConstant = { fg = cp.teal },
+		-- javaTSConstant = { fg = cp.teal },
 
 		-- typescript
 		typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
@@ -105,6 +106,9 @@ function M.get(cp)
 
 		-- cpp
 		cppTSProperty = { fg = cp.white },
+
+		-- yaml
+		yamlTSField = { fg = cp.blue }, -- For fields.
 	}
 end
 

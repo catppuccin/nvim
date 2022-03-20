@@ -1,5 +1,5 @@
 local colors_util = require("catppuccin.utils.colors")
-local color_palette = require("catppuccin.core.color_palette")
+local cp
 
 local M = {}
 
@@ -9,7 +9,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(color_palette.black2) then
+	if colors_util.assert_brightness(cp.black2) then
 		props["background"] = "light"
 	end
 
@@ -17,7 +17,6 @@ local function get_properties()
 end
 
 local function get_base()
-	local cp = color_palette
 	cp.none = "NONE"
 
 	return {
@@ -191,7 +190,7 @@ local function get_integrations()
 			final_integrations = vim.tbl_deep_extend(
 				"force",
 				final_integrations,
-				require("catppuccin.core.integrations." .. integration).get(color_palette)
+				require("catppuccin.core.integrations." .. integration).get(cp)
 			)
 		end
 	end
@@ -205,11 +204,12 @@ local function get_integrations()
 end
 
 local function get_terminal()
-	return color_palette
+	return cp
 end
 
 function M.apply()
 	_G.cnf = require("catppuccin.config").options
+	cp = require("catppuccin.core.palettes.init").get_palette()
 
 	local theme = {}
 	theme.properties = get_properties() -- nvim settings
