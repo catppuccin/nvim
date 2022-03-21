@@ -183,11 +183,13 @@ After setting things up, you can load catppuccin like so:
 
 ```vim
 " Vim Script
+let g:catppuccin_flavour = "dusk"
 colorscheme catppuccin
 ```
 
 ```lua
 -- Lua
+vim.g.catppuccin_flavour = "storm"
 vim.cmd[[colorscheme catppuccin]]
 ```
 
