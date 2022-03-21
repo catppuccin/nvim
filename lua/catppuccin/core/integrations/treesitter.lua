@@ -26,22 +26,22 @@ function M.get(cp)
 
 		TSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
-		TSConditional = { fg = cl, style = "bold" }, -- For keywords related to conditionnals.
-		TSRepeat = { fg = cl, style = "bold" }, -- For keywords related to loops.
-		TSException = { fg = cp.mauve, style = cnf.styles.keywords }, -- For exception related keywords.
+		TSConditional = { fg = cl, style = cnf.styles.keywords or "NONE" }, -- For keywords related to conditionnals.
+		TSRepeat = { fg = cl, style = cnf.styles.keywords or "NONE" }, -- For keywords related to loops.
+		TSException = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" }, -- For exception related keywords.
 
 		-- builtin
-		TSConstBuiltin = { fg = cp.teal, style = cnf.styles.keywords }, -- For constant that are built in the language: nil in Lua.
+		TSConstBuiltin = { fg = cp.teal, style = cnf.styles.keywords or "NONE" }, -- For constant that are built in the language: nil in Lua.
 		TSFuncBuiltin = { fg = cp.teal, style = "italic" }, -- For builtin functions: table.insert in Lua.
 		TSTypeBuiltin = { fg = cp.yellow, style = "italic" }, -- For builtin types.
 		TSVariableBuiltin = { fg = cp.red, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
 
-		TSFunction = { fg = cp.blue, style = cnf.styles.functions }, -- For function (calls and definitions).
-		TSFuncMacro = { fg = cp.red }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
+		TSFunction = { fg = cp.blue, style = cnf.styles.functions or "NONE" }, -- For function (calls and definitions).
+		TSFuncMacro = { fg = cp.red, style = cnf.styles.functions or "NONE" }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
 		TSParameter = { fg = cp.yellow, style = "italic" }, -- For parameters of a function.
-		TSKeywordFunction = { fg = cp.red, style = cnf.styles.keywords }, -- For keywords used to define a fuction.
-		TSKeyword = { fg = keywords, style = cnf.styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordReturn = { fg = cp.pink },
+		TSKeywordFunction = { fg = cp.red, style = cnf.styles.keywords or "NONE" }, -- For keywords used to define a fuction.
+		TSKeyword = { fg = keywords, style = cnf.styles.keywords or "NONE" }, -- For keywords that don't fall in previous categories.
+		TSKeywordReturn = { fg = cp.pink, style = cnf.styles.keywords or "NONE" },
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
 		-- TSCharacter         = { };    -- For characters.
@@ -60,11 +60,11 @@ function M.get(cp)
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.sky }, -- For delimiters ie: .
 		TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
-		TSString = { fg = cp.green }, -- For strings.
-		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings }, -- For regexes.
+		TSString = { fg = cp.green, style = cnf.styles.strings or "NONE" }, -- For strings.
+		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings or "NONE" }, -- For regexes.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
 		TSType = { fg = cp.yellow }, -- For types.
-		TSVariable = { fg = cp.white, style = cnf.styles.variables }, -- Any variable name that does not have another highlighcp.
+		TSVariable = { fg = cp.white, style = cnf.styles.variables or "NONE" }, -- Any variable name that does not have another highlighcp.
 		TSTagAttribute = { fg = cp.mauve, style = "italic" }, -- Tags like html tag names.
 		TSTag = { fg = cp.peach }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = cp.maroon }, -- Tag delimiter like < > /
