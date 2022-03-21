@@ -90,6 +90,8 @@ styles = {
 	keywords = "italic",
 	strings = "NONE",
 	variables = "italic",
+	numbers = "bold",
+	booleans = "bold"
 },
 integrations = {
 	treesitter = true,

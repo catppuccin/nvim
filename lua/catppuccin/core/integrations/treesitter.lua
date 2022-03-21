@@ -15,14 +15,14 @@ function M.get(cp)
 		-- you explicitly want to support Treesitter's improved syntax awareness.
 		TSField = { fg = cp.rosewater }, -- For fields.
 		TSProperty = { fg = cp.yellow, style = "italic" }, -- Same as TSField.
-		TSInclude = { fg = cp.teal, style = "italic" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+		TSInclude = { fg = cp.teal, style = cnf.styles.keywords or "NONE" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		TSOperator = { fg = operators, style = "bold" }, -- For any operator: +, but also -> and * in cp.
 		TSKeywordOperator = { fg = operators, style = "bold" }, -- For new keyword operator
 		TSPunctSpecial = { fg = cp.maroon, style = "bold" }, -- For special punctutation that does not fall in the catagories before.
 
-		TSFloat = { fg = math_logic, style = "bold,italic" }, -- For floats.
-		TSNumber = { fg = math_logic, style = "bold,italic" }, -- For all numbers
-		TSBoolean = { fg = math_logic, style = "bold,italic" }, -- For booleans.
+		TSFloat = { fg = math_logic, style = cnf.styles.numbers or "NONE" }, -- For floats.
+		TSNumber = { fg = math_logic, style = cnf.styles.numbers or "NONE" }, -- For all numbers
+		TSBoolean = { fg = math_logic, style = cnf.styles.booleans or "NONE" }, -- For booleans.
 
 		TSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
