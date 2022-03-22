@@ -19,7 +19,7 @@ local color_palette = {
 	black4 = "#cfd8dc", -- Black4
 	black3 = "#eff3f4", -- Black3
 	black2 = "#FCFCFC", -- Black2			-- done
-	black1 = "#F3F3F3", -- Black1
+	black1 = "#EDEDED", -- Black1
 	black0 = "#D3D0D2", -- Black0
 }
 
