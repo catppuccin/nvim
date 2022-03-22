@@ -62,6 +62,15 @@ local mode_colors = {
 
 local shortline = false
 
+local function is_enabled(is_shortline, winid, min_width)
+	if is_shortline then
+		return true
+	end
+
+	winid = winid or 0
+	return vim.api.nvim_win_get_width(winid) > min_width
+end
+
 -- Initialize the components table
 local components = {
 	active = {},
