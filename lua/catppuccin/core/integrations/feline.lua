@@ -296,9 +296,7 @@ components.active[2][1] = {
 
 		return ""
 	end,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 80
-	end,
+	enabled = is_enabled(shortline, winid, 80),
 	hl = {
 		fg = clrs.rosewater,
 		bg = sett.bkg,
@@ -362,9 +360,7 @@ components.active[2][5] = {
 
 components.active[3][1] = {
 	provider = "git_branch",
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 70
-	end,
+	enabled = is_enabled(shortline, winid, 70),
 	hl = {
 		fg = sett.extras,
 		bg = sett.bkg,
@@ -400,9 +396,7 @@ components.active[3][3] = {
 		end
 		return " " .. icon .. " " .. filename .. " "
 	end,
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 70
-	end,
+	enabled = is_enabled(shortline, winid, 70),
 	hl = {
 		fg = sett.bkg,
 		bg = sett.curr_file,
@@ -422,9 +416,7 @@ components.active[3][4] = {
 		return "  " .. dir_name .. " "
 	end,
 
-	enabled = shortline or function(winid)
-		return vim.api.nvim_win_get_width(winid) > 80
-	end,
+	enabled = is_enabled(shortline, winid, 80),
 
 	hl = {
 		fg = sett.bkg,
