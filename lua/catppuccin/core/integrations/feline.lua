@@ -23,7 +23,7 @@ local assets = {
 	slant_right_2 = "",
 	slant_right_2_thin = "",
 	chubby_dot = "●",
-	slim_dot = '•',
+	slim_dot = "•",
 }
 
 local clrs = require("catppuccin.core.color_palette")
@@ -77,7 +77,7 @@ local invi_sep = {
 	str = " ",
 	hl = {
 		fg = sett.bkg,
-		bg = sett.bkg
+		bg = sett.bkg,
 	},
 }
 
@@ -85,16 +85,18 @@ local invi_sep = {
 local function any_git_changes()
 	local gst = b.gitsigns_status_dict -- git stats
 	if gst then
-		if gst["added"] and gst["added"] > 0 or gst["removed"] and gst["removed"] > 0 or gst["changed"] and gst["changed"] > 0 then
+		if
+			gst["added"] and gst["added"] > 0
+			or gst["removed"] and gst["removed"] > 0
+			or gst["changed"] and gst["changed"] > 0
+		then
 			return true
 		end
 	end
 	return false
 end
 
-
 -- #################### STATUSLINE ->
-
 
 -- ######## Left
 
@@ -103,7 +105,7 @@ local vi_mode_hl = function()
 	return {
 		fg = sett.bkg,
 		bg = mode_colors[vim.fn.mode()][2],
-		style = "bold"
+		style = "bold",
 	}
 end
 
@@ -146,12 +148,12 @@ components.active[1][4] = {
 	hl = function()
 		return {
 			fg = mode_colors[vim.fn.mode()][2],
-			bg = sett.bkg
+			bg = sett.bkg,
 		}
 	end,
 	enabled = function()
 		return not any_git_changes()
-	end
+	end,
 }
 
 -- enable if git diffs are available
@@ -160,12 +162,12 @@ components.active[1][5] = {
 	hl = function()
 		return {
 			fg = mode_colors[vim.fn.mode()][2],
-			bg = sett.diffs
+			bg = sett.diffs,
 		}
 	end,
 	enabled = function()
 		return any_git_changes()
-	end
+	end,
 }
 -- Current vi mode ------>
 
@@ -205,7 +207,7 @@ components.active[1][9] = {
 	},
 	enabled = function()
 		return any_git_changes()
-	end
+	end,
 }
 -- Diffs ------>
 
@@ -230,7 +232,7 @@ components.active[1][10] = {
 	-- end,
 	hl = {
 		fg = sett.extras,
-		bg = sett.bkg
+		bg = sett.bkg,
 	},
 	left_sep = invi_sep,
 }
@@ -243,7 +245,7 @@ components.active[1][11] = {
 	-- end,
 	hl = {
 		fg = sett.extras,
-		bg = sett.bkg
+		bg = sett.bkg,
 	},
 	left_sep = invi_sep,
 }
@@ -290,7 +292,7 @@ components.active[2][1] = {
 	end,
 	hl = {
 		fg = clrs.rosewater,
-		bg = sett.bkg
+		bg = sett.bkg,
 	},
 }
 
@@ -356,7 +358,7 @@ components.active[3][1] = {
 	end,
 	hl = {
 		fg = sett.extras,
-		bg = sett.bkg
+		bg = sett.bkg,
 	},
 	icon = "   ",
 	left_sep = invi_sep,
@@ -373,7 +375,7 @@ components.active[3][2] = {
 	end,
 	hl = {
 		fg = sett.extras,
-		bg = sett.bkg
+		bg = sett.bkg,
 	},
 	right_sep = invi_sep,
 }
