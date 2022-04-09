@@ -1,5 +1,7 @@
 local M = {}
 
+------ HERERE RERESFD SFDSF 
+
 function M.get(cp)
 	local delimeters = cp.gray2
 	local operators = cp.sky
@@ -13,35 +15,39 @@ function M.get(cp)
 		-- By default, most of these groups link to an appropriate Vim group,
 		-- TSError -> Error for example, so you do not have to define these unless
 		-- you explicitly want to support Treesitter's improved syntax awareness.
-		TSField = { fg = cp.rosewater }, -- For fields.
-		TSProperty = { fg = cp.yellow, style = "italic" }, -- Same as TSField.
-		TSInclude = { fg = cp.teal, style = cnf.styles.keywords or "NONE" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-		TSOperator = { fg = operators, style = "bold" }, -- For any operator: +, but also -> and * in cp.
-		TSKeywordOperator = { fg = operators, style = "bold" }, -- For new keyword operator
-		TSPunctSpecial = { fg = cp.maroon, style = "bold" }, -- For special punctutation that does not fall in the catagories before.
+		TSField = { fg = cp.teal }, -- For fields.
+		TSProperty = { fg = cp.teal, style = cnf.styles.properties or "NONE" }, -- Same as TSField.
+
+		TSInclude = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+		TSOperator = { fg = operators, style = cnf.styles.operators or "NONE" }, -- For any operator: +, but also -> and * in cp.
+		TSKeywordOperator = { fg = cp.mauve, style = cnf.styles.operators or "NONE" }, -- For new keyword operator
+		TSPunctSpecial = { fg = cp.sky, style = cnf.styles.operators or "NONE" }, -- For special punctutation that does not fall in the catagories before.
 
 		TSFloat = { fg = math_logic, style = cnf.styles.numbers or "NONE" }, -- For floats.
 		TSNumber = { fg = math_logic, style = cnf.styles.numbers or "NONE" }, -- For all numbers
 		TSBoolean = { fg = math_logic, style = cnf.styles.booleans or "NONE" }, -- For booleans.
 
-		TSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		TSConstructor = { fg = cp.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
 		TSConditional = { fg = cl, style = cnf.styles.keywords or "NONE" }, -- For keywords related to conditionnals.
 		TSRepeat = { fg = cl, style = cnf.styles.keywords or "NONE" }, -- For keywords related to loops.
 		TSException = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" }, -- For exception related keywords.
 
 		-- builtin
-		TSConstBuiltin = { fg = cp.teal, style = cnf.styles.keywords or "NONE" }, -- For constant that are built in the language: nil in Lua.
-		TSFuncBuiltin = { fg = cp.teal, style = "italic" }, -- For builtin functions: table.insert in Lua.
-		TSTypeBuiltin = { fg = cp.yellow, style = "italic" }, -- For builtin types.
-		TSVariableBuiltin = { fg = cp.red, style = "italic" }, -- Variable names that are defined by the languages, like this or self.
+		TSConstBuiltin = { fg = cp.peach, style = cnf.styles.keywords or "NONE" }, -- For constant that are built in the language: nil in Lua.
+		TSFuncBuiltin = { fg = cp.sapphire, style = cnf.styles.functions or "NONE" }, -- For builtin functions: table.insert in Lua.
+
+		TSNamespace = { fg = cp.blue, style = "italic" }, -- For identifiers referring to modules and namespaces.
+		TSType = { fg = cp.cotton, style = cnf.styles.types or "NONE" }, -- For types.
+		TSTypeBuiltin = { fg = cp.cotton, style = cnf.styles.properties or "italic" }, -- For builtin types.
+		TSVariableBuiltin = { fg = cp.red }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions or "NONE" }, -- For function (calls and definitions).
-		TSFuncMacro = { fg = cp.red, style = cnf.styles.functions or "NONE" }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
+		TSFuncMacro = { fg = cp.teal, style = cnf.styles.functions or "NONE" }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
 		TSParameter = { fg = cp.yellow, style = "italic" }, -- For parameters of a function.
-		TSKeywordFunction = { fg = cp.red, style = cnf.styles.keywords or "NONE" }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" }, -- For keywords used to define a fuction.
 		TSKeyword = { fg = keywords, style = cnf.styles.keywords or "NONE" }, -- For keywords that don't fall in previous categories.
-		TSKeywordReturn = { fg = cp.pink, style = cnf.styles.keywords or "NONE" },
+		TSKeywordReturn = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" },
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
 		-- TSCharacter         = { };    -- For characters.
@@ -52,22 +58,20 @@ function M.get(cp)
 		-- TSConstMacro        = { };    -- For constants that are defined by macros: NULL in cp.
 		-- TSError = { fg = cp.red }, -- For syntax/parser errors.
 		-- rustTSField = { fg = cp.black4 }, -- For fields.
-		TSLabel = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
-		TSMethod = { fg = cp.blue, style = "italic" }, -- For method calls and definitions.
-		TSNamespace = { fg = cp.rosewater, style = "italic" }, -- For identifiers referring to modules and namespaces.
+		TSLabel = { fg = cp.sapphire }, -- For labels: label: in C and :label: in Lua.
+		TSMethod = { fg = cp.blue, style = cnf.styles.functions or "NONE" }, -- For method calls and definitions.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = cp.sky }, -- For delimiters ie: .
+		TSPunctDelimiter = { fg = cp.gray2 }, -- For delimiters ie: .
 		TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
 		TSString = { fg = cp.green, style = cnf.styles.strings or "NONE" }, -- For strings.
 		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings or "NONE" }, -- For regexes.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
-		TSType = { fg = cp.yellow }, -- For types.
 		TSVariable = { fg = cp.white, style = cnf.styles.variables or "NONE" }, -- Any variable name that does not have another highlighcp.
-		TSTagAttribute = { fg = cp.mauve, style = "italic" }, -- Tags like html tag names.
-		TSTag = { fg = cp.peach }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = cp.maroon }, -- Tag delimiter like < > /
+		TSTagAttribute = { fg = cp.teal, style = "italic" }, -- Tags like html tag names.
+		TSTag = { fg = cp.mauve }, -- Tags like html tag names.
+		TSTagDelimiter = { fg = cp.sky }, -- Tag delimiter like < > /
 		TSText = { fg = cp.white }, -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
@@ -90,19 +94,23 @@ function M.get(cp)
 		-- bashTSParameter = { fg = cp.yellow, style = "italic" },
 
 		-- lua
-		luaTSField = { fg = cp.rosewater },
-		-- luaTSConstructor = { fg = cp.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		luaTSFuncBuiltin = { fg = cp.teal, style = "italic" }, -- For builtin functions: table.insert in Lua.
+
+		jsonTSLabel = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
+		-- luaTSField = { fg = cp.rosewater },
+		luaTSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		-- luaTSFuncBuiltin = { fg = cp.teal, style = "italic" }, -- For builtin functions: table.insert in Lua.
 
 		-- java
+		-- javaTSField = { fg = cp.red },
+		-- javaTSType = { fg = cp.yellow }, -- current Java TS parser doesn't distinguish types properly
 		-- javaTSConstant = { fg = cp.teal },
 
 		-- typescript
-		typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
+		-- typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
 
 		-- css
-		cssTSType = { fg = cp.lavender },
-		cssTSProperty = { fg = cp.yellow, style = "italic" }, -- Same as TSField.
+		-- cssTSType = { fg = cp.lavender },
+		-- cssTSProperty = { fg = cp.yellow, style = "italic" }, -- Same as TSField.
 
 		-- cpp
 		cppTSProperty = { fg = cp.white },

@@ -1,4 +1,5 @@
 local M = {}
+local util = require("catppuccin.utils.util")
 
 function M.get(cp)
 
@@ -8,7 +9,8 @@ function M.get(cp)
 	local error = cp.red
 	local warning = cp.yellow
 	local info = cp.sky
-	local hint = cp.rosewater
+	local hint = cp.teal
+	local darkening_percentage = 0.095
 
 	return {
 		-- These groups are for the native LSP cliencp. Some other LSP clients may
@@ -18,10 +20,11 @@ function M.get(cp)
 		LspReferenceRead = { bg = cp.black4 }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = cp.black4 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
-		DiagnosticError = { fg = error, style = virtual_text.errors }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { fg = warning, style = virtual_text.warnings }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { fg = info, style = virtual_text.information }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { fg = hint, style = virtual_text.hints }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { bg = util.darken(error, darkening_percentage, cp.black2), fg = error, style = virtual_text.errors }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { bg = util.darken(warning, darkening_percentage, cp.black2), fg = warning, style = virtual_text.warnings }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { bg = util.darken(info, darkening_percentage, cp.black2), fg = info, style = virtual_text.information }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { bg = util.darken(hint, darkening_percentage, cp.black2), fg = hint, style = virtual_text.hints }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		-- util.
 
 		-- for nvim nightly
 		DiagnosticUnderlineError = { style = underlines.errors, sp = error },

@@ -1,18 +1,44 @@
 local color_palette = {
-	rosewater = "#F5DFDA", -- Rosewater
+	pink = "#F5BFE7", -- Pink					-- done -- cotton
 	flamingo = "#F2CBCB", -- Flamingo			-- done
-	mauve = "#C6A4F8", -- Mauve					-- done
-	pink = "#F5BFE7", -- Pink					-- done
-	red = "#F586A2", -- Red						-- done
-	maroon = "#EB9DA4", -- Maroon				-- done
-	peach = "#FCB081", -- Peach					-- done
-	yellow = "#F8DEA9", -- Yellow				-- done
-	green = "#A9E4A3", -- Green					-- done
-	blue = "#8CB3FA", -- Blue					-- done
+	cotton = "#F3DCAC",
+	yellow = "#F1D0D8", -- Yellow				-- done -
+	-- cotton = "#B6FFEA",
+	rosewater = "#F5DFDA", -- Rosewater
+	mauve = "#C59FF6", -- Mauve					-- done -
+	red = "#F67E98", -- Red						-- done
+	maroon = "#F1949B", -- Maroon				-- done
+	peach = "#FEA571", -- Peach					-- done - -
+	green = "#9CDA83", -- Green					-- done -
+	-- sapphire = "#2AC3DE",
+	-- sapphire = "#99FFCD",
+	-- sapphire = "#F8DEA9",
+	-- sapphire = "#B6FFCE",
+	-- sapphire = "#2AC3DE",
+
+	-- green = "#98C379", -- Green					-- done -
+	sapphire = "#34C3DC",
+	-- cotton = "#E7F0C3",
+	-- cotton = "#CAF2D7",
+	-- cotton = "#CDF0EA",
+	-- cotton = "#F0D9FF",
+	-- cotton = "#F6AE99",
+	-- cotton = "#C1FFD7",
+	-- cotton = "#F3E6E3",
+	-- cotton = "#FFBA92",
+
+
+
+
+
+
+	-- sapphire = "#2AC3DE",
+
+	blue = "#83ABF9", -- Blue					-- done
+	teal = "#78DCCC", -- Teal					-- done
 	sky = "#89DCFD", -- Sky						-- done
-	teal = "#88DFD2", -- Teal					-- done
-	lavender = "#C7CBFD", -- Lavender			-- done
-	white = "#D2DAF1", -- White					-- done
+	lavender = "#C1CAFE", -- Lavender			-- done
+	white = "#C5CFF5", -- White					-- done
 	gray2 = "#B9C0DB", -- Gray2
 	gray1 = "#6F7599", -- Gray1
 	gray0 = "#5E6487", -- Gray0

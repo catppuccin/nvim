@@ -12,6 +12,9 @@ config.options = {
 		variables = "italic",
 		numbers = "bold",
 		booleans = "bold",
+		operators = "NONE",
+		properties = "NONE",
+		types = "NONE"
 	},
 	integrations = {
 		treesitter = true,

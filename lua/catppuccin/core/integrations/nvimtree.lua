@@ -4,9 +4,8 @@ function M.get(cp)
 	local config = require("catppuccin.config").options
 	local nvimtree = config.integrations.nvimtree
 
-	local root_dir_color = cp.pink
-
-	if nvimtree.show_root then
+	local root_dir_color = cp.black1
+	if nvimtree.show_root == true then
 		root_dir_color = cp.blue
 	end
 
