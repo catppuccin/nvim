@@ -106,7 +106,7 @@ function M.get(cp)
 
 		-- typescript
 
-    -- typescript
+        -- typescript
 		typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
 		typescriptTSConstructor = { fg = cp.lavender },
 		typescriptTSTagProperty = { fg = cp.cotton },
@@ -121,6 +121,7 @@ function M.get(cp)
 		-- css
 		-- cssTSType = { fg = cp.lavender },
 		cssTSProperty = { fg = cp.cotton, style = "italic" }, -- Same as TSField.
+
 
 		-- cpp
 		cppTSProperty = { fg = cp.white },
