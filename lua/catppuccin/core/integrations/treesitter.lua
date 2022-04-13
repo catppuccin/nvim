@@ -1,9 +1,7 @@
 local M = {}
 
------- HERERE RERESFD SFDSF 
-
 function M.get(cp)
-	local delimeters = cp.gray2
+	-- local delimeters = cp.gray2
 	local operators = cp.sky
 	local cl = cp.mauve -- conditionals, loops
 	local keywords = cp.mauve
@@ -35,16 +33,16 @@ function M.get(cp)
 
 		-- builtin
 		TSConstBuiltin = { fg = cp.peach, style = cnf.styles.keywords or "NONE" }, -- For constant that are built in the language: nil in Lua.
-		TSFuncBuiltin = { fg = cp.sapphire, style = cnf.styles.functions or "NONE" }, -- For builtin functions: table.insert in Lua.
+		TSFuncBuiltin = { fg = cp.peach, style = cnf.styles.functions or "NONE" }, -- For builtin functions: table.insert in Lua.
 
 		TSNamespace = { fg = cp.blue, style = "italic" }, -- For identifiers referring to modules and namespaces.
-		TSType = { fg = cp.cotton, style = cnf.styles.types or "NONE" }, -- For types.
-		TSTypeBuiltin = { fg = cp.cotton, style = cnf.styles.properties or "italic" }, -- For builtin types.
+		TSType = { fg = cp.yellow, style = cnf.styles.types or "NONE" }, -- For types.
+		TSTypeBuiltin = { fg = cp.yellow, style = cnf.styles.properties or "italic" }, -- For builtin types.
 		TSVariableBuiltin = { fg = cp.red }, -- Variable names that are defined by the languages, like this or self.
 
 		TSFunction = { fg = cp.blue, style = cnf.styles.functions or "NONE" }, -- For function (calls and definitions).
 		TSFuncMacro = { fg = cp.teal, style = cnf.styles.functions or "NONE" }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
-		TSParameter = { fg = cp.yellow, style = "italic" }, -- For parameters of a function.
+		TSParameter = { fg = cp.maroon, style = "italic" }, -- For parameters of a function.
 		TSKeywordFunction = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" }, -- For keywords used to define a fuction.
 		TSKeyword = { fg = keywords, style = cnf.styles.keywords or "NONE" }, -- For keywords that don't fall in previous categories.
 		TSKeywordReturn = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" },
@@ -55,7 +53,7 @@ function M.get(cp)
 		TSNote = { fg = cp.black2, bg = cp.blue },
 		TSWarning = { fg = cp.black2, bg = cp.yellow },
 		TSDanger = { fg = cp.black2, bg = cp.red },
-		-- TSConstMacro        = { };    -- For constants that are defined by macros: NULL in cp.
+		TSConstMacro = { fg = cp.mauve };    -- For constants that are defined by macros: NULL in cp.
 		-- TSError = { fg = cp.red }, -- For syntax/parser errors.
 		-- rustTSField = { fg = cp.black4 }, -- For fields.
 		TSLabel = { fg = cp.sapphire }, -- For labels: label: in C and :label: in Lua.
@@ -64,7 +62,8 @@ function M.get(cp)
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
 		TSPunctDelimiter = { fg = cp.gray2 }, -- For delimiters ie: .
-		TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
+		-- TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
+		TSPunctBracket = { fg = cp.gray2 }, -- For brackets and parenthesis.
 		TSString = { fg = cp.green, style = cnf.styles.strings or "NONE" }, -- For strings.
 		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings or "NONE" }, -- For regexes.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
