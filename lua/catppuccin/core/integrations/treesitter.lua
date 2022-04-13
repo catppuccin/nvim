@@ -105,11 +105,22 @@ function M.get(cp)
 		-- javaTSConstant = { fg = cp.teal },
 
 		-- typescript
-		-- typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
+
+    -- typescript
+		typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
+		typescriptTSConstructor = { fg = cp.lavender },
+		typescriptTSTagProperty = { fg = cp.cotton },
+
+    -- TSX (React with Typescript)
+		tsxTSConstructor = { fg = cp.lavender },
+		tsxTSTagDelimiter = { fg = cp.maroon },
+		tsxTSTagAttribute = { fg = cp.mauve },
+		tsxTSTagProperty = { fg = cp.cotton },
+
 
 		-- css
 		-- cssTSType = { fg = cp.lavender },
-		-- cssTSProperty = { fg = cp.yellow, style = "italic" }, -- Same as TSField.
+		cssTSProperty = { fg = cp.cotton, style = "italic" }, -- Same as TSField.
 
 		-- cpp
 		cppTSProperty = { fg = cp.white },
