@@ -92,36 +92,18 @@ function M.get(cp)
 		-- bashTSFuncBuiltin = { fg = cp.red, style = "italic" },
 		-- bashTSParameter = { fg = cp.yellow, style = "italic" },
 
-		-- lua
-
+		-- json
 		jsonTSLabel = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
-		-- luaTSField = { fg = cp.rosewater },
+
+		-- lua
 		luaTSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		-- luaTSFuncBuiltin = { fg = cp.teal, style = "italic" }, -- For builtin functions: table.insert in Lua.
-
-		-- java
-		-- javaTSField = { fg = cp.red },
-		-- javaTSType = { fg = cp.yellow }, -- current Java TS parser doesn't distinguish types properly
-		-- javaTSConstant = { fg = cp.teal },
-
-		-- typescript
 
         -- typescript
-		typescriptTSProperty = { fg = cp.lavender, style = "italic" }, -- Same as TSField.
 		typescriptTSConstructor = { fg = cp.lavender },
-		typescriptTSTagProperty = { fg = cp.cotton },
 
-    -- TSX (React with Typescript)
+		-- TSX (Typescript React)
 		tsxTSConstructor = { fg = cp.lavender },
-		tsxTSTagDelimiter = { fg = cp.maroon },
 		tsxTSTagAttribute = { fg = cp.mauve },
-		tsxTSTagProperty = { fg = cp.cotton },
-
-
-		-- css
-		-- cssTSType = { fg = cp.lavender },
-		cssTSProperty = { fg = cp.cotton, style = "italic" }, -- Same as TSField.
-
 
 		-- cpp
 		cppTSProperty = { fg = cp.white },
