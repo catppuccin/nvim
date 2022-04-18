@@ -14,15 +14,15 @@ local color_palette = {
 	sapphire = "#209FB5",
 	lavender = "#7287FD",
 	white = "#575279",
-	gray2 = "#6E6A8B",
-	gray1 = "#86819C",
-	gray0 = "#9D99AE",
-	black5 = "#B5B1BF",
-	black4 = "#CCC9D1",
-	black3 = "#E6E3E5",
+	gray2 = "#6C6789",
+	gray1 = "#817C98",
+	gray0 = "#9691A8",
+	black5 = "#AAA6B7",
+	black4 = "#BEBAC6",
+	black0 = "#D0CDD4",
+	black3 = "#E1DCE0",
+	black1 = "#ECEBEB",
 	black2 = "#FBF8F4",
-	black1 = "#EDEDED",
-	black0 = "#D3D0D2",
 }
 
 return color_palette
