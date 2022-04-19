@@ -222,7 +222,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ##### Special Integrations
 
--   **Feline.nvim**: Catppuccin provides this integration as a component that you can select on your Feline config:
+-   **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
 ```lua
 require("feline").setup({
