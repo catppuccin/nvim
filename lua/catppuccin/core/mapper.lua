@@ -1,4 +1,5 @@
 local colors_util = require("catppuccin.utils.colors")
+local util = require("catppuccin.utils.util")
 local cp
 
 local M = {}
@@ -27,7 +28,7 @@ local function get_base()
 		lCursor = { fg = cp.black2, bg = cp.white }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.black2, bg = cp.white }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.black1 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = colors_util.vary_color({dawn = cp.black1}, cp.black3) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		CursorLine = { bg = colors_util.vary_color({dawn = cp.black1}, util.darken(cp.black3, 0.64, cp.black2)) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.black2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
