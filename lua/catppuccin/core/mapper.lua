@@ -28,7 +28,7 @@ local function get_base()
 		lCursor = { fg = cp.black2, bg = cp.white }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.black2, bg = cp.white }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.black1 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = colors_util.vary_color({dawn = cp.black1}, util.darken(cp.black3, 0.64, cp.black2)) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		CursorLine = { bg = colors_util.vary_color({latte = util.lighten(cp.black1, 0.70, cp.black2)}, util.darken(cp.black3, 0.64, cp.black2)) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.black2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
@@ -38,7 +38,7 @@ local function get_base()
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.black2, fg = cp.black4 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.black0, fg = cp.black4 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.black4, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = colors_util.vary_color({dawn = cp.black0}, cp.black4) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		LineNr = { fg = colors_util.vary_color({latte = cp.black0}, cp.black4) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.white, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
