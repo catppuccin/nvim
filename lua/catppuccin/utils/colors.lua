@@ -6,7 +6,7 @@ local function color_is_bright(r, g, b)
 	if luminance > 0.5 then
 		return true -- Bright colors, black font
 	else
-		return false -- Dark colors, white font
+		return false -- Dark colors, text font
 	end
 end
 

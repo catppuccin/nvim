@@ -16,14 +16,14 @@ function M.get(cp)
 		-- These groups are for the native LSP cliencp. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText = { bg = cp.black4 }, -- used for highlighting "text" references
-		LspReferenceRead = { bg = cp.black4 }, -- used for highlighting "read" references
-		LspReferenceWrite = { bg = cp.black4 }, -- used for highlighting "write" references
+		LspReferenceText = { bg = cp.surface1 }, -- used for highlighting "text" references
+		LspReferenceRead = { bg = cp.surface1 }, -- used for highlighting "read" references
+		LspReferenceWrite = { bg = cp.surface1 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
-		DiagnosticError = { bg = util.darken(error, darkening_percentage, cp.black2), fg = error, style = virtual_text.errors }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { bg = util.darken(warning, darkening_percentage, cp.black2), fg = warning, style = virtual_text.warnings }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { bg = util.darken(info, darkening_percentage, cp.black2), fg = info, style = virtual_text.information }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { bg = util.darken(hint, darkening_percentage, cp.black2), fg = hint, style = virtual_text.hints }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { bg = util.darken(error, darkening_percentage, cp.base2), fg = error, style = virtual_text.errors }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { bg = util.darken(warning, darkening_percentage, cp.base2), fg = warning, style = virtual_text.warnings }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { bg = util.darken(info, darkening_percentage, cp.base2), fg = info, style = virtual_text.information }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { bg = util.darken(hint, darkening_percentage, cp.base2), fg = hint, style = virtual_text.hints }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		-- util.
 
 		-- for nvim nightly
@@ -54,7 +54,7 @@ function M.get(cp)
 		LspDiagnosticsUnderlineWarning = { style = underlines.warnings, sp = warning }, -- Used to underline "Warning" diagnostics
 		LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = info }, -- Used to underline "Information" diagnostics
 		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
-		LspCodeLens = { fg = cp.gray0 }, -- virtual text of the codelens
+		LspCodeLens = { fg = cp.overlay0 }, -- virtual text of the codelens
 	}
 end
 

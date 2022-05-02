@@ -2,12 +2,12 @@ local M = {}
 
 function M.get(cp)
 	return {
-		CmpItemAbbr = { fg = cp.gray2 },
-		CmpItemAbbrDeprecated = { fg = cp.gray0, style = "strikethrough" },
+		CmpItemAbbr = { fg = cp.overlay2 },
+		CmpItemAbbrDeprecated = { fg = cp.overlay0, style = "strikethrough" },
 		CmpItemKind = { fg = cp.blue },
-		CmpItemMenu = { fg = cp.white },
-		CmpItemAbbrMatch = { fg = cp.white, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = cp.white, style = "bold" },
+		CmpItemMenu = { fg = cp.text },
+		CmpItemAbbrMatch = { fg = cp.text, style = "bold" },
+		CmpItemAbbrMatchFuzzy = { fg = cp.text, style = "bold" },
 
 		-- kind support
 		CmpItemKindSnippet = { fg = cp.mauve },

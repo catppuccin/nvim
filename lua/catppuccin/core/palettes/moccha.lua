@@ -1,3 +1,8 @@
+-- NOTE: references for Catppuccin Moccha
+-- monochromatic: https://coolors.co/c6d0f5-aeb7d9-969dbc-7e84a0-666a83-4e5167-36374a-1e1e2e-12121c-07070a
+-- analogous 1: https://coolors.co/f5e0dc-f2cdcd-f5c2e7-cba6f7-eba0ac-f38ba8-fab387
+-- analogous 2: https://coolors.co/bfb7e4-8caaee-99d1db-e5c890-85c1dc-a6d189-81c8be
+
 local color_palette = {
 	rosewater = "#F5E0DC",
 	flamingo = "#F2CDCD",
@@ -13,16 +18,16 @@ local color_palette = {
 	blue = "#90C1FB",
 	sapphire = "#74C7EC",
 	lavender = "#B4BEFE",
-	white = "#C6D0F5",
-	gray2 = "#AEB7D9",
-	gray1 = "#969DBC",
-	gray0 = "#7E84A0",
-	black5 = "#666A83",
-	black4 = "#4E5167",
-	black3 = "#36374A",
-	black2 = "#1E1E2E",
-	black1 = "#181825",
-	black0 = "#101019",
+	text = "#C6D0F5",
+	overlay2 = "#AEB7D9",
+	overlay1 = "#969DBC",
+	overlay0 = "#7E84A0",
+	surface2 = "#666A83",
+	surface1 = "#4E5167",
+	surface0 = "#36374A",
+	base2 = "#1E1E2E",
+	base1 = "#12121C",
+	base0 = "#07070A",
 }
 
 return color_palette

@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get(cp)
-	-- local delimeters = cp.gray2
+	-- local delimeters = cp.overlay2
 	local operators = cp.sky
 	local cl = cp.mauve -- conditionals, loops
 	local keywords = cp.mauve
@@ -27,8 +27,8 @@ function M.get(cp)
 
 		TSConstructor = { fg = cp.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		TSConstant = { fg = cp.peach }, -- For constants
-		TSConditional = { fg = cl, style = cnf.styles.keywords or "NONE" }, -- For keywords related to conditionnals.
-		TSRepeat = { fg = cl, style = cnf.styles.keywords or "NONE" }, -- For keywords related to loops.
+		TSConditional = { fg = cl, style = cnf.styles.conditionals or "NONE" }, -- For keywords related to conditionnals.
+		TSRepeat = { fg = cl, style = cnf.styles.loops or "NONE" }, -- For keywords related to loops.
 		TSException = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" }, -- For exception related keywords.
 
 		-- builtin
@@ -49,29 +49,29 @@ function M.get(cp)
 		-- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
 		-- TSCharacter         = { };    -- For characters.
-		-- TSgray0           = { };    -- For gray0 blocks.
-		TSNote = { fg = cp.black2, bg = cp.blue },
-		TSWarning = { fg = cp.black2, bg = cp.yellow },
-		TSDanger = { fg = cp.black2, bg = cp.red },
+		-- TSoverlay0           = { };    -- For overlay0 blocks.
+		TSNote = { fg = cp.base2, bg = cp.blue },
+		TSWarning = { fg = cp.base2, bg = cp.yellow },
+		TSDanger = { fg = cp.base2, bg = cp.red },
 		TSConstMacro = { fg = cp.mauve };    -- For constants that are defined by macros: NULL in cp.
 		-- TSError = { fg = cp.red }, -- For syntax/parser errors.
-		-- rustTSField = { fg = cp.black4 }, -- For fields.
+		-- rustTSField = { fg = cp.surface1 }, -- For fields.
 		TSLabel = { fg = cp.sapphire }, -- For labels: label: in C and :label: in Lua.
 		TSMethod = { fg = cp.blue, style = cnf.styles.functions or "NONE" }, -- For method calls and definitions.
 		-- TSNone              = { };    -- TODO: docs
 		-- TSParameterReference= { };    -- For references to parameters of a function.
 		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
-		TSPunctDelimiter = { fg = cp.gray2 }, -- For delimiters ie: .
+		TSPunctDelimiter = { fg = cp.overlay2 }, -- For delimiters ie: .
 		-- TSPunctBracket = { fg = delimeters }, -- For brackets and parenthesis.
-		TSPunctBracket = { fg = cp.gray2 }, -- For brackets and parenthesis.
+		TSPunctBracket = { fg = cp.overlay2 }, -- For brackets and parenthesis.
 		TSString = { fg = cp.green, style = cnf.styles.strings or "NONE" }, -- For strings.
 		TSStringRegex = { fg = cp.peach, style = cnf.styles.strings or "NONE" }, -- For regexes.
 		-- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
-		TSVariable = { fg = cp.white, style = cnf.styles.variables or "NONE" }, -- Any variable name that does not have another highlighcp.
+		TSVariable = { fg = cp.text, style = cnf.styles.variables or "NONE" }, -- Any variable name that does not have another highlighcp.
 		TSTagAttribute = { fg = cp.teal, style = "italic" }, -- Tags like html tag names.
 		TSTag = { fg = cp.mauve }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = cp.sky }, -- Tag delimiter like < > /
-		TSText = { fg = cp.white }, -- For strings considerated text in a markup language.
+		TSText = { fg = cp.text }, -- For strings considerated text in a markup language.
 		-- TSEmphasis          = { };    -- For text to be represented with emphasis.
 		-- TSUnderline         = { };    -- For text to be represented with an underline.
 		-- TSStrike            = { };    -- For strikethrough texcp.
@@ -106,7 +106,7 @@ function M.get(cp)
 		tsxTSTagAttribute = { fg = cp.mauve },
 
 		-- cpp
-		cppTSProperty = { fg = cp.white },
+		cppTSProperty = { fg = cp.text },
 
 		-- yaml
 		yamlTSField = { fg = cp.blue }, -- For fields.

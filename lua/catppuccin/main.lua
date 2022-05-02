@@ -1,6 +1,11 @@
 local M = {}
 
 local utils = require("catppuccin.utils.util")
+local flavours = {"latte", "frappe", "macchiato", "moccha"}
+
+function M.cli_flavour_completion()
+	return vim.tbl_keys(require("catppuccin.utils.data").set_of(flavours))
+end
 
 local function load()
 	local catppuccin = require("catppuccin")
@@ -18,17 +23,11 @@ local function load()
 	end
 end
 
-local function clear()
-	vim.cmd("hi clear")
-end
-
 function M.main(option)
 	option = option or "load"
 
 	if option == "load" then
 		load()
-	elseif option == "clear" then
-		clear()
 	else
 		print("catppuccin: option was not recognized")
 	end
