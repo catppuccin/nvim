@@ -59,7 +59,8 @@ local function get_base()
 		QuickFixLine = { bg = cp.surface1, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = cp.surface1, fg = cp.pink, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = cp.pink, fg = cp.surface1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
+		CurSearch = { bg = cp.red, fg = cp.none } -- 'cursearch' highlighting: highlights the current search you're on differently
+        SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
 		SpellBad = { sp = cp.red, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.blue, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
