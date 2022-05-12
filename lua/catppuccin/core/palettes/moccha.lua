@@ -18,6 +18,7 @@ local color_palette = {
 	blue = "#90C1FB",
 	sapphire = "#74C7EC",
 	lavender = "#B4BEFE",
+
 	text = "#C6D0F5",
 	overlay2 = "#AEB7D9",
 	overlay1 = "#969DBC",
@@ -25,9 +26,10 @@ local color_palette = {
 	surface2 = "#666A83",
 	surface1 = "#4E5167",
 	surface0 = "#36374A",
-	base2 = "#1E1E2E",
-	base1 = "#12121C",
-	base0 = "#07070A",
+
+	crust = "#11111B",
+	mantle = "#181825",
+	base = "#1E1E2E",
 }
 
 return color_palette

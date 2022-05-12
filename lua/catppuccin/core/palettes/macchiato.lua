@@ -25,9 +25,10 @@ local color_palette = {
 	surface2 = "#696F8A",
 	surface1 = "#52576F",
 	surface0 = "#3B3F55",
-	base2 = "#24273A",
-	base1 = "#181926",
-	base0 = "#0C0D13",
+
+	crust = "#181926",
+	mantle = "#1E2030",
+	base = "#24273A",
 }
 
 return color_palette

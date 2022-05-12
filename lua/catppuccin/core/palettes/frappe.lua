@@ -22,12 +22,14 @@ local color_palette = {
 	overlay2 = "#B1B8D7",
 	overlay1 = "#9BA2BF",
 	overlay0 = "#868CA7",
-	surface2 = "#707590",
-	surface1 = "#5B5F78",
-	surface0 = "#454960",
-	base2 = "#303348",
-	base1 = "#252737",
-	base0 = "#181A25",
+	surface2 = "#70768E",
+	surface1 = "#5B6076",
+	surface0 = "#454A5E",
+
+	crust = "#232634",
+	mantle = "#292C3C",
+	base = "#303446",
+
 }
 
 return color_palette

@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(cp)
 	local transparent_background = require("catppuccin.config").options.transparent_background
-	local bg_highlight = transparent_background and "NONE" or cp.base2
+	local bg_highlight = transparent_background and "NONE" or cp.base
 	return {
 		rainbowcol1 = {bg = bg_highlight, fg = cp.red},
 		rainbowcol2 = {bg = bg_highlight, fg = cp.teal},

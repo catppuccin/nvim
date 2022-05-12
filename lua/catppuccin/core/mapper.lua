@@ -10,7 +10,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(cp.base2) then
+	if colors_util.assert_brightness(cp.base) then
 		props["background"] = "light"
 	end
 
@@ -24,21 +24,21 @@ local function get_base()
 		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.surface0 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = cp.base2, bg = cp.text }, -- character under the cursor
-		lCursor = { fg = cp.base2, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { fg = cp.base2, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn = { bg = cp.base1 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = colors_util.vary_color({latte = util.lighten(cp.base1, 0.70, cp.base2)}, util.darken(cp.surface0, 0.64, cp.base2)) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
+		Cursor = { fg = cp.base, bg = cp.text }, -- character under the cursor
+		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
+		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
+		CursorLine = { bg = colors_util.vary_color({latte = util.lighten(cp.mantle, 0.70, cp.base)}, util.darken(cp.surface0, 0.64, cp.base)) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
-		EndOfBuffer = { fg = cp.base2 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		EndOfBuffer = { fg = cp.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
-		VertSplit = { fg = cp.base0 }, -- the column separating vertically split windows
+		VertSplit = { fg = cp.crust }, -- the column separating vertically split windows
 		Folded = { fg = cp.blue, bg = cp.surface1 }, -- line used for closed folds
-		FoldColumn = { bg = cp.base2, fg = cp.overlay0 }, -- 'foldcolumn'
-		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base2, fg = cp.surface1 }, -- column where |signs| are displayed
-		SignColumnSB = { bg = cp.base0, fg = cp.surface1 }, -- column where |signs| are displayed
+		FoldColumn = { bg = cp.base, fg = cp.overlay0 }, -- 'foldcolumn'
+		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
+		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = colors_util.vary_color({latte = cp.base0}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		LineNr = { fg = cp.surface1 }, -- colors_util.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.text, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -46,10 +46,10 @@ local function get_base()
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.blue }, -- |more-prompt|
 		NonText = { fg = cp.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base2 }, -- normal text
-		NormalNC = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base2 }, -- normal text in non-current windows
-		NormalSB = { fg = cp.text, bg = cp.base0 }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.text, bg = cp.base1 }, -- Normal text in floating windows.
+		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text
+		NormalNC = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text in non-current windows
+		NormalSB = { fg = cp.text, bg = cp.crust }, -- normal text in non-current windows
+		NormalFloat = { fg = cp.text, bg = cp.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.blue },
 		Pmenu = { bg = cp.surface0, fg = cp.overlay2 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.text, bg = cp.surface1, style = "bold" }, -- Popup menu: selected item.
@@ -64,9 +64,9 @@ local function get_base()
 		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = cp.blue, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { sp = cp.green, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = cp.text, bg = cp.base1 }, -- status line of current window
-		StatusLineNC = { fg = cp.surface1, bg = cp.base1 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { bg = cp.base1, fg = cp.surface1 }, -- tab pages line, not active tab page label
+		StatusLine = { fg = cp.text, bg = cp.mantle }, -- status line of current window
+		StatusLineNC = { fg = cp.surface1, bg = cp.mantle }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = cp.mantle, fg = cp.surface1 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.green, bg = cp.surface1 }, -- tab pages line, active tab page label
 		Title = { fg = cp.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
@@ -123,21 +123,21 @@ local function get_base()
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
 		Error = { fg = cp.red }, -- (preferred) any erroneous construct
-		Todo = { bg = cp.yellow, fg = cp.base2, style = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { bg = cp.yellow, fg = cp.base, style = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.yellow },
 		qfFileName = { fg = cp.blue },
 		htmlH1 = { fg = cp.pink, style = "bold" },
 		htmlH2 = { fg = cp.blue, style = "bold" },
 		-- mkdHeading = { fg = cp.peach, style = "bold" },
 		-- mkdCode = { bg = cp.terminal_black, fg = cp.text },
-		mkdCodeDelimiter = { bg = cp.base2, fg = cp.text },
+		mkdCodeDelimiter = { bg = cp.base, fg = cp.text },
 		mkdCodeStart = { fg = cp.flamingo, style = "bold" },
 		mkdCodeEnd = { fg = cp.flamingo, style = "bold" },
 		-- mkdLink = { fg = cp.blue, style = "underline" },
 
 		-- debugging
-		debugPC = { bg = cp.base0 }, -- used for highlighting the current line in terminal-debug
-		debugBreakpoint = { bg = cp.base2, fg = cp.overlay0 }, -- used for breakpoint colors in terminal-debug
+		debugPC = { bg = cp.crust }, -- used for highlighting the current line in terminal-debug
+		debugBreakpoint = { bg = cp.base, fg = cp.overlay0 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
 		illuminatedWord = { bg = cp.surface1 },
 		illuminatedCurWord = { bg = cp.surface1 },
@@ -150,10 +150,10 @@ local function get_base()
 		diffFile = { fg = cp.blue },
 		diffLine = { fg = cp.overlay0 },
 		diffIndexLine = { fg = cp.pink },
-		DiffAdd = { fg = cp.green, bg = cp.base2 }, -- diff mode: Added line |diff.txt|
-		DiffChange = { fg = cp.yellow, bg = cp.base2 }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = cp.red, bg = cp.base2 }, -- diff mode: Deleted line |diff.txt|
-		DiffText = { fg = cp.blue, bg = cp.base2 }, -- diff mode: Changed text within a changed line |diff.txt|
+		DiffAdd = { fg = cp.green, bg = cp.base }, -- diff mode: Added line |diff.txt|
+		DiffChange = { fg = cp.yellow, bg = cp.base }, -- diff mode: Changed line |diff.txt|
+		DiffDelete = { fg = cp.red, bg = cp.base }, -- diff mode: Deleted line |diff.txt|
+		DiffText = { fg = cp.blue, bg = cp.base }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.red },
 		healthSuccess = { fg = cp.teal },
