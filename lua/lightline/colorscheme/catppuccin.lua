@@ -2,36 +2,36 @@ local cp = require("catppuccin.core.color_palette")
 local catppuccin = {}
 
 catppuccin.normal = {
-	left = { { cp.base1, cp.blue }, { cp.blue, cp.base2 } },
+	left = { { cp.mantle, cp.blue }, { cp.blue, cp.base } },
 	middle = { { cp.blue, cp.surface1 } },
-	right = { { cp.overlay0, cp.base2 }, { cp.blue, cp.surface0 } },
-	error = { { cp.base1, cp.red } },
-	warning = { { cp.base1, cp.yellow } },
+	right = { { cp.overlay0, cp.base }, { cp.blue, cp.surface0 } },
+	error = { { cp.mantle, cp.red } },
+	warning = { { cp.mantle, cp.yellow } },
 }
 
 catppuccin.insert = {
-	left = { { cp.base1, cp.teal }, { cp.blue, cp.base2 } },
+	left = { { cp.mantle, cp.teal }, { cp.blue, cp.base } },
 }
 
 catppuccin.visual = {
-	left = { { cp.base1, cp.mauve }, { cp.blue, cp.base2 } },
+	left = { { cp.mantle, cp.mauve }, { cp.blue, cp.base } },
 }
 
 catppuccin.replace = {
-	left = { { cp.base1, cp.red }, { cp.blue, cp.base2 } },
+	left = { { cp.mantle, cp.red }, { cp.blue, cp.base } },
 }
 
 catppuccin.inactive = {
-	left = { { cp.blue, cp.base2 }, { cp.overlay0, cp.base2 } },
-	middle = { { cp.surface1, cp.base2 } },
-	right = { { cp.surface1, cp.base2 }, { cp.overlay0, cp.base2 } },
+	left = { { cp.blue, cp.base }, { cp.overlay0, cp.base } },
+	middle = { { cp.surface1, cp.base } },
+	right = { { cp.surface1, cp.base }, { cp.overlay0, cp.base } },
 }
 
 catppuccin.tabline = {
-	left = { { cp.overlay0, cp.base2 }, { cp.overlay0, cp.base2 } },
-	middle = { { cp.surface1, cp.base2 } },
-	right = { { cp.surface1, cp.base2 }, { cp.overlay0, cp.base2 } },
-	tabsel = { { cp.blue, cp.surface1 }, { cp.overlay0, cp.base2 } },
+	left = { { cp.overlay0, cp.base }, { cp.overlay0, cp.base } },
+	middle = { { cp.surface1, cp.base } },
+	right = { { cp.surface1, cp.base }, { cp.overlay0, cp.base } },
+	tabsel = { { cp.blue, cp.surface1 }, { cp.overlay0, cp.base } },
 }
 
 return catppuccin

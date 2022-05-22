@@ -20,10 +20,10 @@ function M.get(cp)
 		LspReferenceRead = { bg = cp.surface1 }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = cp.surface1 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
-		DiagnosticError = { bg = util.darken(error, darkening_percentage, cp.base2), fg = error, style = virtual_text.errors }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { bg = util.darken(warning, darkening_percentage, cp.base2), fg = warning, style = virtual_text.warnings }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { bg = util.darken(info, darkening_percentage, cp.base2), fg = info, style = virtual_text.information }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { bg = util.darken(hint, darkening_percentage, cp.base2), fg = hint, style = virtual_text.hints }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { bg = util.darken(error, darkening_percentage, cp.base), fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { bg = util.darken(warning, darkening_percentage, cp.base), fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { bg = util.darken(info, darkening_percentage, cp.base), fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { bg = util.darken(hint, darkening_percentage, cp.base), fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		-- util.
 
 		-- for nvim nightly
@@ -32,10 +32,10 @@ function M.get(cp)
 		DiagnosticUnderlineInfo = { style = underlines.information, sp = info },
 		DiagnosticUnderlineHint = { style = underlines.hints, sp = hint },
 
-		LspDiagnosticsDefaultError = { fg = error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspDiagnosticsDefaultWarning = { fg = warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspDiagnosticsDefaultInformation = { fg = info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspDiagnosticsDefaultHint = { fg = hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultError = { fg = error }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultWarning = { fg = warning }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultInformation = { fg = info }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		LspDiagnosticsDefaultHint = { fg = hint }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspSignatureActiveParameter = { fg = cp.peach },
 		-- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
 		-- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float

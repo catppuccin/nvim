@@ -21,7 +21,7 @@ local hex_to_rgb = function(hex_str)
 	return { tonumber(red, 16), tonumber(green, 16), tonumber(blue, 16) }
 end
 
----@param fg string foreground color
+---@param fg string forecrust color
 ---@param bg string background color
 ---@param alpha number number between 0 and 1. 0 results in bg, 1 results in fg
 function util.blend(fg, bg, alpha)

@@ -18,16 +18,20 @@ local color_palette = {
 	blue = "#8CAAEE",
 	sapphire = "#85C1DC",
 	lavender = "#BFB7E4",
+
 	text = "#C6CEEF",
-	overlay2 = "#B1B8D7",
-	overlay1 = "#9BA2BF",
-	overlay0 = "#868CA7",
-	surface2 = "#707590",
-	surface1 = "#5B5F78",
-	surface0 = "#454960",
-	base2 = "#303348",
-	base1 = "#252737",
-	base0 = "#181A25",
+	subtext1 = "#B5BDDC",
+	subtext0 = "#A5ACC9",
+	overlay2 = "#949BB7",
+	overlay1 = "#838AA4",
+	overlay0 = "#737891",
+	surface2 = "#62677E",
+	surface1 = "#51566C",
+	surface0 = "#414559",
+
+	base = "#303446",
+	mantle = "#292C3C",
+	crust = "#232634",
 }
 
 return color_palette

@@ -50,9 +50,9 @@ function M.get(cp)
 		-- TSAttribute         = { };    -- (unstable) TODO: docs
 		-- TSCharacter         = { };    -- For characters.
 		-- TSoverlay0           = { };    -- For overlay0 blocks.
-		TSNote = { fg = cp.base2, bg = cp.blue },
-		TSWarning = { fg = cp.base2, bg = cp.yellow },
-		TSDanger = { fg = cp.base2, bg = cp.red },
+		TSNote = { fg = cp.base, bg = cp.blue },
+		TSWarning = { fg = cp.base, bg = cp.yellow },
+		TSDanger = { fg = cp.base, bg = cp.red },
 		TSConstMacro = { fg = cp.mauve };    -- For constants that are defined by macros: NULL in cp.
 		-- TSError = { fg = cp.red }, -- For syntax/parser errors.
 		-- rustTSField = { fg = cp.surface1 }, -- For fields.
