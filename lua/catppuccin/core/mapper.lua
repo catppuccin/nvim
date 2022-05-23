@@ -48,9 +48,7 @@ local function get_base()
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-    dev
 		LineNr = { fg = colors_util.vary_color({ latte = cp.base0 }, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
-
 		LineNr = { fg = cp.surface1 }, -- colors_util.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
