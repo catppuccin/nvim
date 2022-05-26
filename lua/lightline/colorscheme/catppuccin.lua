@@ -1,4 +1,4 @@
-local cp = require("catppuccin.core.color_palette")
+local cp = require("catppuccin.core.palettes.init").get_palette()
 local catppuccin = {}
 
 catppuccin.normal = {
