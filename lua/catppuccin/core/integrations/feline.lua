@@ -30,9 +30,9 @@ local clrs = require("catppuccin.core.color_palette")
 
 -- settings
 local sett = {
-	bkg = clrs.black3,
+	bkg = clrs.surface0,
 	diffs = clrs.mauve,
-	extras = clrs.gray1,
+	extras = clrs.overlay1,
 	curr_file = clrs.maroon,
 	curr_dir = clrs.flamingo,
 }

@@ -21,7 +21,7 @@ local hex_to_rgb = function(hex_str)
 	return { tonumber(red, 16), tonumber(green, 16), tonumber(blue, 16) }
 end
 
----@param fg string foreground color
+---@param fg string forecrust color
 ---@param bg string background color
 ---@param alpha number number between 0 and 1. 0 results in bg, 1 results in fg
 function util.blend(fg, bg, alpha)
@@ -78,7 +78,7 @@ function util.string_to_color(colors, value, default)
 		return value
 	end
 
-	local acceptable_colors = { "black", "red", "green", "blue", "magenta", "cyan", "white", "orange", "pink" }
+	local acceptable_colors = { "black", "red", "green", "blue", "magenta", "cyan", "text", "orange", "pink" }
 	for _, ac in ipairs(acceptable_colors) do
 		if string.match(value, ac) then
 			return colors[value]
@@ -117,8 +117,8 @@ function util.properties(tbl)
 end
 
 function util.terminal(cp)
-	g.terminal_color_0 = cp.gray0
-	g.terminal_color_8 = cp.gray1
+	g.terminal_color_0 = cp.overlay0
+	g.terminal_color_8 = cp.overlay1
 
 	g.terminal_color_1 = cp.red
 	g.terminal_color_9 = cp.red
@@ -138,8 +138,8 @@ function util.terminal(cp)
 	g.terminal_color_6 = cp.sky
 	g.terminal_color_14 = cp.sky
 
-	g.terminal_color_7 = cp.white
-	g.terminal_color_15 = cp.white
+	g.terminal_color_7 = cp.text
+	g.terminal_color_15 = cp.text
 end
 
 function util.load(theme)

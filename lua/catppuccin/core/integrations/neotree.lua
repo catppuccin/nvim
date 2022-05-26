@@ -13,8 +13,8 @@ function M.get(cp)
 	return {
 		NeoTreeDirectoryName = { fg = cp.blue },
 		NeoTreeDirectoryIcon = { fg = cp.blue },
-		NeoTreeNormal = { fg = cp.white, bg = neotree.transparent_panel and "NONE" or cp.black1 },
-		NeoTreeIndentMarker = { fg = cp.gray0 },
+		NeoTreeNormal = { fg = cp.text, bg = neotree.transparent_panel and "NONE" or cp.mantle },
+		NeoTreeIndentMarker = { fg = cp.overlay0 },
 		NeoTreeRootName = { fg = root_dir_color, style = "bold" },
 		NeoTreeSymbolicLinkTarget = { fg = cp.pink },
 		NeoTreeGitModified = { fg = cp.yellow },

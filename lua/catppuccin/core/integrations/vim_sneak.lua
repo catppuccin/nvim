@@ -2,8 +2,8 @@ local M = {}
 
 function M.get(cp)
 	return {
-		Sneak = { fg = cp.gray2, bg = cp.pink },
-		SneakScope = { bg = cp.white },
+		Sneak = { fg = cp.overlay2, bg = cp.pink },
+		SneakScope = { bg = cp.text },
 	}
 end
 

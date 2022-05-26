@@ -86,10 +86,17 @@ transparent_background = false,
 term_colors = false,
 styles = {
 	comments = "italic",
-	functions = "italic",
-	keywords = "italic",
+	conditionals = "italic",
+	loops = "NONE",
+	functions = "NONE",
+	keywords = "NONE",
 	strings = "NONE",
-	variables = "italic",
+	variables = "NONE",
+	numbers = "NONE",
+	booleans = "NONE",
+	properties = "NONE",
+	types = "NONE",
+	operators = "NONE",
 },
 integrations = {
 	treesitter = true,
@@ -145,7 +152,7 @@ integrations = {
 }
 ```
 
-The way you setup the settings on your configuration varies on whether you are using vimL for this or Lua.
+The way you setup the settings on your configuration varies based on whether you are using vimL for this or Lua.
 
 <details>
     <summary>For init.lua</summary>
@@ -181,13 +188,19 @@ After setting things up, you can load catppuccin like so:
 
 ```vim
 " Vim Script
+let g:catppuccin_flavour = "dusk" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
 ```
 
 ```lua
 -- Lua
+vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 vim.cmd[[colorscheme catppuccin]]
 ```
+
+Remember that if you want to switch your Catppuccin flavour "on the fly" you may use the `:Catppuccin <flavour>` command.
+
+> Note: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
 
 ### Configuration
 
@@ -218,7 +231,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ##### Special Integrations
 
--   **Feline.nvim**: Catppuccin provides this integration as a component that you can select on your Feline config:
+-   **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
 ```lua
 require("feline").setup({

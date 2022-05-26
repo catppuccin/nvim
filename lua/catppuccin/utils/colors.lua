@@ -6,7 +6,7 @@ local function color_is_bright(r, g, b)
 	if luminance > 0.5 then
 		return true -- Bright colors, black font
 	else
-		return false -- Dark colors, white font
+		return false -- Dark colors, text font
 	end
 end
 
@@ -25,6 +25,15 @@ function M.assert_brightness(color)
 	end
 
 	return false -- dull
+end
+
+function M.vary_color(palettes, default)
+	local flvr = vim.g.catppuccin_flavour
+
+	if palettes[flvr] ~= nil then
+		return palettes[flvr]
+	end
+	return default
 end
 
 return M

@@ -28,20 +28,20 @@ function M.get(cp)
 	end
 
 	return {
-		LightspeedLabel = {bg = cp.black4, fg = cp.white},
-		LightspeedOverlapped = {bg = cp.black4, fg = cp.white},
-		LightspeedLabelDistant = {bg = cp.mauve, fg = cp.white},
-		LightspeedLabelDistantOverlapped = {bg = cp.mauve, fg = cp.white},
-		LightspeedShortcut = {bg = cp.black2, fg = cp.peach, style = "italic"},
-		LightspeedShortcutOverlapped = {bg = cp.black2, fg = cp.peach, style = "bold"},
-		LightspeedMaskedChar = {bg = cp.black2, fg = cp.red, style = "undercurl"},
-		LightspeedGreyWash = {bg = cp.black2, fg = cp.gray0},
-		LightspeedUnlabeledMatch = {bg = cp.black2, fg = cp.red, style = "underline"},
-		LightspeedOneCharMatch = {bg = cp.black2, fg = cp.red, style = "underline"},
-		LightspeedUniqueChar = {bg = cp.black2, fg = cp.green, style = "strikethrough"},
-		LightspeedPendingOpArea = {bg = cp.black2, fg = cp.green, style = "strikethrough"},
-		LightspeedPendingChangeOpArea = {bg = cp.black2, fg = cp.green, style = "strikethrough"},
-		LightspeedCursor = {fg = cp.black2, bg = cp.white},
+		LightspeedLabel = {bg = cp.surface1, fg = cp.text},
+		LightspeedOverlapped = {bg = cp.surface1, fg = cp.text},
+		LightspeedLabelDistant = {bg = cp.mauve, fg = cp.text},
+		LightspeedLabelDistantOverlapped = {bg = cp.mauve, fg = cp.text},
+		LightspeedShortcut = {bg = cp.base, fg = cp.peach, style = "italic"},
+		LightspeedShortcutOverlapped = {bg = cp.base, fg = cp.peach, style = "bold"},
+		LightspeedMaskedChar = {bg = cp.base, fg = cp.red, style = "undercurl"},
+		LightspeedGreyWash = {bg = cp.base, fg = cp.overlay0},
+		LightspeedUnlabeledMatch = {bg = cp.base, fg = cp.red, style = "underline"},
+		LightspeedOneCharMatch = {bg = cp.base, fg = cp.red, style = "underline"},
+		LightspeedUniqueChar = {bg = cp.base, fg = cp.green, style = "strikethrough"},
+		LightspeedPendingOpArea = {bg = cp.base, fg = cp.green, style = "strikethrough"},
+		LightspeedPendingChangeOpArea = {bg = cp.base, fg = cp.green, style = "strikethrough"},
+		LightspeedCursor = {fg = cp.base, bg = cp.text},
 	}
 end
 

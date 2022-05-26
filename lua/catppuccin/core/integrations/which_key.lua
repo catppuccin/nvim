@@ -5,10 +5,10 @@ function M.get(cp)
 		WhichKey = { fg = cp.flamingo },
 		WhichKeyGroup = { fg = cp.blue },
 		WhichKeyDesc = { fg = cp.pink },
-		WhichKeySeperator = { fg = cp.gray0 },
-		WhichKeySeparator = { fg = cp.gray0 },
-		WhichKeyFloat = { bg = cp.black0 },
-		WhichKeyValue = { fg = cp.gray0 },
+		WhichKeySeperator = { fg = cp.overlay0 },
+		WhichKeySeparator = { fg = cp.overlay0 },
+		WhichKeyFloat = { bg = cp.crust },
+		WhichKeyValue = { fg = cp.overlay0 },
 	}
 end
 
