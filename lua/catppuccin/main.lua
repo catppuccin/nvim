@@ -1,7 +1,7 @@
 local M = {}
 
 local utils = require("catppuccin.utils.util")
-local flavours = {"latte", "frappe", "macchiato", "mocha", "original"}
+local flavours = {"latte", "frappe", "macchiato", "mocha", "original", "white"}
 
 function M.cli_flavour_completion()
 	return vim.tbl_keys(require("catppuccin.utils.data").set_of(flavours))
