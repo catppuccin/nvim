@@ -16,7 +16,7 @@ local color_palette = {
 	teal = "#94E2D5",
 	sky = "#89DCEB",
 	sapphire = "#74C7EC",
-	blue = "#87B0F9",
+	blue = "#89B4FA",
 	lavender = "#B4BEFE",
 
 	text = "#CDD6F4",
