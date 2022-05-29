@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/catppuccin/nvim/main/assets/ss.png"/>
+  <img src="assets/demo.png"/>
 </p>
 
 # About
