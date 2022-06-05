@@ -44,7 +44,7 @@ config.options = {
 			transparent_panel = false,
 		},
 		treesitter = true,
-			enabled = false,
+		whitespace = true,
 	},
 }
 
