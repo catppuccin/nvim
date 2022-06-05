@@ -38,6 +38,8 @@ function M.get(cp)
     -- green
     TSString = { fg = cp.green },
     TSLiteral = { fg = cp.green },
+    TSLiteral = { fg = cp.green },
+    rubyString = { fg = cp.green },
 
     -- blue
     TSMethod = { fg = cp.blue },
