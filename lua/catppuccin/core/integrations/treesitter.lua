@@ -22,6 +22,7 @@ function M.get(cp)
     RubyModelValidations = { fg = cp.pink },
     rubyHelper = { fg = cp.pink },
     rubyViewHelper = { fg = cp.pink },
+    TSFuncMacro = { fg = cp.teal },
 
     -- yellow
     TSConstructor = { fg = cp.yellow },
@@ -64,7 +65,6 @@ function M.get(cp)
     TSAnnotation = { fg = cp.text },
     TSCharacter = { fg = cp.text },
     TSError = { fg = cp.text },
-    TSFuncMacro = { fg = cp.text }, -- teal
     TSNamespace = { fg = cp.text }, -- blue
     TSNone = { fg = cp.text },
     TSParameterReference = { fg = cp.text },
