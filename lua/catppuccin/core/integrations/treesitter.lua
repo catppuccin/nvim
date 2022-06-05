@@ -22,6 +22,9 @@ function M.get(cp)
     RubyModelValidations = { fg = cp.pink },
     rubyHelper = { fg = cp.pink },
     rubyViewHelper = { fg = cp.pink },
+    rubyControl = { fg = cp.pink },
+    rubyCurelyBlock = { fg = cp.pink },
+
     TSFuncMacro = { fg = cp.teal },
 
     -- yellow
@@ -34,6 +37,10 @@ function M.get(cp)
     TSConstBuiltin = { fg = cp.yellow },
     TSConstMacro = { fg = cp.yellow },
     TSTypeBuiltin = { fg = cp.yellow },
+    rubyPredefinedConstant = { fg = cp.yellow },
+    rubyPseudoVariable = { fg = cp.yellow },
+    rubyConstant = { fg = cp.yellow },
+    rubyBoolean = { fg = cp.yellow },
 
     -- green
     TSString = { fg = cp.green },
@@ -53,6 +60,7 @@ function M.get(cp)
     TSSymbol = { fg = cp.sky },
     TSStringRegex = { fg = cp.sky },
     TSStringEscape = { fg = cp.sky }, -- or pink
+    rubySymbol = { fg = cp.sky },
 
     -- red
     TSLabel = { fg = cp.maroon }, -- sapphire
@@ -62,6 +70,7 @@ function M.get(cp)
     TSGlobalVariable = { fg = cp.red },
     TSPunctSpecial = { fg = cp.red }, -- sky
     TSParameter = { fg = cp.red }, -- maroon
+    rubyBlockParameterList = { fg = cp.red },
 
     -- text
     TSAnnotation = { fg = cp.text },
