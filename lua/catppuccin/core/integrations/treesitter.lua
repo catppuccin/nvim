@@ -20,6 +20,8 @@ function M.get(cp)
     RubyModelMacro = { fg = cp.pink },
     RubyModelCallback = { fg = cp.pink },
     RubyModelValidations = { fg = cp.pink },
+    rubyHelper = { fg = cp.pink },
+    rubyViewHelper = { fg = cp.pink },
 
     -- yellow
     TSConstructor = { fg = cp.yellow },
