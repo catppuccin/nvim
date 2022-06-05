@@ -40,7 +40,7 @@ local function get_base()
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = cp.surface1 }, -- colors_util.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen = { fg = "NONE", style = "undercurl" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.text, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.text }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -70,7 +70,7 @@ local function get_base()
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.green, bg = cp.surface1 }, -- tab pages line, active tab page label
 		Title = { fg = cp.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = cp.surface1, style = "bold" }, -- Visual mode selection
+		Visual = { gui = "reverse" }, -- Visual mode selection
 		VisualNOS = { bg = cp.surface1, style = "bold" }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.yellow }, -- warning messages
 		Whitespace = { fg = cp.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
@@ -128,19 +128,10 @@ local function get_base()
 		qfFileName = { fg = cp.blue },
 		htmlH1 = { fg = cp.pink, style = "bold" },
 		htmlH2 = { fg = cp.blue, style = "bold" },
-		-- mkdHeading = { fg = cp.peach, style = "bold" },
-		-- mkdCode = { bg = cp.terminal_black, fg = cp.text },
-		mkdCodeDelimiter = { bg = cp.base, fg = cp.text },
-		mkdCodeStart = { fg = cp.flamingo, style = "bold" },
-		mkdCodeEnd = { fg = cp.flamingo, style = "bold" },
-		-- mkdLink = { fg = cp.blue, style = "underline" },
 
 		-- debugging
 		debugPC = { bg = cp.crust }, -- used for highlighting the current line in terminal-debug
 		debugBreakpoint = { bg = cp.base, fg = cp.overlay0 }, -- used for breakpoint colors in terminal-debug
-		-- illuminate
-		illuminatedWord = { bg = cp.surface1 },
-		illuminatedCurWord = { bg = cp.surface1 },
 		-- diff
 		diffAdded = { fg = cp.green },
 		diffRemoved = { fg = cp.red },

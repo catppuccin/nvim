@@ -10,7 +10,7 @@ catppuccin.normal = {
 }
 
 catppuccin.insert = {
-	left = { { cp.mantle, cp.teal }, { cp.text, cp.surface0 } },
+	left = { { cp.mantle, cp.green }, { cp.text, cp.surface0 } },
 }
 
 catppuccin.visual = {

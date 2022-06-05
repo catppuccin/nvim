@@ -20,6 +20,7 @@ config.options = {
 	},
 	integrations = {
 		cmp = true,
+    git = true,
 		gitsigns = true,
 		lightspeed = false,
 		markdown = true,

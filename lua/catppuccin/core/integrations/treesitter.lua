@@ -8,18 +8,18 @@ function M.get(cp)
 
 	local math_logic = cp.peach
 	return {
-    -- mauve
-    TSConditional = { fg = cp.mauve },
-    TSException = { fg = cp.mauve },
-    TSInclude = { fg = cp.mauve },
-    TSKeyword = { fg = cp.mauve },
-    TSKeywordFunction = { fg = cp.mauve },
-    TSKeywordOperator = { fg = cp.mauve },
-    TSRepeat = { fg = cp.mauve },
-    TSOperator = { fg = cp.mauve },
-    RubyModelMacro = { fg = cp.mauve },
-    RubyModelCallback = { fg = cp.mauve },
-    RubyModelValidations = { fg = cp.mauve },
+    -- pink
+    TSConditional = { fg = cp.pink },
+    TSException = { fg = cp.pink },
+    TSInclude = { fg = cp.pink },
+    TSKeyword = { fg = cp.pink },
+    TSKeywordFunction = { fg = cp.pink },
+    TSKeywordOperator = { fg = cp.pink },
+    TSRepeat = { fg = cp.pink },
+    TSOperator = { fg = cp.pink },
+    RubyModelMacro = { fg = cp.pink },
+    RubyModelCallback = { fg = cp.pink },
+    RubyModelValidations = { fg = cp.pink },
 
     -- yellow
     TSConstructor = { fg = cp.yellow },
@@ -40,41 +40,56 @@ function M.get(cp)
     TSMethod = { fg = cp.blue },
     TSFunction = { fg = cp.blue },
 
-    -- teal
-    TSAttribute = { fg = cp.teal },
-    TSField = { fg = cp.teal },
-    TSFuncBuiltin = { fg = cp.teal }, -- or peach
-    TSProperty = { fg = cp.teal },
-    TSSymbol = { fg = cp.teal },
-    TSStringRegex = { fg = cp.teal },
-    TSStringEscape = { fg = cp.teal }, -- or pink
+    -- sky
+    TSAttribute = { fg = cp.sky },
+    TSField = { fg = cp.sky },
+    TSFuncBuiltin = { fg = cp.sky }, -- or peach
+    TSProperty = { fg = cp.sky },
+    TSSymbol = { fg = cp.sky },
+    TSStringRegex = { fg = cp.sky },
+    TSStringEscape = { fg = cp.sky }, -- or pink
 
-		-- TSPunctSpecial = { fg = cp.sky, style = cnf.styles.operators or "NONE" }, -- For special punctutation that does not fall in the catagories before.
-		-- TSNamespace = { fg = cp.blue, style = "italic" }, -- For identifiers referring to modules and namespaces.
-		-- TSVariableBuiltin = { fg = cp.red }, -- Variable names that are defined by the languages, like this or self.
-		-- TSFuncMacro = { fg = cp.teal, style = cnf.styles.functions or "NONE" }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
-		-- TSParameter = { fg = cp.maroon, style = "italic" }, -- For parameters of a function.
-		-- TSKeywordReturn = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" },
-		-- TSNote = { fg = cp.base, bg = cp.blue },
-		-- TSWarning = { fg = cp.base, bg = cp.yellow },
-		-- TSDanger = { fg = cp.base, bg = cp.red },
-		-- TSLabel = { fg = cp.sapphire }, -- For labels: label: in C and :label: in Lua.
-		-- tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
-		-- TSPunctDelimiter = { fg = cp.overlay2 }, -- For delimiters ie: .
-		-- TSPunctBracket = { fg = cp.overlay2 }, -- For brackets and parenthesis.
-		-- TSVariable = { fg = cp.text, style = cnf.styles.variables or "NONE" }, -- Any variable name that does not have another highlighcp.
-		-- TSTagAttribute = { fg = cp.teal, style = "italic" }, -- Tags like html tag names.
-		-- TSTag = { fg = cp.mauve }, -- Tags like html tag names.
-		-- TSTagDelimiter = { fg = cp.sky }, -- Tag delimiter like < > /
-		-- TSText = { fg = cp.text }, -- For strings considerated text in a markup language.
+    -- red
+    TSLabel = { fg = cp.maroon }, -- sapphire
+    TSTag = { fg = cp.red }, -- mauve
+    TSTagDelimiter = { fg = cp.red }, -- sky
+    TSVariableBuiltin = { fg = cp.red },
+    TSGlobalVariable = { fg = cp.red },
+    TSPunctSpecial = { fg = cp.red }, -- sky
+    TSParameter = { fg = cp.red }, -- maroon
+
+    -- text
+    TSAnnotation = { fg = cp.text },
+    TSCharacter = { fg = cp.text },
+    TSError = { fg = cp.text },
+    TSFuncMacro = { fg = cp.text }, -- teal
+    TSNamespace = { fg = cp.text }, -- blue
+    TSNone = { fg = cp.text },
+    TSParameterReference = { fg = cp.text },
+    TSPunctDelimiter = { fg = cp.text }, -- overlay2
+    TSPunctBracket = { fg = cp.rosewater }, -- overlay2
+    TSText = { fg = cp.text },
+    TSStrong = { fg = cp.text, style = "bold" }, -- maroon
+    TSEmphasis = { fg = cp.text, style = "italic" }, -- maroon
+    TSUnderline = { fg = cp.text },
+    TSStrike = { fg = cp.text },
+    TSTitle = { fg = cp.text, style = "bold" }, -- blue
+    TSMath = { fg = cp.text },
+    TSEnviroment = { fg = cp.text },
+    TSEnviromentName = { fg = cp.text },
+		TSKeywordReturn = { fg = cp.mauve, style = cnf.styles.keywords or "NONE" },
+		TSNote = { fg = cp.base, bg = cp.blue },
+		TSWarning = { fg = cp.base, bg = cp.yellow },
+		TSDanger = { fg = cp.base, bg = cp.red },
+		tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
+		TSTagAttribute = { fg = cp.teal, style = "italic" }, -- Tags like html tag names.
+
+		TSComment = { fg = cp.surface1 },
 
 		-- Markdown tresitter parser support
 		TSURI = { fg = cp.rosewater, style = "italic,underline" }, -- urls, links and emails
 		TSLiteral = { fg = cp.teal, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
 		TSTextReference = { fg = cp.lavender, style = "bold" }, -- references
-		TSTitle = { fg = cp.blue, style = "bold" }, -- titles like: # Example
-		TSEmphasis = { fg = cp.maroon, style = "italic" }, -- bold
-		TSStrong = { fg = cp.maroon, style = "bold" }, -- italic
 
 		-- json
 		jsonTSLabel = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
