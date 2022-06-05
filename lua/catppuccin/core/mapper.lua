@@ -28,7 +28,7 @@ local function get_base()
 		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = surface0 },
+		CursorLine = { bg = cp.surface0 },
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
