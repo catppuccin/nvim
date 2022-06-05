@@ -9,17 +9,17 @@ function M.get(cp)
 	local math_logic = cp.peach
 	return {
     -- mauve
-    TSConditional = { fg = cp.mauve }
-    TSException = { fg = cp.mauve }
-    TSInclude = { fg = cp.mauve }
-    TSKeyword = { fg = cp.mauve }
-    TSKeywordFunction= { fg = cp.mauve }
-    TSKeywordOperator= { fg = cp.mauve }
-    TSRepeat= { fg = cp.mauve }
-    TSOperator= { fg = cp.mauve }
-    RubyModelMacro= { fg = cp.mauve }
-    RubyModelCallback = { fg = cp.mauve }
-    RubyModelValidations = { fg = cp.mauve }
+    TSConditional = { fg = cp.mauve },
+    TSException = { fg = cp.mauve },
+    TSInclude = { fg = cp.mauve },
+    TSKeyword = { fg = cp.mauve },
+    TSKeywordFunction= { fg = cp.mauve },
+    TSKeywordOperator= { fg = cp.mauve },
+    TSRepeat= { fg = cp.mauve },
+    TSOperator= { fg = cp.mauve },
+    RubyModelMacro= { fg = cp.mauve },
+    RubyModelCallback = { fg = cp.mauve },
+    RubyModelValidations = { fg = cp.mauve },
 
 
 		-- TSField = { fg = cp.teal }, -- For fields.
