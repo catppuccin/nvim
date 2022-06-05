@@ -28,11 +28,11 @@ local function get_base()
 		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = colors_util.vary_color({latte = util.lighten(cp.mantle, 0.70, cp.base)}, util.darken(cp.surface0, 0.64, cp.base)) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
+		CursorLine = { bg = surface0 },
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
-		VertSplit = { fg = cp.crust }, -- the column separating vertically split windows
+		VertSplit = { fg = cp.surface0 }, -- the column separating vertically split windows
 		Folded = { fg = cp.blue, bg = cp.surface1 }, -- line used for closed folds
 		FoldColumn = { bg = cp.base, fg = cp.overlay0 }, -- 'foldcolumn'
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
@@ -57,8 +57,8 @@ local function get_base()
 		PmenuThumb = { bg = cp.overlay0 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.blue }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = cp.surface1, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = cp.surface1, fg = cp.pink, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { bg = cp.pink, fg = cp.surface1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		Search = { bg = cp.yellow, fg = cp.surface1, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		IncSearch = { bg = cp.surface1, fg = cp.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
 		SpellBad = { sp = cp.red, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
