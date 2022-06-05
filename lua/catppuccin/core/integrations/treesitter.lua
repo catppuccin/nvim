@@ -8,7 +8,7 @@ function M.get(cp)
 
 	local math_logic = cp.peach
 	return {
-    " mauve
+    -- mauve
     TSConditional = { fg = cp.mauve }
     TSException = { fg = cp.mauve }
     TSInclude = { fg = cp.mauve }
