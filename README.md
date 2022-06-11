@@ -188,7 +188,7 @@ After setting things up, you can load catppuccin like so:
 
 ```vim
 " Vim Script
-let g:catppuccin_flavour = "dusk" " latte, frappe, macchiato, mocha
+let g:catppuccin_flavour = "frappe" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
 ```
 
