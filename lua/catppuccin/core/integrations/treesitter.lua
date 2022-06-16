@@ -106,7 +106,7 @@ function M.get(cp)
 		tsxTSTagAttribute = { fg = cp.mauve },
 
 		-- cpp
-		cppTSProperty = { fg = cp.text },
+		cppTSProperty = { fg = cp.rosewater },
 
 		-- yaml
 		yamlTSField = { fg = cp.blue }, -- For fields.
