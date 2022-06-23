@@ -17,11 +17,11 @@ function M.get(cp)
 		if catppuccin.after_loading ~= nil then
 			catppuccin.after_loading = function ()
 				catppuccin.after_loading()
-				require'leap'.init_highlight()
+				-- require'leap'.init_highlight()
 			end
 		else
 			catppuccin.after_loading = function ()
-				require'leap'.init_highlight()
+				-- require'leap'.init_highlight()
 			end
 		end
 		set_prepared(true)
