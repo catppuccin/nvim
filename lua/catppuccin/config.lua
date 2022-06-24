@@ -35,6 +35,7 @@ config.options = {
 				information = "underline",
 			},
 		},
+        coc_nvim = false,
 		lsp_trouble = false,
 		cmp = true,
 		lsp_saga = false,
