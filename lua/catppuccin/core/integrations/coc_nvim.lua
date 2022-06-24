@@ -23,3 +23,5 @@ function M.get(cp)
         CocWarningSign = { fg = warning },
     }
 end
+
+return M
