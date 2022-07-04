@@ -12,6 +12,12 @@ function M.get_palette()
 		for k, v in pairs(vim.g.catppuccin_override_colors) do
 			if palette[k] then
 				palette[k] = v
+			else
+				vim.api.nvim_echo(
+					{ { 'Warning: "' .. k .. '" is not a valid catppucin palette color.', "WarningMsg" } },
+					true,
+					{}
+				)
 			end
 		end
 	end
