@@ -2,6 +2,7 @@
 local config = {}
 
 config.options = {
+	dim_inactive = false,
 	transparent_background = false,
 	term_colors = false,
 	styles = {
@@ -35,7 +36,7 @@ config.options = {
 				information = "underline",
 			},
 		},
-        coc_nvim = false,
+		coc_nvim = false,
 		lsp_trouble = false,
 		cmp = true,
 		lsp_saga = false,

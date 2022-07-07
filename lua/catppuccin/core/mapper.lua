@@ -52,7 +52,13 @@ local function get_base()
 		MoreMsg = { fg = cp.blue }, -- |more-prompt|
 		NonText = { fg = cp.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text
-		NormalNC = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text in non-current windows
+		NormalNC = {
+			fg = cp.text,
+			bg = (cnf.transparent_background and cnf.dim_inactive and cp.dim)
+				or (cnf.dim_inactive and cp.dim)
+				or (cnf.transparent_background and cp.none)
+				or cp.base,
+		}, -- normal text in non-current windows
 		NormalSB = { fg = cp.text, bg = cp.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.text, bg = cp.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.blue },
