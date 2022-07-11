@@ -341,6 +341,20 @@ catppuccin.before_loading = function ()
 end
 ```
 
+#### Autocmd
+
+Instead of `after_loading` hook, you can use autocmd event like this:
+
+```lua
+vim.api.nvim_create_autocmd("User", {
+    pattern = "CatppuccinLoaded",
+    callback = function()
+        local colors = require("catppuccin.api.colors").get_colors()
+        -- do something with colors
+    end
+})
+```
+
 ## 💝 Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)

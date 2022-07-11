@@ -21,6 +21,8 @@ local function load()
 	if catppuccin.after_loading ~= nil then
 		catppuccin.after_loading()
 	end
+
+	vim.api.nvim_exec_autocmds("User", { pattern = "CatppuccinLoaded" })
 end
 
 function M.main(option)

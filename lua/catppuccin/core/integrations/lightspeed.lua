@@ -13,19 +13,14 @@ end
 function M.get(cp)
 
 	if not get_prepared() then
-		local catppuccin = require("catppuccin")
-		if catppuccin.after_loading ~= nil then
-			local callback = catppuccin.after_loading
-			catppuccin.after_loading = function ()
-				callback()
-				require'lightspeed'.init_highlight()
+		set_prepared(vim.api.nvim_create_autocmd("User", {
+			pattern = "CatppuccinLoaded",
+			callback = function ()
+				if pcall(require, "lightspeed") then
+					require("lightspeed").init_highlight()
+				end
 			end
-		else
-			catppuccin.after_loading = function ()
-				require'lightspeed'.init_highlight()
-			end
-		end
-		set_prepared(true)
+		}))
 	end
 
 	return {
