@@ -1,5 +1,5 @@
 local M = {}
-local ucolors = require("catppuccin.ucolorss.colors")
+local ucolors = require("catppuccin.ucolors.colors")
 
 function M.get(cp)
 
