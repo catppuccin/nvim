@@ -5,8 +5,7 @@ function! s:FlavourCompletion(...) abort
 endfunction
 
 function! s:ApplyFlavour(args) abort
-	let l:flavour = matchstr(a:args[0], "[a-z]*")
-	let g:catppuccin_flavour = flavour
+	let g:catppuccin_flavour = matchstr(a:args[0], "[a-z]*")
 	colorscheme catppuccin
 endfunction
 

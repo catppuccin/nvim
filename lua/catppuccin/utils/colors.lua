@@ -2,6 +2,10 @@ local M = {}
 
 local hsluv = require("catppuccin.utils.hsluv")
 
+M.bg = "#000000"
+M.fg = "#ffffff"
+M.day_brightness = 0.3
+
 ---@param hex_str string hexadecimal value of a color
 local hex_to_rgb = function(hex_str)
 	local hex = "[abcdef0-9][abcdef0-9]"

@@ -7,7 +7,7 @@ config.options = {
 	dim_inactive = {
 		enable = true,
 		shade = "dark",
-		percentage = 10
+		percentage = 0.15
 	},
 	styles = {
 		comments = "italic",

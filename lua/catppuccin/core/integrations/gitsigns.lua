@@ -1,16 +1,15 @@
 local M = {}
 
-function M.get(cp)
-	local cnf = require("catppuccin.config").options
-	local bg_highlight = (cnf.transparent_background and cnf.dim_inactive.enable and cp.dim)
-		or (cnf.transparent_background and "NONE")
-		or (cnf.dim_inactive.enable and cp.dim)
-		or cp.base
-	return {
-		GitSignsAdd = { fg = cp.green, bg = bg_highlight }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = cp.yellow, bg = bg_highlight }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = cp.red, bg = bg_highlight }, -- diff mode: Deleted line |diff.txt|
-	}
+local cp = require("catppuccin.core.palettes.init").get_palette()
+local cnf = require("catppuccin.config").options
+local dim_percentage = cnf.dim_inactive.percentage
+local ucolors = require("catppuccin.utils.colors")
+
+function M.dim()
+	if cnf.dim_inactive.shade == "dark" then
+		return ucolors.darken(cp.base, dim_percentage, cp.mantle)
+	end
+	return ucolors.lighten(cp.surface0, dim_percentage, cp.base)
 end
 
 return M
