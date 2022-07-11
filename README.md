@@ -51,6 +51,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
     -   [Notify](https://github.com/rcarriga/nvim-notify)
     -   [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
+    -   [Mini.nvim](https://github.com/echasnovski/mini.nvim)
 
 ## Usage
 
@@ -149,6 +150,7 @@ integrations = {
 	notify = true,
 	telekasten = true,
 	symbols_outline = true,
+	mini = false,
 }
 ```
 

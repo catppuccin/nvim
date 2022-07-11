@@ -1,5 +1,4 @@
-local colors_util = require("catppuccin.utils.colors")
-local util = require("catppuccin.utils.util")
+local ucolors = require("catppuccin.utils.colors")
 local cp
 
 local M = {}
@@ -10,7 +9,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(cp.base) then
+	if ucolors.assert_brightness(cp.base) then
 		props["background"] = "light"
 	end
 
@@ -28,7 +27,12 @@ local function get_base()
 		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = colors_util.vary_color({latte = util.lighten(cp.mantle, 0.70, cp.base)}, util.darken(cp.surface0, 0.64, cp.base)) }, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
+		CursorLine = {
+			bg = ucolors.vary_color(
+				{ latte = ucolors.lighten(cp.mantle, 0.70, cp.base) },
+				ucolors.darken(cp.surface0, 0.64, cp.base)
+			),
+		}, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
@@ -38,7 +42,7 @@ local function get_base()
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = cp.surface1 }, -- colors_util.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		LineNr = { fg = cp.surface1 }, -- ucolors.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.text, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")

@@ -1,5 +1,5 @@
 local M = {}
-local util = require("catppuccin.utils.util")
+local ucolors = require("catppuccin.utils.colors")
 
 function M.get(cp)
 
@@ -21,6 +21,7 @@ function M.get(cp)
 		LspReferenceRead = { bg = cp.surface1 }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = cp.surface1 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
+
 		DiagnosticVirtualTextError = { bg = util.darken(error, darkening_percentage, cp.base), fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextWarn = { bg = util.darken(warning, darkening_percentage, cp.base), fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextInfo = { bg = util.darken(info, darkening_percentage, cp.base), fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
@@ -30,7 +31,6 @@ function M.get(cp)
 		DiagnosticWarn = { bg = cp.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticInfo = { bg = cp.none, fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticHint = { bg = cp.none, fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		-- util.
 
 		-- for nvim nightly
 		DiagnosticUnderlineError = { style = underlines.errors, sp = error },
