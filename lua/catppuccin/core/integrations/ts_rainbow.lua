@@ -3,10 +3,9 @@ local M = {}
 function M.get(cp)
 	local cnf = require("catppuccin.config").options
 	local transparent_background = cnf.transparent_background
-	local dim_inactive = cnf.dim_inactive
-	local bg_highlight = (transparent_background and dim_inactive and cp.dim)
+	local bg_highlight = (transparent_background and cnf.dim_inactive.enable and cp.dim)
 		or (transparent_background and "NONE")
-		or (dim_inactive and cp.dim)
+		or (cnf.dim_inactive.enable and cp.dim)
 		or cp.base
 	return {
 		rainbowcol1 = { bg = bg_highlight, fg = cp.red },

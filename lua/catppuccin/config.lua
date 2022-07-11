@@ -2,9 +2,13 @@
 local config = {}
 
 config.options = {
-	dim_inactive = false,
 	transparent_background = false,
 	term_colors = false,
+	dim_inactive = {
+		enable = true,
+		shade = "dark",
+		percentage = 10
+	},
 	styles = {
 		comments = "italic",
 		conditionals = "italic",
