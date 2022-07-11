@@ -23,6 +23,16 @@ local function get_base()
 		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.surface0 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Cursor = { fg = cp.base2, bg = cp.text }, -- character under the cursor
+		lCursor = { fg = cp.base2, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = cp.base2, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
+		CursorColumn = { bg = cp.base1 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
+		CursorLine = {
+			bg = colors_util.vary_color(
+				{ latte = util.lighten(cp.base1, 0.70, cp.base2) },
+				util.darken(cp.surface0, 0.64, cp.base2)
+			),
+		}, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Cursor = { fg = cp.base, bg = cp.text }, -- character under the cursor
 		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
@@ -42,7 +52,7 @@ local function get_base()
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = cp.surface1 }, -- ucolors.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		LineNr = { fg = ucolors.vary_color({ latte = cp.base0 }, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.text, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -61,8 +71,9 @@ local function get_base()
 		PmenuThumb = { bg = cp.overlay0 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.blue }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = cp.surface1, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = cp.surface1, fg = cp.pink, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { bg = cp.pink, fg = cp.surface1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		Search = { bg = cp.green, fg = cp.surface2, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		IncSearch = { bg = cp.pink, fg = cp.surface2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		CurSearch = { bg = cp.red, fg = cp.surface2 }, -- 'cursearch' highlighting: highlights the current search you're on differently
 		SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
 		SpellBad = { sp = cp.red, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
