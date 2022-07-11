@@ -32,6 +32,7 @@ local color_palette = {
 	base = "#24273A",
 	mantle = "#1E2030",
 	crust = "#181926",
+	dim = "#393C4D",
 }
 
 return color_palette

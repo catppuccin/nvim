@@ -1,4 +1,5 @@
 local ucolors = require("catppuccin.utils.colors")
+local lui = require("catppuccin.lib.ui")
 local cp
 
 local M = {}
@@ -17,10 +18,8 @@ local function get_properties()
 end
 
 local function get_base()
-	cp.none = "NONE"
-
 	return {
-Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
+		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.surface0 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = cp.base, bg = cp.text }, -- character under the cursor
@@ -51,7 +50,13 @@ Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
 		MoreMsg = { fg = cp.blue }, -- |more-prompt|
 		NonText = { fg = cp.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text
-		NormalNC = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text in non-current windows
+		NormalNC = {
+			fg = cp.text,
+			bg = (cnf.transparent_background and cnf.dim_inactive.enable and cp.dim)
+				or (cnf.dim_inactive.enable and cp.dim)
+				or (cnf.transparent_background and cp.none)
+				or cp.base,
+		}, -- normal text in non-current windows
 		NormalSB = { fg = cp.text, bg = cp.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.text, bg = cp.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.blue },
@@ -214,6 +219,9 @@ end
 function M.apply()
 	_G.cnf = require("catppuccin.config").options
 	cp = require("catppuccin.core.palettes.init").get_palette()
+
+	cp.none = "NONE"
+	cp.dim = lui.dim()
 
 	local theme = {}
 	theme.properties = get_properties() -- nvim settings
