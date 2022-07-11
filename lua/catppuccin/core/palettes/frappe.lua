@@ -19,7 +19,7 @@ local color_palette = {
 	blue = "#8CAAEE",
 	lavender = "#BABBF1",
 
-	text = "#C6D0F5",
+	text = "#D1D9F8",
 	subtext1 = "#B5BFE2",
 	subtext0 = "#A5ADCE",
 	overlay2 = "#949CBB",

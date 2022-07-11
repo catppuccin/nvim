@@ -1,5 +1,5 @@
 local M = {}
-local util = require("catppuccin.utils.util")
+local ucolors = require("catppuccin.utils.colors")
 
 function M.get(cp)
 
@@ -20,11 +20,11 @@ function M.get(cp)
 		LspReferenceRead = { bg = cp.surface1 }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = cp.surface1 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
-		DiagnosticError = { bg = util.darken(error, darkening_percentage, cp.base), fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { bg = util.darken(warning, darkening_percentage, cp.base), fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { bg = util.darken(info, darkening_percentage, cp.base), fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { bg = util.darken(hint, darkening_percentage, cp.base), fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		-- util.
+		DiagnosticError = { bg = ucolors.darken(error, darkening_percentage, cp.base), fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { bg = ucolors.darken(warning, darkening_percentage, cp.base), fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { bg = ucolors.darken(info, darkening_percentage, cp.base), fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { bg = ucolors.darken(hint, darkening_percentage, cp.base), fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		-- ucolors.
 
 		-- for nvim nightly
 		DiagnosticUnderlineError = { style = underlines.errors, sp = error },
