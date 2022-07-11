@@ -145,7 +145,7 @@ components.active[1][3] = {
 	hl = vi_mode_hl,
 }
 
--- there is a dilema: we need to hide Diffs if ther is no git info. We can do that, but this will
+-- there is a dilema: we need to hide Diffs if there is no git info. We can do that, but this will
 -- leave the right_semicircle colored with purple, and since we can't change the color conditonally
 -- then the solution is to create two right_semicircles: one with a mauve sett.bkg and the other one normal
 -- sett.bkg; both have the same fg (vi mode). The mauve one appears if there is git info, else the one with
@@ -394,7 +394,7 @@ components.active[3][3] = {
 			icon = "   "
 			return icon
 		end
-		return " " .. icon .. " " .. filename .. " "
+		return "%m" .. " " .. icon .. " " .. filename .. " "
 	end,
 	enabled = is_enabled(shortline, winid, 70),
 	hl = {
