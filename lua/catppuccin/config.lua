@@ -4,6 +4,11 @@ local config = {}
 config.options = {
 	transparent_background = false,
 	term_colors = false,
+	dim_inactive = {
+		enable = true,
+		shade = "dark",
+		percentage = 10
+	},
 	styles = {
 		comments = "italic",
 		conditionals = "italic",
@@ -35,7 +40,7 @@ config.options = {
 				information = "underline",
 			},
 		},
-        coc_nvim = false,
+		coc_nvim = false,
 		lsp_trouble = false,
 		cmp = true,
 		lsp_saga = false,

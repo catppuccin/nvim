@@ -82,6 +82,7 @@ Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
 
 ```lua
+dim_inactive = false,
 transparent_background = false,
 term_colors = false,
 styles = {
@@ -213,6 +214,8 @@ This settings are unrelated to any group and are independent.
 
 -   `transparent_background`: (Boolean) if true, disables setting the background color.
 -   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+-   `dim_inactive`: (Boolean) if true, dims the background color of inactive
+    window or buffer or split.
 
 #### Styles
 

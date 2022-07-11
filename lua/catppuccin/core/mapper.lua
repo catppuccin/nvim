@@ -1,5 +1,5 @@
-local colors_util = require("catppuccin.utils.colors")
-local util = require("catppuccin.utils.util")
+local ucolors = require("catppuccin.ucolors.ucolors")
+local lui = require("catppuccin.lib.ui")
 local cp
 
 local M = {}
@@ -10,7 +10,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(cp.base) then
+	if ucolors.assert_brightness(cp.base) then
 		props["background"] = "light"
 	end
 
@@ -18,8 +18,6 @@ local function get_properties()
 end
 
 local function get_base()
-	cp.none = "NONE"
-
 	return {
 		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.surface0 }, -- used for the columns set with 'colorcolumn'
@@ -29,9 +27,9 @@ local function get_base()
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
 		CursorLine = {
-			bg = colors_util.vary_color(
-				{ latte = util.lighten(cp.mantle, 0.70, cp.base) },
-				util.darken(cp.surface0, 0.64, cp.base)
+			bg = ucolors.vary_color(
+				{ latte = ucolors.lighten(cp.mantle, 0.70, cp.base) },
+				ucolors.darken(cp.surface0, 0.64, cp.base)
 			),
 		}, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
@@ -43,7 +41,7 @@ local function get_base()
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = cp.surface1 }, -- colors_util.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		LineNr = { fg = cp.surface1 }, -- colors_ucolors.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.text, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -52,7 +50,13 @@ local function get_base()
 		MoreMsg = { fg = cp.blue }, -- |more-prompt|
 		NonText = { fg = cp.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text
-		NormalNC = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text in non-current windows
+		NormalNC = {
+			fg = cp.text,
+			bg = (cnf.transparent_background and cnf.dim_inactive.enable and cp.dim)
+				or (cnf.dim_inactive.enable and cp.dim)
+				or (cnf.transparent_background and cp.none)
+				or cp.base,
+		}, -- normal text in non-current windows
 		NormalSB = { fg = cp.text, bg = cp.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.text, bg = cp.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.blue },
@@ -202,11 +206,8 @@ local function get_integrations()
 		end
 	end
 
-	final_integrations = vim.tbl_deep_extend(
-		"force",
-		final_integrations,
-		require("catppuccin.core.remaps").get_hig_remaps() or {}
-	)
+	final_integrations =
+		vim.tbl_deep_extend("force", final_integrations, require("catppuccin.core.remaps").get_hig_remaps() or {})
 	return final_integrations
 end
 
@@ -217,6 +218,9 @@ end
 function M.apply()
 	_G.cnf = require("catppuccin.config").options
 	cp = require("catppuccin.core.palettes.init").get_palette()
+
+	cp.none = "NONE"
+	cp.dim = lui.dim()
 
 	local theme = {}
 	theme.properties = get_properties() -- nvim settings
