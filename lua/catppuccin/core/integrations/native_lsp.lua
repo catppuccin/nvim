@@ -1,5 +1,5 @@
 local M = {}
-local ucolors = require("catppuccin.utils.colors")
+local ucolors = require("catppuccin.ucolorss.colors")
 
 function M.get(cp)
 
@@ -22,10 +22,10 @@ function M.get(cp)
 		LspReferenceWrite = { bg = cp.surface1 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
 
-		DiagnosticVirtualTextError = { bg = util.darken(error, darkening_percentage, cp.base), fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticVirtualTextWarn = { bg = util.darken(warning, darkening_percentage, cp.base), fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticVirtualTextInfo = { bg = util.darken(info, darkening_percentage, cp.base), fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticVirtualTextHint = { bg = util.darken(hint, darkening_percentage, cp.base), fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticVirtualTextError = { bg = ucolors.darken(error, darkening_percentage, cp.base), fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticVirtualTextWarn = { bg = ucolors.darken(warning, darkening_percentage, cp.base), fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticVirtualTextInfo = { bg = ucolors.darken(info, darkening_percentage, cp.base), fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticVirtualTextHint = { bg = ucolors.darken(hint, darkening_percentage, cp.base), fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 
 		DiagnosticError = { bg = cp.none, fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn = { bg = cp.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
