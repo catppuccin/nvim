@@ -20,19 +20,9 @@ local function get_base()
 	cp.none = "NONE"
 
 	return {
-		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
+Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.surface0 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = cp.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = cp.base2, bg = cp.text }, -- character under the cursor
-		lCursor = { fg = cp.base2, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { fg = cp.base2, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn = { bg = cp.base1 }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = {
-			bg = colors_util.vary_color(
-				{ latte = util.lighten(cp.base1, 0.70, cp.base2) },
-				util.darken(cp.surface0, 0.64, cp.base2)
-			),
-		}, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if foreground (ctermfg OR guifg) is not secp.
 		Cursor = { fg = cp.base, bg = cp.text }, -- character under the cursor
 		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
@@ -212,11 +202,8 @@ local function get_integrations()
 		end
 	end
 
-	final_integrations = vim.tbl_deep_extend(
-		"force",
-		final_integrations,
-		require("catppuccin.core.remaps").get_hig_remaps() or {}
-	)
+	final_integrations =
+		vim.tbl_deep_extend("force", final_integrations, require("catppuccin.core.remaps").get_hig_remaps() or {})
 	return final_integrations
 end
 
