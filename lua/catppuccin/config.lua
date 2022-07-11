@@ -5,7 +5,7 @@ config.options = {
 	transparent_background = false,
 	term_colors = false,
 	dim_inactive = {
-		enable = true,
+		enable = false,
 		shade = "dark",
 		percentage = 0.15
 	},
