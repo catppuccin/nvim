@@ -30,9 +30,8 @@ local color_palette = {
 	surface0 = "#CCD0DA",
 
 	base = "#EFF1F5",
-	crust = "#DCE0E8",
 	mantle = "#E6E9EF",
-	dim = "#D7D8DC",
+	crust = "#DCE0E8",
 }
 
 return color_palette

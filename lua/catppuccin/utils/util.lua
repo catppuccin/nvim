@@ -3,9 +3,6 @@ local udata = require("catppuccin.utils.data")
 local g = vim.g
 local util = {}
 
-util.bg = "#000000"
-util.fg = "#ffffff"
-util.day_brightness = 0.3
 
 local has_nvim07 = vim.fn.has("nvim-0.7")
 
