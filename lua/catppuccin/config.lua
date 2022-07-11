@@ -77,6 +77,7 @@ config.options = {
 		telekasten = true,
 		symbols_outline = true,
 	},
+  custom_highlights = {},
 }
 
 function config.set_options(opts)
