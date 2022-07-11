@@ -1,18 +1,18 @@
 <h3 align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for NeoVim
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/misc/transparent.png" height="30" width="0px"/>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+	Catppuccin for <a href="https://github.com/neovim/neovim">NeoVim</a>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
-    <a href="https://github.com/catppuccin/nvim/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/nvim?colorA=1e1e28&colorB=c9cbff&style=for-the-badge&logo=starship style=for-the-badge"></a>
-    <a href="https://github.com/catppuccin/nvim/issues"><img src="https://img.shields.io/github/issues/catppuccin/nvim?colorA=1e1e28&colorB=f7be95&style=for-the-badge"></a>
-    <a href="https://github.com/catppuccin/nvim/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/nvim?colorA=1e1e28&colorB=b1e1a6&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/nvim/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/nvim?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/nvim/issues"><img src="https://img.shields.io/github/issues/catppuccin/nvim?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/nvim/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/nvim?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/catppuccin/nvim/dev/assets/ss.png"/>
+  <img src="assets/demo.png"/>
 </p>
 
 # About
@@ -30,7 +30,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Feline](https://github.com/feline-nvim/feline.nvim)
     -   [Lualine](https://github.com/hoob3rt/lualine.nvim)
     -   [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-    -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
+    -   [LSP Saga](https://github.com/tami5/lspsaga.nvim)
     -   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
     -   [Trouble](https://github.com/folke/trouble.nvim)
@@ -51,6 +51,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
     -   [Notify](https://github.com/rcarriga/nvim-notify)
     -   [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
+    -   [Mini.nvim](https://github.com/echasnovski/mini.nvim)
 
 ## Usage
 
@@ -86,12 +87,17 @@ transparent_background = false,
 term_colors = false,
 styles = {
 	comments = "italic",
-	functions = "italic",
-	keywords = "italic",
+	conditionals = "italic",
+	loops = "NONE",
+	functions = "NONE",
+	keywords = "NONE",
 	strings = "NONE",
-	variables = "italic",
-	numbers = "bold",
-	booleans = "bold"
+	variables = "NONE",
+	numbers = "NONE",
+	booleans = "NONE",
+	properties = "NONE",
+	types = "NONE",
+	operators = "NONE",
 },
 integrations = {
 	treesitter = true,
@@ -110,6 +116,7 @@ integrations = {
 			information = "underline",
 		},
 	},
+	coc_nvim = false,
 	lsp_trouble = false,
 	cmp = true,
 	lsp_saga = false,
@@ -144,10 +151,11 @@ integrations = {
 	notify = true,
 	telekasten = true,
 	symbols_outline = true,
+	mini = false,
 }
 ```
 
-The way you setup the settings on your configuration varies on whether you are using vimL for this or Lua.
+The way you setup the settings on your configuration varies based on whether you are using vimL for this or Lua.
 
 <details>
     <summary>For init.lua</summary>
@@ -183,15 +191,19 @@ After setting things up, you can load catppuccin like so:
 
 ```vim
 " Vim Script
-let g:catppuccin_flavour = "dusk"
+let g:catppuccin_flavour = "frappe" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
 ```
 
 ```lua
 -- Lua
-vim.g.catppuccin_flavour = "storm"
+vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 vim.cmd[[colorscheme catppuccin]]
 ```
+
+Remember that if you want to switch your Catppuccin flavour "on the fly" you may use the `:Catppuccin <flavour>` command.
+
+> Note: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
 
 ### Configuration
 
@@ -332,6 +344,6 @@ end
 
 &nbsp;
 
-<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
-<p align="center">Copyright &copy; 2020-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
-<p align="center"><a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=302d41&colorB=c9cbff"/></a></p>
+<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
+<p align="center">Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
+<p align="center"><a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a></p>

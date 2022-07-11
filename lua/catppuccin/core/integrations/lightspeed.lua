@@ -15,8 +15,9 @@ function M.get(cp)
 	if not get_prepared() then
 		local catppuccin = require("catppuccin")
 		if catppuccin.after_loading ~= nil then
+			local callback = catppuccin.after_loading
 			catppuccin.after_loading = function ()
-				catppuccin.after_loading()
+				callback()
 				require'lightspeed'.init_highlight()
 			end
 		else
