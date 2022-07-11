@@ -65,6 +65,7 @@ config.options = {
 		bufferline = true,
 		markdown = true,
 		lightspeed = false,
+		leap = false,
 		ts_rainbow = false,
 		hop = false,
 		notify = true,
