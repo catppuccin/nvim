@@ -8,7 +8,6 @@ local latte = require("catppuccin.core.palettes.latte")
 
 function M.dim()
 	if cnf.dim_inactive.shade == "dark" then
-		print(vim.g.catppuccin_flavour)
 		return ucolors.vary_color(
 			{ latte = ucolors.darken(latte.base, dim_percentage, latte.mantle) },
 			ucolors.darken(cp.base, dim_percentage, cp.mantle)

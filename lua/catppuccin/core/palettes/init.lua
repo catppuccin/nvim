@@ -1,6 +1,7 @@
 local M = {}
 
 local cnf = require("catppuccin.config").options
+local echo = require("catppuccin.utils.echo")
 
 function M.get_palette()
 	local flvr = vim.g.catppuccin_flavour
@@ -17,11 +18,7 @@ function M.get_palette()
 					if palette[k] then
 						palette[k] = v
 					else
-						vim.api.nvim_echo(
-							{ { 'Warning: "' .. k .. '" is not a valid catppucin palette color.', "WarningMsg" } },
-							true,
-							{}
-						)
+						echo('Warning: "' .. k .. '" is not a valid catppucin palette color')
 					end
 				end
 			end
