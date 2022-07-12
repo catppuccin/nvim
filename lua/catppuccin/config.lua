@@ -77,6 +77,7 @@ config.options = {
 		telekasten = true,
 		symbols_outline = true,
 	},
+	color_overrides = {}
   custom_highlights = {},
 }
 

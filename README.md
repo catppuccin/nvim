@@ -322,6 +322,18 @@ local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with 
 catppuccin.remap({ Comment = { fg = colors.flamingo }, })
 ```
 
+#### Overwriting colors
+
+Colors can be overwritten using `vim.g.catppucin_override_colors`:
+
+```lua
+vim.g.catppuccin_override_colors = {
+  base = "#ff0000",
+  mantle = "#242424",
+  crust = "#474747",
+}
+```
+
 #### Hooks
 
 Use them to execute code at certain events. These are the ones available:
