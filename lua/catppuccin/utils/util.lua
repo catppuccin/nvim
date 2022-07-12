@@ -82,6 +82,7 @@ function util.load(theme)
 	if vim.fn.exists("syntax_on") then
 		vim.cmd("syntax reset")
 	end
+	g.colors_name = "catppuccin"
 	local custom_highlights = require("catppuccin.config").options.custom_highlights
 
 	util.properties(theme.properties)
