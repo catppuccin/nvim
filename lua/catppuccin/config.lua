@@ -72,6 +72,7 @@ config.options = {
 		symbols_outline = true,
 	},
 	color_overrides = {}
+  custom_highlights = {},
 }
 
 function config.set_options(opts)
