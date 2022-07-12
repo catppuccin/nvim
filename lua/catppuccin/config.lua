@@ -7,11 +7,11 @@ config.options = {
 	dim_inactive = {
 		enable = false,
 		shade = "dark",
-		percentage = 0.15
+		percentage = 0.15,
 	},
 	styles = {
-		comments = "italic",
-		conditionals = "italic",
+		comments = { "italic" },
+		conditionals = { "italic" },
 		loops = "NONE",
 		functions = "NONE",
 		keywords = "NONE",
@@ -28,16 +28,16 @@ config.options = {
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
-				errors = "italic",
-				hints = "italic",
-				warnings = "italic",
-				information = "italic",
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
 			},
 			underlines = {
-				errors = "underline",
-				hints = "underline",
-				warnings = "underline",
-				information = "underline",
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
 			},
 		},
 		coc_nvim = false,
