@@ -71,6 +71,7 @@ config.options = {
 		telekasten = true,
 		symbols_outline = true,
 	},
+	color_overrides = {}
 }
 
 function config.set_options(opts)
