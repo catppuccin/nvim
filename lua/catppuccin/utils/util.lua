@@ -1,8 +1,5 @@
-local udata = require("catppuccin.utils.data")
-
 local g = vim.g
 local util = {}
-
 
 local has_nvim07 = vim.fn.has("nvim-0.7")
 
@@ -15,8 +12,12 @@ function util.highlight(group, color)
 		else
 			if color.style then
 				if color.style ~= "NONE" then
-					for _, style in pairs(udata.split(color.style, ",")) do
-						color[style] = true
+					if type(color.style) == "table" then
+						for _, style in ipairs(color.style) do
+							color[style] = true
+						end
+					else
+						color[color.style] = true
 					end
 				end
 			end
@@ -26,6 +27,9 @@ function util.highlight(group, color)
 		end
 	else
 		-- Doc: :h highlight-gui
+		if color.style and type(color.style) == "table" then
+			color.style = table.concat(color.style, ",")
+		end
 		local style = color.style and "gui=" .. color.style or "gui=NONE"
 		local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
 		local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"

@@ -14,7 +14,7 @@ function M.get(cp)
 		BufferLineFill = { bg = bg_highlight },
 		BufferLineBackcrust = { fg = cp.text, bg = inactive_bg }, -- others
 		BufferLineBufferVisible = { fg = cp.surface1, bg = inactive_bg },
-		BufferLineBufferSelected = { fg = cp.text, bg = cp.base, style = "bold,italic" }, -- current
+		BufferLineBufferSelected = { fg = cp.text, bg = cp.base, style = { "bold", "italic" } }, -- current
 		BufferLineTab = { fg = cp.surface1, bg = cp.base },
 		BufferLineTabSelected = { fg = cp.red, bg = cp.blue },
 		BufferLineTabClose = { fg = cp.red, bg = inactive_bg },
