@@ -35,7 +35,7 @@ config.options = {
 				information = "underline",
 			},
 		},
-        coc_nvim = false,
+		coc_nvim = false,
 		lsp_trouble = false,
 		cmp = true,
 		lsp_saga = false,
@@ -71,8 +71,8 @@ config.options = {
 		telekasten = true,
 		symbols_outline = true,
 	},
-	color_overrides = {}
-  custom_highlights = {},
+	color_overrides = {},
+	custom_highlights = {},
 }
 
 function config.set_options(opts)
