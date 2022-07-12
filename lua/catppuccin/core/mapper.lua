@@ -66,9 +66,9 @@ local function get_base()
 		PmenuThumb = { bg = cp.overlay0 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.blue }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = cp.surface1, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = cp.green, fg = cp.surface2, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { bg = cp.pink, fg = cp.surface2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		CurSearch = { bg = cp.red, fg = cp.surface2 }, -- 'cursearch' highlighting: highlights the current search you're on differently
+		Search = { bg = ucolors.darken(cp.sky, 0.30, cp.base), fg = cp.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
+		IncSearch = { bg = ucolors.darken(cp.sky, 0.90, cp.base), fg = cp.mantle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		CurSearch = { bg = cp.red, fg = cp.mantle }, -- 'cursearch' highlighting: highlights the current search you're on differently
 		SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
 		SpellBad = { sp = cp.red, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
