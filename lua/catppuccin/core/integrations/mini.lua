@@ -17,7 +17,7 @@ function M.get(cp)
 
 		MiniJump = { fg = cp.overlay2, bg = cp.pink },
 
-		MiniJump2dSpot = { bg = cp.base, fg = cp.peach, style = "bold,underline" },
+		MiniJump2dSpot = { bg = cp.base, fg = cp.peach, style = { "bold", "underline" } },
 
 		MiniStarterCurrent = {},
 		MiniStarterFooter = { fg = cp.yellow, style = "italic" },
@@ -42,10 +42,10 @@ function M.get(cp)
 
 		MiniSurround = { bg = cp.pink, fg = cp.surface1 },
 
-		MiniTablineCurrent = { fg = cp.text, bg = cp.base, style = "bold,italic" },
+		MiniTablineCurrent = { fg = cp.text, bg = cp.base, style = { "bold", "italic" } },
 		MiniTablineFill = { bg = bg_highlight },
 		MiniTablineHidden = { fg = cp.text, bg = inactive_bg },
-		MiniTablineModifiedCurrent = { fg = cp.base, bg = cp.text, style = "bold,italic" },
+		MiniTablineModifiedCurrent = { fg = cp.base, bg = cp.text, style = { "bold", "italic" } },
 		MiniTablineModifiedHidden = { fg = inactive_bg, bg = cp.text },
 		MiniTablineModifiedVisible = { fg = cp.surface1, bg = cp.subtext1 },
 		MiniTablineTabpagesection = { fg = cp.surface1, bg = cp.base },
