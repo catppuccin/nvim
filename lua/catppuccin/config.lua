@@ -77,8 +77,8 @@ config.options = {
 		telekasten = true,
 		symbols_outline = true,
 	},
-	color_overrides = {}
-  custom_highlights = {},
+	color_overrides = {},
+	custom_highlights = {},
 }
 
 function config.set_options(opts)
