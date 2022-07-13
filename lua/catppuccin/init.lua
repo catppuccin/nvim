@@ -22,11 +22,11 @@ end, {
 })
 
 command("CatppuccinCompile", function()
-	require("catppuccin.utils.util").compile()
+	require("catppuccin.lib.compiler").compile()
 end, {})
 
 command("CatppuccinClean", function()
-	require("catppuccin.utils.util").clean()
+	require("catppuccin.lib.compiler").clean()
 end, {})
 
 function M.load()
@@ -52,9 +52,7 @@ function M.load()
 	end
 
 	if not loaded then -- colorscheme gets evaluated from mapper.lua
-		local theme = require("catppuccin.lib.mapper").apply()
-		local utils = require("catppuccin.utils.util")
-		utils.load(theme)
+		require("catppuccin.lib.highlighter").load(require("catppuccin.lib.mapper").apply())
 
 		if catppuccin.after_loading ~= nil then
 			catppuccin.after_loading()
