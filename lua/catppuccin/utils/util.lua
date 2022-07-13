@@ -11,26 +11,19 @@ function util.highlight(group, color)
 			})
 		else
 			if color.style then
-				if color.style ~= "NONE" then
-					if type(color.style) == "table" then
-						for _, style in ipairs(color.style) do
-							color[style] = true
-						end
-					else
-						color[color.style] = true
-					end
+				for _, style in ipairs(color.style) do
+					color[style] = true
 				end
 			end
 
 			color.style = nil
 			vim.api.nvim_set_hl(0, group, color)
 		end
-	else
-		-- Doc: :h highlight-gui
-		if color.style and type(color.style) == "table" then
+	else -- Doc: :h highlight-gui
+		if color.style then
 			color.style = table.concat(color.style, ",")
 		end
-		local style = color.style and "gui=" .. color.style or "gui=NONE"
+		local style = (color.style and color.style ~= "") and "gui=" .. color.style or "gui=NONE"
 		local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
 		local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
 		local sp = color.sp and "guisp=" .. color.sp or ""
