@@ -101,7 +101,13 @@ vim.g.colors_name = "catppuccin"]] }
 	local config = require("catppuccin.config").options
 	local custom_highlights = config.custom_highlights
 	for property, value in pairs(theme.properties) do
-		table.insert(lines, fmt("vim.o.%s = %s", property, value))
+		if type(value) == "string" then
+			table.insert(lines, fmt('vim.o.%s = "%s"', property, value))
+		elseif type(value) == "bool" then
+			table.insert(lines, fmt('vim.o.%s = %s', property, value))
+		elseif type(value) == "table" then
+			table.insert(lines, fmt('vim.o.%s = %s', property, inspect(value)))
+		end
 	end
 	local tbl = vim.tbl_deep_extend("keep", theme.integrations, theme.base)
 	tbl = vim.tbl_deep_extend("keep", custom_highlights, tbl)
