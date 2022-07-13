@@ -4,6 +4,11 @@ local config = {}
 config.options = {
 	transparent_background = false,
 	term_colors = false,
+	compile = {
+		enable = false,
+		path = vim.fn.stdpath "cache" .. "/catppuccin",
+		suffix = "_compiled"
+	},
 	dim_inactive = {
 		enable = false,
 		shade = "dark",
