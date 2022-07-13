@@ -316,6 +316,16 @@ Catppuccin provides these commands to work with the catppuccin compiler.
 :CatppuccinClean # Delete compiled files
 ```
 
+It's recommended to add `:CatppuccinCompile` to run everytime you update your config. For example:
+
+```
+use {
+	"catppuccin/nvim",
+	as = "catppuccin",
+	run = ":CatppuccinCompile",
+}
+```
+
 Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
 
 ### Extra
