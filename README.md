@@ -23,6 +23,7 @@ This port of Catppuccin is special because it was the first one and the one that
 
 -   Handy CLI.
 -   Extensible for many use cases.
+-   [Compile](https://github.com/catppuccin/nvim#Compile) user's configuration
 -   Integrations with a bunch of plugins:
     -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
     -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
@@ -292,7 +293,7 @@ integration = {
 }
 ```
 
-# Compiling
+# Compile
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
 
