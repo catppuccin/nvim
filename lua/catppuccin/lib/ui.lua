@@ -1,10 +1,10 @@
 local M = {}
 
-local cp = require("catppuccin.core.palettes.init").get_palette()
+local cp = require("catppuccin.palettes.init").get_palette()
 local cnf = require("catppuccin.config").options
 local dim_percentage = cnf.dim_inactive.percentage
 local ucolors = require("catppuccin.utils.colors")
-local latte = require("catppuccin.core.palettes.latte")
+local latte = require("catppuccin.palettes.latte")
 
 function M.dim()
 	if cnf.dim_inactive.shade == "dark" then

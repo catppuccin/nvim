@@ -1,7 +1,6 @@
 local M = {}
 
 local flavours = {"latte", "frappe", "macchiato", "mocha"}
-
 local command = vim.api.nvim_create_user_command
 
 command("Catppuccin", function(inp)
@@ -18,11 +17,11 @@ end, {
 })
 
 command("CatppuccinCompile", function()
-	require("catppuccin.utils.util").compile()
+	require("catppuccin.lib.compiler").compile()
 end, {})
 
 command("CatppuccinClean", function()
-	require("catppuccin.utils.util").clean()
+	require("catppuccin.lib.compiler").clean()
 end, {})
 
 local function load()
@@ -44,9 +43,9 @@ local function load()
 		end
 	end
 	-- colorscheme gets evaluated from mapper.lua
-	local theme = require("catppuccin.core.mapper").apply()
-	local utils = require("catppuccin.utils.util")
-	utils.load(theme)
+	local theme = require("catppuccin.lib.mapper").apply()
+	local highlighter = require("catppuccin.lib.highlighter")
+	highlighter.load(theme)
 
 	if catppuccin.after_loading ~= nil then
 		catppuccin.after_loading()
