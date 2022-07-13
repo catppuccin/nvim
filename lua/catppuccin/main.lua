@@ -20,16 +20,17 @@ local function load()
 		if f ~= nil then
 			io.close(f)
 			vim.cmd("luafile " .. compiled_path)
+			vim.api.nvim_exec_autocmds("User", { pattern = "CatppuccinLoaded" })
+			return
 		end
-	else
-		-- colorscheme gets evaluated from mapper.lua
-		local theme = require("catppuccin.core.mapper").apply()
-		local utils = require("catppuccin.utils.util")
-		utils.load(theme)
+	end
+	-- colorscheme gets evaluated from mapper.lua
+	local theme = require("catppuccin.core.mapper").apply()
+	local utils = require("catppuccin.utils.util")
+	utils.load(theme)
 
-		if catppuccin.after_loading ~= nil then
-			catppuccin.after_loading()
-		end
+	if catppuccin.after_loading ~= nil then
+		catppuccin.after_loading()
 	end
 
 	vim.api.nvim_exec_autocmds("User", { pattern = "CatppuccinLoaded" })
