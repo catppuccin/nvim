@@ -10,5 +10,7 @@ function! s:ApplyFlavour(args) abort
 endfunction
 
 command! -nargs=1 -complete=custom,s:FlavourCompletion		Catppuccin call s:ApplyFlavour([<f-args>])
+command! CatppuccinCompile lua require("catppuccin.utils.util").compile()
+command! CatppuccinClean lua require("catppuccin.utils.util").clean()
 
 let g:loaded_catppuccin = 1
