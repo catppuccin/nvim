@@ -36,13 +36,12 @@ function M.load(theme)
 		vim.cmd("syntax reset")
 	end
 	g.colors_name = "catppuccin"
-	local custom_highlights = require("catppuccin.config").options.custom_highlights
 
 	M.properties(theme.properties)
 	M.syntax(theme.editor)
 	M.syntax(theme.syntax)
 	M.syntax(theme.integrations)
-	M.syntax(custom_highlights)
+	M.syntax(require("catppuccin.config").options.custom_highlights)
 
 	if require("catppuccin.config").options["term_colors"] then
 		M.properties(theme.terminal)
