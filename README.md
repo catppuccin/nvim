@@ -313,8 +313,8 @@ By default catppuccin writes the compiled results into the system's cache direct
 Catppuccin provides these commands to work with the catppuccin compiler.
 
 ```vim
-:CatppuccinCompile # Create/update the compile files
-:CatppuccinClean # Delete compiled files
+:CatppuccinCompile # Create/update the compile file
+:CatppuccinClean # Delete compiled file
 ```
 
 It's recommended to add `:CatppuccinCompile` to run everytime you update your config. For example:
