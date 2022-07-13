@@ -17,7 +17,6 @@ config.options = {
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
-<<<<<<< HEAD
 		loops = {},
 		functions = {},
 		keywords = {},
@@ -28,18 +27,6 @@ config.options = {
 		properties = {},
 		types = {},
 		operators = {},
-=======
-		loops = "NONE",
-		functions = "NONE",
-		keywords = "NONE",
-		strings = "NONE",
-		variables = "NONE",
-		numbers = "NONE",
-		booleans = "NONE",
-		properties = "NONE",
-		types = "NONE",
-		operators = "NONE",
->>>>>>> origin/dev
 	},
 	integrations = {
 		treesitter = true,
