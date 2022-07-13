@@ -1,6 +1,6 @@
 local M = {}
 
-local hsluv = require("catppuccin.utils.hsluv")
+local hsluv = require("catppuccin.lib.hsluv")
 
 M.bg = "#000000"
 M.fg = "#ffffff"
