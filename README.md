@@ -23,6 +23,7 @@ This port of Catppuccin is special because it was the first one and the one that
 
 -   Handy CLI.
 -   Extensible for many use cases.
+-   [Compile](https://github.com/catppuccin/nvim#Compile) user's configuration
 -   Integrations with a bunch of plugins:
     -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
     -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
@@ -86,6 +87,11 @@ There are already some sane defaults that you may like, however you can change t
 dim_inactive = false,
 transparent_background = false,
 term_colors = false,
+compile = {
+	enable = false,
+	path = vim.fn.stdpath "cache" .. "/catppuccin",
+	suffix = "_compiled"
+},
 styles = {
 	comments = { "italic" },
 	conditionals = { "italic" },
@@ -286,6 +292,42 @@ integration = {
   }
 }
 ```
+
+### Compile
+
+Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
+
+Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
+
+To enable compile enables it in setup function:
+
+```lua
+compile = {
+	enable = true,
+	path = vim.fn.stdpath "cache" .. "/catppuccin",
+	suffix = "_compiled"
+},
+```
+By default catppuccin writes the compiled results into the system's cache directory.
+
+Catppuccin provides these commands to work with the catppuccin compiler.
+
+```vim
+:CatppuccinCompile # Create/update the compile file
+:CatppuccinClean # Delete compiled file
+```
+
+It's recommended to add `:CatppuccinCompile` to run everytime you update your config. For example:
+
+```
+use {
+	"catppuccin/nvim",
+	as = "catppuccin",
+	run = ":CatppuccinCompile",
+}
+```
+
+Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
 
 ### Extra
 
