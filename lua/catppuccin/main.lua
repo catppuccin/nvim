@@ -5,15 +5,19 @@ local flavours = {"latte", "frappe", "macchiato", "mocha"}
 local command = vim.api.nvim_create_user_command
 
 command("Catppuccin", function(inp)
+	if not vim.tbl_contains(flavours, inp.args) then
+		local echo = require("catppuccin.utils.echo")
+		echo("Invalid flavour", "info")
+		return
+	end
 	vim.g.catppuccin_flavour = inp.args
 	vim.cmd "colorscheme catppuccin"
 end, {
 	nargs = 1,
 	complete = function(line)
-		local builtin_list = flavours
 		return vim.tbl_filter(function(val)
 			return vim.startswith(val, line)
-		end, builtin_list)
+		end, flavours)
 	end
 })
 
