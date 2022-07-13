@@ -293,7 +293,7 @@ integration = {
 }
 ```
 
-# Compile
+### Compile
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
 
