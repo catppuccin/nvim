@@ -9,8 +9,11 @@ command("Catppuccin", function(inp)
 	vim.cmd "colorscheme catppuccin"
 end, {
 	nargs = 1,
-	complete = function()
-		return flavours
+	complete = function(line)
+		local builtin_list = flavours
+		return vim.tbl_filter(function(val)
+			return vim.startswith(val, line)
+		end, builtin_list)
 	end
 })
 
