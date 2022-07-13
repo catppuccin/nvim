@@ -2,9 +2,28 @@ local M = {}
 
 local flavours = {"latte", "frappe", "macchiato", "mocha"}
 
-function M.cli_flavour_completion()
-	return vim.tbl_keys(require("catppuccin.utils.data").set_of(flavours))
-end
+local command = vim.api.nvim_create_user_command
+
+command("Catppuccin", function(inp)
+	vim.g.catppuccin_flavour = inp.args
+	vim.cmd "colorscheme catppuccin"
+end, {
+	nargs = 1,
+	complete = function(line)
+		local builtin_list = flavours
+		return vim.tbl_filter(function(val)
+			return vim.startswith(val, line)
+		end, builtin_list)
+	end
+})
+
+command("CatppuccinCompile", function()
+	require("catppuccin.utils.util").compile()
+end, {})
+
+command("CatppuccinClean", function()
+	require("catppuccin.utils.util").clean()
+end, {})
 
 local function load()
 	local catppuccin = require("catppuccin")
