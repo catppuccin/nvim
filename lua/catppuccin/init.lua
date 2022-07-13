@@ -52,7 +52,7 @@ function M.load()
 	end
 
 	if not loaded then -- colorscheme gets evaluated from mapper.lua
-		local theme = require("catppuccin.core.mapper").apply()
+		local theme = require("catppuccin.lib.mapper").apply()
 		local utils = require("catppuccin.utils.util")
 		utils.load(theme)
 
