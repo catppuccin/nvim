@@ -114,7 +114,7 @@ local vi_mode_hl = function()
 	return {
 		fg = sett.bkg,
 		bg = mode_colors[vim.fn.mode()][2],
-		style = "bold",
+		style = { "bold" },
 	}
 end
 

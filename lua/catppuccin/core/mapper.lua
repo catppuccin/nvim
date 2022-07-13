@@ -43,8 +43,8 @@ local function get_base()
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = ucolors.vary_color({ latte = cp.base0 }, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = cp.peach, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = cp.text, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MatchParen = { fg = cp.peach, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg = { fg = cp.text, style = { "bold" } }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = cp.text }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = cp.blue }, -- |more-prompt|
@@ -61,27 +61,27 @@ local function get_base()
 		NormalFloat = { fg = cp.text, bg = cp.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.blue },
 		Pmenu = { bg = cp.surface0, fg = cp.overlay2 }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.text, bg = cp.surface1, style = "bold" }, -- Popup menu: selected item.
+		PmenuSel = { fg = cp.text, bg = cp.surface1, style = { "bold" } }, -- Popup menu: selected item.
 		PmenuSbar = { bg = cp.surface1 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = cp.overlay0 }, -- Popup menu: Thumb of the scrollbar.
 		Question = { fg = cp.blue }, -- |hit-enter| prompt and yes/no questions
-		QuickFixLine = { bg = cp.surface1, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { bg = cp.surface1, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = ucolors.darken(cp.sky, 0.30, cp.base), fg = cp.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = ucolors.darken(cp.sky, 0.90, cp.base), fg = cp.mantle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		CurSearch = { bg = cp.red, fg = cp.mantle }, -- 'cursearch' highlighting: highlights the current search you're on differently
 		SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
-		SpellBad = { sp = cp.red, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal = { sp = cp.blue, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = cp.green, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellBad = { sp = cp.red, style = { "undercurl" } }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = cp.yellow, style = { "undercurl" } }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal = { sp = cp.blue, style = { "undercurl" } }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = cp.green, style = { "undercurl" } }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = cp.text, bg = cp.mantle }, -- status line of current window
 		StatusLineNC = { fg = cp.surface1, bg = cp.mantle }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine = { bg = cp.mantle, fg = cp.surface1 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
 		TabLineSel = { fg = cp.green, bg = cp.surface1 }, -- tab pages line, active tab page label
-		Title = { fg = cp.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = cp.surface1, style = "bold" }, -- Visual mode selection
-		VisualNOS = { bg = cp.surface1, style = "bold" }, -- Visual mode selection when vim is "Not Owning the Selection".
+		Title = { fg = cp.blue, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etcp.
+		Visual = { bg = cp.surface1, style = { "bold" } }, -- Visual mode selection
+		VisualNOS = { bg = cp.surface1, style = { "bold" } }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = cp.yellow }, -- warning messages
 		Whitespace = { fg = cp.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = cp.overlay0 }, -- current match in 'wildmenu' completion
@@ -127,24 +127,24 @@ local function get_base()
 		-- Specialoverlay0= { }, -- special things inside a overlay0
 		-- Debug         = { }, --    debugging statements
 
-		Underlined = { style = "underline" }, -- (preferred) text that stands out, HTML links
-		Bold = { style = "bold" },
-		Italic = { style = "italic" },
+		Underlined = { style = { "underline" } }, -- (preferred) text that stands out, HTML links
+		Bold = { style = { "bold" } },
+		Italic = { style = { "italic" } },
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
 		Error = { fg = cp.red }, -- (preferred) any erroneous construct
-		Todo = { bg = cp.yellow, fg = cp.base, style = "bold" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { bg = cp.yellow, fg = cp.base, style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = cp.yellow },
 		qfFileName = { fg = cp.blue },
-		htmlH1 = { fg = cp.pink, style = "bold" },
-		htmlH2 = { fg = cp.blue, style = "bold" },
-		-- mkdHeading = { fg = cp.peach, style = "bold" },
+		htmlH1 = { fg = cp.pink, style = { "bold" } },
+		htmlH2 = { fg = cp.blue, style = { "bold" } },
+		-- mkdHeading = { fg = cp.peach, style = { "bold" } },
 		-- mkdCode = { bg = cp.terminal_black, fg = cp.text },
 		mkdCodeDelimiter = { bg = cp.base, fg = cp.text },
-		mkdCodeStart = { fg = cp.flamingo, style = "bold" },
-		mkdCodeEnd = { fg = cp.flamingo, style = "bold" },
-		-- mkdLink = { fg = cp.blue, style = "underline" },
+		mkdCodeStart = { fg = cp.flamingo, style = { "bold" } },
+		mkdCodeEnd = { fg = cp.flamingo, style = { "bold" } },
+		-- mkdLink = { fg = cp.blue, style = { "underline" } },
 
 		-- debugging
 		debugPC = { bg = cp.crust }, -- used for highlighting the current line in terminal-debug
