@@ -13,7 +13,7 @@ local function inspect(t)
 	return fmt([[{ %s }]], table.concat(list, ", "))
 end
 
-function util.compile()
+function M.compile()
 	local theme = require("catppuccin.lib.mapper").apply()
 	local lines = {
 		[[
@@ -100,7 +100,7 @@ vim.g.colors_name = "catppuccin"]],
 	file:close()
 end
 
-function util.clean()
+function M.clean()
 	local config = require("catppuccin.config").options
 	local compiled_path = config.compile.path
 		.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
@@ -109,3 +109,5 @@ function util.clean()
 		.. ".lua"
 	os.remove(compiled_path)
 end
+
+return M
