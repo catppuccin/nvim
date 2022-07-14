@@ -5,8 +5,8 @@ function M.get(cp)
 		TelescopeBorder = { fg = cp.blue },
 		TelescopeSelectionCaret = { fg = cp.flamingo },
 		TelescopeSelection = { fg = cp.text, bg = cp.surface0, style = "bold" },
+		TelescopeMatching = { fg = cp.blue },
 		-- Allow Telescope to hijack these highlights in order to achieve the old behavior
-		--   TelescopeMatching = { fg = cp.blue },
 		--   TelescopePromptPrefix = { bg = cp.crust },
 		--   TelescopePromptNormal = { bg = cp.crust},
 		--   TelescopeResultsNormal = { bg = cp.mantle},
