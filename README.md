@@ -132,12 +132,12 @@ integrations = {
 	telescope = true,
 	nvimtree = {
 		enabled = true,
-		show_root = false,
+		show_root = true,
 		transparent_panel = false,
 	},
 	neotree = {
 		enabled = false,
-		show_root = false,
+		show_root = true,
 		transparent_panel = false,
 	},
 	which_key = false,
@@ -262,10 +262,10 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 
 ```lua
 require('lualine').setup {
-  options = {
-    theme = "catppuccin"
-	-- ... the rest of your lualine config
-  }
+	options = {
+		theme = "catppuccin"
+		-- ... the rest of your lualine config
+	}
 }
 ```
 
@@ -274,22 +274,22 @@ require('lualine').setup {
 
 ```lua
 integration = {
-  nvimtree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
-  }
+	nvimtree = {
+		enabled = true,
+		show_root = true, -- makes the root folder not transparent
+		transparent_panel = false, -- make the panel transparent
+	}
 }
 ```
 -   **Neo-tree:** setting `enabled` to `true` enables this integration:
 
 ```lua
 integration = {
-  neotree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
-  }
+	neotree = {
+		enabled = true,
+		show_root = true, -- makes the root folder not transparent
+		transparent_panel = false, -- make the panel transparent
+	}
 }
 ```
 
@@ -312,19 +312,32 @@ By default catppuccin writes the compiled results into the system's cache direct
 
 Catppuccin provides these commands to work with the catppuccin compiler.
 
-```vim
+```bash
 :CatppuccinCompile # Create/update the compile file
 :CatppuccinClean # Delete compiled file
 ```
 
 It's recommended to add `:CatppuccinCompile` to run everytime you update your config. For example:
 
-```
+```lua
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
 	run = ":CatppuccinCompile",
 }
+```
+
+To auto-compile catppuccin after `:PackerCompile`, create an autocmd `PackerCompileDone` in User group
+
+For example, if your plugin specification is in `~/.config/nvim/lua/plugins.lua` then the pattern is `plugins.lua`
+
+```lua
+vim.api.nvim_create_autocmd("User PackerCompileDone", {
+	pattern = "plugins.lua",
+	callback = function()
+		vim.cmd "CatppuccinCompile"
+	end,
+})
 ```
 
 Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
@@ -370,9 +383,9 @@ Colors can be overwritten using `vim.g.catppucin_override_colors`:
 
 ```lua
 vim.g.catppuccin_override_colors = {
-  base = "#ff0000",
-  mantle = "#242424",
-  crust = "#474747",
+	base = "#ff0000",
+	mantle = "#242424",
+	crust = "#474747",
 }
 ```
 
@@ -401,11 +414,11 @@ Instead of `after_loading` hook, you can use autocmd event like this:
 
 ```lua
 vim.api.nvim_create_autocmd("User", {
-    pattern = "CatppuccinLoaded",
-    callback = function()
-        local colors = require("catppuccin.api.colors").get_colors()
-        -- do something with colors
-    end
+	pattern = "CatppuccinLoaded",
+	callback = function()
+		local colors = require("catppuccin.api.colors").get_colors()
+		-- do something with colors
+	end
 })
 ```
 

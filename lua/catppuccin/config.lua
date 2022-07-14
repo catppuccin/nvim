@@ -59,7 +59,7 @@ config.options = {
 		},
 		neotree = {
 			enabled = false,
-			show_root = false,
+			show_root = true,
 			transparent_panel = false,
 		},
 		which_key = false,
