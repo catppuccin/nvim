@@ -41,10 +41,10 @@ function M.load()
 
 	if config.compile.enable == true then
 		local compiled_path = config.compile.path
-			.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
-			.. vim.g.catppuccin_flavour
-			.. config.compile.suffix
-			.. ".lua"
+				.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
+				.. vim.g.catppuccin_flavour
+				.. config.compile.suffix
+				.. ".lua"
 		local f = io.open(compiled_path, "r")
 		if f ~= nil then
 			io.close(f)
@@ -65,6 +65,7 @@ function M.load()
 end
 
 function M.setup(custom_opts)
+	hello
 	require("catppuccin.config").set_options(custom_opts)
 end
 
