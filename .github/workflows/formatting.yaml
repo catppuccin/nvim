@@ -1,7 +1,8 @@
 name: stylua
 on:
 	push:
-		branches: ["main", "dev"]
+		branches:
+      - dev
 		paths-ignore:
 			- ".github/**"
 
