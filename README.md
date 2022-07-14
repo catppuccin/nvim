@@ -327,11 +327,13 @@ use {
 }
 ```
 
-To auto-compile catppuccin after `:PackerCompile`, create an autocmd:
+To auto-compile catppuccin after `:PackerCompile`, create an autocmd `PackerCompileDone` in User group
+
+For example, if your plugin specification is in `~/.config/nvim/lua/plugins.lua` then the pattern is `plugins.lua`
 
 ```lua
 vim.api.nvim_create_autocmd("User PackerCompileDone", {
-	pattern = "*",
+	pattern = "plugins.lua",
 	callback = function()
 		vim.cmd "CatppuccinCompile"
 	end,
