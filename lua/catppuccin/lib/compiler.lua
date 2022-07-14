@@ -61,27 +61,9 @@ vim.g.colors_name = "catppuccin"]],
 		end
 	end
 
-	if config.term_colors then
-		local colors = {
-			"overlay0",
-			"red",
-			"green",
-			"yellow",
-			"blue",
-			"pink",
-			"sky",
-			"text",
-			"overlay1",
-			"red",
-			"green",
-			"yellow",
-			"blue",
-			"pink",
-			"sky",
-			"text",
-		}
-		for i = 0, 15 do
-			table.insert(lines, fmt('vim.g.terminal_color_%d = "%s"', i, theme.terminal[colors[i + 1]]))
+	if config.term_colors == true then
+		for k, v in pairs(theme.terminal) do
+			table.insert(lines, fmt('vim.g.%s = "%s"', k, v))
 		end
 	end
 	os.execute(
