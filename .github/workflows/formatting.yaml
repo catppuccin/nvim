@@ -1,7 +1,8 @@
 name: stylua
 on:
 	push:
-		branches: ["main"]
+		branches:
+      - dev
 		paths-ignore:
 			- ".github/**"
 
@@ -13,4 +14,4 @@ jobs:
 			- uses: JohnnyMorganz/stylua-action@1.0.0
 				with:
 					token: ${{ secrets.GITHUB_TOKEN }}
-					args: --check --config-path=.stylua.toml .
+					args: --check --config-path=stylua.toml .

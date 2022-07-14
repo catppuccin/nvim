@@ -13,7 +13,7 @@ local function inspect(t)
 	return fmt([[{ %s }]], table.concat(list, ", "))
 end
 
-function util.compile()
+function M.compile()
 	local theme = require("catppuccin.lib.mapper").apply()
 	local lines = {
 		[[
@@ -27,7 +27,6 @@ end
 vim.g.colors_name = "catppuccin"]],
 	}
 	local config = require("catppuccin.config").options
-	local custom_highlights = config.custom_highlights
 	for property, value in pairs(theme.properties) do
 		if type(value) == "string" then
 			table.insert(lines, fmt('vim.o.%s = "%s"', property, value))
@@ -37,8 +36,8 @@ vim.g.colors_name = "catppuccin"]],
 			table.insert(lines, fmt("vim.o.%s = %s", property, inspect(value)))
 		end
 	end
-	local tbl = vim.tbl_deep_extend("keep", theme.integrations, theme.base)
-	tbl = vim.tbl_deep_extend("keep", custom_highlights, tbl)
+	local tbl = vim.tbl_deep_extend("keep", theme.integrations, theme.editor)
+	tbl = vim.tbl_deep_extend("keep", config.custom_highlights, tbl)
 
 	for group, color in pairs(tbl) do
 		if color.link then
@@ -100,7 +99,7 @@ vim.g.colors_name = "catppuccin"]],
 	file:close()
 end
 
-function util.clean()
+function M.clean()
 	local config = require("catppuccin.config").options
 	local compiled_path = config.compile.path
 		.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
@@ -109,3 +108,5 @@ function util.clean()
 		.. ".lua"
 	os.remove(compiled_path)
 end
+
+return M
