@@ -262,10 +262,10 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 
 ```lua
 require('lualine').setup {
-  options = {
-    theme = "catppuccin"
-	-- ... the rest of your lualine config
-  }
+	options = {
+		theme = "catppuccin"
+		-- ... the rest of your lualine config
+	}
 }
 ```
 
@@ -274,22 +274,22 @@ require('lualine').setup {
 
 ```lua
 integration = {
-  nvimtree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
-  }
+	nvimtree = {
+		enabled = true,
+		show_root = true, -- makes the root folder not transparent
+		transparent_panel = false, -- make the panel transparent
+	}
 }
 ```
 -   **Neo-tree:** setting `enabled` to `true` enables this integration:
 
 ```lua
 integration = {
-  neotree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
-  }
+	neotree = {
+		enabled = true,
+		show_root = true, -- makes the root folder not transparent
+		transparent_panel = false, -- make the panel transparent
+	}
 }
 ```
 
@@ -381,9 +381,9 @@ Colors can be overwritten using `vim.g.catppucin_override_colors`:
 
 ```lua
 vim.g.catppuccin_override_colors = {
-  base = "#ff0000",
-  mantle = "#242424",
-  crust = "#474747",
+	base = "#ff0000",
+	mantle = "#242424",
+	crust = "#474747",
 }
 ```
 
@@ -412,11 +412,11 @@ Instead of `after_loading` hook, you can use autocmd event like this:
 
 ```lua
 vim.api.nvim_create_autocmd("User", {
-    pattern = "CatppuccinLoaded",
-    callback = function()
-        local colors = require("catppuccin.api.colors").get_colors()
-        -- do something with colors
-    end
+	pattern = "CatppuccinLoaded",
+	callback = function()
+		local colors = require("catppuccin.api.colors").get_colors()
+		-- do something with colors
+	end
 })
 ```
 
