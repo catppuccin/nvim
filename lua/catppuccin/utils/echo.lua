@@ -5,13 +5,13 @@ return function(msg, kind)
 	local level = {}
 
 	if kind == "error" then
-		level.log = vim.log.kinds.ERROR
+		level.log = vim.log.levels.ERROR
 		level.type = "error"
 	elseif kind == "warn" then
-		level.log = vim.log.kinds.WARN
+		level.log = vim.log.levels.WARN
 		level.type = "error"
 	else
-		level.log = kind or vim.log.kinds.INFO
+		level.log = kind or vim.log.levels.INFO
 		level.type = "info"
 	end
 
