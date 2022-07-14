@@ -319,7 +319,7 @@ Catppuccin provides these commands to work with the catppuccin compiler.
 
 It's recommended to add `:CatppuccinCompile` to run everytime you update your config. For example:
 
-```
+```lua
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
@@ -329,7 +329,7 @@ use {
 
 To auto-compile catppuccin after `:PackerCompile`, create an autocmd:
 
-```
+```lua
 vim.api.nvim_create_autocmd("User PackerCompileDone", {
 	pattern = "*",
 	callback = function()
