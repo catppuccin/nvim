@@ -24,9 +24,9 @@ function M.syntax(tbl)
 	end
 end
 
-function M.properties(tbl)
+function M.properties(tbl, type)
 	for property, value in pairs(tbl) do
-		vim.o[property] = value
+		vim[type][property] = value
 	end
 end
 
@@ -37,14 +37,14 @@ function M.load(theme)
 	end
 	g.colors_name = "catppuccin"
 
-	M.properties(theme.properties)
+	M.properties(theme.properties, "o")
 	M.syntax(theme.editor)
 	M.syntax(theme.syntax)
 	M.syntax(theme.integrations)
 	M.syntax(require("catppuccin.config").options.custom_highlights)
 
 	if require("catppuccin.config").options["term_colors"] then
-		M.properties(theme.terminal)
+		M.properties(theme.terminal, "g")
 	end
 end
 
