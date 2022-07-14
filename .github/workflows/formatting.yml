@@ -2,8 +2,8 @@ name: stylua
 on:
   push:
     branches: ["main", "dev"]
-    paths-ignore:
-      - ".github/**"
+  pull_request:
+    branches: ["main", "dev"]
 
 jobs:
   stylua:
