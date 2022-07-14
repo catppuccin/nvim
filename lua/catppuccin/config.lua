@@ -6,8 +6,8 @@ config.options = {
 	term_colors = false,
 	compile = {
 		enable = false,
-		path = vim.fn.stdpath "cache" .. "/catppuccin",
-		suffix = "_compiled"
+		path = vim.fn.stdpath("cache") .. "/catppuccin",
+		suffix = "_compiled",
 	},
 	dim_inactive = {
 		enable = false,

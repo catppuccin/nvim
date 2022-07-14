@@ -9,7 +9,6 @@ function M.get()
 		root_dir_color = cp.blue
 	end
 
-
 	return {
 		NvimTreeFolderName = { fg = cp.blue },
 		NvimTreeFolderIcon = { fg = cp.blue },

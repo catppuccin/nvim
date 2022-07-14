@@ -1,6 +1,6 @@
 local M = {}
 
-local flavours = {"latte", "frappe", "macchiato", "mocha"}
+local flavours = { "latte", "frappe", "macchiato", "mocha" }
 
 local command = vim.api.nvim_create_user_command
 
@@ -11,14 +11,14 @@ command("Catppuccin", function(inp)
 		return
 	end
 	vim.g.catppuccin_flavour = inp.args
-	vim.cmd "colorscheme catppuccin"
+	vim.cmd("colorscheme catppuccin")
 end, {
 	nargs = 1,
 	complete = function(line)
 		return vim.tbl_filter(function(val)
 			return vim.startswith(val, line)
 		end, flavours)
-	end
+	end,
 })
 
 command("CatppuccinCompile", function()
@@ -42,7 +42,9 @@ function M.load()
 	if config.compile.enable == true then
 		local compiled_path = config.compile.path
 			.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
-			.. vim.g.catppuccin_flavour .. config.compile.suffix .. ".lua"
+			.. vim.g.catppuccin_flavour
+			.. config.compile.suffix
+			.. ".lua"
 		local f = io.open(compiled_path, "r")
 		if f ~= nil then
 			io.close(f)

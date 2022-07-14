@@ -53,7 +53,7 @@ function M.get()
 		TSNote = { fg = cp.base, bg = cp.blue },
 		TSWarning = { fg = cp.base, bg = cp.yellow },
 		TSDanger = { fg = cp.base, bg = cp.red },
-		TSConstMacro = { fg = cp.mauve };    -- For constants that are defined by macros: NULL in cp.
+		TSConstMacro = { fg = cp.mauve }, -- For constants that are defined by macros: NULL in cp.
 		-- TSError = { fg = cp.red }, -- For syntax/parser errors.
 		-- rustTSField = { fg = cp.surface1 }, -- For fields.
 		TSLabel = { fg = cp.sapphire }, -- For labels: label: in C and :label: in Lua.
@@ -98,7 +98,7 @@ function M.get()
 		-- lua
 		luaTSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
-        -- typescript
+		-- typescript
 		typescriptTSConstructor = { fg = cp.lavender },
 
 		-- TSX (Typescript React)

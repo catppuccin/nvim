@@ -13,10 +13,10 @@ function M.dim()
 			ucolors.darken(cp.base, dim_percentage, cp.mantle)
 		)
 	end
-		return ucolors.vary_color(
-			{ latte = ucolors.lighten("#FBFCFD", dim_percentage, latte.base) },
-			ucolors.lighten(cp.surface0, dim_percentage, cp.base)
-		)
+	return ucolors.vary_color(
+		{ latte = ucolors.lighten("#FBFCFD", dim_percentage, latte.base) },
+		ucolors.lighten(cp.surface0, dim_percentage, cp.base)
+	)
 end
 
 return M

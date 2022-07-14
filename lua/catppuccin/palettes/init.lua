@@ -12,13 +12,13 @@ function M.get_palette()
 	end
 
 	if type(cnf.color_overrides) == "table" then
-		for _, pal in pairs({"all", flvr}) do
+		for _, pal in pairs({ "all", flvr }) do
 			if cnf.color_overrides[pal] ~= nil then
 				for k, v in pairs(cnf.color_overrides[pal]) do
 					if palette[k] then
 						palette[k] = v
 					else
-						echo('"'..k .. '" is not a valid catppucin palette color', "warn")
+						echo('"' .. k .. '" is not a valid catppucin palette color', "warn")
 					end
 				end
 			end

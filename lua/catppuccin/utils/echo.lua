@@ -1,7 +1,7 @@
 local TITLE = "Catppuccin"
 
 return function(msg, kind)
-    local has_notify_plugin = pcall(require, "notify")
+	local has_notify_plugin = pcall(require, "notify")
 	local level = {}
 
 	if kind == "error" then
@@ -15,11 +15,11 @@ return function(msg, kind)
 		level.type = "info"
 	end
 
-    if has_notify_plugin then
-        vim.notify(msg, level.log, {
-            title = TITLE,
-        })
-    else
-        vim.notify(("%s (%s): %s"):format(TITLE, level.type,msg), level.log)
-    end
+	if has_notify_plugin then
+		vim.notify(msg, level.log, {
+			title = TITLE,
+		})
+	else
+		vim.notify(("%s (%s): %s"):format(TITLE, level.type, msg), level.log)
+	end
 end
