@@ -327,6 +327,17 @@ use {
 }
 ```
 
+To auto-compile catppuccin after `:PackerCompile`, create an autocmd:
+
+```
+vim.api.nvim_create_autocmd("User PackerCompileDone", {
+	pattern = "*",
+	callback = function()
+		vim.cmd ":CatppuccinCompile"
+	end,
+})
+```
+
 Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
 
 ### Extra
