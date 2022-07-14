@@ -312,7 +312,7 @@ By default catppuccin writes the compiled results into the system's cache direct
 
 Catppuccin provides these commands to work with the catppuccin compiler.
 
-```vim
+```bash
 :CatppuccinCompile # Create/update the compile file
 :CatppuccinClean # Delete compiled file
 ```
