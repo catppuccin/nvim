@@ -6,8 +6,7 @@ local command = vim.api.nvim_create_user_command
 
 command("Catppuccin", function(inp)
 	if not vim.tbl_contains(flavours, inp.args) then
-		local echo = require("catppuccin.utils.echo")
-		echo("Invalid flavour", "info")
+		require("catppuccin.utils.echo")("Invalid flavour")
 		return
 	end
 	vim.g.catppuccin_flavour = inp.args
