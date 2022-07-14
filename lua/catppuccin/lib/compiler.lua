@@ -37,6 +37,7 @@ vim.g.colors_name = "catppuccin"]],
 		end
 	end
 	local tbl = vim.tbl_deep_extend("keep", theme.integrations, theme.editor)
+	tbl = vim.tbl_deep_extend("keep", theme.syntax, tbl)
 	tbl = vim.tbl_deep_extend("keep", config.custom_highlights, tbl)
 
 	for group, color in pairs(tbl) do
