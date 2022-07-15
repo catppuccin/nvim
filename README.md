@@ -84,7 +84,11 @@ Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
 
 ```lua
-dim_inactive = false,
+dim_inactive = {
+  enabled = false
+  shade = "dark",
+  percentage = 0.15,
+},
 transparent_background = false,
 term_colors = false,
 compile = {
@@ -222,8 +226,14 @@ This settings are unrelated to any group and are independent.
 
 -   `transparent_background`: (Boolean) if true, disables setting the background color.
 -   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
--   `dim_inactive`: (Boolean) if true, dims the background color of inactive
-    window or buffer or split.
+
+#### Dim inactive
+
+This setting manages the ability to dim the inactive splits/windows/buffers displayed.
+
+-   `enabled`: (Boolean) if true, dims the background color of inactive window or buffer or split.
+-   `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
+-   `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
 
 #### Styles
 
@@ -281,6 +291,7 @@ integration = {
 	}
 }
 ```
+
 -   **Neo-tree:** setting `enabled` to `true` enables this integration:
 
 ```lua
@@ -299,7 +310,7 @@ Catppuccin is a highly customizable and configurable colorscheme. This does howe
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
-- Setting `enabled` to `true` enables this feature:
+-   Setting `enabled` to `true` enables this feature:
 
 ```lua
 compile = {
@@ -308,16 +319,17 @@ compile = {
 	suffix = "_compiled"
 },
 ```
+
 By default catppuccin writes the compiled results into the system's cache directory.
 
-- Catppuccin provides these commands to work with the catppuccin compiler.
+-   Catppuccin provides these commands to work with the catppuccin compiler.
 
 ```bash
 :CatppuccinCompile # Create/update the compile file
 :CatppuccinClean # Delete compiled file
 ```
 
-- It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
+-   It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
 #### Packer.nvim
 
@@ -335,7 +347,7 @@ use {
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
 
-- To auto-compile everytime you update your config:
+-   To auto-compile everytime you update your config:
 
 #### Packer.nvim
 
