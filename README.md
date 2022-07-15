@@ -317,14 +317,39 @@ Catppuccin provides these commands to work with the catppuccin compiler.
 :CatppuccinClean # Delete compiled file
 ```
 
-It's recommended to add `:CatppuccinCompile` to run everytime you update your config. For example:
+It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
 ```lua
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
-	run = ":CatppuccinCompile",
+	run = "CatppuccinCompile",
 }
+```
+
+# Vim-plug
+
+```lua
+Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
+```
+
+To auto-compile catppuccin after `:PackerCompile`, create an autocmd `User PackerCompileDone` in User group
+
+# Packer.nvim
+
+```lua
+vim.api.nvim_create_autocmd("User", {
+	pattern = "PackerCompileDone",
+	callback = function()
+		vim.cmd "CatppuccinCompile"
+	end,
+})
+```
+
+# Vim-plug
+
+```lua
+autocmd User VimPlugDone :CatppuccinCompile
 ```
 
 To auto-compile catppuccin after `:PackerCompile`, create an autocmd `PackerCompileDone` in User group
