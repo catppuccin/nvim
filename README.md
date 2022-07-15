@@ -319,6 +319,8 @@ Catppuccin provides these commands to work with the catppuccin compiler.
 
 It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
+#### Packer.nvim
+
 ```lua
 use {
 	"catppuccin/nvim",
@@ -327,7 +329,7 @@ use {
 }
 ```
 
-# Vim-plug
+#### Vim-plug
 
 ```lua
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
@@ -335,7 +337,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 
 To auto-compile catppuccin after `:PackerCompile`, create an autocmd `User PackerCompileDone` in User group
 
-# Packer.nvim
+#### Packer.nvim
 
 ```lua
 vim.api.nvim_create_autocmd("User", {
@@ -346,7 +348,7 @@ vim.api.nvim_create_autocmd("User", {
 })
 ```
 
-# Vim-plug
+#### Vim-plug
 
 ```lua
 autocmd User VimPlugDone :CatppuccinCompile
