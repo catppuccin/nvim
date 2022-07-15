@@ -335,9 +335,11 @@ use {
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
 
-- To auto-compile catppuccin after `:PackerCompile`, create an autocmd `User PackerCompileDone` in User group
+- To auto-compile everytime you update your config:
 
 #### Packer.nvim
+
+Create an autocmd `User PackerCompileDone` to update it
 
 ```lua
 vim.api.nvim_create_autocmd("User", {
@@ -350,21 +352,10 @@ vim.api.nvim_create_autocmd("User", {
 
 #### Vim-plug
 
-```lua
-autocmd User VimPlugDone :CatppuccinCompile
-```
-
-To auto-compile catppuccin after `:PackerCompile`, create an autocmd `PackerCompileDone` in User group
-
-For example, if your plugin specification is in `~/.config/nvim/lua/plugins.lua` then the pattern is `plugins.lua`
+- 
 
 ```lua
-vim.api.nvim_create_autocmd("User PackerCompileDone", {
-	pattern = "plugins.lua",
-	callback = function()
-		vim.cmd "CatppuccinCompile"
-	end,
-})
+autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
 Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
