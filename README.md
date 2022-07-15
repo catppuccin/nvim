@@ -352,7 +352,7 @@ vim.api.nvim_create_autocmd("User", {
 
 #### Vim-plug
 
-- Auto compile on save if catppuccin config is in `init.vim`
+Auto compile on save if catppuccin config is in `init.vim`
 
 ```lua
 autocmd BufWritePost init.vim :CatppuccinCompile
