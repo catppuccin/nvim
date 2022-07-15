@@ -319,7 +319,7 @@ By default catppuccin writes the compiled results into the system's cache direct
 
 - It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
-* Packer.nvim
+#### Packer.nvim
 
 ```lua
 use {
@@ -329,7 +329,7 @@ use {
 }
 ```
 
-* Vim-plug
+#### Vim-plug
 
 ```lua
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
@@ -337,7 +337,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 
 - To auto-compile everytime you update your config:
 
-* Packer.nvim
+#### Packer.nvim
 
 Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
 
@@ -350,7 +350,7 @@ vim.api.nvim_create_autocmd("User", {
 })
 ```
 
-* Vim-plug
+#### Vim-plug
 
 Auto compile on save if catppuccin config is in `init.vim`
 
