@@ -2,6 +2,8 @@ local M = {}
 
 -- Credit: https://github.com/EdenEast/nightfox.nvim
 local fmt = string.format
+local sysname = vim.loop.os_uname().sysname
+
 local function inspect(t)
 	local list = {}
 	for k, v in pairs(t) do
@@ -68,11 +70,15 @@ vim.g.colors_name = "catppuccin"]],
 		end
 	end
 	os.execute(
-		string.format("mkdir %s %s", vim.loop.os_uname().sysname == "Windows" and "" or "-p", config.compile.path)
+		string.format(
+			"mkdir %s %s",
+			(sysname == "Windows" or sysname == "Windows_NT") and "" or "-p",
+			config.compile.path
+		)
 	)
 	local file = io.open(
 		config.compile.path
-			.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
+			.. ((sysname == "Windows" or sysname == "Windows_NT") and "\\" or "/")
 			.. vim.g.catppuccin_flavour
 			.. config.compile.suffix
 			.. ".lua",
@@ -85,7 +91,7 @@ end
 function M.clean()
 	local config = require("catppuccin.config").options
 	local compiled_path = config.compile.path
-		.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
+		.. ((sysname == "Windows" or sysname == "Windows_NT") and "\\" or "/")
 		.. vim.g.catppuccin_flavour
 		.. config.compile.suffix
 		.. ".lua"
