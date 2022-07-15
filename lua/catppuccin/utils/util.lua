@@ -1,46 +1,27 @@
 local g = vim.g
 local util = {}
 
-local has_nvim07 = vim.fn.has("nvim-0.7")
-
 function util.highlight(group, color)
-	if has_nvim07 then
-		if color.link then
-			vim.api.nvim_set_hl(0, group, {
-				link = color.link,
-			})
-		else
-			if color.style then
-				if color.style ~= "NONE" then
-					if type(color.style) == "table" then
-						for _, style in ipairs(color.style) do
-							color[style] = true
-						end
-					else
-						color[color.style] = true
-					end
-				end
-			end
+  if color.link then
+    vim.api.nvim_set_hl(0, group, {
+      link = color.link,
+    })
+  else
+    if color.style then
+      if color.style ~= "NONE" then
+        if type(color.style) == "table" then
+          for _, style in ipairs(color.style) do
+            color[style] = true
+          end
+        else
+          color[color.style] = true
+        end
+      end
+    end
 
-			color.style = nil
-			vim.api.nvim_set_hl(0, group, color)
-		end
-	else
-		-- Doc: :h highlight-gui
-		if color.style and type(color.style) == "table" then
-			color.style = table.concat(color.style, ",")
-		end
-		local style = color.style and "gui=" .. color.style or "gui=NONE"
-		local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
-		local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
-		local sp = color.sp and "guisp=" .. color.sp or ""
-		local blend = color.blend and "blend=" .. color.blend or ""
-		local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp .. " " .. blend
-		vim.cmd(hl)
-		if color.link then
-			vim.cmd("highlight! link " .. group .. " " .. color.link)
-		end
-	end
+    color.style = nil
+    vim.api.nvim_set_hl(0, group, color)
+  end
 end
 
 function util.syntax(tbl)
