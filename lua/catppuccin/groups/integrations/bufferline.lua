@@ -3,9 +3,9 @@ local M = {}
 function M.get()
 	local cnf = require("catppuccin.config").options
 	local transparent_background = cnf.transparent_background
-	local bg_highlight = (transparent_background and cnf.dim_inactive.enable and cp.dim)
+	local bg_highlight = (transparent_background and cnf.dim_inactive.enabled and cp.dim)
 		or (transparent_background and "NONE")
-		or (cnf.dim_inactive.enable and cp.dim)
+		or (cnf.dim_inactive.enabled and cp.dim)
 		or cp.base
 
 	local inactive_bg = transparent_background and "NONE" or cp.mantle

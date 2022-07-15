@@ -37,8 +37,8 @@ function M.get()
 		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text
 		NormalNC = {
 			fg = cp.text,
-			bg = (cnf.transparent_background and cnf.dim_inactive.enable and lui.dim())
-				or (cnf.dim_inactive.enable and cp.dim)
+			bg = (cnf.transparent_background and cnf.dim_inactive.enabled and lui.dim())
+				or (cnf.dim_inactive.enabled and cp.dim)
 				or (cnf.transparent_background and cp.none)
 				or cp.base,
 		}, -- normal text in non-current windows
