@@ -339,7 +339,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 
 #### Packer.nvim
 
-Create an autocmd `User PackerCompileDone` to update it
+Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
 
 ```lua
 vim.api.nvim_create_autocmd("User", {
@@ -352,7 +352,7 @@ vim.api.nvim_create_autocmd("User", {
 
 #### Vim-plug
 
-- 
+- Auto compile on save if catppuccin config is in `init.vim`
 
 ```lua
 autocmd BufWritePost init.vim :CatppuccinCompile
