@@ -299,7 +299,7 @@ Catppuccin is a highly customizable and configurable colorscheme. This does howe
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
-To enable compile enables it in setup function:
+- To enable compile enables it in setup function:
 
 ```lua
 compile = {
@@ -310,14 +310,14 @@ compile = {
 ```
 By default catppuccin writes the compiled results into the system's cache directory.
 
-Catppuccin provides these commands to work with the catppuccin compiler.
+- Catppuccin provides these commands to work with the catppuccin compiler.
 
 ```bash
 :CatppuccinCompile # Create/update the compile file
 :CatppuccinClean # Delete compiled file
 ```
 
-It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
+- It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
 #### Packer.nvim
 
@@ -335,7 +335,7 @@ use {
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
 
-To auto-compile catppuccin after `:PackerCompile`, create an autocmd `User PackerCompileDone` in User group
+- To auto-compile catppuccin after `:PackerCompile`, create an autocmd `User PackerCompileDone` in User group
 
 #### Packer.nvim
 
