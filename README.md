@@ -299,7 +299,7 @@ Catppuccin is a highly customizable and configurable colorscheme. This does howe
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
-To enable compile enables it in setup function:
+- To enable compile enables it in setup function:
 
 ```lua
 compile = {
@@ -310,34 +310,52 @@ compile = {
 ```
 By default catppuccin writes the compiled results into the system's cache directory.
 
-Catppuccin provides these commands to work with the catppuccin compiler.
+- Catppuccin provides these commands to work with the catppuccin compiler.
 
 ```bash
 :CatppuccinCompile # Create/update the compile file
 :CatppuccinClean # Delete compiled file
 ```
 
-It's recommended to add `:CatppuccinCompile` to run everytime you update your config. For example:
+- It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
+
+#### Packer.nvim
 
 ```lua
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
-	run = ":CatppuccinCompile",
+	run = "CatppuccinCompile",
 }
 ```
 
-To auto-compile catppuccin after `:PackerCompile`, create an autocmd `PackerCompileDone` in User group
-
-For example, if your plugin specification is in `~/.config/nvim/lua/plugins.lua` then the pattern is `plugins.lua`
+#### Vim-plug
 
 ```lua
-vim.api.nvim_create_autocmd("User PackerCompileDone", {
-	pattern = "plugins.lua",
+Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
+```
+
+- To auto-compile everytime you update your config:
+
+#### Packer.nvim
+
+Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
+
+```lua
+vim.api.nvim_create_autocmd("User", {
+	pattern = "PackerCompileDone",
 	callback = function()
 		vim.cmd "CatppuccinCompile"
 	end,
 })
+```
+
+#### Vim-plug
+
+Auto compile on save if catppuccin config is in `init.vim`
+
+```lua
+autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
 Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
