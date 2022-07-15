@@ -100,7 +100,7 @@ function M.get(cp)
 		TSComment = { fg = cp.surface1 },
 
 		-- Markdown tresitter parser support
-		TSURI = { fg = cp.rosewater, style = "italic,underline" }, -- urls, links and emails
+		TSURI = { fg = cp.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
 		TSLiteral = { fg = cp.teal, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
 		TSTextReference = { fg = cp.lavender, style = "bold" }, -- references
 
@@ -111,7 +111,7 @@ function M.get(cp)
 		luaTSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
 		-- cpp
-		cppTSProperty = { fg = cp.text },
+		cppTSProperty = { fg = cp.rosewater },
 
 		-- yaml
 		yamlTSField = { fg = cp.blue }, -- For fields.

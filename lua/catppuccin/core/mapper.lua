@@ -1,5 +1,5 @@
-local colors_util = require("catppuccin.utils.colors")
-local util = require("catppuccin.utils.util")
+local ucolors = require("catppuccin.utils.colors")
+local lui = require("catppuccin.lib.ui")
 local cp
 
 local M = {}
@@ -10,7 +10,7 @@ local function get_properties()
 		background = "dark",
 	}
 
-	if colors_util.assert_brightness(cp.base) then
+	if ucolors.assert_brightness(cp.base) then
 		props["background"] = "light"
 	end
 
@@ -18,8 +18,6 @@ local function get_properties()
 end
 
 local function get_base()
-	cp.none = "NONE"
-
 	return {
 		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
 		ColorColumn = { bg = cp.surface0 }, -- used for the columns set with 'colorcolumn'
@@ -28,7 +26,13 @@ local function get_base()
 		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
-		CursorLine = { bg = cp.surface0 },
+		CursorLine = {
+			bg = ucolors.vary_color(
+				{ latte = ucolors.lighten(cp.mantle, 0.70, cp.base) },
+				ucolors.darken(cp.surface0, 0.64, cp.base)
+			),
+		}, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
+		-- CursorLine = { bg = cp.surface0 },
 		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = cp.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = cp.red, style = "bold,italic" }, -- error messages on the command line
@@ -38,7 +42,7 @@ local function get_base()
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = cp.surface1 }, -- colors_util.vary_color({latte = cp.crust}, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		LineNr = { fg = ucolors.vary_color({ latte = cp.base0 }, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = "NONE", style = "undercurl" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.text, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -47,7 +51,13 @@ local function get_base()
 		MoreMsg = { fg = cp.blue }, -- |more-prompt|
 		NonText = { fg = cp.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text
-		NormalNC = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text in non-current windows
+		NormalNC = {
+			fg = cp.text,
+			bg = (cnf.transparent_background and cnf.dim_inactive.enable and lui.dim())
+				or (cnf.dim_inactive.enable and cp.dim)
+				or (cnf.transparent_background and cp.none)
+				or cp.base,
+		}, -- normal text in non-current windows
 		NormalSB = { fg = cp.text, bg = cp.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = cp.text, bg = cp.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.blue },
@@ -59,6 +69,7 @@ local function get_base()
 		QuickFixLine = { bg = cp.surface1, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = cp.yellow, fg = cp.surface1, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
 		IncSearch = { bg = cp.surface1, fg = cp.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		CurSearch = { bg = cp.red, fg = cp.mantle }, -- 'cursearch' highlighting: highlights the current search you're on differently
 		SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
 		SpellBad = { sp = cp.red, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = cp.yellow, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -75,6 +86,7 @@ local function get_base()
 		WarningMsg = { fg = cp.yellow }, -- warning messages
 		Whitespace = { fg = cp.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = cp.overlay0 }, -- current match in 'wildmenu' completion
+		WinBar = { fg = cp.rosewater },
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
 		-- overlay0ed out groups should chain up to their "preferred" group by
@@ -187,11 +199,6 @@ local function get_integrations()
 		end
 	end
 
-	final_integrations = vim.tbl_deep_extend(
-		"force",
-		final_integrations,
-		require("catppuccin.core.remaps").get_hig_remaps() or {}
-	)
 	return final_integrations
 end
 
@@ -202,6 +209,9 @@ end
 function M.apply()
 	_G.cnf = require("catppuccin.config").options
 	cp = require("catppuccin.core.palettes.init").get_palette()
+
+	cp.none = "NONE"
+	cp.dim = lui.dim()
 
 	local theme = {}
 	theme.properties = get_properties() -- nvim settings

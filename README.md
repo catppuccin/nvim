@@ -1,14 +1,14 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for NeoVim
+	Catppuccin for <a href="https://github.com/neovim/neovim">NeoVim</a>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
-    <a href="https://github.com/catppuccin/nvim/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/nvim?colorA=1e1e28&colorB=c9cbff&style=for-the-badge&logo=starship style=for-the-badge"></a>
-    <a href="https://github.com/catppuccin/nvim/issues"><img src="https://img.shields.io/github/issues/catppuccin/nvim?colorA=1e1e28&colorB=f7be95&style=for-the-badge"></a>
-    <a href="https://github.com/catppuccin/nvim/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/nvim?colorA=1e1e28&colorB=b1e1a6&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/nvim/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/nvim?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/nvim/issues"><img src="https://img.shields.io/github/issues/catppuccin/nvim?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+    <a href="https://github.com/catppuccin/nvim/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/nvim?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
@@ -51,6 +51,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
     -   [Notify](https://github.com/rcarriga/nvim-notify)
     -   [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
+    -   [Mini.nvim](https://github.com/echasnovski/mini.nvim)
 
 ## Usage
 
@@ -82,6 +83,7 @@ Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
 
 ```lua
+dim_inactive = false,
 transparent_background = false,
 term_colors = false,
 styles = {
@@ -115,6 +117,7 @@ integrations = {
 			information = "underline",
 		},
 	},
+	coc_nvim = false,
 	lsp_trouble = false,
 	cmp = true,
 	lsp_saga = false,
@@ -149,6 +152,7 @@ integrations = {
 	notify = true,
 	telekasten = true,
 	symbols_outline = true,
+	mini = false,
 }
 ```
 
@@ -188,7 +192,7 @@ After setting things up, you can load catppuccin like so:
 
 ```vim
 " Vim Script
-let g:catppuccin_flavour = "dusk" " latte, frappe, macchiato, mocha
+let g:catppuccin_flavour = "frappe" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
 ```
 
@@ -212,6 +216,8 @@ This settings are unrelated to any group and are independent.
 
 -   `transparent_background`: (Boolean) if true, disables setting the background color.
 -   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+-   `dim_inactive`: (Boolean) if true, dims the background color of inactive
+    window or buffer or split.
 
 #### Styles
 
@@ -316,6 +322,18 @@ local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with 
 catppuccin.remap({ Comment = { fg = colors.flamingo }, })
 ```
 
+#### Overwriting colors
+
+Colors can be overwritten using `vim.g.catppucin_override_colors`:
+
+```lua
+vim.g.catppuccin_override_colors = {
+  base = "#ff0000",
+  mantle = "#242424",
+  crust = "#474747",
+}
+```
+
 #### Hooks
 
 Use them to execute code at certain events. These are the ones available:
@@ -335,12 +353,26 @@ catppuccin.before_loading = function ()
 end
 ```
 
+#### Autocmd
+
+Instead of `after_loading` hook, you can use autocmd event like this:
+
+```lua
+vim.api.nvim_create_autocmd("User", {
+    pattern = "CatppuccinLoaded",
+    callback = function()
+        local colors = require("catppuccin.api.colors").get_colors()
+        -- do something with colors
+    end
+})
+```
+
 ## 💝 Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)
 
 &nbsp;
 
-<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
-<p align="center">Copyright &copy; 2020-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
-<p align="center"><a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=302d41&colorB=c9cbff"/></a></p>
+<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
+<p align="center">Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
+<p align="center"><a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a></p>

@@ -4,6 +4,11 @@ local config = {}
 config.options = {
 	transparent_background = false,
 	term_colors = false,
+	dim_inactive = {
+		enable = false,
+		shade = "dark",
+		percentage = 0.15
+	},
 	styles = {
 		comments = "italic",
 		conditionals = "italic",
@@ -47,6 +52,8 @@ config.options = {
 		treesitter = true,
 		whitespace = true,
 	},
+	color_overrides = {},
+	custom_highlights = {},
 }
 
 function config.set_options(opts)
