@@ -38,7 +38,7 @@ function M.load()
 	local loaded = nil
 	local config = require("catppuccin.config").options
 
-	if config.compile.enable == true then
+	if config.compile.enabled == true then
 		local compiled_path = config.compile.path
 			.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
 			.. vim.g.catppuccin_flavour

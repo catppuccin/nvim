@@ -88,7 +88,7 @@ dim_inactive = false,
 transparent_background = false,
 term_colors = false,
 compile = {
-	enable = false,
+	enabled = false,
 	path = vim.fn.stdpath "cache" .. "/catppuccin",
 	suffix = "_compiled"
 },
@@ -299,11 +299,11 @@ Catppuccin is a highly customizable and configurable colorscheme. This does howe
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
-- To enable compile enables it in setup function:
+- Setting `enabled` to `true` enables this feature:
 
 ```lua
 compile = {
-	enable = true,
+	enabled = true,
 	path = vim.fn.stdpath "cache" .. "/catppuccin",
 	suffix = "_compiled"
 },

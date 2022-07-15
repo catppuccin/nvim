@@ -5,12 +5,12 @@ config.options = {
 	transparent_background = false,
 	term_colors = false,
 	compile = {
-		enable = false,
+		enabled = false,
 		path = vim.fn.stdpath("cache") .. "/catppuccin",
 		suffix = "_compiled",
 	},
 	dim_inactive = {
-		enable = false,
+		enabled = false,
 		shade = "dark",
 		percentage = 0.15,
 	},
