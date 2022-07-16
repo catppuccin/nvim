@@ -374,20 +374,12 @@ Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#c
 
 ### Extra
 
-#### API
-
-The API allows you fetch data from Catppuccin. It can be required as a Lua module:
-
-```lua
-local cp_api = require("catppuccin.api.<module>")
-```
-
 ##### Modules
 
 -   `colors`
 
 ```lua
-cp_api.get_colors()
+require("catppuccin.palettes").get_palette()
 ```
 
 > Returns a table where the key is the name of the color and the value is its hex value.
@@ -397,26 +389,36 @@ cp_api.get_colors()
 Highlight groups can be overwritten like so:
 
 ```lua
-catppuccin.remap({ <hi_group> = { <fields> }, })
+custom_highlights = {
+	<hi_group> = { <fields> }
+}
 ```
 
 Here is an example:
 
 ```lua
-local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with API
-catppuccin.remap({ Comment = { fg = colors.flamingo }, })
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+custom_highlights = {
+	Comment = { fg = colors.flamingo }
+	TSConstBuiltin = { fg = colors.peach, style = {} },
+	TSConstant = { fg = colors.sky },
+	TSComment = { fg = colors.surface2, style = { "italic" } }
+}
 ```
 
 #### Overwriting colors
 
-Colors can be overwritten using `vim.g.catppucin_override_colors`:
+Colors can be overwritten using `color_overrides`:
 
 ```lua
-vim.g.catppuccin_override_colors = {
-	base = "#ff0000",
-	mantle = "#242424",
-	crust = "#474747",
-}
+color_overrides = {
+	frappe = {
+		text = "#ffffff"
+		base = "#ff0000",
+		mantle = "#242424",
+		crust = "#474747",
+	}
+},
 ```
 
 #### Hooks
@@ -454,13 +456,13 @@ vim.api.nvim_create_autocmd("User", {
 
 ## FAQ
 
-#### Abnormal colors?
+#### [Abnormal colors](https://github.com/catppuccin/nvim/issues/182)?
 
 You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
 
 #### Toggle light/dark theme based on background value?
 
-For people who are hybrid between light and dark mode you can use this autocmd!
+`set background=light` will change flavour to latte and `set background=dark` to mocha flavour
 
 ```lua
 vim.api.nvim_create_autocmd("OptionSet", {
@@ -471,7 +473,7 @@ vim.api.nvim_create_autocmd("OptionSet", {
 })
 ```
 
-`set background=light` will change flavour to latte and `set background=dark` to mocha flavour
+For people who are hybrid between light and dark mode you can try out this autocmd!
 
 ## 💝 Thanks to
 
