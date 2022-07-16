@@ -452,6 +452,25 @@ vim.api.nvim_create_autocmd("User", {
 })
 ```
 
+#### FAQ
+
+**Abnormal colors?**
+
+You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
+
+**Toggle based on background value?**
+
+```lua
+-- set background=light will change flavour to latte
+-- set background=dark -> mocha flavour
+vim.api.nvim_create_autocmd("OptionSet", {
+	pattern = "background",
+	callback = function()
+		vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "latte" or "mocha"))
+	end,
+})
+```
+
 ## 💝 Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)
