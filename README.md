@@ -310,7 +310,9 @@ Catppuccin is a highly customizable and configurable colorscheme. This does howe
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
--   Setting `enabled` to `true` enables this feature:
+#### Enable
+
+Setting `enabled` to `true` enables this feature:
 
 ```lua
 compile = {
@@ -322,16 +324,17 @@ compile = {
 
 By default catppuccin writes the compiled results into the system's cache directory.
 
--   Catppuccin provides these commands to work with the catppuccin compiler.
+#### Catppuccin provides these commands to work with the catppuccin compiler.
 
 ```bash
 :CatppuccinCompile # Create/update the compile file
 :CatppuccinClean # Delete compiled file
 ```
 
--   It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
+#### Post-install/update hooks
+It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
-#### Packer.nvim
+Packer.nvim
 
 ```lua
 use {
@@ -341,19 +344,18 @@ use {
 }
 ```
 
-#### Vim-plug
+Vim-plug
 
 ```lua
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
 
--   To auto-compile everytime you update your config:
+#### Auto compile
 
-#### Packer.nvim
-
-Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
+Packer.nvim
 
 ```lua
+-- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
 vim.api.nvim_create_autocmd("User", {
 	pattern = "PackerCompileDone",
 	callback = function()
@@ -362,11 +364,10 @@ vim.api.nvim_create_autocmd("User", {
 })
 ```
 
-#### Vim-plug
+Vim-plug
 
-Auto compile on save if catppuccin config is in `init.vim`
-
-```lua
+```bash
+# Auto compile on save if catppuccin config is in `init.vim`
 autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
@@ -462,7 +463,7 @@ You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_
 
 #### Toggle light/dark theme based on background value?
 
-`set background=light` will change flavour to latte and `set background=dark` to mocha flavour
+The following autocmd will change the flavour to latte when you `:set background=light` and to mocha after `:set background=dark`
 
 ```lua
 vim.api.nvim_create_autocmd("OptionSet", {
@@ -473,7 +474,7 @@ vim.api.nvim_create_autocmd("OptionSet", {
 })
 ```
 
-For people who are hybrid between light and dark mode you can try out this autocmd!
+For people who are hybrid between light and dark mode!
 
 ## 💝 Thanks to
 
