@@ -376,9 +376,7 @@ Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#c
 
 ### Extra
 
-##### Modules
-
--   `colors`
+##### Get catppuccin palette
 
 ```lua
 require("catppuccin.palettes").get_palette()
@@ -450,7 +448,7 @@ Instead of `after_loading` hook, you can use autocmd event like this:
 vim.api.nvim_create_autocmd("User", {
 	pattern = "CatppuccinLoaded",
 	callback = function()
-		local colors = require("catppuccin.api.colors").get_colors()
+		local colors = require("catppuccin.palettes").get_palette()
 		-- do something with colors
 	end
 })
