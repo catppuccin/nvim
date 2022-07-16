@@ -324,7 +324,7 @@ compile = {
 
 By default catppuccin writes the compiled results into the system's cache directory.
 
-#### Catppuccin provides these commands to work with the catppuccin compiler.
+#### Compile commands
 
 ```bash
 :CatppuccinCompile # Create/update the compile file
