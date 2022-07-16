@@ -386,7 +386,7 @@ require("catppuccin.palettes").get_palette()
 
 #### Overwriting highlight groups
 
-Highlight groups can be overwritten like so:
+Highlight groups can be overwritten in the setting like so:
 
 ```lua
 custom_highlights = {
@@ -408,7 +408,7 @@ custom_highlights = {
 
 #### Overwriting colors
 
-Colors can be overwritten using `color_overrides`:
+Colors can be overwritten using `color_overrides` in the setting:
 
 ```lua
 color_overrides = {
