@@ -310,7 +310,9 @@ Catppuccin is a highly customizable and configurable colorscheme. This does howe
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
--   Setting `enabled` to `true` enables this feature:
+#### Enable
+
+Setting `enabled` to `true` enables this feature:
 
 ```lua
 compile = {
@@ -322,16 +324,17 @@ compile = {
 
 By default catppuccin writes the compiled results into the system's cache directory.
 
--   Catppuccin provides these commands to work with the catppuccin compiler.
+#### Compile commands
 
 ```bash
 :CatppuccinCompile # Create/update the compile file
 :CatppuccinClean # Delete compiled file
 ```
 
--   To auto-compile everytime you update your config:
+#### Post-install/update hooks
+It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
-**Packer.nvim**
+Packer.nvim
 
 ```lua
 -- It's recommended to add `:CatppuccinCompile` to post-install/update hooks
@@ -340,8 +343,20 @@ use {
 	as = "catppuccin",
 	run = "CatppuccinCompile",
 }
+```
 
--- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
+Vim-plug
+
+```lua
+Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
+```
+
+#### Auto compile
+
+Packer.nvim
+
+```lua
+-- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled
 vim.api.nvim_create_autocmd("User", {
 	pattern = "PackerCompileDone",
 	callback = function()
@@ -350,12 +365,10 @@ vim.api.nvim_create_autocmd("User", {
 })
 ```
 
-**Vim-plug**
+Vim-plug
 
 ```bash
-# It's recommended to add `:CatppuccinCompile` to post-install/update hooks
-Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
-# Auto compile on save if catppuccin config is in init.vim
+# Auto compile on save if catppuccin config is in `init.vim`
 autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
@@ -363,49 +376,51 @@ Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#c
 
 ### Extra
 
-#### API
-
-The API allows you fetch data from Catppuccin. It can be required as a Lua module:
-
-```lua
-local cp_api = require("catppuccin.api.<module>")
-```
-
 ##### Modules
 
 -   `colors`
 
 ```lua
-cp_api.get_colors()
+require("catppuccin.palettes").get_palette()
 ```
 
 > Returns a table where the key is the name of the color and the value is its hex value.
 
 #### Overwriting highlight groups
 
-Highlight groups can be overwritten like so:
+Highlight groups can be overwritten in the setting like so:
 
 ```lua
-catppuccin.remap({ <hi_group> = { <fields> }, })
+custom_highlights = {
+	<hi_group> = { <fields> }
+}
 ```
 
 Here is an example:
 
 ```lua
-local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with API
-catppuccin.remap({ Comment = { fg = colors.flamingo }, })
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+custom_highlights = {
+	Comment = { fg = colors.flamingo }
+	TSConstBuiltin = { fg = colors.peach, style = {} },
+	TSConstant = { fg = colors.sky },
+	TSComment = { fg = colors.surface2, style = { "italic" } }
+}
 ```
 
 #### Overwriting colors
 
-Colors can be overwritten using `vim.g.catppucin_override_colors`:
+Colors can be overwritten using `color_overrides` in the setting:
 
 ```lua
-vim.g.catppuccin_override_colors = {
-	base = "#ff0000",
-	mantle = "#242424",
-	crust = "#474747",
-}
+color_overrides = {
+	frappe = {
+		text = "#ffffff"
+		base = "#ff0000",
+		mantle = "#242424",
+		crust = "#474747",
+	}
+},
 ```
 
 #### Hooks
@@ -440,6 +455,27 @@ vim.api.nvim_create_autocmd("User", {
 	end
 })
 ```
+
+## FAQ
+
+#### [Abnormal colors](https://github.com/catppuccin/nvim/issues/182)?
+
+You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
+
+#### Toggle light/dark theme based on background value?
+
+The following autocmd will change the flavour to latte when you `:set background=light` and to mocha after `:set background=dark`
+
+```lua
+vim.api.nvim_create_autocmd("OptionSet", {
+	pattern = "background",
+	callback = function()
+		vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "latte" or "mocha"))
+	end,
+})
+```
+
+For people who are hybrid between light and dark mode!
 
 ## 💝 Thanks to
 
