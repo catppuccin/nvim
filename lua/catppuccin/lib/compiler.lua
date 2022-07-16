@@ -29,6 +29,10 @@ end
 vim.g.colors_name = "catppuccin"]],
 	}
 	local config = require("catppuccin.config").options
+	if sysname == "Windows" or sysname == "Windows_NT" then
+		config.compile.path = config.compile.path:gsub("/", "\\")
+	end
+
 	for property, value in pairs(theme.properties) do
 		if type(value) == "string" then
 			table.insert(lines, fmt('vim.o.%s = "%s"', property, value))
