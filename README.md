@@ -464,7 +464,7 @@ For people who are hybrid between light and dark mode!
 
 `set background=light` will change flavour to latte
 
-`set background=dark` -> mocha flavour
+`set background=dark` to mocha flavour
 
 ```lua
 vim.api.nvim_create_autocmd("OptionSet", {
