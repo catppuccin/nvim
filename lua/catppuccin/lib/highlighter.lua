@@ -12,7 +12,6 @@ function M.highlight(group, color)
 				color[style] = true
 			end
 		end
-
 		color.style = nil
 		vim.api.nvim_set_hl(0, group, color)
 	end

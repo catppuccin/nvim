@@ -49,19 +49,11 @@ vim.g.colors_name = "catppuccin"]],
 			table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", { link = "%s" })]], group, color.link))
 		else
 			if color.style then
-				if color.style ~= "NONE" then
-					if type(color.style) == "table" then
-						for _, style in ipairs(color.style) do
-							color[style] = true
-						end
-					else
-						color[color.style] = true
-					end
+				for _, style in ipairs(color.style) do
+					color[style] = true
 				end
 			end
-
 			color.style = nil
-			vim.api.nvim_set_hl(0, group, color)
 			table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
 		end
 	end

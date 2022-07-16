@@ -27,7 +27,7 @@ function M.load()
 		catppuccin.before_loading()
 	end
 
-	local loaded = nil
+	local compiled = nil
 	local config = require("catppuccin.config").options
 
 	if config.compile.enabled == true then
@@ -40,19 +40,19 @@ function M.load()
 		if f ~= nil then
 			io.close(f)
 			vim.cmd("luafile " .. compiled_path)
-			loaded = true
+			compiled = true
 		end
 	end
 
-	if not loaded then -- colorscheme gets evaluated from mapper.lua
+	if not compiled then -- colorscheme gets evaluated from mapper.lua
 		require("catppuccin.lib.highlighter").load(require("catppuccin.lib.mapper").apply())
-
-		if catppuccin.after_loading ~= nil then
-			catppuccin.after_loading()
-		end
 	end
 
-	vim.api.nvim_exec_autocmds("User", { pattern = "CatppuccinLoaded" })
+	if catppuccin.after_loading ~= nil then
+		catppuccin.after_loading()
+	end
+
+	vim.api.nvim_exec_autocmds("User", { pattern = "Catppuccincompiled" })
 end
 
 function M.setup(custom_opts)
