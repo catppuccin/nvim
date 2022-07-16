@@ -341,7 +341,7 @@ use {
 	run = "CatppuccinCompile",
 }
 
-# Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
+-- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
 vim.api.nvim_create_autocmd("User", {
 	pattern = "PackerCompileDone",
 	callback = function()
@@ -352,7 +352,7 @@ vim.api.nvim_create_autocmd("User", {
 
 **Vim-plug**
 
-```vim
+```bash
 # It's recommended to add `:CatppuccinCompile` to post-install/update hooks
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 # Auto compile on save if catppuccin config is in `init.vim`
