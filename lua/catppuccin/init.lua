@@ -20,14 +20,6 @@ end, {
 	end,
 })
 
-command("CatppuccinCompile", function()
-	require("catppuccin.lib.compiler").compile()
-end, {})
-
-command("CatppuccinClean", function()
-	require("catppuccin.lib.compiler").clean()
-end, {})
-
 function M.load()
 	local catppuccin = require("catppuccin")
 
@@ -40,7 +32,7 @@ function M.load()
 
 	if config.compile.enabled == true then
 		local compiled_path = config.compile.path
-			.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
+			.. (vim.startswith(vim.loop.os_uname().sysname, "Windows") and "\\" or "/")
 			.. vim.g.catppuccin_flavour
 			.. config.compile.suffix
 			.. ".lua"
@@ -65,6 +57,17 @@ end
 
 function M.setup(custom_opts)
 	require("catppuccin.config").set_options(custom_opts)
+
+	-- Only set compile commands when enabled = true
+	if custom_opts.compile.enabled == true then
+		command("CatppuccinCompile", function()
+			require("catppuccin.lib.compiler").compile()
+		end, {})
+
+		command("CatppuccinClean", function()
+			require("catppuccin.lib.compiler").clean()
+		end, {})
+	end
 end
 
 return M
