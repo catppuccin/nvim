@@ -52,7 +52,7 @@ function M.load()
 		catppuccin.after_loading()
 	end
 
-	vim.api.nvim_exec_autocmds("User", { pattern = "Catppuccincompiled" })
+	vim.api.nvim_exec_autocmds("User", { pattern = "CatppuccinLoaded" })
 end
 
 function M.setup(custom_opts)
