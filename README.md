@@ -454,11 +454,11 @@ vim.api.nvim_create_autocmd("User", {
 
 ## FAQ
 
-**Abnormal colors?**
+#### Abnormal colors?
 
 You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
 
-**Toggle light/dark theme based on background value?**
+#### Toggle light/dark theme based on background value?
 
 For people who are hybrid between light and dark mode!
 
