@@ -458,7 +458,7 @@ vim.api.nvim_create_autocmd("User", {
 
 ## FAQ
 
-#### Transparenct background tweak?
+#### Transparent background tweak?
 
 Add this to `custom_highlights` settings
 
