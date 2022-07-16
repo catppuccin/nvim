@@ -42,7 +42,7 @@ vim.g.colors_name = "catppuccin"]],
 			table.insert(lines, fmt("vim.o.%s = %s", property, inspect(value)))
 		end
 	end
-	local tbl = vim.tbl_deep_extend("keep", config.custom_highlights, theme.syntax, theme.integrations, theme.editor)
+	local tbl = vim.tbl_deep_extend("keep", config.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
 	for group, color in pairs(tbl) do
 		if color.link then
