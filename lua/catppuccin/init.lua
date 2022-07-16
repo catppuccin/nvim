@@ -40,7 +40,7 @@ function M.load()
 
 	if config.compile.enabled == true then
 		local compiled_path = config.compile.path
-			.. (vim.loop.os_uname().sysname == "Windows" and "\\" or "/")
+			.. (vim.startswith(vim.loop.os_uname().sysname, "Windows") and "\\" or "/")
 			.. vim.g.catppuccin_flavour
 			.. config.compile.suffix
 			.. ".lua"
