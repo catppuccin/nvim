@@ -329,18 +329,19 @@ By default catppuccin writes the compiled results into the system's cache direct
 :CatppuccinClean # Delete compiled file
 ```
 
+-   To auto-compile everytime you update your config:
 
 **Packer.nvim**
 
 ```lua
--   It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
+-- It's recommended to add `:CatppuccinCompile` to post-install/update hooks
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
 	run = "CatppuccinCompile",
 }
 
--   To auto-compile everytime you update your config:
+# Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
 vim.api.nvim_create_autocmd("User", {
 	pattern = "PackerCompileDone",
 	callback = function()
@@ -351,8 +352,8 @@ vim.api.nvim_create_autocmd("User", {
 
 **Vim-plug**
 
-```bash
-# Create an autocmd `User PackerCompileDone` to update it every time packer is compiled:
+```vim
+# It's recommended to add `:CatppuccinCompile` to post-install/update hooks
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 # Auto compile on save if catppuccin config is in `init.vim`
 autocmd BufWritePost init.vim :CatppuccinCompile
