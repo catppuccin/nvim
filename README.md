@@ -460,11 +460,7 @@ You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_
 
 #### Toggle light/dark theme based on background value?
 
-For people who are hybrid between light and dark mode!
-
-`set background=light` will change flavour to latte
-
-`set background=dark` to mocha flavour
+For people who are hybrid between light and dark mode you can use this autocmd!
 
 ```lua
 vim.api.nvim_create_autocmd("OptionSet", {
@@ -474,6 +470,8 @@ vim.api.nvim_create_autocmd("OptionSet", {
 	end,
 })
 ```
+
+`set background=light` will change flavour to latte and `set background=dark` to mocha flavour
 
 ## 💝 Thanks to
 
