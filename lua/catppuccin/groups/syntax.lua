@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	return {
-		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
+		Comment = { fg = cnf.transparent_background and cp.overlay1 or cp.surface2, style = cnf.styles.comments }, -- just comments
 		Constant = { fg = cp.peach }, -- (preferred) any constant
 		String = { fg = cp.green, style = cnf.styles.strings }, -- a string constant: "this is a string"
 		Character = { fg = cp.teal }, --  a character constant: 'c', '\n'

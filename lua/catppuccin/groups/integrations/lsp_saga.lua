@@ -24,4 +24,5 @@ function M.get()
 		TargetWord = { fg = cp.flamingo },
 	}
 end
+
 return M
