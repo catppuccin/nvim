@@ -458,11 +458,15 @@ vim.api.nvim_create_autocmd("User", {
 
 You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
 
-**Toggle based on background value?**
+**Toggle light/dark theme based on background value?**
+
+For people who are hybrid between light and dark mode!
+
+`set background=light` will change flavour to latte
+
+`set background=dark` -> mocha flavour
 
 ```lua
--- set background=light will change flavour to latte
--- set background=dark -> mocha flavour
 vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = "background",
 	callback = function()
