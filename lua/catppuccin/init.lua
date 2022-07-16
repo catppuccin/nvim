@@ -20,14 +20,6 @@ end, {
 	end,
 })
 
-command("CatppuccinCompile", function()
-	require("catppuccin.lib.compiler").compile()
-end, {})
-
-command("CatppuccinClean", function()
-	require("catppuccin.lib.compiler").clean()
-end, {})
-
 function M.load()
 	local catppuccin = require("catppuccin")
 
@@ -65,6 +57,17 @@ end
 
 function M.setup(custom_opts)
 	require("catppuccin.config").set_options(custom_opts)
+
+	-- Only set compile commands when enabled = true
+	if custom_opts.compile.enabled == true then
+		command("CatppuccinCompile", function()
+			require("catppuccin.lib.compiler").compile()
+		end, {})
+
+		command("CatppuccinClean", function()
+			require("catppuccin.lib.compiler").clean()
+		end, {})
+	end
 end
 
 return M
