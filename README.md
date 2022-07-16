@@ -458,11 +458,18 @@ vim.api.nvim_create_autocmd("User", {
 
 ## FAQ
 
-#### [Abnormal colors](https://github.com/catppuccin/nvim/issues/182)?
+
+#### Transparenct background tweak?
+
+
+
+#### Abnormal colors?
 
 You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
 
-#### Toggle light/dark theme based on background value?
+Related: [:h termguicolors](https://neovim.io/doc/user/options.html#'termguicolors'), [catppuccin/nvim#182](https://github.com/catppuccin/nvim/issues/182),
+
+#### Use catppuccin theme for :set background=light/dark?
 
 The following autocmd will change the flavour to latte when you `:set background=light` and to mocha after `:set background=dark`
 
