@@ -38,10 +38,15 @@ function M.load(theme)
 	g.colors_name = "catppuccin"
 
 	M.properties(theme.properties, "o")
-	M.syntax(theme.editor)
-	M.syntax(theme.syntax)
-	M.syntax(theme.integrations)
-	M.syntax(require("catppuccin.config").options.custom_highlights)
+	M.syntax(
+		vim.tbl_deep_extend(
+			"keep",
+			require("catppuccin.config").options.custom_highlights,
+			theme.integrations,
+			theme.syntax,
+			theme.editor
+		)
+	)
 
 	if require("catppuccin.config").options["term_colors"] then
 		M.properties(theme.terminal, "g")
