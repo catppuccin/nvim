@@ -12,18 +12,14 @@ end
 
 function M.get()
 	if not get_prepared() then
-		local catppuccin = require("catppuccin")
-		if catppuccin.after_loading ~= nil then
-			catppuccin.after_loading = function()
-				catppuccin.after_loading()
-				require("leap").init_highlight(true)
-			end
-		else
-			catppuccin.after_loading = function()
-				require("leap").init_highlight(true)
-			end
-		end
-		set_prepared(true)
+		set_prepared(vim.api.nvim_create_autocmd("User", {
+			pattern = "CatppuccinLoaded",
+			callback = function()
+				if pcall(require, "leap") then
+					require("leap").init_highlight(true)
+				end
+			end,
+		}))
 	end
 
 	return {
