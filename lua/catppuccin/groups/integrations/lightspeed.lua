@@ -12,14 +12,14 @@ end
 
 function M.get()
 	if not get_prepared() then
-		set_prepared(vim.api.nvim_create_autocmd("User", {
-			pattern = "CatppuccinLoaded",
+		set_prepared(vim.api.nvim_create_autocmd("ColorScheme", {
 			callback = function()
 				if pcall(require, "lightspeed") then
 					require("lightspeed").init_highlight()
 				end
 			end,
 		}))
+		set_prepared(true)
 	end
 
 	return {

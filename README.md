@@ -249,7 +249,7 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
-If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/core/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/core/integrations).
+If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin.groups.integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin.groups.integrations).
 
 ##### Special Integrations
 
@@ -257,7 +257,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ```lua
 require("feline").setup({
-	components = require('catppuccin.core.integrations.feline'),
+	components = require('catppuccin.groups.integrations.feline'),
 })
 ```
 
@@ -357,10 +357,11 @@ Packer.nvim
 
 ```lua
 -- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled
-vim.api.nvim_create_autocmd("User", {
+autocmd("User", {
 	pattern = "PackerCompileDone",
 	callback = function()
 		vim.cmd "CatppuccinCompile"
+		vim.cmd "colorscheme catppuccin"
 	end,
 })
 ```
