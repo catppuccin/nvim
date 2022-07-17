@@ -21,12 +21,6 @@ end, {
 })
 
 function M.load()
-	local catppuccin = require("catppuccin")
-
-	if catppuccin.before_loading ~= nil then
-		catppuccin.before_loading()
-	end
-
 	local compiled = nil
 	local config = require("catppuccin.config").options
 
@@ -46,10 +40,6 @@ function M.load()
 
 	if not compiled then -- colorscheme gets evaluated from mapper.lua
 		require("catppuccin.lib.highlighter").load(require("catppuccin.lib.mapper").apply())
-	end
-
-	if catppuccin.after_loading ~= nil then
-		catppuccin.after_loading()
 	end
 
 	vim.api.nvim_exec_autocmds("User", { pattern = "CatppuccinLoaded" })
