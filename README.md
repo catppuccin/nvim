@@ -249,7 +249,7 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
-If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin.groups.integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin.groups.integrations).
+If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 ##### Special Integrations
 
