@@ -581,6 +581,7 @@ Related: [:h termguicolors](https://neovim.io/doc/user/options.html#'termguicolo
 ## 💝 Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)
+-   [Null Chilly](https://github.com/nullchilly)
 
 &nbsp;
 
