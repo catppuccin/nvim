@@ -493,6 +493,44 @@ vim.api.nvim_create_autocmd("OptionSet", {
 
 For people who are hybrid between light and dark mode!
 
+#### Catppuccin highlight function?
+
+This is the old remap function under the hood:
+
+```lua
+require("catppuccin.lib.highlight").syntax({
+	Normal = { style = { "italic", "bold" } }
+})
+
+```
+Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
+
+However,if you wish to use the old highlight (slower):
+
+```lua
+local function highlight(tbl)
+	for group, color in pairs(tbl) do
+		if color.style and type(color.style) == "table" then
+			color.style = table.concat(color.style, ",")
+		end
+		local style = color.style and "gui=" .. color.style or "gui=NONE"
+		local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
+		local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
+		local sp = color.sp and "guisp=" .. color.sp or ""
+		local blend = color.blend and "blend=" .. color.blend or ""
+		local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp .. " " .. blend
+		vim.cmd(hl)
+		if color.link then
+			vim.cmd("highlight! link " .. group .. " " .. color.link)
+		end
+	end
+end
+
+highlight {
+	Normal = { style = { "italic", "bold" } },
+}
+```
+
 #### Abnormal colors?
 
 You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
