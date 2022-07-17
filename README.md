@@ -309,9 +309,16 @@ integration = {
 }
 ```
 
--   **Nvim-dap:** setting `enabled` to `true`, you need to override nvim-dap's default highlight groups, AFTER requiring nvim-dap:
+-   **Nvim-dap:** setting `enabled` to `true`:
+```lua
+dap = {
+	enabled = true,
+	enable_ui = true,
+},
+```
 
 ```lua
+-- You need to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
 require("dap")
 local sign = vim.fn.sign_define
 sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
@@ -338,6 +345,7 @@ compile = {
 ```
 
 By default catppuccin writes the compiled results into the system's cache directory.
+Note: On windows we replace `/` with `\` by default
 
 #### Compile commands
 
