@@ -1,11 +1,11 @@
 local M = {}
 
-function M.get(cp)
+function M.get()
 	return {
-		markdownHeadingDelimiter = { fg = cp.peach, style = "bold" },
+		markdownHeadingDelimiter = { fg = cp.peach, style = { "bold" } },
 		markdownCode = { fg = cp.flamingo },
 		markdownCodeBlock = { fg = cp.flamingo },
-		markdownLinkText = { fg = cp.blue, style = "underline" },
+		markdownLinkText = { fg = cp.blue, style = { "underline" } },
 		markdownH1 = { fg = cp.lavender },
 		markdownH2 = { fg = cp.mauve },
 		markdownH3 = { fg = cp.green },

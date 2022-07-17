@@ -1,6 +1,6 @@
 local M = {}
 
-function M.get(cp)
+function M.get()
 	return {
 		ExtraWhitespace = { bg = cp.red },
 	}

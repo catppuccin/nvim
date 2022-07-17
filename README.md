@@ -23,6 +23,7 @@ This port of Catppuccin is special because it was the first one and the one that
 
 -   Handy CLI.
 -   Extensible for many use cases.
+-   [Compile](https://github.com/catppuccin/nvim#Compile) user's configuration
 -   Integrations with a bunch of plugins:
     -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
     -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
@@ -83,38 +84,47 @@ Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
 
 ```lua
-dim_inactive = false,
+dim_inactive = {
+	enabled = false
+	shade = "dark",
+	percentage = 0.15,
+},
 transparent_background = false,
 term_colors = false,
+compile = {
+	enabled = false,
+	path = vim.fn.stdpath "cache" .. "/catppuccin",
+	suffix = "_compiled"
+},
 styles = {
-	comments = "italic",
-	conditionals = "italic",
-	loops = "NONE",
-	functions = "NONE",
-	keywords = "NONE",
-	strings = "NONE",
-	variables = "NONE",
-	numbers = "NONE",
-	booleans = "NONE",
-	properties = "NONE",
-	types = "NONE",
-	operators = "NONE",
+	comments = { "italic" },
+	conditionals = { "italic" },
+	loops = {},
+	functions = {},
+	keywords = {},
+	strings = {},
+	variables = {},
+	numbers = {},
+	booleans = {},
+	properties = {},
+	types = {},
+	operators = {},
 },
 integrations = {
 	treesitter = true,
 	native_lsp = {
 		enabled = true,
 		virtual_text = {
-			errors = "italic",
-			hints = "italic",
-			warnings = "italic",
-			information = "italic",
+			errors = { "italic" },
+			hints = { "italic" },
+			warnings = { "italic" },
+			information = { "italic" },
 		},
 		underlines = {
-			errors = "underline",
-			hints = "underline",
-			warnings = "underline",
-			information = "underline",
+			errors = { "underline" },
+			hints = { "underline" },
+			warnings = { "underline" },
+			information = { "underline" },
 		},
 	},
 	coc_nvim = false,
@@ -126,12 +136,12 @@ integrations = {
 	telescope = true,
 	nvimtree = {
 		enabled = true,
-		show_root = false,
+		show_root = true,
 		transparent_panel = false,
 	},
 	neotree = {
 		enabled = false,
-		show_root = false,
+		show_root = true,
 		transparent_panel = false,
 	},
 	which_key = false,
@@ -216,24 +226,30 @@ This settings are unrelated to any group and are independent.
 
 -   `transparent_background`: (Boolean) if true, disables setting the background color.
 -   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
--   `dim_inactive`: (Boolean) if true, dims the background color of inactive
-    window or buffer or split.
+
+#### Dim inactive
+
+This setting manages the ability to dim the inactive splits/windows/buffers displayed.
+
+-   `enabled`: (Boolean) if true, dims the background color of inactive window or buffer or split.
+-   `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
+-   `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
 
 #### Styles
 
 Handles the style of general hi groups (see `:h highlight-args`):
 
--   `comments`: (String) changed the style of the comments.
--   `functions`: (String) changed the style of the functions.
--   `keywords`: (String) changed the style of the keywords.
--   `strings`: (String) changed the style of the strings.
--   `variables`: (String) changed the style of the variables.
+-   `comments`: (Table) changed the style of the comments.
+-   `functions`: (Table) changed the style of the functions.
+-   `keywords`: (Table) changed the style of the keywords.
+-   `strings`: (Table) changed the style of the strings.
+-   `variables`: (Table) changed the style of the variables.
 
 #### Integrations
 
 These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
-If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/core/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/core/integrations).
+If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 ##### Special Integrations
 
@@ -241,7 +257,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ```lua
 require("feline").setup({
-	components = require('catppuccin.core.integrations.feline'),
+	components = require('catppuccin.groups.integrations.feline'),
 })
 ```
 
@@ -256,10 +272,10 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 
 ```lua
 require('lualine').setup {
-  options = {
-    theme = "catppuccin"
-	-- ... the rest of your lualine config
-  }
+	options = {
+		theme = "catppuccin"
+		-- ... the rest of your lualine config
+	}
 }
 ```
 
@@ -268,104 +284,274 @@ require('lualine').setup {
 
 ```lua
 integration = {
-  nvimtree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
-  }
+	nvimtree = {
+		enabled = true,
+		show_root = true, -- makes the root folder not transparent
+		transparent_panel = false, -- make the panel transparent
+	}
 }
 ```
+
 -   **Neo-tree:** setting `enabled` to `true` enables this integration:
 
 ```lua
 integration = {
-  neotree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
-  }
+	neotree = {
+		enabled = true,
+		show_root = true, -- makes the root folder not transparent
+		transparent_panel = false, -- make the panel transparent
+	}
 }
 ```
 
+### Compile
+
+Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
+
+Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
+
+#### Enable
+
+Setting `enabled` to `true` enables this feature:
+
+```lua
+compile = {
+	enabled = true,
+	path = vim.fn.stdpath "cache" .. "/catppuccin",
+	suffix = "_compiled"
+},
+```
+
+By default catppuccin writes the compiled results into the system's cache directory.
+
+#### Compile commands
+
+```vim
+:CatppuccinCompile " Create/update the compile file
+:CatppuccinClean " Delete compiled file
+```
+
+#### Post-install/update hooks
+It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
+
+Packer.nvim
+
+```lua
+-- It's recommended to add `:CatppuccinCompile` to post-install/update hooks
+use {
+	"catppuccin/nvim",
+	as = "catppuccin",
+	run = "CatppuccinCompile",
+}
+```
+
+Vim-plug
+
+```lua
+Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
+```
+
+#### Auto compile
+
+Packer.nvim
+
+```lua
+-- If you want catppuccin live reload after :PackerCompile
+require("packer").init {
+	auto_reload_compiled = true,
+}
+```
+
+```lua
+-- Create an autocmd User PackerCompileDone to update it every time packer is compiled
+vim.api.nvim_create_autocmd("User", {
+	pattern = "PackerCompileDone",
+	callback = function()
+		vim.cmd "CatppuccinCompile"
+		vim.defer_fn(function()
+			vim.cmd "colorscheme catppuccin"
+		end, 50) -- Debounced for live reloading
+	end,
+})
+```
+
+```lua
+-- PackerCompile on save assuming your plugin spefication file is in plugins.lua or catppuccin.lua
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = { "plugins.lua", "catppuccin.lua" },
+	callback = function()
+		vim.cmd "PackerCompile"
+	end,
+})
+```
+
+Vim-plug
+
+```vim
+" Auto compile on save if catppuccin config is written inside init.vim
+autocmd BufWritePost init.vim :CatppuccinCompile
+```
+
+#### Acknowledge
+
+[nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
+
 ### Extra
 
-#### API
-
-The API allows you fetch data from Catppuccin. It can be required as a Lua module:
+##### Get catppuccin colors
 
 ```lua
-local cp_api = require("catppuccin.api.<module>")
+require("catppuccin.palettes").get_palette()
 ```
 
-##### Modules
-
--   `colors`
-
-```lua
-cp_api.get_colors()
-```
-
-> Returns a table where the key is the name of the color and the value is its hex value.
+Will returns a table where the key is the name of the color and the value is its hex value.
 
 #### Overwriting highlight groups
 
-Highlight groups can be overwritten like so:
+Highlight groups can be overwritten in the setting like so:
 
 ```lua
-catppuccin.remap({ <hi_group> = { <fields> }, })
+custom_highlights = {
+	<hi_group> = { <fields> }
+}
 ```
 
 Here is an example:
 
 ```lua
-local colors = require'catppuccin.api.colors'.get_colors() -- fetch colors with API
-catppuccin.remap({ Comment = { fg = colors.flamingo }, })
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+custom_highlights = {
+	Comment = { fg = colors.flamingo }
+	TSConstBuiltin = { fg = colors.peach, style = {} },
+	TSConstant = { fg = colors.sky },
+	TSComment = { fg = colors.surface2, style = { "italic" } }
+}
 ```
 
 #### Overwriting colors
 
-Colors can be overwritten using `vim.g.catppucin_override_colors`:
+Colors can be overwritten using `color_overrides` in the setting:
 
 ```lua
-vim.g.catppuccin_override_colors = {
-  base = "#ff0000",
-  mantle = "#242424",
-  crust = "#474747",
-}
+color_overrides = {
+	frappe = {
+		text = "#ffffff"
+		base = "#ff0000",
+		mantle = "#242424",
+		crust = "#474747",
+	}
+},
 ```
 
 #### Hooks
 
 Use them to execute code at certain events. These are the ones available:
 
-| Function           | Description                  |
+| Autocmd            | Description                  |
 | ------------------ | ---------------------------- |
-| `before_loading()` | Before loading a colorscheme |
-| `after_loading()`  | After loading a colorscheme  |
+| `ColorSchemePre`   | Before loading a colorscheme |
+| `ColorScheme`      | After loading a colorscheme  |
 
 They can be used like so:
 
 ```lua
-local catppuccin = require("catppuccin")
+vim.api.nvim_create_autocmd("ColorSchemePre", {
+	pattern = "*",
+	callback = function()
+		print "I ran before loading Catppuccin!"
+	end,
+})
 
-catppuccin.before_loading = function ()
-	print("I ran before loading Catppuccin!")
-end
-```
-
-#### Autocmd
-
-Instead of `after_loading` hook, you can use autocmd event like this:
-
-```lua
-vim.api.nvim_create_autocmd("User", {
-    pattern = "CatppuccinLoaded",
-    callback = function()
-        local colors = require("catppuccin.api.colors").get_colors()
-        -- do something with colors
-    end
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		local colors = require("catppuccin.palettes").get_palette()
+		-- do something with colors
+	end,
 })
 ```
+
+## FAQ
+
+#### Transparent background tweak?
+
+Add this to `custom_highlights` settings
+
+```lua
+local colors = require("catppuccin.palettes").get_palette()
+colors.none = "NONE"
+require("catppuccin").setup {
+	custom_highlights = {
+		Comment = { fg = colors.overlay1 },
+		LineNr = { fg = colors.overlay1 },
+		CursorLine = { bg = colors.none },
+		CursorLineNr = { fg = colors.lavender },
+		DiagnosticVirtualTextError = { bg = colors.none },
+		DiagnosticVirtualTextWarn = { bg = colors.none },
+		DiagnosticVirtualTextInfo = { bg = colors.none },
+		DiagnosticVirtualTextHint = { bg = colors.none },
+	}
+}
+```
+
+#### Use catppuccin theme for :set background=light/dark?
+
+The following autocmd will change the flavour to latte when you `:set background=light` and to mocha after `:set background=dark`
+
+```lua
+vim.api.nvim_create_autocmd("OptionSet", {
+	pattern = "background",
+	callback = function()
+		vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "latte" or "mocha"))
+	end,
+})
+```
+
+For people who are hybrid between light and dark mode!
+
+#### Catppuccin highlight function?
+
+This is the old remap function under the hood:
+
+```lua
+require("catppuccin.lib.highlight").syntax({
+	Normal = { style = { "italic", "bold" } }
+})
+
+```
+Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
+
+However, if you wish to use the old highlight (slower):
+
+```lua
+local function syntax(tbl)
+	for group, color in pairs(tbl) do
+		if color.style then
+			color.style = table.concat(color.style, ",")
+		end
+		local style = color.style and "gui=" .. color.style or "gui=NONE"
+		local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
+		local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
+		local sp = color.sp and "guisp=" .. color.sp or ""
+		local blend = color.blend and "blend=" .. color.blend or ""
+		local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp .. " " .. blend
+		vim.cmd(hl)
+		if color.link then
+			vim.cmd("highlight! link " .. group .. " " .. color.link)
+		end
+	end
+end
+
+syntax {
+	Normal = { style = { "italic", "bold" } },
+}
+```
+
+#### Abnormal colors?
+
+You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
+
+Related: [:h termguicolors](https://neovim.io/doc/user/options.html#'termguicolors'), [catppuccin/nvim#182](https://github.com/catppuccin/nvim/issues/182),
 
 ## 💝 Thanks to
 

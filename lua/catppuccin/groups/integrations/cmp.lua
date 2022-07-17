@@ -1,13 +1,13 @@
 local M = {}
 
-function M.get(cp)
+function M.get()
 	return {
 		CmpItemAbbr = { fg = cp.overlay2 },
-		CmpItemAbbrDeprecated = { fg = cp.overlay0, style = "strikethrough" },
+		CmpItemAbbrDeprecated = { fg = cp.overlay0, style = { "strikethrough" } },
 		CmpItemKind = { fg = cp.blue },
 		CmpItemMenu = { fg = cp.text },
-		CmpItemAbbrMatch = { fg = cp.text, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = cp.text, style = "bold" },
+		CmpItemAbbrMatch = { fg = cp.text, style = { "bold" } },
+		CmpItemAbbrMatchFuzzy = { fg = cp.text, style = { "bold" } },
 
 		-- kind support
 		CmpItemKindSnippet = { fg = cp.mauve },
