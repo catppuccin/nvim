@@ -276,7 +276,6 @@ Notice that calling `setup()` is optional. You may pass a lua table in order to 
   <summary>Here are the defaults</summary>
 <code>
 local clrs = require("catppuccin.palettes.init").get_palette()
-
 assets = {
 	left_separator = "",
 	right_separator = "",
