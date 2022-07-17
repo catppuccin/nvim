@@ -505,12 +505,12 @@ require("catppuccin.lib.highlight").syntax({
 ```
 Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
 
-However,if you wish to use the old highlight (slower):
+However, if you wish to use the old highlight (slower):
 
 ```lua
 local function highlight(tbl)
 	for group, color in pairs(tbl) do
-		if color.style and type(color.style) == "table" then
+		if color.style then
 			color.style = table.concat(color.style, ",")
 		end
 		local style = color.style and "gui=" .. color.style or "gui=NONE"
