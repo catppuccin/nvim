@@ -326,9 +326,9 @@ By default catppuccin writes the compiled results into the system's cache direct
 
 #### Compile commands
 
-```bash
-:CatppuccinCompile # Create/update the compile file
-:CatppuccinClean # Delete compiled file
+```vim
+:CatppuccinCompile " Create/update the compile file
+:CatppuccinClean " Delete compiled file
 ```
 
 #### Post-install/update hooks
@@ -375,10 +375,21 @@ vim.api.nvim_create_autocmd("User", {
 })
 ```
 
+```lua
+-- PackerCompile on save
+-- This assumes your plugin spefication file is in plugins.lua or catppuccin.lua
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = { "plugins.lua", "catppuccin.lua" },
+	callback = function()
+		vim.cmd "PackerCompile"
+	end,
+})
+```
+
 Vim-plug
 
-```bash
-# Auto compile on save if catppuccin config is written inside init.vim
+```vim
+" Auto compile on save if catppuccin config is written inside init.vim
 autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
@@ -512,7 +523,7 @@ Note: Unlike the `:highlight` command which can update a highlight group, this f
 However, if you wish to use the old highlight (slower):
 
 ```lua
-local function highlight(tbl)
+local function syntax(tbl)
 	for group, color in pairs(tbl) do
 		if color.style then
 			color.style = table.concat(color.style, ",")
@@ -530,7 +541,7 @@ local function highlight(tbl)
 	end
 end
 
-highlight {
+syntax {
 	Normal = { style = { "italic", "bold" } },
 }
 ```
