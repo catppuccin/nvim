@@ -41,8 +41,6 @@ function M.load()
 	if not compiled then -- colorscheme gets evaluated from mapper.lua
 		require("catppuccin.lib.highlighter").load(require("catppuccin.lib.mapper").apply())
 	end
-
-	vim.api.nvim_exec_autocmds("User", { pattern = "CatppuccinLoaded" })
 end
 
 function M.setup(custom_opts)
