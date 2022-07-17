@@ -39,7 +39,8 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [BarBar](https://github.com/romgrk/barbar.nvim)
     -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
     -   [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
-    -   [Nvim-dap](https://github.com/mfussenegger/nvim-dap) and [Nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+    -   [Nvim-dap](https://github.com/mfussenegger/nvim-dap)
+    -   [Nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
     -   [Git Gutter](https://github.com/airblade/vim-gitgutter)
     -   [Fern](https://github.com/lambdalisue/fern.vim)
     -   [Lightline](https://github.com/itchyny/lightline.vim)
@@ -320,7 +321,9 @@ dap = {
 ```lua
 -- You need to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
 require("dap")
+
 local sign = vim.fn.sign_define
+
 sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
 sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
@@ -543,7 +546,7 @@ require("catppuccin.lib.highlight").syntax({
 ```
 Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
 
-However, if you wish to use the old highlight (slower):
+However, if you wish to use the old highlight api (slower):
 
 ```lua
 local function syntax(tbl)
