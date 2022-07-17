@@ -421,28 +421,9 @@ color_overrides = {
 },
 ```
 
-#### Hooks
-
-Use them to execute code at certain events. These are the ones available:
-
-| Function           | Description                  |
-| ------------------ | ---------------------------- |
-| `before_loading()` | Before loading a colorscheme |
-| `after_loading()`  | After loading a colorscheme  |
-
-They can be used like so:
-
-```lua
-local catppuccin = require("catppuccin")
-
-catppuccin.before_loading = function ()
-	print("I ran before loading Catppuccin!")
-end
-```
-
 #### Autocmd
 
-Instead of `after_loading` hook, you can use autocmd event like this:
+Use this to execude code after Catppuccin's been loaded:
 
 ```lua
 vim.api.nvim_create_autocmd("User", {
