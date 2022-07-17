@@ -9,27 +9,9 @@ local ucolors = require("catppuccin.utils.colors")
 local latte = require("catppuccin.palettes.latte")
 
 local assets = {
-	left_semicircle = "",
-	right_semicircle = "",
-	right_semicircle_cut = "",
-	left_semicircle_cut = "",
-	vertical_bar_chubby = "█",
-	vertical_bar_medium = "┃",
-	vertical_bar_thin = "│",
-	left_arrow_thin = "",
-	right_arrow_thin = "",
-	left_arrow_filled = "",
-	right_arrow_filled = "",
-	slant_left = "",
-	slant_left_thin = "",
-	slant_right = "",
-	slant_right_thin = "",
-	slant_left_2 = "",
-	slant_left_2_thin = "",
-	slant_right_2 = "",
-	slant_right_2_thin = "",
-	chubby_dot = "●",
-	slim_dot = "•",
+	left_separator = "",
+	right_separator = "",
+	bar = "█",
 }
 
 local sett = {
@@ -136,7 +118,7 @@ function M.get()
 	end
 
 	components.active[1][1] = {
-		provider = assets.vertical_bar_chubby,
+		provider = assets.bar,
 		hl = function()
 			return {
 				fg = mode_colors[vim.fn.mode()][2],
@@ -163,14 +145,14 @@ function M.get()
 	}
 
 	-- there is a dilema: we need to hide Diffs if ther is no git info. We can do that, but this will
-	-- leave the right_semicircle colored with purple, and since we can't change the color conditonally
-	-- then the solution is to create two right_semicircles: one with a mauve sett.bkg and the other one normal
+	-- leave the right_separator colored with purple, and since we can't change the color conditonally
+	-- then the solution is to create two right_separators: one with a mauve sett.bkg and the other one normal
 	-- sett.bkg; both have the same fg (vi mode). The mauve one appears if there is git info, else the one with
 	-- the normal sett.bkg appears. Fixed :)
 
 	-- enable if git diffs are not available
 	components.active[1][4] = {
-		provider = assets.right_semicircle,
+		provider = assets.right_separator,
 		hl = function()
 			return {
 				fg = mode_colors[vim.fn.mode()][2],
@@ -184,7 +166,7 @@ function M.get()
 
 	-- enable if git diffs are available
 	components.active[1][5] = {
-		provider = assets.right_semicircle,
+		provider = assets.right_separator,
 		hl = function()
 			return {
 				fg = mode_colors[vim.fn.mode()][2],
@@ -226,7 +208,7 @@ function M.get()
 	}
 
 	components.active[1][9] = {
-		provider = assets.right_semicircle,
+		provider = assets.right_separator,
 		hl = {
 			fg = sett.diffs,
 			bg = sett.bkg,
@@ -419,7 +401,7 @@ function M.get()
 			bg = sett.curr_file,
 		},
 		left_sep = {
-			str = assets.left_semicircle,
+			str = assets.left_separator,
 			hl = {
 				fg = sett.curr_file,
 				bg = sett.bkg,
@@ -438,7 +420,7 @@ function M.get()
 			bg = sett.curr_dir,
 		},
 		left_sep = {
-			str = assets.left_semicircle,
+			str = assets.left_separator,
 			hl = {
 				fg = sett.curr_dir,
 				bg = sett.curr_file,
