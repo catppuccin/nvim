@@ -12,6 +12,7 @@ local assets = {
 	left_separator = "",
 	right_separator = "",
 	bar = "█",
+	mode_icon = ""
 }
 
 local sett = {
@@ -128,7 +129,7 @@ function M.get()
 	}
 
 	components.active[1][2] = {
-		provider = "",
+		provider = assets.mode_icon,
 		hl = function()
 			return {
 				fg = sett.text,

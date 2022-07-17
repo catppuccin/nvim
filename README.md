@@ -283,6 +283,7 @@ assets = {
 	left_separator = "",
 	right_separator = "",
 	bar = "█",
+	mode_icon = ""
 },
 sett = {
 	text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
