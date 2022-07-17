@@ -85,9 +85,9 @@ There are already some sane defaults that you may like, however you can change t
 
 ```lua
 dim_inactive = {
-  enabled = false
-  shade = "dark",
-  percentage = 0.15,
+	enabled = false
+	shade = "dark",
+	percentage = 0.15,
 },
 transparent_background = false,
 term_colors = false,
@@ -239,11 +239,11 @@ This setting manages the ability to dim the inactive splits/windows/buffers disp
 
 Handles the style of general hi groups (see `:h highlight-args`):
 
--   `comments`: (String) changed the style of the comments.
--   `functions`: (String) changed the style of the functions.
--   `keywords`: (String) changed the style of the keywords.
--   `strings`: (String) changed the style of the strings.
--   `variables`: (String) changed the style of the variables.
+-   `comments`: (Table) changed the style of the comments.
+-   `functions`: (Table) changed the style of the functions.
+-   `keywords`: (Table) changed the style of the keywords.
+-   `strings`: (Table) changed the style of the strings.
+-   `variables`: (Table) changed the style of the variables.
 
 #### Integrations
 
@@ -356,11 +356,6 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 Packer.nvim
 
 ```lua
--- Enable packer auto reload
-require("packer").init {
-	auto_reload_compiled = true,
-}
-
 -- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled
 vim.api.nvim_create_autocmd("User", {
 	pattern = "PackerCompileDone",
@@ -368,6 +363,12 @@ vim.api.nvim_create_autocmd("User", {
 		vim.cmd "CatppuccinCompile"
 	end,
 })
+```
+```lua
+-- Enable auto reload compiled in packer setting
+require("packer").init {
+	auto_reload_compiled = true,
+}
 ```
 
 Vim-plug
@@ -381,13 +382,13 @@ Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#c
 
 ### Extra
 
-##### Get catppuccin palette
+##### Get catppuccin colors
 
 ```lua
 require("catppuccin.palettes").get_palette()
 ```
 
-> Returns a table where the key is the name of the color and the value is its hex value.
+Will returns a table where the key is the name of the color and the value is its hex value.
 
 #### Overwriting highlight groups
 
@@ -450,7 +451,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function()
 		local colors = require("catppuccin.palettes").get_palette()
 		-- do something with colors
-		print "ok"
 	end,
 })
 ```
