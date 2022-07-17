@@ -272,9 +272,12 @@ require("feline").setup({
 ```
 
 Notice that calling `setup()` is optional. You may pass a lua table in order to change assets, settings and the colors per vim mode.
+
 <details>
-  <summary>Here are the defaults</summary>
-<code>
+    <summary>Here are the defaults</summary>
+<p>
+
+```lua
 local clrs = require("catppuccin.palettes.init").get_palette()
 assets = {
 	left_separator = "",
@@ -311,7 +314,9 @@ mode_colors = {
 	["r?"] = { "CONFIRM", clrs.mauve },
 	["!"] = { "SHELL", clrs.green },
 }
-</code>
+```
+
+<br />
 </details>
 
 -   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
