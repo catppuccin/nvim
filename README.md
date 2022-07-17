@@ -376,8 +376,7 @@ vim.api.nvim_create_autocmd("User", {
 ```
 
 ```lua
--- PackerCompile on save
--- This assumes your plugin spefication file is in plugins.lua or catppuccin.lua
+-- PackerCompile on save assuming your plugin spefication file is in plugins.lua or catppuccin.lua
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = { "plugins.lua", "catppuccin.lua" },
 	callback = function()
@@ -393,7 +392,9 @@ Vim-plug
 autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
-Acknowledge: [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
+#### Acknowledge
+
+[nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
 
 ### Extra
 
