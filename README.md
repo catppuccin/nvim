@@ -356,26 +356,29 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 Packer.nvim
 
 ```lua
--- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled
-autocmd("User", {
-	pattern = "PackerCompileDone",
-	callback = function()
-		vim.cmd "CatppuccinCompile"
-		vim.cmd "colorscheme catppuccin"
-	end,
-})
-```
-```lua
--- Enable auto reload compiled in packer setting
+-- If you want catppuccin live reload after :PackerCompile
 require("packer").init {
 	auto_reload_compiled = true,
 }
 ```
 
+```lua
+-- Create an autocmd User PackerCompileDone to update it every time packer is compiled
+vim.api.nvim_create_autocmd("User", {
+	pattern = "PackerCompileDone",
+	callback = function()
+		vim.cmd "CatppuccinCompile"
+		vim.defer_fn(function()
+			vim.cmd "colorscheme catppuccin"
+		end, 50) -- Debounced for live reloading
+	end,
+})
+```
+
 Vim-plug
 
 ```bash
-# Auto compile on save if catppuccin config is in `init.vim`
+# Auto compile on save if catppuccin config is written inside init.vim
 autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
