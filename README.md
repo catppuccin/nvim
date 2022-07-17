@@ -356,6 +356,11 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 Packer.nvim
 
 ```lua
+-- Enable packer auto reload
+require("packer").init {
+	auto_reload_compiled = true,
+}
+
 -- Create an autocmd `User PackerCompileDone` to update it every time packer is compiled
 vim.api.nvim_create_autocmd("User", {
 	pattern = "PackerCompileDone",
@@ -425,32 +430,28 @@ color_overrides = {
 
 Use them to execute code at certain events. These are the ones available:
 
-| Function           | Description                  |
+| Autocmd            | Description                  |
 | ------------------ | ---------------------------- |
-| `before_loading()` | Before loading a colorscheme |
-| `after_loading()`  | After loading a colorscheme  |
+| `ColorSchemePre`   | Before loading a colorscheme |
+| `ColorScheme`      | After loading a colorscheme  |
 
 They can be used like so:
 
 ```lua
-local catppuccin = require("catppuccin")
+vim.api.nvim_create_autocmd("ColorSchemePre", {
+	pattern = "*",
+	callback = function()
+		print "I ran before loading Catppuccin!"
+	end,
+})
 
-catppuccin.before_loading = function ()
-	print("I ran before loading Catppuccin!")
-end
-```
-
-#### Autocmd
-
-Instead of `after_loading` hook, you can use autocmd event like this:
-
-```lua
-vim.api.nvim_create_autocmd("User", {
-	pattern = "CatppuccinLoaded",
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
 	callback = function()
 		local colors = require("catppuccin.palettes").get_palette()
 		-- do something with colors
-	end
+		print "ok"
+	end,
 })
 ```
 
