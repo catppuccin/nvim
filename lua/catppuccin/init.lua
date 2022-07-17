@@ -47,7 +47,7 @@ function M.setup(custom_opts)
 	require("catppuccin.config").set_options(custom_opts)
 
 	-- Only set compile commands when enabled = true
-	if custom_opts.compile.enabled == true then
+	if require("catppuccin.config").options.compile.enabled == true then
 		command("CatppuccinCompile", function()
 			require("catppuccin.lib.compiler").compile()
 		end, {})
