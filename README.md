@@ -39,6 +39,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [BarBar](https://github.com/romgrk/barbar.nvim)
     -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
     -   [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+    -   [Nvim-dap](https://github.com/mfussenegger/nvim-dap) and [Nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
     -   [Git Gutter](https://github.com/airblade/vim-gitgutter)
     -   [Fern](https://github.com/lambdalisue/fern.vim)
     -   [Lightline](https://github.com/itchyny/lightline.vim)
@@ -143,6 +144,10 @@ integrations = {
 		enabled = false,
 		show_root = true,
 		transparent_panel = false,
+	},
+	dap = {
+		enabled = false,
+		enable_ui = false,
 	},
 	which_key = false,
 	indent_blankline = {
@@ -304,6 +309,16 @@ integration = {
 }
 ```
 
+-   **Nvim-dap:** setting `enabled` to `true`, you need to override nvim-dap's default highlight groups, AFTER requiring nvim-dap:
+
+```lua
+require("dap")
+local sign = vim.fn.sign_define
+sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
+```
+
 ### Compile
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
@@ -332,7 +347,6 @@ By default catppuccin writes the compiled results into the system's cache direct
 ```
 
 #### Post-install/update hooks
-It's recommended to add `:CatppuccinCompile` to post-install/update hooks. For example:
 
 Packer.nvim
 

@@ -57,6 +57,10 @@ config.options = {
 			show_root = true,
 			transparent_panel = false,
 		},
+		dap = {
+			enabled = false,
+			enable_ui = false,
+		},
 		neotree = {
 			enabled = false,
 			show_root = true,
