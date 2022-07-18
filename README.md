@@ -422,7 +422,7 @@ Packer.nvim
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
-	run = "CatppuccinCompile",
+	run = ":CatppuccinCompile",
 }
 ```
 
