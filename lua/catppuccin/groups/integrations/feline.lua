@@ -22,7 +22,7 @@ local sett = {
 	extras = clrs.overlay1,
 	curr_file = clrs.maroon,
 	curr_dir = clrs.flamingo,
-	show_modified = true
+	show_modified = false
 }
 
 local mode_colors = {
