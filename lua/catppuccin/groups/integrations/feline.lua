@@ -12,7 +12,7 @@ local assets = {
 	left_separator = "",
 	right_separator = "",
 	bar = "█",
-	mode_icon = ""
+	mode_icon = "",
 }
 
 local sett = {
@@ -22,7 +22,7 @@ local sett = {
 	extras = clrs.overlay1,
 	curr_file = clrs.maroon,
 	curr_dir = clrs.flamingo,
-	show_modified = false
+	show_modified = false,
 }
 
 local mode_colors = {
