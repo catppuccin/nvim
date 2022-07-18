@@ -366,10 +366,12 @@ integration = {
 
 -   **Nvim-dap:** setting `enabled` to `true`:
 ```lua
-dap = {
-	enabled = true,
-	enable_ui = true,
-},
+integration = {
+	dap = {
+		enabled = true,
+		enable_ui = true, -- enable nvim-dap-ui
+	},
+}
 ```
 
 ```lua
@@ -427,6 +429,7 @@ use {
 Vim-plug
 
 ```lua
+-- It's recommended to add `:CatppuccinCompile` to post-update hooks
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
 
