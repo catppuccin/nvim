@@ -22,6 +22,7 @@ local sett = {
 	extras = clrs.overlay1,
 	curr_file = clrs.maroon,
 	curr_dir = clrs.flamingo,
+	show_modified = true
 }
 
 local mode_colors = {
@@ -394,7 +395,7 @@ function M.get()
 				icon = "   "
 				return icon
 			end
-			return " " .. icon .. " " .. filename .. " "
+			return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "
 		end,
 		enabled = is_enabled(shortline, winid, 70),
 		hl = {

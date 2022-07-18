@@ -292,6 +292,7 @@ sett = {
 	extras = clrs.overlay1,
 	curr_file = clrs.maroon,
 	curr_dir = clrs.flamingo,
+	show_modified = true -- show if the file has been modified
 },
 mode_colors = {
 	["n"] = { "NORMAL", clrs.lavender },
