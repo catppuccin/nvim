@@ -55,6 +55,10 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Notify](https://github.com/rcarriga/nvim-notify)
     -   [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
     -   [Mini.nvim](https://github.com/echasnovski/mini.nvim)
+    -   [Aerial.nvim](https://github.com/stevearc/aerial.nvim)
+    -   [Beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
+    -   [VimWiki](https://github.com/vimwiki/vimwiki)
+    -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
 
 ## Usage
 
@@ -154,6 +158,7 @@ integrations = {
 	lsp_saga = false,
 	gitgutter = false,
 	gitsigns = true,
+	leap = false,
 	telescope = true,
 	nvimtree = {
 		enabled = true,
@@ -188,6 +193,9 @@ integrations = {
 	telekasten = true,
 	symbols_outline = true,
 	mini = false,
+	aerial = false,
+	vimwiki = true,
+	beacon = true,
 }
 ```
 
