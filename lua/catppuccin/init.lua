@@ -1,3 +1,5 @@
+vim.g.loaded_catppuccin = 1
+
 local M = {}
 
 local flavours = { "latte", "frappe", "macchiato", "mocha" }
@@ -17,6 +19,18 @@ end, {
 		end, flavours)
 	end,
 })
+
+vim.api.nvim_create_user_command("CatppuccinCompile", function()
+	require("catppuccin").compile()
+end, {})
+
+vim.api.nvim_create_user_command("CatppuccinClean", function()
+	require("catppuccin").clean()
+end, {})
+
+vim.api.nvim_create_user_command("CatppuccinStatus", function()
+	require("catppuccin").status()
+end, {})
 
 function M.load()
 	local compiled = nil
