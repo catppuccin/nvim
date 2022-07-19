@@ -22,12 +22,10 @@ end, {
 	end,
 })
 
-if require("catppuccin.config").options.compile.enabled == true then
-	command("CatppuccinCompile", function()
-		require("catppuccin.lib.compiler").compile()
-	end, {})
+command("CatppuccinCompile", function()
+	require("catppuccin.lib.compiler").compile()
+end, {})
 
-	command("CatppuccinClean", function()
-		require("catppuccin.lib.compiler").clean()
-	end, {})
-end
+command("CatppuccinClean", function()
+	require("catppuccin.lib.compiler").clean()
+end, {})
