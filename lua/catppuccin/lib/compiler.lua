@@ -2,6 +2,7 @@ local M = {}
 
 -- Credit: https://github.com/EdenEast/nightfox.nvim
 local fmt = string.format
+local echo = require("catppuccin.utils.echo")
 local is_windows = vim.startswith(vim.loop.os_uname().sysname, "Windows")
 
 local function inspect(t)
@@ -72,7 +73,13 @@ vim.g.colors_name = "catppuccin"]],
 			.. ".lua",
 		"w"
 	)
-	file:write(table.concat(lines, "\n"))
+	local ok, err = pcall(file.write, file, table.concat(lines, "\n"))
+	if not ok then
+		echo("failed to compile", "error")
+		print(err)
+	else
+		echo("compiled successfully!")
+	end
 	file:close()
 end
 
