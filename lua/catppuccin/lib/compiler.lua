@@ -90,7 +90,13 @@ function M.clean()
 		.. vim.g.catppuccin_flavour
 		.. config.compile.suffix
 		.. ".lua"
-	os.remove(compiled_path)
+	local ok, err = pcall(os.remove, compiled_path)
+	if not ok then
+		echo("failed to clean compiled cache", "error")
+		print(err)
+	else
+		echo("successfully claned compiled cache!")
+	end
 end
 
 return M
