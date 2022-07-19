@@ -1,36 +1,4 @@
-vim.g.loaded_catppuccin = 1
-
 local M = {}
-
-local flavours = { "latte", "frappe", "macchiato", "mocha" }
-
-vim.api.nvim_create_user_command("Catppuccin", function(inp)
-	if not vim.tbl_contains(flavours, inp.args) then
-		require("catppuccin.utils.echo")("Invalid flavour")
-		return
-	end
-	vim.g.catppuccin_flavour = inp.args
-	vim.cmd("colorscheme catppuccin")
-end, {
-	nargs = 1,
-	complete = function(line)
-		return vim.tbl_filter(function(val)
-			return vim.startswith(val, line)
-		end, flavours)
-	end,
-})
-
-vim.api.nvim_create_user_command("CatppuccinCompile", function()
-	require("catppuccin").compile()
-end, {})
-
-vim.api.nvim_create_user_command("CatppuccinClean", function()
-	require("catppuccin").clean()
-end, {})
-
-vim.api.nvim_create_user_command("CatppuccinStatus", function()
-	require("catppuccin").status()
-end, {})
 
 function M.load()
 	local compiled = nil
@@ -58,25 +26,46 @@ function M.setup(custom_opts)
 	require("catppuccin.config").set_options(custom_opts)
 end
 
-function M.compile()
-	for _, flavour in ipairs(flavours) do
-		vim.g.catppuccin_flavour = flavour
-		require("catppuccin.lib.compiler").compile(flavour)
+local flavours = { "latte", "frappe", "macchiato", "mocha" }
+local command = vim.api.nvim_create_user_command
+
+command("Catppuccin", function(inp)
+	if not vim.tbl_contains(flavours, inp.args) then
+		require("catppuccin.utils.echo")("Invalid flavour")
+		return
+	end
+	vim.g.catppuccin_flavour = inp.args
+	vim.cmd("colorscheme catppuccin")
+end, {
+	nargs = 1,
+	complete = function(line)
+		return vim.tbl_filter(function(val)
+			return vim.startswith(val, line)
+		end, flavours)
+	end,
+})
+
+for _, cmd in ipairs({ "compile", "clean", "status" }) do
+	M[cmd] = function()
+		for _, flavour in ipairs(flavours) do
+			vim.g.catppuccin_flavour = flavour
+			require("catppuccin.lib.compiler")[cmd](flavour)
+		end
 	end
 end
 
-function M.clean()
-	for _, flavour in ipairs(flavours) do
-		vim.g.catppuccin_flavour = flavour
-		require("catppuccin.lib.compiler").clean(flavour)
-	end
-end
+command("CatppuccinCompile", function()
+	require("catppuccin").compile()
+end, {})
 
-function M.status()
-	for _, flavour in ipairs(flavours) do
-		vim.g.catppuccin_flavour = flavour
-		require("catppuccin.lib.compiler").status(flavour)
-	end
-end
+command("CatppuccinClean", function()
+	require("catppuccin").clean()
+end, {})
+
+command("CatppuccinStatus", function()
+	require("catppuccin").status()
+end, {})
+
+vim.g.loaded_catppuccin = 1 -- plugin/catppuccin.vim
 
 return M
