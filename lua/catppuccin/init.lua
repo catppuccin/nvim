@@ -1,8 +1,18 @@
 local M = {}
 
+local flavours = { "latte", "frappe", "macchiato", "mocha" }
+
 function M.load()
 	local compiled = nil
 	local config = require("catppuccin.config").options
+
+	if vim.g.catppuccin_flavour == nil then
+		require("catppuccin.utils.echo")(
+			"Please choose a flavour by setting g:catppuccin_flavour (vimscript) or vim.g.catppuccin_flavour (lua) to latte, frappe, macchiato or mocha",
+			"error"
+		)
+		vim.g.catppuccin_flavour = "macchiato"
+	end
 
 	if config.compile.enabled == true then
 		local compiled_path = config.compile.path
@@ -26,7 +36,6 @@ function M.setup(custom_opts)
 	require("catppuccin.config").set_options(custom_opts)
 end
 
-local flavours = { "latte", "frappe", "macchiato", "mocha" }
 local command = vim.api.nvim_create_user_command
 
 command("Catppuccin", function(inp)
