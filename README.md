@@ -472,7 +472,8 @@ vim.api.nvim_create_autocmd("User", {
 ```
 
 ```lua
--- PackerCompile on save assuming your plugin spefication file is in plugins.lua or catppuccin.lua
+-- PackerCompile on save if your config file is in plugins.lua or catppuccin.lua
+-- DO NOT put the autocmd inside the config file or you will get 2 ^ x files open after x saves
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = { "plugins.lua", "catppuccin.lua" },
 	callback = function()
