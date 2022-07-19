@@ -62,7 +62,7 @@ for _, cmd in ipairs({ "compile", "clean", "status" }) do
 			require("catppuccin.lib.compiler")[cmd](flavour)
 		end
 		if cmd ~= "status" then
-			echo((cmd == "compile" and "compil" or cmd) + "ed cache!")
+			echo((cmd == "compile" and "compil" or cmd) .. "ed cache!")
 		end
 	end
 end
