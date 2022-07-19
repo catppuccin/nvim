@@ -2,9 +2,7 @@ local M = {}
 
 local flavours = { "latte", "frappe", "macchiato", "mocha" }
 
-local command = vim.api.nvim_create_user_command
-
-command("Catppuccin", function(inp)
+vim.api.nvim_create_user_command("Catppuccin", function(inp)
 	if not vim.tbl_contains(flavours, inp.args) then
 		require("catppuccin.utils.echo")("Invalid flavour")
 		return
@@ -44,17 +42,17 @@ end
 
 function M.setup(custom_opts)
 	require("catppuccin.config").set_options(custom_opts)
+end
 
-	-- Only set compile commands when enabled = true
-	if require("catppuccin.config").options.compile.enabled == true then
-		command("CatppuccinCompile", function()
-			require("catppuccin.lib.compiler").compile()
-		end, {})
-
-		command("CatppuccinClean", function()
-			require("catppuccin.lib.compiler").clean()
-		end, {})
+function M.compile()
+	for _, flavour in ipairs(flavours) do
+		vim.g.catppuccin_flavour = flavour
+		require("catppuccin.lib.compiler").compile(flavour)
 	end
+end
+
+function M.clean()
+	require("catppuccin.lib.compiler").clean()
 end
 
 return M
