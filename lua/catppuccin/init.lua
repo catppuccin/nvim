@@ -52,7 +52,17 @@ function M.compile()
 end
 
 function M.clean()
-	require("catppuccin.lib.compiler").clean()
+	for _, flavour in ipairs(flavours) do
+		vim.g.catppuccin_flavour = flavour
+		require("catppuccin.lib.compiler").clean(flavour)
+	end
+end
+
+function M.status()
+	for _, flavour in ipairs(flavours) do
+		vim.g.catppuccin_flavour = flavour
+		require("catppuccin.lib.compiler").status(flavour)
+	end
 end
 
 return M

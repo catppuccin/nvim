@@ -2,7 +2,6 @@ local M = {}
 
 -- Credit: https://github.com/EdenEast/nightfox.nvim
 local fmt = string.format
-local echo = require("catppuccin.utils.echo")
 local is_windows = vim.startswith(vim.loop.os_uname().sysname, "Windows")
 
 local function inspect(t)
@@ -66,29 +65,26 @@ vim.g.colors_name = "catppuccin"]],
 	end
 	os.execute(string.format("mkdir %s %s", is_windows and "" or "-p", config.compile.path))
 	local file = io.open(config.compile.path .. (is_windows and "\\" or "/") .. flavour .. "_compiled.lua", "w")
-	local ok, err = pcall(file.write, file, table.concat(lines, "\n"))
-	if not ok then
-		echo("failed to compile", "error")
-		print(err)
-	else
-		echo("compiled successfully!")
-	end
+	file:write(table.concat(lines, "\n"))
 	file:close()
 end
 
-function M.clean()
+function M.clean(flavour)
 	local config = require("catppuccin.config").options
-	local compiled_path = config.compile.path
-		.. (is_windows and "\\" or "/")
-		.. vim.g.catppuccin_flavour
-		.. "_compiled.lua"
-	local ok, err = pcall(os.remove, compiled_path)
-	if not ok then
-		echo("failed to clean compiled cache", "error")
-		print(err)
-	else
-		echo("successfully cleaned compiled cache!")
+	local compiled_path = config.compile.path .. (is_windows and "\\" or "/") .. flavour .. "_compiled.lua"
+	os.remove(compiled_path)
+end
+
+function M.status(flavour)
+	local config = require("catppuccin.config").options
+	local file = config.compile.path .. (is_windows and "\\" or "/") .. flavour .. "_compiled.lua"
+	local f = io.open(file, "r")
+	local status = "x"
+	if f ~= nil then
+		io.close(f)
+		status = "✓"
 	end
+	print(fmt("[%s]: %-10s %s", status, flavour, file))
 end
 
 return M

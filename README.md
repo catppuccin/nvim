@@ -409,6 +409,22 @@ Note: On windows we replace `/` with `\` by default
 ```vim
 :CatppuccinCompile " Create/update the compile file
 :CatppuccinClean " Delete compiled file
+:CatppuccinStatus " Compile status
+```
+
+Catppuccin also provides these functions to work with the catppuccin compiler.
+
+```lua
+local catppuccin = require('catppuccin')
+
+-- Create/update the compile files
+catppuccin.compile()
+
+-- Delete compiled files
+catppuccin.clean()
+
+-- Show compile status
+catppuccin.status()
 ```
 
 #### Post-install/update hooks
