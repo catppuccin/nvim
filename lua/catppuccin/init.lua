@@ -1,13 +1,14 @@
 local M = {}
 
 local flavours = { "latte", "frappe", "macchiato", "mocha" }
+local echo = require("catppuccin.utils.echo")
 
 function M.load()
 	local compiled = nil
 	local config = require("catppuccin.config").options
 
 	if vim.g.catppuccin_flavour == nil then
-		require("catppuccin.utils.echo")(
+		echo(
 			"Please choose a flavour by setting g:catppuccin_flavour (vimscript) or vim.g.catppuccin_flavour (lua) to latte, frappe, macchiato or mocha",
 			"error"
 		)
@@ -40,7 +41,7 @@ local command = vim.api.nvim_create_user_command
 
 command("Catppuccin", function(inp)
 	if not vim.tbl_contains(flavours, inp.args) then
-		require("catppuccin.utils.echo")("Invalid flavour")
+		echo("Invalid flavour", "error")
 		return
 	end
 	vim.g.catppuccin_flavour = inp.args
@@ -59,6 +60,9 @@ for _, cmd in ipairs({ "compile", "clean", "status" }) do
 		for _, flavour in ipairs(flavours) do
 			vim.g.catppuccin_flavour = flavour
 			require("catppuccin.lib.compiler")[cmd](flavour)
+		end
+		if cmd ~= "status" then
+			echo((cmd == "compile" and "compil" or cmd) + "ed cache!")
 		end
 	end
 end
