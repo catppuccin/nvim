@@ -65,14 +65,8 @@ vim.g.colors_name = "catppuccin"]],
 		end
 	end
 	os.execute(string.format("mkdir %s %s", is_windows and "" or "-p", config.compile.path))
-	local file = io.open(
-		config.compile.path
-			.. (is_windows and "\\" or "/")
-			.. vim.g.catppuccin_flavour
-			.. config.compile.suffix
-			.. ".lua",
-		"w"
-	)
+	local file =
+		io.open(config.compile.path .. (is_windows and "\\" or "/") .. vim.g.catppuccin_flavour .. "_compiled.lua", "w")
 	local ok, err = pcall(file.write, file, table.concat(lines, "\n"))
 	if not ok then
 		echo("failed to compile", "error")
@@ -88,8 +82,7 @@ function M.clean()
 	local compiled_path = config.compile.path
 		.. (is_windows and "\\" or "/")
 		.. vim.g.catppuccin_flavour
-		.. config.compile.suffix
-		.. ".lua"
+		.. "_compiled.lua"
 	local ok, err = pcall(os.remove, compiled_path)
 	if not ok then
 		echo("failed to clean compiled cache", "error")

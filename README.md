@@ -96,7 +96,6 @@ term_colors = false,
 compile = {
 	enabled = false,
 	path = vim.fn.stdpath "cache" .. "/catppuccin",
-	suffix = "_compiled"
 },
 styles = {
 	comments = { "italic" },
@@ -399,7 +398,6 @@ Setting `enabled` to `true` enables this feature:
 compile = {
 	enabled = true,
 	path = vim.fn.stdpath "cache" .. "/catppuccin",
-	suffix = "_compiled"
 },
 ```
 

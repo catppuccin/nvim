@@ -7,7 +7,6 @@ config.options = {
 	compile = {
 		enabled = false,
 		path = vim.fn.stdpath("cache") .. "/catppuccin",
-		suffix = "_compiled",
 	},
 	dim_inactive = {
 		enabled = false,
