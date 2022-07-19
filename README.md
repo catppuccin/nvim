@@ -83,7 +83,27 @@ Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
 
 ### Setup
 
-There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
+For `lua`:
+
+```lua
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+require("catppuccin").setup()
+vim.cmd[[colorscheme catppuccin]]
+```
+
+For `vimscript`:
+
+```vim
+let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
+
+lua << EOF
+require("catppuccin").setup()
+EOF
+
+colorscheme catppuccin
+```
+
+You may pass a lua table to the `setup()` function in order to edit any of Catppuccin's settings:
 
 ```lua
 dim_inactive = {
@@ -169,52 +189,6 @@ integrations = {
 	symbols_outline = true,
 	mini = false,
 }
-```
-
-The way you setup the settings on your configuration varies based on whether you are using vimL for this or Lua.
-
-<details>
-    <summary>For init.lua</summary>
-<p>
-
-```lua
-local catppuccin = require("catppuccin")
-
--- configure it
-catppuccin.setup(<settings>)
-```
-
-<br />
-</details>
-
-<details>
-    <summary>For init.vim</summary>
-<p>
-
-```lua
-lua << EOF
-local catppuccin = require("catppuccin")
-
--- configure it
-catppuccin.setup(<settings>)
-EOF
-```
-
-<br />
-</details>
-
-After setting things up, you can load catppuccin like so:
-
-```vim
-" Vim Script
-let g:catppuccin_flavour = "frappe" " latte, frappe, macchiato, mocha
-colorscheme catppuccin
-```
-
-```lua
--- Lua
-vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
-vim.cmd[[colorscheme catppuccin]]
 ```
 
 Remember that if you want to switch your Catppuccin flavour "on the fly" you may use the `:Catppuccin <flavour>` command.
@@ -364,6 +338,7 @@ integration = {
 ```
 
 -   **Nvim-dap:** setting `enabled` to `true`:
+
 ```lua
 integration = {
 	dap = {
@@ -544,10 +519,10 @@ color_overrides = {
 
 Use them to execute code at certain events. These are the ones available:
 
-| Autocmd            | Description                  |
-| ------------------ | ---------------------------- |
-| `ColorSchemePre`   | Before loading a colorscheme |
-| `ColorScheme`      | After loading a colorscheme  |
+| Autocmd          | Description                  |
+| ---------------- | ---------------------------- |
+| `ColorSchemePre` | Before loading a colorscheme |
+| `ColorScheme`    | After loading a colorscheme  |
 
 They can be used like so:
 
@@ -616,6 +591,7 @@ require("catppuccin.lib.highlight").syntax({
 })
 
 ```
+
 Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
 
 However, if you wish to use the old highlight api (slower):
