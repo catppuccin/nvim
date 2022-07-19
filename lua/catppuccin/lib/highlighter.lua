@@ -40,10 +40,10 @@ function M.load(theme)
 	M.syntax(
 		vim.tbl_deep_extend(
 			"keep",
-			theme.editor,
-			theme.syntax,
+			require("catppuccin.config").options.custom_highlights,
 			theme.integrations,
-			require("catppuccin.config").options.custom_highlights
+			theme.syntax,
+			theme.editor
 		)
 	)
 
