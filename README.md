@@ -466,7 +466,7 @@ vim.api.nvim_create_autocmd("User", {
 		vim.cmd "CatppuccinCompile"
 		vim.defer_fn(function()
 			vim.cmd "colorscheme catppuccin"
-		end, 50) -- Debounced for live reloading
+		end, 0) -- Defered for live reloading
 	end,
 })
 ```
