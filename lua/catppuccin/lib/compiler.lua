@@ -95,7 +95,7 @@ function M.clean()
 		echo("failed to clean compiled cache", "error")
 		print(err)
 	else
-		echo("successfully claned compiled cache!")
+		echo("successfully cleaned compiled cache!")
 	end
 end
 
