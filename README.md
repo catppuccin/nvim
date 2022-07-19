@@ -500,6 +500,23 @@ custom_highlights = {
 }
 ```
 
+Aditionally, if you want to load other custom highlights later, you may use this function:
+
+```lua
+require("catppuccin.lib.highlighter").syntax()
+```
+
+For example:
+
+```lua
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+require("catppuccin.lib.highlighter").syntax({
+	Comment = { fg = colors.surface0 }
+})
+```
+
+> Note: custom highlights loaded using the `require("catppuccin.lib.highlighter").syntax()` function won't be pre-compiled. See [compile](https://github.com/catppuccin/nvim/tree/main#compile).
+
 #### Overwriting colors
 
 Colors can be overwritten using `color_overrides` in the setting:
