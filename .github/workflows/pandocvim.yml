@@ -2,7 +2,8 @@ name: panvimdoc
 
 on:
   push:
-    branches: ["main"]
+    paths:
+      - '**.md'
 
 jobs:
   docs:
