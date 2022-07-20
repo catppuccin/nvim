@@ -24,10 +24,10 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Overwriting colors                         |catppuccin-overwriting-colors|
   - Hooks                                                   |catppuccin-hooks|
 8. FAQ                                                        |catppuccin-faq|
-  - Transparent background tweak?   |catppuccin-transparent-background-tweak?|
-  - Use catppuccin theme for :set background=light/dark?|catppuccin-use-catppuccin-theme-for-:set-background=light/dark?|
-  - Catppuccin highlight function? |catppuccin-catppuccin-highlight-function?|
-  - Abnormal colors?                             |catppuccin-abnormal-colors?|
+  - Transparent background tweak     |catppuccin-transparent-background-tweak|
+  - Usage with :set background         |catppuccin-usage-with-:set-background|
+  - Catppuccin highlight function   |catppuccin-catppuccin-highlight-function|
+  - Abnormal colors                               |catppuccin-abnormal-colors|
 9. 💝 Thanks to                                  |catppuccin-💝-thanks-to|
 
 <h3 align="center">
@@ -681,7 +681,7 @@ They can be used like so:
 ==============================================================================
 8. FAQ                                                        *catppuccin-faq*
 
-TRANSPARENT BACKGROUND TWEAK?       *catppuccin-transparent-background-tweak?*
+TRANSPARENT BACKGROUND TWEAK         *catppuccin-transparent-background-tweak*
 
 Add this to `custom_highlights` settings
 
@@ -703,7 +703,7 @@ Add this to `custom_highlights` settings
 <
 
 
-USE CATPPUCCIN THEME FOR :SET BACKGROUND=LIGHT/DARK?*catppuccin-use-catppuccin-theme-for-:set-background=light/dark?*
+USAGE WITH :SET BACKGROUND             *catppuccin-usage-with-:set-background*
 
 The following autocmd will change the flavour to latte when you `:set
 background=light` and to mocha after `:set background=dark`
@@ -720,7 +720,7 @@ background=light` and to mocha after `:set background=dark`
 
 For people who are hybrid between light and dark mode!
 
-CATPPUCCIN HIGHLIGHT FUNCTION?     *catppuccin-catppuccin-highlight-function?*
+CATPPUCCIN HIGHLIGHT FUNCTION       *catppuccin-catppuccin-highlight-function*
 
 This is the old remap function under the hood:
 
@@ -761,7 +761,7 @@ However, if you wish to use the old highlight api (slower):
 <
 
 
-ABNORMAL COLORS?                                 *catppuccin-abnormal-colors?*
+ABNORMAL COLORS                                   *catppuccin-abnormal-colors*
 
 You need to enable truecolor
 <https://wiki.archlinux.org/title/Color_output_in_console#True_color_support>
