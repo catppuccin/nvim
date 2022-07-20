@@ -101,103 +101,105 @@ EOF
 colorscheme catppuccin
 ```
 
-You may pass a lua table to the `setup()` function in order to edit any of Catppuccin's settings:
-
-```lua
-dim_inactive = {
-	enabled = false
-	shade = "dark",
-	percentage = 0.15,
-},
-transparent_background = false,
-term_colors = false,
-compile = {
-	enabled = false,
-	path = vim.fn.stdpath "cache" .. "/catppuccin",
-},
-styles = {
-	comments = { "italic" },
-	conditionals = { "italic" },
-	loops = {},
-	functions = {},
-	keywords = {},
-	strings = {},
-	variables = {},
-	numbers = {},
-	booleans = {},
-	properties = {},
-	types = {},
-	operators = {},
-},
-integrations = {
-	treesitter = true,
-	native_lsp = {
-		enabled = true,
-		virtual_text = {
-			errors = { "italic" },
-			hints = { "italic" },
-			warnings = { "italic" },
-			information = { "italic" },
-		},
-		underlines = {
-			errors = { "underline" },
-			hints = { "underline" },
-			warnings = { "underline" },
-			information = { "underline" },
-		},
-	},
-	coc_nvim = false,
-	lsp_trouble = false,
-	cmp = true,
-	lsp_saga = false,
-	gitgutter = false,
-	gitsigns = true,
-	leap = false,
-	telescope = true,
-	nvimtree = {
-		enabled = true,
-		show_root = true,
-		transparent_panel = false,
-	},
-	neotree = {
-		enabled = false,
-		show_root = true,
-		transparent_panel = false,
-	},
-	dap = {
-		enabled = false,
-		enable_ui = false,
-	},
-	which_key = false,
-	indent_blankline = {
-		enabled = true,
-		colored_indent_levels = false,
-	},
-	dashboard = true,
-	neogit = false,
-	vim_sneak = false,
-	fern = false,
-	barbar = false,
-	bufferline = true,
-	markdown = true,
-	lightspeed = false,
-	ts_rainbow = false,
-	hop = false,
-	notify = true,
-	telekasten = true,
-	symbols_outline = true,
-	mini = false,
-	aerial = false,
-	vimwiki = true,
-	beacon = true,
-}
-```
-
 Remember that if you want to switch your Catppuccin flavour "on the fly" you may use the `:Catppuccin <flavour>` command.
 
 > Note: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
 
 # Configuration
+
+You may pass a lua table to the `setup()` function in order to edit any of Catppuccin's settings:
+
+```lua
+require("catppuccin").setup {
+	dim_inactive = {
+		enabled = false,
+		shade = "dark",
+		percentage = 0.15,
+	},
+	transparent_background = false,
+	term_colors = false,
+	compile = {
+		enabled = false,
+		path = vim.fn.stdpath "cache" .. "/catppuccin",
+	},
+	styles = {
+		comments = { "italic" },
+		conditionals = { "italic" },
+		loops = {},
+		functions = {},
+		keywords = {},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
+	},
+	integrations = {
+		treesitter = true,
+		native_lsp = {
+			enabled = true,
+			virtual_text = {
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
+			},
+			underlines = {
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
+			},
+		},
+		coc_nvim = false,
+		lsp_trouble = false,
+		cmp = true,
+		lsp_saga = false,
+		gitgutter = false,
+		gitsigns = true,
+		leap = false,
+		telescope = true,
+		nvimtree = {
+			enabled = true,
+			show_root = true,
+			transparent_panel = false,
+		},
+		neotree = {
+			enabled = false,
+			show_root = true,
+			transparent_panel = false,
+		},
+		dap = {
+			enabled = false,
+			enable_ui = false,
+		},
+		which_key = false,
+		indent_blankline = {
+			enabled = true,
+			colored_indent_levels = false,
+		},
+		dashboard = true,
+		neogit = false,
+		vim_sneak = false,
+		fern = false,
+		barbar = false,
+		bufferline = true,
+		markdown = true,
+		lightspeed = false,
+		ts_rainbow = false,
+		hop = false,
+		notify = true,
+		telekasten = true,
+		symbols_outline = true,
+		mini = false,
+		aerial = false,
+		vimwiki = true,
+		beacon = true,
+	},
+}
+```
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
 
