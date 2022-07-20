@@ -77,6 +77,7 @@ use {
 	"catppuccin/nvim",
 	as = "catppuccin"
 }
+```
 
 # Usage
 
