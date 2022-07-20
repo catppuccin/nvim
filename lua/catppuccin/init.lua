@@ -6,11 +6,7 @@ function M.load()
 	local compiled = nil
 	local config = require("catppuccin.config").options
 
-	if vim.g.catppuccin_flavour == nil then
-		require("catppuccin.utils.echo")(
-			"Please choose a flavour by setting g:catppuccin_flavour (vimscript) or vim.g.catppuccin_flavour (lua) to latte, frappe, macchiato or mocha (string)",
-			"error"
-		)
+	if vim.g.catppuccin_flavour == nil then -- Default catppuccin flavour to macchiato
 		vim.g.catppuccin_flavour = "macchiato"
 	end
 
