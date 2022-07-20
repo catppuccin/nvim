@@ -60,7 +60,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [VimWiki](https://github.com/vimwiki/vimwiki)
     -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
 
-## Usage
+# Installation
 
 You can use your favorite plugin manager for this. Here are some examples with the most popular ones:
 
@@ -73,19 +73,12 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 #### Packer.nvim
 
 ```lua
-use({
+use {
 	"catppuccin/nvim",
 	as = "catppuccin"
-})
-```
+}
 
-#### Vundle
-
-```lua
-Plugin 'catppuccin/nvim', {'name': 'catppuccin'}
-```
-
-### Setup
+# Usage
 
 For `lua`:
 
@@ -203,18 +196,18 @@ Remember that if you want to switch your Catppuccin flavour "on the fly" you may
 
 > Note: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
 
-### Configuration
+# Configuration
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
 
-#### General
+## General
 
 This settings are unrelated to any group and are independent.
 
 -   `transparent_background`: (Boolean) if true, disables setting the background color.
 -   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
 
-#### Dim inactive
+## Dim inactive
 
 This setting manages the ability to dim the inactive splits/windows/buffers displayed.
 
@@ -222,7 +215,7 @@ This setting manages the ability to dim the inactive splits/windows/buffers disp
 -   `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
 -   `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
 
-#### Styles
+## Styles
 
 Handles the style of general hi groups (see `:h highlight-args`):
 
@@ -232,13 +225,13 @@ Handles the style of general hi groups (see `:h highlight-args`):
 -   `strings`: (Table) changed the style of the strings.
 -   `variables`: (Table) changed the style of the variables.
 
-#### Integrations
+## Integrations
 
 These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
 If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
-##### Special Integrations
+### Special Integrations
 
 -   **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
@@ -352,7 +345,7 @@ integration = {
 	dap = {
 		enabled = true,
 		enable_ui = true, -- enable nvim-dap-ui
-	},
+	}
 }
 ```
 
@@ -367,27 +360,27 @@ sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition"
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
 
-### Compile
+# Compile
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
-#### Enable
+## Enable
 
 Setting `enabled` to `true` enables this feature:
 
 ```lua
 compile = {
 	enabled = true,
-	path = vim.fn.stdpath "cache" .. "/catppuccin",
-},
+	path = vim.fn.stdpath "cache" .. "/catppuccin"
+}
 ```
 
 By default catppuccin writes the compiled results into the system's cache directory.
 Note: On windows we replace `/` with `\` by default
 
-#### Compile commands
+## Compile commands
 
 ```vim
 :CatppuccinCompile " Create/update the compile file
@@ -410,7 +403,7 @@ catppuccin.clean()
 catppuccin.status()
 ```
 
-#### Post-install/update hooks
+## Post-install/update hooks
 
 Packer.nvim
 
@@ -419,7 +412,7 @@ Packer.nvim
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
-	run = ":CatppuccinCompile",
+	run = ":CatppuccinCompile"
 }
 ```
 
@@ -430,14 +423,14 @@ Vim-plug
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
 
-#### Auto compile
+## Auto compile
 
 Packer.nvim
 
 ```lua
 -- If you want catppuccin live reload after :PackerCompile
 require("packer").init {
-	auto_reload_compiled = true,
+	auto_reload_compiled = true
 }
 ```
 
@@ -450,7 +443,7 @@ vim.api.nvim_create_autocmd("User", {
 		vim.defer_fn(function()
 			vim.cmd "colorscheme catppuccin"
 		end, 0) -- Defered for live reloading
-	end,
+	end
 })
 ```
 
@@ -461,7 +454,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = { "plugins.lua", "catppuccin.lua" },
 	callback = function()
 		vim.cmd "PackerCompile"
-	end,
+	end
 })
 ```
 
@@ -472,13 +465,13 @@ Vim-plug
 autocmd BufWritePost init.vim :CatppuccinCompile
 ```
 
-#### Acknowledge
+## Acknowledge
 
 [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
 
-### Extra
+# Extra
 
-##### Get catppuccin colors
+## Get catppuccin colors
 
 ```lua
 require("catppuccin.palettes").get_palette()
@@ -486,7 +479,7 @@ require("catppuccin.palettes").get_palette()
 
 Will returns a table where the key is the name of the color and the value is its hex value.
 
-#### Overwriting highlight groups
+## Overwriting highlight groups
 
 Highlight groups can be overwritten in the setting like so:
 
@@ -525,7 +518,7 @@ require("catppuccin.lib.highlighter").syntax({
 
 > Note: custom highlights loaded using the `require("catppuccin.lib.highlighter").syntax()` function won't be pre-compiled. See [compile](https://github.com/catppuccin/nvim/tree/main#compile).
 
-#### Overwriting colors
+## Overwriting colors
 
 Colors can be overwritten using `color_overrides` in the setting:
 
@@ -537,10 +530,10 @@ color_overrides = {
 		mantle = "#242424",
 		crust = "#474747",
 	}
-},
+}
 ```
 
-#### Hooks
+## Hooks
 
 Use them to execute code at certain events. These are the ones available:
 
@@ -568,9 +561,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 ```
 
-## FAQ
+# FAQ
 
-#### Transparent background tweak?
+## Transparent background tweak?
 
 Add this to `custom_highlights` settings
 
@@ -591,7 +584,7 @@ require("catppuccin").setup {
 }
 ```
 
-#### Use catppuccin theme for :set background=light/dark?
+## Use catppuccin theme for :set background=light/dark?
 
 The following autocmd will change the flavour to latte when you `:set background=light` and to mocha after `:set background=dark`
 
@@ -606,7 +599,7 @@ vim.api.nvim_create_autocmd("OptionSet", {
 
 For people who are hybrid between light and dark mode!
 
-#### Catppuccin highlight function?
+## Catppuccin highlight function?
 
 This is the old remap function under the hood:
 
@@ -645,13 +638,13 @@ syntax {
 }
 ```
 
-#### Abnormal colors?
+## Abnormal colors?
 
 You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
 
 Related: [:h termguicolors](https://neovim.io/doc/user/options.html#'termguicolors'), [catppuccin/nvim#182](https://github.com/catppuccin/nvim/issues/182),
 
-## 💝 Thanks to
+# 💝 Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)
 -   [Null Chilly](https://github.com/nullchilly)
