@@ -611,7 +611,7 @@ For people who are hybrid between light and dark mode!
 This is the old remap function under the hood:
 
 ```lua
-require("catppuccin.lib.highlight").syntax({
+require("catppuccin.lib.highlighter").syntax({
 	Normal = { style = { "italic", "bold" } }
 })
 
