@@ -96,10 +96,11 @@ config.options = {
 function config.set_options(opts)
 	opts = opts or {}
 	config.options = vim.tbl_deep_extend("keep", opts, config.options)
-	if require("catppuccin.config").options.compile.enabled ~= true then
-		vim.api.nvim_del_user_command("CatppuccinCompile")
-		vim.api.nvim_del_user_command("CatppuccinClean")
-		vim.api.nvim_del_user_command("CatppuccinStatus")
+	print(config.options.compile.enabled)
+	if config.options.compile.enabled ~= true then
+		pcall(vim.api.nvim_del_user_command, "CatppuccinCompile")
+		pcall(vim.api.nvim_del_user_command, "CatppuccinClean")
+		pcall(vim.api.nvim_del_user_command, "CatppuccinStatus")
 	end
 end
 
