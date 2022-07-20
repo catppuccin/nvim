@@ -551,7 +551,7 @@ vim.api.nvim_create_autocmd("ColorSchemePre", {
 	pattern = "*",
 	callback = function()
 		print "I ran before loading Catppuccin!"
-	end,
+	end
 })
 
 vim.api.nvim_create_autocmd("ColorScheme", {
@@ -559,7 +559,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function()
 		local colors = require("catppuccin.palettes").get_palette()
 		-- do something with colors
-	end,
+	end
 })
 ```
 
