@@ -67,15 +67,15 @@ for _, cmd in ipairs({ "compile", "clean", "status" }) do
 end
 
 command("CatppuccinCompile", function()
-	require("catppuccin").compile()
+	M.compile()
 end, {})
 
 command("CatppuccinClean", function()
-	require("catppuccin").clean()
+	M.clean()
 end, {})
 
 command("CatppuccinStatus", function()
-	require("catppuccin").status()
+	M.status()
 end, {})
 
 vim.g.loaded_catppuccin = 1 -- plugin/catppuccin.vim
