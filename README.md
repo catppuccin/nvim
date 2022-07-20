@@ -73,10 +73,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 #### Packer.nvim
 
 ```lua
-use {
-	"catppuccin/nvim",
-	as = "catppuccin"
-}
+use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
 # Usage
@@ -85,8 +82,10 @@ For `lua`:
 
 ```lua
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+
 require("catppuccin").setup()
-vim.cmd[[colorscheme catppuccin]]
+
+vim.cmd [[colorscheme catppuccin]]
 ```
 
 For `vimscript`:
@@ -110,7 +109,7 @@ Remember that if you want to switch your Catppuccin flavour "on the fly" you may
 You may pass a lua table to the `setup()` function in order to edit any of Catppuccin's settings:
 
 ```lua
-require("catppuccin").setup {
+require("catppuccin").setup({
 	dim_inactive = {
 		enabled = false,
 		shade = "dark",
@@ -198,7 +197,7 @@ require("catppuccin").setup {
 		vimwiki = true,
 		beacon = true,
 	},
-}
+})
 ```
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
