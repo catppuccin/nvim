@@ -565,7 +565,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 # FAQ
 
-## Transparent background tweak?
+## Transparent background tweak
 
 Add this to `custom_highlights` settings
 
@@ -586,7 +586,7 @@ require("catppuccin").setup {
 }
 ```
 
-## Use catppuccin theme for :set background=light/dark?
+## Usage with :set background
 
 The following autocmd will change the flavour to latte when you `:set background=light` and to mocha after `:set background=dark`
 
@@ -601,7 +601,7 @@ vim.api.nvim_create_autocmd("OptionSet", {
 
 For people who are hybrid between light and dark mode!
 
-## Catppuccin highlight function?
+## Catppuccin highlight function
 
 This is the old remap function under the hood:
 
@@ -640,7 +640,7 @@ syntax {
 }
 ```
 
-## Abnormal colors?
+## Abnormal colors
 
 You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
 
