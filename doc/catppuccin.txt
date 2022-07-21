@@ -234,6 +234,8 @@ Catppuccin’s settings:
             vimwiki = true,
             beacon = true,
         },
+        color_overrides = {},
+        custom_highlights = {},
     })
 <
 
