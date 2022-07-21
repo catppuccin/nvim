@@ -7,6 +7,7 @@ local b = vim.b
 local clrs = require("catppuccin.palettes.init").get_palette()
 local ucolors = require("catppuccin.utils.colors")
 local latte = require("catppuccin.palettes.latte")
+local piccolo = require("catppuccin.palettes.piccolo")
 
 local assets = {
 	left_separator = "",
@@ -16,8 +17,8 @@ local assets = {
 }
 
 local sett = {
-	text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
-	bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
+	text = ucolors.vary_color({ latte = latte.base, piccolo = piccolo.base }, clrs.surface0),
+	bkg = ucolors.vary_color({ latte = latte.crust, piccolo = piccolo.crust }, clrs.surface0),
 	diffs = clrs.mauve,
 	extras = clrs.overlay1,
 	curr_file = clrs.maroon,

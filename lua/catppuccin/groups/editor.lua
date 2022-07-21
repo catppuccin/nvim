@@ -13,7 +13,7 @@ function M.get()
 		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
 		CursorLine = {
 			bg = ucolors.vary_color(
-				{ latte = ucolors.lighten(cp.mantle, 0.70, cp.base) },
+				{ latte = ucolors.lighten(cp.mantle, 0.70, cp.base), piccolo = ucolors.lighten(cp.mantle, 0.70, cp.base) },
 				ucolors.darken(cp.surface0, 0.64, cp.base)
 			),
 		}, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
@@ -26,7 +26,7 @@ function M.get()
 		SignColumn = { bg = cnf.transparent_background and cp.none or cp.base, fg = cp.surface1 }, -- column where |signs| are displayed
 		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
 		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = ucolors.vary_color({ latte = cp.base0 }, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
+		LineNr = { fg = ucolors.vary_color({ latte = cp.base0, piccolo = cp.base0 }, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
 		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 		MatchParen = { fg = cp.peach, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = cp.text, style = { "bold" } }, -- 'showmode' message (e.g., "-- INSERT -- ")

@@ -81,7 +81,7 @@ use { "catppuccin/nvim", as = "catppuccin" }
 For `lua`:
 
 ```lua
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha, piccolo
 
 require("catppuccin").setup()
 
@@ -91,7 +91,7 @@ vim.cmd [[colorscheme catppuccin]]
 For `vimscript`:
 
 ```vim
-let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
+let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha, piccolo
 
 lua << EOF
 require("catppuccin").setup()
