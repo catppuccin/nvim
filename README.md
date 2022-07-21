@@ -201,6 +201,8 @@ require("catppuccin").setup({
 		vimwiki = true,
 		beacon = true,
 	},
+	color_overrides = {},
+	custom_highlights = {},
 })
 ```
 
