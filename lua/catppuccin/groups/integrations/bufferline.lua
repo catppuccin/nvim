@@ -6,27 +6,32 @@ function M.get()
 	local bg_highlight = (transparent_background and cnf.dim_inactive.enabled and cp.dim)
 		or (transparent_background and "NONE")
 		or (cnf.dim_inactive.enabled and cp.dim)
-		or cp.base
+		or cp.crust
 
+	local active_bg = transparent_background and "NONE" or cp.base
 	local inactive_bg = transparent_background and "NONE" or cp.mantle
 
 	return {
-		BufferLineFill = { bg = bg_highlight },
+		-- buffers
+		BufferLineBackground = { bg = inactive_bg },
 		BufferLineBackcrust = { fg = cp.text, bg = inactive_bg }, -- others
 		BufferLineBufferVisible = { fg = cp.surface1, bg = inactive_bg },
-		BufferLineBufferSelected = { fg = cp.text, bg = cp.base, style = { "bold", "italic" } }, -- current
-		BufferLineTab = { fg = cp.surface1, bg = cp.base },
-		BufferLineTabSelected = { fg = cp.red, bg = cp.blue },
+		BufferLineBufferSelected = { fg = cp.text, bg = active_bg, style = { "bold", "italic" } }, -- current
+		-- tabs
+		BufferLineTab = { fg = cp.surface1, bg = inactive_bg },
+		BufferLineTabSelected = { fg = cp.sky, bg = active_bg },
 		BufferLineTabClose = { fg = cp.red, bg = inactive_bg },
-		BufferLineIndicatorSelected = { fg = cp.peach, bg = cp.base },
+		BufferLineIndicatorSelected = { fg = cp.peach, bg = active_bg },
 		-- separators
-		BufferLineSeparator = { fg = inactive_bg, bg = inactive_bg },
-		BufferLineSeparatorVisible = { fg = inactive_bg, bg = inactive_bg },
-		BufferLineSeparatorSelected = { fg = inactive_bg, bg = inactive_bg },
+		BufferLineSeparator = { fg = cp.crust, bg = inactive_bg },
+		BufferLineSeparatorVisible = { fg = cp.crust, bg = inactive_bg },
+		BufferLineSeparatorSelected = { fg = cp.crust, bg = active_bg },
 		-- close buttons
 		BufferLineCloseButton = { fg = cp.surface1, bg = inactive_bg },
 		BufferLineCloseButtonVisible = { fg = cp.surface1, bg = inactive_bg },
-		BufferLineCloseButtonSelected = { fg = cp.red, bg = cp.base },
+		BufferLineCloseButtonSelected = { fg = cp.red, bg = active_bg },
+		-- Empty fill
+		BufferLineFill = { bg = bg_highlight },
 	}
 end
 
