@@ -13,7 +13,7 @@ function M.get()
 
 	return {
 		-- buffers
-		BufferLineBackground = { bg = active_bg },
+		BufferLineBackground = { bg = inactive_bg },
 		BufferLineBackcrust = { fg = cp.text, bg = inactive_bg }, -- others
 		BufferLineBufferVisible = { fg = cp.surface1, bg = inactive_bg },
 		BufferLineBufferSelected = { fg = cp.text, bg = active_bg, style = { "bold", "italic" } }, -- current
