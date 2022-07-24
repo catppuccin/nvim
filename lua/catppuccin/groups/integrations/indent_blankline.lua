@@ -4,6 +4,7 @@ function M.get()
 	local hi = {
 		IndentBlanklineChar = { fg = cp.surface0 },
 		IndentBlanklineContextChar = { fg = cp.text },
+		IndentBlanklineContextStart = { sp = cp.text, style = { "underline" } },
 	}
 
 	if cnf.integrations.indent_blankline.colored_indent_levels then
