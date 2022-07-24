@@ -37,10 +37,12 @@ function M.load(theme)
 	g.colors_name = "catppuccin"
 
 	M.properties(theme.properties, "o")
+	local custom_highlights = require("catppuccin.config").options.highlight_overrides
 	M.syntax(
 		vim.tbl_deep_extend(
 			"keep",
-			require("catppuccin.config").options.custom_highlights,
+			custom_highlights[vim.g.catppuccin_flavour],
+			custom_highlights.all,
 			theme.integrations,
 			theme.syntax,
 			theme.editor
