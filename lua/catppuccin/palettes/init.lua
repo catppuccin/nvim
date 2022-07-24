@@ -3,11 +3,11 @@ local M = {}
 local cnf = require("catppuccin.config").options
 local echo = require("catppuccin.utils.echo")
 
-function M.get_palette()
-	local flvr = vim.g.catppuccin_flavour
+function M.get_palette(flavour)
+	local flvr = flavour or vim.g.catppuccin_flavour
 
 	local null, palette = pcall(require, "catppuccin.palettes." .. flvr)
-	if null then
+	if not null then
 		return {}
 	end
 

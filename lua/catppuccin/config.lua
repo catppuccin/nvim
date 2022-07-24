@@ -96,9 +96,7 @@ config.options = {
 function config.set_options(opts)
 	opts = opts or {}
 	config.options = vim.tbl_deep_extend("keep", opts, config.options)
-	if not config.options.highlight_overrides.all then
-		config.options.highlight_overrides.all = config.options.custom_highlights or {}
-	end
+	config.options.highlight_overrides.all = config.options.highlight_overrides.all or config.options.custom_highlights
 	if config.options.compile.enabled ~= true then
 		pcall(vim.api.nvim_del_user_command, "CatppuccinCompile")
 		pcall(vim.api.nvim_del_user_command, "CatppuccinClean")

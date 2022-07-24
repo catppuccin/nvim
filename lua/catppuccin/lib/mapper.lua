@@ -43,6 +43,9 @@ function M.apply()
 	theme.editor = require("catppuccin.groups.editor").get()
 	theme.integrations = get_integrations() -- plugins
 	theme.terminal = require("catppuccin.groups.terminal").get() -- terminal colors
+	local user_highlights = require("catppuccin.config").options.highlight_overrides
+	theme.custom_highlights =
+		vim.tbl_deep_extend("keep", user_highlights[vim.g.catppuccin_flavour] or {}, user_highlights.all or {})
 
 	-- uninstantiate to avoid poluting global scope and because it's not needed anymore
 	_G.cnf = nil

@@ -493,19 +493,45 @@ Highlight groups can be overwritten in the setting like so:
 
 ```lua
 custom_highlights = {
-	<hi_group> = { <fields> }
+	all = {
+		<hi_group> = { <fields> }
+	}, -- Same for each flavour
+	latte = {},
+	frappe = {},
+	macchiato = {},
+	mocha = {},
 }
 ```
 
 Here is an example:
 
 ```lua
-local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
-custom_highlights = {
-	Comment = { fg = colors.flamingo }
-	TSConstBuiltin = { fg = colors.peach, style = {} },
-	TSConstant = { fg = colors.sky },
-	TSComment = { fg = colors.surface2, style = { "italic" } }
+local ucolors = require "catppuccin.utils.colors"
+local latte = require("catppuccin.palettes").get_palette "latte"
+local frappe = require("catppuccin.palettes").get_palette "frappe"
+local macchiato = require("catppuccin.palettes").get_palette "frappe"
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+
+catppuccin.setup {
+	highlight_overrides = {
+		all = {
+			CmpBorder = { fg = "#3e4145" },
+		},
+		latte = {
+			Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
+		},
+		frappe = {
+			TSConstBuiltin = { fg = frappe.peach, style = {} },
+			TSConstant = { fg = frappe.sky },
+			TSComment = { fg = frappe.surface2, style = { "italic" } },
+		},
+		macchiato = {
+			LineNr = { fg = macchiato.overlay1 }
+		},
+		mocha = {
+			Comment = { fg = mocha.flamingo },
+		},
+	},
 }
 ```
 

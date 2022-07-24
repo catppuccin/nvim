@@ -3,7 +3,6 @@ local M = {}
 -- Credit: https://github.com/EdenEast/nightfox.nvim
 local fmt = string.format
 local is_windows = vim.startswith(vim.loop.os_uname().sysname, "Windows")
-local echo = require("catppuccin.utils.echo")
 
 local function inspect(t)
 	local list = {}
@@ -43,7 +42,7 @@ vim.g.colors_name = "catppuccin"]],
 			table.insert(lines, fmt("vim.o.%s = %s", property, inspect(value)))
 		end
 	end
-	local tbl = vim.tbl_deep_extend("keep", config.custom_highlights, theme.integrations, theme.syntax, theme.editor)
+	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
 	for group, color in pairs(tbl) do
 		if color.link then
