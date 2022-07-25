@@ -310,10 +310,10 @@ Here are the defaults
 >
     local clrs = require("catppuccin.palettes").get_palette()
     assets = {
-        left_separator = "",
-        right_separator = "",
-        bar = "",
-        mode_icon = ""
+        left_separator = "",
+        right_separator = "",
+        bar = "█",
+        mode_icon = ""
     },
     sett = {
         text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
@@ -426,9 +426,9 @@ Here are the defaults
     
     local sign = vim.fn.sign_define
     
-    sign("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = ""})
-    sign("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
-    sign("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = ""})
+    sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+    sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+    sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 <
 
 
@@ -499,7 +499,7 @@ Here is an example:
     require("catppuccin").setup {
         highlight_overrides = {
             all = {
-                CmpBorder = { fg = "3e4145" },
+                CmpBorder = { fg = "#3e4145" },
             },
             latte = {
                 Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
@@ -552,10 +552,10 @@ Colors can be overwritten using `color_overrides` in the setting:
 >
     color_overrides = {
         frappe = {
-            text = "ffffff"
-            base = "ff0000",
-            mantle = "242424",
-            crust = "474747",
+            text = "#ffffff"
+            base = "#ff0000",
+            mantle = "#242424",
+            crust = "#474747",
         }
     }
 <
@@ -685,7 +685,7 @@ Vim-plug
 
 ACKNOWLEDGE                                           *catppuccin-acknowledge*
 
-nightfox.nvimcompile <https://github.com/EdenEast/nightfox.nvim#compile>
+nightfox.nvim#compile <https://github.com/EdenEast/nightfox.nvim#compile>
 
 HOOKS                                                       *catppuccin-hooks*
 
@@ -700,14 +700,14 @@ They can be used like so:
 
 >
     vim.api.nvim_create_autocmd("ColorSchemePre", {
-        pattern = "",
+        pattern = "*",
         callback = function()
             print "I ran before loading Catppuccin!"
         end
     })
     
     vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "",
+        pattern = "*",
         callback = function()
             local colors = require("catppuccin.palettes").get_palette()
             -- do something with colors
@@ -804,7 +804,7 @@ ABNORMAL COLORS                                   *catppuccin-abnormal-colors*
 You need to enable truecolor
 <https://wiki.archlinux.org/title/Color_output_in_console#True_color_support>
 
-Related: |:h termguicolors|, catppuccin/nvim182
+Related: |:h termguicolors|, catppuccin/nvim#182
 <https://github.com/catppuccin/nvim/issues/182>,
 
 ==============================================================================
