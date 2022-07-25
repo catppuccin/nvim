@@ -202,9 +202,124 @@ require("catppuccin").setup({
 		beacon = true,
 	},
 	color_overrides = {},
-	custom_highlights = {},
+	highlight_overrides = {},
 })
 ```
+
+# Customize palette and highlights
+
+## Get catppuccin colors
+
+```lua
+local latte = require("catppuccin.palettes").get_palette "latte"
+local frappe = require("catppuccin.palettes").get_palette "frappe"
+local macchiato = require("catppuccin.palettes").get_palette "frappe"
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+
+vim.g.catppuccin_flavour = "macchiato"
+local colors = require("catppuccin.palettes").get_palette() -- g:catppuccin_flavour's palette
+```
+
+Will returns a table where the key is the name of the color and the value is its hex value.
+
+## Overwriting highlight groups
+
+Global highlight groups can be overwritten in the setting like so:
+
+```lua
+vim.g.catppuccin_flavour = "macchiato"
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
+require("catppuccin").setup {
+	custom_highlights = {
+		Comment = { fg = colors.flamingo }
+		TSConstBuiltin = { fg = colors.peach, style = {} },
+		TSConstant = { fg = colors.sky },
+		TSComment = { fg = colors.surface2, style = { "italic" } }
+	}
+}
+```
+
+Per flavour highlight groups can be overwritten in the setting like so:
+
+```lua
+highlight_overrides = {
+	all = { -- Will be replaced with custom_highlights if it exists
+		<hi_group> = { <fields> }
+	}, -- Same for each flavour
+	latte = {},
+	frappe = {},
+	macchiato = {},
+	mocha = {},
+}
+```
+
+Here is an example:
+
+```lua
+local ucolors = require "catppuccin.utils.colors"
+local latte = require("catppuccin.palettes").get_palette "latte"
+local frappe = require("catppuccin.palettes").get_palette "frappe"
+local macchiato = require("catppuccin.palettes").get_palette "frappe"
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+
+vim.g.catppuccin_flavour = "macchiato"
+local colors = require("catppuccin.palettes").get_palette() -- return vim.g.catppuccin_flavour palette
+
+catppuccin.setup {
+	highlight_overrides = {
+		all = {
+			CmpBorder = { fg = "#3e4145" },
+		},
+		latte = {
+			Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
+		},
+		frappe = {
+			TSConstBuiltin = { fg = frappe.peach, style = {} },
+			TSConstant = { fg = frappe.sky },
+			TSComment = { fg = frappe.surface2, style = { "italic" } },
+		},
+		macchiato = {
+			LineNr = { fg = macchiato.overlay1 }
+		},
+		mocha = {
+			Comment = { fg = mocha.flamingo },
+		},
+	},
+}
+```
+
+Aditionally, if you want to load other custom highlights later, you may use this function:
+
+```lua
+require("catppuccin.lib.highlighter").syntax()
+```
+
+For example:
+
+```lua
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+require("catppuccin.lib.highlighter").syntax({
+	Comment = { fg = colors.surface0 }
+})
+```
+
+> Note: custom highlights loaded using the `require("catppuccin.lib.highlighter").syntax()` function won't be pre-compiled. See [compile](https://github.com/catppuccin/nvim/tree/main#compile).
+
+## Overwriting colors
+
+Colors can be overwritten using `color_overrides` in the setting:
+
+```lua
+color_overrides = {
+	frappe = {
+		text = "#ffffff"
+		base = "#ff0000",
+		mantle = "#242424",
+		crust = "#474747",
+	}
+}
+```
+
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
 
@@ -476,96 +591,6 @@ autocmd BufWritePost init.vim :CatppuccinCompile
 ## Acknowledge
 
 [nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
-
-# Extra
-
-## Get catppuccin colors
-
-```lua
-require("catppuccin.palettes").get_palette()
-```
-
-Will returns a table where the key is the name of the color and the value is its hex value.
-
-## Overwriting highlight groups
-
-Highlight groups can be overwritten in the setting like so:
-
-```lua
-custom_highlights = {
-	all = {
-		<hi_group> = { <fields> }
-	}, -- Same for each flavour
-	latte = {},
-	frappe = {},
-	macchiato = {},
-	mocha = {},
-}
-```
-
-Here is an example:
-
-```lua
-local ucolors = require "catppuccin.utils.colors"
-local latte = require("catppuccin.palettes").get_palette "latte"
-local frappe = require("catppuccin.palettes").get_palette "frappe"
-local macchiato = require("catppuccin.palettes").get_palette "frappe"
-local mocha = require("catppuccin.palettes").get_palette "mocha"
-
-catppuccin.setup {
-	highlight_overrides = {
-		all = {
-			CmpBorder = { fg = "#3e4145" },
-		},
-		latte = {
-			Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
-		},
-		frappe = {
-			TSConstBuiltin = { fg = frappe.peach, style = {} },
-			TSConstant = { fg = frappe.sky },
-			TSComment = { fg = frappe.surface2, style = { "italic" } },
-		},
-		macchiato = {
-			LineNr = { fg = macchiato.overlay1 }
-		},
-		mocha = {
-			Comment = { fg = mocha.flamingo },
-		},
-	},
-}
-```
-
-Aditionally, if you want to load other custom highlights later, you may use this function:
-
-```lua
-require("catppuccin.lib.highlighter").syntax()
-```
-
-For example:
-
-```lua
-local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
-require("catppuccin.lib.highlighter").syntax({
-	Comment = { fg = colors.surface0 }
-})
-```
-
-> Note: custom highlights loaded using the `require("catppuccin.lib.highlighter").syntax()` function won't be pre-compiled. See [compile](https://github.com/catppuccin/nvim/tree/main#compile).
-
-## Overwriting colors
-
-Colors can be overwritten using `color_overrides` in the setting:
-
-```lua
-color_overrides = {
-	frappe = {
-		text = "#ffffff"
-		base = "#ff0000",
-		mantle = "#242424",
-		crust = "#474747",
-	}
-}
-```
 
 ## Hooks
 
