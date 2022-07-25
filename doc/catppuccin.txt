@@ -12,7 +12,7 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
   - Integrations                                     |catppuccin-integrations|
-6. Customize palette and highlights|catppuccin-customize-palette-and-highlights|
+6. Customize palettes and highlights|catppuccin-customize-palettes-and-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
   - Overwriting colors                         |catppuccin-overwriting-colors|
@@ -433,7 +433,7 @@ Here are the defaults
 
 
 ==============================================================================
-6. Customize palette and highlights*catppuccin-customize-palette-and-highlights*
+6. Customize palettes and highlights*catppuccin-customize-palettes-and-highlights*
 
 GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
@@ -597,7 +597,7 @@ COMPILE COMMANDS                                 *catppuccin-compile-commands*
 
 NOTE: You have to reload setup function in order for compile to register new
 config. Please refer to auto compile
-<https://github.com/catppuccin/nvim#auto-compile>:
+<https://github.com/catppuccin/nvim#auto-compile>
 
 Catppuccin also provides these functions to work with the catppuccin compiler.
 
