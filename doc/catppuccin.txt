@@ -4,31 +4,31 @@
 Table of Contents                               *catppuccin-table-of-contents*
 
 1. About                                                    |catppuccin-about|
-2. 🎁 Features                                    |catppuccin-🎁-features|
+2. Features                                              |catppuccin-features|
 3. Installation                                      |catppuccin-installation|
 4. Usage                                                    |catppuccin-usage|
 5. Configuration                                    |catppuccin-configuration|
+6. Customize palette and highlights|catppuccin-customize-palette-and-highlights|
+  - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
+  - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
+  - Overwriting colors                         |catppuccin-overwriting-colors|
   - General                                               |catppuccin-general|
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
   - Integrations                                     |catppuccin-integrations|
-6. Compile                                                |catppuccin-compile|
+7. Compile                                                |catppuccin-compile|
   - Enable                                                 |catppuccin-enable|
   - Compile commands                             |catppuccin-compile-commands|
   - Post-install/update hooks           |catppuccin-post-install/update-hooks|
   - Auto compile                                     |catppuccin-auto-compile|
   - Acknowledge                                       |catppuccin-acknowledge|
-7. Extra                                                    |catppuccin-extra|
-  - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
-  - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
-  - Overwriting colors                         |catppuccin-overwriting-colors|
   - Hooks                                                   |catppuccin-hooks|
 8. FAQ                                                        |catppuccin-faq|
   - Transparent background tweak     |catppuccin-transparent-background-tweak|
   - Usage with :set background         |catppuccin-usage-with-:set-background|
   - Catppuccin highlight function   |catppuccin-catppuccin-highlight-function|
   - Abnormal colors                               |catppuccin-abnormal-colors|
-9. 💝 Thanks to                                  |catppuccin-💝-thanks-to|
+9. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
 1. About                                                    *catppuccin-about*
@@ -41,7 +41,7 @@ it under the `old-catppuccino`
 <https://github.com/catppuccin/nvim/tree/old-catppuccino> branch.
 
 ==============================================================================
-2. 🎁 Features                                    *catppuccin-🎁-features*
+2. Features                                              *catppuccin-features*
 
 
 - Handy CLI.
@@ -235,8 +235,137 @@ Catppuccin’s settings:
             beacon = true,
         },
         color_overrides = {},
-        custom_highlights = {},
+        highlight_overrides = {},
     })
+<
+
+
+==============================================================================
+6. Customize palette and highlights*catppuccin-customize-palette-and-highlights*
+
+GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
+
+>
+    local latte = require("catppuccin.palettes").get_palette "latte"
+    local frappe = require("catppuccin.palettes").get_palette "frappe"
+    local macchiato = require("catppuccin.palettes").get_palette "frappe"
+    local mocha = require("catppuccin.palettes").get_palette "mocha"
+    
+    vim.g.catppuccin_flavour = "macchiato"
+    local colors = require("catppuccin.palettes").get_palette() -- g:catppuccin_flavour's palette
+<
+
+
+Will returns a table where the key is the name of the color and the value is
+its hex value.
+
+OVERWRITING HIGHLIGHT GROUPS         *catppuccin-overwriting-highlight-groups*
+
+Global highlight groups can be overwritten in the setting like so:
+
+>
+    vim.g.catppuccin_flavour = "macchiato"
+    local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
+    require("catppuccin").setup {
+        custom_highlights = {
+            Comment = { fg = colors.flamingo }
+            TSConstBuiltin = { fg = colors.peach, style = {} },
+            TSConstant = { fg = colors.sky },
+            TSComment = { fg = colors.surface2, style = { "italic" } }
+        }
+    }
+<
+
+
+Per flavour highlight groups can be overwritten in the setting like so:
+
+>
+    highlight_overrides = {
+        all = { -- Will be replaced with custom_highlights if it exists
+            <hi_group> = { <fields> }
+        }, -- Same for each flavour
+        latte = {},
+        frappe = {},
+        macchiato = {},
+        mocha = {},
+    }
+<
+
+
+Here is an example:
+
+>
+    local ucolors = require "catppuccin.utils.colors"
+    local latte = require("catppuccin.palettes").get_palette "latte"
+    local frappe = require("catppuccin.palettes").get_palette "frappe"
+    local macchiato = require("catppuccin.palettes").get_palette "frappe"
+    local mocha = require("catppuccin.palettes").get_palette "mocha"
+    
+    vim.g.catppuccin_flavour = "macchiato"
+    local colors = require("catppuccin.palettes").get_palette() -- return vim.g.catppuccin_flavour palette
+    
+    catppuccin.setup {
+        highlight_overrides = {
+            all = {
+                CmpBorder = { fg = "3e4145" },
+            },
+            latte = {
+                Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
+            },
+            frappe = {
+                TSConstBuiltin = { fg = frappe.peach, style = {} },
+                TSConstant = { fg = frappe.sky },
+                TSComment = { fg = frappe.surface2, style = { "italic" } },
+            },
+            macchiato = {
+                LineNr = { fg = macchiato.overlay1 }
+            },
+            mocha = {
+                Comment = { fg = mocha.flamingo },
+            },
+        },
+    }
+<
+
+
+Aditionally, if you want to load other custom highlights later, you may use
+this function:
+
+>
+    require("catppuccin.lib.highlighter").syntax()
+<
+
+
+For example:
+
+>
+    local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
+    require("catppuccin.lib.highlighter").syntax({
+        Comment = { fg = colors.surface0 }
+    })
+<
+
+
+
+  Note: custom highlights loaded using the
+  `require("catppuccin.lib.highlighter").syntax()` function won’t be
+  pre-compiled. See compile
+  <https://github.com/catppuccin/nvim/tree/main#compile>.
+
+
+OVERWRITING COLORS                             *catppuccin-overwriting-colors*
+
+Colors can be overwritten using `color_overrides` in the setting:
+
+>
+    color_overrides = {
+        frappe = {
+            text = "ffffff"
+            base = "ff0000",
+            mantle = "242424",
+            crust = "474747",
+        }
+    }
 <
 
 
@@ -310,10 +439,10 @@ Here are the defaults
 >
     local clrs = require("catppuccin.palettes.init").get_palette()
     assets = {
-        left_separator = "",
-        right_separator = "",
-        bar = "█",
-        mode_icon = ""
+        left_separator = "",
+        right_separator = "",
+        bar = "",
+        mode_icon = ""
     },
     sett = {
         text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
@@ -426,14 +555,14 @@ Here are the defaults
     
     local sign = vim.fn.sign_define
     
-    sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
-    sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
-    sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
+    sign("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+    sign("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+    sign("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = ""})
 <
 
 
 ==============================================================================
-6. Compile                                                *catppuccin-compile*
+7. Compile                                                *catppuccin-compile*
 
 Catppuccin is a highly customizable and configurable colorscheme. This does
 however come at the cost of complexity and execution time.
@@ -552,111 +681,7 @@ Vim-plug
 
 ACKNOWLEDGE                                           *catppuccin-acknowledge*
 
-nightfox.nvim#compile <https://github.com/EdenEast/nightfox.nvim#compile>
-
-==============================================================================
-7. Extra                                                    *catppuccin-extra*
-
-GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
-
->
-    require("catppuccin.palettes").get_palette()
-<
-
-
-Will returns a table where the key is the name of the color and the value is
-its hex value.
-
-OVERWRITING HIGHLIGHT GROUPS         *catppuccin-overwriting-highlight-groups*
-
-Highlight groups can be overwritten in the setting like so:
-
->
-    custom_highlights = {
-        all = {
-            <hi_group> = { <fields> }
-        }, -- Same for each flavour
-        latte = {},
-        frappe = {},
-        macchiato = {},
-        mocha = {},
-    }
-<
-
-
-Here is an example:
-
->
-    local ucolors = require "catppuccin.utils.colors"
-    local latte = require("catppuccin.palettes").get_palette "latte"
-    local frappe = require("catppuccin.palettes").get_palette "frappe"
-    local macchiato = require("catppuccin.palettes").get_palette "frappe"
-    local mocha = require("catppuccin.palettes").get_palette "mocha"
-    
-    catppuccin.setup {
-        highlight_overrides = {
-            all = {
-                CmpBorder = { fg = "#3e4145" },
-            },
-            latte = {
-                Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
-            },
-            frappe = {
-                TSConstBuiltin = { fg = frappe.peach, style = {} },
-                TSConstant = { fg = frappe.sky },
-                TSComment = { fg = frappe.surface2, style = { "italic" } },
-            },
-            macchiato = {
-                LineNr = { fg = macchiato.overlay1 }
-            },
-            mocha = {
-                Comment = { fg = mocha.flamingo },
-            },
-        },
-    }
-<
-
-
-Aditionally, if you want to load other custom highlights later, you may use
-this function:
-
->
-    require("catppuccin.lib.highlighter").syntax()
-<
-
-
-For example:
-
->
-    local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
-    require("catppuccin.lib.highlighter").syntax({
-        Comment = { fg = colors.surface0 }
-    })
-<
-
-
-
-  Note: custom highlights loaded using the
-  `require("catppuccin.lib.highlighter").syntax()` function won’t be
-  pre-compiled. See compile
-  <https://github.com/catppuccin/nvim/tree/main#compile>.
-
-
-OVERWRITING COLORS                             *catppuccin-overwriting-colors*
-
-Colors can be overwritten using `color_overrides` in the setting:
-
->
-    color_overrides = {
-        frappe = {
-            text = "#ffffff"
-            base = "#ff0000",
-            mantle = "#242424",
-            crust = "#474747",
-        }
-    }
-<
-
+nightfox.nvimcompile <https://github.com/EdenEast/nightfox.nvim#compile>
 
 HOOKS                                                       *catppuccin-hooks*
 
@@ -671,14 +696,14 @@ They can be used like so:
 
 >
     vim.api.nvim_create_autocmd("ColorSchemePre", {
-        pattern = "*",
+        pattern = "",
         callback = function()
             print "I ran before loading Catppuccin!"
         end
     })
     
     vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "*",
+        pattern = "",
         callback = function()
             local colors = require("catppuccin.palettes").get_palette()
             -- do something with colors
@@ -775,11 +800,11 @@ ABNORMAL COLORS                                   *catppuccin-abnormal-colors*
 You need to enable truecolor
 <https://wiki.archlinux.org/title/Color_output_in_console#True_color_support>
 
-Related: |:h termguicolors|, catppuccin/nvim#182
+Related: |:h termguicolors|, catppuccin/nvim182
 <https://github.com/catppuccin/nvim/issues/182>,
 
 ==============================================================================
-9. 💝 Thanks to                                  *catppuccin-💝-thanks-to*
+9. Thanks to                                            *catppuccin-thanks-to*
 
 
 - Pocco81 <https://github.com/Pocco81>
