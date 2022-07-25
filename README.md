@@ -368,7 +368,7 @@ sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition"
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
 
-# Customize palette and highlights
+# Customize palettes and highlights
 
 ## Get catppuccin colors
 
@@ -509,7 +509,7 @@ Note: On windows we replace `/` with `\` by default
 :CatppuccinStatus " Compile status
 ```
 
-NOTE: You have to reload setup function in order for compile to register new config. Please refer to [auto compile](https://github.com/catppuccin/nvim#auto-compile):
+NOTE: You have to reload setup function in order for compile to register new config. Please refer to [auto compile](https://github.com/catppuccin/nvim#auto-compile)
 
 Catppuccin also provides these functions to work with the catppuccin compiler.
 
