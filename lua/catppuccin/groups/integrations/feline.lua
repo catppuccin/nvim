@@ -4,7 +4,7 @@ local lsp = require("feline.providers.lsp")
 local lsp_severity = vim.diagnostic.severity
 local b = vim.b
 
-local clrs = require("catppuccin.palettes.init").get_palette()
+local clrs = require("catppuccin.palettes").get_palette()
 local ucolors = require("catppuccin.utils.colors")
 local latte = require("catppuccin.palettes.latte")
 

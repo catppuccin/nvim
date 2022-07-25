@@ -5,7 +5,7 @@ local dim_percentage = cnf.dim_inactive.percentage
 local ucolors = require("catppuccin.utils.colors")
 
 function M.dim()
-	local cp = require("catppuccin.palettes.init").get_palette()
+	local cp = require("catppuccin.palettes").get_palette()
 	if cnf.dim_inactive.shade == "dark" then
 		return ucolors.vary_color(
 			{ latte = ucolors.darken(cp.base, dim_percentage, cp.mantle) },
