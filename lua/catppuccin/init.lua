@@ -74,4 +74,6 @@ command("CatppuccinStatus", function()
 	M.status()
 end, {})
 
+vim.g.loaded_catppuccin = 1 -- plugin/catppuccin.vim
+
 return M
