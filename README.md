@@ -427,7 +427,7 @@ local mocha = require("catppuccin.palettes").get_palette "mocha"
 vim.g.catppuccin_flavour = "macchiato"
 local colors = require("catppuccin.palettes").get_palette() -- return vim.g.catppuccin_flavour palette
 
-catppuccin.setup {
+require("catppuccin").setup {
 	highlight_overrides = {
 		all = {
 			CmpBorder = { fg = "#3e4145" },
@@ -509,6 +509,8 @@ Note: On windows we replace `/` with `\` by default
 :CatppuccinStatus " Compile status
 ```
 
+NOTE: You have to reload setup function in order for compile to register new config. Please refer to [auto compile](https://github.com/catppuccin/nvim#auto-compile):
+
 Catppuccin also provides these functions to work with the catppuccin compiler.
 
 ```lua
@@ -549,7 +551,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 Packer.nvim
 
 ```lua
--- If you want catppuccin live reload after :PackerCompile
+-- If you want catppuccin setup function to actually reload without restarting nvim
 require("packer").init {
 	auto_reload_compiled = true
 }
@@ -583,7 +585,7 @@ Vim-plug
 
 ```vim
 " Auto compile on save if catppuccin config is written inside init.vim
-autocmd BufWritePost init.vim :CatppuccinCompile
+autocmd BufWritePost init.vim :source init.vim | CatppuccinCompile
 ```
 
 ## Acknowledge
