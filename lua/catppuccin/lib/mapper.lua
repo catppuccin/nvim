@@ -32,7 +32,6 @@ end
 
 function M.apply()
 	_G.cnf = require("catppuccin.config").options
-	vim.pretty_print(cnf.color_overrides)
 	_G.cp = require("catppuccin.palettes").get_palette()
 
 	cp.none = "NONE"
