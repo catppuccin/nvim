@@ -12,7 +12,7 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
   - Integrations                                     |catppuccin-integrations|
-6. Customize palettes and highlights|catppuccin-customize-palettes-and-highlights|
+6. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
   - Overwriting colors                         |catppuccin-overwriting-colors|
@@ -433,7 +433,7 @@ Here are the defaults
 
 
 ==============================================================================
-6. Customize palettes and highlights*catppuccin-customize-palettes-and-highlights*
+6. Customize highlights                      *catppuccin-customize-highlights*
 
 GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
