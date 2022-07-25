@@ -4,7 +4,7 @@ local cnf = require("catppuccin.config").options
 local echo = require("catppuccin.utils.echo")
 
 function M.get_palette(flavour)
-	local flvr = flavour or vim.g.catppuccin_flavour
+	local flvr = flavour or vim.g.catppuccin_flavour or "macchiato"
 
 	local null, palette = pcall(require, "catppuccin.palettes." .. flvr)
 	if not null then
