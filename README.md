@@ -368,7 +368,7 @@ sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition"
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
 
-# Customize palettes and highlights
+# Customize highlights
 
 ## Get catppuccin colors
 
