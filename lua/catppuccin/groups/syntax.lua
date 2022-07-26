@@ -1,5 +1,7 @@
 local M = {}
 
+local ucolors = require("catppuccin.utils.colors")
+
 function M.get()
 	return {
 		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
@@ -64,16 +66,16 @@ function M.get()
 		-- diff
 		diffAdded = { fg = cp.green },
 		diffRemoved = { fg = cp.red },
-		diffChanged = { fg = cp.yellow },
+		diffChanged = { fg = cp.blue },
 		diffOldFile = { fg = cp.yellow },
 		diffNewFile = { fg = cp.peach },
 		diffFile = { fg = cp.blue },
 		diffLine = { fg = cp.overlay0 },
-		diffIndexLine = { fg = cp.pink },
-		DiffAdd = { fg = cp.green, bg = cp.base }, -- diff mode: Added line |diff.txt|
-		DiffChange = { fg = cp.yellow, bg = cp.base }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = cp.red, bg = cp.base }, -- diff mode: Deleted line |diff.txt|
-		DiffText = { fg = cp.blue, bg = cp.base }, -- diff mode: Changed text within a changed line |diff.txt|
+		diffIndexLine = { fg = cp.teal },
+		DiffAdd = { bg = ucolors.darken(cp.green, 0.18, cp.base) }, -- diff mode: Added line |diff.txt|
+		DiffChange = { bg = ucolors.darken(cp.blue, 0.07, cp.base) }, -- diff mode: Changed line |diff.txt|
+		DiffDelete = { fg = ucolors.darken(cp.red, 0.18, cp.base), bg = ucolors.darken(cp.red, 0.18, cp.base) }, -- diff mode: Deleted line |diff.txt|
+		DiffText = { bg = ucolors.darken(cp.blue, 0.18, cp.base) }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.red },
 		healthSuccess = { fg = cp.teal },
