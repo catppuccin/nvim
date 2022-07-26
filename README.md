@@ -389,6 +389,14 @@ Will returns a table where the key is the name of the color and the value is its
 Global highlight groups can be overwritten in the setting like so:
 
 ```lua
+custom_highlights = {
+	<hi_group> = { <fields> }
+}
+```
+
+Here is an example:
+
+```lua
 vim.g.catppuccin_flavour = "macchiato"
 local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
 require("catppuccin").setup {
