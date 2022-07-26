@@ -53,7 +53,6 @@ end, {
 for _, cmd in ipairs({ "compile", "clean", "status" }) do
 	M[cmd] = function()
 		for _, flavour in ipairs(flavours) do
-			vim.g.catppuccin_flavour = flavour
 			require("catppuccin.lib.compiler")[cmd](flavour)
 		end
 		if cmd ~= "status" then

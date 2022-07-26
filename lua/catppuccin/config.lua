@@ -1,7 +1,4 @@
----@class Config
-local config = {}
-
-config.options = {
+local default_config = {
 	transparent_background = false,
 	term_colors = false,
 	compile = {
@@ -93,9 +90,11 @@ config.options = {
 	highlight_overrides = {},
 }
 
+local config = { options = default_config }
+
 function config.set_options(opts)
 	opts = opts or {}
-	config.options = vim.tbl_deep_extend("keep", opts, config.options)
+	config.options = vim.tbl_deep_extend("keep", opts, default_config)
 	config.options.highlight_overrides.all = config.options.custom_highlights or config.options.highlight_overrides.all
 	if config.options.compile.enabled ~= true then
 		pcall(vim.api.nvim_del_user_command, "CatppuccinCompile")
