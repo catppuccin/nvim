@@ -401,7 +401,7 @@ vim.g.catppuccin_flavour = "macchiato"
 local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
 require("catppuccin").setup {
 	custom_highlights = {
-		Comment = { fg = colors.flamingo }
+		Comment = { fg = colors.flamingo },
 		TSConstBuiltin = { fg = colors.peach, style = {} },
 		TSConstant = { fg = colors.sky },
 		TSComment = { fg = colors.surface2, style = { "italic" } }
@@ -482,7 +482,7 @@ Colors can be overwritten using `color_overrides` in the setting:
 ```lua
 color_overrides = {
 	frappe = {
-		text = "#ffffff"
+		text = "#ffffff",
 		base = "#ff0000",
 		mantle = "#242424",
 		crust = "#474747",
