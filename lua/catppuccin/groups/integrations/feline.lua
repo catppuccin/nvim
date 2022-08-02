@@ -210,7 +210,7 @@ function M.get()
 	}
 
 	components.active[1][9] = {
-		provider = assets.right_separator,
+		provider = "█" .. assets.right_separator,
 		hl = {
 			fg = sett.diffs,
 			bg = sett.bkg,
@@ -366,7 +366,7 @@ function M.get()
 			fg = sett.extras,
 			bg = sett.bkg,
 		},
-		icon = "   ",
+		icon = "  ",
 		left_sep = invi_sep,
 		right_sep = invi_sep,
 	}
@@ -374,7 +374,7 @@ function M.get()
 	components.active[3][2] = {
 		provider = function()
 			if next(vim.lsp.buf_get_clients()) ~= nil then
-				return " "
+				return "  Lsp "
 			else
 				return ""
 			end
