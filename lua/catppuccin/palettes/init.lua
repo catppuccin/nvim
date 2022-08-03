@@ -2,7 +2,7 @@ local M = {}
 
 function M.get_palette(flavour)
 	local flvr = flavour or vim.g.catppuccin_flavour or "macchiato"
-	if not vim.tbl_contains({ "latte", "frappe", "macchiato", "mocha" }, vim.g.catppuccin_flavour) then
+	if not vim.tbl_contains({ "latte", "frappe", "macchiato", "mocha" }, flvr) then
 		require("catppuccin.utils.echo")(
 			"Invalid flavour, g:catppuccin_flavour must be latte, frappe, macchiato or mocha",
 			"error"
