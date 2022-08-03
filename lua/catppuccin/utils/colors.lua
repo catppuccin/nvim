@@ -149,9 +149,6 @@ end
 function M.increase_saturation(hex, percentage)
 	local rgb = hex_to_rgb(hex)
 
-	for i, v in pairs(rgb) do
-		print(i .. ": " .. v)
-	end
 	local saturation_float = percentage
 
 	table.sort(rgb)
@@ -160,9 +157,6 @@ function M.increase_saturation(hex, percentage)
 		mid = rgb[2] / 255,
 		max = rgb[3] / 255,
 	}
-	for i, v in pairs(rgb_intensity) do
-		print(i .. ": " .. v)
-	end
 
 	if rgb_intensity.max == rgb_intensity.min then
 		-- all colors have same intensity, which means
