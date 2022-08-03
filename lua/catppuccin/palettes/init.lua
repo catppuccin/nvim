@@ -5,7 +5,7 @@ function M.get_palette(flavour)
 	if flvr == nil then
 		flvr = "macchiato"
 		require("catppuccin.utils.echo")(
-			"g:catppuccin_flavour must be set before calling require('catppuccin.palettes').get_palette() Defaulting to macchiato flavour",
+			"g:catppuccin_flavour must be set before calling require('catppuccin.palettes').get_palette(). Defaulting to macchiato flavour",
 			"info"
 		)
 	end
