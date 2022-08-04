@@ -64,6 +64,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [VimWiki](https://github.com/vimwiki/vimwiki)
     -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
     -   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
+    -   [vim-clap](https://github.com/liuchengxu/vim-clap)
 
 # Installation
 
@@ -201,7 +202,7 @@ require("catppuccin").setup({
 		aerial = false,
 		vimwiki = true,
 		beacon = true,
-        navic = false,
+		navic = false,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
@@ -308,8 +309,14 @@ mode_colors = {
 -   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
 -   **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
-```lua
+```vim
 let g:lightline = {'colorscheme': 'catppuccin'}
+```
+
+-   **vim-clap:** use this to set it up:
+
+```vim
+let g:clap_theme = 'catppuccin'
 ```
 
 -   **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
