@@ -122,4 +122,65 @@ function M.vary_color(palettes, default)
 	return default
 end
 
+local function rgb2Hex(rgb)
+	local hexadecimal = "#"
+
+	for _, value in pairs(rgb) do
+		local hex = ""
+
+		while value > 0 do
+			local index = math.fmod(value, 16) + 1
+			value = math.floor(value / 16)
+			hex = string.sub(hsluv.hexChars, index, index) .. hex
+		end
+
+		if string.len(hex) == 0 then
+			hex = "00"
+		elseif string.len(hex) == 1 then
+			hex = "0" .. hex
+		end
+
+		hexadecimal = hexadecimal .. hex
+	end
+
+	return hexadecimal
+end
+
+function M.increase_saturation(hex, percentage)
+	local rgb = hex_to_rgb(hex)
+
+	local saturation_float = percentage
+
+	table.sort(rgb)
+	local rgb_intensity = {
+		min = rgb[1] / 255,
+		mid = rgb[2] / 255,
+		max = rgb[3] / 255,
+	}
+
+	if rgb_intensity.max == rgb_intensity.min then
+		-- all colors have same intensity, which means
+		-- the original color is gray, so we can't change saturation.
+		return hex
+	end
+
+	local new_intensities = {}
+	new_intensities.max = rgb_intensity.max
+	new_intensities.min = rgb_intensity.max * (1 - saturation_float)
+
+	if rgb_intensity.mid == rgb_intensity.min then
+		new_intensities.mid = new_intensities.min
+	else
+		local intensity_proportion = (rgb_intensity.max - rgb_intensity.mid) / (rgb_intensity.mid - rgb_intensity.min)
+		new_intensities.mid = (intensity_proportion * new_intensities.min + rgb_intensity.max)
+			/ (intensity_proportion + 1)
+	end
+
+	for i, v in pairs(new_intensities) do
+		new_intensities[i] = math.floor(v * 255)
+	end
+	table.sort(new_intensities)
+	return (rgb2Hex({ new_intensities.max, new_intensities.min, new_intensities.mid }))
+end
+
 return M
