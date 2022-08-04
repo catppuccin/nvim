@@ -85,7 +85,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 # Usage
 
-**lua**
+For `lua`
 
 ```lua
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
@@ -95,7 +95,7 @@ require("catppuccin").setup()
 vim.cmd [[colorscheme catppuccin]]
 ```
 
-**vimscript**
+For `vimscript`
 
 ```vim
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
@@ -505,7 +505,7 @@ require("catppuccin.lib.highlighter").syntax({
 Colors can be overwritten using `color_overrides` in the setting, like so:
 
 ```lua
-catppuccin.setup {
+require("catppuccin").setup {
 	color_overrides = {
 		all = {
 			text = "#ffffff",
@@ -612,7 +612,7 @@ vim.api.nvim_create_autocmd("User", {
 
 ```lua
 -- PackerCompile on save if your config file is in plugins.lua or catppuccin.lua
--- DO NOT put the autocmd inside the config file or you will get 2 ^ x files open after x saves
+-- DO NOT put the autocmd inside the plugin specification file or you will get 2 ^ x files open after x saves
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = { "plugins.lua", "catppuccin.lua" },
 	callback = function()
@@ -624,7 +624,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 Vim-plug
 
 ```vim
-" Auto compile on save if catppuccin config is written inside init.vim
+" Auto reload on save if catppuccin config is written inside init.vim
 autocmd BufWritePost init.vim :source init.vim | CatppuccinCompile
 ```
 
