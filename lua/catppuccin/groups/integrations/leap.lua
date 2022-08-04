@@ -15,7 +15,7 @@ function M.get()
 		},
 		LeapLabelSecondary = {
 			fg = ucolors.vary_color({ latte = "#222222" }, cp.base),
-			bg = cp.sky,
+			bg = ucolors.vary_color({ latte = ucolors.brighten(cp.sky, 0.3) }, cp.sky),
 			style = { "nocombine" },
 		},
 	}

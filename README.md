@@ -35,7 +35,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Feline](https://github.com/feline-nvim/feline.nvim)
     -   [Lualine](https://github.com/hoob3rt/lualine.nvim)
     -   [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-    -   [LSP Saga](https://github.com/tami5/lspsaga.nvim)
+    -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim/)
     -   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
     -   [Trouble](https://github.com/folke/trouble.nvim)
