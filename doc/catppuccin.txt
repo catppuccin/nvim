@@ -110,7 +110,7 @@ the most popular ones:
 ==============================================================================
 4. Usage                                                    *catppuccin-usage*
 
-**lua**
+For `lua`
 
 >
     vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
@@ -121,7 +121,7 @@ the most popular ones:
 <
 
 
-**vimscript**
+For `vimscript`
 
 >
     let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
@@ -591,7 +591,7 @@ OVERWRITING COLORS                             *catppuccin-overwriting-colors*
 Colors can be overwritten using `color_overrides` in the setting, like so:
 
 >
-    catppuccin.setup {
+    require("catppuccin").setup {
         color_overrides = {
             all = {
                 text = "#ffffff",
@@ -713,7 +713,7 @@ Packer.nvim
 
 >
     -- PackerCompile on save if your config file is in plugins.lua or catppuccin.lua
-    -- DO NOT put the autocmd inside the config file or you will get 2 ^ x files open after x saves
+    -- DO NOT put the autocmd inside the plugin specification file or you will get 2 ^ x files open after x saves
     vim.api.nvim_create_autocmd("BufWritePost", {
         pattern = { "plugins.lua", "catppuccin.lua" },
         callback = function()
@@ -726,7 +726,7 @@ Packer.nvim
 Vim-plug
 
 >
-    " Auto compile on save if catppuccin config is written inside init.vim
+    " Auto reload on save if catppuccin config is written inside init.vim
     autocmd BufWritePost init.vim :source init.vim | CatppuccinCompile
 <
 
