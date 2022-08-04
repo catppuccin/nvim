@@ -82,7 +82,8 @@ it under the `old-catppuccino`
     - Beacon.nvim <https://github.com/DanilaMihailov/beacon.nvim>
     - VimWiki <https://github.com/vimwiki/vimwiki>
     - Leap.nvim <https://github.com/ggandor/leap.nvim>
-    - vim-clap <https://github.com/liuchengxu/vim-clap>
+    - Nvim-navic <https://github.com/SmiteshP/nvim-navic>
+    - Vim-clap <https://github.com/liuchengxu/vim-clap>
 
 
 ==============================================================================
@@ -234,6 +235,7 @@ Catppuccin’s settings:
             aerial = false,
             vimwiki = true,
             beacon = true,
+            navic = false,
         },
         color_overrides = {},
         highlight_overrides = {},
@@ -439,6 +441,25 @@ Here are the defaults
     sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
     sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
     sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
+<
+
+
+
+- **Nvim-navic:** setting `enabled` to `true`:
+
+
+>
+    integration = {
+        navic = true
+    }
+<
+
+
+>
+    -- You need to enable highlight in nvim-navic setting or it won't work
+    require("nvim-navic").setup {
+        highlight = true
+    }
 <
 
 
