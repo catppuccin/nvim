@@ -64,7 +64,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [VimWiki](https://github.com/vimwiki/vimwiki)
     -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
     -   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
-    -   [vim-clap](https://github.com/liuchengxu/vim-clap)
+    -   [Vim-clap](https://github.com/liuchengxu/vim-clap)
 
 # Installation
 
@@ -375,6 +375,21 @@ local sign = vim.fn.sign_define
 sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
 sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
+```
+
+-   **Nvim-navic:** setting `enabled` to `true`:
+
+```lua
+integration = {
+	navic = true
+}
+```
+
+```lua
+-- You need to enable highlight in nvim-navic setting or it won't work
+require("nvim-navic").setup {
+	highlight = true
+}
 ```
 
 # Customize highlights
