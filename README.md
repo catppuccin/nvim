@@ -63,6 +63,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
     -   [VimWiki](https://github.com/vimwiki/vimwiki)
     -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
+    -   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
 
 # Installation
 
@@ -200,6 +201,7 @@ require("catppuccin").setup({
 		aerial = false,
 		vimwiki = true,
 		beacon = true,
+        navic = false,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
