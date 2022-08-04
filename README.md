@@ -27,7 +27,7 @@ This port of Catppuccin is special because it was the first one and the one that
 
 -   Handy CLI.
 -   Extensible for many use cases.
--   [Compile](https://github.com/catppuccin/nvim#Compile) user's configuration
+-   [Compile](https://github.com/catppuccin/nvim#Compile) user config for faster startuptime
 -   Integrations with a bunch of plugins:
     -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
     -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
@@ -40,6 +40,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
     -   [Trouble](https://github.com/folke/trouble.nvim)
     -   [WhichKey](https://github.com/folke/which-key.nvim)
+    -   [Bufferline](https://github.com/akinsho/bufferline.nvim)
     -   [BarBar](https://github.com/romgrk/barbar.nvim)
     -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
     -   [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
@@ -51,9 +52,10 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Dashboard](https://github.com/glepnir/dashboard-nvim)
     -   [Markdown](https://www.markdownguide.org/)
     -   [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
-    -   [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
-    -   [Sneak](https://github.com/justinmk/vim-sneak)
+    -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
     -   [Hop](https://github.com/phaazon/hop.nvim)
+    -   [Sneak](https://github.com/justinmk/vim-sneak)
+    -   [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
     -   [Neogit](https://github.com/TimUntersberger/neogit)
     -   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
     -   [Notify](https://github.com/rcarriga/nvim-notify)
@@ -62,7 +64,6 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Aerial.nvim](https://github.com/stevearc/aerial.nvim)
     -   [Beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
     -   [VimWiki](https://github.com/vimwiki/vimwiki)
-    -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
     -   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
     -   [Vim-clap](https://github.com/liuchengxu/vim-clap)
 
@@ -70,21 +71,21 @@ This port of Catppuccin is special because it was the first one and the one that
 
 You can use your favorite plugin manager for this. Here are some examples with the most popular ones:
 
-#### Vim-plug
-
-```lua
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-```
-
 #### Packer.nvim
 
 ```lua
 use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
+#### Vim-plug
+
+```vim
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+```
+
 # Usage
 
-For `lua`:
+**lua**
 
 ```lua
 vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
@@ -94,7 +95,7 @@ require("catppuccin").setup()
 vim.cmd [[colorscheme catppuccin]]
 ```
 
-For `vimscript`:
+**vimscript**
 
 ```vim
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
@@ -367,7 +368,7 @@ integration = {
 ```
 
 ```lua
--- You need to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
+-- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
 require("dap")
 
 local sign = vim.fn.sign_define
@@ -386,7 +387,7 @@ integration = {
 ```
 
 ```lua
--- You need to enable highlight in nvim-navic setting or it won't work
+-- You NEED to enable highlight in nvim-navic setting or it won't work
 require("nvim-navic").setup {
 	highlight = true
 }
@@ -501,15 +502,22 @@ require("catppuccin.lib.highlighter").syntax({
 
 ## Overwriting colors
 
-Colors can be overwritten using `color_overrides` in the setting:
+Colors can be overwritten using `color_overrides` in the setting, like so:
 
 ```lua
-color_overrides = {
-	frappe = {
-		text = "#ffffff",
-		base = "#ff0000",
-		mantle = "#242424",
-		crust = "#474747",
+catppuccin.setup {
+	color_overrides = {
+		all = {
+			text = "#ffffff",
+		},
+		latte = {
+			base = "#ff0000",
+			mantle = "#242424",
+			crust = "#474747",
+		},
+		frappe = {},
+		macchiato = {},
+		mocha = {},
 	}
 }
 ```
@@ -690,9 +698,9 @@ vim.api.nvim_create_autocmd("OptionSet", {
 
 For people who are hybrid between light and dark mode!
 
-## Catppuccin highlight function
+## Old catppuccin remap function
 
-This is the old remap function under the hood:
+Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
 
 ```lua
 require("catppuccin.lib.highlighter").syntax({
@@ -701,9 +709,7 @@ require("catppuccin.lib.highlighter").syntax({
 
 ```
 
-Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
-
-However, if you wish to use the old highlight api (slower):
+If you wish to use the old highlight api (slower):
 
 ```lua
 local function syntax(tbl)
