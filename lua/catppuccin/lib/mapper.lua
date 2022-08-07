@@ -30,9 +30,10 @@ local function get_integrations()
 	return final_integrations
 end
 
-function M.apply()
+function M.apply(flavour)
+	flavour = flavour or vim.g.catppuccin_flavour
 	_G.cnf = require("catppuccin.config").options
-	_G.cp = require("catppuccin.palettes").get_palette()
+	_G.cp = require("catppuccin.palettes").get_palette(flavour)
 
 	cp.none = "NONE"
 	cp.dim = lui.dim()
@@ -44,8 +45,7 @@ function M.apply()
 	theme.integrations = get_integrations() -- plugins
 	theme.terminal = require("catppuccin.groups.terminal").get() -- terminal colors
 	local user_highlights = require("catppuccin.config").options.highlight_overrides
-	theme.custom_highlights =
-		vim.tbl_deep_extend("keep", user_highlights[vim.g.catppuccin_flavour] or {}, user_highlights.all or {})
+	theme.custom_highlights = vim.tbl_deep_extend("keep", user_highlights[flavour] or {}, user_highlights.all or {})
 
 	-- uninstantiate to avoid poluting global scope and because it's not needed anymore
 	_G.cnf = nil

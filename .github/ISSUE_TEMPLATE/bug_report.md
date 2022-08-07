@@ -37,7 +37,13 @@ Relevant catppuccin's configuration...
 <details>
 <summary>minimal_init.lua</summary>
 
-A `minimal_init.lua` file template is located at the root of the project.
+A [minimal_init.lua](https://github.com/catppuccin/nvim/blob/main/minimal_init.lua) file template is located at the root of the project.
+
+```
+-- Paste your modified minimal_init.lua in here:
+
+
+```
 
 </details>
 
