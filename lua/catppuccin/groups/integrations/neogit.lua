@@ -11,20 +11,19 @@ function M.get()
 		},
 		NeogitHunkHeaderHighlight = {
 			bg = ucolors.darken(cp.blue, 0.215, cp.base),
-			fg = cp.blue
+			fg = cp.blue,
 		},
 		NeogitDiffContextHighlight = {
 			bg = ucolors.darken(cp.blue, 0.065, cp.base),
-			fg = cp.text
+			fg = cp.text,
 		},
 		NeogitDiffDeleteHighlight = {
 			bg = ucolors.darken(cp.red, 0.095, cp.base),
-			fg = cp.red
+			fg = cp.red,
 		},
 		NeogitDiffAddHighlight = {
 			bg = ucolors.darken(cp.green, 0.095, cp.base),
-			fg = cp.green
-		}
+			fg = cp.green,
 	}
 end
 
