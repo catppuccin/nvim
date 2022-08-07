@@ -74,7 +74,7 @@ function M.get()
 		diffIndexLine = { fg = cp.teal },
 		DiffAdd = { bg = ucolors.darken(cp.green, 0.18, cp.base) }, -- diff mode: Added line |diff.txt|
 		DiffChange = { bg = ucolors.darken(cp.blue, 0.07, cp.base) }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = cp.red, bg = cp.base }, -- diff mode: Deleted line |diff.txt|
+		DiffDelete = { bg = ucolors.darken(cp.red, 0.18, cp.base) }, -- diff mode: Deleted line |diff.txt|
 		DiffText = { bg = ucolors.darken(cp.blue, 0.18, cp.base) }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = cp.red },
