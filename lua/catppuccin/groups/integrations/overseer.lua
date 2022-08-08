@@ -7,7 +7,7 @@ function M.get()
 		OverseerSUCCESS = { fg = cp.green },
 		OverseerCANCELED = { fg = cp.overlay2 },
 		OverseerFAILURE = { fg = cp.red },
-		OverseerTask = { cp.blue },
+		OverseerTask = { fg = cp.blue },
 		OverseerTaskBorder = { fg = cp.sky },
 		OverseerOutput = { fg = cp.text },
 		OverseerComponent = { fg = cp.yellow },
