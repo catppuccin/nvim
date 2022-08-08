@@ -85,6 +85,7 @@ it under the `old-catppuccino`
     - VimWiki <https://github.com/vimwiki/vimwiki>
     - Nvim-navic <https://github.com/SmiteshP/nvim-navic>
     - Vim-clap <https://github.com/liuchengxu/vim-clap>
+    - Overseer.nvim <https://github.com/stevearc/overseer.nvim>
 
 
 ==============================================================================
@@ -237,6 +238,7 @@ Catppuccin’s settings:
             vimwiki = true,
             beacon = true,
             navic = false,
+            overseer = false,
         },
         color_overrides = {},
         highlight_overrides = {},
