@@ -66,6 +66,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [VimWiki](https://github.com/vimwiki/vimwiki)
     -   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
     -   [Vim-clap](https://github.com/liuchengxu/vim-clap)
+    -   [Overseer.nvim](https://github.com/stevearc/overseer.nvim)
 
 # Installation
 
@@ -204,6 +205,7 @@ require("catppuccin").setup({
 		vimwiki = true,
 		beacon = true,
 		navic = false,
+		overseer = false,
 	},
 	color_overrides = {},
 	highlight_overrides = {},

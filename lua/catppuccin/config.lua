@@ -86,6 +86,7 @@ local default_config = {
 		vimwiki = true,
 		beacon = true,
 		navic = false,
+		overseer = false,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
