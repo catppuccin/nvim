@@ -11,7 +11,7 @@ function M.get()
 		OverseerTaskBorder = { fg = cp.sky },
 		OverseerOutput = { fg = cp.text },
 		OverseerComponent = { fg = cp.yellow },
-		OverseerField = { cp.green },
+		OverseerField = { fg = cp.green },
 	}
 end
 
