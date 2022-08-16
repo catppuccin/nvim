@@ -13,6 +13,21 @@ local assets = {
 	right_separator = "",
 	bar = "█",
 	mode_icon = "",
+  dir = "  ",
+  file = "   ",
+	lsp = {
+		server = "  ",
+		error = "  ",
+		warning = "  ",
+		info = "  ",
+		hint = "  ",
+	},
+	git = {
+		branch = "  ",
+		added = "  ",
+		changed = "  ",
+		removed = "  ",
+	},
 }
 
 local sett = {
@@ -188,7 +203,7 @@ function M.get()
 			fg = sett.text,
 			bg = sett.diffs,
 		},
-		icon = "  ",
+		icon = assets.git.added,
 	}
 
 	components.active[1][7] = {
@@ -197,7 +212,7 @@ function M.get()
 			fg = sett.text,
 			bg = sett.diffs,
 		},
-		icon = "  ",
+		icon = assets.git.changed,
 	}
 
 	components.active[1][8] = {
@@ -206,7 +221,7 @@ function M.get()
 			fg = sett.text,
 			bg = sett.diffs,
 		},
-		icon = "  ",
+		icon = assets.git.removed
 	}
 
 	components.active[1][9] = {
@@ -315,7 +330,7 @@ function M.get()
 			fg = clrs.red,
 			bg = sett.bkg,
 		},
-		icon = "  ",
+		icon = assets.lsp.error,
 	}
 
 	components.active[2][3] = {
@@ -327,7 +342,7 @@ function M.get()
 			fg = clrs.yellow,
 			bg = sett.bkg,
 		},
-		icon = "  ",
+		icon = assets.lsp.warning,
 	}
 
 	components.active[2][4] = {
@@ -339,7 +354,7 @@ function M.get()
 			fg = clrs.sky,
 			bg = sett.bkg,
 		},
-		icon = "  ",
+		icon = assets.lsp.info,
 	}
 
 	components.active[2][5] = {
@@ -351,7 +366,7 @@ function M.get()
 			fg = clrs.rosewater,
 			bg = sett.bkg,
 		},
-		icon = "  ",
+		icon = assets.lsp.hint,
 	}
 	-- Diagnostics ------>
 
@@ -366,7 +381,7 @@ function M.get()
 			fg = sett.extras,
 			bg = sett.bkg,
 		},
-		icon = "  ",
+		icon = assets.git.branch,
 		left_sep = invi_sep,
 		right_sep = invi_sep,
 	}
@@ -374,7 +389,7 @@ function M.get()
 	components.active[3][2] = {
 		provider = function()
 			if next(vim.lsp.buf_get_clients()) ~= nil then
-				return "  Lsp "
+				return assets.lsp.server .. "Lsp"
 			else
 				return ""
 			end
@@ -392,7 +407,7 @@ function M.get()
 			local extension = vim.fn.expand("%:e")
 			local icon = require("nvim-web-devicons").get_icon(filename, extension)
 			if icon == nil then
-				icon = "   "
+				icon = assets.file
 				return icon
 			end
 			return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "
@@ -414,7 +429,7 @@ function M.get()
 	components.active[3][4] = {
 		provider = function()
 			local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-			return "  " .. dir_name .. " "
+			return assets.dir .. dir_name .. " "
 		end,
 		enabled = is_enabled(shortline, winid, 80),
 		hl = {
