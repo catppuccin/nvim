@@ -41,9 +41,9 @@ function M.get()
 		-- Empty fill
 		BufferLineFill = { bg = bg_highlight },
 		-- Numbers
-		BufferLineNumbers = { fg = cp.subtext0 },
-		BufferLineNumbersVisible = { fg = cp.subtext0 },
-		BufferLineNumbersSelected = { fg = cp.subtext0, style = styles },
+		BufferLineNumbers = { fg = cp.subtext0, bg = inactive_bg },
+		BufferLineNumbersVisible = { fg = cp.subtext0, bg = inactive_bg },
+		BufferLineNumbersSelected = { fg = cp.subtext0, bg = active_bg, style = styles },
 		-- Errors
 		BufferLineError = { fg = cp.red },
 		BufferLineErrorVisible = { fg = cp.red },
