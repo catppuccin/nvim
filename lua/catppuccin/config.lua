@@ -68,10 +68,10 @@ local default_config = {
 			colored_indent_levels = false,
 		},
 		bufferline = {
-      enabled = true,
-      italics = true,
-      bolds = true
-    },
+			enabled = true,
+			italics = true,
+			bolds = true,
+		},
 		dashboard = true,
 		neogit = false,
 		vim_sneak = false,
