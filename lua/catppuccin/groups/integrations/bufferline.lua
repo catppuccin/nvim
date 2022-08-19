@@ -77,8 +77,8 @@ function M.get()
 		BufferLineDiagnosticVisible = { fg = cp.subtext0, bg = inactive_bg },
 		BufferLineDiagnosticSelected = { fg = cp.subtext0, bg = active_bg, style = styles },
 		-- Modified
-		BufferLineModified = { fg = cp.red, bg = inactive_bg },
-		BufferLineModifiedSelected = { fg = cp.green, bg = active_bg, style = {} },
+		BufferLineModified = { fg = cp.peach, bg = inactive_bg },
+		BufferLineModifiedSelected = { fg = cp.peach, bg = active_bg, style = {} },
 	}
 end
 
