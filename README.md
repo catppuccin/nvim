@@ -271,7 +271,22 @@ assets = {
 	left_separator = "",
 	right_separator = "",
 	bar = "█",
-	mode_icon = ""
+	mode_icon = "",
+	dir = "  ",
+	file = "   ",
+	lsp = {
+		server = "  ",
+		error = "  ",
+		warning = "  ",
+		info = "  ",
+		hint = "  ",
+	},
+	git = {
+		branch = "  ",
+		added = "  ",
+		changed = "  ",
+		removed = "  ",
+	},
 },
 sett = {
 	text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),

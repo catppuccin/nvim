@@ -13,8 +13,8 @@ local assets = {
 	right_separator = "",
 	bar = "█",
 	mode_icon = "",
-  dir = "  ",
-  file = "   ",
+	dir = "  ",
+	file = "   ",
 	lsp = {
 		server = "  ",
 		error = "  ",
@@ -221,7 +221,7 @@ function M.get()
 			fg = sett.text,
 			bg = sett.diffs,
 		},
-		icon = assets.git.removed
+		icon = assets.git.removed,
 	}
 
 	components.active[1][9] = {
