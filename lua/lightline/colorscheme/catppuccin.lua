@@ -3,7 +3,7 @@ local catppuccin = {}
 
 catppuccin.normal = {
 	left = { { cp.mantle, cp.blue }, { cp.blue, cp.base } },
-	middle = { { cp.blue, cp.surface1 } },
+	middle = { { cp.blue, cp.none } },
 	right = { { cp.overlay0, cp.base }, { cp.blue, cp.surface0 } },
 	error = { { cp.mantle, cp.red } },
 	warning = { { cp.mantle, cp.yellow } },
