@@ -345,18 +345,6 @@ require('lualine').setup {
 ```
 
 -   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
--   **NvimTree:** setting `enabled` to `true` enables this integration:
-
-```lua
-integration = {
-	nvimtree = {
-		enabled = true,
-		show_root = true, -- makes the root folder not transparent
-		transparent_panel = false, -- make the panel transparent
-	}
-}
-```
-
 -   **Neo-tree:** setting `enabled` to `true` enables this integration:
 
 ```lua
