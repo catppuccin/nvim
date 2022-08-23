@@ -12,7 +12,7 @@ function M.get()
 		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
 		CursorLine = {
-			bg = ucolors.vary_color(
+			bg = cnf.transparent_background and cp.none or ucolors.vary_color(
 				{ latte = ucolors.lighten(cp.mantle, 0.70, cp.base) },
 				ucolors.darken(cp.surface0, 0.64, cp.base)
 			),

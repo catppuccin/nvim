@@ -48,11 +48,7 @@ local default_config = {
 		gitgutter = false,
 		gitsigns = true,
 		telescope = true,
-		nvimtree = {
-			enabled = true,
-			show_root = true,
-			transparent_panel = false,
-		},
+		nvimtree = true,
 		dap = {
 			enabled = false,
 			enable_ui = false,

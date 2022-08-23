@@ -22,22 +22,22 @@ function M.get()
 		-- hightlight diagnostics in numberline
 
 		DiagnosticVirtualTextError = {
-			bg = ucolors.darken(error, darkening_percentage, cp.base),
+			bg = cnf.transparent_background and cp.none or ucolors.darken(error, darkening_percentage, cp.base),
 			fg = error,
 			style = virtual_text.errors,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextWarn = {
-			bg = ucolors.darken(warning, darkening_percentage, cp.base),
+			bg = cnf.transparent_background and cp.none or ucolors.darken(warning, darkening_percentage, cp.base),
 			fg = warning,
 			style = virtual_text.warnings,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextInfo = {
-			bg = ucolors.darken(info, darkening_percentage, cp.base),
+			bg = cnf.transparent_background and cp.none or ucolors.darken(info, darkening_percentage, cp.base),
 			fg = info,
 			style = virtual_text.information,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextHint = {
-			bg = ucolors.darken(hint, darkening_percentage, cp.base),
+			bg = cnf.transparent_background and cp.none or ucolors.darken(hint, darkening_percentage, cp.base),
 			fg = hint,
 			style = virtual_text.hints,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
