@@ -4,20 +4,15 @@ function M.get()
 	local config = require("catppuccin.config").options
 	local nvimtree = config.integrations.nvimtree
 
-	local root_dir_color = cp.mantle
-	if nvimtree.show_root == true then
-		root_dir_color = cp.blue
-	end
-
 	return {
 		NvimTreeFolderName = { fg = cp.blue },
 		NvimTreeFolderIcon = { fg = cp.blue },
-		NvimTreeNormal = { fg = cp.text, bg = nvimtree.transparent_panel and "NONE" or cp.mantle },
+		NvimTreeNormal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle },
 		NvimTreeOpenedFolderName = { fg = cp.blue },
 		NvimTreeEmptyFolderName = { fg = cp.blue },
 		NvimTreeIndentMarker = { fg = cp.overlay0 },
 		NvimTreeVertSplit = { fg = cp.base, bg = cp.base },
-		NvimTreeRootFolder = { fg = root_dir_color, style = { "bold" } },
+		NvimTreeRootFolder = { fg = cp.blue, style = { "bold" } },
 		NvimTreeSymlink = { fg = cp.pink },
 		NvimTreeStatuslineNc = { fg = cp.mantle, bg = cp.mantle },
 		NvimTreeGitDirty = { fg = cp.yellow },

@@ -168,11 +168,7 @@ require("catppuccin").setup({
 		gitsigns = true,
 		leap = false,
 		telescope = true,
-		nvimtree = {
-			enabled = true,
-			show_root = true,
-			transparent_panel = false,
-		},
+		nvimtree = true,
 		neotree = {
 			enabled = false,
 			show_root = true,
