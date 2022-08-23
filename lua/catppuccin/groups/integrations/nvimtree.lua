@@ -11,7 +11,7 @@ function M.get()
 		NvimTreeOpenedFolderName = { fg = cp.blue },
 		NvimTreeEmptyFolderName = { fg = cp.blue },
 		NvimTreeIndentMarker = { fg = cp.overlay0 },
-		NvimTreeVertSplit = { fg = cp.base, bg = cp.base },
+		NvimTreeVertSplit = { fg = cp.base, bg = cnf.transparent_background and cp.none or cp.base },
 		NvimTreeRootFolder = { fg = cp.blue, style = { "bold" } },
 		NvimTreeSymlink = { fg = cp.pink },
 		NvimTreeStatuslineNc = { fg = cp.mantle, bg = cp.mantle },
