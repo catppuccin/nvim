@@ -11,8 +11,9 @@ function M.get()
 	local active_bg = transparent_background and "NONE" or cp.base
 	local inactive_bg = transparent_background and "NONE" or cp.mantle
 
+	-- Backward compatibility
 	if type(cnf.integrations.bufferline) == "boolean" then
-		cnf.integrations.bufferline = {}
+		cnf.integrations.bufferline = { bolds = true, italics = true }
 	end
 
 	local styles = {}
