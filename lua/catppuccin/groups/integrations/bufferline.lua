@@ -11,6 +11,10 @@ function M.get()
 	local active_bg = transparent_background and "NONE" or cp.base
 	local inactive_bg = transparent_background and "NONE" or cp.mantle
 
+	if type(cnf.integrations.bufferline) == "boolean" then
+		cnf.integrations.bufferline = {}
+	end
+
 	local styles = {}
 	if cnf.integrations.bufferline.bolds then
 		table.insert(styles, "bold")
