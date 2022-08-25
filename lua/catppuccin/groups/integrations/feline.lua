@@ -410,7 +410,6 @@ function M.get()
 				icon = assets.file
 			end
 			return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "
-
 		end,
 		enabled = is_enabled(shortline, winid, 70),
 		hl = {
