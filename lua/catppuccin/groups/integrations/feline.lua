@@ -14,7 +14,7 @@ local assets = {
 	bar = "█",
 	mode_icon = "",
 	dir = "  ",
-	file = "   ",
+	file = "  ",
 	lsp = {
 		server = "  ",
 		error = "  ",
@@ -408,9 +408,10 @@ function M.get()
 			local icon = require("nvim-web-devicons").get_icon(filename, extension)
 			if icon == nil then
 				icon = assets.file
-				return icon
+				return icon .. " " .. filename .. " "
 			end
 			return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "
+
 		end,
 		enabled = is_enabled(shortline, winid, 70),
 		hl = {
