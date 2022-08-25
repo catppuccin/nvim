@@ -7,7 +7,8 @@ function M.get()
 	local hint = cp.teal
 
 	return {
-		-- These groups are for the coc.nvim, the documentation is here (https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt#L2365).
+		-- These groups are for the coc.nvim, see ":h coc-highlights"
+		-- Diagnostics
 		CocErrorHighlight = { fg = error },
 		CocErrorSign = { fg = error },
 		CocErrorVirtualText = { fg = error },
@@ -19,6 +20,12 @@ function M.get()
 		CocInfoVirtualText = { fg = info },
 		CocWarningHighlight = { fg = warning },
 		CocWarningSign = { fg = warning },
+		CocWarningVirtualText = { fg = warning },
+		-- Custom popup menu since coc v0.0.82
+		CocMenuSel = { link = "PmenuSel" },
+		CocPumSearch = { fg = info, style = { "bold" } },
+		-- InlayHints
+		CocInlayHint = { fg = hint },
 	}
 end
 
