@@ -188,7 +188,11 @@ require("catppuccin").setup({
 		vim_sneak = false,
 		fern = false,
 		barbar = false,
-		bufferline = true,
+		bufferline = {
+			enabled = true,
+			italics = true,
+			bolds = true,
+		},
 		markdown = true,
 		lightspeed = false,
 		ts_rainbow = false,
