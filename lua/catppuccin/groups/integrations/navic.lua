@@ -1,35 +1,42 @@
 local M = {}
+local config = require("catppuccin.config").options
+-- Backwards compatibility
+if type(cnf.integrations.navic) == "boolean" then
+	cnf.integrations.navic = { custom_bg = cp.mantle }
+end
+
+local background = config.transparent_background and "NONE" or (cnf.integrations.navic.custom_bg or cp.mantle)
 
 function M.get()
 	return {
-		NavicIconsFile = { fg = cp.blue, bg = "NONE" },
-		NavicIconsModule = { fg = cp.blue, bg = "NONE" },
-		NavicIconsNamespace = { fg = cp.blue, bg = "NONE" },
-		NavicIconsPackage = { fg = cp.blue, bg = "NONE" },
-		NavicIconsClass = { fg = cp.yellow, bg = "NONE" },
-		NavicIconsMethod = { fg = cp.blue, bg = "NONE" },
-		NavicIconsProperty = { fg = cp.green, bg = "NONE" },
-		NavicIconsField = { fg = cp.green, bg = "NONE" },
-		NavicIconsConstructor = { fg = cp.blue, bg = "NONE" },
-		NavicIconsEnum = { fg = cp.green, bg = "NONE" },
-		NavicIconsInterface = { fg = cp.yellow, bg = "NONE" },
-		NavicIconsFunction = { fg = cp.blue, bg = "NONE" },
-		NavicIconsVariable = { fg = cp.flamingo, bg = "NONE" },
-		NavicIconsConstant = { fg = cp.peach, bg = "NONE" },
-		NavicIconsString = { fg = cp.green, style = cnf.styles.strings, bg = "NONE" },
-		NavicIconsNumber = { fg = cp.peach, bg = "NONE" },
-		NavicIconsBoolean = { fg = cp.peach, bg = "NONE" },
-		NavicIconsArray = { fg = cp.peach, bg = "NONE" },
-		NavicIconsObject = { fg = cp.peach, bg = "NONE" },
-		NavicIconsKey = { fg = cp.pink, style = cnf.styles.keywords, bg = "NONE" },
-		NavicIconsNull = { fg = cp.peach, bg = "NONE" },
-		NavicIconsEnumMember = { fg = cp.red, bg = "NONE" },
-		NavicIconsStruct = { fg = cp.blue, bg = "NONE" },
-		NavicIconsEvent = { fg = cp.blue, bg = "NONE" },
-		NavicIconsOperator = { fg = cp.sky, bg = "NONE" },
-		NavicIconsTypeParameter = { fg = cp.blue, bg = "NONE" },
-		NavicText = { fg = cp.teal, bg = "NONE" },
-		NavicSeparator = { fg = cp.text, bg = "NONE" },
+		NavicIconsFile = { fg = cp.blue, bg = background },
+		NavicIconsModule = { fg = cp.blue, bg = background },
+		NavicIconsNamespace = { fg = cp.blue, bg = background },
+		NavicIconsPackage = { fg = cp.blue, bg = background },
+		NavicIconsClass = { fg = cp.yellow, bg = background },
+		NavicIconsMethod = { fg = cp.blue, bg = background },
+		NavicIconsProperty = { fg = cp.green, bg = background },
+		NavicIconsField = { fg = cp.green, bg = background },
+		NavicIconsConstructor = { fg = cp.blue, bg = background },
+		NavicIconsEnum = { fg = cp.green, bg = background },
+		NavicIconsInterface = { fg = cp.yellow, bg = background },
+		NavicIconsFunction = { fg = cp.blue, bg = background },
+		NavicIconsVariable = { fg = cp.flamingo, bg = background },
+		NavicIconsConstant = { fg = cp.peach, bg = background },
+		NavicIconsString = { fg = cp.green, style = cnf.styles.strings, bg = background },
+		NavicIconsNumber = { fg = cp.peach, bg = background },
+		NavicIconsBoolean = { fg = cp.peach, bg = background },
+		NavicIconsArray = { fg = cp.peach, bg = background },
+		NavicIconsObject = { fg = cp.peach, bg = background },
+		NavicIconsKey = { fg = cp.pink, style = cnf.styles.keywords, bg = background },
+		NavicIconsNull = { fg = cp.peach, bg = background },
+		NavicIconsEnumMember = { fg = cp.red, bg = background },
+		NavicIconsStruct = { fg = cp.blue, bg = background },
+		NavicIconsEvent = { fg = cp.blue, bg = background },
+		NavicIconsOperator = { fg = cp.sky, bg = background },
+		NavicIconsTypeParameter = { fg = cp.blue, bg = background },
+		NavicText = { fg = cp.teal, bg = background },
+		NavicSeparator = { fg = cp.text, bg = background },
 	}
 end
 
