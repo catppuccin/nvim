@@ -96,6 +96,7 @@ function M.get()
 	table.insert(components.active, {}) -- (1) left
 	table.insert(components.active, {}) -- (2) center
 	table.insert(components.active, {}) -- (3) right
+	table.insert(components.inactive, {})
 
 	-- global components
 	local invi_sep = {
@@ -444,6 +445,17 @@ function M.get()
 		},
 	}
 	-- ######## Right
+
+	-- Inanctive components
+	components.inactive[1][1] = {
+		provider = function()
+			return " " .. string.upper(vim.bo.ft) .. " "
+		end,
+		hl = {
+			fg = clrs.overlay2,
+			bg = clrs.mantle,
+		},
+	}
 
 	return components
 end
