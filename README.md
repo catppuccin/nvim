@@ -245,7 +245,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 ### Special Integrations
 
--   **Bufferline.nvim**: Update your Feline config to use the Catppuccin components:
+-   **Bufferline.nvim**: Update your bufferline config to use the Catppuccin components:
 
 ```lua
 bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }

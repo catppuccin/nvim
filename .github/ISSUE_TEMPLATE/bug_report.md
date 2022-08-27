@@ -6,8 +6,7 @@ labels: bug
 assignees: ""
 ---
 
-After [#169](https://github.com/catppuccin/nvim/issues/169) was opened a bunch of changes have taken place. Please read the MIGRATION GUIDE before opening an issue then tick the box below
-- [ ] I have read [MIGRATION GUIDE](https://github.com/catppuccin/nvim/issues/178)
+Please read https://github.com/catppuccin/nvim/issues/260 before opening an issue!
 
 ## Description
 
