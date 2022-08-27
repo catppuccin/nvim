@@ -85,7 +85,10 @@ local default_config = {
 		aerial = false,
 		vimwiki = true,
 		beacon = true,
-		navic = false,
+		navic = {
+			enabled = false,
+			custom_bg = "NONE",
+		},
 		overseer = false,
 	},
 	color_overrides = {},
