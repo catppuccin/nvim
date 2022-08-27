@@ -188,11 +188,6 @@ require("catppuccin").setup({
 		vim_sneak = false,
 		fern = false,
 		barbar = false,
-		bufferline = {
-			enabled = true,
-			italics = true,
-			bolds = true,
-		},
 		markdown = true,
 		lightspeed = false,
 		ts_rainbow = false,
@@ -249,6 +244,34 @@ These integrations allow catppuccin to set the theme of various plugins/stuff. T
 If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 ### Special Integrations
+
+-   **Bufferline.nvim**: Update your Feline config to use the Catppuccin components:
+
+```lua
+bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
+```
+
+Configurations are self-explanatory:
+
+```lua
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+bufferline.setup {
+	highlights = require("catppuccin.groups.integrations.bufferline").get {
+		styles = { "italic", "bold" },
+		custom = {
+			all = {
+				fill = { bg = "#000000" },
+			},
+			mocha = {
+				background = { fg = mocha.text },
+			},
+			latte = {
+				background = { fg = "#000000" },
+			},
+		},
+	},
+}
+```
 
 -   **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
