@@ -292,7 +292,7 @@ catppuccin, checkout this directory: `lua/catppuccin/groups/integrations/`
 SPECIAL INTEGRATIONS ~
 
 
-- **Bufferline.nvim**: Update your Feline config to use the Catppuccin components:
+- **Bufferline.nvim**: Update your bufferline config to use the Catppuccin components:
 
 
 >
