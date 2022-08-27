@@ -1,6 +1,11 @@
 local M = {}
 local config = require("catppuccin.config").options
-local background = config.transparent_background and "NONE" or cp.mantle
+-- Backwards compatibility
+if type(cnf.integrations.navic) == "boolean" then
+	cnf.integrations.navic = { custom_bg = cp.mantle }
+end
+
+local background = config.transparent_background and "NONE" or (cnf.integrations.navic.custom_bg or cp.mantle)
 
 function M.get()
 	return {
