@@ -1,9 +1,12 @@
 local M = {}
 
 function M.get()
-	local config = require("catppuccin.config").options
 	return {
-		NormalFloat = { bg = config.transparent_background and cp.none or cp.mantle },
+		TreesitterContext = {
+			bg = cnf.transparent_background and cp.none or cp.mantle,
+			fg = cp.text,
+		},
+		TreesitterContextLineNumber = { fg = cp.surface1 },
 	}
 end
 
