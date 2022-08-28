@@ -30,6 +30,7 @@ This port of Catppuccin is special because it was the first one and the one that
 -   [Compile](https://github.com/catppuccin/nvim#Compile) user config for faster startuptime
 -   Integrations with a bunch of plugins:
     -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
+    -   [Nvim-Treesitter-Context](https://github.com/nvim-treesitter/nvim-treesitter-context)
     -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
     -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
     -   [Feline](https://github.com/feline-nvim/feline.nvim)
@@ -145,6 +146,7 @@ require("catppuccin").setup({
 	},
 	integrations = {
 		treesitter = true,
+		treesitter_context = true,
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
