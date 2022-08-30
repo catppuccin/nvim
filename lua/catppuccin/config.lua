@@ -27,6 +27,7 @@ local default_config = {
 	integrations = {
 		treesitter = true,
 		treesitter_context = true,
+		fidget = true,
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
