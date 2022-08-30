@@ -389,6 +389,17 @@ integration = {
 }
 ```
 
+-   **Fidget:** set `window.blend` to `0`:
+
+```lua
+require("fidget").setup {
+    window = {
+        blend = 0,
+    },
+	-- ... the rest of your fidget config
+}
+```
+
 -   **Nvim-dap:** setting `enabled` to `true`:
 
 ```lua
