@@ -87,6 +87,7 @@ it under the `old-catppuccino`
     - Nvim-navic <https://github.com/SmiteshP/nvim-navic>
     - Vim-clap <https://github.com/liuchengxu/vim-clap>
     - Overseer.nvim <https://github.com/stevearc/overseer.nvim>
+    - Fidget.nvim <https://github.com/j-hui/fidget.nvim>
 
 
 ==============================================================================
@@ -239,6 +240,7 @@ Catppuccin’s settings:
                 custom_bg = "NONE",
             },
             overseer = false,
+            fidget = true,
         },
         color_overrides = {},
         highlight_overrides = {},
@@ -449,6 +451,20 @@ Here are the defaults
             show_root = true, -- makes the root folder not transparent
             transparent_panel = false, -- make the panel transparent
         }
+    }
+<
+
+
+
+- **Fidget:** set `window.blend` to `0`:
+
+
+>
+    require("fidget").setup {
+        window = {
+            blend = 0,
+        },
+        -- ... the rest of your fidget config
     }
 <
 
