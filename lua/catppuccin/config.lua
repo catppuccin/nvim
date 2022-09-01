@@ -26,7 +26,6 @@ local default_config = {
 	},
 	integrations = {
 		treesitter = true,
-		treesitter_context = true,
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
@@ -75,18 +74,19 @@ local default_config = {
 		ts_rainbow = false,
 		hop = false,
 		notify = true,
-		telekasten = true,
-		symbols_outline = true,
+		telekasten = false,
+		symbols_outline = false,
 		mini = false,
 		aerial = false,
-		vimwiki = true,
-		beacon = true,
+		vimwiki = false,
+		beacon = false,
 		navic = {
 			enabled = false,
 			custom_bg = "NONE",
 		},
 		overseer = false,
-		fidget = true,
+		fidget = false,
+		treesitter_context = false,
 	},
 	color_overrides = {},
 	highlight_overrides = {},

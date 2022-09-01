@@ -120,16 +120,16 @@ You may pass a lua table to the `setup()` function in order to edit any of Catpp
 
 ```lua
 require("catppuccin").setup({
-	dim_inactive = {
-		enabled = false,
-		shade = "dark",
-		percentage = 0.15,
-	},
 	transparent_background = false,
 	term_colors = false,
 	compile = {
 		enabled = false,
-		path = vim.fn.stdpath "cache" .. "/catppuccin",
+		path = vim.fn.stdpath("cache") .. "/catppuccin",
+	},
+	dim_inactive = {
+		enabled = false,
+		shade = "dark",
+		percentage = 0.15,
 	},
 	styles = {
 		comments = { "italic" },
@@ -147,7 +147,6 @@ require("catppuccin").setup({
 	},
 	integrations = {
 		treesitter = true,
-		treesitter_context = true,
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
@@ -169,17 +168,16 @@ require("catppuccin").setup({
 		lsp_saga = false,
 		gitgutter = false,
 		gitsigns = true,
-		leap = false,
 		telescope = true,
 		nvimtree = true,
+		dap = {
+			enabled = false,
+			enable_ui = false,
+		},
 		neotree = {
 			enabled = false,
 			show_root = true,
 			transparent_panel = false,
-		},
-		dap = {
-			enabled = false,
-			enable_ui = false,
 		},
 		which_key = false,
 		indent_blankline = {
@@ -193,21 +191,23 @@ require("catppuccin").setup({
 		barbar = false,
 		markdown = true,
 		lightspeed = false,
+		leap = false,
 		ts_rainbow = false,
 		hop = false,
 		notify = true,
-		telekasten = true,
-		symbols_outline = true,
+		telekasten = false,
+		symbols_outline = false,
 		mini = false,
 		aerial = false,
-		vimwiki = true,
-		beacon = true,
+		vimwiki = false,
+		beacon = false,
 		navic = {
 			enabled = false,
 			custom_bg = "NONE",
 		},
 		overseer = false,
-		fidget = true,
+		fidget = false,
+		treesitter_context = false,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
