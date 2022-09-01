@@ -27,7 +27,6 @@ local default_config = {
 	integrations = {
 		treesitter = true,
 		treesitter_context = true,
-		fidget = true,
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
@@ -87,6 +86,7 @@ local default_config = {
 			custom_bg = "NONE",
 		},
 		overseer = false,
+		fidget = true,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
