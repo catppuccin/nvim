@@ -86,6 +86,7 @@ local default_config = {
 			custom_bg = "NONE",
 		},
 		overseer = false,
+		fidget = true,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
