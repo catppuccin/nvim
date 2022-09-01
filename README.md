@@ -68,6 +68,7 @@ This port of Catppuccin is special because it was the first one and the one that
     -   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
     -   [Vim-clap](https://github.com/liuchengxu/vim-clap)
     -   [Overseer.nvim](https://github.com/stevearc/overseer.nvim)
+    -   [Fidget.nvim](https://github.com/j-hui/fidget.nvim)
 
 # Installation
 
@@ -206,6 +207,7 @@ require("catppuccin").setup({
 			custom_bg = "NONE",
 		},
 		overseer = false,
+    	fidget = true,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
@@ -565,6 +567,7 @@ require("catppuccin").setup {
 	}
 }
 ```
+
 # Compile
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
