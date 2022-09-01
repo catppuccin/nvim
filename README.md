@@ -207,7 +207,7 @@ require("catppuccin").setup({
 			custom_bg = "NONE",
 		},
 		overseer = false,
-    	fidget = true,
+		fidget = true,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
