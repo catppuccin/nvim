@@ -917,10 +917,6 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</tr>
-
-<td>
-
 Here are the default options
 
 <td>
