@@ -581,7 +581,7 @@ require("fidget").setup {
 ```
 </details>
 
-</tr> <td> Here are the default options <td>
+<details> <summary> Here are the default options <td>
 
 ```lua
 require("catppuccin").setup({
