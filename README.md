@@ -146,7 +146,8 @@ These integrations allow catppuccin to set the theme of various plugins/stuff. T
 
 If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
-Here is the default options:
+<details> <summary>Here is the default options</summary>
+
 ```lua
 require("catppuccin").setup({
 	integrations = {
@@ -215,6 +216,7 @@ require("catppuccin").setup({
 	},
 })
 ```
+</details>
 
 <details> <summary> Click to see the list of plugins and their configurations</summary>
 
