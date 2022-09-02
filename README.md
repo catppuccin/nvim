@@ -433,7 +433,7 @@ integration = {
 ```
 </details>
 
-<details> <summary>nvim-dap</a> & nvim-dap-ui</a>
+<details> <summary>nvim-dap</a> & nvim-dap-ui</a> </summary>
 
 Setting `enabled` to `true`:
 
@@ -460,7 +460,7 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 
 <details> <summary>lightline.vim</summary>
 
-**Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+Use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
 ```vim
 let g:lightline = {'colorscheme': 'catppuccin'}
