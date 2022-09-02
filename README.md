@@ -216,7 +216,8 @@ require("catppuccin").setup({
 })
 ```
 
-List of plugins and their configurations:
+<details> <summary> Click to see the list of plugins and their configurations</summary>
+
 <table>
 <tr>
 <td> Plugin </td> <td> Config </td>
@@ -389,12 +390,6 @@ sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition"
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
 </td> </tr>
-</tr> <td>  <td>
-
-```lua
-
-```
-</td> </tr>
 </tr> <td> <a href="https://github.com/airblade/vim-gitgutter">Git Gutter</a> <td>
 
 ```lua
@@ -557,10 +552,12 @@ require("fidget").setup {
 </tr> <td> <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">Nvim-Treesitter-Context</a> <td>
 
 ```lua
-
+treesitter_context = false
 ```
 </td> </tr>
 </table>
+
+</details>
 
 ### Special Integrations
 
