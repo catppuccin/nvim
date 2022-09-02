@@ -264,7 +264,7 @@ Here are the default options:
 <
 
 
-Here is the list of supported plugins and their configurations
+Supported plugins and their configurations:
 
 <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a>
 
