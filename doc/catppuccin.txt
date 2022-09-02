@@ -197,7 +197,7 @@ special integrations), for example:
 <
 
 
-Here are the default options
+<strong> Example config </strong>
 
 >
     require("catppuccin").setup({
@@ -269,7 +269,9 @@ Here are the default options
 <
 
 
-Supported plugins and their modules:
+
+- Supported plugins and their modules:
+
 
 │                                       Plugin                                       │      Module      │
 │nvim-treesitter <https://github.com/nvim-treesitter/nvim-treesitter>                │treesitter        │
