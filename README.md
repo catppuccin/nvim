@@ -106,7 +106,7 @@ require("catppuccin").setup({
 		operators = {},
 	},
 	integrations = {
-		-- For various plugins support see https://github.com/catppuccin/nvim#integrations
+		-- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
 	},
 	color_overrides = {},
 	highlight_overrides = {},
