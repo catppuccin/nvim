@@ -606,6 +606,7 @@ detailed explanation.:
 <td>
 
 <a href="https://github.com/mfussenegger/nvim-dap">Nvim-dap</a>
+<a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a>
 
 <td>
 
@@ -640,8 +641,6 @@ detailed explanation.:
 </tr>
 
 <td>
-
-<a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a>
 
 <td>
 
