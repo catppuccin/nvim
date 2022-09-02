@@ -226,45 +226,261 @@ List of plugins and their configurations:
 treesitter = true
 ```
 </td> </tr>
--   [Native LSP](https://github.com/neovim/nvim-lspconfig)
--   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
--   [Feline](https://github.com/feline-nvim/feline.nvim)
--   [Lualine](https://github.com/hoob3rt/lualine.nvim)
--   [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
--   [LSP Saga](https://github.com/glepnir/lspsaga.nvim/)
--   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
--   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
--   [Trouble](https://github.com/folke/trouble.nvim)
--   [WhichKey](https://github.com/folke/which-key.nvim)
--   [Bufferline](https://github.com/akinsho/bufferline.nvim)
--   [BarBar](https://github.com/romgrk/barbar.nvim)
--   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
--   [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
--   [Nvim-dap](https://github.com/mfussenegger/nvim-dap)
--   [Nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
--   [Git Gutter](https://github.com/airblade/vim-gitgutter)
--   [Fern](https://github.com/lambdalisue/fern.vim)
--   [Lightline](https://github.com/itchyny/lightline.vim)
--   [Dashboard](https://github.com/glepnir/dashboard-nvim)
--   [Markdown](https://www.markdownguide.org/)
--   [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
--   [Leap.nvim](https://github.com/ggandor/leap.nvim)
--   [Hop](https://github.com/phaazon/hop.nvim)
--   [Sneak](https://github.com/justinmk/vim-sneak)
--   [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
--   [Neogit](https://github.com/TimUntersberger/neogit)
--   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
--   [Notify](https://github.com/rcarriga/nvim-notify)
--   [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
--   [Mini.nvim](https://github.com/echasnovski/mini.nvim)
--   [Aerial.nvim](https://github.com/stevearc/aerial.nvim)
--   [Beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
--   [VimWiki](https://github.com/vimwiki/vimwiki)
--   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
--   [Vim-clap](https://github.com/liuchengxu/vim-clap)
--   [Overseer.nvim](https://github.com/stevearc/overseer.nvim)
--   [Fidget.nvim](https://github.com/j-hui/fidget.nvim)
--   [Nvim-Treesitter-Context](https://github.com/nvim-treesitter/nvim-treesitter-context)
+
+</tr> <td> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> <td>
+
+```lua
+native_lsp = {
+	enabled = true,
+	virtual_text = {
+		errors = { "italic" },
+		hints = { "italic" },
+		warnings = { "italic" },
+		information = { "italic" },
+	},
+	underlines = {
+		errors = { "underline" },
+		hints = { "underline" },
+		warnings = { "underline" },
+		information = { "underline" },
+	},
+},
+```
+</td> </tr>
+</tr> <td> <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> <td>
+
+```lua
+treesitter = true
+```
+</td> </tr>
+</tr> <td> <a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/feline-nvim/feline.nvim">Feline</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/hoob3rt/lualine.nvim">Lualine</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/hrsh7th/nvim-cmp">Nvim-cmp</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/glepnir/lspsaga.nvim/">LSP Saga</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/lewis6991/gitsigns.nvim">Git signs</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/lukas-reineke/indent-blankline.nvim">Indent Blankline</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/folke/trouble.nvim">Trouble</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/folke/which-key.nvim">WhichKey</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/akinsho/bufferline.nvim">Bufferline</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/romgrk/barbar.nvim">BarBar</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/kyazdani42/nvim-tree.lua">NvimTree</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/nvim-neo-tree/neo-tree.nvim">Neo-tree</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/mfussenegger/nvim-dap">Nvim-dap</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/airblade/vim-gitgutter">Git Gutter</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/lambdalisue/fern.vim">Fern</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/itchyny/lightline.vim">Lightline</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/glepnir/dashboard-nvim">Dashboard</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://w</tr> <td> <a href=ww.markdownguide.org/">Markdown</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/ggandor/lightspeed.nvim">Lightspeed</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/ggandor/leap.nvim">Leap.nvim</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/phaazon/hop.nvim">Hop</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/justinmk/vim-sneak">Sneak</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/p00f/nvim-ts-rainbow">Nvim-ts-Rainbow</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/TimUntersberger/neogit">Neogit</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/renerocksai/telekasten.nvim">Telekasten</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/rcarriga/nvim-notify">Notify</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/simrat39/symbols-outline.nvim">Symbols-Outline</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/echasnovski/mini.nvim">Mini.nvim</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/stevearc/aerial.nvim">Aerial.nvim</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/DanilaMihailov/beacon.nvim">Beacon.nvim</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/vimwiki/vimwiki">VimWiki</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/SmiteshP/nvim-navic">Nvim-navic</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/liuchengxu/vim-clap">Vim-clap</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/stevearc/overseer.nvim">Overseer.nvim</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/j-hui/fidget.nvim">Fidget.nvim</a> <td>
+
+```lua
+
+```
+</td> </tr>
+"https://g</tr> <td> <a href=ithub.com/nvim-treesitter/nvim-treesitter-context">Nvim-Treesitter-Context</a> <td>
+
+```lua
+
+```
+</td> </tr>
 </table>
 
 ### Special Integrations
