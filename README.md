@@ -260,7 +260,7 @@ require("catppuccin").setup({
 ### Special integrations
 <details> <summary> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> </summary>
 
-**Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
+Setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 
 ```lua
 native_lsp = {
@@ -314,7 +314,7 @@ bufferline.setup {
 
 <details> <summary> <a href="https://github.com/feline-nvim/feline.nvim">feline.nvim</a> </summary>
 
-**Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
+First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
 ```lua
 local ctp_feline = require('catppuccin.groups.integrations.feline')
@@ -394,7 +394,7 @@ mode_colors = {
 
 <details> <summary> <a href="https://github.com/hoob3rt/lualine.nvim">lualine.nvim</a> </summary>
 
-**Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
+Use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
 ```lua
 require('lualine').setup {
@@ -408,7 +408,7 @@ require('lualine').setup {
 
 <details> <summary> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">indent-blankline.nvim</a> </summary>
 
-**Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
+Setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
 
 ```lua
 indent_blankline = {
@@ -420,7 +420,7 @@ indent_blankline = {
 
 <details> <summary> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">neo-tree.nvim</a> </summary>
 
-**Neo-tree:** setting `enabled` to `true` enables this integration:
+Setting `enabled` to `true` enables this integration:
 
 ```lua
 integration = {
@@ -438,7 +438,7 @@ integration = {
 <a href="https://github.com/rcarriga/nvim-dap-ui">nvim-dap-ui</a>
 </summary>
 
-**Nvim-dap:** setting `enabled` to `true`:
+Setting `enabled` to `true`:
 
 ```lua
 integration = {
@@ -472,7 +472,7 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 
 <details> <summary> <a href="https://github.com/liuchengxu/vim-clap">vim-clap</a> </summary>
 
-**vim-clap:** use this to set it up:
+Use this to set it up:
 
 ```vim
 let g:clap_theme = 'catppuccin'
@@ -481,7 +481,7 @@ let g:clap_theme = 'catppuccin'
 
 <details> <summary> <a href="https://github.com/SmiteshP/nvim-navic">nvim-navic</a> </summary>
 
-**Nvim-navic:** setting `enabled` to `true`:
+Setting `enabled` to `true`:
 
 ```lua
 navic = {
@@ -504,7 +504,7 @@ require("nvim-navic").setup {
 fidget = false
 ```
 
-**Fidget:** set `window.blend` to `0`:
+Set `window.blend` to `0`:
 
 ```lua
 require("fidget").setup {
