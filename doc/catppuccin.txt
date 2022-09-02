@@ -196,9 +196,9 @@ some special integrations…
 
 Supported plugins and their modules:
 
-Plugin | Module |
+│                               Plugin                               │  Module  │
+│nvim-treesitter <https://github.com/nvim-treesitter/nvim-treesitter>│treesitter│
 
-nvim-treesitter <https://github.com/nvim-treesitter/nvim-treesitter> | treesitter |
 
 </tr>
 
