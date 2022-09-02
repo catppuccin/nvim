@@ -362,7 +362,10 @@ neotree = {
 },
 ```
 </td> </tr>
-</tr> <td> <a href="https://github.com/mfussenegger/nvim-dap">Nvim-dap</a> <td>
+</tr> <td>
+<a href="https://github.com/mfussenegger/nvim-dap">Nvim-dap</a>
+<a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a>
+<td>
 
 **Nvim-dap:** setting `enabled` to `true`:
 
@@ -386,7 +389,7 @@ sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition"
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
 </td> </tr>
-</tr> <td> <a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a> <td>
+</tr> <td>  <td>
 
 ```lua
 
