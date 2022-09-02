@@ -142,7 +142,7 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 ## Integrations
 
-List of supported plugins and their modules:
+List of supported plugins and their modules (See also [Special integrations](https://github.com/catppuccin/nvim#special-integrations)):
 
 | Plugin | Module |
 | ------ | ------ |
@@ -175,7 +175,7 @@ List of supported plugins and their modules:
 | [overseer.nvim](https://github.com/stevearc/overseer.nvim) | overseer |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context |
 
-These integrations allow catppuccin to set the theme of various plugins. To enable an integration you just need to set it to `true` (there are also some special integrations), for example:
+These integrations allow catppuccin to set the theme of various plugins. To enable an integration you just need to set it to `true`, for example:
 
 ```lua
 require("catppuccin").setup({
@@ -185,7 +185,7 @@ require("catppuccin").setup({
 })
 ```
 
-<details> <summary> <strong> Example config </strong> </summary>
+<details> <summary> <strong> Click here to see an example config </strong> </summary>
 
 ```lua
 require("catppuccin").setup({
