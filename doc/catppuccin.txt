@@ -266,46 +266,14 @@ Here is the default options:
 
 Here is the list of plugins and their configurations
 
-<table>
-
-<tr>
-
-<td>
-
-Plugin
-
-</td>
-
-<td>
-
-Config
-
-</td>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a>
-
-<td>
 
 >
     treesitter = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a>
-
-<td>
 
 **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In
 the inners tables you can set the style for the diagnostics, both
@@ -331,51 +299,21 @@ directly at the thing (e.g. an error)).
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a>
-
-<td>
 
 >
     treesitter = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a>
-
-<td>
 
 >
     telescope = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/feline-nvim/feline.nvim">Feline</a>
-
-<td>
 
 **Feline.nvim**: First make sure that the kyazdani42/nvim-web-devicons
 <https://github.com/kyazdani42/nvim-web-devicons/> plugin is installed. Then
@@ -456,17 +394,7 @@ Here are the defaults
 
 <br />
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/hoob3rt/lualine.nvim">Lualine</a>
-
-<td>
 
 **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme
 name. It will pick the one set in your config):
@@ -481,68 +409,28 @@ name. It will pick the one set in your config):
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/hrsh7th/nvim-cmp">Nvim-cmp</a>
-
-<td>
 
 >
     cmp = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/glepnir/lspsaga.nvim/">LSP Saga</a>
-
-<td>
 
 >
     lsp_saga = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/lewis6991/gitsigns.nvim">Git signs</a>
-
-<td>
 
 >
     gitsigns = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/lukas-reineke/indent-blankline.nvim">Indent Blankline</a>
-
-<td>
 
 **Indent-blankline.nvim**: setting `enabled` to `true` enables this
 integration. `colored_indent_levels` enables char highlights per indent level.
@@ -558,51 +446,21 @@ to set the latter up.
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/folke/trouble.nvim">Trouble</a>
-
-<td>
 
 >
     lsp_trouble = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/folke/which-key.nvim">WhichKey</a>
-
-<td>
 
 >
     which_key = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/akinsho/bufferline.nvim">Bufferline</a>
-
-<td>
 
 Update your bufferline config to use the Catppuccin components:
 
@@ -635,51 +493,21 @@ detailed explanation.:
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/romgrk/barbar.nvim">BarBar</a>
-
-<td>
 
 >
     barbar = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/kyazdani42/nvim-tree.lua">NvimTree</a>
-
-<td>
 
 >
     nvimtree = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Neo-tree</a>
-
-<td>
 
 **Neo-tree:** setting `enabled` to `true` enables this integration:
 
@@ -694,18 +522,8 @@ detailed explanation.:
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/mfussenegger/nvim-dap">Nvim-dap</a>
 <a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a>
-
-<td>
 
 **Nvim-dap:** setting `enabled` to `true`:
 
@@ -731,51 +549,21 @@ detailed explanation.:
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/airblade/vim-gitgutter">Git Gutter</a>
-
-<td>
 
 >
     gitgutter = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/lambdalisue/fern.vim">Fern</a>
-
-<td>
 
 >
     fern = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/itchyny/lightline.vim">Lightline</a>
-
-<td>
 
 **Lightline:** use this to set it up (Note: `catppuccin` is the only valid
 colorscheme name. It will pick the one set in your config):
@@ -785,272 +573,112 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/glepnir/dashboard-nvim">Dashboard</a>
-
-<td>
 
 >
     dashboard = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://www.markdownguide.org/">Markdown</a>
-
-<td>
 
 >
     markdown = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/ggandor/lightspeed.nvim">Lightspeed</a>
-
-<td>
 
 >
     lightspeed = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/ggandor/leap.nvim">Leap.nvim</a>
-
-<td>
 
 >
     leap = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/phaazon/hop.nvim">Hop</a>
-
-<td>
 
 >
     hop = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/justinmk/vim-sneak">Sneak</a>
-
-<td>
 
 >
     vim_sneak = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/p00f/nvim-ts-rainbow">Nvim-ts-Rainbow</a>
-
-<td>
 
 >
     ts_rainbow = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/TimUntersberger/neogit">Neogit</a>
-
-<td>
 
 >
     neogit = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/renerocksai/telekasten.nvim">Telekasten</a>
-
-<td>
 
 >
     telekasten = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/rcarriga/nvim-notify">Notify</a>
-
-<td>
 
 >
     notify = true
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/simrat39/symbols-outline.nvim">Symbols-Outline</a>
-
-<td>
 
 >
     symbols_outline = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/echasnovski/mini.nvim">Mini.nvim</a>
-
-<td>
 
 >
     mini = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/stevearc/aerial.nvim">Aerial.nvim</a>
-
-<td>
 
 >
     aerial = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/DanilaMihailov/beacon.nvim">Beacon.nvim</a>
-
-<td>
 
 >
     beacon = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/vimwiki/vimwiki">VimWiki</a>
-
-<td>
 
 >
     vimwiki = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/SmiteshP/nvim-navic">Nvim-navic</a>
-
-<td>
 
 **Nvim-navic:** setting `enabled` to `true`:
 
@@ -1070,17 +698,7 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/liuchengxu/vim-clap">Vim-clap</a>
-
-<td>
 
 **vim-clap:** use this to set it up:
 
@@ -1089,34 +707,14 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/stevearc/overseer.nvim">Overseer.nvim</a>
-
-<td>
 
 >
     overseer = false
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/j-hui/fidget.nvim">Fidget.nvim</a>
-
-<td>
 
 >
     fidget = false
@@ -1135,28 +733,12 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
 <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">Nvim-Treesitter-Context</a>
-
-<td>
 
 >
     treesitter_context = false
 <
 
-
-</td>
-
-</tr>
-
-</table>
 
 ==============================================================================
 6. Customize highlights                      *catppuccin-customize-highlights*
