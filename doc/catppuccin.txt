@@ -192,7 +192,7 @@ If you’d like to know which highlight groups are being affected by
 catppuccin, checkout this directory: `lua/catppuccin/groups/integrations/`
 <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
 
-Here is the default options:
+Here are the default options:
 
 >
     require("catppuccin").setup({
@@ -455,25 +455,6 @@ Here is the list of supported plugins and their configurations
 <
 
 
-<a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a>
-
->
-    fidget = false
-<
-
-
-**Fidget:** set `window.blend` to `0`:
-
->
-    require("fidget").setup {
-        window = {
-            blend = 0,
-        },
-        -- ... the rest of your fidget config
-    }
-<
-
-
 <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">nvim-treesitter-context</a>
 
 >
@@ -519,7 +500,7 @@ Update your bufferline config to use the Catppuccin components:
 
 
 Configurations are self-explanatory, see `:h bufferline-highlights` for
-detailed explanation.:
+detailed explanation:
 
 >
     local mocha = require("catppuccin.palettes").get_palette "mocha"
@@ -731,6 +712,25 @@ colorscheme name. It will pick the one set in your config):
     -- You NEED to enable highlight in nvim-navic setting or it won't work
     require("nvim-navic").setup {
         highlight = true
+    }
+<
+
+
+<a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a>
+
+>
+    fidget = false
+<
+
+
+**Fidget:** set `window.blend` to `0`:
+
+>
+    require("fidget").setup {
+        window = {
+            blend = 0,
+        },
+        -- ... the rest of your fidget config
     }
 <
 
