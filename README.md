@@ -577,7 +577,8 @@ require("fidget").setup {
 ```
 </details>
 
-Here are the default options:
+
+<details> <summary> Here are the default options </summary>
 
 ```lua
 require("catppuccin").setup({
@@ -647,6 +648,7 @@ require("catppuccin").setup({
 	},
 })
 ```
+</details>
 
 # Customize highlights
 
