@@ -152,7 +152,7 @@ require("catppuccin").setup({
 })
 ```
 
-<details> <summary> Here are the default options </summary>
+<details> <summary> <strong> Example config </strong> </summary>
 
 ```lua
 require("catppuccin").setup({
@@ -224,7 +224,7 @@ require("catppuccin").setup({
 ```
 </details>
 
-Supported plugins and their modules:
+- Supported plugins and their modules:
 
 | Plugin | Module |
 | ------ | ------ |
