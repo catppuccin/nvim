@@ -217,7 +217,7 @@ require("catppuccin").setup({
 })
 ```
 
-Here is the list of plugins and their configurations
+Here is the list of supported plugins and their configurations
 
 <details> <summary> <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> </summary>
 
@@ -246,12 +246,6 @@ native_lsp = {
 		information = { "underline" },
 	},
 },
-```
-</details>
-<details> <summary> <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> </summary>
-
-```lua
-treesitter = true
 ```
 </details>
 <details> <summary> <a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a> </summary>
