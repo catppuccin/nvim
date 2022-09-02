@@ -312,8 +312,32 @@ which_key = false
 </td> </tr>
 </tr> <td> <a href="https://github.com/akinsho/bufferline.nvim">Bufferline</a> <td>
 
-```lua
+Update your bufferline config to use the Catppuccin components:
 
+```lua
+bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
+```
+
+Configurations are self-explanatory, see `:h bufferline-highlights` for detailed explanation.:
+
+```lua
+local mocha = require("catppuccin.palettes").get_palette "mocha"
+bufferline.setup {
+	highlights = require("catppuccin.groups.integrations.bufferline").get {
+		styles = { "italic", "bold" },
+		custom = {
+			all = {
+				fill = { bg = "#000000" },
+			},
+			mocha = {
+				background = { fg = mocha.text },
+			},
+			latte = {
+				background = { fg = "#000000" },
+			},
+		},
+	},
+}
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/romgrk/barbar.nvim">BarBar</a> <td>
@@ -325,19 +349,41 @@ barbar = false
 </tr> <td> <a href="https://github.com/kyazdani42/nvim-tree.lua">NvimTree</a> <td>
 
 ```lua
-
+nvimtree = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Neo-tree</a> <td>
 
 ```lua
-
+neotree = {
+	enabled = false,
+	show_root = true,
+	transparent_panel = false,
+},
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/mfussenegger/nvim-dap">Nvim-dap</a> <td>
 
-```lua
+**Nvim-dap:** setting `enabled` to `true`:
 
+```lua
+integration = {
+	dap = {
+		enabled = true,
+		enable_ui = true, -- enable nvim-dap-ui
+	}
+}
+```
+
+```lua
+-- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
+require("dap")
+
+local sign = vim.fn.sign_define
+
+sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a> <td>
@@ -349,25 +395,27 @@ barbar = false
 </tr> <td> <a href="https://github.com/airblade/vim-gitgutter">Git Gutter</a> <td>
 
 ```lua
-
+gitgutter = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/lambdalisue/fern.vim">Fern</a> <td>
 
 ```lua
-
+fern = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/itchyny/lightline.vim">Lightline</a> <td>
 
-```lua
+**Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
+```vim
+let g:lightline = {'colorscheme': 'catppuccin'}
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/glepnir/dashboard-nvim">Dashboard</a> <td>
 
 ```lua
-
+dashboard = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://www.markdownguide.org/">Markdown</a> <td>
@@ -379,103 +427,128 @@ markdown = true
 </tr> <td> <a href="https://github.com/ggandor/lightspeed.nvim">Lightspeed</a> <td>
 
 ```lua
-
+lightspeed = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/ggandor/leap.nvim">Leap.nvim</a> <td>
 
 ```lua
-
+leap = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/phaazon/hop.nvim">Hop</a> <td>
 
 ```lua
-
+hop = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/justinmk/vim-sneak">Sneak</a> <td>
 
 ```lua
-
+vim_sneak = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/p00f/nvim-ts-rainbow">Nvim-ts-Rainbow</a> <td>
 
 ```lua
-
+ts_rainbow = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/TimUntersberger/neogit">Neogit</a> <td>
 
 ```lua
-
+neogit = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/renerocksai/telekasten.nvim">Telekasten</a> <td>
 
 ```lua
-
+telekasten = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/rcarriga/nvim-notify">Notify</a> <td>
 
 ```lua
-
+notify = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/simrat39/symbols-outline.nvim">Symbols-Outline</a> <td>
 
 ```lua
-
+symbols_outline = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/echasnovski/mini.nvim">Mini.nvim</a> <td>
 
 ```lua
-
+mini = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/stevearc/aerial.nvim">Aerial.nvim</a> <td>
 
 ```lua
-
+aerial = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/DanilaMihailov/beacon.nvim">Beacon.nvim</a> <td>
 
 ```lua
-
+beacon = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/vimwiki/vimwiki">VimWiki</a> <td>
 
 ```lua
-
+vimwiki = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/SmiteshP/nvim-navic">Nvim-navic</a> <td>
 
-```lua
+**Nvim-navic:** setting `enabled` to `true`:
 
+```lua
+navic = {
+	enabled = false,
+	custom_bg = "NONE",
+},
+```
+
+```lua
+-- You NEED to enable highlight in nvim-navic setting or it won't work
+require("nvim-navic").setup {
+	highlight = true
+}
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/liuchengxu/vim-clap">Vim-clap</a> <td>
 
-```lua
+**vim-clap:** use this to set it up:
 
+```vim
+let g:clap_theme = 'catppuccin'
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/stevearc/overseer.nvim">Overseer.nvim</a> <td>
 
 ```lua
-
+overseer = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/j-hui/fidget.nvim">Fidget.nvim</a> <td>
 
 ```lua
+fidget = false
+```
 
+**Fidget:** set `window.blend` to `0`:
+
+```lua
+require("fidget").setup {
+    window = {
+        blend = 0,
+    },
+	-- ... the rest of your fidget config
+}
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">Nvim-Treesitter-Context</a> <td>
