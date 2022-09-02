@@ -151,169 +151,33 @@ Supported plugins and their modules:
 | Plugin | Module |
 | ------ | ------ |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | treesitter |
-
-</tr> <td> <a href="https://github.com/nvim-telescope/telescope.nvim">telescope.nvim</a> <td>
-
-telescope
-</details>
-</tr> <td> <a href="https://github.com/hrsh7th/nvim-cmp">nvim-cmp</a> <td>
-
-```lua
-cmp = true
-```
-</details>
-</tr> <td> <a href="https://github.com/glepnir/lspsaga.nvim/">lspsaga.nvim</a> <td>
-
-```lua
-lsp_saga = false
-```
-</details>
-</tr> <td> <a href="https://github.com/lewis6991/gitsigns.nvim">gitsigns.nvim</a> <td>
-
-```lua
-gitsigns = true
-```
-</details>
-</tr> <td> <a href="https://github.com/folke/trouble.nvim">trouble.nvim</a> <td>
-
-```lua
-lsp_trouble = false
-```
-</details>
-</tr> <td> <a href="https://github.com/folke/which-key.nvim">which-key.nvim</a> <td>
-
-```lua
-which_key = false
-```
-</details>
-</tr> <td> <a href="https://github.com/romgrk/barbar.nvim">barbar.nvim</a> <td>
-
-```lua
-barbar = false
-```
-</details>
-</tr> <td> <a href="https://github.com/kyazdani42/nvim-tree.lua">nvim-tree.lua</a> <td>
-
-```lua
-nvimtree = true
-```
-</details>
-</tr> <td> <a href="https://github.com/airblade/vim-gitgutter">vim-gitgutter</a> <td>
-
-```lua
-gitgutter = false
-```
-</details>
-</tr> <td> <a href="https://github.com/lambdalisue/fern.vim">fern.vim</a> <td>
-
-```lua
-fern = false
-```
-</details>
-</tr> <td> <a href="https://github.com/glepnir/dashboard-nvim">dashboard-nvim</a> <td>
-
-```lua
-dashboard = true
-```
-</details>
-</tr> <td> <a href="https://www.markdownguide.org/">Markdown</a> <td>
-
-```lua
-markdown = true
-```
-</details>
-</tr> <td> <a href="https://github.com/ggandor/lightspeed.nvim">lightspeed.nvim</a> <td>
-
-```lua
-lightspeed = false
-```
-</details>
-</tr> <td> <a href="https://github.com/ggandor/leap.nvim">leap.nvim</a> <td>
-
-```lua
-leap = false
-```
-</details>
-</tr> <td> <a href="https://github.com/phaazon/hop.nvim">hop.nvim</a> <td>
-
-```lua
-hop = false
-```
-</details>
-</tr> <td> <a href="https://github.com/justinmk/vim-sneak">vim-sneak</a> <td>
-
-```lua
-vim_sneak = false
-```
-</details>
-</tr> <td> <a href="https://github.com/p00f/nvim-ts-rainbow">nvim-ts-rainbow</a> <td>
-
-```lua
-ts_rainbow = false
-```
-</details>
-</tr> <td> <a href="https://github.com/TimUntersberger/neogit">neogit</a> <td>
-
-```lua
-neogit = false
-```
-</details>
-</tr> <td> <a href="https://github.com/renerocksai/telekasten.nvim">telekasten.nvim</a> <td>
-
-```lua
-telekasten = false
-```
-</details>
-</tr> <td> <a href="https://github.com/rcarriga/nvim-notify">nvim-notify</a> <td>
-
-```lua
-notify = true
-```
-</details>
-</tr> <td> <a href="https://github.com/simrat39/symbols-outline.nvim">symbols-outline.nvim</a> <td>
-
-```lua
-symbols_outline = false
-```
-</details>
-</tr> <td> <a href="https://github.com/echasnovski/mini.nvim">mini.nvim</a> <td>
-
-```lua
-mini = false
-```
-</details>
-</tr> <td> <a href="https://github.com/stevearc/aerial.nvim">aerial.nvim</a> <td>
-
-```lua
-aerial = false
-```
-</details>
-</tr> <td> <a href="https://github.com/DanilaMihailov/beacon.nvim">beacon.nvim</a> <td>
-
-```lua
-beacon = false
-```
-</details>
-</tr> <td> <a href="https://github.com/vimwiki/vimwiki">vimwiki</a> <td>
-
-```lua
-vimwiki = false
-```
-</details>
-</tr> <td> <a href="https://github.com/stevearc/overseer.nvim">overseer.nvim</a> <td>
-
-```lua
-overseer = false
-```
-</details>
-</tr> <td> <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">nvim-treesitter-context</a> <td>
-
-```lua
-treesitter_context = false
-```
-</details>
-
-</table>
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | telescope |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | cmp |
+| [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim/) | lsp_saga |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | gitsigns |
+| [trouble.nvim](https://github.com/folke/trouble.nvim) | lsp_trouble |
+| [which-key.nvim](https://github.com/folke/which-key.nvim) | which_key |
+| [barbar.nvim](https://github.com/romgrk/barbar.nvim) | barbar |
+| [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) | nvimtree |
+| [vim-gitgutter](https://github.com/airblade/vim-gitgutter) | gitgutter |
+| [fern.vim](https://github.com/lambdalisue/fern.vim) | fern |
+| [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) | dashboard |
+| [Markdown](https://www.markdownguide.org/) | markdown |
+| [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim) | lightspeed |
+| [leap.nvim](https://github.com/ggandor/leap.nvim) | leap |
+| [hop.nvim](https://github.com/phaazon/hop.nvim) | hop |
+| [vim-sneak](https://github.com/justinmk/vim-sneak) | vim_sneak |
+| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow) | ts_rainbow |
+| [neogit](https://github.com/TimUntersberger/neogit) | neogit |
+| [telekasten.nvim](https://github.com/renerocksai/telekasten.nvim) | telekasten |
+| [nvim-notify](https://github.com/rcarriga/nvim-notify) | notify |
+| [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim) | symbols_outline |
+| [mini.nvim](https://github.com/echasnovski/mini.nvim) | mini |
+| [aerial.nvim](https://github.com/stevearc/aerial.nvim) | aerial |
+| [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim) | beacon |
+| [vimwiki](https://github.com/vimwiki/vimwiki) | vimwiki |
+| [overseer.nvim](https://github.com/stevearc/overseer.nvim) | overseer |
+| [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context |
 
 ### Special integrations
 <details> <summary> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> </summary>
