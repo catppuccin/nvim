@@ -217,7 +217,7 @@ require("catppuccin").setup({
 })
 ```
 
-Here is the list of supported plugins and their configurations
+Supported plugins and their configurations:
 
 <details> <summary> <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> </summary>
 
