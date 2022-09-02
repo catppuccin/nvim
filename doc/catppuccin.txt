@@ -511,8 +511,34 @@ Config
 
 <td>
 
+Update your bufferline config to use the Catppuccin components:
+
 >
-    
+    bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
+<
+
+
+Configurations are self-explanatory, see `:h bufferline-highlights` for
+detailed explanation.:
+
+>
+    local mocha = require("catppuccin.palettes").get_palette "mocha"
+    bufferline.setup {
+        highlights = require("catppuccin.groups.integrations.bufferline").get {
+            styles = { "italic", "bold" },
+            custom = {
+                all = {
+                    fill = { bg = "#000000" },
+                },
+                mocha = {
+                    background = { fg = mocha.text },
+                },
+                latte = {
+                    background = { fg = "#000000" },
+                },
+            },
+        },
+    }
 <
 
 
@@ -546,7 +572,7 @@ Config
 <td>
 
 >
-    
+    nvimtree = true
 <
 
 
@@ -563,7 +589,11 @@ Config
 <td>
 
 >
-    
+    neotree = {
+        enabled = false,
+        show_root = true,
+        transparent_panel = false,
+    },
 <
 
 
@@ -579,8 +609,27 @@ Config
 
 <td>
 
+**Nvim-dap:** setting `enabled` to `true`:
+
 >
+    integration = {
+        dap = {
+            enabled = true,
+            enable_ui = true, -- enable nvim-dap-ui
+        }
+    }
+<
+
+
+>
+    -- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
+    require("dap")
     
+    local sign = vim.fn.sign_define
+    
+    sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+    sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+    sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 <
 
 
@@ -614,7 +663,7 @@ Config
 <td>
 
 >
-    
+    gitgutter = false
 <
 
 
@@ -631,7 +680,7 @@ Config
 <td>
 
 >
-    
+    fern = false
 <
 
 
@@ -647,8 +696,11 @@ Config
 
 <td>
 
+**Lightline:** use this to set it up (Note: `catppuccin` is the only valid
+colorscheme name. It will pick the one set in your config):
+
 >
-    
+    let g:lightline = {'colorscheme': 'catppuccin'}
 <
 
 
@@ -665,7 +717,7 @@ Config
 <td>
 
 >
-    
+    dashboard = true
 <
 
 
@@ -699,7 +751,7 @@ Config
 <td>
 
 >
-    
+    lightspeed = false
 <
 
 
@@ -716,7 +768,7 @@ Config
 <td>
 
 >
-    
+    leap = false
 <
 
 
@@ -733,7 +785,7 @@ Config
 <td>
 
 >
-    
+    hop = false
 <
 
 
@@ -750,7 +802,7 @@ Config
 <td>
 
 >
-    
+    vim_sneak = false
 <
 
 
@@ -767,7 +819,7 @@ Config
 <td>
 
 >
-    
+    ts_rainbow = false
 <
 
 
@@ -784,7 +836,7 @@ Config
 <td>
 
 >
-    
+    neogit = false
 <
 
 
@@ -801,7 +853,7 @@ Config
 <td>
 
 >
-    
+    telekasten = false
 <
 
 
@@ -818,7 +870,7 @@ Config
 <td>
 
 >
-    
+    notify = true
 <
 
 
@@ -835,7 +887,7 @@ Config
 <td>
 
 >
-    
+    symbols_outline = false
 <
 
 
@@ -852,7 +904,7 @@ Config
 <td>
 
 >
-    
+    mini = false
 <
 
 
@@ -869,7 +921,7 @@ Config
 <td>
 
 >
-    
+    aerial = false
 <
 
 
@@ -886,7 +938,7 @@ Config
 <td>
 
 >
-    
+    beacon = false
 <
 
 
@@ -903,7 +955,7 @@ Config
 <td>
 
 >
-    
+    vimwiki = false
 <
 
 
@@ -919,8 +971,21 @@ Config
 
 <td>
 
+**Nvim-navic:** setting `enabled` to `true`:
+
 >
-    
+    navic = {
+        enabled = false,
+        custom_bg = "NONE",
+    },
+<
+
+
+>
+    -- You NEED to enable highlight in nvim-navic setting or it won't work
+    require("nvim-navic").setup {
+        highlight = true
+    }
 <
 
 
@@ -936,8 +1001,10 @@ Config
 
 <td>
 
+**vim-clap:** use this to set it up:
+
 >
-    
+    let g:clap_theme = 'catppuccin'
 <
 
 
@@ -954,7 +1021,7 @@ Config
 <td>
 
 >
-    
+    overseer = false
 <
 
 
@@ -971,7 +1038,19 @@ Config
 <td>
 
 >
-    
+    fidget = false
+<
+
+
+**Fidget:** set `window.blend` to `0`:
+
+>
+    require("fidget").setup {
+        window = {
+            blend = 0,
+        },
+        -- ... the rest of your fidget config
+    }
 <
 
 
