@@ -576,6 +576,8 @@ Module
 <
 
 
+</table>
+
 SPECIAL INTEGRATIONS ~
 
 <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a>
