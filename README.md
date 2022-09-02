@@ -322,8 +322,9 @@ treesitter_context = false
 ```
 </details>
 
+
 ### Special integrations
-</tr> <td> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> <td>
+<details> <summary> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> </summary>
 
 **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 
@@ -346,7 +347,7 @@ native_lsp = {
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/akinsho/bufferline.nvim">bufferline.nvim</a> <td>
+<details> <summary> <a href="https://github.com/akinsho/bufferline.nvim">bufferline.nvim</a> </summary>
 
 Update your bufferline config to use the Catppuccin components:
 
@@ -377,7 +378,7 @@ bufferline.setup {
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/feline-nvim/feline.nvim">feline.nvim</a> <td>
+<details> <summary> <a href="https://github.com/feline-nvim/feline.nvim">feline.nvim</a> </summary>
 
 **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
@@ -394,7 +395,7 @@ require("feline").setup({
 Notice that calling `setup()` is optional. You may pass a lua table in order to change assets, settings and the colors per vim mode.
 
 <details>
-    <summary>Here are the defaults<td>
+    <summary>Here are the defaults</summary>
 <p>
 
 ```lua
@@ -457,7 +458,7 @@ mode_colors = {
 </details>
 </details>
 
-</tr> <td> <a href="https://github.com/hoob3rt/lualine.nvim">lualine.nvim</a> <td>
+<details> <summary> <a href="https://github.com/hoob3rt/lualine.nvim">lualine.nvim</a> </summary>
 
 **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
@@ -471,7 +472,7 @@ require('lualine').setup {
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">indent-blankline.nvim</a> <td>
+<details> <summary> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">indent-blankline.nvim</a> </summary>
 
 **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
 
@@ -483,7 +484,7 @@ indent_blankline = {
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">neo-tree.nvim</a> <td>
+<details> <summary> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">neo-tree.nvim</a> </summary>
 
 **Neo-tree:** setting `enabled` to `true` enables this integration:
 
@@ -498,10 +499,10 @@ integration = {
 ```
 </details>
 
-</tr> <td>
+<details> <summary>
 <a href="https://github.com/mfussenegger/nvim-dap">nvim-dap</a> & 
 <a href="https://github.com/rcarriga/nvim-dap-ui">nvim-dap-ui</a>
-<td>
+</summary>
 
 **Nvim-dap:** setting `enabled` to `true`:
 
@@ -526,7 +527,7 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a> <td>
+<details> <summary> <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a> </summary>
 
 **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
@@ -535,7 +536,7 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/liuchengxu/vim-clap">vim-clap</a> <td>
+<details> <summary> <a href="https://github.com/liuchengxu/vim-clap">vim-clap</a> </summary>
 
 **vim-clap:** use this to set it up:
 
@@ -544,7 +545,7 @@ let g:clap_theme = 'catppuccin'
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/SmiteshP/nvim-navic">nvim-navic</a> <td>
+<details> <summary> <a href="https://github.com/SmiteshP/nvim-navic">nvim-navic</a> </summary>
 
 **Nvim-navic:** setting `enabled` to `true`:
 
@@ -563,7 +564,7 @@ require("nvim-navic").setup {
 ```
 </details>
 
-</tr> <td> <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a> <td>
+<details> <summary> <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a> </summary>
 
 ```lua
 fidget = false
@@ -581,7 +582,8 @@ require("fidget").setup {
 ```
 </details>
 
-<details> <summary> Here are the default options <td>
+
+<details> <summary> Here are the default options </summary>
 
 ```lua
 require("catppuccin").setup({
