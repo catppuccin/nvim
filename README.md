@@ -185,7 +185,7 @@ require("catppuccin").setup({
 })
 ```
 
-<details> <summary> <u> Click here to see an example config </u> </summary>
+<details> <summary> <ins> Click here to see an example config </ins> </summary>
 
 ```lua
 require("catppuccin").setup({
