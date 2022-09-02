@@ -259,223 +259,223 @@ treesitter = true
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/feline-nvim/feline.nvim">Feline</a> <td>
+</tr> <td> <a href="https://github.com/feline-nvim/feline.nvim">Feline</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/hoob3rt/lualine.nvim">Lualine</a> <td>
+</tr> <td> <a href="https://github.com/hoob3rt/lualine.nvim">Lualine</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/hrsh7th/nvim-cmp">Nvim-cmp</a> <td>
+</tr> <td> <a href="https://github.com/hrsh7th/nvim-cmp">Nvim-cmp</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/glepnir/lspsaga.nvim/">LSP Saga</a> <td>
+</tr> <td> <a href="https://github.com/glepnir/lspsaga.nvim/">LSP Saga</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/lewis6991/gitsigns.nvim">Git signs</a> <td>
+</tr> <td> <a href="https://github.com/lewis6991/gitsigns.nvim">Git signs</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/lukas-reineke/indent-blankline.nvim">Indent Blankline</a> <td>
+</tr> <td> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">Indent Blankline</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/folke/trouble.nvim">Trouble</a> <td>
+</tr> <td> <a href="https://github.com/folke/trouble.nvim">Trouble</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/folke/which-key.nvim">WhichKey</a> <td>
+</tr> <td> <a href="https://github.com/folke/which-key.nvim">WhichKey</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/akinsho/bufferline.nvim">Bufferline</a> <td>
+</tr> <td> <a href="https://github.com/akinsho/bufferline.nvim">Bufferline</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/romgrk/barbar.nvim">BarBar</a> <td>
+</tr> <td> <a href="https://github.com/romgrk/barbar.nvim">BarBar</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/kyazdani42/nvim-tree.lua">NvimTree</a> <td>
+</tr> <td> <a href="https://github.com/kyazdani42/nvim-tree.lua">NvimTree</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/nvim-neo-tree/neo-tree.nvim">Neo-tree</a> <td>
+</tr> <td> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Neo-tree</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/mfussenegger/nvim-dap">Nvim-dap</a> <td>
+</tr> <td> <a href="https://github.com/mfussenegger/nvim-dap">Nvim-dap</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a> <td>
+</tr> <td> <a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/airblade/vim-gitgutter">Git Gutter</a> <td>
+</tr> <td> <a href="https://github.com/airblade/vim-gitgutter">Git Gutter</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/lambdalisue/fern.vim">Fern</a> <td>
+</tr> <td> <a href="https://github.com/lambdalisue/fern.vim">Fern</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/itchyny/lightline.vim">Lightline</a> <td>
+</tr> <td> <a href="https://github.com/itchyny/lightline.vim">Lightline</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/glepnir/dashboard-nvim">Dashboard</a> <td>
+</tr> <td> <a href="https://github.com/glepnir/dashboard-nvim">Dashboard</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://w</tr> <td> <a href=ww.markdownguide.org/">Markdown</a> <td>
+</tr> <td> <a href="https://www.markdownguide.org/">Markdown</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/ggandor/lightspeed.nvim">Lightspeed</a> <td>
+</tr> <td> <a href="https://github.com/ggandor/lightspeed.nvim">Lightspeed</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/ggandor/leap.nvim">Leap.nvim</a> <td>
+</tr> <td> <a href="https://github.com/ggandor/leap.nvim">Leap.nvim</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/phaazon/hop.nvim">Hop</a> <td>
+</tr> <td> <a href="https://github.com/phaazon/hop.nvim">Hop</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/justinmk/vim-sneak">Sneak</a> <td>
+</tr> <td> <a href="https://github.com/justinmk/vim-sneak">Sneak</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/p00f/nvim-ts-rainbow">Nvim-ts-Rainbow</a> <td>
+</tr> <td> <a href="https://github.com/p00f/nvim-ts-rainbow">Nvim-ts-Rainbow</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/TimUntersberger/neogit">Neogit</a> <td>
+</tr> <td> <a href="https://github.com/TimUntersberger/neogit">Neogit</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/renerocksai/telekasten.nvim">Telekasten</a> <td>
+</tr> <td> <a href="https://github.com/renerocksai/telekasten.nvim">Telekasten</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/rcarriga/nvim-notify">Notify</a> <td>
+</tr> <td> <a href="https://github.com/rcarriga/nvim-notify">Notify</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/simrat39/symbols-outline.nvim">Symbols-Outline</a> <td>
+</tr> <td> <a href="https://github.com/simrat39/symbols-outline.nvim">Symbols-Outline</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/echasnovski/mini.nvim">Mini.nvim</a> <td>
+</tr> <td> <a href="https://github.com/echasnovski/mini.nvim">Mini.nvim</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/stevearc/aerial.nvim">Aerial.nvim</a> <td>
+</tr> <td> <a href="https://github.com/stevearc/aerial.nvim">Aerial.nvim</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/DanilaMihailov/beacon.nvim">Beacon.nvim</a> <td>
+</tr> <td> <a href="https://github.com/DanilaMihailov/beacon.nvim">Beacon.nvim</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/vimwiki/vimwiki">VimWiki</a> <td>
+</tr> <td> <a href="https://github.com/vimwiki/vimwiki">VimWiki</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/SmiteshP/nvim-navic">Nvim-navic</a> <td>
+</tr> <td> <a href="https://github.com/SmiteshP/nvim-navic">Nvim-navic</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/liuchengxu/vim-clap">Vim-clap</a> <td>
+</tr> <td> <a href="https://github.com/liuchengxu/vim-clap">Vim-clap</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/stevearc/overseer.nvim">Overseer.nvim</a> <td>
+</tr> <td> <a href="https://github.com/stevearc/overseer.nvim">Overseer.nvim</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/j-hui/fidget.nvim">Fidget.nvim</a> <td>
+</tr> <td> <a href="https://github.com/j-hui/fidget.nvim">Fidget.nvim</a> <td>
 
 ```lua
 
 ```
 </td> </tr>
-"https://g</tr> <td> <a href=ithub.com/nvim-treesitter/nvim-treesitter-context">Nvim-Treesitter-Context</a> <td>
+</tr> <td> <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">Nvim-Treesitter-Context</a> <td>
 
 ```lua
 
