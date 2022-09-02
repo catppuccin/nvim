@@ -560,12 +560,14 @@ Setting `enabled` to `true`:
 
 <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a>
 
+Set fidget module to `true`
+
 >
-    fidget = false
+    fidget = true
 <
 
 
-Set `window.blend` to `0`:
+Then set `window.blend` to `0`:
 
 >
     require("fidget").setup {
