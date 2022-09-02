@@ -264,7 +264,7 @@ Here is the default options:
 <
 
 
-Here is the list of plugins and their configurations
+Here is the list of supported plugins and their configurations
 
 <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a>
 
@@ -296,13 +296,6 @@ directly at the thing (e.g. an error)).
             information = { "underline" },
         },
     },
-<
-
-
-<a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a>
-
->
-    treesitter = true
 <
 
 
