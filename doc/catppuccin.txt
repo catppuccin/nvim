@@ -264,7 +264,7 @@ Here is the default options:
 <
 
 
-List of plugins and their configurations:
+Click to see the list of plugins and their configurations
 
 <table>
 
@@ -631,21 +631,6 @@ detailed explanation.:
     sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
     sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
     sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
-<
-
-
-</td>
-
-</tr>
-
-</tr>
-
-<td>
-
-<td>
-
->
-    
 <
 
 
@@ -1066,7 +1051,7 @@ colorscheme name. It will pick the one set in your config):
 <td>
 
 >
-    
+    treesitter_context = false
 <
 
 
