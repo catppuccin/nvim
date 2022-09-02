@@ -184,7 +184,8 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 INTEGRATIONS                                         *catppuccin-integrations*
 
-List of supported plugins and their modules:
+List of supported plugins and their modules (See also Special integrations
+<https://github.com/catppuccin/nvim#special-integrations>):
 
 │                                       Plugin                                       │      Module      │
 │nvim-treesitter <https://github.com/nvim-treesitter/nvim-treesitter>                │treesitter        │
@@ -218,8 +219,7 @@ List of supported plugins and their modules:
 
 
 These integrations allow catppuccin to set the theme of various plugins. To
-enable an integration you just need to set it to `true` (there are also some
-special integrations), for example:
+enable an integration you just need to set it to `true`, for example:
 
 >
     require("catppuccin").setup({
@@ -230,7 +230,7 @@ special integrations), for example:
 <
 
 
-<strong> Example config </strong>
+<strong> Click here to see an example config </strong>
 
 >
     require("catppuccin").setup({
@@ -302,9 +302,11 @@ special integrations), for example:
 <
 
 
-If you’d like to know which highlight groups are being affected by
-catppuccin, checkout this directory: `lua/catppuccin/groups/integrations/`
-<https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
+
+  If you’d like to know which highlight groups are being affected by
+  catppuccin, checkout this directory: `lua/catppuccin/groups/integrations/`
+  <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
+
 
 SPECIAL INTEGRATIONS ~
 
