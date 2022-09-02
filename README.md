@@ -230,6 +230,8 @@ treesitter = true
 
 </tr> <td> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> <td>
 
+**Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
+
 ```lua
 native_lsp = {
 	enabled = true,
@@ -262,14 +264,94 @@ telescope = true
 </td> </tr>
 </tr> <td> <a href="https://github.com/feline-nvim/feline.nvim">Feline</a> <td>
 
-```lua
+**Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
+```lua
+local ctp_feline = require('catppuccin.groups.integrations.feline')
+
+ctp_feline.setup()
+
+require("feline").setup({
+	components = ctp_feline.get(),
+})
 ```
+
+Notice that calling `setup()` is optional. You may pass a lua table in order to change assets, settings and the colors per vim mode.
+
+<details>
+    <summary>Here are the defaults</summary>
+<p>
+
+```lua
+local clrs = require("catppuccin.palettes").get_palette()
+assets = {
+	left_separator = "",
+	right_separator = "",
+	bar = "█",
+	mode_icon = "",
+	dir = "  ",
+	file = "   ",
+	lsp = {
+		server = "  ",
+		error = "  ",
+		warning = "  ",
+		info = "  ",
+		hint = "  ",
+	},
+	git = {
+		branch = "  ",
+		added = "  ",
+		changed = "  ",
+		removed = "  ",
+	},
+},
+sett = {
+	text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
+	bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
+	diffs = clrs.mauve,
+	extras = clrs.overlay1,
+	curr_file = clrs.maroon,
+	curr_dir = clrs.flamingo,
+	show_modified = true -- show if the file has been modified
+},
+mode_colors = {
+	["n"] = { "NORMAL", clrs.lavender },
+	["no"] = { "N-PENDING", clrs.lavender },
+	["i"] = { "INSERT", clrs.green },
+	["ic"] = { "INSERT", clrs.green },
+	["t"] = { "TERMINAL", clrs.green },
+	["v"] = { "VISUAL", clrs.flamingo },
+	["V"] = { "V-LINE", clrs.flamingo },
+	[""] = { "V-BLOCK", clrs.flamingo },
+	["R"] = { "REPLACE", clrs.maroon },
+	["Rv"] = { "V-REPLACE", clrs.maroon },
+	["s"] = { "SELECT", clrs.maroon },
+	["S"] = { "S-LINE", clrs.maroon },
+	[""] = { "S-BLOCK", clrs.maroon },
+	["c"] = { "COMMAND", clrs.peach },
+	["cv"] = { "COMMAND", clrs.peach },
+	["ce"] = { "COMMAND", clrs.peach },
+	["r"] = { "PROMPT", clrs.teal },
+	["rm"] = { "MORE", clrs.teal },
+	["r?"] = { "CONFIRM", clrs.mauve },
+	["!"] = { "SHELL", clrs.green },
+}
+```
+
+<br />
+</details>
 </td> </tr>
 </tr> <td> <a href="https://github.com/hoob3rt/lualine.nvim">Lualine</a> <td>
 
-```lua
+**Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
+```lua
+require('lualine').setup {
+	options = {
+		theme = "catppuccin"
+		-- ... the rest of your lualine config
+	}
+}
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/hrsh7th/nvim-cmp">Nvim-cmp</a> <td>
@@ -291,6 +373,8 @@ gitsigns = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">Indent Blankline</a> <td>
+
+**Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
 
 ```lua
 indent_blankline = {
@@ -355,12 +439,16 @@ nvimtree = true
 </td> </tr>
 </tr> <td> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Neo-tree</a> <td>
 
+**Neo-tree:** setting `enabled` to `true` enables this integration:
+
 ```lua
-neotree = {
-	enabled = false,
-	show_root = true,
-	transparent_panel = false,
-},
+integration = {
+	neotree = {
+		enabled = true,
+		show_root = true, -- makes the root folder not transparent
+		transparent_panel = false, -- make the panel transparent
+	}
+}
 ```
 </td> </tr>
 </tr> <td>
@@ -558,198 +646,6 @@ treesitter_context = false
 </table>
 
 </details>
-
-### Special Integrations
-
--   **Bufferline.nvim**: Update your bufferline config to use the Catppuccin components:
-
-```lua
-bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
-```
-
-Configurations are self-explanatory:
-
-```lua
-local mocha = require("catppuccin.palettes").get_palette "mocha"
-bufferline.setup {
-	highlights = require("catppuccin.groups.integrations.bufferline").get {
-		styles = { "italic", "bold" },
-		custom = {
-			all = {
-				fill = { bg = "#000000" },
-			},
-			mocha = {
-				background = { fg = mocha.text },
-			},
-			latte = {
-				background = { fg = "#000000" },
-			},
-		},
-	},
-}
-```
-
--   **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
-
-```lua
-local ctp_feline = require('catppuccin.groups.integrations.feline')
-
-ctp_feline.setup()
-
-require("feline").setup({
-	components = ctp_feline.get(),
-})
-```
-
-Notice that calling `setup()` is optional. You may pass a lua table in order to change assets, settings and the colors per vim mode.
-
-<details>
-    <summary>Here are the defaults</summary>
-<p>
-
-```lua
-local clrs = require("catppuccin.palettes").get_palette()
-assets = {
-	left_separator = "",
-	right_separator = "",
-	bar = "█",
-	mode_icon = "",
-	dir = "  ",
-	file = "   ",
-	lsp = {
-		server = "  ",
-		error = "  ",
-		warning = "  ",
-		info = "  ",
-		hint = "  ",
-	},
-	git = {
-		branch = "  ",
-		added = "  ",
-		changed = "  ",
-		removed = "  ",
-	},
-},
-sett = {
-	text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
-	bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
-	diffs = clrs.mauve,
-	extras = clrs.overlay1,
-	curr_file = clrs.maroon,
-	curr_dir = clrs.flamingo,
-	show_modified = true -- show if the file has been modified
-},
-mode_colors = {
-	["n"] = { "NORMAL", clrs.lavender },
-	["no"] = { "N-PENDING", clrs.lavender },
-	["i"] = { "INSERT", clrs.green },
-	["ic"] = { "INSERT", clrs.green },
-	["t"] = { "TERMINAL", clrs.green },
-	["v"] = { "VISUAL", clrs.flamingo },
-	["V"] = { "V-LINE", clrs.flamingo },
-	[""] = { "V-BLOCK", clrs.flamingo },
-	["R"] = { "REPLACE", clrs.maroon },
-	["Rv"] = { "V-REPLACE", clrs.maroon },
-	["s"] = { "SELECT", clrs.maroon },
-	["S"] = { "S-LINE", clrs.maroon },
-	[""] = { "S-BLOCK", clrs.maroon },
-	["c"] = { "COMMAND", clrs.peach },
-	["cv"] = { "COMMAND", clrs.peach },
-	["ce"] = { "COMMAND", clrs.peach },
-	["r"] = { "PROMPT", clrs.teal },
-	["rm"] = { "MORE", clrs.teal },
-	["r?"] = { "CONFIRM", clrs.mauve },
-	["!"] = { "SHELL", clrs.green },
-}
-```
-
-<br />
-</details>
-
--   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
--   **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
-
-```vim
-let g:lightline = {'colorscheme': 'catppuccin'}
-```
-
--   **vim-clap:** use this to set it up:
-
-```vim
-let g:clap_theme = 'catppuccin'
-```
-
--   **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
-
-```lua
-require('lualine').setup {
-	options = {
-		theme = "catppuccin"
-		-- ... the rest of your lualine config
-	}
-}
-```
-
--   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
--   **Neo-tree:** setting `enabled` to `true` enables this integration:
-
-```lua
-integration = {
-	neotree = {
-		enabled = true,
-		show_root = true, -- makes the root folder not transparent
-		transparent_panel = false, -- make the panel transparent
-	}
-}
-```
-
--   **Fidget:** set `window.blend` to `0`:
-
-```lua
-require("fidget").setup {
-    window = {
-        blend = 0,
-    },
-	-- ... the rest of your fidget config
-}
-```
-
--   **Nvim-dap:** setting `enabled` to `true`:
-
-```lua
-integration = {
-	dap = {
-		enabled = true,
-		enable_ui = true, -- enable nvim-dap-ui
-	}
-}
-```
-
-```lua
--- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
-require("dap")
-
-local sign = vim.fn.sign_define
-
-sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
-sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
-sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
-```
-
--   **Nvim-navic:** setting `enabled` to `true`:
-
-```lua
-integration = {
-	navic = true
-}
-```
-
-```lua
--- You NEED to enable highlight in nvim-navic setting or it won't work
-require("nvim-navic").setup {
-	highlight = true
-}
-```
 
 # Customize highlights
 
