@@ -256,7 +256,7 @@ treesitter = true
 </tr> <td> <a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a> <td>
 
 ```lua
-
+telescope = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/feline-nvim/feline.nvim">Feline</a> <td>
@@ -274,37 +274,40 @@ treesitter = true
 </tr> <td> <a href="https://github.com/hrsh7th/nvim-cmp">Nvim-cmp</a> <td>
 
 ```lua
-
+cmp = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/glepnir/lspsaga.nvim/">LSP Saga</a> <td>
 
 ```lua
-
+lsp_saga = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/lewis6991/gitsigns.nvim">Git signs</a> <td>
 
 ```lua
-
+gitsigns = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">Indent Blankline</a> <td>
 
 ```lua
-
+indent_blankline = {
+	enabled = true,
+	colored_indent_levels = false,
+},
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/folke/trouble.nvim">Trouble</a> <td>
 
 ```lua
-
+lsp_trouble = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/folke/which-key.nvim">WhichKey</a> <td>
 
 ```lua
-
+which_key = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/akinsho/bufferline.nvim">Bufferline</a> <td>
@@ -316,7 +319,7 @@ treesitter = true
 </tr> <td> <a href="https://github.com/romgrk/barbar.nvim">BarBar</a> <td>
 
 ```lua
-
+barbar = false
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/kyazdani42/nvim-tree.lua">NvimTree</a> <td>
@@ -370,7 +373,7 @@ treesitter = true
 </tr> <td> <a href="https://www.markdownguide.org/">Markdown</a> <td>
 
 ```lua
-
+markdown = true
 ```
 </td> </tr>
 </tr> <td> <a href="https://github.com/ggandor/lightspeed.nvim">Lightspeed</a> <td>
