@@ -248,13 +248,13 @@ native_lsp = {
 },
 ```
 </details>
-<details> <summary> <a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a> </summary>
+<details> <summary> <a href="https://github.com/nvim-telescope/telescope.nvim">telescope.nvim</a> </summary>
 
 ```lua
 telescope = true
 ```
 </details>
-<details> <summary> <a href="https://github.com/feline-nvim/feline.nvim">Feline</a> </summary>
+<details> <summary> <a href="https://github.com/feline-nvim/feline.nvim">feline.nvim</a> </summary>
 
 **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
@@ -333,7 +333,7 @@ mode_colors = {
 <br />
 </details>
 </details>
-<details> <summary> <a href="https://github.com/hoob3rt/lualine.nvim">Lualine</a> </summary>
+<details> <summary> <a href="https://github.com/hoob3rt/lualine.nvim">lualine.nvim</a> </summary>
 
 **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
@@ -346,25 +346,25 @@ require('lualine').setup {
 }
 ```
 </details>
-<details> <summary> <a href="https://github.com/hrsh7th/nvim-cmp">Nvim-cmp</a> </summary>
+<details> <summary> <a href="https://github.com/hrsh7th/nvim-cmp">nvim-cmp</a> </summary>
 
 ```lua
 cmp = true
 ```
 </details>
-<details> <summary> <a href="https://github.com/glepnir/lspsaga.nvim/">LSP Saga</a> </summary>
+<details> <summary> <a href="https://github.com/glepnir/lspsaga.nvim/">lspsaga.nvim</a> </summary>
 
 ```lua
 lsp_saga = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/lewis6991/gitsigns.nvim">Git signs</a> </summary>
+<details> <summary> <a href="https://github.com/lewis6991/gitsigns.nvim">gitsigns.nvim</a> </summary>
 
 ```lua
 gitsigns = true
 ```
 </details>
-<details> <summary> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">Indent Blankline</a> </summary>
+<details> <summary> <a href="https://github.com/lukas-reineke/indent-blankline.nvim">indent-blankline.nvim</a> </summary>
 
 **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
 
@@ -375,19 +375,19 @@ indent_blankline = {
 },
 ```
 </details>
-<details> <summary> <a href="https://github.com/folke/trouble.nvim">Trouble</a> </summary>
+<details> <summary> <a href="https://github.com/folke/trouble.nvim">trouble.nvim</a> </summary>
 
 ```lua
 lsp_trouble = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/folke/which-key.nvim">WhichKey</a> </summary>
+<details> <summary> <a href="https://github.com/folke/which-key.nvim">which-key.nvim</a> </summary>
 
 ```lua
 which_key = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/akinsho/bufferline.nvim">Bufferline</a> </summary>
+<details> <summary> <a href="https://github.com/akinsho/bufferline.nvim">bufferline.nvim</a> </summary>
 
 Update your bufferline config to use the Catppuccin components:
 
@@ -417,19 +417,19 @@ bufferline.setup {
 }
 ```
 </details>
-<details> <summary> <a href="https://github.com/romgrk/barbar.nvim">BarBar</a> </summary>
+<details> <summary> <a href="https://github.com/romgrk/barbar.nvim">barbar.nvim</a> </summary>
 
 ```lua
 barbar = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/kyazdani42/nvim-tree.lua">NvimTree</a> </summary>
+<details> <summary> <a href="https://github.com/kyazdani42/nvim-tree.lua">nvim-tree.lua</a> </summary>
 
 ```lua
 nvimtree = true
 ```
 </details>
-<details> <summary> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Neo-tree</a> </summary>
+<details> <summary> <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">neo-tree.nvim</a> </summary>
 
 **Neo-tree:** setting `enabled` to `true` enables this integration:
 
@@ -444,8 +444,8 @@ integration = {
 ```
 </details>
 <details> <summary>
-<a href="https://github.com/mfussenegger/nvim-dap">Nvim-dap</a>
-<a href="https://github.com/rcarriga/nvim-dap-ui">Nvim-dap-ui</a>
+<a href="https://github.com/mfussenegger/nvim-dap">nvim-dap</a>
+<a href="https://github.com/rcarriga/nvim-dap-ui">nvim-dap-ui</a>
 </summary>
 
 **Nvim-dap:** setting `enabled` to `true`:
@@ -470,19 +470,19 @@ sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition"
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
 </details>
-<details> <summary> <a href="https://github.com/airblade/vim-gitgutter">Git Gutter</a> </summary>
+<details> <summary> <a href="https://github.com/airblade/vim-gitgutter">vim-gitgutter</a> </summary>
 
 ```lua
 gitgutter = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/lambdalisue/fern.vim">Fern</a> </summary>
+<details> <summary> <a href="https://github.com/lambdalisue/fern.vim">fern.vim</a> </summary>
 
 ```lua
 fern = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/itchyny/lightline.vim">Lightline</a> </summary>
+<details> <summary> <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a> </summary>
 
 **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
@@ -490,7 +490,7 @@ fern = false
 let g:lightline = {'colorscheme': 'catppuccin'}
 ```
 </details>
-<details> <summary> <a href="https://github.com/glepnir/dashboard-nvim">Dashboard</a> </summary>
+<details> <summary> <a href="https://github.com/glepnir/dashboard-nvim">dashboard-nvim</a> </summary>
 
 ```lua
 dashboard = true
@@ -502,85 +502,85 @@ dashboard = true
 markdown = true
 ```
 </details>
-<details> <summary> <a href="https://github.com/ggandor/lightspeed.nvim">Lightspeed</a> </summary>
+<details> <summary> <a href="https://github.com/ggandor/lightspeed.nvim">lightspeed.nvim</a> </summary>
 
 ```lua
 lightspeed = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/ggandor/leap.nvim">Leap.nvim</a> </summary>
+<details> <summary> <a href="https://github.com/ggandor/leap.nvim">leap.nvim</a> </summary>
 
 ```lua
 leap = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/phaazon/hop.nvim">Hop</a> </summary>
+<details> <summary> <a href="https://github.com/phaazon/hop.nvim">hop.nvim</a> </summary>
 
 ```lua
 hop = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/justinmk/vim-sneak">Sneak</a> </summary>
+<details> <summary> <a href="https://github.com/justinmk/vim-sneak">vim-sneak</a> </summary>
 
 ```lua
 vim_sneak = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/p00f/nvim-ts-rainbow">Nvim-ts-Rainbow</a> </summary>
+<details> <summary> <a href="https://github.com/p00f/nvim-ts-rainbow">nvim-ts-rainbow</a> </summary>
 
 ```lua
 ts_rainbow = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/TimUntersberger/neogit">Neogit</a> </summary>
+<details> <summary> <a href="https://github.com/TimUntersberger/neogit">neogit</a> </summary>
 
 ```lua
 neogit = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/renerocksai/telekasten.nvim">Telekasten</a> </summary>
+<details> <summary> <a href="https://github.com/renerocksai/telekasten.nvim">telekasten.nvim</a> </summary>
 
 ```lua
 telekasten = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/rcarriga/nvim-notify">Notify</a> </summary>
+<details> <summary> <a href="https://github.com/rcarriga/nvim-notify">nvim-notify</a> </summary>
 
 ```lua
 notify = true
 ```
 </details>
-<details> <summary> <a href="https://github.com/simrat39/symbols-outline.nvim">Symbols-Outline</a> </summary>
+<details> <summary> <a href="https://github.com/simrat39/symbols-outline.nvim">symbols-outline.nvim</a> </summary>
 
 ```lua
 symbols_outline = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/echasnovski/mini.nvim">Mini.nvim</a> </summary>
+<details> <summary> <a href="https://github.com/echasnovski/mini.nvim">mini.nvim</a> </summary>
 
 ```lua
 mini = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/stevearc/aerial.nvim">Aerial.nvim</a> </summary>
+<details> <summary> <a href="https://github.com/stevearc/aerial.nvim">aerial.nvim</a> </summary>
 
 ```lua
 aerial = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/DanilaMihailov/beacon.nvim">Beacon.nvim</a> </summary>
+<details> <summary> <a href="https://github.com/DanilaMihailov/beacon.nvim">beacon.nvim</a> </summary>
 
 ```lua
 beacon = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/vimwiki/vimwiki">VimWiki</a> </summary>
+<details> <summary> <a href="https://github.com/vimwiki/vimwiki">vimwiki</a> </summary>
 
 ```lua
 vimwiki = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/SmiteshP/nvim-navic">Nvim-navic</a> </summary>
+<details> <summary> <a href="https://github.com/SmiteshP/nvim-navic">nvim-navic</a> </summary>
 
 **Nvim-navic:** setting `enabled` to `true`:
 
@@ -598,7 +598,7 @@ require("nvim-navic").setup {
 }
 ```
 </details>
-<details> <summary> <a href="https://github.com/liuchengxu/vim-clap">Vim-clap</a> </summary>
+<details> <summary> <a href="https://github.com/liuchengxu/vim-clap">vim-clap</a> </summary>
 
 **vim-clap:** use this to set it up:
 
@@ -606,13 +606,13 @@ require("nvim-navic").setup {
 let g:clap_theme = 'catppuccin'
 ```
 </details>
-<details> <summary> <a href="https://github.com/stevearc/overseer.nvim">Overseer.nvim</a> </summary>
+<details> <summary> <a href="https://github.com/stevearc/overseer.nvim">overseer.nvim</a> </summary>
 
 ```lua
 overseer = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/j-hui/fidget.nvim">Fidget.nvim</a> </summary>
+<details> <summary> <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a> </summary>
 
 ```lua
 fidget = false
@@ -629,7 +629,7 @@ require("fidget").setup {
 }
 ```
 </details>
-<details> <summary> <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">Nvim-Treesitter-Context</a> </summary>
+<details> <summary> <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">nvim-treesitter-context</a> </summary>
 
 ```lua
 treesitter_context = false
