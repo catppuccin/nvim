@@ -144,26 +144,17 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
 
-> Note: If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
+> If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 Supported plugins and their modules:
 
-<table>
-<tr>
-<td> Plugin </td> <td> Module </td>
+| Plugin | Module |
 
-</tr> <td> <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> <td>
-
-```lua
-treesitter = true
-```
-</details>
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | treesitter |
 
 </tr> <td> <a href="https://github.com/nvim-telescope/telescope.nvim">telescope.nvim</a> <td>
 
-```lua
-telescope = true
-```
+telescope
 </details>
 </tr> <td> <a href="https://github.com/hrsh7th/nvim-cmp">nvim-cmp</a> <td>
 
