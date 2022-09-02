@@ -322,6 +322,7 @@ treesitter_context = false
 ```
 </details>
 
+</table>
 
 ### Special integrations
 <details> <summary> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> </summary>
