@@ -28,47 +28,7 @@ This port of Catppuccin is special because it was the first one and the one that
 -   Handy CLI.
 -   Extensible for many use cases.
 -   [Compile](https://github.com/catppuccin/nvim#Compile) user config for faster startuptime
--   Integrations with a bunch of plugins:
-    -   [Treesitter](https://github.com/tree-sitter/tree-sitter)
-    -   [Nvim-Treesitter-Context](https://github.com/nvim-treesitter/nvim-treesitter-context)
-    -   [Native LSP](https://github.com/neovim/nvim-lspconfig)
-    -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-    -   [Feline](https://github.com/feline-nvim/feline.nvim)
-    -   [Lualine](https://github.com/hoob3rt/lualine.nvim)
-    -   [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-    -   [LSP Saga](https://github.com/glepnir/lspsaga.nvim/)
-    -   [Git signs](https://github.com/lewis6991/gitsigns.nvim)
-    -   [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-    -   [Trouble](https://github.com/folke/trouble.nvim)
-    -   [WhichKey](https://github.com/folke/which-key.nvim)
-    -   [Bufferline](https://github.com/akinsho/bufferline.nvim)
-    -   [BarBar](https://github.com/romgrk/barbar.nvim)
-    -   [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-    -   [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
-    -   [Nvim-dap](https://github.com/mfussenegger/nvim-dap)
-    -   [Nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-    -   [Git Gutter](https://github.com/airblade/vim-gitgutter)
-    -   [Fern](https://github.com/lambdalisue/fern.vim)
-    -   [Lightline](https://github.com/itchyny/lightline.vim)
-    -   [Dashboard](https://github.com/glepnir/dashboard-nvim)
-    -   [Markdown](https://www.markdownguide.org/)
-    -   [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
-    -   [Leap.nvim](https://github.com/ggandor/leap.nvim)
-    -   [Hop](https://github.com/phaazon/hop.nvim)
-    -   [Sneak](https://github.com/justinmk/vim-sneak)
-    -   [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
-    -   [Neogit](https://github.com/TimUntersberger/neogit)
-    -   [Telekasten](https://github.com/renerocksai/telekasten.nvim)
-    -   [Notify](https://github.com/rcarriga/nvim-notify)
-    -   [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
-    -   [Mini.nvim](https://github.com/echasnovski/mini.nvim)
-    -   [Aerial.nvim](https://github.com/stevearc/aerial.nvim)
-    -   [Beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)
-    -   [VimWiki](https://github.com/vimwiki/vimwiki)
-    -   [Nvim-navic](https://github.com/SmiteshP/nvim-navic)
-    -   [Vim-clap](https://github.com/liuchengxu/vim-clap)
-    -   [Overseer.nvim](https://github.com/stevearc/overseer.nvim)
-    -   [Fidget.nvim](https://github.com/j-hui/fidget.nvim)
+-   Integrations with [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
 
 # Installation
 
@@ -146,6 +106,90 @@ require("catppuccin").setup({
 		operators = {},
 	},
 	integrations = {
+		-- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+	},
+	color_overrides = {},
+	highlight_overrides = {},
+})
+```
+
+Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
+
+## General
+
+This settings are unrelated to any group and are independent.
+
+-   `transparent_background`: (Boolean) if true, disables setting the background color.
+-   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+
+## Dim inactive
+
+This setting manages the ability to dim the inactive splits/windows/buffers displayed.
+
+-   `enabled`: (Boolean) if true, dims the background color of inactive window or buffer or split.
+-   `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
+-   `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
+
+## Styles
+
+Handles the style of general hi groups (see `:h highlight-args`):
+
+-   `comments`: (Table) changed the style of the comments.
+-   `functions`: (Table) changed the style of the functions.
+-   `keywords`: (Table) changed the style of the keywords.
+-   `strings`: (Table) changed the style of the strings.
+-   `variables`: (Table) changed the style of the variables.
+
+## Integrations
+
+List of supported plugins and their modules (See [Special integrations](https://github.com/catppuccin/nvim#special-integrations) for more)
+
+| Plugin | Module |
+| ------ | ------ |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | treesitter |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | telescope |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | cmp |
+| [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim/) | lsp_saga |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | gitsigns |
+| [trouble.nvim](https://github.com/folke/trouble.nvim) | lsp_trouble |
+| [which-key.nvim](https://github.com/folke/which-key.nvim) | which_key |
+| [barbar.nvim](https://github.com/romgrk/barbar.nvim) | barbar |
+| [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) | nvimtree |
+| [vim-gitgutter](https://github.com/airblade/vim-gitgutter) | gitgutter |
+| [fern.vim](https://github.com/lambdalisue/fern.vim) | fern |
+| [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) | dashboard |
+| [Markdown](https://www.markdownguide.org/) | markdown |
+| [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim) | lightspeed |
+| [leap.nvim](https://github.com/ggandor/leap.nvim) | leap |
+| [hop.nvim](https://github.com/phaazon/hop.nvim) | hop |
+| [vim-sneak](https://github.com/justinmk/vim-sneak) | vim_sneak |
+| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow) | ts_rainbow |
+| [neogit](https://github.com/TimUntersberger/neogit) | neogit |
+| [telekasten.nvim](https://github.com/renerocksai/telekasten.nvim) | telekasten |
+| [nvim-notify](https://github.com/rcarriga/nvim-notify) | notify |
+| [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim) | symbols_outline |
+| [mini.nvim](https://github.com/echasnovski/mini.nvim) | mini |
+| [aerial.nvim](https://github.com/stevearc/aerial.nvim) | aerial |
+| [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim) | beacon |
+| [vimwiki](https://github.com/vimwiki/vimwiki) | vimwiki |
+| [overseer.nvim](https://github.com/stevearc/overseer.nvim) | overseer |
+| [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context |
+
+These integrations allow catppuccin to set the theme of various plugins. To enable an integration you just need to set it to `true`, for example:
+
+```lua
+require("catppuccin").setup({
+	integrations = {
+		<module> = <boolean>
+	}
+})
+```
+
+<details> <summary> <ins> Click here to see an example config </ins> </summary>
+
+```lua
+require("catppuccin").setup({
+	integrations = {
 		treesitter = true,
 		native_lsp = {
 			enabled = true,
@@ -209,53 +253,43 @@ require("catppuccin").setup({
 		fidget = false,
 		treesitter_context = false,
 	},
-	color_overrides = {},
-	highlight_overrides = {},
 })
 ```
+</details>
 
-Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
+### Special integrations
+<details> <summary>nvim-lspconfig</summary>
 
-## General
+Setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 
-This settings are unrelated to any group and are independent.
+```lua
+native_lsp = {
+	enabled = true,
+	virtual_text = {
+		errors = { "italic" },
+		hints = { "italic" },
+		warnings = { "italic" },
+		information = { "italic" },
+	},
+	underlines = {
+		errors = { "underline" },
+		hints = { "underline" },
+		warnings = { "underline" },
+		information = { "underline" },
+	},
+},
+```
+</details>
 
--   `transparent_background`: (Boolean) if true, disables setting the background color.
--   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+<details> <summary>bufferline.nvim</summary>
 
-## Dim inactive
-
-This setting manages the ability to dim the inactive splits/windows/buffers displayed.
-
--   `enabled`: (Boolean) if true, dims the background color of inactive window or buffer or split.
--   `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
--   `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
-
-## Styles
-
-Handles the style of general hi groups (see `:h highlight-args`):
-
--   `comments`: (Table) changed the style of the comments.
--   `functions`: (Table) changed the style of the functions.
--   `keywords`: (Table) changed the style of the keywords.
--   `strings`: (Table) changed the style of the strings.
--   `variables`: (Table) changed the style of the variables.
-
-## Integrations
-
-These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
-
-If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
-
-### Special Integrations
-
--   **Bufferline.nvim**: Update your bufferline config to use the Catppuccin components:
+Update your bufferline config to use the Catppuccin components:
 
 ```lua
 bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
 ```
 
-Configurations are self-explanatory:
+Configurations are self-explanatory, see `:h bufferline-highlights` for detailed explanation:
 
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"
@@ -276,8 +310,11 @@ bufferline.setup {
 	},
 }
 ```
+</details>
 
--   **Feline.nvim**: First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
+<details> <summary>feline.nvim</summary>
+
+First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
 
 ```lua
 local ctp_feline = require('catppuccin.groups.integrations.feline')
@@ -353,21 +390,11 @@ mode_colors = {
 
 <br />
 </details>
+</details>
 
--   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
--   **Lightline:** use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+<details> <summary>lualine.nvim</summary>
 
-```vim
-let g:lightline = {'colorscheme': 'catppuccin'}
-```
-
--   **vim-clap:** use this to set it up:
-
-```vim
-let g:clap_theme = 'catppuccin'
-```
-
--   **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
+Use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
 ```lua
 require('lualine').setup {
@@ -377,9 +404,23 @@ require('lualine').setup {
 	}
 }
 ```
+</details>
 
--   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
--   **Neo-tree:** setting `enabled` to `true` enables this integration:
+<details> <summary>indent-blankline.nvim</summary>
+
+Setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
+
+```lua
+indent_blankline = {
+	enabled = true,
+	colored_indent_levels = false,
+},
+```
+</details>
+
+<details> <summary>neo-tree.nvim</summary>
+
+Setting `enabled` to `true` enables this integration:
 
 ```lua
 integration = {
@@ -390,19 +431,11 @@ integration = {
 	}
 }
 ```
+</details>
 
--   **Fidget:** set `window.blend` to `0`:
+<details> <summary>nvim-dap</a> & nvim-dap-ui</a> </summary>
 
-```lua
-require("fidget").setup {
-    window = {
-        blend = 0,
-    },
-	-- ... the rest of your fidget config
-}
-```
-
--   **Nvim-dap:** setting `enabled` to `true`:
+Setting `enabled` to `true`:
 
 ```lua
 integration = {
@@ -423,13 +456,35 @@ sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", num
 sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 ```
+</details>
 
--   **Nvim-navic:** setting `enabled` to `true`:
+<details> <summary>lightline.vim</summary>
+
+Use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+
+```vim
+let g:lightline = {'colorscheme': 'catppuccin'}
+```
+</details>
+
+<details> <summary>vim-clap</summary>
+
+Use this to set it up:
+
+```vim
+let g:clap_theme = 'catppuccin'
+```
+</details>
+
+<details> <summary>nvim-navic</summary>
+
+Setting `enabled` to `true`:
 
 ```lua
-integration = {
-	navic = true
-}
+navic = {
+	enabled = false,
+	custom_bg = "NONE",
+},
 ```
 
 ```lua
@@ -438,6 +493,29 @@ require("nvim-navic").setup {
 	highlight = true
 }
 ```
+</details>
+
+<details> <summary>fidget.nvim</summary>
+
+Set fidget module to `true`
+
+```lua
+fidget = true
+```
+
+Then set `window.blend` to `0`:
+
+```lua
+require("fidget").setup {
+    window = {
+        blend = 0,
+    },
+	-- ... the rest of your fidget config
+}
+```
+</details>
+
+If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 # Customize highlights
 
