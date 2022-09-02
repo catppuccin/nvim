@@ -578,13 +578,7 @@ Module
 
 SPECIAL INTEGRATIONS ~
 
-</tr>
-
-<td>
-
 <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a>
-
-<td>
 
 **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In
 the inners tables you can set the style for the diagnostics, both
@@ -610,13 +604,7 @@ directly at the thing (e.g. an error)).
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/akinsho/bufferline.nvim">bufferline.nvim</a>
-
-<td>
 
 Update your bufferline config to use the Catppuccin components:
 
@@ -649,13 +637,7 @@ detailed explanation:
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/feline-nvim/feline.nvim">feline.nvim</a>
-
-<td>
 
 **Feline.nvim**: First make sure that the kyazdani42/nvim-web-devicons
 <https://github.com/kyazdani42/nvim-web-devicons/> plugin is installed. Then
@@ -676,8 +658,6 @@ Notice that calling `setup()` is optional. You may pass a lua table in order to
 change assets, settings and the colors per vim mode.
 
 Here are the defaults
-
-<td>
 
 >
     local clrs = require("catppuccin.palettes").get_palette()
@@ -738,13 +718,7 @@ Here are the defaults
 
 <br />
 
-</tr>
-
-<td>
-
 <a href="https://github.com/hoob3rt/lualine.nvim">lualine.nvim</a>
-
-<td>
 
 **Lualine:** use this to set it up (Note: `catppuccin` is the only valid theme
 name. It will pick the one set in your config):
@@ -759,13 +733,7 @@ name. It will pick the one set in your config):
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/lukas-reineke/indent-blankline.nvim">indent-blankline.nvim</a>
-
-<td>
 
 **Indent-blankline.nvim**: setting `enabled` to `true` enables this
 integration. `colored_indent_levels` enables char highlights per indent level.
@@ -781,13 +749,7 @@ to set the latter up.
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/nvim-neo-tree/neo-tree.nvim">neo-tree.nvim</a>
-
-<td>
 
 **Neo-tree:** setting `enabled` to `true` enables this integration:
 
@@ -802,14 +764,8 @@ to set the latter up.
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/mfussenegger/nvim-dap">nvim-dap</a> &
 <a href="https://github.com/rcarriga/nvim-dap-ui">nvim-dap-ui</a>
-
-<td>
 
 **Nvim-dap:** setting `enabled` to `true`:
 
@@ -835,13 +791,7 @@ to set the latter up.
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a>
-
-<td>
 
 **Lightline:** use this to set it up (Note: `catppuccin` is the only valid
 colorscheme name. It will pick the one set in your config):
@@ -851,13 +801,7 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/liuchengxu/vim-clap">vim-clap</a>
-
-<td>
 
 **vim-clap:** use this to set it up:
 
@@ -866,13 +810,7 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/SmiteshP/nvim-navic">nvim-navic</a>
-
-<td>
 
 **Nvim-navic:** setting `enabled` to `true`:
 
@@ -892,13 +830,7 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-</tr>
-
-<td>
-
 <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a>
-
-<td>
 
 >
     fidget = false
@@ -918,8 +850,6 @@ colorscheme name. It will pick the one set in your config):
 
 
 Here are the default options
-
-<td>
 
 >
     require("catppuccin").setup({
