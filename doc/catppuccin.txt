@@ -356,7 +356,7 @@ Config
 <td>
 
 >
-    
+    telescope = true
 <
 
 
@@ -407,7 +407,7 @@ Config
 <td>
 
 >
-    
+    cmp = true
 <
 
 
@@ -424,7 +424,7 @@ Config
 <td>
 
 >
-    
+    lsp_saga = false
 <
 
 
@@ -441,7 +441,7 @@ Config
 <td>
 
 >
-    
+    gitsigns = true
 <
 
 
@@ -458,7 +458,10 @@ Config
 <td>
 
 >
-    
+    indent_blankline = {
+        enabled = true,
+        colored_indent_levels = false,
+    },
 <
 
 
@@ -475,7 +478,7 @@ Config
 <td>
 
 >
-    
+    lsp_trouble = false
 <
 
 
@@ -492,7 +495,7 @@ Config
 <td>
 
 >
-    
+    which_key = false
 <
 
 
@@ -526,7 +529,7 @@ Config
 <td>
 
 >
-    
+    barbar = false
 <
 
 
@@ -679,7 +682,7 @@ Config
 <td>
 
 >
-    
+    markdown = true
 <
 
 
