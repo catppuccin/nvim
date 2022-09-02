@@ -185,7 +185,7 @@ require("catppuccin").setup({
 })
 ```
 
-<details> <summary> <strong> Click here to see an example config </strong> </summary>
+<details> <summary> <u> Click here to see an example config </u> </summary>
 
 ```lua
 require("catppuccin").setup({
@@ -516,7 +516,7 @@ require("fidget").setup {
 ```
 </details>
 
-> If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
+If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 # Customize highlights
 
