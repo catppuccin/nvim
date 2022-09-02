@@ -146,7 +146,7 @@ These integrations allow catppuccin to set the theme of various plugins/stuff. T
 
 If you'd like to know which highlight groups are being affected by catppuccin, checkout this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
-Here is the default options:
+Here are the default options:
 
 ```lua
 require("catppuccin").setup({
@@ -382,23 +382,6 @@ vimwiki = false
 overseer = false
 ```
 </details>
-<details> <summary> <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a> </summary>
-
-```lua
-fidget = false
-```
-
-**Fidget:** set `window.blend` to `0`:
-
-```lua
-require("fidget").setup {
-    window = {
-        blend = 0,
-    },
-	-- ... the rest of your fidget config
-}
-```
-</details>
 <details> <summary> <a href="https://github.com/nvim-treesitter/nvim-treesitter-context">nvim-treesitter-context</a> </summary>
 
 ```lua
@@ -438,7 +421,7 @@ Update your bufferline config to use the Catppuccin components:
 bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
 ```
 
-Configurations are self-explanatory, see `:h bufferline-highlights` for detailed explanation.:
+Configurations are self-explanatory, see `:h bufferline-highlights` for detailed explanation:
 
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"
@@ -643,6 +626,24 @@ navic = {
 -- You NEED to enable highlight in nvim-navic setting or it won't work
 require("nvim-navic").setup {
 	highlight = true
+}
+```
+</details>
+
+<details> <summary> <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a> </summary>
+
+```lua
+fidget = false
+```
+
+**Fidget:** set `window.blend` to `0`:
+
+```lua
+require("fidget").setup {
+    window = {
+        blend = 0,
+    },
+	-- ... the rest of your fidget config
 }
 ```
 </details>
