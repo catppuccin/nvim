@@ -500,11 +500,13 @@ require("nvim-navic").setup {
 
 <details> <summary> <a href="https://github.com/j-hui/fidget.nvim">fidget.nvim</a> </summary>
 
+Set fidget module to `true`
+
 ```lua
-fidget = false
+fidget = true
 ```
 
-Set `window.blend` to `0`:
+Then set `window.blend` to `0`:
 
 ```lua
 require("fidget").setup {
