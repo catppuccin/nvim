@@ -142,7 +142,15 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 ## Integrations
 
-These integrations allow catppuccin to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
+These integrations allow catppuccin to set the theme of various plugins. To enable an integration you just need to set it to `true` (there are also some special integrations), for example:
+
+```lua
+require("catppuccin").setup({
+	integrations = {
+		<module> = <boolean>
+	}
+})
+```
 
 Supported plugins and their modules:
 
