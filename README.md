@@ -149,7 +149,7 @@ These integrations allow catppuccin to set the theme of various plugins/stuff. T
 Supported plugins and their modules:
 
 | Plugin | Module |
-
+| ------ | ------ |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | treesitter |
 
 </tr> <td> <a href="https://github.com/nvim-telescope/telescope.nvim">telescope.nvim</a> <td>
