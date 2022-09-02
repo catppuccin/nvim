@@ -142,7 +142,7 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 ## Integrations
 
-List of supported plugins and their modules (See also [Special integrations](https://github.com/catppuccin/nvim#special-integrations)):
+List of supported plugins and their modules (See [Special integrations](https://github.com/catppuccin/nvim#special-integrations) for more)
 
 | Plugin | Module |
 | ------ | ------ |
