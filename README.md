@@ -583,7 +583,7 @@ integration = {
 </details>
 
 <details> <summary>
-<a href="https://github.com/mfussenegger/nvim-dap">nvim-dap</a>
+<a href="https://github.com/mfussenegger/nvim-dap">nvim-dap</a> & 
 <a href="https://github.com/rcarriga/nvim-dap-ui">nvim-dap-ui</a>
 </summary>
 
