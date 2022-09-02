@@ -665,7 +665,7 @@ colorscheme name. It will pick the one set in your config):
 <
 
 
-Here are the default options:
+Here are the default options
 
 >
     require("catppuccin").setup({
