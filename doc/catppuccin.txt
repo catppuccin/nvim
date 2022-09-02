@@ -230,7 +230,11 @@ enable an integration you just need to set it to `true`, for example:
 <
 
 
-<u> Click here to see an example config </u>
+<ins>
+
+Click here to see an example config
+
+</ins>
 
 >
     require("catppuccin").setup({
