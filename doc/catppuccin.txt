@@ -33,6 +33,8 @@ Table of Contents                               *catppuccin-table-of-contents*
 ==============================================================================
 1. About                                                    *catppuccin-about*
 
+NOTE: This fork simply exists to add the "original colors" back to catppuccin.
+
 This port of Catppuccin is special because it was the first one and the one
 that originated the project itself. Given this, it’s important to acknowledge
 that it all didn’t come to be what it is now out of nowhere. So, if you are
