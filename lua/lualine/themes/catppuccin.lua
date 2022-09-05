@@ -1,10 +1,11 @@
-local cp = require("catppuccin.core.palettes.init").get_palette()
+local cp = require("catppuccin.palettes").get_palette()
+local config = require("catppuccin.config").options
 local catppuccin = {}
 
 catppuccin.normal = {
 	a = { bg = cp.blue, fg = cp.mantle, gui = "bold" },
 	b = { bg = cp.surface1, fg = cp.blue },
-	c = { bg = cp.mantle, fg = cp.text },
+	c = { bg = config.transparent_background and "NONE" or cp.mantle, fg = cp.text },
 }
 
 catppuccin.insert = {

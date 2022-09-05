@@ -1,54 +1,61 @@
----@class Config
-local config = {}
-
-config.options = {
+local default_config = {
 	transparent_background = false,
 	term_colors = false,
+	compile = {
+		enabled = false,
+		path = vim.fn.stdpath("cache") .. "/catppuccin",
+	},
+	dim_inactive = {
+		enabled = false,
+		shade = "dark",
+		percentage = 0.15,
+	},
 	styles = {
-		comments = "italic",
-		conditionals = "italic",
-		loops = "NONE",
-		functions = "NONE",
-		keywords = "NONE",
-		strings = "NONE",
-		variables = "NONE",
-		numbers = "NONE",
-		booleans = "NONE",
-		properties = "NONE",
-		types = "NONE",
-		operators = "NONE",
+		comments = { "italic" },
+		conditionals = { "italic" },
+		loops = {},
+		functions = {},
+		keywords = {},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
 	},
 	integrations = {
 		treesitter = true,
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
-				errors = "italic",
-				hints = "italic",
-				warnings = "italic",
-				information = "italic",
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
 			},
 			underlines = {
-				errors = "underline",
-				hints = "underline",
-				warnings = "underline",
-				information = "underline",
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
 			},
 		},
+		coc_nvim = false,
 		lsp_trouble = false,
 		cmp = true,
 		lsp_saga = false,
 		gitgutter = false,
 		gitsigns = true,
 		telescope = true,
-		nvimtree = {
-			enabled = true,
-			show_root = false,
-			transparent_panel = false,
+		nvimtree = true,
+		dap = {
+			enabled = false,
+			enable_ui = false,
 		},
 		neotree = {
 			enabled = false,
-			show_root = false,
+			show_root = true,
 			transparent_panel = false,
 		},
 		which_key = false,
@@ -61,20 +68,41 @@ config.options = {
 		vim_sneak = false,
 		fern = false,
 		barbar = false,
-		bufferline = true,
 		markdown = true,
 		lightspeed = false,
+		leap = false,
 		ts_rainbow = false,
 		hop = false,
 		notify = true,
-		telekasten = true,
-		symbols_outline = true,
+		telekasten = false,
+		symbols_outline = false,
+		mini = false,
+		aerial = false,
+		vimwiki = false,
+		beacon = false,
+		navic = {
+			enabled = false,
+			custom_bg = "NONE",
+		},
+		overseer = false,
+		fidget = false,
+		treesitter_context = false,
 	},
+	color_overrides = {},
+	highlight_overrides = {},
 }
+
+local config = { options = default_config }
 
 function config.set_options(opts)
 	opts = opts or {}
-	config.options = vim.tbl_deep_extend("force", config.options, opts)
+	config.options = vim.tbl_deep_extend("keep", opts, default_config)
+	config.options.highlight_overrides.all = config.options.custom_highlights or config.options.highlight_overrides.all
+	if config.options.compile.enabled ~= true then
+		pcall(vim.api.nvim_del_user_command, "CatppuccinCompile")
+		pcall(vim.api.nvim_del_user_command, "CatppuccinClean")
+		pcall(vim.api.nvim_del_user_command, "CatppuccinStatus")
+	end
 end
 
 return config
