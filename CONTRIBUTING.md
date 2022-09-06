@@ -6,12 +6,10 @@
 
 The following is a set of guidelines for contributing to this project. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-- PRs should go to the `dev` branch. Reasons:
-	- If there is already stuff under development, then it's likely that a conflict may occur.
-	- Releases/Deployment.
-	- Documentation tends not to be updated by PRs.
-	- Testing.
 - Use the `.editorconfig` file (located at the root of this project) on your editor so as to "maintain consistent coding styles". For instructions on how to use this file refer to [EditorConfig's website](https://editorconfig.org/).
+- Format code using [stylua](https://github.com/johnnymorganz/stylua). This keeps everything consistent.
+  - Make sure that the project's `stylua.toml` file is used for stylua settings.
+- New plugin integration should be added in [alphabetical order](https://github.com/catppuccin/nvim#integrations)
 
 ## Recommendations
 
