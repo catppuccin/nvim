@@ -1,1 +1,1 @@
-let g:clap#themes#catppuccin#palette = luaeval('require("clap.themes.catppuccin")')
+let g:clap#themes#catppuccin#palette = luaeval('require("catppuccin.utils.clap")')
