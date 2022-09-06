@@ -2,107 +2,107 @@ name: Bug report
 description: Report a problem with Catppuccin
 labels: [bug]
 body:
-	- type: markdown
-		attributes:
-			value: |
-				Before reporting: Read [Announcement and breaking changes](https://github.com/catppuccin/nvim/issues/260) and PLEASE UPDATE if you use neovim nightly.
-	- type: textarea
-		attributes:
-			label: "Description"
-			description: "A short description of the problem you are reporting."
-		validations:
-			required: true
-	- type: textarea
-		attributes:
-			label: "Neovim version"
-			description: "Output of `nvim --version` (Catppuccin requires neovim >= 0.7)"
-			render: markdown
-			placeholder: |
+  - type: markdown
+    attributes:
+      value: |
+        Before reporting: Read [Announcement and breaking changes](https://github.com/catppuccin/nvim/issues/260) and PLEASE UPDATE if you use neovim nightly.
+  - type: textarea
+    attributes:
+      label: "Description"
+      description: "A short description of the problem you are reporting."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Neovim version"
+      description: "Output of `nvim --version` (Catppuccin requires neovim >= 0.7)"
+      render: markdown
+      placeholder: |
         NVIM v0.8.0-dev-1025-gfb39bba5a6
-				Build type: Release
-				LuaJIT 2.1.0-beta3
-		validations:
-			required: true
-	- type: input
-		attributes:
-			label: "Operating system and version"
-			placeholder: "macOS 11.5"
-		validations:
-			required: true
-	- type: input
-		attributes:
-			label: "Catppuccin version / branch / rev"
-			placeholder: "catppuccin v0.2"
-		validations:
-			required: true
-	- type: textarea
-		attributes:
-			label: "Steps to reproduce"
-			description: "Steps to reproduce using the minimal config provided below."
-			placeholder: |
-				1. `nvim -nu minimal.lua`
-				2. ...
-		validations:
-			required: true
-	- type: textarea
-		attributes:
-			label: "Expected behavior"
-			description: "A description of the behavior you expected:"
-	- type: textarea
-		attributes:
-			label: "Actual behavior"
-			description: "Observed behavior (may optionally include logs, images, or videos)."
-		validations:
-			required: true
-	- type: textarea
-		attributes:
-			label: "Minimal config"
-			description: "Minimal(!) configuration necessary to reproduce the issue. Save this as `minimal.lua`. If _absolutely_ necessary, add plugins and config options from your `init.lua` at the indicated lines."
-			render: Lua
-			value: |
-				-- `minimal_init.lua` used for reproducible configuration
-				-- Open with `nvim --clean -u minimal_init.lua`
+        Build type: Release
+        LuaJIT 2.1.0-beta3
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Operating system and version"
+      placeholder: "macOS 11.5"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Catppuccin version / branch / rev"
+      placeholder: "catppuccin v0.2"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Steps to reproduce"
+      description: "Steps to reproduce using the minimal config provided below."
+      placeholder: |
+        1. `nvim -nu minimal.lua`
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Expected behavior"
+      description: "A description of the behavior you expected:"
+  - type: textarea
+    attributes:
+      label: "Actual behavior"
+      description: "Observed behavior (may optionally include logs, images, or videos)."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Minimal config"
+      description: "Minimal(!) configuration necessary to reproduce the issue. Save this as `minimal.lua`. If _absolutely_ necessary, add plugins and config options from your `init.lua` at the indicated lines."
+      render: Lua
+      value: |
+        -- `minimal_init.lua` used for reproducible configuration
+        -- Open with `nvim --clean -u minimal_init.lua`
 
-				local is_windows = vim.fn.has("win32") == 1
-				local function join(...)
-					local sep = is_windows and "\\" or "/"
-					return table.concat({ ... }, sep)
-				end
+        local is_windows = vim.fn.has("win32") == 1
+        local function join(...)
+          local sep = is_windows and "\\" or "/"
+          return table.concat({ ... }, sep)
+        end
 
-				local root_tmp = is_windows and os.getenv("TEMP") or "/tmp"
-				local site_path = join(root_tmp, "nvim", "site")
-				local pack_path = join(site_path, "pack")
-				local install_path = join(pack_path, "packer", "start", "packer.nvim")
-				local compile_path = join(install_path, "plugin", "packer_compiled.lua")
-				vim.opt.packpath = site_path
+        local root_tmp = is_windows and os.getenv("TEMP") or "/tmp"
+        local site_path = join(root_tmp, "nvim", "site")
+        local pack_path = join(site_path, "pack")
+        local install_path = join(pack_path, "packer", "start", "packer.nvim")
+        local compile_path = join(install_path, "plugin", "packer_compiled.lua")
+        vim.opt.packpath = site_path
 
-				local function load_plugins()
-					local packer = require("packer")
-					local use = packer.use
-					packer.reset()
-					packer.init({ compile_path = compile_path, package_root = pack_path })
+        local function load_plugins()
+          local packer = require("packer")
+          local use = packer.use
+          packer.reset()
+          packer.init({ compile_path = compile_path, package_root = pack_path })
 
-					use("wbthomason/packer.nvim")
-					use({ "catppuccin/nvim", as = "catppuccin" })
-					-- ADD PLUGINS THAT ARE _NECESSARY_ FOR REPRODUCING THE ISSUE
+          use("wbthomason/packer.nvim")
+          use({ "catppuccin/nvim", as = "catppuccin" })
+          -- ADD PLUGINS THAT ARE _NECESSARY_ FOR REPRODUCING THE ISSUE
 
-					packer.install()
-				end
+          packer.install()
+        end
 
-				_G.load_config = function()
-					-- ADD INIT.LUA SETTINGS THAT ARE _NECESSARY_ FOR REPRODUCING THE ISSUE
-					vim.g.catppuccin_flavour = "macchiato"
-					require("catppuccin").setup({
-						-- ...
-					})
+        _G.load_config = function()
+          -- ADD INIT.LUA SETTINGS THAT ARE _NECESSARY_ FOR REPRODUCING THE ISSUE
+          vim.g.catppuccin_flavour = "macchiato"
+          require("catppuccin").setup({
+            -- ...
+          })
 
-					vim.cmd("colorscheme catppuccin")
-				end
+          vim.cmd("colorscheme catppuccin")
+        end
 
-				if vim.fn.isdirectory(install_path) == 0 then
-					vim.fn.system({ "git", "clone", "--depth=1", "https://github.com/wbthomason/packer.nvim", install_path })
-				end
-				load_plugins()
-				vim.cmd([[autocmd User PackerComplete ++once echo "Ready!" | lua load_config()]])
-		validations:
-			required: true
+        if vim.fn.isdirectory(install_path) == 0 then
+          vim.fn.system({ "git", "clone", "--depth=1", "https://github.com/wbthomason/packer.nvim", install_path })
+        end
+        load_plugins()
+        vim.cmd([[autocmd User PackerComplete ++once echo "Ready!" | lua load_config()]])
+    validations:
+      required: true
