@@ -166,6 +166,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter         |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                            | ts_rainbow         |
 | [overseer.nvim](https://github.com/stevearc/overseer.nvim)                            | overseer           |
+| [pounce.nvim](https://github.com/rlane/pounce.nvim)                                   | pounce             |
 | [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)              | symbols_outline    |
 | [telekasten.nvim](https://github.com/renerocksai/telekasten.nvim)                     | telekasten         |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | telescope          |
@@ -211,6 +212,7 @@ require("catppuccin").setup({
 		notify = true,
 		nvimtree = true,
 		overseer = false,
+		pounce = false,
 		symbols_outline = false,
 		telekasten = false,
 		telescope = true,
