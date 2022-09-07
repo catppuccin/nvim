@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before reporting: Read [Announcement and breaking changes](https://github.com/catppuccin/nvim/issues/260) and PLEASE UPDATE if you use neovim nightly.
+        Before reporting: Read [Announcement and breaking changes](https://github.com/catppuccin/nvim/issues/260) and [PLEASE UPDATE if you use neovim nightly](https://github.com/catppuccin/nvim/issues/262).
   - type: textarea
     attributes:
       label: "Description"
@@ -60,8 +60,8 @@ body:
       description: "Minimal(!) configuration necessary to reproduce the issue. Save this as `minimal.lua`. If _absolutely_ necessary, add plugins and config options from your `init.lua` at the indicated lines."
       render: Lua
       value: |
-        -- `minimal_init.lua` used for reproducible configuration
-        -- Open with `nvim --clean -u minimal_init.lua`
+        -- `minimal.lua` used for reproducible configuration
+        -- Open with `nvim --clean -u minimal.lua`
 
         local is_windows = vim.fn.has("win32") == 1
         local function join(...)
