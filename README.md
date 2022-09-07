@@ -13,7 +13,7 @@
     <a href="https://github.com/catppuccin/nvim/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/nvim?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
-![](https://raw.githubusercontent.com/catppuccin/nvim/assets/assets/demo.png)
+![](https://raw.githubusercontent.com/catppuccin/nvim/assets/demo.png)
 
 <!-- panvimdoc-ignore-end -->
 
@@ -190,7 +190,44 @@ require("catppuccin").setup({
 ```lua
 require("catppuccin").setup({
 	integrations = {
+		aerial = false,
+		barbar = false,
+		beacon = false,
+		cmp = true,
+		coc_nvim = false,
+		dashboard = true,
+		fern = false,
+		fidget = false,
+		gitgutter = false,
+		gitsigns = true,
+		hop = false,
+		leap = false,
+		lightspeed = false,
+		lsp_saga = false,
+		lsp_trouble = false,
+		markdown = true,
+		mini = false,
+		neogit = false,
+		notify = true,
+		nvimtree = true,
+		overseer = false,
+		symbols_outline = false,
+		telekasten = false,
+		telescope = true,
 		treesitter = true,
+		treesitter_context = false,
+		ts_rainbow = false,
+		vim_sneak = false,
+		vimwiki = false,
+		which_key = false,
+		dap = {
+			enabled = false,
+			enable_ui = false,
+		},
+		indent_blankline = {
+			enabled = true,
+			colored_indent_levels = false,
+		},
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
@@ -206,52 +243,15 @@ require("catppuccin").setup({
 				information = { "underline" },
 			},
 		},
-		coc_nvim = false,
-		lsp_trouble = false,
-		cmp = true,
-		lsp_saga = false,
-		gitgutter = false,
-		gitsigns = true,
-		telescope = true,
-		nvimtree = true,
-		dap = {
+		navic = {
 			enabled = false,
-			enable_ui = false,
+			custom_bg = "NONE",
 		},
 		neotree = {
 			enabled = false,
 			show_root = true,
 			transparent_panel = false,
 		},
-		which_key = false,
-		indent_blankline = {
-			enabled = true,
-			colored_indent_levels = false,
-		},
-		dashboard = true,
-		neogit = false,
-		vim_sneak = false,
-		fern = false,
-		barbar = false,
-		markdown = true,
-		lightspeed = false,
-		leap = false,
-		ts_rainbow = false,
-		hop = false,
-		notify = true,
-		telekasten = false,
-		symbols_outline = false,
-		mini = false,
-		aerial = false,
-		vimwiki = false,
-		beacon = false,
-		navic = {
-			enabled = false,
-			custom_bg = "NONE",
-		},
-		overseer = false,
-		fidget = false,
-		treesitter_context = false,
 	},
 })
 ```
