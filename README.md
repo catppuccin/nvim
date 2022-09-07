@@ -13,9 +13,7 @@
     <a href="https://github.com/catppuccin/nvim/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/nvim?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
-<p align="center">
-  <img src="assets/demo.png"/>
-</p>
+![](https://raw.githubusercontent.com/catppuccin/nvim/assets/assets/demo.png)
 
 <!-- panvimdoc-ignore-end -->
 
