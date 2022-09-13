@@ -219,7 +219,7 @@ function M.get()
 		yamlTSField = { fg = cp.blue }, -- For fields.
 	}
 
-	if vim.version().minor >= 8 then -- https://github.com/nvim-treesitter/nvim-treesitter/pull/3365
+	if not vim.treesitter.highlighter.hl_map then -- https://github.com/nvim-treesitter/nvim-treesitter/pull/3365
 		return vim.tbl_deep_extend("keep", treesitter, treesitter07)
 	else
 		return treesitter07
