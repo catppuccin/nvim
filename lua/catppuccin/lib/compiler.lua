@@ -26,7 +26,10 @@ vim.cmd("hi clear")
 if vim.fn.exists("syntax_on") then
 	vim.cmd("syntax reset")
 end
-vim.g.colors_name = "catppuccin"]],
+vim.g.colors_name = "catppuccin"
+
+-- neovim 0.8 compatible
+vim.g.skip_ts_default_groups = true]],
 	}
 	local config = require("catppuccin.config").options
 	if is_windows then
