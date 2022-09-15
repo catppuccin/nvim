@@ -24,10 +24,10 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Acknowledge                                       |catppuccin-acknowledge|
   - Hooks                                                   |catppuccin-hooks|
 8. FAQ                                                        |catppuccin-faq|
-  - Transparent background tweak     |catppuccin-transparent-background-tweak|
+  - Transparent background tweaks   |catppuccin-transparent-background-tweaks|
   - Usage with :set background         |catppuccin-usage-with-:set-background|
-  - Old catppuccin remap function   |catppuccin-old-catppuccin-remap-function|
-  - Abnormal colors                               |catppuccin-abnormal-colors|
+  - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
+  - Wrong treesitter highlights after :set spell|catppuccin-wrong-treesitter-highlights-after-:set-spell|
 9. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
@@ -891,7 +891,7 @@ They can be used like so:
 ==============================================================================
 8. FAQ                                                        *catppuccin-faq*
 
-TRANSPARENT BACKGROUND TWEAK         *catppuccin-transparent-background-tweak*
+TRANSPARENT BACKGROUND TWEAKS       *catppuccin-transparent-background-tweaks*
 
 Add this to `custom_highlights` settings
 
@@ -930,7 +930,7 @@ background=light` and to mocha after `:set background=dark`
 
 For people who are hybrid between light and dark mode!
 
-OLD CATPPUCCIN REMAP FUNCTION       *catppuccin-old-catppuccin-remap-function*
+CATPPUCCIN REMAP FUNCTION               *catppuccin-catppuccin-remap-function*
 
 Unlike the `:highlight` command which can update a highlight group, this
 function completely replaces the definition. (`:h nvim_set_hl`)
@@ -942,40 +942,19 @@ function completely replaces the definition. (`:h nvim_set_hl`)
 <
 
 
-If you wish to use the old highlight api (slower):
+WRONG TREESITTER HIGHLIGHTS AFTER :SET SPELL*catppuccin-wrong-treesitter-highlights-after-:set-spell*
+
+Please disable `additional_vim_regex_highlighting`
 
 >
-    local function syntax(tbl)
-        for group, color in pairs(tbl) do
-            if color.style then
-                color.style = table.concat(color.style, ",")
-            end
-            local style = color.style and "gui=" .. color.style or "gui=NONE"
-            local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
-            local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
-            local sp = color.sp and "guisp=" .. color.sp or ""
-            local blend = color.blend and "blend=" .. color.blend or ""
-            local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp .. " " .. blend
-            vim.cmd(hl)
-            if color.link then
-                vim.cmd("highlight! link " .. group .. " " .. color.link)
-            end
-        end
-    end
-    
-    syntax {
-        Normal = { style = { "italic", "bold" } },
+    require("nvim-treesitter.configs").setup {
+        highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false
+        },
     }
 <
 
-
-ABNORMAL COLORS                                   *catppuccin-abnormal-colors*
-
-You need to enable truecolor
-<https://wiki.archlinux.org/title/Color_output_in_console#True_color_support>
-
-Related: |:h termguicolors|, catppuccin/nvim#182
-<https://github.com/catppuccin/nvim/issues/182>,
 
 ==============================================================================
 9. Thanks to                                            *catppuccin-thanks-to*
