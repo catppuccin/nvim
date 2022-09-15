@@ -803,7 +803,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 # FAQ
 
-## Transparent background tweak
+## Transparent background tweaks
 
 Add this to `custom_highlights` settings
 
@@ -839,7 +839,7 @@ vim.api.nvim_create_autocmd("OptionSet", {
 
 For people who are hybrid between light and dark mode!
 
-## Old catppuccin remap function
+## Catppuccin remap function
 
 Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
 
@@ -847,40 +847,20 @@ Unlike the `:highlight` command which can update a highlight group, this functio
 require("catppuccin.lib.highlighter").syntax({
 	Normal = { style = { "italic", "bold" } }
 })
-
 ```
 
-If you wish to use the old highlight api (slower):
+## Wrong treesitter highlights after :set spell
+
+Please disable `additional_vim_regex_highlighting`
 
 ```lua
-local function syntax(tbl)
-	for group, color in pairs(tbl) do
-		if color.style then
-			color.style = table.concat(color.style, ",")
-		end
-		local style = color.style and "gui=" .. color.style or "gui=NONE"
-		local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
-		local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
-		local sp = color.sp and "guisp=" .. color.sp or ""
-		local blend = color.blend and "blend=" .. color.blend or ""
-		local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp .. " " .. blend
-		vim.cmd(hl)
-		if color.link then
-			vim.cmd("highlight! link " .. group .. " " .. color.link)
-		end
-	end
-end
-
-syntax {
-	Normal = { style = { "italic", "bold" } },
+require("nvim-treesitter.configs").setup {
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false
+	},
 }
 ```
-
-## Abnormal colors
-
-You need to enable [truecolor](https://wiki.archlinux.org/title/Color_output_in_console#True_color_support)
-
-Related: [:h termguicolors](https://neovim.io/doc/user/options.html#'termguicolors'), [catppuccin/nvim#182](https://github.com/catppuccin/nvim/issues/182),
 
 # 💝 Thanks to
 
