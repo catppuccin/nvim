@@ -13,11 +13,6 @@ function M.get()
 
 	if not vim.treesitter.highlighter.hl_map then -- https://github.com/nvim-treesitter/nvim-treesitter/pull/3365
 		return {
-			-- These groups are for the neovim tree-sitter highlights.
-			-- As of writing, tree-sitter support is a WIP, group names may change.
-			-- By default, most of these groups link to an appropriate Vim group,
-			-- TSError -> Error for example, so you do not have to define these unless
-			-- you explicitly want to support Treesitter's improved syntax awareness.
 			["@field"] = { fg = cp.teal }, -- For fields.
 			["@property"] = { fg = cp.teal, style = cnf.styles.properties or {} }, -- Same as TSField.
 
@@ -92,30 +87,27 @@ function M.get()
 			["@text.strong"] = { fg = cp.maroon, style = { "bold" } }, -- italic
 			["@string.escape"] = { fg = cp.pink, style = cnf.styles.strings }, -- For escape characters within a string.
 
-			-- bash
-			-- bashTSFuncBuiltin = { fg = cp.red, style = { "italic" } },
-			-- bashTSParameter = { fg = cp.yellow, style = { "italic" } },
-
-			tomlTSProperty = { fg = cp.blue }, -- Differentiates between string and properties
+			-- toml
+			["@property.toml"] = { fg = cp.blue }, -- Differentiates between string and properties
 
 			-- json
-			jsonTSLabel = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
+			["@label.json"] = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
 
 			-- lua
-			luaTSConstructor = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+			["@constructor.lua"] = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
 			-- typescript
-			typescriptTSConstructor = { fg = cp.lavender },
+			["@constructor.typescript"] = { fg = cp.lavender },
 
 			-- TSX (Typescript React)
-			tsxTSConstructor = { fg = cp.lavender },
-			tsxTSTagAttribute = { fg = cp.mauve },
+			["@constructor.tsx"] = { fg = cp.lavender },
+			["@tag.attribute.tsx"] = { fg = cp.mauve },
 
 			-- cpp
-			cppTSProperty = { fg = cp.rosewater },
+			["@property.cpp"] = { fg = cp.rosewater },
 
 			-- yaml
-			yamlTSField = { fg = cp.blue }, -- For fields.
+			["@field.yaml"] = { fg = cp.blue }, -- For fields.
 		}
 	else -- neovim <= 0.7.2
 		return {
