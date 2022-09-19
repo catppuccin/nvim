@@ -25,6 +25,10 @@ function M.get(user_config)
 			background = { bg = inactive_bg },
 			buffer_visible = { fg = cp.surface1, bg = inactive_bg },
 			buffer_selected = { fg = cp.text, bg = active_bg, style = styles }, -- current
+			-- Duplicate
+			duplicate_selected = { fg = cp.text, bg = active_bg },
+			duplicate_visible = { fg = cp.surface1, bg = inactive_bg },
+			duplicate = { fg = cp.surface1, bg = inactive_bg, style = styles },
 			-- tabs
 			tab = { fg = cp.surface1, bg = inactive_bg },
 			tab_selected = { fg = cp.sky, bg = active_bg },
