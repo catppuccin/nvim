@@ -26,8 +26,8 @@ function M.get(user_config)
 			buffer_visible = { fg = cp.surface1, bg = inactive_bg },
 			buffer_selected = { fg = cp.text, bg = active_bg, style = styles }, -- current
 			-- Duplicate
-			duplicate_selected = { fg = cp.text, bg = active_bg },
-			duplicate_visible = { fg = cp.surface1, bg = inactive_bg },
+			duplicate_selected = { fg = cp.text, bg = active_bg, style = styles },
+			duplicate_visible = { fg = cp.surface1, bg = inactive_bg, style = styles },
 			duplicate = { fg = cp.surface1, bg = inactive_bg, style = styles },
 			-- tabs
 			tab = { fg = cp.surface1, bg = inactive_bg },
