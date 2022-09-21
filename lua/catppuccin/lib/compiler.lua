@@ -66,7 +66,9 @@ vim.g.skip_ts_default_groups = true]],
 			table.insert(lines, fmt('vim.g.%s = "%s"', k, v))
 		end
 	end
-	os.execute(string.format("mkdir %s %s", is_windows and "" or "-p", config.compile.path))
+	if vim.fn.isdirectory(config.compile.path) == 0 then
+		os.execute(string.format("mkdir %s %s", is_windows and "" or "-p", config.compile.path))
+	end
 	local file = io.open(config.compile.path .. (is_windows and "\\" or "/") .. flavour .. "_compiled.lua", "w")
 	file:write(table.concat(lines, "\n"))
 	file:close()
