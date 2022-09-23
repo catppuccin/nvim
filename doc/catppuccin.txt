@@ -328,7 +328,7 @@ Update your bufferline config to use the Catppuccin components:
 
 
 Configurations are self-explanatory, see `:h bufferline-highlights` for
-detailed explanation:
+detailed explanations:
 
 >
     local mocha = require("catppuccin.palettes").get_palette "mocha"
