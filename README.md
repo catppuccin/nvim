@@ -724,8 +724,8 @@ use {
 
 Vim-plug
 
-```lua
--- It's recommended to add `:CatppuccinCompile` to post-update hooks
+```vim
+" It's recommended to add `:CatppuccinCompile` to post-update hooks
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
 
