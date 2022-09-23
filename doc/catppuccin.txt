@@ -139,7 +139,7 @@ Catppuccin’s settings:
             operators = {},
         },
         integrations = {
-            -- For various plugins integrations see https://github.com/catppuccin/nvimintegrations
+            -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
         },
         color_overrides = {},
         highlight_overrides = {},
@@ -278,7 +278,7 @@ Click here to see an example config
             vimwiki = false,
             which_key = false,
     
-            -- Special integrations, see https://github.com/catppuccin/nvimspecial-integrations
+            -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
             dap = {
                 enabled = false,
                 enable_ui = false,
@@ -337,13 +337,13 @@ detailed explanations:
             styles = { "italic", "bold" },
             custom = {
                 all = {
-                    fill = { bg = "000000" },
+                    fill = { bg = "#000000" },
                 },
                 mocha = {
                     background = { fg = mocha.text },
                 },
                 latte = {
-                    background = { fg = "000000" },
+                    background = { fg = "#000000" },
                 },
             },
         },
@@ -376,24 +376,24 @@ Here are the defaults
 >
     local clrs = require("catppuccin.palettes").get_palette()
     assets = {
-        left_separator = "",
-        right_separator = "",
-        bar = "",
-        mode_icon = "",
-        dir = "  ",
-        file = "   ",
+        left_separator = "",
+        right_separator = "",
+        bar = "█",
+        mode_icon = "",
+        dir = "  ",
+        file = "   ",
         lsp = {
-            server = "  ",
-            error = "  ",
-            warning = "  ",
-            info = "  ",
-            hint = "  ",
+            server = "  ",
+            error = "  ",
+            warning = "  ",
+            info = "  ",
+            hint = "  ",
         },
         git = {
-            branch = "  ",
-            added = "  ",
-            changed = "  ",
-            removed = "  ",
+            branch = "  ",
+            added = "  ",
+            changed = "  ",
+            removed = "  ",
         },
     },
     sett = {
@@ -526,9 +526,9 @@ Setting `enabled` to `true`:
     
     local sign = vim.fn.sign_define
     
-    sign("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = ""})
-    sign("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
-    sign("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = ""})
+    sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+    sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+    sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 <
 
 
@@ -666,7 +666,7 @@ Here is an example:
     require("catppuccin").setup {
         highlight_overrides = {
             all = {
-                CmpBorder = { fg = "3e4145" },
+                CmpBorder = { fg = "#3e4145" },
             },
             latte = {
                 Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
@@ -720,12 +720,12 @@ Colors can be overwritten using `color_overrides` in the setting, like so:
     require("catppuccin").setup {
         color_overrides = {
             all = {
-                text = "ffffff",
+                text = "#ffffff",
             },
             latte = {
-                base = "ff0000",
-                mantle = "242424",
-                crust = "474747",
+                base = "#ff0000",
+                mantle = "#242424",
+                crust = "#474747",
             },
             frappe = {},
             macchiato = {},
@@ -806,7 +806,7 @@ Packer.nvim
 Vim-plug
 
 >
-    -- It's recommended to add `:CatppuccinCompile` to post-update hooks
+    " It's recommended to add `:CatppuccinCompile` to post-update hooks
     Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 <
 
@@ -859,7 +859,7 @@ Vim-plug
 
 ACKNOWLEDGE                                           *catppuccin-acknowledge*
 
-nightfox.nvimcompile <https://github.com/EdenEast/nightfox.nvim#compile>
+nightfox.nvim#compile <https://github.com/EdenEast/nightfox.nvim#compile>
 
 HOOKS                                                       *catppuccin-hooks*
 
@@ -874,14 +874,14 @@ They can be used like so:
 
 >
     vim.api.nvim_create_autocmd("ColorSchemePre", {
-        pattern = "",
+        pattern = "*",
         callback = function()
             print "I ran before loading Catppuccin!"
         end
     })
     
     vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "",
+        pattern = "*",
         callback = function()
             local colors = require("catppuccin.palettes").get_palette()
             -- do something with colors
