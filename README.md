@@ -21,7 +21,7 @@
 
 This port of Catppuccin is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the [`old-catppuccino`](https://github.com/catppuccin/nvim/tree/v0.1) tag.
 
-# 🎁 Features
+# Features
 
 -   Handy CLI.
 -   Extensible for many use cases.
@@ -172,7 +172,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | telescope          |
 | [trouble.nvim](https://github.com/folke/trouble.nvim)                                 | lsp_trouble        |
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                            | gitgutter          |
-| [vim-illuminate](https://github.com/RRethy/vim-illuminate) | illuminate
+| [vim-illuminate](https://github.com/RRethy/vim-illuminate)                            | illuminate
 | [vim-sneak](https://github.com/justinmk/vim-sneak)                                    | vim_sneak          |
 | [vimwiki](https://github.com/vimwiki/vimwiki)                                         | vimwiki            |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | which_key          |
@@ -864,7 +864,7 @@ require("nvim-treesitter.configs").setup {
 }
 ```
 
-# 💝 Thanks to
+# Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)
 -   [Null Chilly](https://github.com/nullchilly)

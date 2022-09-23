@@ -12,13 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: panvimdoc
-        uses: nekowinston/panvimdoc@main
+        uses: kdheepak/panvimdoc@main
         with:
           vimdoc: catppuccin
           description: "Soothing pastel theme for NeoVim"
           pandoc: "README.md"
           toc: true
-          version: "nvim 0.7"
+          version: "nvim 0.8"
           demojify: true
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
