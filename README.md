@@ -172,7 +172,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | telescope          |
 | [trouble.nvim](https://github.com/folke/trouble.nvim)                                 | lsp_trouble        |
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                            | gitgutter          |
-| [vim-illuminate](https://github.com/RRethy/vim-illuminate)                            | illuminate
+| [vim-illuminate](https://github.com/RRethy/vim-illuminate)                            | illuminate         |
 | [vim-sneak](https://github.com/justinmk/vim-sneak)                                    | vim_sneak          |
 | [vimwiki](https://github.com/vimwiki/vimwiki)                                         | vimwiki            |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | which_key          |
@@ -274,7 +274,7 @@ Update your bufferline config to use the Catppuccin components:
 bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
 ```
 
-Configurations are self-explanatory, see `:h bufferline-highlights` for detailed explanation:
+Configurations are self-explanatory, see `:h bufferline-highlights` for detailed explanations:
 
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"

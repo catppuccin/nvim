@@ -5,4 +5,4 @@
 *.cubin
 *.fatbin
 doc/tags
-.vscode
+.vscode/
