@@ -311,9 +311,7 @@ require("feline").setup({
 
 Notice that calling `setup()` is optional. You may pass a lua table in order to change assets, settings and the colors per vim mode.
 
-<details>
-    <summary>Here are the defaults</summary>
-<p>
+Here are the defaults:
 
 ```lua
 local clrs = require("catppuccin.palettes").get_palette()
@@ -371,8 +369,6 @@ mode_colors = {
 }
 ```
 
-</p>
-</details>
 </details>
 
 <details> <summary>fidget.nvim</summary>

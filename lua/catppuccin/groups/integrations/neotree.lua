@@ -6,7 +6,7 @@ function M.get()
 		NeoTreeDirectoryIcon = { fg = cp.blue },
 		NeoTreeNormal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle },
 		NeoTreeIndentMarker = { fg = cp.overlay0 },
-		NeoTreeRootName = { fg = cp.pink, style = { "bold" } },
+		NeoTreeRootName = { fg = cp.blue, style = { "bold" } },
 		NeoTreeSymbolicLinkTarget = { fg = cp.pink },
 		NeoTreeGitModified = { fg = cp.yellow },
 		NeoTreeUntracked = { fg = cp.blue },
