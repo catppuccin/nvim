@@ -368,7 +368,7 @@ update your Feline config to use the Catppuccin components:
 Notice that calling `setup()` is optional. You may pass a lua table in order to
 change assets, settings and the colors per vim mode.
 
-Here are the defaults
+Here are the defaults:
 
 >
     local clrs = require("catppuccin.palettes").get_palette()
