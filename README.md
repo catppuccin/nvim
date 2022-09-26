@@ -165,6 +165,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter         |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                            | ts_rainbow         |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                       | neotree            |
 | [overseer.nvim](https://github.com/stevearc/overseer.nvim)                            | overseer           |
 | [pounce.nvim](https://github.com/rlane/pounce.nvim)                                   | pounce             |
 | [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)              | symbols_outline    |
@@ -211,6 +212,7 @@ require("catppuccin").setup({
 		markdown = true,
 		mini = false,
 		neogit = false,
+		neotree = false,
 		notify = true,
 		nvimtree = true,
 		overseer = false,
@@ -252,11 +254,6 @@ require("catppuccin").setup({
 		navic = {
 			enabled = false,
 			custom_bg = "NONE",
-		},
-		neotree = {
-			enabled = false,
-			show_root = true,
-			transparent_panel = false,
 		},
 	},
 })
@@ -436,20 +433,6 @@ require('lualine').setup {
 ```
 
 </details>
-
-<details> <summary>neo-tree.nvim</summary>
-
-Setting `enabled` to `true` enables this integration:
-
-```lua
-integration = {
-	neotree = {
-		enabled = true,
-		show_root = true, -- makes the root folder not transparent
-		transparent_panel = false, -- make the panel transparent
-	}
-}
-```
 
 </details>
 

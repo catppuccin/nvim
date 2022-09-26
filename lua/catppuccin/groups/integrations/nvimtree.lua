@@ -1,9 +1,6 @@
 local M = {}
 
 function M.get()
-	local config = require("catppuccin.config").options
-	local nvimtree = config.integrations.nvimtree
-
 	return {
 		NvimTreeFolderName = { fg = cp.blue },
 		NvimTreeFolderIcon = { fg = cp.blue },
