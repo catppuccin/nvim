@@ -108,6 +108,9 @@ function M.get()
 
 			-- yaml
 			["@field.yaml"] = { fg = cp.blue }, -- For fields.
+
+			-- Ruby
+			["@symbol"] = { fg = cp.flamingo },
 		}
 	else -- neovim <= 0.7.2
 		return {
