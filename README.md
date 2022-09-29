@@ -20,11 +20,11 @@
   <h3>Latte</h3><img src="https://user-images.githubusercontent.com/56817415/193100918-17460481-ed80-4f75-bec9-efb3de2cb2ee.png" alt="latte" style="border-radius:1%" />
 </div>
 
-<!-- panvimdoc-ignore-end -->
-
-# About
-
+<p align="center">
 This port of Catppuccin is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the [`old-catppuccino`](https://github.com/catppuccin/nvim/tree/v0.1) tag.
+</p>
+
+<!-- panvimdoc-ignore-end -->
 
 # Features
 
@@ -109,7 +109,12 @@ require("catppuccin").setup({
 		operators = {},
 	},
 	integrations = {
-		-- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+		treesitter = true,
+		cmp = true,
+		gitsigns = true,
+		telescope = true,
+		nvimtree = true,
+		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 	color_overrides = {},
 	highlight_overrides = {},
