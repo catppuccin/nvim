@@ -26,7 +26,7 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Transparent background tweaks   |catppuccin-transparent-background-tweaks|
   - Usage with :set background         |catppuccin-usage-with-:set-background|
   - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
-  - Wrong treesitter highlights after :set spell|catppuccin-wrong-treesitter-highlights-after-:set-spell|
+  - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
 8. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
@@ -942,7 +942,7 @@ function completely replaces the definition. (`:h nvim_set_hl`)
 <
 
 
-WRONG TREESITTER HIGHLIGHTS AFTER :SET SPELL*catppuccin-wrong-treesitter-highlights-after-:set-spell*
+WRONG TREESITTER HIGHLIGHTS           *catppuccin-wrong-treesitter-highlights*
 
 Please disable `additional_vim_regex_highlighting`
 
