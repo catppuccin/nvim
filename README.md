@@ -15,15 +15,31 @@
 
 <p align="center">
 This port of Catppuccin is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the 
-<a href="https://github.com/catppuccin/nvim/tree/v0.1">old-catppuccino</a>
+<a href="https://github.com/catppuccin/nvim/tree/v0.1">v0.1</a> tag
 </p>
 
-<div align="center">
-  <h3>Mocha</h3><img src="https://user-images.githubusercontent.com/56817415/193097127-21377990-ffb9-4e81-9adc-feb688e9104e.png" alt="mocha" style="border-radius:1%" />
-  <h3>Macchiato</h3><img src="https://user-images.githubusercontent.com/56817415/193099598-a5482fa9-bc22-42e8-ad61-ad73303f781f.png" alt="macchiato" style="border-radius:1%" />
-  <h3>Frappe</h3><img src="https://user-images.githubusercontent.com/56817415/193099978-661ade74-49ef-4003-b3c8-9c74c475572c.png" alt="frappe" style="border-radius:1%" />
-  <h3>Latte</h3><img src="https://user-images.githubusercontent.com/56817415/193100918-17460481-ed80-4f75-bec9-efb3de2cb2ee.png" alt="latte" style="border-radius:1%" />
-</div>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/56817415/193125027-e03e0325-acb5-42a7-ba4a-04ad5516b121.png"/>
+</p>
+
+# Previews
+
+<details>
+<summary>Mocha</summary>
+<img src="https://user-images.githubusercontent.com/56817415/193097127-21377990-ffb9-4e81-9adc-feb688e9104e.png"/>
+</details>
+<details>
+<summary>Macchiato</summary>
+<img src="https://user-images.githubusercontent.com/56817415/193099598-a5482fa9-bc22-42e8-ad61-ad73303f781f.png"/>
+</details>
+<details>
+<summary>Frappe</summary>
+<img src="https://user-images.githubusercontent.com/56817415/193099978-661ade74-49ef-4003-b3c8-9c74c475572c.png"/>
+</details>
+<details>
+<summary>Latte</summary>
+<img src="https://user-images.githubusercontent.com/56817415/193100918-17460481-ed80-4f75-bec9-efb3de2cb2ee.png"/>
+</details>
 
 <!-- panvimdoc-ignore-end -->
 
