@@ -859,7 +859,7 @@ require("catppuccin.lib.highlighter").syntax({
 })
 ```
 
-## Wrong treesitter highlights after :set spell
+## Wrong treesitter highlights
 
 Please disable `additional_vim_regex_highlighting`
 
