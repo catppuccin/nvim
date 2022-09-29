@@ -13,7 +13,12 @@
     <a href="https://github.com/catppuccin/nvim/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/nvim?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
-![](https://raw.githubusercontent.com/catppuccin/nvim/assets/demo.png)
+<div align="center">
+  <h3>Mocha</h3><img src="https://user-images.githubusercontent.com/56817415/193097127-21377990-ffb9-4e81-9adc-feb688e9104e.png" alt="mocha" style="border-radius:1%" />
+  <h3>Macchiato</h3><img src="https://user-images.githubusercontent.com/56817415/193099598-a5482fa9-bc22-42e8-ad61-ad73303f781f.png" alt="macchiato" style="border-radius:1%" />
+  <h3>Frappe</h3><img src="https://user-images.githubusercontent.com/56817415/193099978-661ade74-49ef-4003-b3c8-9c74c475572c.png" alt="frappe" style="border-radius:1%" />
+  <h3>Latte</h3><img src="https://user-images.githubusercontent.com/56817415/193100918-17460481-ed80-4f75-bec9-efb3de2cb2ee.png" alt="latte" style="border-radius:1%" />
+</div>
 
 <!-- panvimdoc-ignore-end -->
 
