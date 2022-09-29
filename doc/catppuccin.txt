@@ -3,45 +3,34 @@
 ==============================================================================
 Table of Contents                               *catppuccin-table-of-contents*
 
-1. About                                                    |catppuccin-about|
-2. Features                                              |catppuccin-features|
-3. Installation                                      |catppuccin-installation|
-4. Usage                                                    |catppuccin-usage|
-5. Configuration                                    |catppuccin-configuration|
+1. Features                                              |catppuccin-features|
+2. Installation                                      |catppuccin-installation|
+3. Usage                                                    |catppuccin-usage|
+4. Configuration                                    |catppuccin-configuration|
   - General                                               |catppuccin-general|
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
   - Integrations                                     |catppuccin-integrations|
-6. Customize highlights                      |catppuccin-customize-highlights|
+5. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
   - Overwriting colors                         |catppuccin-overwriting-colors|
-7. Compile                                                |catppuccin-compile|
+6. Compile                                                |catppuccin-compile|
   - Enable                                                 |catppuccin-enable|
   - Compile commands                             |catppuccin-compile-commands|
   - Post-install/update hooks           |catppuccin-post-install/update-hooks|
   - Auto compile                                     |catppuccin-auto-compile|
   - Acknowledge                                       |catppuccin-acknowledge|
   - Hooks                                                   |catppuccin-hooks|
-8. FAQ                                                        |catppuccin-faq|
+7. FAQ                                                        |catppuccin-faq|
   - Transparent background tweaks   |catppuccin-transparent-background-tweaks|
   - Usage with :set background         |catppuccin-usage-with-:set-background|
   - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
   - Wrong treesitter highlights after :set spell|catppuccin-wrong-treesitter-highlights-after-:set-spell|
-9. Thanks to                                            |catppuccin-thanks-to|
+8. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
-1. About                                                    *catppuccin-about*
-
-This port of Catppuccin is special because it was the first one and the one
-that originated the project itself. Given this, it’s important to acknowledge
-that it all didn’t come to be what it is now out of nowhere. So, if you are
-interested in knowing more about the initial stages of the theme, you can find
-it under the `old-catppuccino` <https://github.com/catppuccin/nvim/tree/v0.1>
-tag.
-
-==============================================================================
-2. Features                                              *catppuccin-features*
+1. Features                                              *catppuccin-features*
 
 
 - Handy CLI.
@@ -51,7 +40,7 @@ tag.
 
 
 ==============================================================================
-3. Installation                                      *catppuccin-installation*
+2. Installation                                      *catppuccin-installation*
 
 You can use your favorite plugin manager for this. Here are some examples with
 the most popular ones:
@@ -71,7 +60,7 @@ the most popular ones:
 
 
 ==============================================================================
-4. Usage                                                    *catppuccin-usage*
+3. Usage                                                    *catppuccin-usage*
 
 For `lua`
 
@@ -106,7 +95,7 @@ may use the `:Catppuccin <flavour>` command.
 
 
 ==============================================================================
-5. Configuration                                    *catppuccin-configuration*
+4. Configuration                                    *catppuccin-configuration*
 
 You may pass a lua table to the `setup()` function in order to edit any of
 Catppuccin’s settings:
@@ -139,7 +128,12 @@ Catppuccin’s settings:
             operators = {},
         },
         integrations = {
-            -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+            treesitter = true,
+            cmp = true,
+            gitsigns = true,
+            telescope = true,
+            nvimtree = true,
+            -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
         },
         color_overrides = {},
         highlight_overrides = {},
@@ -595,7 +589,7 @@ catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
 <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
 
 ==============================================================================
-6. Customize highlights                      *catppuccin-customize-highlights*
+5. Customize highlights                      *catppuccin-customize-highlights*
 
 GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
@@ -740,7 +734,7 @@ Colors can be overwritten using `color_overrides` in the setting, like so:
 
 
 ==============================================================================
-7. Compile                                                *catppuccin-compile*
+6. Compile                                                *catppuccin-compile*
 
 Catppuccin is a highly customizable and configurable colorscheme. This does
 however come at the cost of complexity and execution time.
@@ -895,7 +889,7 @@ They can be used like so:
 
 
 ==============================================================================
-8. FAQ                                                        *catppuccin-faq*
+7. FAQ                                                        *catppuccin-faq*
 
 TRANSPARENT BACKGROUND TWEAKS       *catppuccin-transparent-background-tweaks*
 
@@ -963,7 +957,7 @@ Please disable `additional_vim_regex_highlighting`
 
 
 ==============================================================================
-9. Thanks to                                            *catppuccin-thanks-to*
+8. Thanks to                                            *catppuccin-thanks-to*
 
 
 - Pocco81 <https://github.com/Pocco81>
