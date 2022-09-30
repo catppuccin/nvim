@@ -199,6 +199,7 @@ module. (See Special integrations
 │markdown <https://www.markdownguide.org/>                                           │markdown          │
 │mini.nvim <https://github.com/echasnovski/mini.nvim>                                │mini              │
 │neogit <https://github.com/TimUntersberger/neogit>                                  │neogit            │
+│neotest <https://github.com/nvim-neotest/neotest>                                   │neotest           │
 │nvim-cmp <https://github.com/hrsh7th/nvim-cmp>                                      │cmp               │
 │nvim-notify <https://github.com/rcarriga/nvim-notify>                               │notify            │
 │nvim-tree.lua <https://github.com/kyazdani42/nvim-tree.lua>                         │nvimtree          │
@@ -259,6 +260,7 @@ Click here to see an example config
             markdown = true,
             mini = false,
             neogit = false,
+            neotest = false,
             neotree = false,
             notify = true,
             nvimtree = true,
