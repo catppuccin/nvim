@@ -3,7 +3,7 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for <a href="https://github.com/neovim/neovim">NeoVim</a>
+	Catppuccin for <a href="https://github.com/neovim/neovim">Neovim</a>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
@@ -186,6 +186,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [markdown](https://www.markdownguide.org/)                                            | markdown           |
 | [mini.nvim](https://github.com/echasnovski/mini.nvim)                                 | mini               |
 | [neogit](https://github.com/TimUntersberger/neogit)                                   | neogit             |
+| [neotest](https://github.com/nvim-neotest/neotest)                                    | neotest            |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                       | cmp                |
 | [nvim-notify](https://github.com/rcarriga/nvim-notify)                                | notify             |
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                          | nvimtree           |
@@ -239,6 +240,7 @@ require("catppuccin").setup({
 		markdown = true,
 		mini = false,
 		neogit = false,
+		neotest = false,
 		neotree = false,
 		notify = true,
 		nvimtree = true,
