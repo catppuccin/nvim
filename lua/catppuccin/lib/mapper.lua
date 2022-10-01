@@ -1,7 +1,5 @@
 local M = {}
 
-local lui = require("catppuccin.lib.ui")
-
 local function get_integrations()
 	local integrations = cnf["integrations"]
 	local final_integrations = {}
@@ -32,11 +30,17 @@ end
 
 function M.apply(flavour)
 	flavour = flavour or vim.g.catppuccin_flavour
+	-- Borrowing global var
+	_G._cnf = cnf
+	_G._cp = cp
+	_G._ucolors = ucolors
+
 	_G.cnf = require("catppuccin.config").options
 	_G.cp = require("catppuccin.palettes").get_palette(flavour)
+	_G.ucolors = require("catppuccin.utils.colors")
 
 	cp.none = "NONE"
-	cp.dim = lui.dim()
+	cp.dim = require("catppuccin.lib.ui").dim()
 
 	local theme = {}
 	theme.properties = require("catppuccin.groups.properties").get() -- nvim settings
@@ -47,9 +51,10 @@ function M.apply(flavour)
 	local user_highlights = require("catppuccin.config").options.highlight_overrides
 	theme.custom_highlights = vim.tbl_deep_extend("keep", user_highlights[flavour] or {}, user_highlights.all or {})
 
-	-- uninstantiate to avoid poluting global scope and because it's not needed anymore
-	_G.cnf = nil
-	_G.cp = nil
+	-- Returning global var
+	_G.cnf = _G._cnf
+	_G.cp = _G._cp
+	_G.ucolors = _G._ucolors
 
 	return theme
 end

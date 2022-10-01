@@ -1,7 +1,5 @@
 local M = {}
 
-local ucolors = require("catppuccin.utils.colors")
-
 function M.get()
 	local props = {
 		termguicolors = true,

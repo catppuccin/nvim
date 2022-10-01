@@ -1,10 +1,8 @@
 local M = {}
-local ucolors = require("catppuccin.utils.colors")
 
 function M.get()
-	local options = require("catppuccin.config").options
-	local virtual_text = options.integrations.native_lsp.virtual_text
-	local underlines = options.integrations.native_lsp.underlines
+	local virtual_text = cnf.integrations.native_lsp.virtual_text
+	local underlines = cnf.integrations.native_lsp.underlines
 
 	local error = cp.red
 	local warning = cp.yellow

@@ -1,7 +1,5 @@
 local M = {}
 
-local ucolors = require("catppuccin.utils.colors")
-
 function M.get()
 	return {
 		PounceMatch = { bg = ucolors.lighten(cp.green, 0.7), fg = cp.base, style = { "bold" } },
