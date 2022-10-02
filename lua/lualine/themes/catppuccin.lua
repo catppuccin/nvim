@@ -1,5 +1,5 @@
 local cp = require("catppuccin.palettes").get_palette()
-local config = require("catppuccin.config").options
+local config = require("catppuccin").options
 local catppuccin = {}
 
 catppuccin.normal = {

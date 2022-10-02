@@ -57,35 +57,26 @@ You can use your favorite plugin manager for this. Here are some examples with t
 #### Packer.nvim
 
 ```lua
-use { "catppuccin/nvim", as = "catppuccin" }
+use {
+	"catppuccin/nvim",
+	as = "catppuccin",
+	run = ":CatppuccinCompile",
+	config = function()
+		vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+		require("catppuccin").setup()
+		vim.api.nvim_command "colorscheme catppuccin"
+	end
+}
 ```
 
 #### Vim-plug
 
 ```vim
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-```
+Plug 'catppuccin/nvim', { 'as': 'catppuccin', 'do': 'CatppuccinCompile' }
 
-# Usage
-
-For `lua`
-
-```lua
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-
-require("catppuccin").setup()
-
-vim.cmd [[colorscheme catppuccin]]
-```
-
-For `vimscript`
-
-```vim
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
 
-lua << EOF
-require("catppuccin").setup()
-EOF
+lua require("catppuccin").setup()
 
 colorscheme catppuccin
 ```
@@ -100,12 +91,9 @@ You may pass a lua table to the `setup()` function in order to edit any of Catpp
 
 ```lua
 require("catppuccin").setup({
+	compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 	transparent_background = false,
 	term_colors = false,
-	compile = {
-		enabled = false,
-		path = vim.fn.stdpath("cache") .. "/catppuccin",
-	},
 	dim_inactive = {
 		enabled = false,
 		shade = "dark",
@@ -126,15 +114,15 @@ require("catppuccin").setup({
 		operators = {},
 	},
 	integrations = {
-		treesitter = true,
 		cmp = true,
 		gitsigns = true,
-		telescope = true,
 		nvimtree = true,
+		telescope = true,
+		treesitter = true,
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 	color_overrides = {},
-	highlight_overrides = {},
+	custom_highlights = {},
 })
 ```
 
@@ -681,8 +669,6 @@ require("catppuccin.lib.highlighter").syntax({
 })
 ```
 
-> Note: custom highlights loaded using the `require("catppuccin.lib.highlighter").syntax()` function won't be pre-compiled. See [compile](https://github.com/catppuccin/nvim/tree/main#compile).
-
 ## Overwriting colors
 
 Colors can be overwritten using `color_overrides` in the setting, like so:
@@ -711,43 +697,29 @@ Catppuccin is a highly customizable and configurable colorscheme. This does howe
 
 Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
-## Enable
+## Config
 
-Setting `enabled` to `true` enables this feature:
+By default catppuccin writes the compiled results into the system's cache directory. You can change cache dir using:
 
 ```lua
-compile = {
-	enabled = true,
-	path = vim.fn.stdpath "cache" .. "/catppuccin"
-}
+require("catppuccin").setup({
+	compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
+})
 ```
 
-By default catppuccin writes the compiled results into the system's cache directory.
 Note: On windows we replace `/` with `\` by default
 
 ## Compile commands
 
 ```vim
 :CatppuccinCompile " Create/update the compile file
-:CatppuccinClean " Delete compiled file
-:CatppuccinStatus " Compile status
 ```
 
-NOTE: You have to reload setup function in order for compile to register new config. Please refer to [auto compile](https://github.com/catppuccin/nvim#auto-compile)
-
-Catppuccin also provides these functions to work with the catppuccin compiler.
+Catppuccin also provide a function to work with the catppuccin compiler.
 
 ```lua
-local catppuccin = require('catppuccin')
-
 -- Create/update the compile files
-catppuccin.compile()
-
--- Delete compiled files
-catppuccin.clean()
-
--- Show compile status
-catppuccin.status()
+require('catppuccin').compile()
 ```
 
 ## Post-install/update hooks
@@ -769,52 +741,6 @@ Vim-plug
 " It's recommended to add `:CatppuccinCompile` to post-update hooks
 Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 ```
-
-## Auto compile
-
-Packer.nvim
-
-```lua
--- If you want catppuccin setup function to actually reload without restarting nvim
-require("packer").init {
-	auto_reload_compiled = true
-}
-```
-
-```lua
--- Create an autocmd User PackerCompileDone to update it every time packer is compiled
-vim.api.nvim_create_autocmd("User", {
-	pattern = "PackerCompileDone",
-	callback = function()
-		vim.cmd "CatppuccinCompile"
-		vim.defer_fn(function()
-			vim.cmd "colorscheme catppuccin"
-		end, 0) -- Defered for live reloading
-	end
-})
-```
-
-```lua
--- PackerCompile on save if your config file is in plugins.lua or catppuccin.lua
--- DO NOT put the autocmd inside the plugin specification file or you will get 2 ^ x files open after x saves
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = { "plugins.lua", "catppuccin.lua" },
-	callback = function()
-		vim.cmd "PackerCompile"
-	end
-})
-```
-
-Vim-plug
-
-```vim
-" Auto reload on save if catppuccin config is written inside init.vim
-autocmd BufWritePost init.vim :source init.vim | CatppuccinCompile
-```
-
-## Acknowledge
-
-[nightfox.nvim#compile](https://github.com/EdenEast/nightfox.nvim#compile)
 
 ## Hooks
 

@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get()
-	local transparent_background = require("catppuccin.config").options.transparent_background
+	local transparent_background = require("catppuccin").options.transparent_background
 	local bg_highlight = transparent_background and "NONE" or cp.base
 
 	local inactive_bg = transparent_background and "NONE" or cp.mantle

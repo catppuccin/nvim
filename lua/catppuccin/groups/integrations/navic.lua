@@ -1,5 +1,5 @@
 local M = {}
-local config = require("catppuccin.config").options
+local config = require("catppuccin").options
 -- Backwards compatibility
 if type(cnf.integrations.navic) == "boolean" then
 	cnf.integrations.navic = { custom_bg = cp.mantle }

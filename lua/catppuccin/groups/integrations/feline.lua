@@ -5,9 +5,6 @@ local lsp_severity = vim.diagnostic.severity
 local b = vim.b
 
 local clrs = require("catppuccin.palettes").get_palette()
-local ucolors = require("catppuccin.utils.colors")
-local latte = require("catppuccin.palettes.latte")
-
 local assets = {
 	left_separator = "",
 	right_separator = "",
@@ -31,14 +28,20 @@ local assets = {
 }
 
 local sett = {
-	text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
-	bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
+	text = clrs.surface0,
+	bkg = clrs.surface0,
 	diffs = clrs.mauve,
 	extras = clrs.overlay1,
 	curr_file = clrs.maroon,
 	curr_dir = clrs.flamingo,
 	show_modified = false,
 }
+
+if vim.g.catppuccin_flavour == "latte" then
+	local latte = require("catppuccin.palettes").get_palette("latte")
+	sett.text = latte.base
+	sett.bkg = latte.crust
+end
 
 local mode_colors = {
 	["n"] = { "NORMAL", clrs.lavender },
