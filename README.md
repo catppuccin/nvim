@@ -176,36 +176,49 @@ Below is a list of supported plugins and their corresponding integration module.
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | aerial             |
 | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                                  | barbar             |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                          | beacon             |
+| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | Special            |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard          |
+| [feline.nvim](https://github.com/feline-nvim/feline.nvim/)                            | Special            |
 | [fern.vim](https://github.com/lambdalisue/fern.vim)                                   | fern               |
+| [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                   | Special            |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                           | gitsigns           |
 | [harpoon](https://github.com/ThePrimeagen/harpoon)                                    | harpoon            |
 | [hop.nvim](https://github.com/phaazon/hop.nvim)                                       | hop                |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)       | Special            |
 | [leap.nvim](https://github.com/ggandor/leap.nvim)                                     | leap               |
+| [lightline.vim](https://github.com/itchyny/lightline.vim)                             | Special            |
 | [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)                         | lightspeed         |
 | [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim/)                              | lsp_saga           |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                          | Special            |
 | [markdown](https://www.markdownguide.org/)                                            | markdown           |
 | [mini.nvim](https://github.com/echasnovski/mini.nvim)                                 | mini               |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                       | neotree            |
 | [neogit](https://github.com/TimUntersberger/neogit)                                   | neogit             |
 | [neotest](https://github.com/nvim-neotest/neotest)                                    | neotest            |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                       | cmp                |
+| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                | Special            |
+| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                  | Special            |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                            | Special            |
+| [nvim-navic](https://github.com/SmiteshP/nvim-navic/)                                 | Special            |
 | [nvim-notify](https://github.com/rcarriga/nvim-notify)                                | notify             |
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                          | nvimtree           |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter         |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                            | ts_rainbow         |
-| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                       | neotree            |
 | [overseer.nvim](https://github.com/stevearc/overseer.nvim)                            | overseer           |
 | [pounce.nvim](https://github.com/rlane/pounce.nvim)                                   | pounce             |
 | [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)              | symbols_outline    |
 | [telekasten.nvim](https://github.com/renerocksai/telekasten.nvim)                     | telekasten         |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | telescope          |
 | [trouble.nvim](https://github.com/folke/trouble.nvim)                                 | lsp_trouble        |
+| [vim-clap](https://github.com/liuchengxu/vim-clap)                                    | Special            |
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                            | gitgutter          |
 | [vim-illuminate](https://github.com/RRethy/vim-illuminate)                            | illuminate         |
 | [vim-sneak](https://github.com/justinmk/vim-sneak)                                    | vim_sneak          |
 | [vimwiki](https://github.com/vimwiki/vimwiki)                                         | vimwiki            |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | which_key          |
+
+> "Special" module means Special integrations, see https://github.com/catppuccin/nvim#special-integrations for more details
 
 These integrations allow catppuccin to set the theme of various plugins. To enable an integration you just need to set it to `true`, for example:
 
