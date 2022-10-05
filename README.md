@@ -179,6 +179,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard          |
 | [fern.vim](https://github.com/lambdalisue/fern.vim)                                   | fern               |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                           | gitsigns           |
+| [harpoon](https://github.com/ThePrimeagen/harpoon)                                    | harpoon            |
 | [hop.nvim](https://github.com/phaazon/hop.nvim)                                       | hop                |
 | [leap.nvim](https://github.com/ggandor/leap.nvim)                                     | leap               |
 | [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)                         | lightspeed         |
@@ -231,6 +232,7 @@ require("catppuccin").setup({
 		fidget = false,
 		gitgutter = false,
 		gitsigns = true,
+		harpoon = false,
 		hop = false,
 		illuminate = false,
 		leap = false,
