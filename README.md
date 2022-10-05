@@ -245,6 +245,7 @@ require("catppuccin").setup({
 		neotree = false,
 		notify = true,
 		nvimtree = true,
+		harpoon = false,
 		overseer = false,
 		pounce = false,
 		symbols_outline = false,
