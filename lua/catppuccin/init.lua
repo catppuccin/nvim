@@ -154,6 +154,4 @@ function M.setup(user_conf)
 	end
 end
 
-vim.g.loaded_catppuccin = 1 -- plugin/catppuccin.vim
-
 return M
