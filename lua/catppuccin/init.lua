@@ -82,7 +82,12 @@ end
 
 vim.api.nvim_create_user_command("Catppuccin", function(inp)
 	if not vim.tbl_contains(M.flavours, inp.args) then
-		require "catppuccin.utils.echo"("Invalid flavour", "error")
+		vim.notify(
+			"Catppuccin (error): Invalid flavour '"
+				.. vim.g.catppuccin_flavour
+				.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+			vim.log.levels.ERROR
+		)
 		return
 	end
 	vim.g.catppuccin_flavour = inp.args
