@@ -5,29 +5,26 @@ Table of Contents                               *catppuccin-table-of-contents*
 
 1. Features                                              |catppuccin-features|
 2. Installation                                      |catppuccin-installation|
-3. Usage                                                    |catppuccin-usage|
-4. Configuration                                    |catppuccin-configuration|
+3. Configuration                                    |catppuccin-configuration|
   - General                                               |catppuccin-general|
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
   - Integrations                                     |catppuccin-integrations|
-5. Customize highlights                      |catppuccin-customize-highlights|
+4. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
   - Overwriting colors                         |catppuccin-overwriting-colors|
-6. Compile                                                |catppuccin-compile|
-  - Enable                                                 |catppuccin-enable|
+5. Compile                                                |catppuccin-compile|
+  - Config                                                 |catppuccin-config|
   - Compile commands                             |catppuccin-compile-commands|
   - Post-install/update hooks           |catppuccin-post-install/update-hooks|
-  - Auto compile                                     |catppuccin-auto-compile|
-  - Acknowledge                                       |catppuccin-acknowledge|
   - Hooks                                                   |catppuccin-hooks|
-7. FAQ                                                        |catppuccin-faq|
+6. FAQ                                                        |catppuccin-faq|
   - Transparent background tweaks   |catppuccin-transparent-background-tweaks|
   - Usage with :set background         |catppuccin-usage-with-:set-background|
   - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
   - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
-8. Thanks to                                            |catppuccin-thanks-to|
+7. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
 1. Features                                              *catppuccin-features*
@@ -48,46 +45,35 @@ the most popular ones:
                                                       *catppuccin-Packer.nvim*
 
 >
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+            vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+            require("catppuccin").setup()
+            vim.api.nvim_command "colorscheme catppuccin"
+        end
+    }
 <
 
 
                                                          *catppuccin-Vim-plug*
 
 >
-    Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-<
-
-
-==============================================================================
-3. Usage                                                    *catppuccin-usage*
-
-For `lua`
-
->
-    vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     
-    require("catppuccin").setup()
-    
-    vim.cmd [[colorscheme catppuccin]]
-<
-
-
-For `vimscript`
-
->
     let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
     
-    lua << EOF
-    require("catppuccin").setup()
-    EOF
+    lua require("catppuccin").setup()
     
     colorscheme catppuccin
 <
 
 
-Remember that if you want to switch your Catppuccin flavour "on the fly" you
-may use the `:Catppuccin <flavour>` command.
+Vim-plug                               Remember that if you want to switch your
+                                       Catppuccin flavour "on the fly" you may
+                                       use the `:Catppuccin <flavour>` command.
+
 
 
   Note: the command has autocompletion enabled, so you can just press tab to
@@ -95,19 +81,16 @@ may use the `:Catppuccin <flavour>` command.
 
 
 ==============================================================================
-4. Configuration                                    *catppuccin-configuration*
+3. Configuration                                    *catppuccin-configuration*
 
 You may pass a lua table to the `setup()` function in order to edit any of
 Catppuccin’s settings:
 
 >
     require("catppuccin").setup({
+        compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
         transparent_background = false,
         term_colors = false,
-        compile = {
-            enabled = false,
-            path = vim.fn.stdpath("cache") .. "/catppuccin",
-        },
         dim_inactive = {
             enabled = false,
             shade = "dark",
@@ -128,15 +111,15 @@ Catppuccin’s settings:
             operators = {},
         },
         integrations = {
-            treesitter = true,
             cmp = true,
             gitsigns = true,
-            telescope = true,
             nvimtree = true,
+            telescope = true,
+            treesitter = true,
             -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
         },
         color_overrides = {},
-        highlight_overrides = {},
+        custom_highlights = {},
     })
 <
 
@@ -609,7 +592,7 @@ catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
 <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
 
 ==============================================================================
-5. Customize highlights                      *catppuccin-customize-highlights*
+4. Customize highlights                      *catppuccin-customize-highlights*
 
 GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
@@ -723,13 +706,6 @@ For example:
 <
 
 
-
-  Note: custom highlights loaded using the
-  `require("catppuccin.lib.highlighter").syntax()` function won’t be
-  pre-compiled. See compile
-  <https://github.com/catppuccin/nvim/tree/main#compile>.
-
-
 OVERWRITING COLORS                             *catppuccin-overwriting-colors*
 
 Colors can be overwritten using `color_overrides` in the setting, like so:
@@ -754,7 +730,7 @@ Colors can be overwritten using `color_overrides` in the setting, like so:
 
 
 ==============================================================================
-6. Compile                                                *catppuccin-compile*
+5. Compile                                                *catppuccin-compile*
 
 Catppuccin is a highly customizable and configurable colorscheme. This does
 however come at the cost of complexity and execution time.
@@ -763,47 +739,32 @@ Catppuccin can pre compute the results of your configuration and store the
 results in a compiled lua file. We use these precached values to set it’s
 highlights.
 
-ENABLE                                                     *catppuccin-enable*
+CONFIG                                                     *catppuccin-config*
 
-Setting `enabled` to `true` enables this feature:
+By default catppuccin writes the compiled results into the system’s cache
+directory. You can change cache dir using:
 
 >
-    compile = {
-        enabled = true,
-        path = vim.fn.stdpath "cache" .. "/catppuccin"
-    }
+    require("catppuccin").setup({
+        compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
+    })
 <
 
 
-By default catppuccin writes the compiled results into the system’s cache
-directory. Note: On windows we replace `/` with `\` by default
+Note: On windows we replace `/` with `\` by default
 
 COMPILE COMMANDS                                 *catppuccin-compile-commands*
 
 >
     :CatppuccinCompile " Create/update the compile file
-    :CatppuccinClean " Delete compiled file
-    :CatppuccinStatus " Compile status
 <
 
 
-NOTE: You have to reload setup function in order for compile to register new
-config. Please refer to auto compile
-<https://github.com/catppuccin/nvim#auto-compile>
-
-Catppuccin also provides these functions to work with the catppuccin compiler.
+Catppuccin also provide a function to work with the catppuccin compiler.
 
 >
-    local catppuccin = require('catppuccin')
-    
     -- Create/update the compile files
-    catppuccin.compile()
-    
-    -- Delete compiled files
-    catppuccin.clean()
-    
-    -- Show compile status
-    catppuccin.status()
+    require('catppuccin').compile()
 <
 
 
@@ -828,56 +789,6 @@ Vim-plug
     Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 <
 
-
-AUTO COMPILE                                         *catppuccin-auto-compile*
-
-Packer.nvim
-
->
-    -- If you want catppuccin setup function to actually reload without restarting nvim
-    require("packer").init {
-        auto_reload_compiled = true
-    }
-<
-
-
->
-    -- Create an autocmd User PackerCompileDone to update it every time packer is compiled
-    vim.api.nvim_create_autocmd("User", {
-        pattern = "PackerCompileDone",
-        callback = function()
-            vim.cmd "CatppuccinCompile"
-            vim.defer_fn(function()
-                vim.cmd "colorscheme catppuccin"
-            end, 0) -- Defered for live reloading
-        end
-    })
-<
-
-
->
-    -- PackerCompile on save if your config file is in plugins.lua or catppuccin.lua
-    -- DO NOT put the autocmd inside the plugin specification file or you will get 2 ^ x files open after x saves
-    vim.api.nvim_create_autocmd("BufWritePost", {
-        pattern = { "plugins.lua", "catppuccin.lua" },
-        callback = function()
-            vim.cmd "PackerCompile"
-        end
-    })
-<
-
-
-Vim-plug
-
->
-    " Auto reload on save if catppuccin config is written inside init.vim
-    autocmd BufWritePost init.vim :source init.vim | CatppuccinCompile
-<
-
-
-ACKNOWLEDGE                                           *catppuccin-acknowledge*
-
-nightfox.nvim#compile <https://github.com/EdenEast/nightfox.nvim#compile>
 
 HOOKS                                                       *catppuccin-hooks*
 
@@ -909,7 +820,7 @@ They can be used like so:
 
 
 ==============================================================================
-7. FAQ                                                        *catppuccin-faq*
+6. FAQ                                                        *catppuccin-faq*
 
 TRANSPARENT BACKGROUND TWEAKS       *catppuccin-transparent-background-tweaks*
 
@@ -977,7 +888,7 @@ Please disable `additional_vim_regex_highlighting`
 
 
 ==============================================================================
-8. Thanks to                                            *catppuccin-thanks-to*
+7. Thanks to                                            *catppuccin-thanks-to*
 
 
 - Pocco81 <https://github.com/Pocco81>

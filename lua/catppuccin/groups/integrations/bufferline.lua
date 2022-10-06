@@ -3,7 +3,7 @@ local M = {}
 function M.get(user_config)
 	user_config = user_config or {}
 	-- Backward compatibility
-	local cnf = require("catppuccin.config").options
+	local cnf = require("catppuccin").options
 	if cnf.integrations.bufferline then
 		return {}
 	end
