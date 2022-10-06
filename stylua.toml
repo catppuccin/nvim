@@ -3,3 +3,5 @@ line_endings = "Unix"
 indent_type = "Tabs"
 indent_width = 4
 quote_style = "AutoPreferDouble"
+collapse_simple_statement = "Always"
+call_parentheses = "None"

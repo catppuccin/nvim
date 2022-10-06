@@ -29,9 +29,7 @@ vim.g.skip_ts_default_groups = true
 vim.o.termguicolors = true]],
 	}
 	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
-	if path_sep == "\\" then
-		config.compile_path = config.compile_path:gsub("/", "\\")
-	end
+	if path_sep == "\\" then config.compile_path = config.compile_path:gsub("/", "\\") end
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 

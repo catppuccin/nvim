@@ -1,9 +1,9 @@
 local M = {
 	flavours = { "latte", "frappe", "macchiato", "mocha" },
 	options = {
+		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
 		transparent_background = false,
 		term_colors = false,
-		compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 		dim_inactive = {
 			enabled = false,
 			shade = "dark",
@@ -80,25 +80,21 @@ function M.load()
 	dofile(compiled_path)
 end
 
-local command = vim.api.nvim_create_user_command
-
-command("Catppuccin", function(inp)
+vim.api.nvim_create_user_command("Catppuccin", function(inp)
 	if not vim.tbl_contains(M.flavours, inp.args) then
-		require("catppuccin.utils.echo")("Invalid flavour", "error")
+		require "catppuccin.utils.echo"("Invalid flavour", "error")
 		return
 	end
 	vim.g.catppuccin_flavour = inp.args
-	vim.api.nvim_command("colorscheme catppuccin")
+	vim.api.nvim_command "colorscheme catppuccin"
 end, {
 	nargs = 1,
 	complete = function(line)
-		return vim.tbl_filter(function(val)
-			return vim.startswith(val, line)
-		end, M.flavours)
+		return vim.tbl_filter(function(val) return vim.startswith(val, line) end, M.flavours)
 	end,
 })
 
-command("CatppuccinCompile", function()
+vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	M.compile()
 	vim.notify("Catppuccin (info): compiled cache!", "info")
 end, {})
@@ -118,11 +114,11 @@ function M.setup(user_conf)
 	local file = io.open(cached_date, "r")
 	local last_date = nil
 	if file then
-		last_date = file:read("*a")
+		last_date = file:read "*a"
 		file:close()
 	end
 
-	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2))
+	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config lua path & git commit
 		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD")
 
 	if last_date ~= tostring(cur_date) then
@@ -136,7 +132,7 @@ function M.setup(user_conf)
 
 		local cached = {}
 		if file then
-			cached = vim.json.decode(file:read("*a"))
+			cached = vim.json.decode(file:read "*a")
 			io.close(file)
 		end
 
@@ -148,7 +144,6 @@ function M.setup(user_conf)
 				file:write(vim.json.encode(user_conf))
 				file:close()
 			end
-			return
 		end
 	end
 end

@@ -7,13 +7,9 @@ local function get_integrations()
 	for integration in pairs(integrations) do
 		local cot = false
 		if type(integrations[integration]) == "table" then
-			if integrations[integration]["enabled"] == true then
-				cot = true
-			end
+			if integrations[integration]["enabled"] == true then cot = true end
 		else
-			if integrations[integration] == true then
-				cot = true
-			end
+			if integrations[integration] == true then cot = true end
 		end
 
 		if cot then
@@ -37,7 +33,7 @@ function M.apply(flavour)
 
 	_G.cnf = require("catppuccin").options
 	_G.cp = require("catppuccin.palettes").get_palette(flavour)
-	_G.ucolors = require("catppuccin.utils.colors")
+	_G.ucolors = require "catppuccin.utils.colors"
 
 	cp.none = "NONE"
 
