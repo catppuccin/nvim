@@ -1,13 +1,12 @@
 local M = {}
 
 function M.get()
-	local transparent_background = cnf.transparent_background
-	local active_bg = transparent_background and "NONE" or cp.mantle
-	local inactive_bg = transparent_background and "NONE" or cp.base
+	local active_bg = cnf.transparent_background and cp.none or cp.mantle
+	local inactive_bg = cnf.transparent_background and cp.none or cp.base
 	return {
 		NeoTreeDirectoryName = { fg = cp.blue },
 		NeoTreeDirectoryIcon = { fg = cp.blue },
-		NeoTreeNormal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle },
+		NeoTreeNormal = { fg = cp.text, bg = active_bg },
 		NeoTreeExpander = { fg = cp.overlay0 },
 		NeoTreeIndentMarker = { fg = cp.overlay0 },
 		NeoTreeRootName = { fg = cp.blue, style = { "bold" } },
@@ -29,7 +28,7 @@ function M.get()
 		NeoTreeTabInactive = { bg = inactive_bg, fg = cp.overlay0 },
 		NeoTreeTabSeparatorActive = { fg = active_bg, bg = active_bg },
 		NeoTreeTabSeparatorInactive = { fg = inactive_bg, bg = inactive_bg },
-		NeoTreeVertSplit = { fg = cp.base, bg = cnf.transparent_background and cp.none or cp.base },
+		NeoTreeVertSplit = { fg = cp.base, bg = inactive_bg },
 		NeoTreeStatusLineNC = { fg = cp.mantle, bg = cp.mantle },
 	}
 end
