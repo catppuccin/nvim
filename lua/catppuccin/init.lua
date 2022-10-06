@@ -131,7 +131,6 @@ function M.setup(user_conf)
 			file:write(cur_date)
 			file:close()
 		end
-		-- Only re-compile if the setup table changed
 		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
 		file = io.open(cached_config, "r")
 
@@ -141,8 +140,8 @@ function M.setup(user_conf)
 			io.close(file)
 		end
 
-		-- TODO: Implements hashing if needed
-		if vim.inspect(cached) ~= vim.inspect(user_conf) then
+		-- Only re-compile if the setup table changed
+		if vim.inspect(cached) ~= vim.inspect(user_conf) then -- TODO: Implements hashing if needed
 			M.compile()
 			file = io.open(cached_config, "w")
 			if file then

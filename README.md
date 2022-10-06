@@ -60,7 +60,6 @@ You can use your favorite plugin manager for this. Here are some examples with t
 use {
 	"catppuccin/nvim",
 	as = "catppuccin",
-	run = ":CatppuccinCompile",
 	config = function()
 		vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 		require("catppuccin").setup()
@@ -72,7 +71,7 @@ use {
 #### Vim-plug
 
 ```vim
-Plug 'catppuccin/nvim', { 'as': 'catppuccin', 'do': 'CatppuccinCompile' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
 
