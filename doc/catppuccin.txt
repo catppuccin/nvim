@@ -48,7 +48,6 @@ the most popular ones:
     use {
         "catppuccin/nvim",
         as = "catppuccin",
-        run = ":CatppuccinCompile",
         config = function()
             vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
             require("catppuccin").setup()
@@ -61,7 +60,7 @@ the most popular ones:
                                                          *catppuccin-Vim-plug*
 
 >
-    Plug 'catppuccin/nvim', { 'as': 'catppuccin', 'do': 'CatppuccinCompile' }
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     
     let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
     
