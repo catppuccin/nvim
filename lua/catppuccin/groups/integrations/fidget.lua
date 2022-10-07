@@ -6,7 +6,7 @@ function M.get()
 			bg = cnf.transparent_background and cp.none or cp.mantle,
 			fg = cp.text,
 		},
-		FidgetTitle = { fg = cp.surface1 },
+		FidgetTitle = { fg = cp.blue },
 	}
 end
 
