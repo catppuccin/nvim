@@ -58,7 +58,7 @@ local M = {
 }
 
 function M.compile()
-	if not vim.tbl_contains(require("catppuccin").flavours, vim.g.catppuccin_flavour) then
+	if not vim.tbl_contains(M.flavours, vim.g.catppuccin_flavour) then
 		vim.notify(
 			"Catppuccin (error): Invalid flavour '"
 				.. vim.g.catppuccin_flavour
@@ -106,7 +106,7 @@ end, {})
 
 function M.setup(user_conf)
 	-- Set default flavour
-	vim.g.catppuccin_flavour = vim.g.catppuccin_flavour or "macchiato"
+	vim.g.catppuccin_flavour = vim.g.catppuccin_flavour or "mocha"
 
 	-- Parsing user config
 	user_conf = user_conf or {}
