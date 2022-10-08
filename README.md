@@ -830,6 +830,18 @@ require("nvim-treesitter.configs").setup {
 }
 ```
 
+## Colors doesn't match preview screenshots
+
+Catppuccin requires true color support AKA terminals support the full range of 16 million colors
+
+- Supported: iterm2 (macOS), kitty, wezterm, alacritty, tmux, ...
+
+Full list of support terminals can be found here: https://github.com/termstandard/colors#truecolor-support-in-output-devices
+
+- Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, ...
+
+Full list of Unsupported terminals can be found here: https://github.com/termstandard/colors#not-supporting-truecolor
+
 # Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)
