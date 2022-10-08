@@ -24,6 +24,7 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Usage with :set background         |catppuccin-usage-with-:set-background|
   - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
   - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
+  - Colors doesn’t match preview screenshots|catppuccin-colors-doesn’t-match-preview-screenshots|
 7. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
@@ -886,6 +887,25 @@ Please disable `additional_vim_regex_highlighting`
     }
 <
 
+
+COLORS DOESN’T MATCH PREVIEW SCREENSHOTS*catppuccin-colors-doesn’t-match-preview-screenshots*
+
+Catppuccin requires true color support AKA terminals support the full range of
+16 million colors
+
+
+- Supported: iterm2 (macOS), kitty, wezterm, alacritty, tmux, …
+
+
+Full list of support terminals can be found here:
+https://github.com/termstandard/colors#truecolor-support-in-output-devices
+
+
+- Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, …
+
+
+Full list of Unsupported terminals can be found here:
+https://github.com/termstandard/colors#not-supporting-truecolor
 
 ==============================================================================
 7. Thanks to                                            *catppuccin-thanks-to*
