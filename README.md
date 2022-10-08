@@ -830,6 +830,12 @@ require("nvim-treesitter.configs").setup {
 }
 ```
 
+## Setup for macOS "Terminal.app"
+
+Trick question - not possible! Catppuccin requires TrueColor, which macOS's
+native "Terminal.app" does not support. Consider using
+[iTerm2](https://iterm2.com/) as an alternative terminal emulator.
+
 # Thanks to
 
 -   [Pocco81](https://github.com/Pocco81)
