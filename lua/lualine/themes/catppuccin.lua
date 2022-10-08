@@ -2,10 +2,12 @@ local cp = require("catppuccin.palettes").get_palette()
 local config = require("catppuccin").options
 local catppuccin = {}
 
+local transparent_bg = config.transparent_background and "NONE" or cp.mantle
+
 catppuccin.normal = {
 	a = { bg = cp.blue, fg = cp.mantle, gui = "bold" },
 	b = { bg = cp.surface1, fg = cp.blue },
-	c = { bg = config.transparent_background and "NONE" or cp.mantle, fg = cp.text },
+	c = { bg = transparent_bg, fg = cp.text },
 }
 
 catppuccin.insert = {
@@ -29,9 +31,9 @@ catppuccin.replace = {
 }
 
 catppuccin.inactive = {
-	a = { bg = cp.mantle, fg = cp.blue },
-	b = { bg = cp.mantle, fg = cp.surface1, gui = "bold" },
-	c = { bg = cp.mantle, fg = cp.overlay0 },
+	a = { bg = transparent_bg, fg = cp.blue },
+	b = { bg = transparent_bg, fg = cp.surface1, gui = "bold" },
+	c = { bg = transparent_bg, fg = cp.overlay0 },
 }
 
 return catppuccin
