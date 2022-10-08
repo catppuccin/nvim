@@ -57,6 +57,9 @@ local M = {
 	path_sep = vim.startswith(vim.loop.os_uname().sysname, "Windows") and "\\" or "/",
 }
 
+-- Set default flavour
+vim.g.catppuccin_flavour = vim.g.catppuccin_flavour or "mocha"
+
 function M.compile()
 	if not vim.tbl_contains(M.flavours, vim.g.catppuccin_flavour) then
 		vim.notify(
@@ -105,9 +108,6 @@ vim.api.nvim_create_user_command("CatppuccinCompile", function()
 end, {})
 
 function M.setup(user_conf)
-	-- Set default flavour
-	vim.g.catppuccin_flavour = vim.g.catppuccin_flavour or "mocha"
-
 	-- Parsing user config
 	user_conf = user_conf or {}
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
