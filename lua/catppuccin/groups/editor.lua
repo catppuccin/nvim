@@ -40,7 +40,7 @@ function M.get()
 				or cp.base,
 		}, -- normal text in non-current windows
 		NormalSB = { fg = cp.text, bg = cp.crust }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.text, bg = cp.mantle }, -- Normal text in floating windows.
+		NormalFloat = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = cp.blue },
 		Pmenu = { bg = cp.surface0, fg = cp.overlay2 }, -- Popup menu: normal item.
 		PmenuSel = { fg = cp.text, bg = cp.surface1, style = { "bold" } }, -- Popup menu: selected item.
