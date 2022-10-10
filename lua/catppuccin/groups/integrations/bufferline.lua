@@ -5,7 +5,7 @@ function M.get(user_config)
 	-- Backward compatibility
 	local cnf = require("catppuccin").options
 	if cnf.integrations.bufferline then return {} end
-	return function(defaults)
+	return function()
 		local cp = require("catppuccin.palettes").get_palette()
 		local transparent_background = cnf.transparent_background
 		local bg_highlight = (transparent_background and cnf.dim_inactive.enabled and cp.dim)
