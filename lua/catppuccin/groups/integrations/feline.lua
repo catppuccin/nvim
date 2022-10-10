@@ -43,6 +43,8 @@ if vim.g.catppuccin_flavour == "latte" then
 	sett.bkg = latte.crust
 end
 
+if require("catppuccin").options.transparent_background then sett.bkg = "NONE" end
+
 local mode_colors = {
 	["n"] = { "NORMAL", clrs.lavender },
 	["no"] = { "N-PENDING", clrs.lavender },

@@ -11,8 +11,6 @@ local function inspect(t)
 		local q = type(v) == "string" and [["]] or ""
 		table.insert(list, fmt([[%s = %s%s%s]], k, q, v, q))
 	end
-
-	table.sort(list)
 	return fmt([[{ %s }]], table.concat(list, ", "))
 end
 
