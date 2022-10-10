@@ -64,8 +64,8 @@ function M.compile()
 	if not vim.tbl_contains(M.flavours, vim.g.catppuccin_flavour) then
 		vim.notify(
 			"Catppuccin (error): Invalid flavour '"
-				.. vim.g.catppuccin_flavour
-				.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+			.. vim.g.catppuccin_flavour
+			.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
 			vim.log.levels.ERROR
 		)
 	end
@@ -87,8 +87,8 @@ vim.api.nvim_create_user_command("Catppuccin", function(inp)
 	if not vim.tbl_contains(M.flavours, inp.args) then
 		vim.notify(
 			"Catppuccin (error): Invalid flavour '"
-				.. vim.g.catppuccin_flavour
-				.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+			.. vim.g.catppuccin_flavour
+			.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
 			vim.log.levels.ERROR
 		)
 		return
@@ -124,8 +124,8 @@ function M.setup(user_conf)
 	end
 
 	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config last modified
-		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Last git commit
-		+ vim.version().minor -- vim version
+			+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Last git commit
+			+ vim.version().minor -- vim version
 
 	if last_date ~= tostring(cur_date) then
 		file = io.open(cached_date, "w")
@@ -143,11 +143,10 @@ function M.setup(user_conf)
 			io.close(file)
 		end
 
-		-- TODO: Implement unordered hashing to remove vim.inspect
-		local cur_hash = require("catppuccin.lib.hashing").sha1(vim.inspect(user_conf)) .. tostring(vim.version().minor)
+		local cur_hash = require("catppuccin.lib.hashing").hash(user_conf) + vim.version().minor
 
 		-- Only re-compile if the setup table changed or vim version changed
-		if cached_hash ~= cur_hash then
+		if cached_hash ~= tostring(cur_hash) then
 			M.compile()
 			file = io.open(cached_config, "w")
 			if file then

@@ -54,20 +54,4 @@ vim.o.termguicolors = true]],
 	file:close()
 end
 
-function M.clean(flavour)
-	local compiled_path = config.compile_path .. path_sep .. flavour .. "_compiled.lua"
-	os.remove(compiled_path)
-end
-
-function M.status(flavour)
-	local file = config.compile_path .. path_sep .. flavour .. "_compiled.lua"
-	local status = "x"
-	local f = io.open(file, "r")
-	if f then
-		io.close(f)
-		status = "✓"
-	end
-	print(fmt("[%s]: %-10s %s", status, flavour, file))
-end
-
 return M
