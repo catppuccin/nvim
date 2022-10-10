@@ -721,26 +721,6 @@ Catppuccin also provide a function to work with the catppuccin compiler.
 require('catppuccin').compile()
 ```
 
-## Post-install/update hooks
-
-Packer.nvim
-
-```lua
--- It's recommended to add `:CatppuccinCompile` to post-install/update hooks
-use {
-	"catppuccin/nvim",
-	as = "catppuccin",
-	run = ":CatppuccinCompile"
-}
-```
-
-Vim-plug
-
-```vim
-" It's recommended to add `:CatppuccinCompile` to post-update hooks
-Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
-```
-
 ## Hooks
 
 Use them to execute code at certain events. These are the ones available:
