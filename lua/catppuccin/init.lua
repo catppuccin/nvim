@@ -123,8 +123,9 @@ function M.setup(user_conf)
 		file:close()
 	end
 
-	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config lua path & git commit
-		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD")
+	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config last modified
+		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Last git commit
+		+ vim.version().minor -- vim version
 
 	if last_date ~= tostring(cur_date) then
 		file = io.open(cached_date, "w")
@@ -132,21 +133,25 @@ function M.setup(user_conf)
 			file:write(cur_date)
 			file:close()
 		end
-		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
-		file = io.open(cached_config, "r")
 
-		local cached = {}
+		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
+		file = io.open(cached_config, "r") -- Keep .json suffix for backward compatibility
+
+		local cached_hash = ""
 		if file then
-			cached = vim.json.decode(file:read "*a")
+			cached_hash = file:read "*a"
 			io.close(file)
 		end
 
-		-- Only re-compile if the setup table changed
-		if vim.inspect(cached) ~= vim.inspect(user_conf) then -- TODO: Implements hashing if needed
+		-- TODO: Implement unordered hashing to remove vim.inspect
+		local cur_hash = require("catppuccin.lib.hashing").sha1(vim.inspect(user_conf)) .. tostring(vim.version().minor)
+
+		-- Only re-compile if the setup table changed or vim version changed
+		if cached_hash ~= cur_hash then
 			M.compile()
 			file = io.open(cached_config, "w")
 			if file then
-				file:write(vim.json.encode(user_conf))
+				file:write(cur_hash)
 				file:close()
 			end
 		end
