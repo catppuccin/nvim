@@ -143,11 +143,10 @@ function M.setup(user_conf)
 			io.close(file)
 		end
 
-		-- TODO: Implement unordered hashing to remove vim.inspect
-		local cur_hash = require("catppuccin.lib.hashing").sha1(vim.inspect(user_conf)) .. tostring(vim.version().minor)
+		local cur_hash = require("catppuccin.lib.hashing").hash(user_conf) + vim.version().minor
 
 		-- Only re-compile if the setup table changed or vim version changed
-		if cached_hash ~= cur_hash then
+		if cached_hash ~= tostring(cur_hash) then
 			M.compile()
 			file = io.open(cached_config, "w")
 			if file then

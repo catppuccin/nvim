@@ -11,8 +11,6 @@ local function inspect(t)
 		local q = type(v) == "string" and [["]] or ""
 		table.insert(list, fmt([[%s = %s%s%s]], k, q, v, q))
 	end
-
-	table.sort(list)
 	return fmt([[{ %s }]], table.concat(list, ", "))
 end
 
@@ -54,22 +52,6 @@ vim.o.termguicolors = true]],
 	local file = io.open(config.compile_path .. path_sep .. flavour .. "_compiled.lua", "w")
 	file:write(table.concat(lines, "\n"))
 	file:close()
-end
-
-function M.clean(flavour)
-	local compiled_path = config.compile_path .. path_sep .. flavour .. "_compiled.lua"
-	os.remove(compiled_path)
-end
-
-function M.status(flavour)
-	local file = config.compile_path .. path_sep .. flavour .. "_compiled.lua"
-	local status = "x"
-	local f = io.open(file, "r")
-	if f then
-		io.close(f)
-		status = "✓"
-	end
-	print(fmt("[%s]: %-10s %s", status, flavour, file))
 end
 
 return M

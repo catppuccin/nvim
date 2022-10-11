@@ -5,6 +5,7 @@ local lsp_severity = vim.diagnostic.severity
 local b = vim.b
 
 local clrs = require("catppuccin.palettes").get_palette()
+
 local assets = {
 	left_separator = "",
 	right_separator = "",
@@ -42,6 +43,8 @@ if vim.g.catppuccin_flavour == "latte" then
 	sett.text = latte.base
 	sett.bkg = latte.crust
 end
+
+if require("catppuccin").options.transparent_background then sett.bkg = "NONE" end
 
 local mode_colors = {
 	["n"] = { "NORMAL", clrs.lavender },
@@ -83,21 +86,15 @@ function M.get()
 	local shortline = false
 
 	local components = {
-		active = {},
-		inactive = {},
+		active = { {}, {}, {} }, -- left, center, right
+		inactive = { {} },
 	}
 
-	local function is_enabled(is_shortline, winid, min_width)
-		if is_shortline then return true end
+	local function is_enabled(min_width)
+		if shortline then return true end
 
-		winid = winid or 0
-		return vim.api.nvim_win_get_width(winid) > min_width
+		return vim.api.nvim_win_get_width(0) > min_width
 	end
-
-	table.insert(components.active, {}) -- (1) left
-	table.insert(components.active, {}) -- (2) center
-	table.insert(components.active, {}) -- (3) right
-	table.insert(components.inactive, {})
 
 	-- global components
 	local invi_sep = {
@@ -306,7 +303,7 @@ function M.get()
 
 			return ""
 		end,
-		enabled = is_enabled(shortline, winid, 80),
+		enabled = is_enabled(80),
 		hl = {
 			fg = clrs.rosewater,
 			bg = sett.bkg,
@@ -362,7 +359,7 @@ function M.get()
 
 	components.active[3][1] = {
 		provider = "git_branch",
-		enabled = is_enabled(shortline, winid, 70),
+		enabled = is_enabled(70),
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -395,7 +392,7 @@ function M.get()
 			if icon == nil then icon = assets.file end
 			return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "
 		end,
-		enabled = is_enabled(shortline, winid, 70),
+		enabled = is_enabled(70),
 		hl = {
 			fg = sett.text,
 			bg = sett.curr_file,
@@ -414,7 +411,7 @@ function M.get()
 			local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 			return assets.dir .. dir_name .. " "
 		end,
-		enabled = is_enabled(shortline, winid, 80),
+		enabled = is_enabled(80),
 		hl = {
 			fg = sett.text,
 			bg = sett.curr_dir,

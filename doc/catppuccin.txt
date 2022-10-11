@@ -17,7 +17,6 @@ Table of Contents                               *catppuccin-table-of-contents*
 5. Compile                                                |catppuccin-compile|
   - Config                                                 |catppuccin-config|
   - Compile commands                             |catppuccin-compile-commands|
-  - Post-install/update hooks           |catppuccin-post-install/update-hooks|
   - Hooks                                                   |catppuccin-hooks|
 6. FAQ                                                        |catppuccin-faq|
   - Transparent background tweaks   |catppuccin-transparent-background-tweaks|
@@ -766,28 +765,6 @@ Catppuccin also provide a function to work with the catppuccin compiler.
 >
     -- Create/update the compile files
     require('catppuccin').compile()
-<
-
-
-POST-INSTALL/UPDATE HOOKS               *catppuccin-post-install/update-hooks*
-
-Packer.nvim
-
->
-    -- It's recommended to add `:CatppuccinCompile` to post-install/update hooks
-    use {
-        "catppuccin/nvim",
-        as = "catppuccin",
-        run = ":CatppuccinCompile"
-    }
-<
-
-
-Vim-plug
-
->
-    " It's recommended to add `:CatppuccinCompile` to post-update hooks
-    Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile'}
 <
 
 
