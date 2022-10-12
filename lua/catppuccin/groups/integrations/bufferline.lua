@@ -36,6 +36,7 @@ function M.get(user_config)
 			separator = { fg = cp.crust, bg = inactive_bg },
 			separator_visible = { fg = cp.crust, bg = inactive_bg },
 			separator_selected = { fg = cp.crust, bg = active_bg },
+			offset_separator = { fg = cnf.transparent_background and cp.surface1 or cp.crust, bg = active_bg },
 			-- close buttons
 			close_button = { fg = cp.surface1, bg = inactive_bg },
 			close_button_visible = { fg = cp.surface1, bg = inactive_bg },
