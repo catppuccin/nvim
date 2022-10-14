@@ -177,6 +177,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)                         | lightspeed         |
 | [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim/)                              | lsp_saga           |
 | [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                          | Special            |
+| [mason](https://github.com/williamboman/mason.nvim)                                   | mason              |
 | [markdown](https://www.markdownguide.org/)                                            | markdown           |
 | [mini.nvim](https://github.com/echasnovski/mini.nvim)                                 | mini               |
 | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                       | neotree            |
@@ -239,6 +240,7 @@ require("catppuccin").setup({
 		lightspeed = false,
 		lsp_saga = false,
 		lsp_trouble = false,
+		mason = true,
 		markdown = true,
 		mini = false,
 		neogit = false,
