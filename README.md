@@ -22,7 +22,7 @@ This port of Catppuccin is special because it was the first one and the one that
   <img src="assets/res.webp"/>
 </p>
 
-## Previews
+# Previews
 
 <details>
 <summary>🌻 Latte</summary>
