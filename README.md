@@ -19,26 +19,26 @@ This port of Catppuccin is special because it was the first one and the one that
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56817415/193125027-e03e0325-acb5-42a7-ba4a-04ad5516b121.png"/>
+  <img src="assets/res.webp"/>
 </p>
 
-# Previews
+## Previews
 
 <details>
-<summary>Mocha</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193097127-21377990-ffb9-4e81-9adc-feb688e9104e.png"/>
+<summary>🌻 Latte</summary>
+<img src="assets/latte.webp"/>
 </details>
 <details>
-<summary>Macchiato</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193099598-a5482fa9-bc22-42e8-ad61-ad73303f781f.png"/>
+<summary>🪴 Frappé</summary>
+<img src="assets/frappe.webp"/>
 </details>
 <details>
-<summary>Frappe</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193099978-661ade74-49ef-4003-b3c8-9c74c475572c.png"/>
+<summary>🌺 Macchiato</summary>
+<img src="assets/macchiato.webp"/>
 </details>
 <details>
-<summary>Latte</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193100918-17460481-ed80-4f75-bec9-efb3de2cb2ee.png"/>
+<summary>🌿 Mocha</summary>
+<img src="assets/mocha.webp"/>
 </details>
 
 <!-- panvimdoc-ignore-end -->
