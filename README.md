@@ -25,19 +25,19 @@ This port of Catppuccin is special because it was the first one and the one that
 # Previews
 
 <details>
-<summary>🌻 Latte</summary>
+<summary>Latte</summary>
 <img src="assets/latte.webp"/>
 </details>
 <details>
-<summary>🪴 Frappé</summary>
+<summary>Frappé</summary>
 <img src="assets/frappe.webp"/>
 </details>
 <details>
-<summary>🌺 Macchiato</summary>
+<summary>Macchiato</summary>
 <img src="assets/macchiato.webp"/>
 </details>
 <details>
-<summary>🌿 Mocha</summary>
+<summary>Mocha</summary>
 <img src="assets/mocha.webp"/>
 </details>
 
