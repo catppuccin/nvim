@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get()
-	local highlights = {
+	return {
 		AerialLine = { fg = cp.yellow, bg = cp.none },
 		AerialGuide = { fg = cp.overlay2 },
 		AerialBooleanIcon = { link = "@boolean" },
@@ -31,16 +31,6 @@ function M.get()
 		AerialKeyIcon = { link = "@type" },
 		AerialNullIcon = { link = "@type" },
 	}
-
-	local ts_hl = require "catppuccin.utils.treesitter_highlight"
-	if ts_hl.use_legacy_highlight then
-		local map = ts_hl.map
-		for _, v in pairs(highlights) do
-			v.link = map[v.link]
-		end
-	end
-
-	return highlights
 end
 
 return M

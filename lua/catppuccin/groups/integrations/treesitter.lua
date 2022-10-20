@@ -11,7 +11,18 @@ function M.get()
 
 	local math_logic = cp.peach
 
-	local highlights = {
+	if vim.treesitter.highlighter.hl_map then
+		vim.notify(
+			[[Catppuccin (info):
+nvim-treesitter integration requires neovim 0.8
+If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag to v0.2.4 and nvim-treesitter to 4cccb6f494eb255b32a290d37c35ca12584c74d0.
+]],
+			vim.log.levels.INFO
+		)
+		return {}
+	end
+
+	return {
 		["@field"] = { fg = cp.teal }, -- For fields.
 		["@property"] = { fg = cp.teal, style = cnf.styles.properties or {} }, -- Same as TSField.
 
@@ -111,18 +122,6 @@ function M.get()
 		-- Ruby
 		["@symbol"] = { fg = cp.flamingo },
 	}
-
-	local ts_hl = require "catppuccin.utils.treesitter_highlight"
-	if ts_hl.use_legacy_highlight then
-		local map = ts_hl.map
-		local updated_highlights = {}
-		for k, v in pairs(highlights) do
-			updated_highlights[map[k]] = v
-		end
-		return updated_highlights
-	end
-
-	return highlights
 end
 
 return M
