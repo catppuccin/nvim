@@ -100,7 +100,7 @@ function M.assert_brightness(color)
 end
 
 function M.vary_color(palettes, default)
-	local flvr = vim.g.catppuccin_flavour
+	local flvr = require("catppuccin").flavour
 
 	if palettes[flvr] ~= nil then return palettes[flvr] end
 	return default

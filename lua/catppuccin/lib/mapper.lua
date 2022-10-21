@@ -25,7 +25,7 @@ local function get_integrations()
 end
 
 function M.apply(flavour)
-	flavour = flavour or vim.g.catppuccin_flavour
+	flavour = flavour or require("catppuccin").flavour
 	-- Borrowing global var
 	_G._cnf = cnf
 	_G._cp = cp
