@@ -12,7 +12,7 @@ function M.get()
 		CmdlinePopupBorderSearch = { fg = cp.yellow },
 		Confirm = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base },
 		ConfirmBorder = { fg = cp.blue },
-		Cursor = { link = "Cursor" },
+		Cursor = { fg = cp.text },
 		Mini = { fg = cp.text },
 		Popup = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle },
 		PopupBorder = { link = "FloatBorder" },
