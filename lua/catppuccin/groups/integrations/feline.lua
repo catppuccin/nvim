@@ -38,7 +38,7 @@ local sett = {
 	show_modified = false,
 }
 
-if vim.g.catppuccin_flavour == "latte" then
+if require("catppuccin").flavour == "latte" then
 	local latte = require("catppuccin.palettes").get_palette "latte"
 	sett.text = latte.base
 	sett.bkg = latte.crust

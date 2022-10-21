@@ -1,9 +1,10 @@
 local M = {}
+local ctp = require "catppuccin"
+local cnf = ctp.options
 
 function M.get(user_config)
 	user_config = user_config or {}
 	-- Backward compatibility
-	local cnf = require("catppuccin").options
 	if cnf.integrations.bufferline then return {} end
 	return function()
 		local cp = require("catppuccin.palettes").get_palette()
@@ -85,12 +86,8 @@ function M.get(user_config)
 		}
 
 		local user_highlights = user_config.custom or {}
-		highlights = vim.tbl_deep_extend(
-			"keep",
-			user_highlights[vim.g.catppuccin_flavour] or {},
-			user_highlights.all or {},
-			highlights
-		)
+		highlights =
+			vim.tbl_deep_extend("keep", user_highlights[ctp.flavour] or {}, user_highlights.all or {}, highlights)
 
 		for _, color in pairs(highlights) do
 			if color.style then

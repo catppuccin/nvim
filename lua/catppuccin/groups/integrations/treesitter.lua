@@ -1,8 +1,5 @@
 local M = {}
 
--- neovim 0.8 compatibility
-vim.g.skip_ts_default_groups = true
-
 function M.get()
 	-- local delimeters = cp.overlay2
 	local operators = cp.sky

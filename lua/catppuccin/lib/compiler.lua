@@ -22,9 +22,8 @@ function M.compile(flavour)
 -- DO NOT make changes directly to this file.
 
 if vim.g.colors_name then vim.cmd("hi clear") end
-vim.g.colors_name = "catppuccin"
-vim.g.skip_ts_default_groups = true
-vim.o.termguicolors = true]],
+vim.o.termguicolors = true
+vim.g.colors_name = "catppuccin"]],
 	}
 	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
 	if path_sep == "\\" then config.compile_path = config.compile_path:gsub("/", "\\") end
