@@ -104,7 +104,7 @@ end, {
 
 vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	M.compile()
-	vim.notify("Catppuccin (info): compiled cache!", "info")
+	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
 end, {})
 
 function M.setup(user_conf)
