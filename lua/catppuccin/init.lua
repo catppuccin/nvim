@@ -1,6 +1,12 @@
 local M = {
 	flavours = { "latte", "frappe", "macchiato", "mocha" },
+	flavour = "mocha",
 	options = {
+		flavour = "mocha",
+		background = {
+			light = "latte",
+			dark = "mocha",
+		},
 		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
 		transparent_background = false,
 		term_colors = false,
@@ -57,44 +63,46 @@ local M = {
 	path_sep = vim.startswith(vim.loop.os_uname().sysname, "Windows") and "\\" or "/",
 }
 
--- Set default flavour
-vim.g.catppuccin_flavour = vim.g.catppuccin_flavour or "mocha"
-
 function M.compile()
-	if not vim.tbl_contains(M.flavours, vim.g.catppuccin_flavour) then
+	if not vim.tbl_contains(M.flavours, M.flavour) then
 		vim.notify(
 			"Catppuccin (error): Invalid flavour '"
-				.. vim.g.catppuccin_flavour
+				.. M.flavour
 				.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
 			vim.log.levels.ERROR
 		)
 	end
-	require("catppuccin.lib.compiler").compile(vim.g.catppuccin_flavour)
+	require("catppuccin.lib.compiler").compile(M.flavour)
 end
 
-function M.load()
-	local compiled_path = M.options.compile_path .. M.path_sep .. vim.g.catppuccin_flavour .. "_compiled.lua"
+local lock = false -- Avoid o:background reloading
+
+function M.load(flavour)
+	if lock then return end
+	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour)
+	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	local file = io.open(compiled_path, "r")
 	if file then
 		file:close()
 	else
 		M.compile()
 	end
+	lock = true
 	dofile(compiled_path)
+	lock = false
 end
 
 vim.api.nvim_create_user_command("Catppuccin", function(inp)
 	if not vim.tbl_contains(M.flavours, inp.args) then
 		vim.notify(
 			"Catppuccin (error): Invalid flavour '"
-				.. vim.g.catppuccin_flavour
-				.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+				.. inp.args
+				.. "', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
 			vim.log.levels.ERROR
 		)
 		return
 	end
-	vim.g.catppuccin_flavour = inp.args
-	vim.api.nvim_command "colorscheme catppuccin"
+	vim.api.nvim_command("colorscheme catppuccin-" .. inp.args)
 end, {
 	nargs = 1,
 	complete = function(line)
@@ -113,6 +121,11 @@ function M.setup(user_conf)
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
+	M.flavour = M.options.flavour
+	if vim.g.catppuccin_flavour then -- Backward compatibility
+		M.flavour = vim.g.catppuccin_flavour
+	end
+
 	-- Caching configuration
 	local cached_date = M.options.compile_path .. M.path_sep .. "date.txt"
 
@@ -125,7 +138,6 @@ function M.setup(user_conf)
 
 	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config last modified
 		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Last git commit
-		+ vim.version().minor -- vim version
 
 	if last_date ~= tostring(cur_date) then
 		file = io.open(cached_date, "w")
@@ -143,9 +155,9 @@ function M.setup(user_conf)
 			io.close(file)
 		end
 
-		local cur_hash = require("catppuccin.lib.hashing").hash(user_conf) + vim.version().minor
+		local cur_hash = require("catppuccin.lib.hashing").hash(user_conf)
 
-		-- Only re-compile if the setup table changed or vim version changed
+		-- Only re-compile if the setup table changed
 		if cached_hash ~= tostring(cur_hash) then
 			M.compile()
 			file = io.open(cached_config, "w")

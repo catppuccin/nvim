@@ -61,8 +61,9 @@ use {
 	"catppuccin/nvim",
 	as = "catppuccin",
 	config = function()
-		vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-		require("catppuccin").setup()
+		require("catppuccin").setup {
+			flavour = "macchiato" -- mocha, macchiato, frappe, latte
+		}
 		vim.api.nvim_command "colorscheme catppuccin"
 	end
 }
@@ -74,9 +75,7 @@ use {
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
-
 lua require("catppuccin").setup()
-
 colorscheme catppuccin
 ```
 
@@ -90,6 +89,11 @@ You may pass a lua table to the `setup()` function in order to edit any of Catpp
 
 ```lua
 require("catppuccin").setup({
+	flavour = "mocha", -- latte, frappe, macchiato, mocha
+	background = { -- :h background
+		light = "latte",
+		dark = "mocha",
+	},
 	compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 	transparent_background = false,
 	term_colors = false,
@@ -112,6 +116,7 @@ require("catppuccin").setup({
 		types = {},
 		operators = {},
 	},
+	color_overrides = {},
 	integrations = {
 		cmp = true,
 		gitsigns = true,
@@ -120,7 +125,6 @@ require("catppuccin").setup({
 		treesitter = true,
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
-	color_overrides = {},
 	custom_highlights = {},
 })
 ```
@@ -131,8 +135,9 @@ Although settings already have self-explanatory names, here is where you can fin
 
 This settings are unrelated to any group and are independent.
 
--   `transparent_background`: (Boolean) if true, disables setting the background color.
+-   `background`: (Table) Match :set background=light/dark with :Catppuccin background.light/dark
 -   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+-   `transparent_background`: (Boolean) if true, disables setting the background color.
 
 ## Dim inactive
 
@@ -151,6 +156,28 @@ Handles the style of general hi groups (see `:h highlight-args`):
 -   `keywords`: (Table) changed the style of the keywords.
 -   `strings`: (Table) changed the style of the strings.
 -   `variables`: (Table) changed the style of the variables.
+
+## Overwriting colors
+
+Colors can be overwritten using `color_overrides` in the setting, like so:
+
+```lua
+require("catppuccin").setup {
+	color_overrides = {
+		all = {
+			text = "#ffffff",
+		},
+		latte = {
+			base = "#ff0000",
+			mantle = "#242424",
+			crust = "#474747",
+		},
+		frappe = {},
+		macchiato = {},
+		mocha = {},
+	}
+}
+```
 
 ## Integrations
 
@@ -670,28 +697,6 @@ require("catppuccin.lib.highlighter").syntax({
 })
 ```
 
-## Overwriting colors
-
-Colors can be overwritten using `color_overrides` in the setting, like so:
-
-```lua
-require("catppuccin").setup {
-	color_overrides = {
-		all = {
-			text = "#ffffff",
-		},
-		latte = {
-			base = "#ff0000",
-			mantle = "#242424",
-			crust = "#474747",
-		},
-		frappe = {},
-		macchiato = {},
-		mocha = {},
-	}
-}
-```
-
 # Compile
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
@@ -752,42 +757,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 ```
 
 # FAQ
-
-## Transparent background tweaks
-
-Add this to `custom_highlights` settings
-
-```lua
-local colors = require("catppuccin.palettes").get_palette()
-colors.none = "NONE"
-require("catppuccin").setup {
-	custom_highlights = {
-		Comment = { fg = colors.overlay1 },
-		LineNr = { fg = colors.overlay1 },
-		CursorLine = { bg = colors.none },
-		CursorLineNr = { fg = colors.lavender },
-		DiagnosticVirtualTextError = { bg = colors.none },
-		DiagnosticVirtualTextWarn = { bg = colors.none },
-		DiagnosticVirtualTextInfo = { bg = colors.none },
-		DiagnosticVirtualTextHint = { bg = colors.none },
-	}
-}
-```
-
-## Usage with :set background
-
-The following autocmd will change the flavour to latte when you `:set background=light` and to mocha after `:set background=dark`
-
-```lua
-vim.api.nvim_create_autocmd("OptionSet", {
-	pattern = "background",
-	callback = function()
-		vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "latte" or "mocha"))
-	end,
-})
-```
-
-For people who are hybrid between light and dark mode!
 
 ## Catppuccin remap function
 
