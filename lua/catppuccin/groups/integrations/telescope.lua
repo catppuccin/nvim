@@ -4,7 +4,11 @@ function M.get()
 	return {
 		TelescopeBorder = { fg = cp.blue },
 		TelescopeSelectionCaret = { fg = cp.flamingo },
-		TelescopeSelection = { fg = cp.text, bg = cp.surface0, style = { "bold" } },
+		TelescopeSelection = {
+			fg = cnf.transparent_background and cp.flamingo or cp.text,
+			bg = cnf.transparent_background and cp.none or cp.surface0,
+			style = { "bold" },
+		},
 		TelescopeMatching = { fg = cp.blue },
 		-- TelescopePromptPrefix = { bg = cp.crust },
 		-- TelescopePromptNormal = { bg = cp.crust },
