@@ -9,18 +9,16 @@ Table of Contents                               *catppuccin-table-of-contents*
   - General                                               |catppuccin-general|
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
+  - Overwriting colors                         |catppuccin-overwriting-colors|
   - Integrations                                     |catppuccin-integrations|
 4. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
-  - Overwriting colors                         |catppuccin-overwriting-colors|
 5. Compile                                                |catppuccin-compile|
   - Config                                                 |catppuccin-config|
   - Compile commands                             |catppuccin-compile-commands|
   - Hooks                                                   |catppuccin-hooks|
 6. FAQ                                                        |catppuccin-faq|
-  - Transparent background tweaks   |catppuccin-transparent-background-tweaks|
-  - Usage with :set background         |catppuccin-usage-with-:set-background|
   - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
   - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
   - Colors doesn’t match preview screenshots|catppuccin-colors-doesn’t-match-preview-screenshots|
@@ -49,8 +47,9 @@ the most popular ones:
         "catppuccin/nvim",
         as = "catppuccin",
         config = function()
-            vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-            require("catppuccin").setup()
+            require("catppuccin").setup {
+                flavour = "macchiato" -- mocha, macchiato, frappe, latte
+            }
             vim.api.nvim_command "colorscheme catppuccin"
         end
     }
@@ -63,9 +62,7 @@ the most popular ones:
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     
     let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
-    
     lua require("catppuccin").setup()
-    
     colorscheme catppuccin
 <
 
@@ -88,6 +85,11 @@ Catppuccin’s settings:
 
 >
     require("catppuccin").setup({
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        background = { -- :h background
+            light = "latte",
+            dark = "mocha",
+        },
         compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
         transparent_background = false,
         term_colors = false,
@@ -110,6 +112,7 @@ Catppuccin’s settings:
             types = {},
             operators = {},
         },
+        color_overrides = {},
         integrations = {
             cmp = true,
             gitsigns = true,
@@ -118,7 +121,6 @@ Catppuccin’s settings:
             treesitter = true,
             -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
         },
-        color_overrides = {},
         custom_highlights = {},
     })
 <
@@ -132,8 +134,9 @@ GENERAL                                                   *catppuccin-general*
 This settings are unrelated to any group and are independent.
 
 
-- `transparent_background`: (Boolean) if true, disables setting the background color.
+- `background`: (Table) Match :set background=light/dark with :Catppuccin background.light/dark
 - `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+- `transparent_background`: (Boolean) if true, disables setting the background color.
 
 
 DIM INACTIVE                                         *catppuccin-dim-inactive*
@@ -157,6 +160,29 @@ Handles the style of general hi groups (see `:h highlight-args`):
 - `keywords`: (Table) changed the style of the keywords.
 - `strings`: (Table) changed the style of the strings.
 - `variables`: (Table) changed the style of the variables.
+
+
+OVERWRITING COLORS                             *catppuccin-overwriting-colors*
+
+Colors can be overwritten using `color_overrides` in the setting, like so:
+
+>
+    require("catppuccin").setup {
+        color_overrides = {
+            all = {
+                text = "#ffffff",
+            },
+            latte = {
+                base = "#ff0000",
+                mantle = "#242424",
+                crust = "#474747",
+            },
+            frappe = {},
+            macchiato = {},
+            mocha = {},
+        }
+    }
+<
 
 
 INTEGRATIONS                                         *catppuccin-integrations*
@@ -708,29 +734,6 @@ For example:
 <
 
 
-OVERWRITING COLORS                             *catppuccin-overwriting-colors*
-
-Colors can be overwritten using `color_overrides` in the setting, like so:
-
->
-    require("catppuccin").setup {
-        color_overrides = {
-            all = {
-                text = "#ffffff",
-            },
-            latte = {
-                base = "#ff0000",
-                mantle = "#242424",
-                crust = "#474747",
-            },
-            frappe = {},
-            macchiato = {},
-            mocha = {},
-        }
-    }
-<
-
-
 ==============================================================================
 5. Compile                                                *catppuccin-compile*
 
@@ -801,45 +804,6 @@ They can be used like so:
 
 ==============================================================================
 6. FAQ                                                        *catppuccin-faq*
-
-TRANSPARENT BACKGROUND TWEAKS       *catppuccin-transparent-background-tweaks*
-
-Add this to `custom_highlights` settings
-
->
-    local colors = require("catppuccin.palettes").get_palette()
-    colors.none = "NONE"
-    require("catppuccin").setup {
-        custom_highlights = {
-            Comment = { fg = colors.overlay1 },
-            LineNr = { fg = colors.overlay1 },
-            CursorLine = { bg = colors.none },
-            CursorLineNr = { fg = colors.lavender },
-            DiagnosticVirtualTextError = { bg = colors.none },
-            DiagnosticVirtualTextWarn = { bg = colors.none },
-            DiagnosticVirtualTextInfo = { bg = colors.none },
-            DiagnosticVirtualTextHint = { bg = colors.none },
-        }
-    }
-<
-
-
-USAGE WITH :SET BACKGROUND             *catppuccin-usage-with-:set-background*
-
-The following autocmd will change the flavour to latte when you `:set
-background=light` and to mocha after `:set background=dark`
-
->
-    vim.api.nvim_create_autocmd("OptionSet", {
-        pattern = "background",
-        callback = function()
-            vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "latte" or "mocha"))
-        end,
-    })
-<
-
-
-For people who are hybrid between light and dark mode!
 
 CATPPUCCIN REMAP FUNCTION               *catppuccin-catppuccin-remap-function*
 
