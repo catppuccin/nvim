@@ -204,12 +204,13 @@ Below is a list of supported plugins and their corresponding integration module.
 | [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)                         | lightspeed         |
 | [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim/)                              | lsp_saga           |
 | [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                          | Special            |
-| [mason](https://github.com/williamboman/mason.nvim)                                   | mason              |
 | [markdown](https://www.markdownguide.org/)                                            | markdown           |
+| [mason](https://github.com/williamboman/mason.nvim)                                   | mason              |
 | [mini.nvim](https://github.com/echasnovski/mini.nvim)                                 | mini               |
 | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                       | neotree            |
 | [neogit](https://github.com/TimUntersberger/neogit)                                   | neogit             |
 | [neotest](https://github.com/nvim-neotest/neotest)                                    | neotest            |
+| [noice.nvim](https://github.com/folke/noice.nvim)                                     | noice              |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                       | cmp                |
 | [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                | Special            |
 | [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                  | Special            |
@@ -267,12 +268,13 @@ require("catppuccin").setup({
 		lightspeed = false,
 		lsp_saga = false,
 		lsp_trouble = false,
-		mason = true,
 		markdown = true,
+		mason = true,
 		mini = false,
 		neogit = false,
 		neotest = false,
 		neotree = false,
+		noice = false,
 		notify = true,
 		nvimtree = true,
 		overseer = false,
