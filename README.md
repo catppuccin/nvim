@@ -44,7 +44,8 @@ This port of Catppuccin is special because it was the first one and the one that
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
 <details>
 <summary>nullchilly/amoled</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197333547-53be2f72-90b4-490d-b044-384d8adf80c6.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197340978-c4052b14-df5b-427a-9b81-7a93f65efa4e.png"/>
+
 
 Configuration:
 ```lua
