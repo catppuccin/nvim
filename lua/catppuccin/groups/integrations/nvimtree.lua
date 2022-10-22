@@ -9,7 +9,7 @@ function M.get()
 		NvimTreeEmptyFolderName = { fg = cp.blue },
 		NvimTreeIndentMarker = { fg = cp.overlay0 },
 		NvimTreeVertSplit = { fg = cp.base, bg = cnf.transparent_background and cp.none or cp.base },
-		NvimTreeRootFolder = { fg = cp.blue, style = { "bold" } },
+		NvimTreeRootFolder = { fg = cp.lavender, style = { "bold" } },
 		NvimTreeSymlink = { fg = cp.pink },
 		NvimTreeStatuslineNc = { fg = cp.mantle, bg = cp.mantle },
 		NvimTreeGitDirty = { fg = cp.yellow },
