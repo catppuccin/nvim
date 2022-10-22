@@ -41,6 +41,39 @@ This port of Catppuccin is special because it was the first one and the one that
 <img src="https://user-images.githubusercontent.com/56817415/193100918-17460481-ed80-4f75-bec9-efb3de2cb2ee.png"/>
 </details>
 
+**[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
+<details>
+<summary>nullchilly/amoled</summary>
+<img src="https://user-images.githubusercontent.com/56817415/197333547-53be2f72-90b4-490d-b044-384d8adf80c6.png"/>
+
+Configuration:
+```lua
+require("catppuccin").setup {
+	flavour = "mocha",
+	color_overrides = {
+		mocha = {
+			base = "#000000",
+		}
+	},
+	integrations = {
+		nvimtree = true,
+	},
+	custom_highlights = {
+		NvimTreeNormal = { bg = "NONE" },
+	}
+}
+```
+</details>
+
+<details>
+<summary><a href="https://github.com/ayamir/nvimdots/">ayamir/nvimdots</a></summary>
+<img src="https://raw.githubusercontent.com/ayamir/blog-imgs/main/telescope.png"/>
+
+Configuration: https://github.com/ayamir/nvimdots/blob/main/lua/modules/ui/config.lua
+</details>
+
+</details>
+
 <!-- panvimdoc-ignore-end -->
 
 # Features
