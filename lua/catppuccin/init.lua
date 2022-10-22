@@ -60,7 +60,7 @@ local M = {
 		color_overrides = {},
 		highlight_overrides = {},
 	},
-	path_sep = vim.startswith(vim.loop.os_uname().sysname, "Windows") and "\\" or "/",
+	path_sep = ((jit and jit.os or nil) == "Windows") and "\\" or "/",
 }
 
 function M.compile()
@@ -136,8 +136,8 @@ function M.setup(user_conf)
 		file:close()
 	end
 
-	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config last modified
-		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Last git commit
+	local cur_date = vim.loop.fs_stat(debug.getinfo(2).source:sub(2)).mtime.sec -- Get user config last modified
+		+ vim.loop.fs_stat(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD").mtime.sec -- Last git commit
 
 	if last_date ~= tostring(cur_date) then
 		file = io.open(cached_date, "w")
@@ -149,7 +149,7 @@ function M.setup(user_conf)
 		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
 		file = io.open(cached_config, "r") -- Keep .json suffix for backward compatibility
 
-		local cached_hash = ""
+		local cached_hash = nil
 		if file then
 			cached_hash = file:read "*a"
 			io.close(file)
