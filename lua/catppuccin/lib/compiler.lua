@@ -1,4 +1,3 @@
-local path_sep = require("catppuccin").path_sep
 local config = require("catppuccin").options
 local M = {}
 
@@ -26,7 +25,6 @@ vim.o.termguicolors = true
 vim.g.colors_name = "catppuccin"]],
 	}
 	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
-	if path_sep == "\\" then config.compile_path = config.compile_path:gsub("/", "\\") end
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
@@ -46,9 +44,11 @@ vim.g.colors_name = "catppuccin"]],
 		table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
 	end
 	if vim.fn.isdirectory(config.compile_path) == 0 then
-		os.execute(string.format("mkdir %s %s", path_sep == "\\" and "" or "-p", config.compile_path))
+		os.execute(
+			string.format("mkdir %s %s", (jit and jit.os or nil) == "Windows" and "" or "-p", config.compile_path)
+		)
 	end
-	local file = io.open(config.compile_path .. path_sep .. flavour .. "_compiled.lua", "w")
+	local file = io.open(config.compile_path .. "/" .. flavour .. "_compiled.lua", "w")
 	file:write(table.concat(lines, "\n"))
 	file:close()
 end
