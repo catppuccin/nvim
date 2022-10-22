@@ -60,6 +60,7 @@ local M = {
 		color_overrides = {},
 		highlight_overrides = {},
 	},
+	path_sep = ((jit and jit.os or nil) == "Windows") and "\\" or "/",
 }
 
 function M.compile()
@@ -74,12 +75,12 @@ function M.compile()
 	require("catppuccin.lib.compiler").compile(M.flavour)
 end
 
-local lock = false -- Avoid o:background autocmd
+local lock = false -- Avoid o:background reloading
 
 function M.load(flavour)
 	if lock then return end
 	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour)
-	local compiled_path = M.options.compile_path .. "/" .. M.flavour .. "_compiled.lua"
+	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	if vim.fn.getftime(compiled_path) == -1 then M.compile() end
 	lock = true
 	dofile(compiled_path)
@@ -121,7 +122,7 @@ function M.setup(user_conf)
 	end
 
 	-- Caching configuration
-	local cached_date = M.options.compile_path .. "/date.txt"
+	local cached_date = M.options.compile_path .. M.path_sep .. "date.txt"
 
 	local file = io.open(cached_date, "r")
 	local last_date = nil
@@ -132,7 +133,7 @@ function M.setup(user_conf)
 
 	-- getftime is faster than vim.loop.fs_stat
 	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config last modified
-		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git/ORIG_HEAD") -- Last git commit
+		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Last git commit
 
 	if last_date ~= tostring(cur_date) then
 		file = io.open(cached_date, "w")
@@ -141,10 +142,10 @@ function M.setup(user_conf)
 			file:close()
 		end
 
-		local cached_config = M.options.compile_path .. "/config.json"
+		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
 		file = io.open(cached_config, "r") -- Keep .json suffix for backward compatibility
 
-		local cached_hash = nil
+		local cached_hash = ""
 		if file then
 			cached_hash = file:read "*a"
 			io.close(file)
