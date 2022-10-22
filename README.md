@@ -19,18 +19,18 @@ This port of Catppuccin is special because it was the first one and the one that
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56817415/197349390-33b7dbf6-c381-4332-ae7b-a4e1e98b997a.png"/>
+  <img src="https://user-images.githubusercontent.com/56817415/197354846-7a5e0bdf-342e-42f1-8c67-9f1aeac587dc.png"/>
 </p>
 
 # Previews
 
 <details>
 <summary>Mocha</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197349412-0a1161fe-7dec-436e-8c28-33c6c49a702d.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197354842-579a829f-dbd5-4bed-9100-82e82bcf341c.png"/>
 </details>
 <details>
 <summary>Macchiato</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197349417-07b1d4d7-10c8-4d4a-a2dc-8589df6012e9.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197354840-1f3cbe2b-a763-4080-8f86-21b12c5a7e59.png"/>
 </details>
 <details>
 <summary>Frappe</summary>
@@ -38,7 +38,7 @@ This port of Catppuccin is special because it was the first one and the one that
 </details>
 <details>
 <summary>Latte</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197349426-f67c008f-35e9-4cc6-96d9-8a97109b537a.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197354833-4d2c3b33-95bd-4979-a3f5-df3e426dfc50.png"/>
 </details>
 
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
