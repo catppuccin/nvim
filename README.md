@@ -217,6 +217,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                            | Special            |
 | [nvim-navic](https://github.com/SmiteshP/nvim-navic/)                                 | Special            |
 | [nvim-notify](https://github.com/rcarriga/nvim-notify)                                | notify             |
+| [nvim-semantic-tokens](https://github.com/theHamsta/nvim-semantic-tokens)             | semantic_tokens    |
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                          | nvimtree           |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter         |
@@ -275,10 +276,11 @@ require("catppuccin").setup({
 		neotest = false,
 		neotree = false,
 		noice = false,
-		notify = true,
+		notify = false,
 		nvimtree = true,
 		overseer = false,
 		pounce = false,
+		semantic_tokens = false,
 		symbols_outline = false,
 		telekasten = false,
 		telescope = true,
