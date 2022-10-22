@@ -19,32 +19,32 @@ This port of Catppuccin is special because it was the first one and the one that
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56817415/193125027-e03e0325-acb5-42a7-ba4a-04ad5516b121.png"/>
+  <img src="https://user-images.githubusercontent.com/56817415/197349390-33b7dbf6-c381-4332-ae7b-a4e1e98b997a.png"/>
 </p>
 
 # Previews
 
 <details>
 <summary>Mocha</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193097127-21377990-ffb9-4e81-9adc-feb688e9104e.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197349412-0a1161fe-7dec-436e-8c28-33c6c49a702d.png"/>
 </details>
 <details>
 <summary>Macchiato</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193099598-a5482fa9-bc22-42e8-ad61-ad73303f781f.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197349417-07b1d4d7-10c8-4d4a-a2dc-8589df6012e9.png"/>
 </details>
 <details>
 <summary>Frappe</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193099978-661ade74-49ef-4003-b3c8-9c74c475572c.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197349424-6ef5be0d-bf5b-429a-8e36-44dc43707066.png"/>
 </details>
 <details>
 <summary>Latte</summary>
-<img src="https://user-images.githubusercontent.com/56817415/193100918-17460481-ed80-4f75-bec9-efb3de2cb2ee.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197349426-f67c008f-35e9-4cc6-96d9-8a97109b537a.png"/>
 </details>
 
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
 <details>
 <summary>nullchilly/amoled</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197340978-c4052b14-df5b-427a-9b81-7a93f65efa4e.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
 
 
 Configuration:
