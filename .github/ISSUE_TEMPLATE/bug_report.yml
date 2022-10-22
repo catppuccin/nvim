@@ -91,12 +91,11 @@ body:
 
         _G.load_config = function()
           -- ADD INIT.LUA SETTINGS THAT ARE _NECESSARY_ FOR REPRODUCING THE ISSUE
-          vim.g.catppuccin_flavour = "macchiato"
           require("catppuccin").setup({
-            -- ...
+            flavour = "mocha"
           })
 
-          vim.cmd("colorscheme catppuccin")
+          vim.api.nvim_command("colorscheme catppuccin")
         end
 
         if vim.fn.isdirectory(install_path) == 0 then

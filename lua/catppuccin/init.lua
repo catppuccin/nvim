@@ -1,8 +1,6 @@
 local M = {
 	flavours = { "latte", "frappe", "macchiato", "mocha" },
-	flavour = "mocha",
 	options = {
-		flavour = "mocha",
 		background = {
 			light = "latte",
 			dark = "mocha",
@@ -116,10 +114,7 @@ function M.setup(user_conf)
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
-	M.flavour = M.options.flavour
-	if vim.g.catppuccin_flavour then -- Backward compatibility
-		M.flavour = vim.g.catppuccin_flavour
-	end
+	M.flavour = M.options.flavour or vim.g.catppuccin_flavour or "mocha"
 
 	-- Caching configuration
 	local cached_date = M.options.compile_path .. M.path_sep .. "date.txt"

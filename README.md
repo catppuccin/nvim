@@ -105,16 +105,33 @@ use {
 #### Vim-plug
 
 ```vim
+call plug#begin()
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+call plug#end()
 
-let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
-lua require("catppuccin").setup()
+lua << EOF
+require("catppuccin").setup {
+	flavour = "macchiato" -- mocha, macchiato, frappe, latte
+}
+EOF
 colorscheme catppuccin
 ```
 
-Remember that if you want to switch your Catppuccin flavour "on the fly" you may use the `:Catppuccin <flavour>` command.
+If you want to switch your Catppuccin flavour "on the fly" you may use this command:
+
+```lua
+:Catppuccin mocha/macchiato/frappe/latte
+```
 
 > Note: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
+
+```vim
+" There are also colorschemes for the different flavour
+colorscheme catppuccin-mocha
+colorscheme catppuccin-macchiato
+colorscheme catppuccin-frappe
+colorscheme catppuccin-latte
+```
 
 # Configuration
 
