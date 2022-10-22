@@ -107,6 +107,7 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		["@constructor.typescript"] = { fg = cp.lavender },
 
 		-- TSX (Typescript React)
+		["@keyword.export"] = { fg = cp.sky, style = { "bold" } },
 		["@constructor.tsx"] = { fg = cp.lavender },
 		["@tag.attribute.tsx"] = { fg = cp.mauve },
 
