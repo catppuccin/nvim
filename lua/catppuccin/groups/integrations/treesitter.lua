@@ -101,7 +101,8 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		["@label.json"] = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
 
 		-- lua
-		["@constructor.lua"] = { fg = cp.lavender }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@field.lua"] = { fg = cp.lavender },
+		["@constructor.lua"] = { fg = cp.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
 		-- typescript
 		["@constructor.typescript"] = { fg = cp.lavender },
