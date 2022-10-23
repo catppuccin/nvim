@@ -18,7 +18,9 @@ function M.hash(tbl) -- Xor hashing: https://codeforces.com/blog/entry/85900
 	elseif t == "string" then
 		return hash_str(tbl)
 	elseif t == "number" then
-		return tostring(t)
+		return tostring(tbl)
+	elseif t == "function" then
+		return hash_str(string.dump(tbl))
 	else
 		local hash = 0
 		for k, v in pairs(tbl) do

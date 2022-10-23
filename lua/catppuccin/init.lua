@@ -140,7 +140,7 @@ function M.setup(user_conf)
 		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
 		file = io.open(cached_config, "r") -- Keep .json suffix for backward compatibility
 
-		local cached_hash = ""
+		local cached_hash = nil
 		if file then
 			cached_hash = file:read "*a"
 			io.close(file)
