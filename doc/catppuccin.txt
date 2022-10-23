@@ -222,8 +222,6 @@ Here is an example:
 <
 
 
-**Note**
-
 <ins>
 
 Per flavour highlight groups can be overwritten in the setting like so:
@@ -581,9 +579,11 @@ Here are the defaults:
 <
 
 
-Note: Currently feline doesn’t officially support custom themes
-<https://github.com/feline-nvim/feline.nvim/issues/302>. In order for
-`:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
+
+  **Note**: Currently feline doesn’t officially support custom themes
+  <https://github.com/feline-nvim/feline.nvim/issues/302>. In order for
+  `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
+
 
 >
     vim.api.nvim_create_autocmd("ColorScheme", {
@@ -637,8 +637,8 @@ to set the latter up.
 
 lightline.vim
 
-Use this to set it up (Note: `catppuccin` is the only valid colorscheme name.
-It will pick the one set in your config):
+Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme
+name. It will pick the one set in your config):
 
 >
     let g:lightline = {'colorscheme': 'catppuccin'}
@@ -647,8 +647,8 @@ It will pick the one set in your config):
 
 lualine.nvim
 
-Use this to set it up (Note: `catppuccin` is the only valid theme name. It will
-pick the one set in your config):
+Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It
+will pick the one set in your config):
 
 >
     require('lualine').setup {
