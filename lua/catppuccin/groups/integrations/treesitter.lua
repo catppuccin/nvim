@@ -11,7 +11,7 @@ function M.get()
 		vim.notify(
 			[[Catppuccin (info):
 nvim-treesitter integration requires neovim 0.8
-If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag to v0.2.4 and nvim-treesitter to 4cccb6f494eb255b32a290d37c35ca12584c74d0.
+If you want to stay on nvim 0.7, either disable the integration or pin catppuccin tag to v0.2.4 and nvim-treesitter commit to 4cccb6f494eb255b32a290d37c35ca12584c74d0.
 ]],
 			vim.log.levels.INFO
 		)
@@ -121,6 +121,8 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		["@tag"] = { fg = cp.mauve }, -- Tags like html tag names.
 		["@tag.attribute"] = { fg = cp.teal, style = { "italic" } }, -- Tags like html tag names.
 		["@tag.delimiter"] = { fg = cp.sky }, -- Tag delimiter like < > /
+
+		-- Language specific:
 
 		-- toml
 		["@property.toml"] = { fg = cp.blue }, -- Differentiates between string and properties
