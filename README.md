@@ -227,9 +227,9 @@ Global highlight groups can be overwritten in the setting like so:
 
 ```lua
 custom_highlights = function(colors)
-  return {
-    <hl_group> = { <fields> }
-  }
+    return {
+        <hl_group> = { <fields> }
+    }
 end
 ```
 
@@ -252,10 +252,10 @@ require("catppuccin").setup {
 ```lua
 highlight_overrides = {
     all = function(colors) -- Global highlight
-    return {
-      <hl_group> = { <fields> }
-    }
-  end, -- Same for each flavour
+        return {
+            <hl_group> = { <fields> }
+        }
+    end, -- Same for each flavour
     latte = function(latte) end,
     frappe = function(frappe) end,
     macchiato = function(macchiato) end,
@@ -466,6 +466,8 @@ require("catppuccin").setup({
 
 
 Update your bufferline config to use the Catppuccin components:
+
+> **Note**: bufferline needs to be loaded after setting up catppuccin or it will highlight incorrectly
 
 ```lua
 use "akinsho/bufferline.nvim" {
