@@ -12,16 +12,18 @@ Table of Contents                               *catppuccin-table-of-contents*
 4. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
-  - Integrations                                     |catppuccin-integrations|
-5. Compile                                                |catppuccin-compile|
+  - Load other custom highlights later|catppuccin-load-other-custom-highlights-later|
+5. Integrations                                      |catppuccin-integrations|
+  - Special integrations                     |catppuccin-special-integrations|
+6. Compile                                                |catppuccin-compile|
   - Config                                                 |catppuccin-config|
   - Compile commands                             |catppuccin-compile-commands|
   - Hooks                                                   |catppuccin-hooks|
-6. FAQ                                                        |catppuccin-faq|
+7. FAQ                                                        |catppuccin-faq|
   - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
   - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
   - Colors doesn’t match preview screenshots|catppuccin-colors-doesn’t-match-preview-screenshots|
-7. Thanks to                                            |catppuccin-thanks-to|
+8. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
 1. Features                                              *catppuccin-features*
@@ -81,8 +83,10 @@ Vim-plug                               If you want to switch your Catppuccin
 <
 
 
-**Note**: the command has autocompletion enabled, so you can just press tab to
-cycle through the flavours
+
+  **Note**: the command has autocompletion enabled, so you can just press tab to
+  cycle through the flavours
+
 
 >
     " There are also colorschemes for the different flavour
@@ -279,8 +283,7 @@ Here is an example:
 <
 
 
-Aditionally, if you want to load other custom highlights later, you may use
-this function:
+LOAD OTHER CUSTOM HIGHLIGHTS LATER*catppuccin-load-other-custom-highlights-later*
 
 >
     require("catppuccin.lib.highlighter").syntax()
@@ -297,7 +300,8 @@ For example:
 <
 
 
-INTEGRATIONS                                         *catppuccin-integrations*
+==============================================================================
+5. Integrations                                      *catppuccin-integrations*
 
 catppuccin-nvim provides theme support for other plugins in the Neovim
 ecosystem and extended Neovim functionality through _integrations_.
@@ -454,7 +458,7 @@ Click here to see an example config
 <
 
 
-SPECIAL INTEGRATIONS ~
+SPECIAL INTEGRATIONS                         *catppuccin-special-integrations*
 
 bufferline.nvim
 
@@ -745,10 +749,12 @@ catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
 <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
 
 ==============================================================================
-5. Compile                                                *catppuccin-compile*
+6. Compile                                                *catppuccin-compile*
 
-**Note**: As of 7/10/2022, catppuccin should be able to automatically recompile
-when the setup table changed.
+
+  **Note**: As of 7/10/2022, catppuccin should be able to automatically recompile
+  when the setup table changed.
+
 
 Catppuccin is a highly customizable and configurable colorscheme. This does
 however come at the cost of complexity and execution time.
@@ -812,7 +818,7 @@ They can be used like so:
 
 
 ==============================================================================
-6. FAQ                                                        *catppuccin-faq*
+7. FAQ                                                        *catppuccin-faq*
 
 CATPPUCCIN REMAP FUNCTION               *catppuccin-catppuccin-remap-function*
 
@@ -860,7 +866,7 @@ Full list of Unsupported terminals can be found here:
 https://github.com/termstandard/colors#not-supporting-truecolor
 
 ==============================================================================
-7. Thanks to                                            *catppuccin-thanks-to*
+8. Thanks to                                            *catppuccin-thanks-to*
 
 
 - Pocco81 <https://github.com/Pocco81>
