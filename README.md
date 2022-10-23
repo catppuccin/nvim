@@ -124,7 +124,7 @@ If you want to switch your Catppuccin flavour "on the fly" you may use this comm
 :Catppuccin mocha/macchiato/frappe/latte
 ```
 
-**Note**: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
+> **Note**: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
 
 ```vim
 " There are also colorschemes for the different flavour
@@ -299,7 +299,7 @@ require("catppuccin").setup {
 ```
 </details>
 
-Aditionally, if you want to load other custom highlights later, you may use this function:
+## Load other custom highlights later
 
 ```lua
 require("catppuccin.lib.highlighter").syntax()
@@ -314,7 +314,7 @@ require("catppuccin.lib.highlighter").syntax({
 })
 ```
 
-## Integrations
+# Integrations
 
 catppuccin-nvim provides theme support for other plugins in the Neovim ecosystem and extended Neovim functionality through _integrations_.
 
@@ -460,7 +460,7 @@ require("catppuccin").setup({
 
 </details>
 
-### Special integrations
+## Special integrations
 
 <details> <summary>bufferline.nvim</summary>
 
@@ -741,7 +741,7 @@ If you'd like to know which highlight groups are being affected by catppuccin, c
 
 # Compile
 
-**Note**: As of 7/10/2022, catppuccin should be able to automatically recompile when the setup table changed.
+> **Note**: As of 7/10/2022, catppuccin should be able to automatically recompile when the setup table changed.
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time.
 
