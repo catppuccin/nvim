@@ -845,7 +845,7 @@ For example:
 
 
 
-  **Note: Unlike the `:highlight` command which can update a highlight group,
+  **Note**: Unlike the `:highlight` command which can update a highlight group,
   this function completely replaces the definition. (`:h nvim_set_hl`)
 
 
