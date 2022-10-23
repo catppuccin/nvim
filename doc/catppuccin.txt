@@ -83,7 +83,7 @@ Vim-plug                               If you want to switch your Catppuccin
 
 
 
-  Note: the command has autocompletion enabled, so you can just press tab to
+  **Note**: the command has autocompletion enabled, so you can just press tab to
   cycle through the flavours
 
 
