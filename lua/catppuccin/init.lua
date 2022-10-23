@@ -70,7 +70,9 @@ function M.compile()
 			vim.log.levels.ERROR
 		)
 	end
-	require("catppuccin.lib.compiler").compile(M.flavour)
+	for _, flavour in pairs(M.flavours) do
+		require("catppuccin.lib.compiler").compile(flavour)
+	end
 end
 
 local lock = false -- Avoid o:background reloading
