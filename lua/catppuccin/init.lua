@@ -77,7 +77,7 @@ local lock = false -- Avoid o:background reloading
 
 function M.load(flavour)
 	if lock then return end
-	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour)
+	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour) or "mocha"
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	if vim.fn.getftime(compiled_path) == -1 then M.compile() end
 	lock = true
