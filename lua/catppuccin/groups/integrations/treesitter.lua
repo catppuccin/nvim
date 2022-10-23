@@ -1,7 +1,6 @@
 local M = {}
 
 function M.get()
-	-- local delimeters = cp.overlay2
 	local operators = cp.sky
 	local cl = cp.mauve -- conditionals, loops
 	local keywords = cp.mauve
@@ -24,8 +23,8 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		-- Misc
 		["@comment"] = { link = "Comment" },
 		["@error"] = { link = "Error" },
-		-- ["@preproc"]  ; various preprocessor directives & shebangs
-		-- ["@define"]   ; preprocessor definition directives
+		["@preproc"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
+		["@define"] = { link = "Define" }, -- preprocessor definition directives
 		["@operator"] = { fg = operators, style = cnf.styles.operators or {} }, -- For any operator: +, but also -> and * in cp.
 
 		-- Punctuation
@@ -37,10 +36,10 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		["@string"] = { fg = cp.green, style = cnf.styles.strings or {} }, -- For strings.
 		["@string.regex"] = { fg = cp.peach, style = cnf.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = cp.pink, style = cnf.styles.strings }, -- For escape characters within a string.
-		-- @string.special    ; other special strings (e.g. dates)
+		["@string.special"] = { fg = cp.blue }, -- other special strings (e.g. dates)
 
-		-- @character         ; character literals
-		-- @character.special ; special characters (e.g. wildcards)
+		["@character"] = { link = "Character" }, -- character literals
+		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
 
 		["@boolean"] = { fg = math_logic, style = cnf.styles.booleans or {} }, -- For booleans.
 		["@number"] = { fg = math_logic, style = cnf.styles.numbers or {} }, -- For all numbers
@@ -49,11 +48,11 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		-- Functions
 		["@function"] = { fg = cp.blue, style = cnf.styles.functions or {} }, -- For function (calls and definitions).
 		["@function.builtin"] = { fg = cp.peach, style = cnf.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
-		-- @function.call    ; function calls
+		["@function.call"] = { link = "@function" }, -- function calls
 		["@function.macro"] = { fg = cp.teal, style = cnf.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
 		["@method"] = { fg = cp.blue, style = cnf.styles.functions or {} }, -- For method calls and definitions.
 
-		-- @method.call      ; method calls
+		["@method.call"] = { link = "@method" }, -- method calls
 
 		["@constructor"] = { fg = cp.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		["@parameter"] = { fg = cp.maroon, style = { "italic" } }, -- For parameters of a function.
@@ -75,10 +74,10 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 
 		["@type"] = { fg = cp.yellow, style = cnf.styles.types or {} }, -- For types.
 		["@type.builtin"] = { fg = cp.yellow, style = cnf.styles.properties or "italic" }, -- For builtin types.
-		-- @type.definition ; type definitions (e.g. `typedef` in C)
-		-- @type.qualifier  ; type qualifiers (e.g. `const`)
+		["@type.definition"] = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
+		["@type.qualifier"] = { link = "@type" }, -- type qualifiers (e.g. `const`)
 
-		-- @storageclass    ; visibility/life-time/etc. modifiers (e.g. `static`)
+		["@storageclass"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
 		["@field"] = { fg = cp.teal }, -- For fields.
 		["@property"] = { fg = cp.teal, style = cnf.styles.properties or {} }, -- Same as TSField.
@@ -100,14 +99,14 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		["@text"] = { fg = cp.text }, -- For strings considerated text in a markup language.
 		["@text.strong"] = { fg = cp.maroon, style = { "bold" } }, -- italic
 		["@text.emphasis"] = { fg = cp.maroon, style = { "italic" } }, -- bold
-		-- @text.underline        ; underlined text
-		-- @text.strike           ; strikethrough text
+		["@text.underline"] = { link = "Underline" }, -- underlined text
+		["@text.strike"] = { fg = cp.text, style = { "strikethrough" } }, -- strikethrough text
 		["@text.title"] = { fg = cp.blue, style = { "bold" } }, -- titles like: # Example
 		["@text.literal"] = { fg = cp.teal, style = { "italic" } }, -- used for inline code in markdown and for doc in python (""")
 		["@text.uri"] = { fg = cp.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
-		-- @text.math             ; math environments (e.g. `$ ... $` in LaTeX)
-		-- @text.environment      ; text environments of markup languages
-		-- @text.environment.name ; text indicating the type of an environment
+		["@text.math"] = { fg = cp.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
+		["@text.environment"] = { fg = cp.pink }, -- text environments of markup languages
+		["@text.environment.name"] = { fg = cp.blue }, -- text indicating the type of an environment
 		["@text.reference"] = { fg = cp.lavender, style = { "bold" } }, -- references
 
 		["@text.todo"] = { bg = cp.yellow }, -- todo notes
@@ -115,8 +114,8 @@ If you want to stay on nvim 0.7, disable the integration, or pin catppuccin tag 
 		["@text.warning"] = { fg = cp.base, bg = cp.yellow },
 		["@text.danger"] = { fg = cp.base, bg = cp.red },
 
-		-- @text.diff.add         ; added text (for diff files)
-		-- @text.diff.delete      ; deleted text (for diff files)
+		["@text.diff.add"] = { link = "diffAdd" }, -- added text (for diff files)
+		["@text.diff.delete"] = { link = "diffDelete" }, -- deleted text (for diff files)
 
 		-- Tags
 		["@tag"] = { fg = cp.mauve }, -- Tags like html tag names.

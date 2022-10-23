@@ -380,10 +380,18 @@ require("catppuccin").setup({
 
 <details> <summary>bufferline.nvim</summary>
 
+
 Update your bufferline config to use the Catppuccin components:
 
 ```lua
-bufferline.setup { highlights = require("catppuccin.groups.integrations.bufferline").get() }
+use "akinsho/bufferline.nvim" {
+  after = "catppuccin",
+  config = function()
+    require("bufferline").setup {
+      highlights = require("catppuccin.groups.integrations.bufferline").get()
+    }
+  end
+}
 ```
 
 Configurations are self-explanatory, see `:h bufferline-highlights` for detailed explanations:
@@ -681,9 +689,8 @@ local colors = require("catppuccin.palettes").get_palette() -- fetch colors from
 require("catppuccin").setup {
 	custom_highlights = {
 		Comment = { fg = colors.flamingo },
-		TSConstBuiltin = { fg = colors.peach, style = {} },
-		TSConstant = { fg = colors.sky },
-		TSComment = { fg = colors.surface2, style = { "italic" } }
+		["@constant.builtin"] = { fg = colors.peach, style = {} },
+		["@comment"] = { fg = colors.surface2, style = { "italic" } }
 	}
 }
 ```
@@ -723,9 +730,7 @@ require("catppuccin").setup {
 			Normal = { fg = ucolors.darken(latte.base, 0.7, latte.mantle) },
 		},
 		frappe = {
-			TSConstBuiltin = { fg = frappe.peach, style = {} },
-			TSConstant = { fg = frappe.sky },
-			TSComment = { fg = frappe.surface2, style = { "italic" } },
+			["@comment"] = { fg = frappe.surface2, style = { "italic" } },
 		},
 		macchiato = {
 			LineNr = { fg = macchiato.overlay1 }
