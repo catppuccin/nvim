@@ -210,20 +210,25 @@ Global highlight groups can be overwritten in the setting like so:
 Here is an example:
 
 >
-      require("catppuccin").setup {
-        custom_highlights = function(colors)
-          return {
-            Comment = { fg = colors.flamingo },
-            ["@constant.builtin"] = { fg = colors.peach, style = {} },
-            ["@comment"] = { fg = colors.surface2, style = { "italic" }
-          }
-        end
+    require("catppuccin").setup {
+      custom_highlights = function(colors)
+        return {
+          Comment = { fg = colors.flamingo },
+          ["@constant.builtin"] = { fg = colors.peach, style = {} },
+          ["@comment"] = { fg = colors.surface2, style = { "italic" }
         }
+      end
     }
 <
 
 
+**Note**
+
+<ins>
+
 Per flavour highlight groups can be overwritten in the setting like so:
+
+</ins>
 
 >
     highlight_overrides = {
