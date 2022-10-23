@@ -236,19 +236,19 @@ end
 Here is an example:
 
 ```lua
-  require("catppuccin").setup {
-    custom_highlights = function(colors)
-      return {
-        Comment = { fg = colors.flamingo },
-        ["@constant.builtin"] = { fg = colors.peach, style = {} },
-        ["@comment"] = { fg = colors.surface2, style = { "italic" }
-      }
-    end
-	}
+require("catppuccin").setup {
+  custom_highlights = function(colors)
+    return {
+      Comment = { fg = colors.flamingo },
+      ["@constant.builtin"] = { fg = colors.peach, style = {} },
+      ["@comment"] = { fg = colors.surface2, style = { "italic" }
+    }
+  end
 }
 ```
 
-Per flavour highlight groups can be overwritten in the setting like so:
+**Note**
+<details> <summary> <ins> Per flavour highlight groups can be overwritten in the setting like so: </ins> </summary>
 
 ```lua
 highlight_overrides = {
@@ -298,6 +298,7 @@ require("catppuccin").setup {
 	},
 }
 ```
+</details>
 
 Aditionally, if you want to load other custom highlights later, you may use this function:
 
