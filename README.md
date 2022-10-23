@@ -124,7 +124,7 @@ If you want to switch your Catppuccin flavour "on the fly" you may use this comm
 :Catppuccin mocha/macchiato/frappe/latte
 ```
 
-> Note: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
+> **Note**: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
 
 ```vim
 " There are also colorschemes for the different flavour
