@@ -221,6 +221,28 @@ local mocha = require("catppuccin.palettes").get_palette "mocha"
 
 Will returns a table where the key is the name of the color and the value is its hex value corresponding to each flavour.
 
+## Overwriting colors
+
+Colors can be overwritten using `color_overrides` in the setting, like so:
+
+```lua
+require("catppuccin").setup {
+	color_overrides = {
+		all = {
+			text = "#ffffff",
+		},
+		latte = {
+			base = "#ff0000",
+			mantle = "#242424",
+			crust = "#474747",
+		},
+		frappe = {},
+		macchiato = {},
+		mocha = {},
+	}
+}
+```
+
 ## Overwriting highlight groups
 
 Global highlight groups can be overwritten in the setting like so:
@@ -247,11 +269,11 @@ require("catppuccin").setup {
 }
 ```
 
-<details> <summary> <ins> Per flavour highlight groups can be overwritten in the setting like so: </ins> </summary>
+Per flavour highlight groups can be overwritten in the setting like so:
 
 ```lua
 highlight_overrides = {
-    all = function(colors) -- Global highlight
+    all = function(colors) -- Global highlight, will be replaced with custom_highlights if exists
         return {
             <hl_group> = { <fields> }
         }
@@ -297,7 +319,6 @@ require("catppuccin").setup {
     },
 }
 ```
-</details>
 
 # Integrations
 
