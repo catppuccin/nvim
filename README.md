@@ -299,21 +299,6 @@ require("catppuccin").setup {
 ```
 </details>
 
-## Load other custom highlights later
-
-```lua
-require("catppuccin.lib.highlighter").syntax()
-```
-
-For example:
-
-```lua
-local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
-require("catppuccin.lib.highlighter").syntax({
-    Comment = { fg = colors.surface0 }
-})
-```
-
 # Integrations
 
 catppuccin-nvim provides theme support for other plugins in the Neovim ecosystem and extended Neovim functionality through _integrations_.
@@ -799,15 +784,22 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 # FAQ
 
-## Catppuccin remap function
-
-Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
+## Load other custom highlights later
 
 ```lua
+require("catppuccin.lib.highlighter").syntax()
+```
+
+For example:
+
+```lua
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
 require("catppuccin.lib.highlighter").syntax({
-    Normal = { style = { "italic", "bold" } }
+    Comment = { fg = colors.surface0 }
 })
 ```
+
+> **Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
 
 ## Wrong treesitter highlights
 
