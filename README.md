@@ -46,6 +46,7 @@ This port of Catppuccin is special because it was the first one and the one that
 <summary>nullchilly/amoled</summary>
 <img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
 
+Share your custom flavour here! https://github.com/catppuccin/nvim/discussions/323
 
 Configuration:
 ```lua
@@ -820,7 +821,7 @@ require("catppuccin.lib.highlighter").syntax({
 })
 ```
 
-> **Note: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
+> **Note**: Unlike the `:highlight` command which can update a highlight group, this function completely replaces the definition. (`:h nvim_set_hl`)
 
 ## Wrong treesitter highlights
 
