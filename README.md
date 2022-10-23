@@ -207,29 +207,8 @@ Handles the style of general hi groups (see `:h highlight-args`):
 -   `keywords`: (Table) changed the style of the keywords.
 -   `strings`: (Table) changed the style of the strings.
 -   `variables`: (Table) changed the style of the variables.
+
 # Customize highlights
-
-## Overwriting colors
-
-Colors can be overwritten using `color_overrides` in the setting, like so:
-
-```lua
-require("catppuccin").setup {
-	color_overrides = {
-		all = {
-			text = "#ffffff",
-		},
-		latte = {
-			base = "#ff0000",
-			mantle = "#242424",
-			crust = "#474747",
-		},
-		frappe = {},
-		macchiato = {},
-		mocha = {},
-	}
-}
-```
 
 ## Get catppuccin colors
 
@@ -251,7 +230,7 @@ custom_highlights = function(colors)
   return {
     <hl_group> = { <fields> }
   }
-  end
+end
 ```
 
 Here is an example:
