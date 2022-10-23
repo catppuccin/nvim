@@ -9,19 +9,19 @@ Table of Contents                               *catppuccin-table-of-contents*
   - General                                               |catppuccin-general|
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
-  - Overwriting colors                         |catppuccin-overwriting-colors|
+4. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
   - Integrations                                     |catppuccin-integrations|
-4. Compile                                                |catppuccin-compile|
+5. Compile                                                |catppuccin-compile|
   - Config                                                 |catppuccin-config|
   - Compile commands                             |catppuccin-compile-commands|
   - Hooks                                                   |catppuccin-hooks|
-5. FAQ                                                        |catppuccin-faq|
+6. FAQ                                                        |catppuccin-faq|
   - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
   - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
   - Colors doesn’t match preview screenshots|catppuccin-colors-doesn’t-match-preview-screenshots|
-6. Thanks to                                            |catppuccin-thanks-to|
+7. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
 1. Features                                              *catppuccin-features*
@@ -176,31 +176,10 @@ Handles the style of general hi groups (see `:h highlight-args`):
 - `keywords`: (Table) changed the style of the keywords.
 - `strings`: (Table) changed the style of the strings.
 - `variables`: (Table) changed the style of the variables.
-    # Customize highlights
 
 
-OVERWRITING COLORS                             *catppuccin-overwriting-colors*
-
-Colors can be overwritten using `color_overrides` in the setting, like so:
-
->
-    require("catppuccin").setup {
-        color_overrides = {
-            all = {
-                text = "#ffffff",
-            },
-            latte = {
-                base = "#ff0000",
-                mantle = "#242424",
-                crust = "#474747",
-            },
-            frappe = {},
-            macchiato = {},
-            mocha = {},
-        }
-    }
-<
-
+==============================================================================
+4. Customize highlights                      *catppuccin-customize-highlights*
 
 GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
@@ -224,7 +203,7 @@ Global highlight groups can be overwritten in the setting like so:
       return {
         <hl_group> = { <fields> }
       }
-      end
+    end
 <
 
 
@@ -761,7 +740,7 @@ catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
 <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
 
 ==============================================================================
-4. Compile                                                *catppuccin-compile*
+5. Compile                                                *catppuccin-compile*
 
 **Note**: As of 7/10/2022, catppuccin should be able to automatically recompile
 when the setup table changed.
@@ -828,7 +807,7 @@ They can be used like so:
 
 
 ==============================================================================
-5. FAQ                                                        *catppuccin-faq*
+6. FAQ                                                        *catppuccin-faq*
 
 CATPPUCCIN REMAP FUNCTION               *catppuccin-catppuccin-remap-function*
 
@@ -876,7 +855,7 @@ Full list of Unsupported terminals can be found here:
 https://github.com/termstandard/colors#not-supporting-truecolor
 
 ==============================================================================
-6. Thanks to                                            *catppuccin-thanks-to*
+7. Thanks to                                            *catppuccin-thanks-to*
 
 
 - Pocco81 <https://github.com/Pocco81>
