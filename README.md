@@ -1,10 +1,10 @@
 <!-- panvimdoc-ignore-start -->
 
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
-  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-  Catppuccin for <a href="https://github.com/neovim/neovim">Neovim</a>
-  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+    <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
+    <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+    Catppuccin for <a href="https://github.com/neovim/neovim">Neovim</a>
+    <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
@@ -50,18 +50,18 @@ This port of Catppuccin is special because it was the first one and the one that
 Configuration:
 ```lua
 require("catppuccin").setup {
-  flavour = "mocha",
-  color_overrides = {
-    mocha = {
-      base = "#000000",
+    flavour = "mocha",
+    color_overrides = {
+        mocha = {
+            base = "#000000",
+        }
+    },
+    integrations = {
+        nvimtree = true,
+    },
+    custom_highlights = {
+        NvimTreeNormal = { bg = "NONE" },
     }
-  },
-  integrations = {
-    nvimtree = true,
-  },
-  custom_highlights = {
-    NvimTreeNormal = { bg = "NONE" },
-  }
 }
 ```
 </details>
@@ -92,14 +92,14 @@ You can use your favorite plugin manager for this. Here are some examples with t
 
 ```lua
 use {
-  "catppuccin/nvim",
-  as = "catppuccin",
-  config = function()
-    require("catppuccin").setup {
-      flavour = "macchiato" -- mocha, macchiato, frappe, latte
-    }
-    vim.api.nvim_command "colorscheme catppuccin"
-  end
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+        require("catppuccin").setup {
+            flavour = "macchiato" -- mocha, macchiato, frappe, latte
+        }
+        vim.api.nvim_command "colorscheme catppuccin"
+    end
 }
 ```
 
@@ -112,7 +112,7 @@ call plug#end()
 
 lua << EOF
 require("catppuccin").setup {
-  flavour = "macchiato" -- mocha, macchiato, frappe, latte
+    flavour = "macchiato" -- mocha, macchiato, frappe, latte
 }
 EOF
 colorscheme catppuccin
@@ -140,43 +140,43 @@ You may pass a lua table to the `setup()` function in order to edit any of Catpp
 
 ```lua
 require("catppuccin").setup({
-  flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = { -- :h background
-    light = "latte",
-    dark = "mocha",
-  },
-  compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-  transparent_background = false,
-  term_colors = false,
-  dim_inactive = {
-    enabled = false,
-    shade = "dark",
-    percentage = 0.15,
-  },
-  styles = {
-    comments = { "italic" },
-    conditionals = { "italic" },
-    loops = {},
-    functions = {},
-    keywords = {},
-    strings = {},
-    variables = {},
-    numbers = {},
-    booleans = {},
-    properties = {},
-    types = {},
-    operators = {},
-  },
-  color_overrides = {},
-  custom_highlights = {},
-  integrations = {
-    cmp = true,
-    gitsigns = true,
-    nvimtree = true,
-    telescope = true,
-    treesitter = true,
-    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-  },
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+    transparent_background = false,
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+    },
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        treesitter = true,
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    },
 })
 ```
 
@@ -251,15 +251,15 @@ require("catppuccin").setup {
 
 ```lua
 highlight_overrides = {
-  all = function(colors) -- Global highlight
+    all = function(colors) -- Global highlight
     return {
       <hl_group> = { <fields> }
     }
   end, -- Same for each flavour
-  latte = function(latte) end,
-  frappe = function(frappe) end,
-  macchiato = function(macchiato) end,
-  mocha = function(mocha) end,
+    latte = function(latte) end,
+    frappe = function(frappe) end,
+    macchiato = function(macchiato) end,
+    mocha = function(mocha) end,
 }
 ```
 
@@ -268,33 +268,33 @@ Here is an example:
 ```lua
 require("catppuccin").setup {
   highlight_overrides = {
-    all = function(colors)
-      return {
-        NvimTreeNormal = { fg = colors.none },
-        CmpBorder = { fg = "#3e4145" },
-      }
-    end,
-    latte = function(latte)
-      return {
-        Normal = { fg = latte.base },
-      }
-    end,
-    frappe = function(frappe)
-      return {
-        ["@comment"] = { fg = frappe.surface2, style = { "italic" } },
-      }
-    end,
-    macchiato = function(macchiato)
-      return {
-        LineNr = { fg = macchiato.overlay1 },
-      }
-    end,
-    mocha = function(mocha)
-      return {
-        Comment = { fg = mocha.flamingo },
-      }
-    end,
-  },
+        all = function(colors)
+            return {
+                NvimTreeNormal = { fg = colors.none },
+                CmpBorder = { fg = "#3e4145" },
+            }
+        end,
+        latte = function(latte)
+            return {
+                Normal = { fg = latte.base },
+            }
+        end,
+        frappe = function(frappe)
+            return {
+                ["@comment"] = { fg = frappe.surface2, style = { "italic" } },
+            }
+        end,
+        macchiato = function(macchiato)
+            return {
+                LineNr = { fg = macchiato.overlay1 },
+            }
+        end,
+        mocha = function(mocha)
+            return {
+                Comment = { fg = mocha.flamingo },
+            }
+        end,
+    },
 }
 ```
 </details>
@@ -310,7 +310,7 @@ For example:
 ```lua
 local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
 require("catppuccin.lib.highlighter").syntax({
-  Comment = { fg = colors.surface0 }
+    Comment = { fg = colors.surface0 }
 })
 ```
 
@@ -376,9 +376,9 @@ These integrations allow catppuccin to set the theme of various plugins. To enab
 
 ```lua
 require("catppuccin").setup({
-  integrations = {
-    <module> = <boolean>
-  }
+    integrations = {
+        <module> = <boolean>
+    }
 })
 ```
 
@@ -386,75 +386,75 @@ require("catppuccin").setup({
 
 ```lua
 require("catppuccin").setup({
-  integrations = {
-    aerial = false,
-    barbar = false,
-    beacon = false,
-    cmp = true,
-    coc_nvim = false,
-    dashboard = true,
-    fern = false,
-    fidget = false,
-    gitgutter = false,
-    gitsigns = true,
-    harpoon = false,
-    hop = false,
-    illuminate = false,
-    leap = false,
-    lightspeed = false,
-    lsp_saga = false,
-    lsp_trouble = false,
-    markdown = true,
-    mason = true,
-    mini = false,
-    neogit = false,
-    neotest = false,
-    neotree = false,
-    noice = false,
-    notify = false,
-    nvimtree = true,
-    overseer = false,
-    pounce = false,
-    semantic_tokens = false,
-    symbols_outline = false,
-    telekasten = false,
-    telescope = true,
-    treesitter = true,
-    treesitter_context = false,
-    ts_rainbow = false,
-    vim_sneak = false,
-    vimwiki = false,
-    which_key = false,
+    integrations = {
+        aerial = false,
+        barbar = false,
+        beacon = false,
+        cmp = true,
+        coc_nvim = false,
+        dashboard = true,
+        fern = false,
+        fidget = false,
+        gitgutter = false,
+        gitsigns = true,
+        harpoon = false,
+        hop = false,
+        illuminate = false,
+        leap = false,
+        lightspeed = false,
+        lsp_saga = false,
+        lsp_trouble = false,
+        markdown = true,
+        mason = true,
+        mini = false,
+        neogit = false,
+        neotest = false,
+        neotree = false,
+        noice = false,
+        notify = false,
+        nvimtree = true,
+        overseer = false,
+        pounce = false,
+        semantic_tokens = false,
+        symbols_outline = false,
+        telekasten = false,
+        telescope = true,
+        treesitter = true,
+        treesitter_context = false,
+        ts_rainbow = false,
+        vim_sneak = false,
+        vimwiki = false,
+        which_key = false,
 
-    -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
-    dap = {
-      enabled = false,
-      enable_ui = false,
+        -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
+        dap = {
+            enabled = false,
+            enable_ui = false,
+        },
+        indent_blankline = {
+            enabled = true,
+            colored_indent_levels = false,
+        },
+        native_lsp = {
+            enabled = true,
+            virtual_text = {
+                errors = { "italic" },
+                hints = { "italic" },
+                warnings = { "italic" },
+                information = { "italic" },
+            },
+            underlines = {
+                errors = { "underline" },
+                hints = { "underline" },
+                warnings = { "underline" },
+                information = { "underline" },
+            },
+        },
+        navic = {
+            enabled = false,
+            custom_bg = "NONE",
+        },
     },
-    indent_blankline = {
-      enabled = true,
-      colored_indent_levels = false,
-    },
-    native_lsp = {
-      enabled = true,
-      virtual_text = {
-        errors = { "italic" },
-        hints = { "italic" },
-        warnings = { "italic" },
-        information = { "italic" },
-      },
-      underlines = {
-        errors = { "underline" },
-        hints = { "underline" },
-        warnings = { "underline" },
-        information = { "underline" },
-      },
-    },
-    navic = {
-      enabled = false,
-      custom_bg = "NONE",
-    },
-  },
 })
 ```
 
@@ -483,20 +483,20 @@ Configurations are self-explanatory, see `:h bufferline-highlights` for detailed
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 bufferline.setup {
-  highlights = require("catppuccin.groups.integrations.bufferline").get {
-    styles = { "italic", "bold" },
-    custom = {
-      all = {
-        fill = { bg = "#000000" },
-      },
-      mocha = {
-        background = { fg = mocha.text },
-      },
-      latte = {
-        background = { fg = "#000000" },
-      },
+    highlights = require("catppuccin.groups.integrations.bufferline").get {
+        styles = { "italic", "bold" },
+        custom = {
+            all = {
+                fill = { bg = "#000000" },
+            },
+            mocha = {
+                background = { fg = mocha.text },
+            },
+            latte = {
+                background = { fg = "#000000" },
+            },
+        },
     },
-  },
 }
 ```
 
@@ -512,7 +512,7 @@ local ctp_feline = require('catppuccin.groups.integrations.feline')
 ctp_feline.setup()
 
 require("feline").setup({
-  components = ctp_feline.get(),
+    components = ctp_feline.get(),
 })
 ```
 
@@ -525,72 +525,72 @@ local clrs = require("catppuccin.palettes").get_palette()
 local ctp_feline = require('catppuccin.groups.integrations.feline')
 
 ctp_feline.setup({
-  assets = {
-    left_separator = "",
-    right_separator = "",
-    bar = "█",
-    mode_icon = "",
-    dir = "  ",
-    file = "   ",
-    lsp = {
-      server = "  ",
-      error = "  ",
-      warning = "  ",
-      info = "  ",
-      hint = "  ",
+    assets = {
+        left_separator = "",
+        right_separator = "",
+        bar = "█",
+        mode_icon = "",
+        dir = "  ",
+        file = "   ",
+        lsp = {
+            server = "  ",
+            error = "  ",
+            warning = "  ",
+            info = "  ",
+            hint = "  ",
+        },
+        git = {
+            branch = "  ",
+            added = "  ",
+            changed = "  ",
+            removed = "  ",
+        },
     },
-    git = {
-      branch = "  ",
-      added = "  ",
-      changed = "  ",
-      removed = "  ",
+    sett = {
+        text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
+        bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
+        diffs = clrs.mauve,
+        extras = clrs.overlay1,
+        curr_file = clrs.maroon,
+        curr_dir = clrs.flamingo,
+        show_modified = true -- show if the file has been modified
     },
-  },
-  sett = {
-    text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
-    bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
-    diffs = clrs.mauve,
-    extras = clrs.overlay1,
-    curr_file = clrs.maroon,
-    curr_dir = clrs.flamingo,
-    show_modified = true -- show if the file has been modified
-  },
-  mode_colors = {
-    ["n"] = { "NORMAL", clrs.lavender },
-    ["no"] = { "N-PENDING", clrs.lavender },
-    ["i"] = { "INSERT", clrs.green },
-    ["ic"] = { "INSERT", clrs.green },
-    ["t"] = { "TERMINAL", clrs.green },
-    ["v"] = { "VISUAL", clrs.flamingo },
-    ["V"] = { "V-LINE", clrs.flamingo },
-    [""] = { "V-BLOCK", clrs.flamingo },
-    ["R"] = { "REPLACE", clrs.maroon },
-    ["Rv"] = { "V-REPLACE", clrs.maroon },
-    ["s"] = { "SELECT", clrs.maroon },
-    ["S"] = { "S-LINE", clrs.maroon },
-    [""] = { "S-BLOCK", clrs.maroon },
-    ["c"] = { "COMMAND", clrs.peach },
-    ["cv"] = { "COMMAND", clrs.peach },
-    ["ce"] = { "COMMAND", clrs.peach },
-    ["r"] = { "PROMPT", clrs.teal },
-    ["rm"] = { "MORE", clrs.teal },
-    ["r?"] = { "CONFIRM", clrs.mauve },
-    ["!"] = { "SHELL", clrs.green },
-  }
+    mode_colors = {
+        ["n"] = { "NORMAL", clrs.lavender },
+        ["no"] = { "N-PENDING", clrs.lavender },
+        ["i"] = { "INSERT", clrs.green },
+        ["ic"] = { "INSERT", clrs.green },
+        ["t"] = { "TERMINAL", clrs.green },
+        ["v"] = { "VISUAL", clrs.flamingo },
+        ["V"] = { "V-LINE", clrs.flamingo },
+        [""] = { "V-BLOCK", clrs.flamingo },
+        ["R"] = { "REPLACE", clrs.maroon },
+        ["Rv"] = { "V-REPLACE", clrs.maroon },
+        ["s"] = { "SELECT", clrs.maroon },
+        ["S"] = { "S-LINE", clrs.maroon },
+        [""] = { "S-BLOCK", clrs.maroon },
+        ["c"] = { "COMMAND", clrs.peach },
+        ["cv"] = { "COMMAND", clrs.peach },
+        ["ce"] = { "COMMAND", clrs.peach },
+        ["r"] = { "PROMPT", clrs.teal },
+        ["rm"] = { "MORE", clrs.teal },
+        ["r?"] = { "CONFIRM", clrs.mauve },
+        ["!"] = { "SHELL", clrs.green },
+    }
 })
 ```
 
 > **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
 ```lua
 vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    package.loaded["feline"] = nil
-    package.loaded["catppuccin.groups.integrations.feline"] = nil
-    require("feline").setup {
-      components = require("catppuccin.groups.integrations.feline").get(),
-    }
-  end,
+    pattern = "*",
+    callback = function()
+        package.loaded["feline"] = nil
+        package.loaded["catppuccin.groups.integrations.feline"] = nil
+        require("feline").setup {
+            components = require("catppuccin.groups.integrations.feline").get(),
+        }
+    end,
 })
 ```
 
@@ -608,10 +608,10 @@ Then set `window.blend` to `0`:
 
 ```lua
 require("fidget").setup {
-  window = {
-    blend = 0,
-  },
-  -- ... the rest of your fidget config
+    window = {
+        blend = 0,
+    },
+    -- ... the rest of your fidget config
 }
 ```
 
@@ -623,8 +623,8 @@ Setting `enabled` to `true` enables this integration. `colored_indent_levels` en
 
 ```lua
 indent_blankline = {
-  enabled = true,
-  colored_indent_levels = false,
+    enabled = true,
+    colored_indent_levels = false,
 },
 ```
 
@@ -646,10 +646,10 @@ Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It w
 
 ```lua
 require('lualine').setup {
-  options = {
-    theme = "catppuccin"
-    -- ... the rest of your lualine config
-  }
+    options = {
+        theme = "catppuccin"
+        -- ... the rest of your lualine config
+    }
 }
 ```
 
@@ -663,10 +663,10 @@ Setting `enabled` to `true`:
 
 ```lua
 integration = {
-  dap = {
-    enabled = true,
-    enable_ui = true, -- enable nvim-dap-ui
-  }
+    dap = {
+        enabled = true,
+        enable_ui = true, -- enable nvim-dap-ui
+    }
 }
 ```
 
@@ -689,19 +689,19 @@ Setting `enabled` to `true` enables this integration. In the inners tables you c
 
 ```lua
 native_lsp = {
-  enabled = true,
-  virtual_text = {
-    errors = { "italic" },
-    hints = { "italic" },
-    warnings = { "italic" },
-    information = { "italic" },
-  },
-  underlines = {
-    errors = { "underline" },
-    hints = { "underline" },
-    warnings = { "underline" },
-    information = { "underline" },
-  },
+    enabled = true,
+    virtual_text = {
+        errors = { "italic" },
+        hints = { "italic" },
+        warnings = { "italic" },
+        information = { "italic" },
+    },
+    underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+    },
 },
 ```
 
@@ -713,15 +713,15 @@ Setting `enabled` to `true`:
 
 ```lua
 navic = {
-  enabled = false,
-  custom_bg = "NONE",
+    enabled = false,
+    custom_bg = "NONE",
 },
 ```
 
 ```lua
 -- You NEED to enable highlight in nvim-navic setting or it won't work
 require("nvim-navic").setup {
-  highlight = true
+    highlight = true
 }
 ```
 
@@ -753,7 +753,7 @@ By default catppuccin writes the compiled results into the system's cache direct
 
 ```lua
 require("catppuccin").setup({ -- Note: On windows we replace `/` with `\` by default
-  compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
+    compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
 })
 ```
 
@@ -780,18 +780,18 @@ They can be used like so:
 
 ```lua
 vim.api.nvim_create_autocmd("ColorSchemePre", {
-  pattern = "*",
-  callback = function()
-    print "I ran before loading Catppuccin!"
-  end
+    pattern = "*",
+    callback = function()
+        print "I ran before loading Catppuccin!"
+    end
 })
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    local colors = require("catppuccin.palettes").get_palette()
-    -- do something with colors
-  end
+    pattern = "*",
+    callback = function()
+        local colors = require("catppuccin.palettes").get_palette()
+        -- do something with colors
+    end
 })
 ```
 
@@ -803,7 +803,7 @@ Unlike the `:highlight` command which can update a highlight group, this functio
 
 ```lua
 require("catppuccin.lib.highlighter").syntax({
-  Normal = { style = { "italic", "bold" } }
+    Normal = { style = { "italic", "bold" } }
 })
 ```
 
@@ -813,10 +813,10 @@ Please disable `additional_vim_regex_highlighting`
 
 ```lua
 require("nvim-treesitter.configs").setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false
-  },
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false
+    },
 }
 ```
 
