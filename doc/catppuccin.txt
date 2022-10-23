@@ -12,7 +12,6 @@ Table of Contents                               *catppuccin-table-of-contents*
 4. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
-  - Load other custom highlights later|catppuccin-load-other-custom-highlights-later|
 5. Integrations                                      |catppuccin-integrations|
   - Special integrations                     |catppuccin-special-integrations|
 6. Compile                                                |catppuccin-compile|
@@ -20,7 +19,7 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Compile commands                             |catppuccin-compile-commands|
   - Hooks                                                   |catppuccin-hooks|
 7. FAQ                                                        |catppuccin-faq|
-  - Catppuccin remap function           |catppuccin-catppuccin-remap-function|
+  - Load other custom highlights later|catppuccin-load-other-custom-highlights-later|
   - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
   - Colors doesn’t match preview screenshots|catppuccin-colors-doesn’t-match-preview-screenshots|
 8. Thanks to                                            |catppuccin-thanks-to|
@@ -280,23 +279,6 @@ Here is an example:
             end,
         },
     }
-<
-
-
-LOAD OTHER CUSTOM HIGHLIGHTS LATER*catppuccin-load-other-custom-highlights-later*
-
->
-    require("catppuccin.lib.highlighter").syntax()
-<
-
-
-For example:
-
->
-    local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
-    require("catppuccin.lib.highlighter").syntax({
-        Comment = { fg = colors.surface0 }
-    })
 <
 
 
@@ -825,16 +807,26 @@ They can be used like so:
 ==============================================================================
 7. FAQ                                                        *catppuccin-faq*
 
-CATPPUCCIN REMAP FUNCTION               *catppuccin-catppuccin-remap-function*
-
-Unlike the `:highlight` command which can update a highlight group, this
-function completely replaces the definition. (`:h nvim_set_hl`)
+LOAD OTHER CUSTOM HIGHLIGHTS LATER*catppuccin-load-other-custom-highlights-later*
 
 >
+    require("catppuccin.lib.highlighter").syntax()
+<
+
+
+For example:
+
+>
+    local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
     require("catppuccin.lib.highlighter").syntax({
-        Normal = { style = { "italic", "bold" } }
+        Comment = { fg = colors.surface0 }
     })
 <
+
+
+
+  **Note: Unlike the `:highlight` command which can update a highlight group,
+  this function completely replaces the definition. (`:h nvim_set_hl`)
 
 
 WRONG TREESITTER HIGHLIGHTS           *catppuccin-wrong-treesitter-highlights*
