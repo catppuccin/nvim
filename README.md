@@ -247,7 +247,6 @@ require("catppuccin").setup {
 }
 ```
 
-**Note**
 <details> <summary> <ins> Per flavour highlight groups can be overwritten in the setting like so: </ins> </summary>
 
 ```lua
@@ -581,7 +580,7 @@ ctp_feline.setup({
 })
 ```
 
-Note: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
+> **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
 ```lua
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
@@ -633,7 +632,7 @@ indent_blankline = {
 
 <details> <summary>lightline.vim</summary>
 
-Use this to set it up (Note: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
 
 ```vim
 let g:lightline = {'colorscheme': 'catppuccin'}
@@ -643,7 +642,7 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 
 <details> <summary>lualine.nvim</summary>
 
-Use this to set it up (Note: `catppuccin` is the only valid theme name. It will pick the one set in your config):
+Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
 ```lua
 require('lualine').setup {
