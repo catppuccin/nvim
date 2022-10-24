@@ -62,20 +62,12 @@ local M = {
 }
 
 function M.compile()
-	if not vim.tbl_contains(M.flavours, M.flavour) then
-		vim.notify(
-			"Catppuccin (error): Invalid flavour '"
-				.. M.flavour
-				.. "', g:catppuccin_flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
-			vim.log.levels.ERROR
-		)
-	end
 	for _, flavour in pairs(M.flavours) do
 		require("catppuccin.lib.compiler").compile(flavour)
 	end
 end
 
-local lock = false -- Avoid o:background reloading
+local lock = false -- Avoid g:colors_name reloading
 
 function M.load(flavour)
 	if lock then return end
@@ -87,29 +79,6 @@ function M.load(flavour)
 	lock = false
 end
 
-vim.api.nvim_create_user_command("Catppuccin", function(inp)
-	if not vim.tbl_contains(M.flavours, inp.args) then
-		vim.notify(
-			"Catppuccin (error): Invalid flavour '"
-				.. inp.args
-				.. "', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
-			vim.log.levels.ERROR
-		)
-		return
-	end
-	vim.api.nvim_command("colorscheme catppuccin-" .. inp.args)
-end, {
-	nargs = 1,
-	complete = function(line)
-		return vim.tbl_filter(function(val) return vim.startswith(val, line) end, M.flavours)
-	end,
-})
-
-vim.api.nvim_create_user_command("CatppuccinCompile", function()
-	M.compile()
-	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
-end, {})
-
 function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
@@ -117,6 +86,17 @@ function M.setup(user_conf)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
 	M.flavour = M.options.flavour or vim.g.catppuccin_flavour or "mocha"
+
+	if not vim.tbl_contains(M.flavours, M.flavour) then
+		vim.notify(
+			string.format(
+				"Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+				M.flavour
+			),
+			vim.log.levels.ERROR
+		)
+		return
+	end
 
 	-- Caching configuration
 	local cached_date = M.options.compile_path .. M.path_sep .. "date.txt"
@@ -162,8 +142,34 @@ function M.setup(user_conf)
 	end
 end
 
+vim.api.nvim_create_user_command("Catppuccin", function(inp)
+	if not vim.tbl_contains(M.flavours, inp.args) then
+		vim.notify(
+			"Catppuccin (error): Invalid flavour '"
+				.. inp.args
+				.. "', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+			vim.log.levels.ERROR
+		)
+		return
+	end
+	vim.api.nvim_command("colorscheme catppuccin-" .. inp.args)
+end, {
+	nargs = 1,
+	complete = function(line)
+		return vim.tbl_filter(function(val) return vim.startswith(val, line) end, M.flavours)
+	end,
+})
+
+vim.api.nvim_create_user_command("CatppuccinCompile", function()
+	M.compile()
+	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
+end, {})
+
+vim.api.nvim_create_augroup("Catppuccin", { clear = true })
+
 -- Because debug.getinfo(2) is nil with packer's loadstring method
 vim.api.nvim_create_autocmd("User", {
+	group = "Catppuccin",
 	pattern = "PackerCompileDone",
 	callback = function() M.compile() end,
 })
