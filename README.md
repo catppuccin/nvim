@@ -43,7 +43,7 @@ This port of Catppuccin is special because it was the first one and the one that
 
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
 <details>
-<summary>nullchilly/amoled</summary>
+<summary>amoled</summary>
 <img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
 
 Configuration:
@@ -66,10 +66,10 @@ require("catppuccin").setup {
 </details>
 
 <details>
-<summary><a href="https://github.com/ayamir/nvimdots/">ayamir/nvimdots</a></summary>
-<img src="https://raw.githubusercontent.com/ayamir/blog-imgs/main/telescope.png"/>
+<summary>catppuccino</summary>
+<img src="https://user-images.githubusercontent.com/50296129/197518223-bcf0aade-b12a-45c4-a024-dc46c9fee948.png"/>
 
-Configuration: https://github.com/ayamir/nvimdots/blob/main/lua/modules/ui/config.lua
+[Configuration](https://github.com/ayamir/nvimdots)
 </details>
 
 </details>
