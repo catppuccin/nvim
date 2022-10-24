@@ -162,4 +162,10 @@ function M.setup(user_conf)
 	end
 end
 
+-- Because debug.getinfo(2) is nil with packer's loadstring method
+vim.api.nvim_create_autocmd("User", {
+	pattern = "PackerCompileDone",
+	callback = function() M.compile() end,
+})
+
 return M
