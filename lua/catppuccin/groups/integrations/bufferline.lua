@@ -17,6 +17,8 @@ function M.get(user_config)
 		local active_bg = transparent_background and "NONE" or cp.base
 		local inactive_bg = transparent_background and "NONE" or cp.mantle
 
+		local separator_fg = cnf.transparent_background and cp.surface1 or cp.crust
+
 		local styles = user_config.styles or { "bold", "italic" }
 
 		local highlights = {
@@ -34,10 +36,10 @@ function M.get(user_config)
 			tab_close = { fg = cp.red, bg = inactive_bg },
 			indicator_selected = { fg = cp.peach, bg = active_bg, style = styles },
 			-- separators
-			separator = { fg = cp.crust, bg = inactive_bg },
-			separator_visible = { fg = cp.crust, bg = inactive_bg },
-			separator_selected = { fg = cp.crust, bg = active_bg },
-			offset_separator = { fg = cnf.transparent_background and cp.surface1 or cp.crust, bg = active_bg },
+			separator = { fg = separator_fg, bg = inactive_bg },
+			separator_visible = { fg = separator_fg, bg = inactive_bg },
+			separator_selected = { fg = separator_fg, bg = active_bg },
+			offset_separator = { fg = separator_fg, bg = active_bg },
 			-- close buttons
 			close_button = { fg = cp.surface1, bg = inactive_bg },
 			close_button_visible = { fg = cp.surface1, bg = inactive_bg },
