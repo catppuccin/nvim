@@ -265,7 +265,7 @@ function M.get()
 		},
 		left_sep = invi_sep,
 	}
-	
+
 	-- macro
 	components.active[1][12] = {
 		provider = "macro",
@@ -275,7 +275,7 @@ function M.get()
 		},
 		left_sep = invi_sep,
 	}
-	
+
 	-- search count
 	components.active[1][13] = {
 		provider = "search_count",
@@ -285,9 +285,7 @@ function M.get()
 		},
 		left_sep = invi_sep,
 	}
-	
 	-- Extras ------>
-	
 
 	-- ######## Left
 
