@@ -52,17 +52,13 @@ require("catppuccin").setup {
     flavour = "mocha",
     color_overrides = {
         mocha = {
-            base = "#000000",
+            base = "#000000"
         }
-    },
-    integrations = {
-        nvimtree = true,
-    },
-    custom_highlights = {
-        NvimTreeNormal = { bg = "NONE" },
     }
 }
 ```
+
+[Full config here](https://github.com/nullchilly/nvim/blob/nvim/lua/config/catppuccin.lua)
 </details>
 
 <details>
