@@ -46,26 +46,39 @@ This port of Catppuccin is special because it was the first one and the one that
 <summary>amoled</summary>
 <img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
 
-Configuration:
+Full config can be found [here](https://github.com/nullchilly/nvim/blob/nvim/lua/config/catppuccin.lua)
+
+Here is a subset of it:
 ```lua
 require("catppuccin").setup {
     flavour = "mocha",
     color_overrides = {
         mocha = {
-            base = "#000000"
-        }
-    }
+            base = "#000000",
+        },
+    },
+    integrations = {
+        nvimtree = true,
+    },
+    highlight_overrides = {
+        mocha = function(mocha)
+            return {
+                NvimTreeNormal = { bg = mocha.none },
+            }
+        end,
+    },
 }
 ```
 
-[Full config here](https://github.com/nullchilly/nvim/blob/nvim/lua/config/catppuccin.lua)
 </details>
 
 <details>
-<summary>catppuccino</summary>
+
+[Configuration](https://github.com/ayamir/nvimdots/blob/61fe5b7f5374beaee18c0c730441d55ad5911604/lua/modules/ui/config.lua#L125)
+
+<summary>Catppuccino</summary>
 <img src="https://user-images.githubusercontent.com/50296129/197518223-bcf0aade-b12a-45c4-a024-dc46c9fee948.png"/>
 
-[Configuration](https://github.com/ayamir/nvimdots)
 </details>
 
 </details>
