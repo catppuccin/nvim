@@ -43,10 +43,11 @@ This port of Catppuccin is special because it was the first one and the one that
 
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
 <details>
-<summary>amoled</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
+<summary>Amoled</summary>
 
-Full config can be found [here](https://github.com/nullchilly/nvim/blob/nvim/lua/config/catppuccin.lua)
+`#000000`! [Configuration can be found here](https://github.com/nullchilly/nvim/blob/nvim/lua/config/catppuccin.lua)
+
+<img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
 
 Here is a subset of it:
 ```lua
@@ -74,7 +75,7 @@ require("catppuccin").setup {
 
 <details>
 
-[Configuration](https://github.com/ayamir/nvimdots/blob/61fe5b7f5374beaee18c0c730441d55ad5911604/lua/modules/ui/config.lua#L125)
+An attempt to restore the original theme based on Mocha! [Configuration can be found here](https://github.com/ayamir/nvimdots/blob/61fe5b7f5374beaee18c0c730441d55ad5911604/lua/modules/ui/config.lua#L125)
 
 <summary>Catppuccino</summary>
 <img src="https://user-images.githubusercontent.com/50296129/197518223-bcf0aade-b12a-45c4-a024-dc46c9fee948.png"/>
