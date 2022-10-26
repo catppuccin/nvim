@@ -265,7 +265,29 @@ function M.get()
 		},
 		left_sep = invi_sep,
 	}
+	
+	-- macro
+	components.active[1][12] = {
+		provider = "macro",
+		hl = {
+			fg = sett.extras,
+			bg = sett.bkg,
+		},
+		left_sep = invi_sep,
+	}
+	
+	-- search count
+	components.active[1][13] = {
+		provider = "search_count",
+		hl = {
+			fg = sett.extras,
+			bg = sett.bkg,
+		},
+		left_sep = invi_sep,
+	}
+	
 	-- Extras ------>
+	
 
 	-- ######## Left
 
