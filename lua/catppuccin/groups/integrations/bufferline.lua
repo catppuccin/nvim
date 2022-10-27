@@ -32,7 +32,10 @@ function M.get(user_config)
 			duplicate = { fg = cp.surface1, bg = inactive_bg, style = styles },
 			-- tabs
 			tab = { fg = cp.surface1, bg = inactive_bg },
-			tab_selected = { fg = cp.sky, bg = active_bg },
+			tab_selected = { fg = cp.sky, bg = active_bg, bold = true },
+			tab_separator = { fg = separator_fg, bg = inactive_bg },
+			tab_separator_selected = { fg = cp.maroon, bg = active_bg },
+
 			tab_close = { fg = cp.red, bg = inactive_bg },
 			indicator_selected = { fg = cp.peach, bg = active_bg, style = styles },
 			-- separators
