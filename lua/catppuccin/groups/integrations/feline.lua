@@ -269,6 +269,7 @@ function M.get()
 	-- macro
 	components.active[1][12] = {
 		provider = "macro",
+		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -279,6 +280,7 @@ function M.get()
 	-- search count
 	components.active[1][13] = {
 		provider = "search_count",
+		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
