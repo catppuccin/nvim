@@ -19,7 +19,7 @@ function M.get(user_config)
 
 		local separator_fg = cnf.transparent_background and cp.surface1 or cp.crust
 
-		local styles = user_config.styles or { bold = true, italic = true }
+		local styles = user_config.styles or { "bold", "italic" }
 
 		local highlights = {
 			-- buffers
@@ -95,9 +95,13 @@ function M.get(user_config)
 			vim.tbl_deep_extend("keep", user_highlights[ctp.flavour] or {}, user_highlights.all or {}, highlights)
 
 		for _, color in pairs(highlights) do
+			-- Because default is gui=bold,italic
+			color.italic = false
+			color.bold = false
+
 			if color.style then
-				for k, v in pairs(color.style) do
-					color[k] = v
+				for _, style in pairs(color.style) do
+					color[style] = true
 				end
 			end
 			color.style = nil
