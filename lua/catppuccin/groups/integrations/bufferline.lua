@@ -95,8 +95,12 @@ function M.get(user_config)
 			vim.tbl_deep_extend("keep", user_highlights[ctp.flavour] or {}, user_highlights.all or {}, highlights)
 
 		for _, color in pairs(highlights) do
+			-- Because default is gui=bold,italic
+			color.italic = false
+			color.bold = false
+
 			if color.style then
-				for _, style in ipairs(color.style) do
+				for _, style in pairs(color.style) do
 					color[style] = true
 				end
 			end
