@@ -503,7 +503,7 @@ Configurations are self-explanatory, see `:h bufferline-highlights` for detailed
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 bufferline.setup {
     highlights = require("catppuccin.groups.integrations.bufferline").get {
-        styles = { "italic", "bold" },
+        styles = { italic = false, bold = true },
         custom = {
             all = {
                 fill = { bg = "#000000" },

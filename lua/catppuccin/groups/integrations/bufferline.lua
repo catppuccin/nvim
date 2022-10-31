@@ -19,7 +19,7 @@ function M.get(user_config)
 
 		local separator_fg = cnf.transparent_background and cp.surface1 or cp.crust
 
-		local styles = user_config.styles or { "bold", "italic" }
+		local styles = user_config.styles or { bold = true, italic = true }
 
 		local highlights = {
 			-- buffers
@@ -96,8 +96,8 @@ function M.get(user_config)
 
 		for _, color in pairs(highlights) do
 			if color.style then
-				for _, style in ipairs(color.style) do
-					color[style] = true
+				for k, v in pairs(color.style) do
+					color[k] = v
 				end
 			end
 			color.style = nil
