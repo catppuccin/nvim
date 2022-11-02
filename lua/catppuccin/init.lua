@@ -75,7 +75,12 @@ function M.load(flavour)
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	if vim.fn.getftime(compiled_path) == -1 then M.compile() end
 	lock = true
-	loadfile(compiled_path)()
+	local f = loadfile(compiled_path)
+	if not f then
+		M.compile()
+		f = loadfile(compiled_path)
+	end
+	f()
 	lock = false
 end
 
