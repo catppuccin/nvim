@@ -5,102 +5,67 @@ Table of Contents                               *catppuccin-table-of-contents*
 
 1. Features                                              |catppuccin-features|
 2. Installation                                      |catppuccin-installation|
-3. Configuration                                    |catppuccin-configuration|
+3. Usage                                                    |catppuccin-usage|
+4. Configuration                                    |catppuccin-configuration|
   - General                                               |catppuccin-general|
   - Dim inactive                                     |catppuccin-dim-inactive|
   - Styles                                                 |catppuccin-styles|
-4. Customize highlights                      |catppuccin-customize-highlights|
+5. Customize highlights                      |catppuccin-customize-highlights|
   - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
   - Overwriting colors                         |catppuccin-overwriting-colors|
   - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
-5. Integrations                                      |catppuccin-integrations|
+6. Integrations                                      |catppuccin-integrations|
   - Special integrations                     |catppuccin-special-integrations|
-6. Compile                                                |catppuccin-compile|
+7. Compile                                                |catppuccin-compile|
   - Config                                                 |catppuccin-config|
   - Compile commands                             |catppuccin-compile-commands|
   - Hooks                                                   |catppuccin-hooks|
-7. FAQ                                                        |catppuccin-faq|
+8. FAQ                                                        |catppuccin-faq|
+  - Switch Catppuccin flavour on the fly|catppuccin-switch-catppuccin-flavour-on-the-fly|
   - Load other custom highlights later|catppuccin-load-other-custom-highlights-later|
   - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
   - Colors doesn’t match preview screenshots|catppuccin-colors-doesn’t-match-preview-screenshots|
-8. Thanks to                                            |catppuccin-thanks-to|
+9. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
 1. Features                                              *catppuccin-features*
 
 
-- Handy CLI.
-- Extensible for many use cases.
-- Compile <https://github.com/catppuccin/nvim#Compile> user config for faster startuptime
+- Highly configurable with 4 different flavours and ability to create many more <https://github.com/catppuccin/nvim/discussions/323>
+- Compile <https://github.com/catppuccin/nvim#Compile> user config for fastest startuptime <https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/>
 - Integrations with a bunch of plugins <https://github.com/catppuccin/nvim#integrations>
 
 
 ==============================================================================
 2. Installation                                      *catppuccin-installation*
 
-You can use your favorite plugin manager for this. Here are some examples with
-the most popular ones:
-
-                                                      *catppuccin-Packer.nvim*
-
 >
-    use {
-        "catppuccin/nvim",
-        as = "catppuccin",
-        config = function()
-            require("catppuccin").setup {
-                flavour = "macchiato" -- mocha, macchiato, frappe, latte
-            }
-            vim.api.nvim_command "colorscheme catppuccin"
-        end
-    }
+    use { "catppuccin/nvim", as = "catppuccin" }
 <
 
 
-                                                         *catppuccin-Vim-plug*
-
 >
-    call plug#begin()
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-    call plug#end()
-    
-    lua << EOF
-    require("catppuccin").setup {
-        flavour = "macchiato" -- mocha, macchiato, frappe, latte
-    }
-    EOF
-    colorscheme catppuccin
-<
-
-
-Vim-plug                               If you want to switch your Catppuccin
-                                       flavour "on the fly" you may use this
-                                       command:
-
-
->
-    :Catppuccin mocha/macchiato/frappe/latte
-<
-
-
-
-  **Note**: the command has autocompletion enabled, so you can just press tab to
-  cycle through the flavours
-
-
->
-    " There are also colorschemes for the different flavour
-    colorscheme catppuccin-mocha
-    colorscheme catppuccin-macchiato
-    colorscheme catppuccin-frappe
-    colorscheme catppuccin-latte
 <
 
 
 ==============================================================================
-3. Configuration                                    *catppuccin-configuration*
+3. Usage                                                    *catppuccin-usage*
 
-You may pass a lua table to the `setup()` function in order to edit any of
+>
+    colorscheme catppuccin " -- catppuccin, catppuccin-latte, catppuccin-macchiato, catppuccin-mocha
+<
+
+
+>
+    vim.cmd.colorscheme "catppuccin"
+<
+
+
+==============================================================================
+4. Configuration                                    *catppuccin-configuration*
+
+You may pass a lua table to the setup() function in order to edit any of
 Catppuccin’s settings:
 
 >
@@ -183,7 +148,7 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 
 ==============================================================================
-4. Customize highlights                      *catppuccin-customize-highlights*
+5. Customize highlights                      *catppuccin-customize-highlights*
 
 GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
@@ -238,13 +203,13 @@ Here is an example:
 
 >
     require("catppuccin").setup {
-      custom_highlights = function(colors)
-        return {
-          Comment = { fg = colors.flamingo },
-          ["@constant.builtin"] = { fg = colors.peach, style = {} },
-          ["@comment"] = { fg = colors.surface2, style = { "italic" }
-        }
-      end
+        custom_highlights = function(colors)
+            return {
+                Comment = { fg = colors.flamingo },
+                ["@constant.builtin"] = { fg = colors.peach, style = {} },
+                ["@comment"] = { fg = colors.surface2, style = { "italic" }
+            }
+        end
     }
 <
 
@@ -303,7 +268,7 @@ Here is an example:
 
 
 ==============================================================================
-5. Integrations                                      *catppuccin-integrations*
+6. Integrations                                      *catppuccin-integrations*
 
 catppuccin-nvim provides theme support for other plugins in the Neovim
 ecosystem and extended Neovim functionality through _integrations_.
@@ -756,7 +721,7 @@ catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
 <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
 
 ==============================================================================
-6. Compile                                                *catppuccin-compile*
+7. Compile                                                *catppuccin-compile*
 
 
   **Note**: As of 7/10/2022, catppuccin should be able to automatically recompile
@@ -825,7 +790,19 @@ They can be used like so:
 
 
 ==============================================================================
-7. FAQ                                                        *catppuccin-faq*
+8. FAQ                                                        *catppuccin-faq*
+
+SWITCH CATPPUCCIN FLAVOUR ON THE FLY*catppuccin-switch-catppuccin-flavour-on-the-fly*
+
+>
+    :Catppuccin mocha/macchiato/frappe/latte
+<
+
+
+
+  **Note**: the command has autocompletion enabled, so you can just press tab to
+  cycle through the flavours
+
 
 LOAD OTHER CUSTOM HIGHLIGHTS LATER*catppuccin-load-other-custom-highlights-later*
 
@@ -883,7 +860,7 @@ Full list of Unsupported terminals can be found here:
 https://github.com/termstandard/colors#not-supporting-truecolor
 
 ==============================================================================
-8. Thanks to                                            *catppuccin-thanks-to*
+9. Thanks to                                            *catppuccin-thanks-to*
 
 
 - Pocco81 <https://github.com/Pocco81>
