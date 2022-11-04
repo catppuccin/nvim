@@ -107,7 +107,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 # Usage
 
 ```vim
-colorscheme catppuccin " -- catppuccin, catppuccin-latte, catppuccin-macchiato, catppuccin-mocha
+colorscheme catppuccin " catppuccin, catppuccin-latte, catppuccin-macchiato, catppuccin-mocha
 ```
 
 ```lua
@@ -207,19 +207,19 @@ Colors can be overwritten using `color_overrides` in the setting, like so:
 
 ```lua
 require("catppuccin").setup {
-	color_overrides = {
-		all = {
-			text = "#ffffff",
-		},
-		latte = {
-			base = "#ff0000",
-			mantle = "#242424",
-			crust = "#474747",
-		},
-		frappe = {},
-		macchiato = {},
-		mocha = {},
-	}
+    color_overrides = {
+        all = {
+            text = "#ffffff",
+        },
+        latte = {
+            base = "#ff0000",
+            mantle = "#242424",
+            crust = "#474747",
+        },
+        frappe = {},
+        macchiato = {},
+        mocha = {},
+    }
 }
 ```
 
