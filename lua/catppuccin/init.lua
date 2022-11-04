@@ -73,7 +73,7 @@ function M.load(flavour)
 	if lock then return end
 	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour) or "mocha"
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
-	if vim.fn.getftime(compiled_path) == -1 then M.compile() end
+	if not vim.loop.fs_stat(compiled_path) then M.compile() end
 	lock = true
 	dofile(compiled_path)
 	lock = false
@@ -108,11 +108,11 @@ function M.setup(user_conf)
 		file:close()
 	end
 
-	-- getftime is faster than vim.loop.fs_stat
-	local cur_date = vim.fn.getftime(debug.getinfo(2).source:sub(2)) -- Get user config last modified
-		+ vim.fn.getftime(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Last git commit
+	local stat = vim.loop.fs_stat(debug.getinfo(2).source:sub(2))
+	local cur_date = (stat and stat.mtime.sec or 0) -- Get user config last modified
+		+ vim.loop.fs_stat(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD").mtime.sec -- Last git commit
 
-	if last_date ~= tostring(cur_date) then
+	if not stat or last_date ~= tostring(cur_date) then
 		file = io.open(cached_date, "w")
 		if file then
 			file:write(cur_date)
@@ -164,14 +164,5 @@ vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	M.compile()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
 end, {})
-
-vim.api.nvim_create_augroup("Catppuccin", { clear = true })
-
--- Because debug.getinfo(2) is nil with packer's loadstring method
-vim.api.nvim_create_autocmd("User", {
-	group = "Catppuccin",
-	pattern = "PackerCompileDone",
-	callback = function() M.compile() end,
-})
 
 return M
