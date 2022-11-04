@@ -107,7 +107,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 # Usage
 
 ```vim
-colorscheme catppuccin " catppuccin, catppuccin-latte, catppuccin-macchiato, catppuccin-mocha
+colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 ```
 
 ```lua
