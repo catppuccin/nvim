@@ -53,7 +53,7 @@ Table of Contents                               *catppuccin-table-of-contents*
 3. Usage                                                    *catppuccin-usage*
 
 >
-    colorscheme catppuccin " catppuccin, catppuccin-latte, catppuccin-macchiato, catppuccin-mocha
+    colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 <
 
 
