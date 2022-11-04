@@ -108,9 +108,9 @@ function M.setup(user_conf)
 		file:close()
 	end
 
-	local stat = vim.loop.fs_stat(debug.getinfo(2).source:sub(2))
-	local cur_date = (stat and stat.mtime.sec or 0) -- Get user config last modified
-		+ vim.loop.fs_stat(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD").mtime.sec -- Last git commit
+	local stat = vim.loop.fs_stat(debug.getinfo(2).source:sub(2)) -- Get user config stat
+	local git = vim.loop.fs_stat(debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Get git stat
+	local cur_date = (stat and stat.mtime.sec or 0) + (git and git.mtime.sec or 0)
 
 	if not stat or last_date ~= tostring(cur_date) then
 		file = io.open(cached_date, "w")
