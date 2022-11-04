@@ -55,8 +55,11 @@ function M.apply(flavour)
 	theme.terminal = require("catppuccin.groups.terminal").get() -- terminal colors
 	local user_highlights = require("catppuccin").options.highlight_overrides
 	if type(user_highlights[flavour]) == "function" then user_highlights[flavour] = user_highlights[flavour](cp) end
-	if type(user_highlights.all) == "function" then user_highlights.all = user_highlights.all(cp) end
-	theme.custom_highlights = vim.tbl_deep_extend("keep", user_highlights[flavour] or {}, user_highlights.all or {})
+	theme.custom_highlights = vim.tbl_deep_extend(
+		"keep",
+		user_highlights[flavour] or {},
+		type(user_highlights.all) == "function" and user_highlights.all(cp) or user_highlights.all or {}
+	)
 
 	-- Returning global var
 	_G.cnf = _G._cnf
