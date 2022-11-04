@@ -90,64 +90,33 @@ Share your custom flavour here! https://github.com/catppuccin/nvim/discussions/3
 
 # Features
 
--   Handy CLI.
--   Extensible for many use cases.
--   [Compile](https://github.com/catppuccin/nvim#Compile) user config for faster startuptime
+-   Highly configurable with 4 different flavours and ability to create [many more](https://github.com/catppuccin/nvim/discussions/323)
+-   [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
 -   Integrations with [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
 
 # Installation
 
-You can use your favorite plugin manager for this. Here are some examples with the most popular ones:
-
-#### Packer.nvim
-
 ```lua
-use {
-    "catppuccin/nvim",
-    as = "catppuccin",
-    config = function()
-        require("catppuccin").setup {
-            flavour = "macchiato" -- mocha, macchiato, frappe, latte
-        }
-        vim.api.nvim_command "colorscheme catppuccin"
-    end
-}
+use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
-#### Vim-plug
-
 ```vim
-call plug#begin()
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-call plug#end()
-
-lua << EOF
-require("catppuccin").setup {
-    flavour = "macchiato" -- mocha, macchiato, frappe, latte
-}
-EOF
-colorscheme catppuccin
 ```
 
-If you want to switch your Catppuccin flavour "on the fly" you may use this command:
-
-```lua
-:Catppuccin mocha/macchiato/frappe/latte
-```
-
-> **Note**: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
+# Usage
 
 ```vim
-" There are also colorschemes for the different flavour
-colorscheme catppuccin-mocha
-colorscheme catppuccin-macchiato
-colorscheme catppuccin-frappe
-colorscheme catppuccin-latte
+colorscheme catppuccin " -- catppuccin, catppuccin-latte, catppuccin-macchiato, catppuccin-mocha
+```
+
+```lua
+vim.cmd.colorscheme "catppuccin"
 ```
 
 # Configuration
 
-You may pass a lua table to the `setup()` function in order to edit any of Catppuccin's settings:
+You may pass a lua table to the setup() function in order to edit any of Catppuccin's settings:
 
 ```lua
 require("catppuccin").setup({
@@ -270,13 +239,13 @@ Here is an example:
 
 ```lua
 require("catppuccin").setup {
-  custom_highlights = function(colors)
-    return {
-      Comment = { fg = colors.flamingo },
-      ["@constant.builtin"] = { fg = colors.peach, style = {} },
-      ["@comment"] = { fg = colors.surface2, style = { "italic" }
-    }
-  end
+    custom_highlights = function(colors)
+        return {
+            Comment = { fg = colors.flamingo },
+            ["@constant.builtin"] = { fg = colors.peach, style = {} },
+            ["@comment"] = { fg = colors.surface2, style = { "italic" }
+        }
+    end
 }
 ```
 
@@ -815,6 +784,14 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 ```
 
 # FAQ
+
+## Switch Catppuccin flavour on the fly
+
+```lua
+:Catppuccin mocha/macchiato/frappe/latte
+```
+
+> **Note**: the command has autocompletion enabled, so you can just press tab to cycle through the flavours
 
 ## Load other custom highlights later
 
