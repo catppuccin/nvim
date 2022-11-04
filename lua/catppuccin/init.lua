@@ -75,7 +75,16 @@ function M.load(flavour)
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	if not vim.loop.fs_stat(compiled_path) then M.compile() end
 	lock = true
-	dofile(compiled_path)
+	if M.sep == "/" then
+		local f = loadfile(compiled_path)
+		if not f then
+			M.compile()
+			f = loadfile(compiled_path)
+		end
+		f()
+	else
+		dofile(compiled_path)
+	end
 	lock = false
 end
 
