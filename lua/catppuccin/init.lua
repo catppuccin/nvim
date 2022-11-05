@@ -74,17 +74,12 @@ function M.load(flavour)
 	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour) or "mocha"
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	lock = true
-	if M.sep == "/" then
-		local f = loadfile(compiled_path)
-		if not f then
-			M.compile()
-			f = loadfile(compiled_path)
-		end
-		f()
-	else
-		if not vim.loop.fs_stat(compiled_path) then M.compile() end
-		dofile(compiled_path)
+	local f = loadfile(compiled_path)
+	if not f then
+		M.compile()
+		f = loadfile(compiled_path)
 	end
+	f()
 	lock = false
 end
 
@@ -110,10 +105,10 @@ function M.setup(user_conf)
 	-- Caching configuration
 	local cached_date = M.options.compile_path .. M.path_sep .. "date.txt"
 
-	local file = io.open(cached_date, "r")
+	local file = io.open(cached_date)
 	local last_date = nil
 	if file then
-		last_date = file:read "*a"
+		last_date = file:read()
 		file:close()
 	end
 
@@ -122,18 +117,18 @@ function M.setup(user_conf)
 	local cur_date = (stat and stat.mtime.sec or 0) + (git and git.mtime.sec or 0)
 
 	if not stat or last_date ~= tostring(cur_date) then
-		file = io.open(cached_date, "w")
+		file = io.open(cached_date, "wb")
 		if file then
 			file:write(cur_date)
 			file:close()
 		end
 
 		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
-		file = io.open(cached_config, "r") -- Keep .json suffix for backward compatibility
+		file = io.open(cached_config) -- Keep .json suffix for backward compatibility
 
 		local cached_hash = nil
 		if file then
-			cached_hash = file:read "*a"
+			cached_hash = file:read()
 			io.close(file)
 		end
 
@@ -142,7 +137,7 @@ function M.setup(user_conf)
 		-- Only re-compile if the setup table changed
 		if cached_hash ~= tostring(cur_hash) then
 			M.compile()
-			file = io.open(cached_config, "w")
+			file = io.open(cached_config, "wb")
 			if file then
 				file:write(cur_hash)
 				file:close()
