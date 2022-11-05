@@ -16,14 +16,13 @@ end
 
 function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
-	local lines = { [[require("catppuccin").compiled = string.dump(function()]] }
-	table.insert(
-		lines,
+	local lines = {
 		[[
+require("catppuccin").compiled = string.dump(function()
 if vim.g.colors_name then vim.cmd("hi clear") end
 vim.o.termguicolors = true
-vim.g.colors_name = "catppuccin"]]
-	)
+vim.g.colors_name = "catppuccin"]],
+	}
 	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
 	if path_sep == "\\" then config.compile_path = config.compile_path:gsub("/", "\\") end
 
@@ -44,11 +43,11 @@ vim.g.colors_name = "catppuccin"]]
 		color.style = nil
 		table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
 	end
+	table.insert(lines, "end)")
 	if vim.fn.isdirectory(config.compile_path) == 0 then
 		os.execute(string.format("mkdir %s %s", path_sep == "\\" and "" or "-p", config.compile_path))
 	end
 	local file = io.open(config.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
-	table.insert(lines, "end)")
 	loadstring(table.concat(lines, "\n"), "=")()
 	file:write(require("catppuccin").compiled)
 	file:close()
