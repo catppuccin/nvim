@@ -47,7 +47,7 @@ vim.g.colors_name = "catppuccin"]]
 	if vim.fn.isdirectory(config.compile_path) == 0 then
 		os.execute(string.format("mkdir %s %s", path_sep == "\\" and "" or "-p", config.compile_path))
 	end
-	local file = io.open(config.compile_path .. path_sep .. flavour .. "_compiled.lua", "w")
+	local file = io.open(config.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
 	table.insert(lines, "end)")
 	loadstring(table.concat(lines, "\n"), "=")()
 	file:write(require("catppuccin").compiled)
