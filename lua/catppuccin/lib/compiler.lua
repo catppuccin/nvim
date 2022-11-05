@@ -16,7 +16,7 @@ end
 
 function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
-	local lines = path_sep == "/" and { [[require("catppuccin").compiled = string.dump(function()]] } or {}
+	local lines = { [[require("catppuccin").compiled = string.dump(function()]] }
 	table.insert(
 		lines,
 		[[
@@ -48,13 +48,9 @@ vim.g.colors_name = "catppuccin"]]
 		os.execute(string.format("mkdir %s %s", path_sep == "\\" and "" or "-p", config.compile_path))
 	end
 	local file = io.open(config.compile_path .. path_sep .. flavour .. "_compiled.lua", "w")
-	if path_sep == "/" then
-		table.insert(lines, "end)")
-		loadstring(table.concat(lines, "\n"), "=")()
-		file:write(require("catppuccin").compiled)
-	else
-		file:write(table.concat(lines, "\n"))
-	end
+	table.insert(lines, "end)")
+	loadstring(table.concat(lines, "\n"), "=")()
+	file:write(require("catppuccin").compiled)
 	file:close()
 end
 
