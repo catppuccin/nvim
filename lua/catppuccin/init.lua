@@ -73,7 +73,6 @@ function M.load(flavour)
 	if lock then return end
 	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour) or "mocha"
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
-	if not vim.loop.fs_stat(compiled_path) then M.compile() end
 	lock = true
 	if M.sep == "/" then
 		local f = loadfile(compiled_path)
@@ -83,6 +82,7 @@ function M.load(flavour)
 		end
 		f()
 	else
+		if not vim.loop.fs_stat(compiled_path) then M.compile() end
 		dofile(compiled_path)
 	end
 	lock = false
