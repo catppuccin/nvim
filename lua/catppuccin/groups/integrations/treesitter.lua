@@ -97,8 +97,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Text
 
 		["@text"] = { fg = cp.text }, -- For strings considerated text in a markup language.
-		["@text.strong"] = { fg = cp.maroon, style = { "bold" } }, -- italic
-		["@text.emphasis"] = { fg = cp.maroon, style = { "italic" } }, -- bold
+		["@text.strong"] = { fg = cp.maroon, style = { "bold" } }, -- bold
+		["@text.emphasis"] = { fg = cp.maroon, style = { "italic" } }, -- italic
 		["@text.underline"] = { link = "Underline" }, -- underlined text
 		["@text.strike"] = { fg = cp.text, style = { "strikethrough" } }, -- strikethrough text
 		["@text.title"] = { fg = cp.blue, style = { "bold" } }, -- titles like: # Example
@@ -124,6 +124,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Language specific:
 
+		-- css
+		["@property.css"] = { fg = cp.text },
+		["@property.id.css"] = { fg = cp.blue },
+		["@property.class.css"] = { fg = cp.yellow },
+		["@type.tag"] = { fg = cp.mauve },
+		["@string.plain.css"] = { fg = cp.yellow },
+
 		-- toml
 		["@property.toml"] = { fg = cp.blue }, -- Differentiates between string and properties
 
@@ -138,7 +145,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@constructor.typescript"] = { fg = cp.lavender },
 
 		-- TSX (Typescript React)
-		["@keyword.export"] = { fg = cp.sky, style = { "bold" } },
+		["@keyword.export.tsx"] = { fg = cp.sky, style = { "bold" } },
 		["@constructor.tsx"] = { fg = cp.lavender },
 		["@tag.attribute.tsx"] = { fg = cp.mauve },
 
