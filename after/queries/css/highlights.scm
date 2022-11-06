@@ -9,8 +9,8 @@
 
 [
  (declaration
-	 (plain_value))
- ] @string.plain
+	 (plain_value) @string.plain)
+ ]
 [
  (tag_name)
  ] @type.tag

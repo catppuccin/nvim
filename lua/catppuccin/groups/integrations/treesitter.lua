@@ -125,11 +125,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Language specific:
 
 		-- css
-		["@property.css"] = { fg = cp.text },
+		["@property.css"] = { fg = cp.lavender },
 		["@property.id.css"] = { fg = cp.blue },
 		["@property.class.css"] = { fg = cp.yellow },
-		["@type.tag"] = { fg = cp.mauve },
-		["@string.plain.css"] = { fg = cp.yellow },
+		["@type.css"] = { fg = cp.lavender },
+		["@type.tag.css"] = { fg = cp.mauve },
+		["@string.plain.css"] = { fg = cp.peach },
+		["@number.css"] = { fg = cp.peach },
 
 		-- toml
 		["@property.toml"] = { fg = cp.blue }, -- Differentiates between string and properties
