@@ -42,14 +42,14 @@ function M.get()
 
 		MiniSurround = { bg = cp.pink, fg = cp.surface1 },
 
-		MiniTablineCurrent = { fg = cp.text, bg = cp.base, style = { "bold", "italic" } },
+		MiniTablineCurrent = { fg = cp.text, bg = cp.base, sp = cp.red, style = { "bold", "italic", "underline" } },
 		MiniTablineFill = { bg = bg_highlight },
 		MiniTablineHidden = { fg = cp.text, bg = inactive_bg },
-		MiniTablineModifiedCurrent = { fg = cp.base, bg = cp.text, style = { "bold", "italic" } },
-		MiniTablineModifiedHidden = { fg = inactive_bg, bg = cp.text },
-		MiniTablineModifiedVisible = { fg = cp.surface1, bg = cp.subtext1 },
+		MiniTablineModifiedCurrent = { fg = cp.red, bg = cp.none, style = { "bold", "italic" } },
+		MiniTablineModifiedHidden = { fg = cp.red, bg = cp.none },
+		MiniTablineModifiedVisible = { fg = cp.red, bg = cp.none },
 		MiniTablineTabpagesection = { fg = cp.surface1, bg = cp.base },
-		MiniTablineVisible = { fg = cp.subtext1, bg = cp.surface1 },
+		MiniTablineVisible = { bg = cp.none },
 
 		MiniTestEmphasis = { style = { "bold" } },
 		MiniTestFail = { fg = cp.red, style = { "bold" } },
