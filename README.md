@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-This port of Catppuccin is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the 
+This port of Catppuccin is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the
 <a href="https://github.com/catppuccin/nvim/tree/v0.1">v0.1</a> tag
 </p>
 
@@ -50,6 +50,7 @@ This port of Catppuccin is special because it was the first one and the one that
 <img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
 
 Here is a subset of it:
+
 ```lua
 require("catppuccin").setup {
     flavour = "mocha",
@@ -84,15 +85,15 @@ An attempt to restore the original theme based on Mocha! [Configuration can be f
 
 </details>
 
-Share your custom flavour here! https://github.com/catppuccin/nvim/discussions/323
+Share your custom flavour here! <https://github.com/catppuccin/nvim/discussions/323>
 
 <!-- panvimdoc-ignore-end -->
 
 # Features
 
--   Highly configurable with 4 different flavours and ability to create [many more](https://github.com/catppuccin/nvim/discussions/323)
--   [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
--   Integrations with [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
+- Highly configurable with 4 different flavours and ability to create [many more](https://github.com/catppuccin/nvim/discussions/323)
+- [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
+- Integrations with [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
 
 # Installation
 
@@ -166,27 +167,27 @@ Although settings already have self-explanatory names, here is where you can fin
 
 This settings are unrelated to any group and are independent.
 
--   `background`: (Table) Match :set background=light/dark with :Catppuccin background.light/dark
--   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
--   `transparent_background`: (Boolean) if true, disables setting the background color.
+- `background`: (Table) Match :set background=light/dark with :Catppuccin background.light/dark
+- `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
+- `transparent_background`: (Boolean) if true, disables setting the background color.
 
 ## Dim inactive
 
 This setting manages the ability to dim the inactive splits/windows/buffers displayed.
 
--   `enabled`: (Boolean) if true, dims the background color of inactive window or buffer or split.
--   `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
--   `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
+- `enabled`: (Boolean) if true, dims the background color of inactive window or buffer or split.
+- `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
+- `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
 
 ## Styles
 
 Handles the style of general hi groups (see `:h highlight-args`):
 
--   `comments`: (Table) changed the style of the comments.
--   `functions`: (Table) changed the style of the functions.
--   `keywords`: (Table) changed the style of the keywords.
--   `strings`: (Table) changed the style of the strings.
--   `variables`: (Table) changed the style of the variables.
+- `comments`: (Table) changed the style of the comments.
+- `functions`: (Table) changed the style of the functions.
+- `keywords`: (Table) changed the style of the keywords.
+- `strings`: (Table) changed the style of the strings.
+- `variables`: (Table) changed the style of the variables.
 
 # Customize highlights
 
@@ -222,6 +223,39 @@ require("catppuccin").setup {
     }
 }
 ```
+
+<details>
+<summary> <ins> Click here to see color palette document <ins></summary>
+
+| Name      | Latte     | Frappe    | Macchiato | Mocha     | Usage           |
+| --------- | --------- | --------- | --------- | --------- | --------------- |
+| rosewater | `#dc8a78` | `#F2D5CF` | `#F4DBD6` | `#F5E0DC` | Winbar          |
+| flamingo  | `#DD7878` | `#EEBEBE` | `#F0C6C6` | `#F2CDCD` | Target word     |
+| pink      | `#ea76cb` | `#F4B8E4` | `#F5BDE6` | `#F5C2E7` | Just pink       |
+| mauve     | `#8839EF` | `#CA9EE6` | `#C6A0F6` | `#CBA6F7` | Tag             |
+| red       | `#D20F39` | `#E78284` | `#ED8796` | `#F38BA8` | Error           |
+| maroon    | `#E64553` | `#EA999C` | `#EE99A0` | `#EBA0AC` | Lighter red     |
+| peach     | `#FE640B` | `#EF9F76` | `#F5A97F` | `#FAB387` | Number          |
+| yellow    | `#df8e1d` | `#E5C890` | `#EED49F` | `#F9E2AF` | Warning         |
+| green     | `#40A02B` | `#A6D189` | `#A6DA95` | `#A6E3A1` | Diff add        |
+| teal      | `#179299` | `#81C8BE` | `#8BD5CA` | `#94E2D5` | Hint            |
+| sky       | `#04A5E5` | `#99D1DB` | `#91D7E3` | `#89DCEB` | Operator        |
+| sapphire  | `#209FB5` | `#85C1DC` | `#7DC4E4` | `#74C7EC` | Constructor     |
+| blue      | `#1e66f5` | `#8CAAEE` | `#8AADF4` | `#89B4FA` | Diff changed    |
+| lavender  | `#7287FD` | `#BABBF1` | `#B7BDF8` | `#B4BEFE` | CursorLine Nr   |
+| text      | `#4C4F69` | `#c6d0f5` | `#CAD3F5` | `#CDD6F4` | Default fg      |
+| subtext1  | `#5C5F77` | `#b5bfe2` | `#B8C0E0` | `#BAC2DE` | Indicator       |
+| subtext0  | `#6C6F85` | `#a5adce` | `#A5ADCB` | `#A6ADC8` | Float title     |
+| overlay2  | `#7C7F93` | `#949cbb` | `#939AB7` | `#9399B2` | Popup fg        |
+| overlay1  | `#8C8FA1` | `#838ba7` | `#8087A2` | `#7F849C` | Conceal color   |
+| overlay0  | `#9CA0B0` | `#737994` | `#6E738D` | `#6C7086` | Fold color      |
+| surface2  | `#ACB0BE` | `#626880` | `#5B6078` | `#585B70` | Default comment |
+| surface1  | `#BCC0CC` | `#51576d` | `#494D64` | `#45475A` | Darker comment  |
+| surface0  | `#CCD0DA` | `#414559` | `#363A4F` | `#313244` | Darkest comment |
+| base      | `#EFF1F5` | `#303446` | `#24273A` | `#1E1E2E` | Default bg      |
+| mantle    | `#E6E9EF` | `#292C3C` | `#1E2030` | `#181825` | Darker bg       |
+| crust     | `#DCE0E8` | `#232634` | `#181926` | `#11111B` | Darkest bg      |
+</details>
 
 ## Overwriting highlight groups
 
@@ -356,7 +390,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [vimwiki](https://github.com/vimwiki/vimwiki)                                         | vimwiki            |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | which_key          |
 
-> "Special" module means Special integrations, see https://github.com/catppuccin/nvim#special-integrations for more details
+> "Special" module means Special integrations, see <https://github.com/catppuccin/nvim#special-integrations> for more details
 
 These integrations allow catppuccin to set the theme of various plugins. To enable an integration you just need to set it to `true`, for example:
 
@@ -449,7 +483,6 @@ require("catppuccin").setup({
 ## Special integrations
 
 <details> <summary>bufferline.nvim</summary>
-
 
 Update your bufferline config to use the Catppuccin components:
 
@@ -569,6 +602,7 @@ ctp_feline.setup({
 ```
 
 > **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
+
 ```lua
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
@@ -750,6 +784,7 @@ require("catppuccin").setup({ -- Note: On windows we replace `/` with `\` by def
 ```vim
 :CatppuccinCompile " Create/update the compile file
 ```
+
 ```lua
 
 require('catppuccin').compile() -- Catppuccin also provide a function to work with the catppuccin compiler.
@@ -829,16 +864,16 @@ Catppuccin requires true color support AKA terminals support the full range of 1
 
 - Supported: iterm2 (macOS), kitty, wezterm, alacritty, tmux, ...
 
-Full list of support terminals can be found here: https://github.com/termstandard/colors#truecolor-support-in-output-devices
+Full list of support terminals can be found here: <https://github.com/termstandard/colors#truecolor-support-in-output-devices>
 
 - Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, ...
 
-Full list of Unsupported terminals can be found here: https://github.com/termstandard/colors#not-supporting-truecolor
+Full list of Unsupported terminals can be found here: <https://github.com/termstandard/colors#not-supporting-truecolor>
 
 # Thanks to
 
--   [Pocco81](https://github.com/Pocco81)
--   [Null Chilly](https://github.com/nullchilly)
+- [Pocco81](https://github.com/Pocco81)
+- [Null Chilly](https://github.com/nullchilly)
 
 <!-- panvimdoc-ignore-start -->
 
