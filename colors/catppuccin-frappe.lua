@@ -1,1 +1,0 @@
-require("catppuccin").load "frappe"

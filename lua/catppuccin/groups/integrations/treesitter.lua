@@ -1,12 +1,6 @@
 local M = {}
 
 function M.get()
-	local operators = cp.sky
-	local cl = cp.mauve -- conditionals, loops
-	local keywords = cp.mauve
-
-	local math_logic = cp.peach
-
 	if vim.treesitter.highlighter.hl_map then
 		vim.notify(
 			[[Catppuccin (info):
@@ -25,7 +19,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@error"] = { link = "Error" },
 		["@preproc"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
 		["@define"] = { link = "Define" }, -- preprocessor definition directives
-		["@operator"] = { fg = operators, style = cnf.styles.operators or {} }, -- For any operator: +, but also -> and * in cp.
+		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in cp.
 
 		-- Punctuation
 		["@punctuation.delimiter"] = { fg = cp.overlay2 }, -- For delimiters ie: .
@@ -33,7 +27,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@punctuation.special"] = { fg = cp.sky, style = cnf.styles.operators or {} }, -- For special punctutation that does not fall in the catagories before.
 
 		-- Literals
-		["@string"] = { fg = cp.green, style = cnf.styles.strings or {} }, -- For strings.
+		["@string"] = { link = "String" }, -- For strings.
 		["@string.regex"] = { fg = cp.peach, style = cnf.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = cp.pink, style = cnf.styles.strings }, -- For escape characters within a string.
 		["@string.special"] = { fg = cp.blue }, -- other special strings (e.g. dates)
@@ -41,12 +35,12 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@character"] = { link = "Character" }, -- character literals
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
 
-		["@boolean"] = { fg = math_logic, style = cnf.styles.booleans or {} }, -- For booleans.
-		["@number"] = { fg = math_logic, style = cnf.styles.numbers or {} }, -- For all numbers
-		["@float"] = { fg = math_logic, style = cnf.styles.numbers or {} }, -- For floats.
+		["@boolean"] = { link = "Boolean" }, -- For booleans.
+		["@number"] = { link = "Number" }, -- For all numbers
+		["@float"] = { link = "Number" }, -- For floats.
 
 		-- Functions
-		["@function"] = { fg = cp.blue, style = cnf.styles.functions or {} }, -- For function (calls and definitions).
+		["@function"] = { link = "Function" }, -- For function (calls and definitions).
 		["@function.builtin"] = { fg = cp.peach, style = cnf.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
 		["@function.call"] = { link = "@function" }, -- function calls
 		["@function.macro"] = { fg = cp.teal, style = cnf.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
@@ -58,21 +52,21 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@parameter"] = { fg = cp.maroon, style = { "italic" } }, -- For parameters of a function.
 
 		-- Keywords
-		["@keyword"] = { fg = keywords, style = cnf.styles.keywords or {} }, -- For keywords that don't fall in previous categories.
+		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
 		["@keyword.function"] = { fg = cp.mauve, style = cnf.styles.keywords or {} }, -- For keywords used to define a fuction.
 		["@keyword.operator"] = { fg = cp.mauve, style = cnf.styles.operators or {} }, -- For new keyword operator
 		["@keyword.return"] = { fg = cp.mauve, style = cnf.styles.keywords or {} },
 
-		["@conditional"] = { fg = cl, style = cnf.styles.conditionals or {} }, -- For keywords related to conditionnals.
-		["@repeat"] = { fg = cl, style = cnf.styles.loops or {} }, -- For keywords related to loops.
+		["@conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
+		["@repeat"] = { link = "Repeat" }, -- For keywords related to loops.
 		-- @debug            ; keywords related to debugging
-		["@label"] = { fg = cp.sapphire }, -- For labels: label: in C and :label: in Lua.
-		["@include"] = { fg = cp.mauve, style = cnf.styles.keywords or {} }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
+		["@include"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		["@exception"] = { fg = cp.mauve, style = cnf.styles.keywords or {} }, -- For exception related keywords.
 
 		-- Types
 
-		["@type"] = { fg = cp.yellow, style = cnf.styles.types or {} }, -- For types.
+		["@type"] = { link = "Type" }, -- For types.
 		["@type.builtin"] = { fg = cp.yellow, style = cnf.styles.properties or "italic" }, -- For builtin types.
 		["@type.definition"] = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
 		["@type.qualifier"] = { link = "@type" }, -- type qualifiers (e.g. `const`)
@@ -84,12 +78,12 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Identifiers
 
-		["@variable"] = { fg = cp.text, style = cnf.styles.variables or {} }, -- Any variable name that does not have another highlighcp.
+		["@variable"] = { link = "Identifiers" }, -- Any variable name that does not have another highlighcp.
 		["@variable.builtin"] = { fg = cp.red }, -- Variable names that are defined by the languages, like this or self.
 
 		["@constant"] = { fg = cp.peach }, -- For constants
 		["@constant.builtin"] = { fg = cp.peach, style = cnf.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
-		["@constant.macro"] = { fg = cp.mauve }, -- For constants that are defined by macros: NULL in cp.
+		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in cp.
 
 		["@namespace"] = { fg = cp.blue, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
 		["@symbol"] = { fg = cp.flamingo },

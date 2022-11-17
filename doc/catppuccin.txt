@@ -65,8 +65,8 @@ Table of Contents                               *catppuccin-table-of-contents*
 ==============================================================================
 4. Configuration                                    *catppuccin-configuration*
 
-You may pass a lua table to the setup() function in order to edit any of
-Catppuccin’s settings:
+There is no need to call `setup` if you don’t want to change the default
+options and settings.
 
 >
     require("catppuccin").setup({
@@ -104,10 +104,14 @@ Catppuccin’s settings:
             gitsigns = true,
             nvimtree = true,
             telescope = true,
-            treesitter = true,
+            notify = false,
+            mini = false,
             -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
         },
     })
+    
+    -- setup must be called before loading
+    vim.cmd.colorscheme "catppuccin"
 <
 
 
