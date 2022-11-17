@@ -31,7 +31,7 @@ local M = {
 			operators = {},
 		},
 		integrations = {
-			treesitter = true,
+			treesitter = not is_vim,
 			cmp = true,
 			gitsigns = true,
 			telescope = true,

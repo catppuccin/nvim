@@ -1,3 +1,4 @@
+-- TODO: private _G.vim
 vim.cmd = vim.command
 vim.cmd [[command! CatppuccinCompile lua require('catppuccin').compile() print("Catppuccin (info): compiled cache!")]]
 loadstring = load or loadstring

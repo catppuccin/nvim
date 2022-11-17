@@ -3,38 +3,39 @@ local M = {}
 function M.get()
 	return {
 		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
+		SpecialComment = { link = "Special" }, -- special things inside a comment
 		Constant = { fg = cp.peach }, -- (preferred) any constant
-		String = { fg = cp.green, style = cnf.styles.strings }, -- a string constant: "this is a string"
+		String = { fg = cp.green, style = cnf.styles.strings or {} }, -- a string constant: "this is a string"
 		Character = { fg = cp.teal }, --  a character constant: 'c', '\n'
-		Number = { fg = cp.peach }, --   a number constant: 234, 0xff
-		Float = { fg = cp.peach }, --    a floating point constant: 2.3e10
-		Boolean = { fg = cp.peach }, --  a boolean constant: TRUE, false
-		Identifier = { fg = cp.flamingo, style = cnf.styles.variables }, -- (preferred) any variable name
-		Function = { fg = cp.blue, style = cnf.styles.functions }, -- function name (also: methods for classes)
+		Number = { fg = cp.peach, style = cnf.styles.numbers or {} }, --   a number constant: 234, 0xff
+		Float = { fg = cp.peach, style = cnf.styles.numbers or {} }, --    a floating point constant: 2.3e10
+		Boolean = { fg = cp.peach, style = cnf.styles.booleans or {} }, --  a boolean constant: TRUE, false
+		Identifier = { fg = cp.text, style = cnf.styles.variables or {} }, -- (preferred) any variable name
+		Function = { fg = cp.blue, style = cnf.styles.functions or {} }, -- function name (also: methods for classes)
 		Statement = { fg = cp.mauve }, -- (preferred) any statement
-		Conditional = { fg = cp.red }, --  if, then, else, endif, switch, etcp.
-		Repeat = { fg = cp.red }, --   for, do, while, etcp.
-		Label = { fg = cp.peach }, --    case, default, etcp.
-		Operator = { fg = cp.sky }, -- "sizeof", "+", "*", etcp.
-		Keyword = { fg = cp.pink, style = cnf.styles.keywords }, --  any other keyword
+		Conditional = { fg = cp.mauve, style = cnf.styles.conditionals or {} }, --  if, then, else, endif, switch, etcp.
+		Repeat = { fg = cp.mauve, style = cnf.styles.loops or {} }, --   for, do, while, etcp.
+		Label = { fg = cp.sapphire }, --    case, default, etcp.
+		Operator = { fg = cp.sky, style = cnf.styles.operators or {} }, -- "sizeof", "+", "*", etcp.
+		Keyword = { fg = cp.mauve, style = cnf.styles.keywords or {} }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
 		PreProc = { fg = cp.pink }, -- (preferred) generic Preprocessor
-		Include = { fg = cp.pink }, --  preprocessor #include
-		-- Define        = { }, --   preprocessor #define
-		-- Macro         = { }, --    same as Define
-		-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etcp.
+		Include = { fg = cp.mauve, style = cnf.styles.keywords or {} }, --  preprocessor #include
+		Define = { link = "PreProc" }, -- preprocessor #define
+		Macro = { fg = cp.mauve }, -- same as Define
+		PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
 
 		StorageClass = { fg = cp.yellow }, -- static, register, volatile, etcp.
 		Structure = { fg = cp.yellow }, --  struct, union, enum, etcp.
-		Typedef = { fg = cp.yellow }, --  A typedef
 		Special = { fg = cp.pink }, -- (preferred) any special symbol
-		Type = { fg = cp.blue }, -- (preferred) int, long, char, etcp.
-		-- SpecialChar   = { }, --  special character in a constant
-		-- Tag           = { }, --    you can use CTRL-] on this
-		-- Delimiter     = { }, --  character that needs attention
+		Type = { fg = cp.yellow, style = cnf.styles.types or {} }, -- (preferred) int, long, char, etcp.
+		Typedef = { link = "Type" }, --  A typedef
+		SpecialChar = { link = "Special" }, -- special character in a constant
+		Tag = { link = "Special" }, -- you can use CTRL-] on this
+		Delimiter = { link = "Special" }, -- character that needs attention
 		-- Specialoverlay0= { }, -- special things inside a overlay0
-		-- Debug         = { }, --    debugging statements
+		Debug = { link = "Special" }, -- debugging statements
 
 		Underlined = { style = { "underline" } }, -- (preferred) text that stands out, HTML links
 		Bold = { style = { "bold" } },
@@ -88,16 +89,6 @@ function M.get()
 		GlyphPalette6 = { fg = cp.teal },
 		GlyphPalette7 = { fg = cp.text },
 		GlyphPalette9 = { fg = cp.red },
-
-		Define = { link = "PreProc" }, -- preprocessor #define
-		Macro = { link = "PreProc" }, -- same as Define
-		PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
-
-		SpecialChar = { link = "Special" }, -- special character in a constant
-		Tag = { link = "Special" }, -- you can use CTRL-] on this
-		Delimiter = { link = "Special" }, -- character that needs attention
-		SpecialComment = { link = "Special" }, -- special things inside a comment
-		Debug = { link = "Special" }, -- debugging statements
 	}
 end
 
