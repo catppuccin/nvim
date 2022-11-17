@@ -117,7 +117,7 @@ vim.cmd.colorscheme "catppuccin"
 
 # Configuration
 
-You may pass a lua table to the setup() function in order to edit any of Catppuccin's settings:
+There is no need to call `setup` if you don't want to change the default options and settings.
 
 ```lua
 require("catppuccin").setup({
@@ -159,6 +159,9 @@ require("catppuccin").setup({
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
+
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
 ```
 
 Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!

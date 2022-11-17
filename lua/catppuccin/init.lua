@@ -1,3 +1,6 @@
+local is_vim = vim.fn.has "nvim" ~= 1
+if is_vim then require "catppuccin.lib.vim" end
+
 local M = {
 	flavours = { "latte", "frappe", "macchiato", "mocha" },
 	options = {
@@ -58,12 +61,12 @@ local M = {
 		color_overrides = {},
 		highlight_overrides = {},
 	},
-	path_sep = ((jit and jit.os or nil) == "Windows") and "\\" or "/",
+	path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
 }
 
 function M.compile()
 	for _, flavour in pairs(M.flavours) do
-		require("catppuccin.lib.compiler").compile(flavour)
+		require("catppuccin.lib." .. (is_vim and "vim." or "") .. "compiler").compile(flavour)
 	end
 end
 
@@ -145,6 +148,8 @@ function M.setup(user_conf)
 		end
 	end
 end
+
+if is_vim then return M end
 
 vim.api.nvim_create_user_command("Catppuccin", function(inp)
 	if not vim.tbl_contains(M.flavours, inp.args) then
