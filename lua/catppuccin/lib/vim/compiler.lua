@@ -31,6 +31,7 @@ vim.g.colors_name = "catppuccin"]],
 			table.insert(lines, fmt([[highlight! link %s %s]], group, color.link))
 		else
 			if color.style then color.style = table.concat(color.style, ",") end
+			if color.style == "" then color.style = nil end
 			table.insert(
 				lines,
 				fmt(
@@ -49,9 +50,6 @@ vim.g.colors_name = "catppuccin"]],
 		os.execute(string.format("mkdir %s %s", C.is_windows and "" or "-p", config.compile_path))
 	end
 	local file = io.open(config.compile_path .. C.path_sep .. flavour .. "_compiled.lua", "wb")
-	local f = io.open("/tmp/vim.lua", "wb")
-	f:write(table.concat(lines, "\n"))
-	f:close()
 	loadstring(table.concat(lines, "\n"), "=")()
 	file:write(require("catppuccin").compiled)
 	file:close()
