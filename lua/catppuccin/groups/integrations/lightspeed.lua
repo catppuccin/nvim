@@ -2,23 +2,20 @@ local M = {}
 
 function M.get()
 	return {
-		LightspeedLabel = { fg = cp.red, style = { "bold", "underline" } },
+		LightspeedLabel = { fg = C.red, style = { "bold", "underline" } },
 		LightspeedLabelDistant = {
-			fg = ucolors.vary_color({ latte = cp.blue }, cp.sky),
+			fg = U.vary_color({ latte = C.blue }, C.sky),
 			style = { "bold", "underline" },
 		},
 		LightspeedShortcut = {
 			fg = "#ffffff",
-			bg = ucolors.increase_saturation(cp.red, 0.7),
+			bg = U.increase_saturation(C.red, 0.7),
 			style = { "bold" },
 		},
 		LightspeedMaskedChar = {
-			fg = ucolors.vary_color(
-				{ latte = ucolors.lighten(cp.pink, 0.7, cp.text) },
-				ucolors.darken(cp.pink, 0.7, cp.base)
-			),
+			fg = U.vary_color({ latte = U.lighten(C.pink, 0.7, C.text) }, U.darken(C.pink, 0.7, C.base)),
 		},
-		LightspeedUnlabeledMatch = { fg = cp.text, style = { "bold" } },
+		LightspeedUnlabeledMatch = { fg = C.text, style = { "bold" } },
 		LightspeedGreyWash = { link = "Comment" },
 		LightspeedUniqueChar = { link = "LightspeedUnlabeledMatch" },
 		LightspeedOneCharMatch = { link = "LightspeedShortcut" },

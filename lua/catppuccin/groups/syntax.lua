@@ -2,34 +2,34 @@ local M = {}
 
 function M.get()
 	return {
-		Comment = { fg = cp.surface2, style = cnf.styles.comments }, -- just comments
+		Comment = { fg = C.surface2, style = O.styles.comments }, -- just comments
 		SpecialComment = { link = "Special" }, -- special things inside a comment
-		Constant = { fg = cp.peach }, -- (preferred) any constant
-		String = { fg = cp.green, style = cnf.styles.strings or {} }, -- a string constant: "this is a string"
-		Character = { fg = cp.teal }, --  a character constant: 'c', '\n'
-		Number = { fg = cp.peach, style = cnf.styles.numbers or {} }, --   a number constant: 234, 0xff
-		Float = { fg = cp.peach, style = cnf.styles.numbers or {} }, --    a floating point constant: 2.3e10
-		Boolean = { fg = cp.peach, style = cnf.styles.booleans or {} }, --  a boolean constant: TRUE, false
-		Identifier = { fg = cp.text, style = cnf.styles.variables or {} }, -- (preferred) any variable name
-		Function = { fg = cp.blue, style = cnf.styles.functions or {} }, -- function name (also: methods for classes)
-		Statement = { fg = cp.mauve }, -- (preferred) any statement
-		Conditional = { fg = cp.mauve, style = cnf.styles.conditionals or {} }, --  if, then, else, endif, switch, etcp.
-		Repeat = { fg = cp.mauve, style = cnf.styles.loops or {} }, --   for, do, while, etcp.
-		Label = { fg = cp.sapphire }, --    case, default, etcp.
-		Operator = { fg = cp.sky, style = cnf.styles.operators or {} }, -- "sizeof", "+", "*", etcp.
-		Keyword = { fg = cp.mauve, style = cnf.styles.keywords or {} }, --  any other keyword
+		Constant = { fg = C.peach }, -- (preferred) any constant
+		String = { fg = C.green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
+		Character = { fg = C.teal }, --  a character constant: 'c', '\n'
+		Number = { fg = C.peach, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
+		Float = { fg = C.peach, style = O.styles.numbers or {} }, --    a floating point constant: 2.3e10
+		Boolean = { fg = C.peach, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
+		Identifier = { fg = C.text, style = O.styles.variables or {} }, -- (preferred) any variable name
+		Function = { fg = C.blue, style = O.styles.functions or {} }, -- function name (also: methods for classes)
+		Statement = { fg = C.mauve }, -- (preferred) any statement
+		Conditional = { fg = C.mauve, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etC.
+		Repeat = { fg = C.mauve, style = O.styles.loops or {} }, --   for, do, while, etC.
+		Label = { fg = C.sapphire }, --    case, default, etC.
+		Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etC.
+		Keyword = { fg = C.mauve, style = O.styles.keywords or {} }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
-		PreProc = { fg = cp.pink }, -- (preferred) generic Preprocessor
-		Include = { fg = cp.mauve, style = cnf.styles.keywords or {} }, --  preprocessor #include
+		PreProc = { fg = C.pink }, -- (preferred) generic Preprocessor
+		Include = { fg = C.mauve, style = O.styles.keywords or {} }, --  preprocessor #include
 		Define = { link = "PreProc" }, -- preprocessor #define
-		Macro = { fg = cp.mauve }, -- same as Define
+		Macro = { fg = C.mauve }, -- same as Define
 		PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
 
-		StorageClass = { fg = cp.yellow }, -- static, register, volatile, etcp.
-		Structure = { fg = cp.yellow }, --  struct, union, enum, etcp.
-		Special = { fg = cp.pink }, -- (preferred) any special symbol
-		Type = { fg = cp.yellow, style = cnf.styles.types or {} }, -- (preferred) int, long, char, etcp.
+		StorageClass = { fg = C.yellow }, -- static, register, volatile, etC.
+		Structure = { fg = C.yellow }, --  struct, union, enum, etC.
+		Special = { fg = C.pink }, -- (preferred) any special symbol
+		Type = { fg = C.yellow, style = O.styles.types or {} }, -- (preferred) int, long, char, etC.
 		Typedef = { link = "Type" }, --  A typedef
 		SpecialChar = { link = "Special" }, -- special character in a constant
 		Tag = { link = "Special" }, -- you can use CTRL-] on this
@@ -43,52 +43,52 @@ function M.get()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-		Error = { fg = cp.red }, -- (preferred) any erroneous construct
-		Todo = { bg = cp.yellow, fg = cp.base, style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		qfLineNr = { fg = cp.yellow },
-		qfFileName = { fg = cp.blue },
-		htmlH1 = { fg = cp.pink, style = { "bold" } },
-		htmlH2 = { fg = cp.blue, style = { "bold" } },
-		-- mkdHeading = { fg = cp.peach, style = { "bold" } },
-		-- mkdCode = { bg = cp.terminal_black, fg = cp.text },
-		mkdCodeDelimiter = { bg = cp.base, fg = cp.text },
-		mkdCodeStart = { fg = cp.flamingo, style = { "bold" } },
-		mkdCodeEnd = { fg = cp.flamingo, style = { "bold" } },
-		-- mkdLink = { fg = cp.blue, style = { "underline" } },
+		Error = { fg = C.red }, -- (preferred) any erroneous construct
+		Todo = { bg = C.yellow, fg = C.base, style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		qfLineNr = { fg = C.yellow },
+		qfFileName = { fg = C.blue },
+		htmlH1 = { fg = C.pink, style = { "bold" } },
+		htmlH2 = { fg = C.blue, style = { "bold" } },
+		-- mkdHeading = { fg = C.peach, style = { "bold" } },
+		-- mkdCode = { bg = C.terminal_black, fg = C.text },
+		mkdCodeDelimiter = { bg = C.base, fg = C.text },
+		mkdCodeStart = { fg = C.flamingo, style = { "bold" } },
+		mkdCodeEnd = { fg = C.flamingo, style = { "bold" } },
+		-- mkdLink = { fg = C.blue, style = { "underline" } },
 
 		-- debugging
-		debugPC = { bg = cp.crust }, -- used for highlighting the current line in terminal-debug
-		debugBreakpoint = { bg = cp.base, fg = cp.overlay0 }, -- used for breakpoint colors in terminal-debug
+		debugPC = { bg = C.crust }, -- used for highlighting the current line in terminal-debug
+		debugBreakpoint = { bg = C.base, fg = C.overlay0 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
-		illuminatedWord = { bg = cp.surface1 },
-		illuminatedCurWord = { bg = cp.surface1 },
+		illuminatedWord = { bg = C.surface1 },
+		illuminatedCurWord = { bg = C.surface1 },
 		-- diff
-		diffAdded = { fg = cp.green },
-		diffRemoved = { fg = cp.red },
-		diffChanged = { fg = cp.blue },
-		diffOldFile = { fg = cp.yellow },
-		diffNewFile = { fg = cp.peach },
-		diffFile = { fg = cp.blue },
-		diffLine = { fg = cp.overlay0 },
-		diffIndexLine = { fg = cp.teal },
-		DiffAdd = { bg = ucolors.darken(cp.green, 0.18, cp.base) }, -- diff mode: Added line |diff.txt|
-		DiffChange = { bg = ucolors.darken(cp.blue, 0.07, cp.base) }, -- diff mode: Changed line |diff.txt|
-		DiffDelete = { bg = ucolors.darken(cp.red, 0.18, cp.base) }, -- diff mode: Deleted line |diff.txt|
-		DiffText = { bg = ucolors.darken(cp.blue, 0.18, cp.base) }, -- diff mode: Changed text within a changed line |diff.txt|
+		diffAdded = { fg = C.green },
+		diffRemoved = { fg = C.red },
+		diffChanged = { fg = C.blue },
+		diffOldFile = { fg = C.yellow },
+		diffNewFile = { fg = C.peach },
+		diffFile = { fg = C.blue },
+		diffLine = { fg = C.overlay0 },
+		diffIndexLine = { fg = C.teal },
+		DiffAdd = { bg = U.darken(C.green, 0.18, C.base) }, -- diff mode: Added line |diff.txt|
+		DiffChange = { bg = U.darken(C.blue, 0.07, C.base) }, -- diff mode: Changed line |diff.txt|
+		DiffDelete = { bg = U.darken(C.red, 0.18, C.base) }, -- diff mode: Deleted line |diff.txt|
+		DiffText = { bg = U.darken(C.blue, 0.18, C.base) }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
-		healthError = { fg = cp.red },
-		healthSuccess = { fg = cp.teal },
-		healthWarning = { fg = cp.yellow },
+		healthError = { fg = C.red },
+		healthSuccess = { fg = C.teal },
+		healthWarning = { fg = C.yellow },
 		-- misc
 
 		-- glyphs
-		GlyphPalette1 = { fg = cp.red },
-		GlyphPalette2 = { fg = cp.teal },
-		GlyphPalette3 = { fg = cp.yellow },
-		GlyphPalette4 = { fg = cp.blue },
-		GlyphPalette6 = { fg = cp.teal },
-		GlyphPalette7 = { fg = cp.text },
-		GlyphPalette9 = { fg = cp.red },
+		GlyphPalette1 = { fg = C.red },
+		GlyphPalette2 = { fg = C.teal },
+		GlyphPalette3 = { fg = C.yellow },
+		GlyphPalette4 = { fg = C.blue },
+		GlyphPalette6 = { fg = C.teal },
+		GlyphPalette7 = { fg = C.text },
+		GlyphPalette9 = { fg = C.red },
 	}
 end
 

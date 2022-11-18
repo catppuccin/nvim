@@ -2,72 +2,70 @@ local M = {}
 
 function M.get()
 	return {
-		ColorColumn = { bg = cp.surface0 }, -- used for the columns set with 'colorcolumn'
-		Conceal = { fg = cp.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = cp.base, bg = cp.text }, -- character under the cursor
-		lCursor = { fg = cp.base, bg = cp.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { fg = cp.base, bg = cp.text }, -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn = { bg = cp.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is secp.
+		ColorColumn = { bg = C.surface0 }, -- used for the columns set with 'colorcolumn'
+		Conceal = { fg = C.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Cursor = { fg = C.base, bg = C.text }, -- character under the cursor
+		lCursor = { fg = C.base, bg = C.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = C.base, bg = C.text }, -- like Cursor, but used when in IME mode |CursorIM|
+		CursorColumn = { bg = C.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is seC.
 		CursorLine = {
-			bg = cnf.transparent_background and cp.none or ucolors.vary_color(
-				{ latte = ucolors.lighten(cp.mantle, 0.70, cp.base) },
-				ucolors.darken(cp.surface0, 0.64, cp.base)
-			),
-		}, -- Screen-line at the cursor, when 'cursorline' is secp.  Low-priority if forecrust (ctermfg OR guifg) is not secp.
-		Directory = { fg = cp.blue }, -- directory names (and other special names in listings)
-		EndOfBuffer = { fg = cp.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg = { fg = cp.red, style = { "bold", "italic" } }, -- error messages on the command line
-		VertSplit = { fg = cnf.transparent_background and cp.surface1 or cp.crust }, -- the column separating vertically split windows
-		Folded = { fg = cp.blue, bg = cnf.transparent_background and cp.none or cp.surface1 }, -- line used for closed folds
-		FoldColumn = { fg = cp.overlay0 }, -- 'foldcolumn'
-		SignColumn = { fg = cp.surface1 }, -- column where |signs| are displayed
-		SignColumnSB = { bg = cp.crust, fg = cp.surface1 }, -- column where |signs| are displayed
-		Substitute = { bg = cp.surface1, fg = cp.pink }, -- |:substitute| replacement text highlighting
-		LineNr = { fg = ucolors.vary_color({ latte = cp.base0 }, cp.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is secp.
-		CursorLineNr = { fg = cp.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = cp.peach, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = cp.text, style = { "bold" } }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea = { fg = cp.text }, -- Area for messages and cmdline
+			bg = O.transparent_background and C.none
+				or U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
+		}, -- Screen-line at the cursor, when 'cursorline' is seC.  Low-priority if forecrust (ctermfg OR guifg) is not seC.
+		Directory = { fg = C.blue }, -- directory names (and other special names in listings)
+		EndOfBuffer = { fg = C.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		ErrorMsg = { fg = C.red, style = { "bold", "italic" } }, -- error messages on the command line
+		VertSplit = { fg = O.transparent_background and C.surface1 or C.crust }, -- the column separating vertically split windows
+		Folded = { fg = C.blue, bg = O.transparent_background and C.none or C.surface1 }, -- line used for closed folds
+		FoldColumn = { fg = C.overlay0 }, -- 'foldcolumn'
+		SignColumn = { fg = C.surface1 }, -- column where |signs| are displayed
+		SignColumnSB = { bg = C.crust, fg = C.surface1 }, -- column where |signs| are displayed
+		Substitute = { bg = C.surface1, fg = C.pink }, -- |:substitute| replacement text highlighting
+		LineNr = { fg = U.vary_color({ latte = C.base0 }, C.surface1) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is seC.
+		CursorLineNr = { fg = C.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
+		MatchParen = { fg = C.peach, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg = { fg = C.text, style = { "bold" } }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea = { fg = C.text }, -- Area for messages and cmdline
 		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
-		MoreMsg = { fg = cp.blue }, -- |more-prompt|
-		NonText = { fg = cp.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base }, -- normal text
+		MoreMsg = { fg = C.blue }, -- |more-prompt|
+		NonText = { fg = C.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal = { fg = C.text, bg = O.transparent_background and C.none or C.base }, -- normal text
 		NormalNC = {
-			fg = cp.text,
-			bg = (cnf.transparent_background and cnf.dim_inactive.enabled and cp.dim)
-				or (cnf.dim_inactive.enabled and cp.dim)
-				or (cnf.transparent_background and cp.none)
-				or cp.base,
+			fg = C.text,
+			bg = (O.transparent_background and O.dim_inactive.enabled and C.dim)
+				or (O.dim_inactive.enabled and C.dim)
+				or (O.transparent_background and C.none)
+				or C.base,
 		}, -- normal text in non-current windows
-		NormalSB = { fg = cp.text, bg = cp.crust }, -- normal text in non-current windows
-		NormalFloat = { fg = cp.text, bg = cp.none }, -- Normal text in floating windows.
-		FloatBorder = { fg = cp.blue },
-		Pmenu = { bg = cnf.transparent_background and cp.none or cp.surface0, fg = cp.overlay2 }, -- Popup menu: normal item.
-		PmenuSel = { fg = cp.text, bg = cp.surface1, style = { "bold" } }, -- Popup menu: selected item.
-		PmenuSbar = { bg = cp.surface1 }, -- Popup menu: scrollbar.
-		PmenuThumb = { bg = cp.overlay0 }, -- Popup menu: Thumb of the scrollbar.
-		Question = { fg = cp.blue }, -- |hit-enter| prompt and yes/no questions
-		QuickFixLine = { bg = cp.surface1, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search = { bg = ucolors.darken(cp.sky, 0.30, cp.base), fg = cp.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand oucp.
-		IncSearch = { bg = ucolors.darken(cp.sky, 0.90, cp.base), fg = cp.mantle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		CurSearch = { bg = cp.red, fg = cp.mantle }, -- 'cursearch' highlighting: highlights the current search you're on differently
-		SpecialKey = { fg = cp.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
-		SpellBad = { sp = cp.red, style = { "undercurl" } }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap = { sp = cp.yellow, style = { "undercurl" } }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal = { sp = cp.blue, style = { "undercurl" } }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = cp.green, style = { "undercurl" } }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle }, -- status line of current window
-		StatusLineNC = { fg = cp.surface1, bg = cnf.transparent_background and cp.none or cp.mantle }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { bg = cp.mantle, fg = cp.surface1 }, -- tab pages line, not active tab page label
-		TabLineFill = { bg = cp.black }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = cp.green, bg = cp.surface1 }, -- tab pages line, active tab page label
-		Title = { fg = cp.blue, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etcp.
-		Visual = { bg = cp.surface1, style = { "bold" } }, -- Visual mode selection
-		VisualNOS = { bg = cp.surface1, style = { "bold" } }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg = { fg = cp.yellow }, -- warning messages
-		Whitespace = { fg = cp.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu = { bg = cp.overlay0 }, -- current match in 'wildmenu' completion
-		WinBar = { fg = cp.rosewater },
+		NormalSB = { fg = C.text, bg = C.crust }, -- normal text in non-current windows
+		NormalFloat = { fg = C.text, bg = C.none }, -- Normal text in floating windows.
+		FloatBorder = { fg = C.blue },
+		Pmenu = { bg = O.transparent_background and C.none or C.surface0, fg = C.overlay2 }, -- Popup menu: normal item.
+		PmenuSel = { fg = C.text, bg = C.surface1, style = { "bold" } }, -- Popup menu: selected item.
+		PmenuSbar = { bg = C.surface1 }, -- Popup menu: scrollbar.
+		PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
+		Question = { fg = C.blue }, -- |hit-enter| prompt and yes/no questions
+		QuickFixLine = { bg = C.surface1, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Search = { bg = U.darken(C.sky, 0.30, C.base), fg = C.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand ouC.
+		IncSearch = { bg = U.darken(C.sky, 0.90, C.base), fg = C.mantle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		CurSearch = { bg = C.red, fg = C.mantle }, -- 'cursearch' highlighting: highlights the current search you're on differently
+		SpecialKey = { fg = C.text }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
+		SpellBad = { sp = C.red, style = { "undercurl" } }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = C.yellow, style = { "undercurl" } }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal = { sp = C.blue, style = { "undercurl" } }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = C.green, style = { "undercurl" } }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		StatusLine = { fg = C.text, bg = O.transparent_background and C.none or C.mantle }, -- status line of current window
+		StatusLineNC = { fg = C.surface1, bg = O.transparent_background and C.none or C.mantle }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { bg = C.mantle, fg = C.surface1 }, -- tab pages line, not active tab page label
+		TabLineFill = { bg = C.black }, -- tab pages line, where there are no labels
+		TabLineSel = { fg = C.green, bg = C.surface1 }, -- tab pages line, active tab page label
+		Title = { fg = C.blue, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etC.
+		Visual = { bg = C.surface1, style = { "bold" } }, -- Visual mode selection
+		VisualNOS = { bg = C.surface1, style = { "bold" } }, -- Visual mode selection when vim is "Not Owning the Selection".
+		WarningMsg = { fg = C.yellow }, -- warning messages
+		Whitespace = { fg = C.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WildMenu = { bg = C.overlay0 }, -- current match in 'wildmenu' completion
+		WinBar = { fg = C.rosewater },
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
 		-- overlay0ed out groups should chain up to their "preferred" group by

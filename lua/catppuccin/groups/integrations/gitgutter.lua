@@ -2,9 +2,10 @@ local M = {}
 
 function M.get()
 	return {
-		GitGutterAdd = { fg = cp.green },
-		GitGutterChange = { fg = cp.yellow },
-		GitGutterDelete = { fg = cp.red },
+		GitGutterAdd = { fg = C.green },
+		GitGutterChange = { fg = C.yellow },
+		GitGutterDelete = { fg = C.red },
 	}
 end
+
 return M

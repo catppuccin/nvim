@@ -1,20 +1,20 @@
 local M = {}
 
-local virtual_text = cnf.integrations.native_lsp.virtual_text
+local virtual_text = O.integrations.native_lsp.virtual_text
 
 function M.get()
 	return { -- Personally the default integration is already pretty good
-		NoiceCmdline = { fg = cp.text },
-		NoiceCmdlineIcon = { fg = cp.sky, style = virtual_text.information },
-		NoiceCmdlineIconSearch = { fg = cp.yellow },
-		NoiceCmdlinePopup = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base },
-		NoiceCmdlinePopupBorder = { fg = cp.lavender },
-		NoiceCmdlinePopupBorderSearch = { fg = cp.yellow },
-		NoiceConfirm = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.base },
-		NoiceConfirmBorder = { fg = cp.blue },
-		NoiceCursor = { fg = cp.text },
-		NoiceMini = { fg = cp.text },
-		NoicePopup = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle },
+		NoiceCmdline = { fg = C.text },
+		NoiceCmdlineIcon = { fg = C.sky, style = virtual_text.information },
+		NoiceCmdlineIconSearch = { fg = C.yellow },
+		NoiceCmdlinePopup = { fg = C.text, bg = O.transparent_background and C.none or C.base },
+		NoiceCmdlinePopupBorder = { fg = C.lavender },
+		NoiceCmdlinePopupBorderSearch = { fg = C.yellow },
+		NoiceConfirm = { fg = C.text, bg = O.transparent_background and C.none or C.base },
+		NoiceConfirmBorder = { fg = C.blue },
+		NoiceCursor = { fg = C.text },
+		NoiceMini = { fg = C.text },
+		NoicePopup = { fg = C.text, bg = O.transparent_background and C.none or C.mantle },
 		NoicePopupBorder = { link = "FloatBorder" },
 		NoicePopupmenu = { link = "Pmenu" },
 		NoicePopupmenuBorder = { link = "FloatBorder" },
@@ -22,7 +22,7 @@ function M.get()
 		NoicePopupmenuSelected = { link = "PmenuSel" },
 		NoiceScrollbar = { link = "PmenuSbar" },
 		NoiceScrollbarThumb = { link = "PmenuThumb" },
-		NoiceSplit = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle },
+		NoiceSplit = { fg = C.text, bg = O.transparent_background and C.none or C.mantle },
 		NoiceSplitBorder = { link = "FloatBorder" },
 		NoiceVirtualText = { link = "DiagnosticVirtualTextInfo" },
 	}
