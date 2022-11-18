@@ -1,10 +1,10 @@
 local M = {}
 
 function M.get()
-	local error = cp.red
-	local warning = cp.yellow
-	local info = cp.sky
-	local hint = cp.teal
+	local error = C.red
+	local warning = C.yellow
+	local info = C.sky
+	local hint = C.teal
 
 	return {
 		-- These groups are for the coc.nvim, see ":h coc-highlights"

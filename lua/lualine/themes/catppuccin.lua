@@ -1,39 +1,39 @@
-local cp = require("catppuccin.palettes").get_palette()
+local C = require("catppuccin.palettes").get_palette()
 local config = require("catppuccin").options
 local catppuccin = {}
 
-local transparent_bg = config.transparent_background and "NONE" or cp.mantle
+local transparent_bg = config.transparent_background and "NONE" or C.mantle
 
 catppuccin.normal = {
-	a = { bg = cp.blue, fg = cp.mantle, gui = "bold" },
-	b = { bg = cp.surface1, fg = cp.blue },
-	c = { bg = transparent_bg, fg = cp.text },
+	a = { bg = C.blue, fg = C.mantle, gui = "bold" },
+	b = { bg = C.surface1, fg = C.blue },
+	c = { bg = transparent_bg, fg = C.text },
 }
 
 catppuccin.insert = {
-	a = { bg = cp.green, fg = cp.base, gui = "bold" },
-	b = { bg = cp.surface1, fg = cp.teal },
+	a = { bg = C.green, fg = C.base, gui = "bold" },
+	b = { bg = C.surface1, fg = C.teal },
 }
 
 catppuccin.command = {
-	a = { bg = cp.peach, fg = cp.base, gui = "bold" },
-	b = { bg = cp.surface1, fg = cp.peach },
+	a = { bg = C.peach, fg = C.base, gui = "bold" },
+	b = { bg = C.surface1, fg = C.peach },
 }
 
 catppuccin.visual = {
-	a = { bg = cp.mauve, fg = cp.base, gui = "bold" },
-	b = { bg = cp.surface1, fg = cp.mauve },
+	a = { bg = C.mauve, fg = C.base, gui = "bold" },
+	b = { bg = C.surface1, fg = C.mauve },
 }
 
 catppuccin.replace = {
-	a = { bg = cp.red, fg = cp.base, gui = "bold" },
-	b = { bg = cp.surface1, fg = cp.red },
+	a = { bg = C.red, fg = C.base, gui = "bold" },
+	b = { bg = C.surface1, fg = C.red },
 }
 
 catppuccin.inactive = {
-	a = { bg = transparent_bg, fg = cp.blue },
-	b = { bg = transparent_bg, fg = cp.surface1, gui = "bold" },
-	c = { bg = transparent_bg, fg = cp.overlay0 },
+	a = { bg = transparent_bg, fg = C.blue },
+	b = { bg = transparent_bg, fg = C.surface1, gui = "bold" },
+	c = { bg = transparent_bg, fg = C.overlay0 },
 }
 
 return catppuccin

@@ -2,9 +2,9 @@ local M = {}
 
 function M.get()
 	return {
-		IlluminatedWordText = { bg = ucolors.darken(cp.surface1, 0.7, cp.base) },
-		IlluminatedWordRead = { bg = ucolors.darken(cp.surface1, 0.7, cp.base) },
-		IlluminatedWordWrite = { bg = ucolors.darken(cp.surface1, 0.7, cp.base) },
+		IlluminatedWordText = { bg = U.darken(C.surface1, 0.7, C.base) },
+		IlluminatedWordRead = { bg = U.darken(C.surface1, 0.7, C.base) },
+		IlluminatedWordWrite = { bg = U.darken(C.surface1, 0.7, C.base) },
 	}
 end
 

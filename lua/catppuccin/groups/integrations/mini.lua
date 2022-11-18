@@ -2,9 +2,9 @@ local M = {}
 
 function M.get()
 	local transparent_background = require("catppuccin").options.transparent_background
-	local bg_highlight = transparent_background and "NONE" or cp.base
+	local bg_highlight = transparent_background and "NONE" or C.base
 
-	local inactive_bg = transparent_background and "NONE" or cp.mantle
+	local inactive_bg = transparent_background and "NONE" or C.mantle
 
 	return {
 		MiniCompletionActiveParameter = { style = { "underline" } },
@@ -12,50 +12,50 @@ function M.get()
 		MiniCursorword = { style = { "underline" } },
 		MiniCursorwordCurrent = { style = { "underline" } },
 
-		MiniIndentscopeSymbol = { fg = cp.text },
+		MiniIndentscopeSymbol = { fg = C.text },
 		MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
 
-		MiniJump = { fg = cp.overlay2, bg = cp.pink },
+		MiniJump = { fg = C.overlay2, bg = C.pink },
 
-		MiniJump2dSpot = { bg = cp.base, fg = cp.peach, style = { "bold", "underline" } },
+		MiniJump2dSpot = { bg = C.base, fg = C.peach, style = { "bold", "underline" } },
 
 		MiniStarterCurrent = {},
-		MiniStarterFooter = { fg = cp.yellow, style = { "italic" } },
-		MiniStarterHeader = { fg = cp.blue },
-		MiniStarterInactive = { fg = cp.surface2, style = cnf.styles.comments },
-		MiniStarterItem = { fg = cp.text },
-		MiniStarterItemBullet = { fg = cp.blue },
-		MiniStarterItemPrefix = { fg = cp.pink },
-		MiniStarterSection = { fg = cp.flamingo },
-		MiniStarterQuery = { fg = cp.green },
+		MiniStarterFooter = { fg = C.yellow, style = { "italic" } },
+		MiniStarterHeader = { fg = C.blue },
+		MiniStarterInactive = { fg = C.surface2, style = O.styles.comments },
+		MiniStarterItem = { fg = C.text },
+		MiniStarterItemBullet = { fg = C.blue },
+		MiniStarterItemPrefix = { fg = C.pink },
+		MiniStarterSection = { fg = C.flamingo },
+		MiniStarterQuery = { fg = C.green },
 
-		MiniStatuslineDevinfo = { fg = cp.subtext1, bg = cp.surface1 },
-		MiniStatuslineFileinfo = { fg = cp.subtext1, bg = cp.surface1 },
-		MiniStatuslineFilename = { fg = cp.text, bg = cp.mantle },
-		MiniStatuslineInactive = { fg = cp.blue, bg = cp.mantle },
-		MiniStatuslineModeCommand = { fg = cp.base, bg = cp.peach, style = { "bold" } },
-		MiniStatuslineModeInsert = { fg = cp.base, bg = cp.green, style = { "bold" } },
-		MiniStatuslineModeNormal = { fg = cp.mantle, bg = cp.blue, style = { "bold" } },
-		MiniStatuslineModeOther = { fg = cp.base, bg = cp.teal, style = { "bold" } },
-		MiniStatuslineModeReplace = { fg = cp.base, bg = cp.red, style = { "bold" } },
-		MiniStatuslineModeVisual = { fg = cp.base, bg = cp.mauve, style = { "bold" } },
+		MiniStatuslineDevinfo = { fg = C.subtext1, bg = C.surface1 },
+		MiniStatuslineFileinfo = { fg = C.subtext1, bg = C.surface1 },
+		MiniStatuslineFilename = { fg = C.text, bg = C.mantle },
+		MiniStatuslineInactive = { fg = C.blue, bg = C.mantle },
+		MiniStatuslineModeCommand = { fg = C.base, bg = C.peach, style = { "bold" } },
+		MiniStatuslineModeInsert = { fg = C.base, bg = C.green, style = { "bold" } },
+		MiniStatuslineModeNormal = { fg = C.mantle, bg = C.blue, style = { "bold" } },
+		MiniStatuslineModeOther = { fg = C.base, bg = C.teal, style = { "bold" } },
+		MiniStatuslineModeReplace = { fg = C.base, bg = C.red, style = { "bold" } },
+		MiniStatuslineModeVisual = { fg = C.base, bg = C.mauve, style = { "bold" } },
 
-		MiniSurround = { bg = cp.pink, fg = cp.surface1 },
+		MiniSurround = { bg = C.pink, fg = C.surface1 },
 
-		MiniTablineCurrent = { fg = cp.text, bg = cp.base, sp = cp.red, style = { "bold", "italic", "underline" } },
+		MiniTablineCurrent = { fg = C.text, bg = C.base, sp = C.red, style = { "bold", "italic", "underline" } },
 		MiniTablineFill = { bg = bg_highlight },
-		MiniTablineHidden = { fg = cp.text, bg = inactive_bg },
-		MiniTablineModifiedCurrent = { fg = cp.red, bg = cp.none, style = { "bold", "italic" } },
-		MiniTablineModifiedHidden = { fg = cp.red, bg = cp.none },
-		MiniTablineModifiedVisible = { fg = cp.red, bg = cp.none },
-		MiniTablineTabpagesection = { fg = cp.surface1, bg = cp.base },
-		MiniTablineVisible = { bg = cp.none },
+		MiniTablineHidden = { fg = C.text, bg = inactive_bg },
+		MiniTablineModifiedCurrent = { fg = C.red, bg = C.none, style = { "bold", "italic" } },
+		MiniTablineModifiedHidden = { fg = C.red, bg = C.none },
+		MiniTablineModifiedVisible = { fg = C.red, bg = C.none },
+		MiniTablineTabpagesection = { fg = C.surface1, bg = C.base },
+		MiniTablineVisible = { bg = C.none },
 
 		MiniTestEmphasis = { style = { "bold" } },
-		MiniTestFail = { fg = cp.red, style = { "bold" } },
-		MiniTestPass = { fg = cp.green, style = { "bold" } },
+		MiniTestFail = { fg = C.red, style = { "bold" } },
+		MiniTestPass = { fg = C.green, style = { "bold" } },
 
-		MiniTrailspace = { bg = cp.red },
+		MiniTrailspace = { bg = C.red },
 	}
 end
 

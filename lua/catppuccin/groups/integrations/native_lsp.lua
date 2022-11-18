@@ -1,49 +1,49 @@
 local M = {}
 
 function M.get()
-	local virtual_text = cnf.integrations.native_lsp.virtual_text
-	local underlines = cnf.integrations.native_lsp.underlines
+	local virtual_text = O.integrations.native_lsp.virtual_text
+	local underlines = O.integrations.native_lsp.underlines
 
-	local error = cp.red
-	local warning = cp.yellow
-	local info = cp.sky
-	local hint = cp.teal
+	local error = C.red
+	local warning = C.yellow
+	local info = C.sky
+	local hint = C.teal
 	local darkening_percentage = 0.095
 
 	return {
-		-- These groups are for the native LSP cliencp. Some other LSP clients may
+		-- These groups are for the native LSP clienC. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText = { bg = cp.surface1 }, -- used for highlighting "text" references
-		LspReferenceRead = { bg = cp.surface1 }, -- used for highlighting "read" references
-		LspReferenceWrite = { bg = cp.surface1 }, -- used for highlighting "write" references
+		LspReferenceText = { bg = C.surface1 }, -- used for highlighting "text" references
+		LspReferenceRead = { bg = C.surface1 }, -- used for highlighting "read" references
+		LspReferenceWrite = { bg = C.surface1 }, -- used for highlighting "write" references
 		-- hightlight diagnostics in numberline
 
 		DiagnosticVirtualTextError = {
-			bg = cnf.transparent_background and cp.none or ucolors.darken(error, darkening_percentage, cp.base),
+			bg = O.transparent_background and C.none or U.darken(error, darkening_percentage, C.base),
 			fg = error,
 			style = virtual_text.errors,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextWarn = {
-			bg = cnf.transparent_background and cp.none or ucolors.darken(warning, darkening_percentage, cp.base),
+			bg = O.transparent_background and C.none or U.darken(warning, darkening_percentage, C.base),
 			fg = warning,
 			style = virtual_text.warnings,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextInfo = {
-			bg = cnf.transparent_background and cp.none or ucolors.darken(info, darkening_percentage, cp.base),
+			bg = O.transparent_background and C.none or U.darken(info, darkening_percentage, C.base),
 			fg = info,
 			style = virtual_text.information,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticVirtualTextHint = {
-			bg = cnf.transparent_background and cp.none or ucolors.darken(hint, darkening_percentage, cp.base),
+			bg = O.transparent_background and C.none or U.darken(hint, darkening_percentage, C.base),
 			fg = hint,
 			style = virtual_text.hints,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 
-		DiagnosticError = { bg = cp.none, fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { bg = cp.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { bg = cp.none, fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { bg = cp.none, fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { bg = C.none, fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { bg = C.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { bg = C.none, fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { bg = C.none, fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 
 		-- for nvim nightly
 		DiagnosticUnderlineError = { style = underlines.errors, sp = error }, -- Used to underline "Error" diagnostics
@@ -65,7 +65,7 @@ function M.get()
 		LspDiagnosticsDefaultWarning = { fg = warning }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultInformation = { fg = info }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultHint = { fg = hint }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		LspSignatureActiveParameter = { fg = cp.peach },
+		LspSignatureActiveParameter = { fg = C.peach },
 		-- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
 		-- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
 		-- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float
@@ -83,8 +83,8 @@ function M.get()
 		LspDiagnosticsUnderlineWarning = { style = underlines.warnings, sp = warning }, -- Used to underline "Warning" diagnostics
 		LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = info }, -- Used to underline "Information" diagnostics
 		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
-		LspCodeLens = { fg = cp.overlay0 }, -- virtual text of the codelens
-		LspInfoBorder = { fg = cp.blue }, -- LspInfo border
+		LspCodeLens = { fg = C.overlay0 }, -- virtual text of the codelens
+		LspInfoBorder = { fg = C.blue }, -- LspInfo border
 	}
 end
 

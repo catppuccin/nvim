@@ -549,6 +549,7 @@ Here are the defaults:
 ```lua
 local clrs = require("catppuccin.palettes").get_palette()
 local ctp_feline = require('catppuccin.groups.integrations.feline')
+local U = require "catppuccin.utils.colors"
 
 ctp_feline.setup({
     assets = {
@@ -573,8 +574,8 @@ ctp_feline.setup({
         },
     },
     sett = {
-        text = ucolors.vary_color({ latte = latte.base }, clrs.surface0),
-        bkg = ucolors.vary_color({ latte = latte.crust }, clrs.surface0),
+        text = U.vary_color({ latte = latte.base }, clrs.surface0),
+        bkg = U.vary_color({ latte = latte.crust }, clrs.surface0),
         diffs = clrs.mauve,
         extras = clrs.overlay1,
         curr_file = clrs.maroon,

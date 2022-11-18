@@ -2,10 +2,10 @@ local M = {}
 
 function M.get()
 	return {
-		DashboardShortCut = { fg = cp.pink },
-		DashboardHeader = { fg = cp.blue },
-		DashboardCenter = { fg = cp.green },
-		DashboardFooter = { fg = cp.yellow, style = { "italic" } },
+		DashboardShortCut = { fg = C.pink },
+		DashboardHeader = { fg = C.blue },
+		DashboardCenter = { fg = C.green },
+		DashboardFooter = { fg = C.yellow, style = { "italic" } },
 	}
 end
 

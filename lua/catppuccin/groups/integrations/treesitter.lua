@@ -19,18 +19,18 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@error"] = { link = "Error" },
 		["@preproc"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
 		["@define"] = { link = "Define" }, -- preprocessor definition directives
-		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in cp.
+		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
 
 		-- Punctuation
-		["@punctuation.delimiter"] = { fg = cp.overlay2 }, -- For delimiters ie: .
-		["@punctuation.bracket"] = { fg = cp.overlay2 }, -- For brackets and parenthesis.
-		["@punctuation.special"] = { fg = cp.sky, style = cnf.styles.operators or {} }, -- For special punctutation that does not fall in the catagories before.
+		["@punctuation.delimiter"] = { fg = C.overlay2 }, -- For delimiters ie: .
+		["@punctuation.bracket"] = { fg = C.overlay2 }, -- For brackets and parenthesis.
+		["@punctuation.special"] = { fg = C.sky, style = O.styles.operators or {} }, -- For special punctutation that does not fall in the catagories before.
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
-		["@string.regex"] = { fg = cp.peach, style = cnf.styles.strings or {} }, -- For regexes.
-		["@string.escape"] = { fg = cp.pink, style = cnf.styles.strings }, -- For escape characters within a string.
-		["@string.special"] = { fg = cp.blue }, -- other special strings (e.g. dates)
+		["@string.regex"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
+		["@string.escape"] = { fg = C.pink, style = O.styles.strings }, -- For escape characters within a string.
+		["@string.special"] = { fg = C.blue }, -- other special strings (e.g. dates)
 
 		["@character"] = { link = "Character" }, -- character literals
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
@@ -41,118 +41,118 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
-		["@function.builtin"] = { fg = cp.peach, style = cnf.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
+		["@function.builtin"] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
 		["@function.call"] = { link = "@function" }, -- function calls
-		["@function.macro"] = { fg = cp.teal, style = cnf.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
-		["@method"] = { fg = cp.blue, style = cnf.styles.functions or {} }, -- For method calls and definitions.
+		["@function.macro"] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
+		["@method"] = { fg = C.blue, style = O.styles.functions or {} }, -- For method calls and definitions.
 
 		["@method.call"] = { link = "@method" }, -- method calls
 
-		["@constructor"] = { fg = cp.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		["@parameter"] = { fg = cp.maroon, style = { "italic" } }, -- For parameters of a function.
+		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@parameter"] = { fg = C.maroon, style = { "italic" } }, -- For parameters of a function.
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"] = { fg = cp.mauve, style = cnf.styles.keywords or {} }, -- For keywords used to define a fuction.
-		["@keyword.operator"] = { fg = cp.mauve, style = cnf.styles.operators or {} }, -- For new keyword operator
-		["@keyword.return"] = { fg = cp.mauve, style = cnf.styles.keywords or {} },
+		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a fuction.
+		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
+		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
 
 		["@conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
 		["@repeat"] = { link = "Repeat" }, -- For keywords related to loops.
 		-- @debug            ; keywords related to debugging
 		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
 		["@include"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-		["@exception"] = { fg = cp.mauve, style = cnf.styles.keywords or {} }, -- For exception related keywords.
+		["@exception"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For exception related keywords.
 
 		-- Types
 
 		["@type"] = { link = "Type" }, -- For types.
-		["@type.builtin"] = { fg = cp.yellow, style = cnf.styles.properties or "italic" }, -- For builtin types.
+		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or "italic" }, -- For builtin types.
 		["@type.definition"] = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
 		["@type.qualifier"] = { link = "@type" }, -- type qualifiers (e.g. `const`)
 
 		["@storageclass"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@field"] = { fg = cp.teal }, -- For fields.
-		["@property"] = { fg = cp.teal, style = cnf.styles.properties or {} }, -- Same as TSField.
+		["@field"] = { fg = C.teal }, -- For fields.
+		["@property"] = { fg = C.teal, style = O.styles.properties or {} }, -- Same as TSField.
 
 		-- Identifiers
 
-		["@variable"] = { link = "Identifiers" }, -- Any variable name that does not have another highlighcp.
-		["@variable.builtin"] = { fg = cp.red }, -- Variable names that are defined by the languages, like this or self.
+		["@variable"] = { link = "Identifiers" }, -- Any variable name that does not have another highlighC.
+		["@variable.builtin"] = { fg = C.red }, -- Variable names that are defined by the languages, like this or self.
 
-		["@constant"] = { fg = cp.peach }, -- For constants
-		["@constant.builtin"] = { fg = cp.peach, style = cnf.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
-		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in cp.
+		["@constant"] = { fg = C.peach }, -- For constants
+		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
+		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		["@namespace"] = { fg = cp.blue, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
-		["@symbol"] = { fg = cp.flamingo },
+		["@namespace"] = { fg = C.blue, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
+		["@symbol"] = { fg = C.flamingo },
 
 		-- Text
 
-		["@text"] = { fg = cp.text }, -- For strings considerated text in a markup language.
-		["@text.strong"] = { fg = cp.maroon, style = { "bold" } }, -- bold
-		["@text.emphasis"] = { fg = cp.maroon, style = { "italic" } }, -- italic
+		["@text"] = { fg = C.text }, -- For strings considerated text in a markup language.
+		["@text.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
+		["@text.emphasis"] = { fg = C.maroon, style = { "italic" } }, -- italic
 		["@text.underline"] = { link = "Underline" }, -- underlined text
-		["@text.strike"] = { fg = cp.text, style = { "strikethrough" } }, -- strikethrough text
-		["@text.title"] = { fg = cp.blue, style = { "bold" } }, -- titles like: # Example
-		["@text.literal"] = { fg = cp.teal, style = { "italic" } }, -- used for inline code in markdown and for doc in python (""")
-		["@text.uri"] = { fg = cp.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
-		["@text.math"] = { fg = cp.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
-		["@text.environment"] = { fg = cp.pink }, -- text environments of markup languages
-		["@text.environment.name"] = { fg = cp.blue }, -- text indicating the type of an environment
-		["@text.reference"] = { fg = cp.lavender, style = { "bold" } }, -- references
+		["@text.strike"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
+		["@text.title"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
+		["@text.literal"] = { fg = C.teal, style = { "italic" } }, -- used for inline code in markdown and for doc in python (""")
+		["@text.uri"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
+		["@text.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
+		["@text.environment"] = { fg = C.pink }, -- text environments of markup languages
+		["@text.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
+		["@text.reference"] = { fg = C.lavender, style = { "bold" } }, -- references
 
-		["@text.todo"] = { bg = cp.yellow }, -- todo notes
-		["@text.note"] = { fg = cp.base, bg = cp.blue },
-		["@text.warning"] = { fg = cp.base, bg = cp.yellow },
-		["@text.danger"] = { fg = cp.base, bg = cp.red },
+		["@text.todo"] = { bg = C.yellow }, -- todo notes
+		["@text.note"] = { fg = C.base, bg = C.blue },
+		["@text.warning"] = { fg = C.base, bg = C.yellow },
+		["@text.danger"] = { fg = C.base, bg = C.red },
 
 		["@text.diff.add"] = { link = "diffAdd" }, -- added text (for diff files)
 		["@text.diff.delete"] = { link = "diffDelete" }, -- deleted text (for diff files)
 
 		-- Tags
-		["@tag"] = { fg = cp.mauve }, -- Tags like html tag names.
-		["@tag.attribute"] = { fg = cp.teal, style = { "italic" } }, -- Tags like html tag names.
-		["@tag.delimiter"] = { fg = cp.sky }, -- Tag delimiter like < > /
+		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
+		["@tag.attribute"] = { fg = C.teal, style = { "italic" } }, -- Tags like html tag names.
+		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
 
 		-- Language specific:
 
 		-- css
-		["@property.css"] = { fg = cp.lavender },
-		["@property.id.css"] = { fg = cp.blue },
-		["@property.class.css"] = { fg = cp.yellow },
-		["@type.css"] = { fg = cp.lavender },
-		["@type.tag.css"] = { fg = cp.mauve },
-		["@string.plain.css"] = { fg = cp.peach },
-		["@number.css"] = { fg = cp.peach },
+		["@property.css"] = { fg = C.lavender },
+		["@property.id.css"] = { fg = C.blue },
+		["@property.class.css"] = { fg = C.yellow },
+		["@type.css"] = { fg = C.lavender },
+		["@type.tag.css"] = { fg = C.mauve },
+		["@string.plain.css"] = { fg = C.peach },
+		["@number.css"] = { fg = C.peach },
 
 		-- toml
-		["@property.toml"] = { fg = cp.blue }, -- Differentiates between string and properties
+		["@property.toml"] = { fg = C.blue }, -- Differentiates between string and properties
 
 		-- json
-		["@label.json"] = { fg = cp.blue }, -- For labels: label: in C and :label: in Lua.
+		["@label.json"] = { fg = C.blue }, -- For labels: label: in C and :label: in Lua.
 
 		-- lua
-		["@field.lua"] = { fg = cp.lavender },
-		["@constructor.lua"] = { fg = cp.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@field.lua"] = { fg = C.lavender },
+		["@constructor.lua"] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
 		-- typescript
-		["@constructor.typescript"] = { fg = cp.lavender },
+		["@constructor.typescript"] = { fg = C.lavender },
 
 		-- TSX (Typescript React)
-		["@keyword.export.tsx"] = { fg = cp.sky, style = { "bold" } },
-		["@constructor.tsx"] = { fg = cp.lavender },
-		["@tag.attribute.tsx"] = { fg = cp.mauve },
+		["@keyword.export.tsx"] = { fg = C.sky, style = { "bold" } },
+		["@constructor.tsx"] = { fg = C.lavender },
+		["@tag.attribute.tsx"] = { fg = C.mauve },
 
 		-- cpp
-		["@property.cpp"] = { fg = cp.rosewater },
+		["@property.cpp"] = { fg = C.rosewater },
 
 		-- yaml
-		["@field.yaml"] = { fg = cp.blue }, -- For fields.
+		["@field.yaml"] = { fg = C.blue }, -- For fields.
 
 		-- Ruby
-		["@symbol.ruby"] = { fg = cp.flamingo },
+		["@symbol.ruby"] = { fg = C.flamingo },
 	}
 end
 

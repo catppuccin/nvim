@@ -2,18 +2,18 @@ local M = {}
 
 function M.get()
 	return {
-		VimwikiLink = { fg = cp.sky, bg = cp.none },
-		VimwikiHeaderChar = { fg = cp.grey, bg = cp.none },
-		VimwikiHR = { fg = cp.yellow, bg = cp.none },
-		VimwikiList = { fg = cp.peach, bg = cp.none },
-		VimwikiTag = { fg = cp.peach, bg = cp.none },
-		VimwikiMarkers = { fg = cp.subtext0, bg = cp.none },
-		VimwikiHeader1 = { fg = cp.peach, bg = cp.none, style = { "bold" } },
-		VimwikiHeader2 = { fg = cp.green, bg = cp.none, style = { "bold" } },
-		VimwikiHeader3 = { fg = cp.blue, bg = cp.none, style = { "bold" } },
-		VimwikiHeader4 = { fg = cp.sky, bg = cp.none, style = { "bold" } },
-		VimwikiHeader5 = { fg = cp.yellow, bg = cp.none, style = { "bold" } },
-		VimwikiHeader6 = { fg = cp.mauve, bg = cp.none, style = { "bold" } },
+		VimwikiLink = { fg = C.sky, bg = C.none },
+		VimwikiHeaderChar = { fg = C.grey, bg = C.none },
+		VimwikiHR = { fg = C.yellow, bg = C.none },
+		VimwikiList = { fg = C.peach, bg = C.none },
+		VimwikiTag = { fg = C.peach, bg = C.none },
+		VimwikiMarkers = { fg = C.subtext0, bg = C.none },
+		VimwikiHeader1 = { fg = C.peach, bg = C.none, style = { "bold" } },
+		VimwikiHeader2 = { fg = C.green, bg = C.none, style = { "bold" } },
+		VimwikiHeader3 = { fg = C.blue, bg = C.none, style = { "bold" } },
+		VimwikiHeader4 = { fg = C.sky, bg = C.none, style = { "bold" } },
+		VimwikiHeader5 = { fg = C.yellow, bg = C.none, style = { "bold" } },
+		VimwikiHeader6 = { fg = C.mauve, bg = C.none, style = { "bold" } },
 	}
 end
 

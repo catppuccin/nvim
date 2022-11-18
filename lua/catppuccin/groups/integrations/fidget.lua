@@ -3,10 +3,10 @@ local M = {}
 function M.get()
 	return {
 		FidgetTask = {
-			bg = cnf.transparent_background and cp.none or cp.mantle,
-			fg = cp.text,
+			bg = O.transparent_background and C.none or C.mantle,
+			fg = C.text,
 		},
-		FidgetTitle = { fg = cp.blue },
+		FidgetTitle = { fg = C.blue },
 	}
 end
 

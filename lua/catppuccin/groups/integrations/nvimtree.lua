@@ -2,22 +2,22 @@ local M = {}
 
 function M.get()
 	return {
-		NvimTreeFolderName = { fg = cp.blue },
-		NvimTreeFolderIcon = { fg = cp.blue },
-		NvimTreeNormal = { fg = cp.text, bg = cnf.transparent_background and cp.none or cp.mantle },
-		NvimTreeOpenedFolderName = { fg = cp.blue },
-		NvimTreeEmptyFolderName = { fg = cp.blue },
-		NvimTreeIndentMarker = { fg = cp.overlay0 },
-		NvimTreeVertSplit = { fg = cp.base, bg = cnf.transparent_background and cp.none or cp.base },
-		NvimTreeRootFolder = { fg = cp.lavender, style = { "bold" } },
-		NvimTreeSymlink = { fg = cp.pink },
-		NvimTreeStatuslineNc = { fg = cp.mantle, bg = cp.mantle },
-		NvimTreeGitDirty = { fg = cp.yellow },
-		NvimTreeGitNew = { fg = cp.blue },
-		NvimTreeGitDeleted = { fg = cp.red },
-		NvimTreeSpecialFile = { fg = cp.flamingo },
-		NvimTreeImageFile = { fg = cp.text },
-		NvimTreeOpenedFile = { fg = cp.pink },
+		NvimTreeFolderName = { fg = C.blue },
+		NvimTreeFolderIcon = { fg = C.blue },
+		NvimTreeNormal = { fg = C.text, bg = O.transparent_background and C.none or C.mantle },
+		NvimTreeOpenedFolderName = { fg = C.blue },
+		NvimTreeEmptyFolderName = { fg = C.blue },
+		NvimTreeIndentMarker = { fg = C.overlay0 },
+		NvimTreeVertSplit = { fg = C.base, bg = O.transparent_background and C.none or C.base },
+		NvimTreeRootFolder = { fg = C.lavender, style = { "bold" } },
+		NvimTreeSymlink = { fg = C.pink },
+		NvimTreeStatuslineNc = { fg = C.mantle, bg = C.mantle },
+		NvimTreeGitDirty = { fg = C.yellow },
+		NvimTreeGitNew = { fg = C.blue },
+		NvimTreeGitDeleted = { fg = C.red },
+		NvimTreeSpecialFile = { fg = C.flamingo },
+		NvimTreeImageFile = { fg = C.text },
+		NvimTreeOpenedFile = { fg = C.pink },
 	}
 end
 

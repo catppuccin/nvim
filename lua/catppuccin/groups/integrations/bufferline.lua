@@ -1,93 +1,93 @@
 local M = {}
 local ctp = require "catppuccin"
-local cnf = ctp.options
+local O = ctp.options
 
 function M.get(user_config)
 	user_config = user_config or {}
 	-- Backward compatibility
-	if cnf.integrations.bufferline then return {} end
+	if O.integrations.bufferline then return {} end
 	return function()
-		local cp = require("catppuccin.palettes").get_palette()
-		local transparent_background = cnf.transparent_background
-		local bg_highlight = (transparent_background and cnf.dim_inactive.enabled and cp.dim)
+		local C = require("catppuccin.palettes").get_palette()
+		local transparent_background = O.transparent_background
+		local bg_highlight = (transparent_background and O.dim_inactive.enabled and C.dim)
 			or (transparent_background and "NONE")
-			or (cnf.dim_inactive.enabled and cp.dim)
-			or cp.crust
+			or (O.dim_inactive.enabled and C.dim)
+			or C.crust
 
-		local active_bg = transparent_background and "NONE" or cp.base
-		local inactive_bg = transparent_background and "NONE" or cp.mantle
+		local active_bg = transparent_background and "NONE" or C.base
+		local inactive_bg = transparent_background and "NONE" or C.mantle
 
-		local separator_fg = cnf.transparent_background and cp.surface1 or cp.crust
+		local separator_fg = O.transparent_background and C.surface1 or C.crust
 
 		local styles = user_config.styles or { "bold", "italic" }
 
 		local highlights = {
 			-- buffers
 			background = { bg = inactive_bg },
-			buffer_visible = { fg = cp.surface1, bg = inactive_bg },
-			buffer_selected = { fg = cp.text, bg = active_bg, style = styles }, -- current
+			buffer_visible = { fg = C.surface1, bg = inactive_bg },
+			buffer_selected = { fg = C.text, bg = active_bg, style = styles }, -- current
 			-- Duplicate
-			duplicate_selected = { fg = cp.text, bg = active_bg, style = styles },
-			duplicate_visible = { fg = cp.surface1, bg = inactive_bg, style = styles },
-			duplicate = { fg = cp.surface1, bg = inactive_bg, style = styles },
+			duplicate_selected = { fg = C.text, bg = active_bg, style = styles },
+			duplicate_visible = { fg = C.surface1, bg = inactive_bg, style = styles },
+			duplicate = { fg = C.surface1, bg = inactive_bg, style = styles },
 			-- tabs
-			tab = { fg = cp.surface1, bg = inactive_bg },
-			tab_selected = { fg = cp.sky, bg = active_bg, bold = true },
+			tab = { fg = C.surface1, bg = inactive_bg },
+			tab_selected = { fg = C.sky, bg = active_bg, bold = true },
 			tab_separator = { fg = separator_fg, bg = inactive_bg },
-			tab_separator_selected = { fg = cp.maroon, bg = active_bg },
+			tab_separator_selected = { fg = C.maroon, bg = active_bg },
 
-			tab_close = { fg = cp.red, bg = inactive_bg },
-			indicator_selected = { fg = cp.peach, bg = active_bg, style = styles },
+			tab_close = { fg = C.red, bg = inactive_bg },
+			indicator_selected = { fg = C.peach, bg = active_bg, style = styles },
 			-- separators
 			separator = { fg = separator_fg, bg = inactive_bg },
 			separator_visible = { fg = separator_fg, bg = inactive_bg },
 			separator_selected = { fg = separator_fg, bg = active_bg },
 			offset_separator = { fg = separator_fg, bg = active_bg },
 			-- close buttons
-			close_button = { fg = cp.surface1, bg = inactive_bg },
-			close_button_visible = { fg = cp.surface1, bg = inactive_bg },
-			close_button_selected = { fg = cp.red, bg = active_bg },
+			close_button = { fg = C.surface1, bg = inactive_bg },
+			close_button_visible = { fg = C.surface1, bg = inactive_bg },
+			close_button_selected = { fg = C.red, bg = active_bg },
 			-- Empty fill
 			fill = { bg = bg_highlight },
 			-- Numbers
-			numbers = { fg = cp.subtext0, bg = inactive_bg },
-			numbers_visible = { fg = cp.subtext0, bg = inactive_bg },
-			numbers_selected = { fg = cp.subtext0, bg = active_bg, style = styles },
+			numbers = { fg = C.subtext0, bg = inactive_bg },
+			numbers_visible = { fg = C.subtext0, bg = inactive_bg },
+			numbers_selected = { fg = C.subtext0, bg = active_bg, style = styles },
 			-- Errors
-			error = { fg = cp.red, bg = inactive_bg },
-			error_visible = { fg = cp.red, bg = inactive_bg },
-			error_selected = { fg = cp.red, bg = active_bg, style = styles },
-			error_diagnostic = { fg = cp.red, bg = inactive_bg },
-			error_diagnostic_visible = { fg = cp.red, bg = inactive_bg },
-			error_diagnostic_selected = { fg = cp.red, bg = active_bg },
+			error = { fg = C.red, bg = inactive_bg },
+			error_visible = { fg = C.red, bg = inactive_bg },
+			error_selected = { fg = C.red, bg = active_bg, style = styles },
+			error_diagnostic = { fg = C.red, bg = inactive_bg },
+			error_diagnostic_visible = { fg = C.red, bg = inactive_bg },
+			error_diagnostic_selected = { fg = C.red, bg = active_bg },
 			-- Warnings
-			warning = { fg = cp.yellow, bg = inactive_bg },
-			warning_visible = { fg = cp.yellow, bg = inactive_bg },
-			warning_selected = { fg = cp.yellow, bg = active_bg, style = styles },
-			warning_diagnostic = { fg = cp.yellow, bg = inactive_bg },
-			warning_diagnostic_visible = { fg = cp.yellow, bg = inactive_bg },
-			warning_diagnostic_selected = { fg = cp.yellow, bg = active_bg },
+			warning = { fg = C.yellow, bg = inactive_bg },
+			warning_visible = { fg = C.yellow, bg = inactive_bg },
+			warning_selected = { fg = C.yellow, bg = active_bg, style = styles },
+			warning_diagnostic = { fg = C.yellow, bg = inactive_bg },
+			warning_diagnostic_visible = { fg = C.yellow, bg = inactive_bg },
+			warning_diagnostic_selected = { fg = C.yellow, bg = active_bg },
 			-- Infos
-			info = { fg = cp.sky, bg = inactive_bg },
-			info_visible = { fg = cp.sky, bg = inactive_bg },
-			info_selected = { fg = cp.sky, bg = active_bg, style = styles },
-			info_diagnostic = { fg = cp.sky, bg = inactive_bg },
-			info_diagnostic_visible = { fg = cp.sky, bg = inactive_bg },
-			info_diagnostic_selected = { fg = cp.sky, bg = active_bg },
+			info = { fg = C.sky, bg = inactive_bg },
+			info_visible = { fg = C.sky, bg = inactive_bg },
+			info_selected = { fg = C.sky, bg = active_bg, style = styles },
+			info_diagnostic = { fg = C.sky, bg = inactive_bg },
+			info_diagnostic_visible = { fg = C.sky, bg = inactive_bg },
+			info_diagnostic_selected = { fg = C.sky, bg = active_bg },
 			-- Hint
-			hint = { fg = cp.teal, bg = inactive_bg },
-			hint_visible = { fg = cp.teal, bg = inactive_bg },
-			hint_selected = { fg = cp.teal, bg = active_bg, style = styles },
-			hint_diagnostic = { fg = cp.teal, bg = inactive_bg },
-			hint_diagnostic_visible = { fg = cp.teal, bg = inactive_bg },
-			hint_diagnostic_selected = { fg = cp.teal, bg = active_bg },
+			hint = { fg = C.teal, bg = inactive_bg },
+			hint_visible = { fg = C.teal, bg = inactive_bg },
+			hint_selected = { fg = C.teal, bg = active_bg, style = styles },
+			hint_diagnostic = { fg = C.teal, bg = inactive_bg },
+			hint_diagnostic_visible = { fg = C.teal, bg = inactive_bg },
+			hint_diagnostic_selected = { fg = C.teal, bg = active_bg },
 			-- Diagnostics
-			diagnostic = { fg = cp.subtext0, bg = inactive_bg },
-			diagnostic_visible = { fg = cp.subtext0, bg = inactive_bg },
-			diagnostic_selected = { fg = cp.subtext0, bg = active_bg, style = styles },
+			diagnostic = { fg = C.subtext0, bg = inactive_bg },
+			diagnostic_visible = { fg = C.subtext0, bg = inactive_bg },
+			diagnostic_selected = { fg = C.subtext0, bg = active_bg, style = styles },
 			-- Modified
-			modified = { fg = cp.peach, bg = inactive_bg },
-			modified_selected = { fg = cp.peach, bg = active_bg },
+			modified = { fg = C.peach, bg = inactive_bg },
+			modified_selected = { fg = C.peach, bg = active_bg },
 		}
 
 		local user_highlights = user_config.custom or {}
