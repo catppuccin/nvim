@@ -1,5 +1,26 @@
 -- TODO: private _G.vim
-vim.command [[command! CatppuccinCompile lua require('catppuccin').compile() print("Catppuccin (info): compiled cache!")]]
+vim.cmd = vim.command
+vim.cmd [[command! CatppuccinCompile lua require('catppuccin').compile() print("Catppuccin (info): compiled cache!")]]
+loadstring = load or loadstring
+bit = bit32 or {
+	rshift = function(a, b) return a >> b end,
+	bxor = function(a, b) return a ~ b end,
+}
+
+local function get_option(name, _) return vim.eval("&" .. name) end
+
+local function set_option(name, opt, _)
+	if type(opt) == "boolean" then
+		vim.cmd("set " .. name)
+	else
+		vim.cmd("set " .. name .. "=" .. opt)
+	end
+end
+
+vim.o = setmetatable({}, {
+	__index = function(_, k) return get_option(k, {}) end,
+	__newindex = function(_, k, v) return set_option(k, v, {}) end,
+})
 
 vim.fn.stdpath = function(what)
 	if what ~= "cache" then return end
@@ -19,12 +40,12 @@ vim.loop = {
 }
 
 -- Reference: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/shared.lua
-local function tbl_isempty(t)
+function vim.tbl_isempty(t)
 	assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
 	return next(t) == nil
 end
 
-local function tbl_islist(t)
+function vim.tbl_islist(t)
 	if type(t) ~= "table" then return false end
 
 	local count = 0
@@ -47,7 +68,14 @@ local function tbl_islist(t)
 	end
 end
 
-local function can_merge(v) return type(v) == "table" and (tbl_isempty(v) or not tbl_islist(v)) end
+local function can_merge(v) return type(v) == "table" and (vim.tbl_isempty(v) or not vim.tbl_islist(v)) end
+
+function vim.tbl_contains(t, value)
+	for _, v in ipairs(t) do
+		if v == value then return true end
+	end
+	return false
+end
 
 local function tbl_extend(behavior, deep_extend, ...)
 	if behavior ~= "error" and behavior ~= "keep" and behavior ~= "force" then
