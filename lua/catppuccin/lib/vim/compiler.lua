@@ -10,22 +10,21 @@ function M.compile(flavour)
 	local lines = {
 		[[
 require("catppuccin").compiled = string.dump(function()
-vim.command[[
-if exists("colors_name")
-	hi clear
-endif
-set termguicolors
-let g:colors_name = "catppuccin"]],
+if vim.g.colors_name then vim.cmd("hi clear") end
+vim.o.termguicolors = true
+vim.g.colors_name = "catppuccin"]],
 	}
-	table.insert(lines, "set background=" .. (flavour == "latte" and [["light"]] or [["dark"]]))
+	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
 	if config.term_colors == true then
 		for k, v in pairs(theme.terminal) do
-			table.insert(lines, fmt("let g:%s = '%s'", k, v))
+			table.insert(lines, fmt('vim.g.%s = "%s"', k, v))
 		end
 	end
+
+	table.insert(lines, "vim.cmd[[")
 
 	for group, color in pairs(tbl) do
 		if color.link then
@@ -51,8 +50,7 @@ let g:colors_name = "catppuccin"]],
 		os.execute(string.format("mkdir %s %s", C.is_windows and "" or "-p", config.compile_path))
 	end
 	local file = io.open(config.compile_path .. C.path_sep .. flavour .. "_compiled.lua", "wb")
-	local ls = load or loadstring
-	ls(table.concat(lines, "\n"), "=")()
+	loadstring(table.concat(lines, "\n"), "=")()
 	file:write(require("catppuccin").compiled)
 	file:close()
 end

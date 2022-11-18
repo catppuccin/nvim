@@ -1,0 +1,2 @@
+* linguist-vendored
+*.lua linguist-vendored=false

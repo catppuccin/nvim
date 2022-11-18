@@ -2,6 +2,7 @@ local is_vim = vim.fn.has "nvim" ~= 1
 if is_vim then require "catppuccin.lib.vim" end
 
 local M = {
+	flavours = { "latte", "frappe", "macchiato", "mocha" },
 	options = {
 		background = {
 			light = "latte",
@@ -60,12 +61,11 @@ local M = {
 		color_overrides = {},
 		highlight_overrides = {},
 	},
-	flavours = { latte = 1, frappe = 2, macchiato = 3, mocha = 4 },
 	path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
 }
 
 function M.compile()
-	for flavour, _ in pairs(M.flavours) do
+	for _, flavour in pairs(M.flavours) do
 		require("catppuccin.lib." .. (is_vim and "vim." or "") .. "compiler").compile(flavour)
 	end
 end
@@ -74,9 +74,7 @@ local lock = false -- Avoid g:colors_name reloading
 
 function M.load(flavour)
 	if lock then return end
-	M.flavour = flavour
-		or (vim.g.colors_name and M.options.background[M.is_vim and vim.eval "&background" or vim.o.background] or M.flavour)
-		or "mocha"
+	M.flavour = flavour or (vim.g.colors_name and M.options.background[vim.o.background] or M.flavour) or "mocha"
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	lock = true
 	local f = loadfile(compiled_path)
@@ -96,7 +94,7 @@ function M.setup(user_conf)
 
 	M.flavour = M.options.flavour or vim.g.catppuccin_flavour or "mocha"
 
-	if not M.flavours[M.flavour] then
+	if not vim.tbl_contains(M.flavours, M.flavour) then
 		vim.notify(
 			string.format(
 				"Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
@@ -154,7 +152,7 @@ end
 if is_vim then return M end
 
 vim.api.nvim_create_user_command("Catppuccin", function(inp)
-	if not M.flavours[inp.args] then
+	if not vim.tbl_contains(M.flavours, inp.args) then
 		vim.notify(
 			"Catppuccin (error): Invalid flavour '"
 				.. inp.args
@@ -167,7 +165,7 @@ vim.api.nvim_create_user_command("Catppuccin", function(inp)
 end, {
 	nargs = 1,
 	complete = function(line)
-		return vim.tbl_filter(function(val) return vim.startswith(val, line) end, vim.tbl_keys(M.flavours))
+		return vim.tbl_filter(function(val) return vim.startswith(val, line) end, M.flavours)
 	end,
 })
 
