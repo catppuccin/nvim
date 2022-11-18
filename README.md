@@ -3,7 +3,7 @@
 <h3 align="center">
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-    Catppuccin for <a href="https://github.com/neovim/neovim">Neovim</a>
+    Catppuccin for <a href="https://github.com/neovim/neovim">(Neo)</a><a href="https://github.com/vim/vim">vim</a>
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
@@ -387,6 +387,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [telekasten.nvim](https://github.com/renerocksai/telekasten.nvim)                     | telekasten         |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | telescope          |
 | [trouble.nvim](https://github.com/folke/trouble.nvim)                                 | lsp_trouble        |
+| [vim-airline](https://github.com/vim-airline/vim-airline)                             | Special            |
 | [vim-clap](https://github.com/liuchengxu/vim-clap)                                    | Special            |
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                            | gitgutter          |
 | [vim-illuminate](https://github.com/RRethy/vim-illuminate)                            | illuminate         |
@@ -750,6 +751,18 @@ require("nvim-navic").setup {
     highlight = true
 }
 ```
+
+</details>
+
+<details> <summary>vim-airline</summary>
+
+Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
+
+```vim
+let g:airline_theme = 'catppuccin'
+```
+
+</details>
 
 </details>
 
