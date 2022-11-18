@@ -2,7 +2,7 @@ let s:c = has("nvim") == 1 ? luaeval('require("catppuccin.palettes").get_palette
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [ [ s:c.mantle, s:c.blue ], [ s:c.blue, s:c.base ] ]
-let s:p.normal.middle = [ [ s:c.blue, s:c.surface1 ] ]
+let s:p.normal.middle = [ [ s:c.blue, s:c.mantle ] ]
 let s:p.normal.right = [ [ s:c.overlay0, s:c.base ], [ s:c.blue, s:c.surface0 ] ]
 let s:p.insert.left = [ [ s:c.mantle, s:c.teal ], [ s:c.blue, s:c.base ] ]
 let s:p.visual.left = [ [ s:c.mantle, s:c.mauve ], [ s:c.blue, s:c.base ] ]
