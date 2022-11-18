@@ -1,8 +1,8 @@
 local C = require("catppuccin.palettes").get_palette()
-local config = require("catppuccin").options
+local O = require("catppuccin").options
 local catppuccin = {}
 
-local transparent_bg = config.transparent_background and "NONE" or C.mantle
+local transparent_bg = O.transparent_background and "NONE" or C.mantle
 
 catppuccin.normal = {
 	a = { bg = C.blue, fg = C.mantle, gui = "bold" },
