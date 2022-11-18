@@ -535,6 +535,7 @@ Here are the defaults:
 >
     local clrs = require("catppuccin.palettes").get_palette()
     local ctp_feline = require('catppuccin.groups.integrations.feline')
+    local U = require "catppuccin.utils.colors"
     
     ctp_feline.setup({
         assets = {
