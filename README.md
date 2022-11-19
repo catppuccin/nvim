@@ -667,6 +667,8 @@ Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme name
 let g:lightline = {'colorscheme': 'catppuccin'}
 ```
 
+</details>
+
 <details> <summary>lspsaga.nvim</summary>
 
 For custom Lsp Kind Icon and Color
