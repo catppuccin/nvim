@@ -15,6 +15,8 @@ local M = {
 			shade = "dark",
 			percentage = 0.15,
 		},
+		no_italic = false,
+		no_bold = false,
 		styles = {
 			comments = { "italic" },
 			conditionals = { "italic" },

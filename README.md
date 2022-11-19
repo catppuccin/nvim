@@ -126,7 +126,6 @@ require("catppuccin").setup({
         light = "latte",
         dark = "mocha",
     },
-    compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
     transparent_background = false,
     term_colors = false,
     dim_inactive = {
@@ -134,6 +133,8 @@ require("catppuccin").setup({
         shade = "dark",
         percentage = 0.15,
     },
+    no_italic = false, -- Force no italic
+	no_bold = false, -- Force no bold
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },
