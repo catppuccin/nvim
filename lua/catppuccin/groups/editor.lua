@@ -40,7 +40,7 @@ function M.get()
 		NormalSB = { fg = C.text, bg = C.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = C.text, bg = C.transparent_background and C.none or C.mantle }, -- Normal text in floating windows.
 		FloatBorder = { fg = C.blue },
-		Pmenu = { bg = O.transparent_background and C.none or C.surface0, fg = C.overlay2 }, -- Popup menu: normal item.
+		Pmenu = { bg = O.transparent_background and C.none or U.darken(C.surface0, 0.8, C.crust), fg = C.overlay2 }, -- Popup menu: normal item.
 		PmenuSel = { fg = C.text, bg = C.surface1, style = { "bold" } }, -- Popup menu: selected item.
 		PmenuSbar = { bg = C.surface1 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
