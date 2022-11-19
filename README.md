@@ -134,7 +134,7 @@ require("catppuccin").setup({
         percentage = 0.15,
     },
     no_italic = false, -- Force no italic
-	no_bold = false, -- Force no bold
+    no_bold = false, -- Force no bold
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },

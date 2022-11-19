@@ -1,5 +1,5 @@
 local C = require "catppuccin"
-local config = C.options
+local O = C.options
 local M = {}
 
 -- Reference: https://github.com/EdenEast/nightfox.nvim
@@ -21,7 +21,7 @@ let g:colors_name = "catppuccin"]],
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
-	if config.term_colors == true then
+	if O.term_colors == true then
 		for k, v in pairs(theme.terminal) do
 			table.insert(lines, fmt("let g:%s = '%s'", k, v))
 		end
@@ -31,7 +31,15 @@ let g:colors_name = "catppuccin"]],
 		if color.link then
 			table.insert(lines, fmt([[highlight! link %s %s]], group, color.link))
 		else
-			if color.style then color.style = table.concat(color.style, ",") end
+			if color.style then
+				local rstyle = {}
+				for _, style in ipairs(color.style) do
+					if O.no_italic and style == "italic" then style = nil end
+					if O.no_bold and style == "bold" then style = nil end
+					if style then rstyle[#rstyle + 1] = style end
+				end
+				color.style = table.concat(rstyle, ",")
+			end
 			if color.style == "" then color.style = nil end
 			table.insert(
 				lines,
@@ -47,10 +55,10 @@ let g:colors_name = "catppuccin"]],
 		end
 	end
 	table.insert(lines, "]]end)")
-	if vim.fn.isdirectory(config.compile_path) == 0 then
-		os.execute(string.format("mkdir %s %s", C.is_windows and "" or "-p", config.compile_path))
+	if vim.fn.isdirectory(O.compile_path) == 0 then
+		os.execute(string.format("mkdir %s %s", C.is_windows and "" or "-p", O.compile_path))
 	end
-	local file = io.open(config.compile_path .. C.path_sep .. flavour .. "_compiled.lua", "wb")
+	local file = io.open(O.compile_path .. C.path_sep .. flavour .. "_compiled.lua", "wb")
 	local ls = load or loadstring
 	ls(table.concat(lines, "\n"), "=")()
 	file:write(require("catppuccin").compiled)
