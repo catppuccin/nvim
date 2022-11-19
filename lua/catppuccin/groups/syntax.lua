@@ -10,7 +10,7 @@ function M.get()
 		Number = { fg = C.peach, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
 		Float = { fg = C.peach, style = O.styles.numbers or {} }, --    a floating point constant: 2.3e10
 		Boolean = { fg = C.peach, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
-		Identifier = { fg = C.text, style = O.styles.variables or {} }, -- (preferred) any variable name
+		Identifier = { fg = C.flamingo, style = O.styles.variables or {} }, -- (preferred) any variable name
 		Function = { fg = C.blue, style = O.styles.functions or {} }, -- function name (also: methods for classes)
 		Statement = { fg = C.mauve }, -- (preferred) any statement
 		Conditional = { fg = C.mauve, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etC.
