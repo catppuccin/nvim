@@ -28,12 +28,13 @@ let g:colors_name = "catppuccin"]],
 	end
 
 	for group, color in pairs(tbl) do
+		if color.link and theme.custom_highlights[group] then color.link = nil end
 		if color.link then
 			table.insert(lines, fmt([[highlight! link %s %s]], group, color.link))
 		else
 			if color.style then
 				local rstyle = {}
-				for _, style in ipairs(color.style) do
+				for _, style in pairs(color.style) do
 					if O.no_italic and style == "italic" then style = nil end
 					if O.no_bold and style == "bold" then style = nil end
 					if style then rstyle[#rstyle + 1] = style end

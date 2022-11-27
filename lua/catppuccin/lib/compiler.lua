@@ -36,13 +36,14 @@ vim.g.colors_name = "catppuccin"]],
 
 	for group, color in pairs(tbl) do
 		if color.style then
-			for _, style in ipairs(color.style) do
+			for _, style in pairs(color.style) do
 				color[style] = true
 				if O.no_italic and style == "italic" then color[style] = false end
 				if O.no_bold and style == "bold" then color[style] = false end
 			end
 		end
 		color.style = nil
+		if color.link and theme.custom_highlights[group] then color.link = nil end
 		table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
 	end
 	table.insert(lines, "end)")
