@@ -108,8 +108,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@text.warning"] = { fg = C.base, bg = C.yellow },
 		["@text.danger"] = { fg = C.base, bg = C.red },
 
-		["@text.diff.add"] = { link = "diffAdd" }, -- added text (for diff files)
-		["@text.diff.delete"] = { link = "diffDelete" }, -- deleted text (for diff files)
+		["@text.diff.add"] = { link = "diffAdded" }, -- added text (for diff files)
+		["@text.diff.delete"] = { link = "diffRemoved" }, -- deleted text (for diff files)
 
 		-- Tags
 		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
