@@ -120,9 +120,9 @@ function M.setup(user_conf)
 	end
 
 	local config_path = debug.getinfo(2).source:sub(2) -- Get user config path
-	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD" -- Get git path
+	local git_path = debug.getinfo(1).source:sub(2, -24) -- Get git path
 	local config = vim.fn.getftime(config_path) -- getftime is 2 time faster than fs_stat, for benchmark see #352
-	local git = vim.fn.getftime(git_path) -- Parsed config & git stat
+	local git = vim.fn.getftime(git_path .. ".git" .. M.path_sep .. "ORIG_HEAD") -- Parsed config & git stat
 
 	local cur_date = (config == 1 and config_path or config) .. (git == 1 and git_path or git) -- nix mtime is always 1 so cache path instead
 
