@@ -124,7 +124,7 @@ function M.setup(user_conf)
 	local config = vim.fn.getftime(config_path) -- getftime is 2 time faster than fs_stat, for benchmark see #352
 	local git = vim.fn.getftime(git_path) -- Parsed config & git stat
 
-	local cur_date = (config == 1 and config_path or config) .. (git == 1 and git_path or git) -- nix mtime is always 1 so cache path instead
+	local cur_date = (config == 1 and config_path or config) .. (git == -1 and git_path or git) -- nix mtime is always 1 so cache path instead
 
 	if config == -1 or last_date ~= cur_date then
 		file = io.open(cached_date, "wb")
