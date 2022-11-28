@@ -70,7 +70,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or "italic" }, -- For builtin types.
 		["@type.definition"] = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
 		["@type.qualifier"] = { link = "@type" }, -- type qualifiers (e.g. `const`)
-		["@type.qualifier.php"] = { fg = C.pink, style = O.styles.properties }, -- type qualifiers (e.g. `const`)
 
 		["@storageclass"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
@@ -154,6 +153,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Ruby
 		["@symbol.ruby"] = { fg = C.flamingo },
+
+		-- PHP
+		["@type.qualifier.php"] = { fg = C.pink, style = O.styles.properties }, -- type qualifiers (e.g. `const`)
 	}
 end
 
