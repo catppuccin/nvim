@@ -43,7 +43,9 @@ vim.g.colors_name = "catppuccin"]],
 			end
 		end
 		color.style = nil
-		if color.link and theme.custom_highlights[group] then color.link = nil end
+		if color.link and (theme.custom_highlights[group] and not theme.custom_highlights[group].link) then
+			color.link = nil
+		end
 		table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
 	end
 	table.insert(lines, "end)")

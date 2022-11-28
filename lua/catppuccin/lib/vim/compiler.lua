@@ -28,7 +28,9 @@ let g:colors_name = "catppuccin"]],
 	end
 
 	for group, color in pairs(tbl) do
-		if color.link and theme.custom_highlights[group] then color.link = nil end
+		if color.link and (theme.custom_highlights[group] and not theme.custom_highlights[group].link) then
+			color.link = nil
+		end
 		if color.link then
 			table.insert(lines, fmt([[highlight! link %s %s]], group, color.link))
 		else
