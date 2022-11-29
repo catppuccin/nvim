@@ -301,7 +301,8 @@ function M.get()
 
 			if Lsp then
 				local msg = Lsp.message or ""
-				local percentage = Lsp.percentage or 0
+				local percentage = Lsp.percentage
+				if not percentage then return "" end
 				local title = Lsp.title or ""
 				local spinners = {
 					"",
