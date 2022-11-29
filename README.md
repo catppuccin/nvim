@@ -282,7 +282,7 @@ require("catppuccin").setup {
         return {
             Comment = { fg = colors.flamingo },
             ["@constant.builtin"] = { fg = colors.peach, style = {} },
-            ["@comment"] = { fg = colors.surface2, style = { "italic" }
+            ["@comment"] = { fg = colors.surface2, style = { "italic" } },
         }
     end
 }

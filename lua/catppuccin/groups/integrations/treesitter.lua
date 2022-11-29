@@ -103,7 +103,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@text.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
 		["@text.reference"] = { fg = C.lavender, style = { "bold" } }, -- references
 
-		["@text.todo"] = { bg = C.yellow }, -- todo notes
+		["@text.todo"] = { fg = C.base, bg = C.yellow }, -- todo notes
 		["@text.note"] = { fg = C.base, bg = C.blue },
 		["@text.warning"] = { fg = C.base, bg = C.yellow },
 		["@text.danger"] = { fg = C.base, bg = C.red },
