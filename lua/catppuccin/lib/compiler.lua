@@ -49,11 +49,26 @@ vim.g.colors_name = "catppuccin"]],
 		table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
 	end
 	table.insert(lines, "end)")
-	if vim.fn.isdirectory(O.compile_path) == 0 then
-		os.execute(string.format("mkdir %s %s", path_sep == "\\" and "" or "-p", O.compile_path))
-	end
+	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
 	local file = io.open(O.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
-	loadstring(table.concat(lines, "\n"), "=")()
+
+	local f = loadstring(table.concat(lines, "\n"), "=")
+	if not f then
+		vim.notify(
+			[[Catppuccin (error): Most likely some mistake made in your catppuccin config
+You can open /tmp/catppuccin_error.lua for debugging
+
+If you think this is a bug, kindly open an issue and attach /tmp/catppuccin_error.lua file
+Below is the error message that we captured:
+]],
+			vim.log.levels.ERROR
+		)
+		io.open("/tmp/catppuccin_error.lua", "wb"):write(table.concat(lines, "\n"))
+		dofile "/tmp/catppuccin_error.lua"
+		return
+	end
+	f()
+
 	file:write(require("catppuccin").compiled)
 	file:close()
 end
