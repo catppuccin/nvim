@@ -110,48 +110,25 @@ function M.setup(user_conf)
 	end
 
 	-- Caching configuration
-	local cached_date = M.options.compile_path .. M.path_sep .. "date.txt"
+	local cached_path = M.options.compile_path .. M.path_sep .. "date.txt"
 
-	local file = io.open(cached_date)
-	local last_date = nil
+	local file = io.open(cached_path)
+	local cached = nil
 	if file then
-		last_date = file:read()
+		cached = file:read()
 		file:close()
 	end
 
-	local config_path = debug.getinfo(2).source:sub(2) -- Get user config path
-	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD" -- Get git path
-	local config = vim.fn.getftime(config_path) -- getftime is 2 time faster than fs_stat, for benchmark see #352
-	local git = vim.fn.getftime(git_path) -- Parsed config & git stat
+	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
+	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
+	local hash = require("catppuccin.lib.hashing").hash(user_conf) .. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
 
-	local cur_date = (config == 1 and config_path or config) .. (git == -1 and git_path or git) -- nix mtime is always 1 so cache path instead
-
-	if config == -1 or last_date ~= cur_date then
-		file = io.open(cached_date, "wb")
+	if cached ~= hash then
+		M.compile()
+		file = io.open(cached_path, "wb")
 		if file then
-			file:write(cur_date)
+			file:write(hash)
 			file:close()
-		end
-
-		local cached_config = M.options.compile_path .. M.path_sep .. "config.json"
-		file = io.open(cached_config) -- Keep .json suffix for backward compatibility
-
-		local cached_hash = nil
-		if file then
-			cached_hash = file:read()
-			io.close(file)
-		end
-
-		local cur_hash = require("catppuccin.lib.hashing").hash(user_conf)
-
-		-- Only re-compile if the setup table changed
-		if cached_hash ~= tostring(cur_hash) then
-			M.compile()
-			file = io.open(cached_config, "wb")
-			if file then
-				file:write(cur_hash)
-				file:close()
-			end
 		end
 	end
 end
