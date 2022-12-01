@@ -79,7 +79,7 @@ Below is the error message that we captured:
 		local err = io.open(err_path, "wb")
 		err:write(table.concat(lines, "\n"))
 		err:close()
-		dofile "/tmp/catppuccin_error.lua"
+		dofile(err_path)
 		return
 	end
 	f()
