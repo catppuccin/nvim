@@ -63,7 +63,27 @@ let g:colors_name = "catppuccin"]],
 	end
 	local file = io.open(O.compile_path .. C.path_sep .. flavour .. "_compiled.lua", "wb")
 	local ls = load or loadstring
-	ls(table.concat(lines, "\n"), "=")()
+	local f = ls(table.concat(lines, "\n"), "=")
+	if not f then
+		local err_path = (C.path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
+		print(string.format(
+			[[Catppuccin (error): Most likely some mistake made in your catppuccin config
+You can open %s for debugging
+
+If you think this is a bug, kindly open an issue and attach %s file
+Below is the error message that we captured:
+]],
+			err_path,
+			err_path
+		))
+		local err = io.open(err_path, "wb")
+		err:write(table.concat(lines, "\n"))
+		err:close()
+		dofile "/tmp/catppuccin_error.lua"
+		return
+	end
+	f()
+
 	file:write(require("catppuccin").compiled)
 	file:close()
 end

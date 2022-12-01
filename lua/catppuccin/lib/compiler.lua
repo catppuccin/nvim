@@ -54,16 +54,20 @@ vim.g.colors_name = "catppuccin"]],
 
 	local f = loadstring(table.concat(lines, "\n"), "=")
 	if not f then
-		vim.notify(
+		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
+		print(string.format(
 			[[Catppuccin (error): Most likely some mistake made in your catppuccin config
-You can open /tmp/catppuccin_error.lua for debugging
+You can open %s for debugging
 
-If you think this is a bug, kindly open an issue and attach /tmp/catppuccin_error.lua file
+If you think this is a bug, kindly open an issue and attach %s file
 Below is the error message that we captured:
 ]],
-			vim.log.levels.ERROR
-		)
-		io.open("/tmp/catppuccin_error.lua", "wb"):write(table.concat(lines, "\n"))
+			err_path,
+			err_path
+		))
+		local err = io.open(err_path, "wb")
+		err:write(table.concat(lines, "\n"))
+		err:close()
 		dofile "/tmp/catppuccin_error.lua"
 		return
 	end
