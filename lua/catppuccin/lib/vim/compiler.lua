@@ -58,9 +58,7 @@ let g:colors_name = "catppuccin"]],
 		end
 	end
 	table.insert(lines, "]]end)")
-	if vim.fn.isdirectory(O.compile_path) == 0 then
-		os.execute(string.format("mkdir %s %s", C.is_windows and "" or "-p", O.compile_path))
-	end
+	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path) end
 	local file = io.open(O.compile_path .. C.path_sep .. flavour .. "_compiled.lua", "wb")
 	local ls = load or loadstring
 	local f = ls(table.concat(lines, "\n"), "=")
