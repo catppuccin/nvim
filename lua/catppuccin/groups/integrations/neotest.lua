@@ -11,7 +11,7 @@ function M.get()
 		NeotestFocused = { style = { "bold", "underline" } },
 		NeotestFile = { fg = C.blue },
 		NeotestDir = { fg = C.blue },
-		NeotestIndent = { fg = C.surface0 },
+		NeotestIndent = { fg = C.overlay1 },
 		NeotestExpandMarker = { fg = C.overlay1 },
 		NeotestAdapterName = { fg = C.maroon },
 		NeotestWinSelect = { fg = C.blue, style = { "bold" } },
