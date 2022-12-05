@@ -75,5 +75,5 @@ end
 
 return {
 	bxor = bit_bxor,
-	rshift = function(x, n) return bit_tobit(rshift(x % MOD, n % 32)) end,
+	lshift = function(x, n) return bit_tobit(lshift(x % MOD, n % 32)) end,
 }
