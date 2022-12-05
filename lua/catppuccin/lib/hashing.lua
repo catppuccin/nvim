@@ -1,33 +1,27 @@
 local M = {}
 local B = bit or bit32 or require "catppuccin.lib.native_bit"
 
-local hash_str = function(str) -- MurmurOAAT_32, https://stackoverflow.com/questions/7666509/hash-function-for-string
-	local hash = 0x12345678
+local hash_str = function(str) -- djb2, https://stackoverflow.com/questions/7666509/hash-function-for-string
+	local hash = 5381
 	local tbl = { string.byte(str, 1, #str) }
 	for i = 1, #tbl do
-		hash = B.bxor(hash, tbl[i])
-		hash = hash * 0x5bd1e995
-		hash = B.bxor(hash, B.rshift(hash, 15))
+		hash = B.lshift(hash, 5) + tbl[i]
 	end
 	return hash
 end
 
-function M.hash(tbl) -- Xor hashing: https://codeforces.com/blog/entry/85900
-	local t = type(tbl)
-	if t == "boolean" then
-		return hash_str(tbl and "1" or "0")
-	elseif t == "string" then
-		return hash_str(tbl)
-	elseif t == "number" then
-		return tostring(tbl)
-	elseif t == "function" then
-		return hash_str(string.dump(tbl))
-	else
+function M.hash(v) -- Xor hashing: https://codeforces.com/blog/entry/85900
+	local t = type(v)
+	if t == "table" then
 		local hash = 0
-		for k, v in pairs(tbl) do
-			hash = B.bxor(hash, hash_str(k .. ":" .. M.hash(v)))
+		for p, u in pairs(v) do
+			hash = B.bxor(hash, hash_str(p .. M.hash(u)))
 		end
 		return hash
+	elseif t == "function" then
+		return hash_str(string.dump(v))
+	else
+		return tostring(v)
 	end
 end
 
