@@ -56,6 +56,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a fuction.
 		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
 		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
+		-- JS & derivative
+		["@keyword.export"] = { fg = C.sky, style = { "bold" } },
 
 		["@conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
 		["@repeat"] = { link = "Repeat" }, -- For keywords related to loops.
@@ -141,7 +143,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@constructor.typescript"] = { fg = C.lavender },
 
 		-- TSX (Typescript React)
-		["@keyword.export.tsx"] = { fg = C.sky, style = { "bold" } },
 		["@constructor.tsx"] = { fg = C.lavender },
 		["@tag.attribute.tsx"] = { fg = C.mauve },
 
