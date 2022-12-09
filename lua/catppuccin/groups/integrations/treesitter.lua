@@ -106,6 +106,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@text.reference"] = { fg = C.lavender, style = { "bold" } }, -- references
 
 		["@text.todo"] = { fg = C.base, bg = C.yellow }, -- todo notes
+		["@text.todo.checked"] = { fg = C.green }, -- todo notes
+		["@text.todo.unchecked"] = { fg = C.overlay1 }, -- todo notes
 		["@text.note"] = { fg = C.base, bg = C.blue },
 		["@text.warning"] = { fg = C.base, bg = C.yellow },
 		["@text.danger"] = { fg = C.base, bg = C.red },
