@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: JohnnyMorganz/stylua-action@latest
+      - uses: JohnnyMorganz/stylua-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --check --config-path=stylua.toml .
