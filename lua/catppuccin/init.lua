@@ -81,8 +81,8 @@ local lock = false -- Avoid g:colors_name reloading
 function M.load(flavour)
 	if lock then return end
 	M.flavour = flavour
-			or (vim.g.colors_name and M.options.background[is_vim and vim.eval "&background" or vim.o.background] or M.flavour)
-			or "mocha"
+		or (vim.g.colors_name and M.options.background[is_vim and vim.eval "&background" or vim.o.background] or M.flavour)
+		or "mocha"
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	lock = true
 	local f = loadfile(compiled_path)
@@ -143,8 +143,8 @@ vim.api.nvim_create_user_command("Catppuccin", function(inp)
 	if not M.flavours[inp.args] then
 		vim.notify(
 			"Catppuccin (error): Invalid flavour '"
-			.. inp.args
-			.. "', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+				.. inp.args
+				.. "', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
 			vim.log.levels.ERROR
 		)
 		return

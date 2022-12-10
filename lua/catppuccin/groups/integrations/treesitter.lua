@@ -98,7 +98,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@text.underline"] = { link = "Underline" }, -- underlined text
 		["@text.strike"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
 		["@text.title"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
-		["@text.literal"] = { fg = C.teal, style = { "italic" } }, -- used for inline code in markdown and for doc in python (""")
+		["@text.literal"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
 		["@text.uri"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
 		["@text.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
 		["@text.environment"] = { fg = C.pink }, -- text environments of markup languages
