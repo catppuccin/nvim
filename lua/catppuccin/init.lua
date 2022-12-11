@@ -158,6 +158,9 @@ end, {
 })
 
 vim.api.nvim_create_user_command("CatppuccinCompile", function()
+	for name, _ in pairs(package.loaded) do
+		if name:match "^catppuccin" and name ~= "catppuccin" then package.loaded[name] = nil end
+	end
 	M.compile()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
 	vim.api.nvim_command "colorscheme catppuccin"
