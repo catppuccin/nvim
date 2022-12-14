@@ -82,8 +82,12 @@ Below is the error message that we captured:
 	end
 	f()
 
-	file:write(require("catppuccin").compiled)
-	file:close()
+	if file then
+		file:write(require("catppuccin").compiled)
+		file:close()
+	else
+		print("Error while writing compiled file to " .. O.compile_path .. path_sep .. flavour .. "_compiled.lua")
+	end
 end
 
 return M
