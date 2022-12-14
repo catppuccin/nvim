@@ -86,7 +86,7 @@ Below is the error message that we captured:
 		file:write(require("catppuccin").compiled)
 		file:close()
 	else
-		print("Error while writing compiled file to " .. O.compile_path .. path_sep .. flavour .. "_compiled.lua")
+		print("Permission denied while writing compiled file to " .. O.compile_path .. C.path_sep .. flavour .. "_compiled.lua")
 	end
 end
 
