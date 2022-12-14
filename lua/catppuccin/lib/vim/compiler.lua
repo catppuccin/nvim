@@ -1,5 +1,5 @@
-local C = require "catppuccin"
-local O = C.options
+local path_sep = require("catppuccin").path_sep
+local O = require("catppuccin").options
 local M = {}
 
 -- Reference: https://github.com/EdenEast/nightfox.nvim
@@ -59,11 +59,11 @@ let g:colors_name = "catppuccin"]],
 	end
 	table.insert(lines, "]]end)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-	local file = io.open(O.compile_path .. C.path_sep .. flavour .. "_compiled.lua", "wb")
+	local file = io.open(O.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
 	local ls = load or loadstring
 	local f = ls(table.concat(lines, "\n"), "=")
 	if not f then
-		local err_path = (C.path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
+		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
 		print(string.format(
 			[[Catppuccin (error): Most likely some mistake made in your catppuccin config
 You can open %s for debugging
@@ -86,7 +86,13 @@ Below is the error message that we captured:
 		file:write(require("catppuccin").compiled)
 		file:close()
 	else
-		print("Permission denied while writing compiled file to " .. O.compile_path .. C.path_sep .. flavour .. "_compiled.lua")
+		print(
+			"Permission denied while writing compiled file to "
+				.. O.compile_path
+				.. path_sep
+				.. flavour
+				.. "_compiled.lua"
+		)
 	end
 end
 
