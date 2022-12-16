@@ -15,6 +15,11 @@ catppuccin.insert = {
 	b = { bg = C.surface1, fg = C.teal },
 }
 
+catppuccin.terminal = {
+	a = { bg = C.green, fg = C.base, gui = "bold" },
+	b = { bg = C.surface1, fg = C.teal },
+}
+
 catppuccin.command = {
 	a = { bg = C.peach, fg = C.base, gui = "bold" },
 	b = { bg = C.surface1, fg = C.peach },
