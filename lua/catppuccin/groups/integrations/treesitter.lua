@@ -146,7 +146,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- TSX (Typescript React)
 		["@constructor.tsx"] = { fg = C.lavender },
-		["@tag.attribute.tsx"] = { fg = C.mauve },
+		["@tag.attribute.tsx"] = { fg = C.mauve, style = { "italic" } },
 
 		-- cpp
 		["@property.cpp"] = { fg = C.rosewater },
