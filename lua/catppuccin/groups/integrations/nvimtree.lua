@@ -8,7 +8,10 @@ function M.get()
 		NvimTreeOpenedFolderName = { fg = C.blue },
 		NvimTreeEmptyFolderName = { fg = C.blue },
 		NvimTreeIndentMarker = { fg = C.overlay0 },
-		NvimTreeVertSplit = { fg = C.base, bg = O.transparent_background and C.none or C.base },
+		NvimTreeWinSeparator = {
+			fg = O.transparent_background and C.surface1 or C.base,
+			bg = O.transparent_background and C.none or C.base,
+		},
 		NvimTreeRootFolder = { fg = C.lavender, style = { "bold" } },
 		NvimTreeSymlink = { fg = C.pink },
 		NvimTreeStatuslineNc = { fg = C.mantle, bg = C.mantle },
