@@ -1,4 +1,7 @@
 local C = require("catppuccin.palettes").get_palette()
+local O = require("catppuccin").options
+
+local dirname_color = O.integrations.barbecue.dim_dirname and C.overlay1 or C.text
 
 local M = {
 	normal = { fg = C.text, bg = "none" },
@@ -7,7 +10,7 @@ local M = {
 	separator = { fg = C.overlay1 },
 	modified = { fg = C.peach },
 
-	dirname = { fg = C.overlay1 },
+	dirname = { fg = dirname_color },
 	basename = { fg = C.text, bold = true },
 	context = { fg = C.text },
 

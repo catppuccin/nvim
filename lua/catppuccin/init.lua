@@ -40,6 +40,9 @@ local M = {
 			telescope = true,
 			treesitter = not is_vim,
 			ts_rainbow = true,
+			barbecue = {
+				dim_dirname = true,
+			},
 			indent_blankline = {
 				enabled = true,
 				colored_indent_levels = false,
