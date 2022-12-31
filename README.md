@@ -349,7 +349,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | ------------------------------------------------------------------------------------- | ------------------- |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | aerial              |
 | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                                  | barbar              |
-| [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | Special             |
+| [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | barbecue, Special             |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                          | beacon              |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | Special             |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard           |
@@ -454,6 +454,9 @@ require("catppuccin").setup({
         which_key = false,
 
         -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
+        barbecue = {
+            dim_dirname = true,
+        },
         dap = {
             enabled = false,
             enable_ui = false,
@@ -497,6 +500,16 @@ Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It w
 ```lua
 require("barbecue").setup {
   theme = "catppuccin",
+}
+```
+
+The directory name color shown is dimmed by default, you can customize this setting.
+
+```lua
+integrations = {
+  barbecue = {
+    dim_dirname = true,
+  }
 }
 ```
 
