@@ -349,6 +349,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | ------------------------------------------------------------------------------------- | ------------------- |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | aerial              |
 | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                                  | barbar              |
+| [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | Special             |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                          | beacon              |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | Special             |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard           |
@@ -487,6 +488,17 @@ require("catppuccin").setup({
 </details>
 
 ## Special integrations
+
+
+<details> <summary>barbecue.nvim</summary>
+
+Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It will pick the one set in your config):
+
+```lua
+require("barbecue").setup {
+  theme = "catppuccin",
+}
+```
 
 <details> <summary>bufferline.nvim</summary>
 
