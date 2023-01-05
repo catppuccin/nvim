@@ -81,7 +81,8 @@ local lock = false -- Avoid g:colors_name reloading
 function M.load(flavour)
 	if lock then return end
 	M.flavour = flavour
-		or (vim.g.colors_name and M.options.background[is_vim and vim.eval "&background" or vim.o.background] or M.flavour)
+		or M.flavour
+		or M.options.background[is_vim and vim.eval "&background" or vim.o.background]
 		or "mocha"
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	lock = true
