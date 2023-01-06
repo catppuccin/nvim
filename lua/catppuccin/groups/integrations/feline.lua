@@ -9,22 +9,21 @@ local clrs = require("catppuccin.palettes").get_palette()
 local assets = {
 	left_separator = "",
 	right_separator = "",
-	bar = "█",
 	mode_icon = "",
-	dir = "  ",
-	file = "  ",
+	dir = "",
+	file = "",
 	lsp = {
-		server = "  ",
-		error = "  ",
-		warning = "  ",
-		info = "  ",
-		hint = "  ",
+		server = "",
+		error = "",
+		warning = "",
+		info = "",
+		hint = "",
 	},
 	git = {
-		branch = "  ",
-		added = "  ",
-		changed = "  ",
-		removed = "  ",
+		branch = "",
+		added = "",
+		changed = "",
+		removed = "",
 	},
 }
 
@@ -134,17 +133,7 @@ function M.get()
 	end
 
 	components.active[1][1] = {
-		provider = assets.bar,
-		hl = function()
-			return {
-				fg = mode_colors[vim.fn.mode()][2],
-				bg = sett.bkg,
-			}
-		end,
-	}
-
-	components.active[1][2] = {
-		provider = assets.mode_icon,
+		provider = " " .. assets.mode_icon .. " ",
 		hl = function()
 			return {
 				fg = sett.text,
@@ -153,8 +142,8 @@ function M.get()
 		end,
 	}
 
-	components.active[1][3] = {
-		provider = function() return " " .. mode_colors[vim.fn.mode()][1] .. " " end,
+	components.active[1][2] = {
+		provider = function() return mode_colors[vim.fn.mode()][1] .. " "  end,
 		hl = vi_mode_hl,
 	}
 
@@ -165,7 +154,7 @@ function M.get()
 	-- the normal sett.bkg appears. Fixed :)
 
 	-- enable if git diffs are not available
-	components.active[1][4] = {
+	components.active[1][3] = {
 		provider = assets.right_separator,
 		hl = function()
 			return {
@@ -177,7 +166,7 @@ function M.get()
 	}
 
 	-- enable if git diffs are available
-	components.active[1][5] = {
+	components.active[1][4] = {
 		provider = assets.right_separator,
 		hl = function()
 			return {
@@ -190,35 +179,44 @@ function M.get()
 	-- Current vi mode ------>
 
 	-- Diffs ------>
-	components.active[1][6] = {
+	components.active[1][5] = {
 		provider = "git_diff_added",
 		hl = {
 			fg = sett.text,
 			bg = sett.diffs,
 		},
-		icon = assets.git.added,
+		icon = " " .. assets.git.added .. " ",
 	}
 
-	components.active[1][7] = {
+	components.active[1][6] = {
 		provider = "git_diff_changed",
 		hl = {
 			fg = sett.text,
 			bg = sett.diffs,
 		},
-		icon = assets.git.changed,
+		icon = " " .. assets.git.changed .. " ",
 	}
 
-	components.active[1][8] = {
+	components.active[1][7] = {
 		provider = "git_diff_removed",
 		hl = {
 			fg = sett.text,
 			bg = sett.diffs,
 		},
-		icon = assets.git.removed,
+		icon = " " .. assets.git.removed .. " ",
+	}
+
+	components.active[1][8] = {
+		provider = " ",
+		hl = {
+			fg = sett.bkg,
+			bg = sett.diffs,
+		},
+		enabled = function() return any_git_changes() end,
 	}
 
 	components.active[1][9] = {
-		provider = "█" .. assets.right_separator,
+		provider = assets.right_separator,
 		hl = {
 			fg = sett.diffs,
 			bg = sett.bkg,
@@ -236,12 +234,12 @@ function M.get()
 			local total_line = vim.fn.line "$"
 
 			if current_line == 1 then
-				return " Top "
+				return "Top"
 			elseif current_line == vim.fn.line "$" then
-				return " Bot "
+				return "Bot"
 			end
 			local result, _ = math.modf((current_line / total_line) * 100)
-			return " " .. result .. "%% "
+			return result .. "%%"
 		end,
 		-- enabled = shortline or function(winid)
 		-- 	return vim.api.nvim_win_get_width(winid) > 90
@@ -342,7 +340,7 @@ function M.get()
 			fg = clrs.red,
 			bg = sett.bkg,
 		},
-		icon = assets.lsp.error,
+		icon = " " .. assets.lsp.error .. " ",
 	}
 
 	components.active[2][3] = {
@@ -352,7 +350,7 @@ function M.get()
 			fg = clrs.yellow,
 			bg = sett.bkg,
 		},
-		icon = assets.lsp.warning,
+		icon = " " .. assets.lsp.warning .. " ",
 	}
 
 	components.active[2][4] = {
@@ -362,7 +360,7 @@ function M.get()
 			fg = clrs.sky,
 			bg = sett.bkg,
 		},
-		icon = assets.lsp.info,
+		icon = " " .. assets.lsp.info .. " ",
 	}
 
 	components.active[2][5] = {
@@ -372,7 +370,7 @@ function M.get()
 			fg = clrs.rosewater,
 			bg = sett.bkg,
 		},
-		icon = assets.lsp.hint,
+		icon = " " .. assets.lsp.hint .. " ",
 	}
 	-- Diagnostics ------>
 
@@ -387,15 +385,14 @@ function M.get()
 			fg = sett.extras,
 			bg = sett.bkg,
 		},
-		icon = assets.git.branch,
-		left_sep = invi_sep,
+		icon = assets.git.branch .. " ",
 		right_sep = invi_sep,
 	}
 
 	components.active[3][2] = {
 		provider = function()
 			if next(vim.lsp.buf_get_clients()) ~= nil then
-				return assets.lsp.server .. "Lsp"
+				return assets.lsp.server .. " " .. "Lsp"
 			else
 				return ""
 			end
@@ -432,7 +429,7 @@ function M.get()
 	components.active[3][4] = {
 		provider = function()
 			local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-			return assets.dir .. dir_name .. " "
+			return " " .. assets.dir .. " " .. dir_name .. " "
 		end,
 		enabled = is_enabled(80),
 		hl = {
