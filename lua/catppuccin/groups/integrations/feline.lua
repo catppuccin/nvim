@@ -143,7 +143,7 @@ function M.get()
 	}
 
 	components.active[1][2] = {
-		provider = function() return mode_colors[vim.fn.mode()][1] .. " "  end,
+		provider = function() return mode_colors[vim.fn.mode()][1] .. " " end,
 		hl = vi_mode_hl,
 	}
 
