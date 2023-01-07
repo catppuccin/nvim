@@ -79,10 +79,10 @@ Below is the error message that we captured:
 	else
 		print(
 			"Permission denied while writing compiled file to "
-				.. O.compile_path
-				.. path_sep
-				.. flavour
-				.. "_compiled.lua"
+			.. O.compile_path
+			.. path_sep
+			.. flavour
+			.. "_compiled.lua"
 		)
 	end
 end

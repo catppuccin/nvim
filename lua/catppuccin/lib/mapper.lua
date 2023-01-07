@@ -39,14 +39,14 @@ function M.apply(flavour)
 
 	local dim_percentage = O.dim_inactive.percentage
 	C.dim = O.dim_inactive.shade == "dark"
-			and U.vary_color(
-				{ latte = U.darken(C.base, dim_percentage, C.mantle) },
-				U.darken(C.base, dim_percentage, C.mantle)
-			)
-		or U.vary_color(
-			{ latte = U.lighten("#FBFCFD", dim_percentage, C.base) },
-			U.lighten(C.surface0, dim_percentage, C.base)
-		)
+		 and U.vary_color(
+		    { latte = U.darken(C.base, dim_percentage, C.mantle) },
+		    U.darken(C.base, dim_percentage, C.mantle)
+		 )
+		 or U.vary_color(
+		    { latte = U.lighten("#FBFCFD", dim_percentage, C.base) },
+		    U.lighten(C.surface0, dim_percentage, C.base)
+		 )
 
 	local theme = {}
 	theme.syntax = require("catppuccin.groups.syntax").get()
