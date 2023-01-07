@@ -23,7 +23,7 @@ if vim.g.colors_name then vim.cmd("hi clear") end
 vim.o.termguicolors = true
 vim.g.colors_name = "catppuccin"]],
 	}
-	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
+	--table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
 	if path_sep == "\\" then O.compile_path = O.compile_path:gsub("/", "\\") end
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
