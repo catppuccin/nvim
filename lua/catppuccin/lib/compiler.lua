@@ -14,7 +14,8 @@ local function inspect(t)
 	return fmt([[{ %s }]], table.concat(list, ", "))
 end
 
-function M.compile(flavour)
+function M.compile(_flavour)
+	local flavour = "frappe"
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
 		[[
