@@ -100,7 +100,7 @@ function M.setup(user_conf)
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
-	M.flavour = M.options.flavour or vim.g.catppuccin_flavour or "mocha"
+	M.flavour = M.options.flavour or vim.g.catppuccin_flavour or "frappe"
 
 	if not M.flavours[M.flavour] then
 		vim.notify(
