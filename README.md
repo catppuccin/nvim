@@ -42,6 +42,7 @@ This port of Catppuccin is special because it was the first one and the one that
 </details>
 
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
+
 <details>
 <summary>Amoled</summary>
 
@@ -260,6 +261,7 @@ require("catppuccin").setup {
 | base      | `#EFF1F5` | `#303446` | `#24273A` | `#1E1E2E` | Default bg      |
 | mantle    | `#E6E9EF` | `#292C3C` | `#1E2030` | `#181825` | Darker bg       |
 | crust     | `#DCE0E8` | `#232634` | `#181926` | `#11111B` | Darkest bg      |
+
 </details>
 
 ## Overwriting highlight groups
@@ -819,7 +821,6 @@ require("catppuccin").setup({ -- Note: On windows we replace `/` with `\` by def
 ```
 
 ```lua
-
 require('catppuccin').compile() -- Catppuccin also provide a function to work with the catppuccin compiler.
 ```
 
