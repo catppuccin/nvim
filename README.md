@@ -512,6 +512,7 @@ integrations = {
   }
 }
 ```
+</details>
 
 <details> <summary>bufferline.nvim</summary>
 
