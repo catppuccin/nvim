@@ -558,7 +558,7 @@ bufferline.setup {
 
 <details> <summary>feline.nvim</summary>
 
-First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
+Update your Feline config to use the Catppuccin components:
 
 ```lua
 local ctp_feline = require('catppuccin.groups.integrations.feline')

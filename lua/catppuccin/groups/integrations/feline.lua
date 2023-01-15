@@ -1,15 +1,12 @@
 local M = {}
 
+local C = require("catppuccin.palettes").get_palette()
 local lsp = require "feline.providers.lsp"
-local lsp_severity = vim.diagnostic.severity
-local b = vim.b
-
-local clrs = require("catppuccin.palettes").get_palette()
 
 local assets = {
 	left_separator = "",
 	right_separator = "",
-	mode_icon = "",
+	mode_icon = "",
 	dir = "",
 	file = "",
 	lsp = {
@@ -28,12 +25,12 @@ local assets = {
 }
 
 local sett = {
-	text = clrs.surface0,
-	bkg = clrs.surface0,
-	diffs = clrs.mauve,
-	extras = clrs.overlay1,
-	curr_file = clrs.maroon,
-	curr_dir = clrs.flamingo,
+	text = C.surface0,
+	bkg = C.surface0,
+	diffs = C.mauve,
+	extras = C.overlay1,
+	curr_file = C.maroon,
+	curr_dir = C.flamingo,
 	show_modified = false,
 }
 
@@ -46,26 +43,26 @@ end
 if require("catppuccin").options.transparent_background then sett.bkg = "NONE" end
 
 local mode_colors = {
-	["n"] = { "NORMAL", clrs.lavender },
-	["no"] = { "N-PENDING", clrs.lavender },
-	["i"] = { "INSERT", clrs.green },
-	["ic"] = { "INSERT", clrs.green },
-	["t"] = { "TERMINAL", clrs.green },
-	["v"] = { "VISUAL", clrs.flamingo },
-	["V"] = { "V-LINE", clrs.flamingo },
-	[""] = { "V-BLOCK", clrs.flamingo },
-	["R"] = { "REPLACE", clrs.maroon },
-	["Rv"] = { "V-REPLACE", clrs.maroon },
-	["s"] = { "SELECT", clrs.maroon },
-	["S"] = { "S-LINE", clrs.maroon },
-	[""] = { "S-BLOCK", clrs.maroon },
-	["c"] = { "COMMAND", clrs.peach },
-	["cv"] = { "COMMAND", clrs.peach },
-	["ce"] = { "COMMAND", clrs.peach },
-	["r"] = { "PROMPT", clrs.teal },
-	["rm"] = { "MORE", clrs.teal },
-	["r?"] = { "CONFIRM", clrs.mauve },
-	["!"] = { "SHELL", clrs.green },
+	["n"] = { "NORMAL", C.lavender },
+	["no"] = { "N-PENDING", C.lavender },
+	["i"] = { "INSERT", C.green },
+	["ic"] = { "INSERT", C.green },
+	["t"] = { "TERMINAL", C.green },
+	["v"] = { "VISUAL", C.flamingo },
+	["V"] = { "V-LINE", C.flamingo },
+	[""] = { "V-BLOCK", C.flamingo },
+	["R"] = { "REPLACE", C.maroon },
+	["Rv"] = { "V-REPLACE", C.maroon },
+	["s"] = { "SELECT", C.maroon },
+	["S"] = { "S-LINE", C.maroon },
+	[""] = { "S-BLOCK", C.maroon },
+	["c"] = { "COMMAND", C.peach },
+	["cv"] = { "COMMAND", C.peach },
+	["ce"] = { "COMMAND", C.peach },
+	["r"] = { "PROMPT", C.teal },
+	["rm"] = { "MORE", C.teal },
+	["r?"] = { "CONFIRM", C.mauve },
+	["!"] = { "SHELL", C.green },
 }
 
 function M.setup(opts)
@@ -106,7 +103,7 @@ function M.get()
 
 	-- helpers
 	local function any_git_changes()
-		local gst = b.gitsigns_status_dict -- git stats
+		local gst = vim.b.gitsigns_status_dict -- git stats
 		if gst then
 			if
 				gst["added"] and gst["added"] > 0
@@ -326,7 +323,7 @@ function M.get()
 		end,
 		enabled = is_enabled(80),
 		hl = {
-			fg = clrs.rosewater,
+			fg = C.rosewater,
 			bg = sett.bkg,
 		},
 	}
@@ -334,10 +331,10 @@ function M.get()
 	-- genral diagnostics (errors, warnings. info and hints)
 	components.active[2][2] = {
 		provider = "diagnostic_errors",
-		enabled = function() return lsp.diagnostics_exist(lsp_severity.ERROR) end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR) end,
 
 		hl = {
-			fg = clrs.red,
+			fg = C.red,
 			bg = sett.bkg,
 		},
 		icon = " " .. assets.lsp.error .. " ",
@@ -345,9 +342,9 @@ function M.get()
 
 	components.active[2][3] = {
 		provider = "diagnostic_warnings",
-		enabled = function() return lsp.diagnostics_exist(lsp_severity.WARN) end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.WARN) end,
 		hl = {
-			fg = clrs.yellow,
+			fg = C.yellow,
 			bg = sett.bkg,
 		},
 		icon = " " .. assets.lsp.warning .. " ",
@@ -355,9 +352,9 @@ function M.get()
 
 	components.active[2][4] = {
 		provider = "diagnostic_info",
-		enabled = function() return lsp.diagnostics_exist(lsp_severity.INFO) end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.INFO) end,
 		hl = {
-			fg = clrs.sky,
+			fg = C.sky,
 			bg = sett.bkg,
 		},
 		icon = " " .. assets.lsp.info .. " ",
@@ -365,9 +362,9 @@ function M.get()
 
 	components.active[2][5] = {
 		provider = "diagnostic_hints",
-		enabled = function() return lsp.diagnostics_exist(lsp_severity.HINT) end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.HINT) end,
 		hl = {
-			fg = clrs.rosewater,
+			fg = C.rosewater,
 			bg = sett.bkg,
 		},
 		icon = " " .. assets.lsp.hint .. " ",
@@ -408,8 +405,8 @@ function M.get()
 		provider = function()
 			local filename = vim.fn.expand "%:t"
 			local extension = vim.fn.expand "%:e"
-			local icon = require("nvim-web-devicons").get_icon(filename, extension)
-			if icon == nil then icon = assets.file end
+			local present, icons = pcall(require, "nvim-web-devicons")
+			local icon = present and icons.get_icon(filename, extension) or assets.file
 			return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "
 		end,
 		enabled = is_enabled(70),
@@ -450,8 +447,8 @@ function M.get()
 	components.inactive[1][1] = {
 		provider = function() return " " .. string.upper(vim.bo.ft) .. " " end,
 		hl = {
-			fg = clrs.overlay2,
-			bg = clrs.mantle,
+			fg = C.overlay2,
+			bg = C.mantle,
 		},
 	}
 
