@@ -9,6 +9,7 @@ local M = {
 		},
 		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
 		transparent_background = false,
+		show_end_of_buffer = false,
 		term_colors = false,
 		dim_inactive = {
 			enabled = false,
