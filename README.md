@@ -700,8 +700,11 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 For custom Lsp Kind Icon and Color
 
 ```lua
-require("lspsaga").init_lsp_saga {
-    custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+require("lspsaga").setup {
+    ui = {
+        colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
+        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+    },
 }
 ```
 

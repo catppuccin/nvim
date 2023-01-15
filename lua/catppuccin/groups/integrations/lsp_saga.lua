@@ -1,5 +1,25 @@
 local M = {}
 
+function M.custom_colors()
+	local C = require("catppuccin.palettes").get_palette()
+	return {
+		--float window normal bakcground color
+		normal_bg = C.base,
+		--title background color
+		title_bg = C.green,
+		red = "#e95678",
+		magenta = C.maroon,
+		orange = C.peach,
+		yellow = C.yellow,
+		green = C.green,
+		cyan = C.sky,
+		blue = C.blue,
+		purple = C.mauve,
+		white = C.text,
+		black = C.crust,
+	}
+end
+
 function M.custom_kind()
 	local C = require("catppuccin.palettes").get_palette()
 	return {
