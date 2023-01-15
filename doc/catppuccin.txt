@@ -39,12 +39,12 @@ Table of Contents                               *catppuccin-table-of-contents*
 ==============================================================================
 2. Installation                                      *catppuccin-installation*
 
->
+>lua
     use { "catppuccin/nvim", as = "catppuccin" }
 <
 
 
->
+>vim
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 <
 
@@ -52,12 +52,12 @@ Table of Contents                               *catppuccin-table-of-contents*
 ==============================================================================
 3. Usage                                                    *catppuccin-usage*
 
->
+>vim
     colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 <
 
 
->
+>lua
     vim.cmd.colorscheme "catppuccin"
 <
 
@@ -68,7 +68,7 @@ Table of Contents                               *catppuccin-table-of-contents*
 There is no need to call `setup` if you don’t want to change the default
 options and settings.
 
->
+>lua
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
         background = { -- :h background
@@ -158,7 +158,7 @@ Handles the style of general hi groups (see `:h highlight-args`):
 
 GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
->
+>lua
     local latte = require("catppuccin.palettes").get_palette "latte"
     local frappe = require("catppuccin.palettes").get_palette "frappe"
     local macchiato = require("catppuccin.palettes").get_palette "macchiato"
@@ -173,7 +173,7 @@ OVERWRITING COLORS                             *catppuccin-overwriting-colors*
 
 Colors can be overwritten using `color_overrides` in the setting, like so:
 
->
+>lua
     require("catppuccin").setup {
         color_overrides = {
             all = {
@@ -229,7 +229,7 @@ OVERWRITING HIGHLIGHT GROUPS         *catppuccin-overwriting-highlight-groups*
 
 Global highlight groups can be overwritten in the setting like so:
 
->
+>lua
     custom_highlights = function(colors)
         return {
             <hl_group> = { <fields> }
@@ -240,7 +240,7 @@ Global highlight groups can be overwritten in the setting like so:
 
 Here is an example:
 
->
+>lua
     require("catppuccin").setup {
         custom_highlights = function(colors)
             return {
@@ -255,7 +255,7 @@ Here is an example:
 
 Per flavour highlight groups can be overwritten in the setting like so:
 
->
+>lua
     highlight_overrides = {
         all = function(colors) -- Global highlight, will be replaced with custom_highlights if exists
             return {
@@ -272,7 +272,7 @@ Per flavour highlight groups can be overwritten in the setting like so:
 
 Here is an example:
 
->
+>lua
     require("catppuccin").setup {
       highlight_overrides = {
             all = function(colors)
@@ -376,7 +376,7 @@ module. (See Special integrations
 These integrations allow catppuccin to set the theme of various plugins. To
 enable an integration you just need to set it to `true`, for example:
 
->
+>lua
     require("catppuccin").setup({
         integrations = {
             <module> = <boolean>
@@ -391,7 +391,7 @@ Click here to see an example config
 
 </ins>
 
->
+>lua
     require("catppuccin").setup({
         integrations = {
             aerial = false,
@@ -476,7 +476,7 @@ barbecue.nvim
 Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It
 will pick the one set in your config):
 
->
+>lua
     require("barbecue").setup {
       theme = "catppuccin",
     }
@@ -486,7 +486,7 @@ will pick the one set in your config):
 The directory name color shown is dimmed by default, you can customize this
 setting.
 
->
+>lua
     integrations = {
       barbecue = {
         dim_dirname = true,
@@ -504,7 +504,7 @@ Update your bufferline config to use the Catppuccin components:
   highlight incorrectly
 
 
->
+>lua
     use "akinsho/bufferline.nvim" {
       after = "catppuccin",
       config = function()
@@ -519,7 +519,7 @@ Update your bufferline config to use the Catppuccin components:
 Configurations are self-explanatory, see `:h bufferline-highlights` for
 detailed explanations:
 
->
+>lua
     local mocha = require("catppuccin.palettes").get_palette "mocha"
     bufferline.setup {
         highlights = require("catppuccin.groups.integrations.bufferline").get {
@@ -542,11 +542,9 @@ detailed explanations:
 
 feline.nvim
 
-First make sure that the kyazdani42/nvim-web-devicons
-<https://github.com/kyazdani42/nvim-web-devicons/> plugin is installed. Then
-update your Feline config to use the Catppuccin components:
+Update your Feline config to use the Catppuccin components:
 
->
+>lua
     local ctp_feline = require('catppuccin.groups.integrations.feline')
     
     ctp_feline.setup()
@@ -562,7 +560,7 @@ change assets, settings and the colors per vim mode.
 
 Here are the defaults:
 
->
+>lua
     local clrs = require("catppuccin.palettes").get_palette()
     local ctp_feline = require('catppuccin.groups.integrations.feline')
     local U = require "catppuccin.utils.colors"
@@ -629,7 +627,7 @@ Here are the defaults:
   `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
 
 
->
+>lua
     vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "*",
         callback = function()
@@ -647,14 +645,14 @@ fidget.nvim
 
 Set fidget module to `true`
 
->
+>lua
     fidget = true
 <
 
 
 Then set `window.blend` to `0`:
 
->
+>lua
     require("fidget").setup {
         window = {
             blend = 0,
@@ -671,7 +669,7 @@ enables char highlights per indent level. Follow the instructions here
 <https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list>
 to set the latter up.
 
->
+>lua
     indent_blankline = {
         enabled = true,
         colored_indent_levels = false,
@@ -684,7 +682,7 @@ lightline.vim
 Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme
 name. It will pick the one set in your config):
 
->
+>vim
     let g:lightline = {'colorscheme': 'catppuccin'}
 <
 
@@ -693,7 +691,7 @@ lspsaga.nvim
 
 For custom Lsp Kind Icon and Color
 
->
+>lua
     require("lspsaga").setup {
         ui = {
             colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
@@ -708,7 +706,7 @@ lualine.nvim
 Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It
 will pick the one set in your config):
 
->
+>lua
     require('lualine').setup {
         options = {
             theme = "catppuccin"
@@ -722,7 +720,7 @@ nvim-dap</a> & nvim-dap-ui</a>
 
 Setting `enabled` to `true`:
 
->
+>lua
     integration = {
         dap = {
             enabled = true,
@@ -732,7 +730,7 @@ Setting `enabled` to `true`:
 <
 
 
->
+>lua
     -- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
     require("dap")
     
@@ -750,7 +748,7 @@ Setting `enabled` to `true` enables this integration. In the inners tables you
 can set the style for the diagnostics, both `virtual_text` (what you see on the
 side) and `underlines` (what points directly at the thing (e.g. an error)).
 
->
+>lua
     native_lsp = {
         enabled = true,
         virtual_text = {
@@ -773,7 +771,7 @@ nvim-navic
 
 Setting `enabled` to `true`:
 
->
+>lua
     navic = {
         enabled = false,
         custom_bg = "NONE",
@@ -781,7 +779,7 @@ Setting `enabled` to `true`:
 <
 
 
->
+>lua
     -- You NEED to enable highlight in nvim-navic setting or it won't work
     require("nvim-navic").setup {
         highlight = true
@@ -794,7 +792,7 @@ vim-airline
 Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme
 name. It will pick the one set in your config):
 
->
+>vim
     let g:airline_theme = 'catppuccin'
 <
 
@@ -803,7 +801,7 @@ vim-clap
 
 Use this to set it up:
 
->
+>vim
     let g:clap_theme = 'catppuccin'
 <
 
@@ -832,7 +830,7 @@ CONFIG                                                     *catppuccin-config*
 By default catppuccin writes the compiled results into the system’s cache
 directory. You can change the cache dir using:
 
->
+>lua
     require("catppuccin").setup({ -- Note: On windows we replace `/` with `\` by default
         compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
     })
@@ -841,12 +839,12 @@ directory. You can change the cache dir using:
 
 COMPILE COMMANDS                                 *catppuccin-compile-commands*
 
->
+>vim
     :CatppuccinCompile " Create/update the compile file
 <
 
 
->
+>lua
     
     require('catppuccin').compile() -- Catppuccin also provide a function to work with the catppuccin compiler.
 <
@@ -863,7 +861,7 @@ Use them to execute code at certain events. These are the ones available:
 
 They can be used like so:
 
->
+>lua
     vim.api.nvim_create_autocmd("ColorSchemePre", {
         pattern = "*",
         callback = function()
@@ -886,7 +884,7 @@ They can be used like so:
 
 SWITCH CATPPUCCIN FLAVOUR ON THE FLY*catppuccin-switch-catppuccin-flavour-on-the-fly*
 
->
+>lua
     :Catppuccin mocha/macchiato/frappe/latte
 <
 
@@ -898,14 +896,14 @@ SWITCH CATPPUCCIN FLAVOUR ON THE FLY*catppuccin-switch-catppuccin-flavour-on-the
 
 LOAD OTHER CUSTOM HIGHLIGHTS LATER*catppuccin-load-other-custom-highlights-later*
 
->
+>lua
     require("catppuccin.lib.highlighter").syntax()
 <
 
 
 For example:
 
->
+>lua
     local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
     require("catppuccin.lib.highlighter").syntax({
         Comment = { fg = colors.surface0 }
@@ -922,7 +920,7 @@ WRONG TREESITTER HIGHLIGHTS           *catppuccin-wrong-treesitter-highlights*
 
 Please disable `additional_vim_regex_highlighting`
 
->
+>lua
     require("nvim-treesitter.configs").setup {
         highlight = {
             enable = true,
