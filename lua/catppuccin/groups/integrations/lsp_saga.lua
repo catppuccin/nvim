@@ -3,11 +3,9 @@ local M = {}
 function M.custom_colors()
 	local C = require("catppuccin.palettes").get_palette()
 	return {
-		--float window normal bakcground color
 		normal_bg = C.base,
-		--title background color
 		title_bg = C.green,
-		red = "#e95678",
+		red = C.red,
 		magenta = C.maroon,
 		orange = C.peach,
 		yellow = C.yellow,
@@ -56,29 +54,6 @@ function M.custom_kind()
 	}
 end
 
-function M.get()
-	return {
-		DiagnosticError = { fg = C.red },
-		DiagnosticWarning = { fg = C.yellow },
-		DiagnosticInformation = { fg = C.blue },
-		DiagnosticHint = { fg = C.rosewater },
-		LspFloatWinNormal = { bg = C.crust },
-		LspFloatWinBorder = { fg = C.blue },
-		LspSagaBorderTitle = { fg = C.flamingo },
-		LspSagaHoverBorder = { fg = C.blue },
-		LspSagaRenameBorder = { fg = C.teal },
-		LspSagaDefPreviewBorder = { fg = C.teal },
-		LspSagaCodeActionBorder = { fg = C.blue },
-		LspSagaFinderSelection = { fg = C.surface1 },
-		LspSagaCodeActionTitle = { fg = C.blue },
-		LspSagaCodeActionContent = { fg = C.lavender },
-		LspSagaSignatureHelpBorder = { fg = C.red },
-		ReferencesCount = { fg = C.lavender },
-		DefinitionCount = { fg = C.lavender },
-		DefinitionIcon = { fg = C.blue },
-		ReferencesIcon = { fg = C.blue },
-		TargetWord = { fg = C.flamingo },
-	}
-end
+function M.get() return {} end
 
 return M
