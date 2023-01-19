@@ -19,73 +19,37 @@ This port of Catppuccin is special because it was the first one and the one that
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56817415/197354846-7a5e0bdf-342e-42f1-8c67-9f1aeac587dc.png"/>
+  <img src="https://user-images.githubusercontent.com/56817415/213472445-091e54fb-091f-4448-a631-fa6b2ba7d8a5.png"/>
 </p>
 
 # Previews
 
 <details>
-<summary>Mocha</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197354842-579a829f-dbd5-4bed-9100-82e82bcf341c.png"/>
-</details>
-<details>
-<summary>Macchiato</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197354840-1f3cbe2b-a763-4080-8f86-21b12c5a7e59.png"/>
+<summary>Latte</summary>
+<img src="https://user-images.githubusercontent.com/56817415/213473391-603bdc68-68f4-4877-a15a-b469040928b5.png"/>
 </details>
 <details>
 <summary>Frappe</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197349424-6ef5be0d-bf5b-429a-8e36-44dc43707066.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/213473368-16931b70-fd84-4a89-a698-1b1bca1f82de.png"/>
 </details>
 <details>
-<summary>Latte</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197354833-4d2c3b33-95bd-4979-a3f5-df3e426dfc50.png"/>
+<summary>Macchiato</summary>
+<img src="https://user-images.githubusercontent.com/56817415/213473285-7bd858be-6947-4d9e-8c01-2573cbc7e76c.png"/>
+</details>
+<details>
+<summary>Mocha</summary>
+<img src="https://user-images.githubusercontent.com/56817415/213471997-34837219-88cc-4db2-baca-e25813a89789.png"/>
 </details>
 
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
-<details>
-<summary>Amoled</summary>
 
-`#000000`! [Configuration can be found here](https://github.com/nullchilly/nvim/blob/nvim/lua/config/catppuccin.lua)
+![nvimwalk-custom](https://user-images.githubusercontent.com/56817415/213480149-6ba92b81-1ada-46a4-89bd-4e2bb25d19c3.png)
 
-<img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
+<p align="center">
+<a href="https://www.pixiv.net/en/artworks/101554989">bg used in transparent screenshot</a>
+</p>
 
-Here is a subset of it:
-
-```lua
-require("catppuccin").setup {
-    flavour = "mocha",
-    color_overrides = {
-        mocha = {
-            base = "#000000",
-        },
-    },
-    integrations = {
-        nvimtree = true,
-    },
-    highlight_overrides = {
-        mocha = function(mocha)
-            return {
-                NvimTreeNormal = { bg = mocha.none },
-            }
-        end,
-    },
-}
-```
-
-</details>
-
-<details>
-
-An attempt to restore the original theme based on Mocha! [Configuration can be found here](https://github.com/ayamir/nvimdots/blob/61fe5b7f5374beaee18c0c730441d55ad5911604/lua/modules/ui/config.lua#L125)
-
-<summary>Catppuccino</summary>
-<img src="https://user-images.githubusercontent.com/50296129/197518223-bcf0aade-b12a-45c4-a024-dc46c9fee948.png"/>
-
-</details>
-
-</details>
-
-Share your custom flavour here! <https://github.com/catppuccin/nvim/discussions/323>
+**[Configurations can be found here!](https://github.com/catppuccin/nvim/discussions/323)**
 
 <!-- panvimdoc-ignore-end -->
 
