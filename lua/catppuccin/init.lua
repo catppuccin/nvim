@@ -85,7 +85,7 @@ local function get_flavour(default)
 	local flavour
 	if default then
 		flavour = default
-	elseif vim.g.colors_name and vim.g.colors_name == "catppuccin" then
+	elseif vim.g.colors_name == "catppuccin" then
 		-- after first time load
 		flavour = M.options.background[is_vim and vim.eval "&background" or vim.o.background]
 	else
