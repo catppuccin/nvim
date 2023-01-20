@@ -82,7 +82,7 @@ end
 
 ---@param default? string
 local function get_flavour(default)
-  local flavour
+	local flavour
 	if default then
 		flavour = default
 	elseif vim.g.colors_name and vim.g.colors_name == "catppuccin" then
@@ -103,7 +103,7 @@ local function get_flavour(default)
 		)
 		flavour = nil
 	end
-  return flavour or "mocha"
+	return flavour or "mocha"
 end
 
 local lock = false -- Avoid g:colors_name reloading
