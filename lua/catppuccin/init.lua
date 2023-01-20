@@ -84,21 +84,24 @@ end
 local function get_flavour(flavour)
 	if flavour and not M.flavours[flavour] then
 		vim.notify(
-			string.format("Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'", flavour),
+			string.format(
+				"Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+				flavour
+			),
 			vim.log.levels.ERROR
 		)
-    flavour = "mocha"
+		flavour = "mocha"
 	end
 
-  if flavour then
-    return flavour
-  elseif vim.g.colors_name and vim.g.colors_name == "catppuccin" then
-    -- after first time load
-    return M.options.background[is_vim and vim.eval "&background" or vim.o.background]
-  else
-    -- first time load
-    return M.flavour or "mocha"
-  end
+	if flavour then
+		return flavour
+	elseif vim.g.colors_name and vim.g.colors_name == "catppuccin" then
+		-- after first time load
+		return M.options.background[is_vim and vim.eval "&background" or vim.o.background]
+	else
+		-- first time load
+		return M.flavour or "mocha"
+	end
 end
 
 local lock = false -- Avoid g:colors_name reloading
@@ -114,7 +117,7 @@ function M.load(flavour)
 		M.compile()
 		f = loadfile(compiled_path)
 	end
-  ---@diagnostic disable-next-line: need-check-nil
+	---@diagnostic disable-next-line: need-check-nil
 	f()
 	lock = false
 end
