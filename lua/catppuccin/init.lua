@@ -80,17 +80,14 @@ function M.compile()
 	M.flavour = _flavour -- Restore user flavour after compile
 end
 
----@param default? string
 local function get_flavour(default)
 	local flavour
 	if default then
 		flavour = default
-	elseif vim.g.colors_name == "catppuccin" then
-		-- after first time load
+	elseif vim.g.colors_name == "catppuccin" then -- after first time load
 		flavour = M.options.background[is_vim and vim.eval "&background" or vim.o.background]
 	else
-		-- first time load
-		flavour = M.flavour
+		flavour = M.flavour -- first time load
 	end
 
 	if flavour and not M.flavours[flavour] then
@@ -108,7 +105,6 @@ end
 
 local lock = false -- Avoid g:colors_name reloading
 
----@param flavour? string
 function M.load(flavour)
 	if lock then return end
 	M.flavour = get_flavour(flavour)
@@ -157,23 +153,16 @@ end
 
 if is_vim then return M end
 
-vim.api.nvim_create_user_command("Catppuccin", function(inp)
-	if not M.flavours[inp.args] then
-		vim.notify(
-			"Catppuccin (error): Invalid flavour '"
-				.. inp.args
-				.. "', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
-			vim.log.levels.ERROR
-		)
-		return
-	end
-	vim.api.nvim_command("colorscheme catppuccin-" .. inp.args)
-end, {
-	nargs = 1,
-	complete = function(line)
-		return vim.tbl_filter(function(val) return vim.startswith(val, line) end, vim.tbl_keys(M.flavours))
-	end,
-})
+vim.api.nvim_create_user_command(
+	"Catppuccin",
+	function(inp) vim.api.nvim_command("colorscheme catppuccin-" .. get_flavour(inp.args)) end,
+	{
+		nargs = 1,
+		complete = function(line)
+			return vim.tbl_filter(function(val) return vim.startswith(val, line) end, vim.tbl_keys(M.flavours))
+		end,
+	}
+)
 
 vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	for name, _ in pairs(package.loaded) do
@@ -183,4 +172,5 @@ vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
 	vim.api.nvim_command "colorscheme catppuccin"
 end, {})
+
 return M
