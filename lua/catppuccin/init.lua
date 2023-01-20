@@ -80,13 +80,33 @@ function M.compile()
 	M.flavour = _flavour -- Restore user flavour after compile
 end
 
+---@param flavour? string
+local function get_flavour(flavour)
+	if flavour and not M.flavours[flavour] then
+		vim.notify(
+			string.format("Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'", flavour),
+			vim.log.levels.ERROR
+		)
+    flavour = "mocha"
+	end
+
+  if flavour then
+    return flavour
+  elseif vim.g.colors_name and vim.g.colors_name == "catppuccin" then
+    -- after first time load
+    return M.options.background[is_vim and vim.eval "&background" or vim.o.background]
+  else
+    -- first time load
+    return M.flavour or "mocha"
+  end
+end
+
 local lock = false -- Avoid g:colors_name reloading
 
+---@param flavour? string
 function M.load(flavour)
 	if lock then return end
-	M.flavour = flavour
-		or (vim.g.colors_name and M.options.background[is_vim and vim.eval "&background" or vim.o.background] or M.flavour)
-		or "mocha"
+	M.flavour = get_flavour(flavour)
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
 	lock = true
 	local f = loadfile(compiled_path)
@@ -94,6 +114,7 @@ function M.load(flavour)
 		M.compile()
 		f = loadfile(compiled_path)
 	end
+  ---@diagnostic disable-next-line: need-check-nil
 	f()
 	lock = false
 end
@@ -103,19 +124,7 @@ function M.setup(user_conf)
 	user_conf = user_conf or {}
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
-
-	M.flavour = M.options.flavour or vim.g.catppuccin_flavour or "mocha"
-
-	if not M.flavours[M.flavour] then
-		vim.notify(
-			string.format(
-				"Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
-				M.flavour
-			),
-			vim.log.levels.ERROR
-		)
-		return
-	end
+	M.flavour = get_flavour(M.options.flavour or vim.g.catppuccin_flavour)
 
 	-- Caching configuration
 	local cached_path = M.options.compile_path .. M.path_sep .. "date.txt"
