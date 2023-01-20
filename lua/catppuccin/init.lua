@@ -80,8 +80,19 @@ function M.compile()
 	M.flavour = _flavour -- Restore user flavour after compile
 end
 
----@param flavour? string
-local function get_flavour(flavour)
+---@param default? string
+local function get_flavour(default)
+  local flavour
+	if default then
+		flavour = default
+	elseif vim.g.colors_name and vim.g.colors_name == "catppuccin" then
+		-- after first time load
+		flavour = M.options.background[is_vim and vim.eval "&background" or vim.o.background]
+	else
+		-- first time load
+		flavour = M.flavour
+	end
+
 	if flavour and not M.flavours[flavour] then
 		vim.notify(
 			string.format(
@@ -90,18 +101,9 @@ local function get_flavour(flavour)
 			),
 			vim.log.levels.ERROR
 		)
-		flavour = "mocha"
+		flavour = nil
 	end
-
-	if flavour then
-		return flavour
-	elseif vim.g.colors_name and vim.g.colors_name == "catppuccin" then
-		-- after first time load
-		return M.options.background[is_vim and vim.eval "&background" or vim.o.background]
-	else
-		-- first time load
-		return M.flavour or "mocha"
-	end
+  return flavour or "mocha"
 end
 
 local lock = false -- Avoid g:colors_name reloading
