@@ -31,18 +31,31 @@ Table of Contents                               *catppuccin-table-of-contents*
 1. Features                                              *catppuccin-features*
 
 
-- Highly configurable with 4 different flavours and ability to create many more <https://github.com/catppuccin/nvim/discussions/323>
+- Supports both vim and neovim (Requires neovim <https://github.com/neovim/neovim/> >= 0.8 or vim <https://github.com/vim/vim> >= 9 with lua <https://github.com/lua/lua> >= 5.1)
+- Highly configurable with 4 different flavours and ability to create your own! <https://github.com/catppuccin/nvim/discussions/323>
 - Compile <https://github.com/catppuccin/nvim#Compile> user config for fastest startuptime <https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/>
-- Integrations with a bunch of plugins <https://github.com/catppuccin/nvim#integrations>
+- Integrations with lsp, treesitter and a bunch of plugins <https://github.com/catppuccin/nvim#integrations>
+- Supports for many other applications <https://github.com/catppuccin/catppuccin>
 
 
 ==============================================================================
 2. Installation                                      *catppuccin-installation*
 
+lazy.nvim <https://github.com/folke/lazy.nvim>
+
+>lua
+    { "catppuccin/nvim", name = "catppuccin" }
+<
+
+
+packer.nvim <https://github.com/wbthomason/packer.nvim>
+
 >lua
     use { "catppuccin/nvim", as = "catppuccin" }
 <
 
+
+vim-plug <https://github.com/junegunn/vim-plug>
 
 >vim
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -954,7 +967,7 @@ https://github.com/termstandard/colors#not-supporting-truecolor
 
 
 - Pocco81 <https://github.com/Pocco81>
-- Null Chilly <https://github.com/nullchilly>
+- nullchilly <https://github.com/nullchilly>
 
 
 
