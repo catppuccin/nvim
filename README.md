@@ -14,15 +14,14 @@
 </p>
 
 <p align="center">
-This port of Catppuccin is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the
-<a href="https://github.com/catppuccin/nvim/tree/v0.1">v0.1</a> tag
+This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the <a href="https://github.com/catppuccin/nvim/tree/v0.1">v0.1</a> tag
 </p>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/56817415/213472445-091e54fb-091f-4448-a631-fa6b2ba7d8a5.png"/>
 </p>
 
-# Previews
+# Flavours
 
 <details>
 <summary>Latte</summary>
@@ -41,30 +40,35 @@ This port of Catppuccin is special because it was the first one and the one that
 <img src="https://user-images.githubusercontent.com/56817415/213471997-34837219-88cc-4db2-baca-e25813a89789.png"/>
 </details>
 
-**[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
-
-![nvimwalk-custom](https://user-images.githubusercontent.com/56817415/213480149-6ba92b81-1ada-46a4-89bd-4e2bb25d19c3.png)
-
-<p align="center">
-<a href="https://www.pixiv.net/en/artworks/101554989">bg used in transparent screenshot</a>
+**[Bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors)** Here are some **[config from our community](https://github.com/catppuccin/nvim/discussions/323)**: <a href="https://www.pixiv.net/en/artworks/101554989"><sub><sup>(background source)</sup></sub></a>
 </p>
 
-**[Configurations can be found here!](https://github.com/catppuccin/nvim/discussions/323)**
+![nvimwalk-custom](https://user-images.githubusercontent.com/56817415/213480149-6ba92b81-1ada-46a4-89bd-4e2bb25d19c3.png)
+<p align="center">
 
 <!-- panvimdoc-ignore-end -->
 
 # Features
 
-- Highly configurable with 4 different flavours and ability to create [many more](https://github.com/catppuccin/nvim/discussions/323)
+- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 with [lua](https://github.com/lua/lua) >= 5.1)
+- Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
 - [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
-- Integrations with [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
+- Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
+- Supports for [many other applications](https://github.com/catppuccin/catppuccin)
 
 # Installation
 
+[lazy.nvim](https://github.com/folke/lazy.nvim)
+```lua
+{ "catppuccin/nvim", name = "catppuccin" }
+```
+
+[packer.nvim](https://github.com/wbthomason/packer.nvim)
 ```lua
 use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
+[vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 ```
@@ -899,7 +903,7 @@ Full list of Unsupported terminals can be found here: <https://github.com/termst
 # Thanks to
 
 - [Pocco81](https://github.com/Pocco81)
-- [Null Chilly](https://github.com/nullchilly)
+- [nullchilly](https://github.com/nullchilly)
 
 <!-- panvimdoc-ignore-start -->
 
