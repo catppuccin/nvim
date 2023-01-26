@@ -1,5 +1,5 @@
 🎉 First off, thanks for taking the time to contribute! 🎉 Here are some guidelines from us:
-- Format code using [stylua](https://github.com/johnnymorganz/stylua).
+- Format code using [stylus](https://github.com/johnnymorganz/stylua).
 - New plugin integration should be added in [alphabetical order](https://github.com/catppuccin/nvim#integrations)
 - Recommendation:
   - Create a topic branch on your fork for your specific PR.
