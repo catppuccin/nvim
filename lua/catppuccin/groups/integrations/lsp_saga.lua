@@ -1,23 +1,5 @@
 local M = {}
 
-function M.custom_colors()
-	local C = require("catppuccin.palettes").get_palette()
-	return {
-		normal_bg = C.base,
-		title_bg = C.green,
-		red = C.red,
-		magenta = C.maroon,
-		orange = C.peach,
-		yellow = C.yellow,
-		green = C.green,
-		cyan = C.sky,
-		blue = C.blue,
-		purple = C.mauve,
-		white = C.text,
-		black = C.crust,
-	}
-end
-
 function M.custom_kind()
 	local C = require("catppuccin.palettes").get_palette()
 	return {
@@ -54,6 +36,35 @@ function M.custom_kind()
 	}
 end
 
-function M.get() return {} end
+function M.get()
+	return {
+		TitleString = { fg = C.text },
+		TitleIcon = { fg = C.blue },
+		SagaBorder = { fg = C.blue, bg = C.none },
+		SagaNormal = { bg = O.transparent_background and C.none or C.base },
+		SagaExpand = { fg = C.green },
+		SagaCollapse = { fg = C.green },
+		SagaBeacon = { bg = U.darken(C.surface0, 0.8, C.crust) },
+		ActionPreviewTitle = { fg = C.mauve, bg = O.transparent_background and C.none or C.base },
+		CodeActionText = { fg = C.green },
+		CodeActionNumber = { fg = C.pink },
+		FinderSelection = { fg = C.blue, style = { "bold" } },
+		FinderFileName = { fg = C.text },
+		FinderIcon = { fg = C.flamingo },
+		FinderCount = { fg = C.lavender },
+		FinderType = { fg = C.flamingo },
+		FinderSpinnerTitle = { fg = C.mauve, style = { "bold" } },
+		FinderSpinner = { fg = C.mauve, style = { "bold" } },
+		FinderVirtText = { fg = C.overlay2 },
+		RenameNormal = { fg = C.text },
+		DiagnosticSource = { fg = C.overlay0 },
+		DiagnosticPos = { fg = C.surface2 },
+		DiagnosticWord = { fg = C.text },
+		CallHierarchyIcon = { fg = C.mauve },
+		CallHierarchyTitle = { fg = C.blue },
+		SagaShadow = { bg = C.crust },
+		OutlineIndent = { fg = C.overlay2 },
+	}
+end
 
 return M
