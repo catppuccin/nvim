@@ -57,7 +57,7 @@ function M.get()
 		-- mkdLink = { fg = C.blue, style = { "underline" } },
 
 		-- debugging
-		debugPC = { bg = C.crust }, -- used for highlighting the current line in terminal-debug
+		debugPC = { bg = O.transparent_background and C.none or C.crust }, -- used for highlighting the current line in terminal-debug
 		debugBreakpoint = { bg = C.base, fg = C.overlay0 }, -- used for breakpoint colors in terminal-debug
 		-- illuminate
 		illuminatedWord = { bg = C.surface1 },
