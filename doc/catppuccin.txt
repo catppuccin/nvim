@@ -346,7 +346,7 @@ module. (See Special integrations
 │leap.nvim <https://github.com/ggandor/leap.nvim>                                    │leap               │
 │lightline.vim <https://github.com/itchyny/lightline.vim>                            │Special            │
 │lightspeed.nvim <https://github.com/ggandor/lightspeed.nvim>                        │lightspeed         │
-│lspsaga.nvim <https://github.com/glepnir/lspsaga.nvim/>                             │lsp_saga           │
+│lspsaga.nvim <https://github.com/glepnir/lspsaga.nvim/>                             │lsp_saga, Special  │
 │lualine.nvim <https://github.com/nvim-lualine/lualine.nvim>                         │Special            │
 │markdown <https://www.markdownguide.org/>                                           │markdown           │
 │mason <https://github.com/williamboman/mason.nvim>                                  │mason              │
@@ -697,6 +697,20 @@ name. It will pick the one set in your config):
 
 >vim
     let g:lightline = {'colorscheme': 'catppuccin'}
+<
+
+
+lspsaga.nvim
+
+For custom Lsp Kind Icon and Color
+
+>lua
+    require("lspsaga").setup {
+        ui = {
+            colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
+            kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+        },
+    }
 <
 
 
