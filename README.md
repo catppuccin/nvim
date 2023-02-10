@@ -332,7 +332,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [leap.nvim](https://github.com/ggandor/leap.nvim)                                     | leap                |
 | [lightline.vim](https://github.com/itchyny/lightline.vim)                             | Special             |
 | [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)                         | lightspeed          |
-| [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim/)                              | lsp_saga, Special   |
+| [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim/)                              | lsp_saga            |
 | [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                          | Special             |
 | [markdown](https://www.markdownguide.org/)                                            | markdown            |
 | [mason](https://github.com/williamboman/mason.nvim)                                   | mason               |
@@ -660,23 +660,6 @@ Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme name
 ```vim
 let g:lightline = {'colorscheme': 'catppuccin'}
 ```
-
-</details>
-
-<details> <summary>lspsaga.nvim</summary>
-
-For custom Lsp Kind Icon and Color
-
-```lua
-require("lspsaga").setup {
-    ui = {
-        colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
-        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
-    },
-}
-```
-
-</details>
 
 </details>
 
