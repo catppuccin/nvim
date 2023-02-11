@@ -12,7 +12,6 @@ function M.get()
 		NoiceCmdlinePopupBorderSearch = { fg = C.yellow },
 		NoiceConfirm = { fg = C.text, bg = O.transparent_background and C.none or C.base },
 		NoiceConfirmBorder = { fg = C.blue },
-		NoiceCursor = { fg = C.text },
 		NoiceMini = { fg = C.text },
 		NoicePopup = { fg = C.text, bg = O.transparent_background and C.none or C.mantle },
 		NoicePopupBorder = { link = "FloatBorder" },
