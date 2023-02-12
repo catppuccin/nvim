@@ -362,6 +362,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [vim-clap](https://github.com/liuchengxu/vim-clap)                                    | Special             |
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                            | gitgutter           |
 | [vim-illuminate](https://github.com/RRethy/vim-illuminate)                            | illuminate          |
+| [vim-sandwich](https://github.com/machakann/vim-sandwich)                             | sandwich            |
 | [vim-sneak](https://github.com/justinmk/vim-sneak)                                    | vim_sneak           |
 | [vimwiki](https://github.com/vimwiki/vimwiki)                                         | vimwiki             |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | which_key           |
@@ -411,6 +412,7 @@ require("catppuccin").setup({
         nvimtree = true,
         overseer = false,
         pounce = false,
+        sandwich = false,
         semantic_tokens = false,
         symbols_outline = false,
         telekasten = false,
