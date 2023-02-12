@@ -17,7 +17,7 @@ endif
 set termguicolors
 let g:colors_name = "catppuccin"]],
 	}
-	table.insert(lines, "set background=" .. (flavour == "latte" and [["light"]] or [["dark"]]))
+	table.insert(lines, "set background=" .. (flavour == "latte" and [[light]] or [[dark]]))
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
