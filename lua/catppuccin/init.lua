@@ -85,7 +85,7 @@ local function get_flavour(default)
 	if default then
 		flavour = default
 	elseif vim.g.colors_name == "catppuccin" then -- after first time load
-		flavour = M.options.background[is_vim and vim.eval "&background" or vim.o.background]
+		flavour = M.options.background[vim.o.background]
 	else
 		flavour = M.flavour -- first time load
 	end
@@ -139,7 +139,10 @@ function M.setup(user_conf)
 
 	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
 	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
-	local hash = require("catppuccin.lib.hashing").hash(user_conf) .. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
+	local hash = require("catppuccin.lib.hashing").hash(user_conf)
+		.. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
+		.. (vim.o.winblend == 0 and 1 or 0) -- :h winblend
+		.. (vim.o.pumblend == 0 and 1 or 0) -- :h pumblend
 
 	if cached ~= hash then
 		M.compile()

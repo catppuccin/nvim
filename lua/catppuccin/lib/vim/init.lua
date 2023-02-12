@@ -1,6 +1,12 @@
 -- TODO: private _G.vim
 vim.command [[command! CatppuccinCompile lua require('catppuccin').compile() print("Catppuccin (info): compiled cache!")]]
 
+vim.o = setmetatable({}, {
+	__index = function(_, k)
+		if k == "background" then return vim.eval "&background" end
+	end,
+})
+
 vim.fn.stdpath = function(what)
 	if what ~= "cache" then return end
 	if package.config:sub(1, 1) == "\\" then
