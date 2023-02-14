@@ -9,7 +9,7 @@ function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
 		[[
-require("catppuccin").compiled = string.dump(function()
+return string.dump(function()
 vim.command[[
 if exists("colors_name")
 	hi clear
@@ -80,10 +80,9 @@ Below is the error message that we captured:
 		dofile(err_path)
 		return
 	end
-	f()
 
 	if file then
-		file:write(require("catppuccin").compiled)
+		file:write(f())
 		file:close()
 	else
 		print(
