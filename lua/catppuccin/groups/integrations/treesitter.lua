@@ -53,7 +53,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a fuction.
+		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
 		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
 		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
 		-- JS & derivative
