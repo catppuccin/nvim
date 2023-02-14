@@ -169,7 +169,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@symbol.ruby"] = { fg = C.flamingo },
 
 		-- PHP
-		["@type.qualifier.php"] = { fg = C.pink, style = O.styles.properties }, -- type qualifiers (e.g. `const`)
+		["@type.qualifier.php"] = { link = "Keyword" }, -- type qualifiers (e.g. `const`)
+		["@method.php"] = { link = "Function" },
+		["@method.call.php"] = { link = "Function" },
 	}
 end
 
