@@ -129,7 +129,7 @@ function M.setup(user_conf)
 	M.flavour = get_flavour(M.options.flavour or vim.g.catppuccin_flavour)
 
 	-- Caching configuration
-	local cached_path = M.options.compile_path .. M.path_sep .. "date"
+	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
 
 	local file = io.open(cached_path)
 	local cached = nil
