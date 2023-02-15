@@ -318,7 +318,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | ------------------------------------------------------------------------------------- | ------------------- |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | aerial              |
 | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                                  | barbar              |
-| [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | barbecue, Special             |
+| [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | barbecue, Special   |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                          | beacon              |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | Special             |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard           |
@@ -352,7 +352,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context  |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter          |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                            | ts_rainbow          |
-| [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)                       | ts_rainbow          |
+| [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)                       | ts_rainbow2         |
 | [overseer.nvim](https://github.com/stevearc/overseer.nvim)                            | overseer            |
 | [pounce.nvim](https://github.com/rlane/pounce.nvim)                                   | pounce              |
 | [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)              | symbols_outline     |
