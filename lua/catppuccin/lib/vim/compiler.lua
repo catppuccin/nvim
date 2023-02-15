@@ -59,8 +59,15 @@ let g:colors_name = "catppuccin"]],
 	end
 	table.insert(lines, "]]end)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-	local file = io.open(O.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
+	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 	local ls = load or loadstring
+
+	if vim.g.catppuccin_debug then -- Debugging purpose
+		local deb = io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb")
+		deb:write(table.concat(lines, "\n"))
+		deb:close()
+	end
+
 	local f = ls(table.concat(lines, "\n"), "=")
 	if not f then
 		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"

@@ -1,5 +1,5 @@
 local M = {}
-local B = bit or bit32 or require "catppuccin.lib.native_bit"
+local B = bit or bit32 or require "catppuccin.lib.vim.bit"
 
 local hash_str = function(str) -- djb2, https://stackoverflow.com/questions/7666509/hash-function-for-string
 	local hash = 5381

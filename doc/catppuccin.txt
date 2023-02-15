@@ -844,7 +844,7 @@ highlights.
 
 CONFIG                                                     *catppuccin-config*
 
-By default catppuccin writes the compiled results into the system’s cache
+By default catppuccin writes the compiled results into this repo’s root
 directory. You can change the cache dir using:
 
 >lua

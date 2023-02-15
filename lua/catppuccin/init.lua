@@ -7,7 +7,7 @@ local M = {
 			light = "latte",
 			dark = "mocha",
 		},
-		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
+		compile_path = debug.getinfo(1).source:sub(2, -24) .. "compiled",
 		transparent_background = false,
 		show_end_of_buffer = false,
 		term_colors = false,
@@ -73,12 +73,12 @@ local M = {
 }
 
 function M.compile()
-	local _flavour = M.flavour
+	local user_flavour = M.flavour
 	for flavour, _ in pairs(M.flavours) do
 		M.flavour = flavour
 		require("catppuccin.lib." .. (is_vim and "vim." or "") .. "compiler").compile(flavour)
 	end
-	M.flavour = _flavour -- Restore user flavour after compile
+	M.flavour = user_flavour -- Restore user flavour after compile
 end
 
 local function get_flavour(default)
@@ -109,7 +109,7 @@ local lock = false -- Avoid g:colors_name reloading
 function M.load(flavour)
 	if lock then return end
 	M.flavour = get_flavour(flavour)
-	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour .. "_compiled.lua"
+	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour
 	lock = true
 	local f = loadfile(compiled_path)
 	if not f then
@@ -129,7 +129,7 @@ function M.setup(user_conf)
 	M.flavour = get_flavour(M.options.flavour or vim.g.catppuccin_flavour)
 
 	-- Caching configuration
-	local cached_path = M.options.compile_path .. M.path_sep .. "date.txt"
+	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
 
 	local file = io.open(cached_path)
 	local cached = nil
