@@ -50,7 +50,7 @@ vim.g.colors_name = "catppuccin"]],
 	end
 	table.insert(lines, "end)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-	local file = io.open(O.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
+	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 
 	if vim.g.catppuccin_debug then -- Debugging purpose
 		local deb = io.open((path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_debug.lua", "wb")

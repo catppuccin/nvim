@@ -7,15 +7,6 @@ vim.o = setmetatable({}, {
 	end,
 })
 
-vim.fn.stdpath = function(what)
-	if what ~= "cache" then return end
-	if package.config:sub(1, 1) == "\\" then
-		return vim.fn.expand "%localappdata%" .. [[Temp\vim]]
-	else
-		return (os.getenv "XDG_CACHE_HOME" or vim.fn.expand "$HOME/.cache") .. "/vim"
-	end
-end
-
 -- Reference: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/shared.lua
 local function tbl_isempty(t)
 	assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
