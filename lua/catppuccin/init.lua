@@ -41,6 +41,7 @@ local M = {
 			telescope = true,
 			treesitter = not is_vim,
 			ts_rainbow = true,
+			ts_rainbow2 = true,
 			barbecue = {
 				dim_dirname = true,
 			},
