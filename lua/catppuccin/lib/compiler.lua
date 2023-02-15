@@ -52,9 +52,15 @@ vim.g.colors_name = "catppuccin"]],
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
 	local file = io.open(O.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
 
+	if vim.g.catppuccin_debug then -- Debugging purpose
+		local deb = io.open((path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_debug.lua", "wb")
+		deb:write(table.concat(lines, "\n"))
+		deb:close()
+	end
+
 	local f = loadstring(table.concat(lines, "\n"), "=")
 	if not f then
-		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
+		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_debug.lua"
 		print(string.format(
 			[[Catppuccin (error): Most likely some mistake made in your catppuccin config
 You can open %s for debugging
