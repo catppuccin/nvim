@@ -366,6 +366,7 @@ module. (See Special integrations
 │nvim-treesitter-context <https://github.com/nvim-treesitter/nvim-treesitter-context>│treesitter_context │
 │nvim-treesitter <https://github.com/nvim-treesitter/nvim-treesitter>                │treesitter         │
 │nvim-ts-rainbow <https://github.com/p00f/nvim-ts-rainbow>                           │ts_rainbow         │
+│nvim-ts-rainbow2 <https://github.com/HiPhish/nvim-ts-rainbow2>                      │ts_rainbow2        │
 │overseer.nvim <https://github.com/stevearc/overseer.nvim>                           │overseer           │
 │pounce.nvim <https://github.com/rlane/pounce.nvim>                                  │pounce             │
 │symbols-outline.nvim <https://github.com/simrat39/symbols-outline.nvim>             │symbols_outline    │
@@ -444,6 +445,7 @@ Click here to see an example config
             treesitter = true,
             treesitter_context = false,
             ts_rainbow = false,
+            ts_rainbow2 = false,
             vim_sneak = false,
             vimwiki = false,
             which_key = false,
