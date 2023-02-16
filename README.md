@@ -321,6 +321,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | barbecue, Special   |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                          | beacon              |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | Special             |
+| [coc.nvim](https://github.com/neoclide/coc.nvim)                                      | coc_nvim, Special   |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard           |
 | [feline.nvim](https://github.com/feline-nvim/feline.nvim/)                            | Special             |
 | [fern.vim](https://github.com/lambdalisue/fern.vim)                                   | fern                |
@@ -524,6 +525,37 @@ bufferline.setup {
         },
     },
 }
+```
+
+</details>
+
+<details> <summary>coc.nvim</summary>
+
+Setting `enabled` to `true` enables this integration. 
+
+```lua
+coc_nvim = true,
+```
+> **Note**: coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
+
+In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
+
+```
+native_lsp = {
+    enabled = true,
+    virtual_text = {
+        errors = { "italic" },
+        hints = { "italic" },
+        warnings = { "italic" },
+        information = { "italic" },
+    },
+    underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+    },
+},
 ```
 
 </details>
