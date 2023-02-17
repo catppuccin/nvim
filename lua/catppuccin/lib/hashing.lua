@@ -3,9 +3,8 @@ local B = bit or bit32 or require "catppuccin.lib.vim.bit"
 
 local hash_str = function(str) -- djb2, https://stackoverflow.com/questions/7666509/hash-function-for-string
 	local hash = 5381
-	local tbl = { string.byte(str, 1, #str) }
-	for i = 1, #tbl do
-		hash = B.lshift(hash, 5) + tbl[i]
+	for i = 1, #str do
+		hash = B.lshift(hash, 5) + string.byte(str, i)
 	end
 	return hash
 end
@@ -14,7 +13,7 @@ function M.hash(v) -- Xor hashing: https://codeforces.com/blog/entry/85900
 	local t = type(v)
 	if t == "table" then
 		local hash = 0
-		for p, u in pairs(v) do
+		for p, u in next, v do
 			hash = B.bxor(hash, hash_str(p .. M.hash(u)))
 		end
 		return hash
