@@ -31,7 +31,7 @@ function M.get()
 		SagaShadow = { bg = C.crust },
 		OutlineIndent = { fg = C.overlay2 },
 
-		-- Lspkind
+		-- Lspkind icons support
 		LspKindClass = { fg = C.yellow },
 		LspKindConstant = { fg = C.peach },
 		LspKindConstructor = { fg = C.sapphire },
@@ -103,6 +103,11 @@ function M.custom_kind()
 		Parameter = { " ", "LspKindParameter" },
 		StaticMethod = { "ﴂ ", "LspKindStaticMethod" },
 		Macro = { " ", "LspKindMacro" },
+		Text = { " ", "LspKindText" },
+		Snippet = { " ", "LspKindSnippet" },
+		Folder = { " ", "LspKindFolder" },
+		Unit = { " ", "LspKindUnit" },
+		Value = { " ", "LspKindValue" },
 	}
 end
 
