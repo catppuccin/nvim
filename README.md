@@ -707,7 +707,6 @@ For custom Lsp Kind Icon and Color
 ```lua
 require("lspsaga").setup {
     ui = {
-        colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
         kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
     },
 }
