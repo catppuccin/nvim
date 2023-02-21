@@ -19,7 +19,7 @@ function M.compile(_flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
 		[[
-require("catppuccin").compiled = string.dump(function()
+return string.dump(function()
 if vim.g.colors_name then vim.cmd("hi clear") end
 vim.o.termguicolors = true
 vim.g.colors_name = "catppuccin"]],
@@ -51,7 +51,13 @@ vim.g.colors_name = "catppuccin"]],
 	end
 	table.insert(lines, "end)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-	local file = io.open(O.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
+	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
+
+	if vim.g.catppuccin_debug then -- Debugging purpose
+		local deb = io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb")
+		deb:write(table.concat(lines, "\n"))
+		deb:close()
+	end
 
 	local f = loadstring(table.concat(lines, "\n"), "=")
 	if not f then
@@ -72,10 +78,9 @@ Below is the error message that we captured:
 		dofile(err_path)
 		return
 	end
-	f()
 
 	if file then
-		file:write(require("catppuccin").compiled)
+		file:write(f())
 		file:close()
 	else
 		print(

@@ -6,6 +6,7 @@ function M.get()
 		DapBreakpoint = { fg = C.red },
 		DapBreakpointCondition = { fg = C.yellow },
 		DapLogPoint = { fg = C.sky },
+		DapStopped = { fg = C.maroon },
 
 		-- nvim-dap-ui
 		DAPUIScope = { fg = C.sky },
@@ -28,6 +29,15 @@ function M.get()
 		DapUIBreakpointsInfo = { fg = C.green },
 		DapUIBreakpointsCurrentLine = { fg = C.green, style = { "bold" } },
 		DapUIBreakpointsDisabledLine = { fg = C.gray0 },
+
+		DapUIStepOver = { fg = C.blue },
+		DapUIStepInto = { fg = C.blue },
+		DapUIStepBack = { fg = C.blue },
+		DapUIStepOut = { fg = C.blue },
+		DapUIStop = { fg = C.red },
+		DapUIPlayPause = { fg = C.green },
+		DapUIRestart = { fg = C.green },
+		DapUIUnavailable = { fg = C.surface1 },
 	}
 end
 

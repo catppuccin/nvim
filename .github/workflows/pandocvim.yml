@@ -18,8 +18,9 @@ jobs:
           description: "Soothing pastel theme for NeoVim"
           pandoc: "README.md"
           toc: true
-          version: "nvim 0.8"
+          version: "nvim >= 0.8.0"
+          treesitter: true
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Auto generate docs"
+          commit_message: "chore: auto generate vimdoc"
           branch: ${{ github.head_ref }}

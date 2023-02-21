@@ -7,44 +7,55 @@ Table of Contents                               *catppuccin-table-of-contents*
 2. Installation                                      |catppuccin-installation|
 3. Usage                                                    |catppuccin-usage|
 4. Configuration                                    |catppuccin-configuration|
-  - General                                               |catppuccin-general|
-  - Dim inactive                                     |catppuccin-dim-inactive|
-  - Styles                                                 |catppuccin-styles|
+  - General                                 |catppuccin-configuration-general|
+  - Dim inactive                       |catppuccin-configuration-dim-inactive|
+  - Styles                                   |catppuccin-configuration-styles|
 5. Customize highlights                      |catppuccin-customize-highlights|
-  - Get catppuccin colors                   |catppuccin-get-catppuccin-colors|
-  - Overwriting colors                         |catppuccin-overwriting-colors|
-  - Overwriting highlight groups     |catppuccin-overwriting-highlight-groups|
+  - Get catppuccin colors|catppuccin-customize-highlights-get-catppuccin-colors|
+  - Overwriting colors    |catppuccin-customize-highlights-overwriting-colors|
+  - Overwriting highlight groups|catppuccin-customize-highlights-overwriting-highlight-groups|
 6. Integrations                                      |catppuccin-integrations|
-  - Special integrations                     |catppuccin-special-integrations|
+  - Special integrations        |catppuccin-integrations-special-integrations|
 7. Compile                                                |catppuccin-compile|
-  - Config                                                 |catppuccin-config|
-  - Compile commands                             |catppuccin-compile-commands|
-  - Hooks                                                   |catppuccin-hooks|
+  - Config                                         |catppuccin-compile-config|
+  - Compile commands                     |catppuccin-compile-compile-commands|
+  - Hooks                                           |catppuccin-compile-hooks|
 8. FAQ                                                        |catppuccin-faq|
-  - Switch Catppuccin flavour on the fly|catppuccin-switch-catppuccin-flavour-on-the-fly|
-  - Load other custom highlights later|catppuccin-load-other-custom-highlights-later|
-  - Wrong treesitter highlights       |catppuccin-wrong-treesitter-highlights|
-  - Colors doesn’t match preview screenshots|catppuccin-colors-doesn’t-match-preview-screenshots|
+  - Switch Catppuccin flavour on the fly|catppuccin-faq-switch-catppuccin-flavour-on-the-fly|
+  - Load other custom highlights later|catppuccin-faq-load-other-custom-highlights-later|
+  - Wrong treesitter highlights   |catppuccin-faq-wrong-treesitter-highlights|
+  - Colors doesn’t match preview screenshots|catppuccin-faq-colors-doesn’t-match-preview-screenshots|
 9. Thanks to                                            |catppuccin-thanks-to|
 
 ==============================================================================
 1. Features                                              *catppuccin-features*
 
 
-- Highly configurable with 4 different flavours and ability to create many more <https://github.com/catppuccin/nvim/discussions/323>
+- Supports both vim and neovim (Requires neovim <https://github.com/neovim/neovim/> >= 0.8 or vim <https://github.com/vim/vim> >= 9 with lua <https://github.com/lua/lua> >= 5.1)
+- Highly configurable with 4 different flavours and ability to create your own! <https://github.com/catppuccin/nvim/discussions/323>
 - Compile <https://github.com/catppuccin/nvim#Compile> user config for fastest startuptime <https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/>
-- Integrations with a bunch of plugins <https://github.com/catppuccin/nvim#integrations>
+- Integrations with lsp, treesitter and a bunch of plugins <https://github.com/catppuccin/nvim#integrations>
+- Supports for many other applications <https://github.com/catppuccin/catppuccin>
 
 
 ==============================================================================
 2. Installation                                      *catppuccin-installation*
 
->
+lazy.nvim <https://github.com/folke/lazy.nvim>
+
+>lua
+    { "catppuccin/nvim", name = "catppuccin" }
+<
+
+packer.nvim <https://github.com/wbthomason/packer.nvim>
+
+>lua
     use { "catppuccin/nvim", as = "catppuccin" }
 <
 
+vim-plug <https://github.com/junegunn/vim-plug>
 
->
+>vim
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 <
 
@@ -52,12 +63,11 @@ Table of Contents                               *catppuccin-table-of-contents*
 ==============================================================================
 3. Usage                                                    *catppuccin-usage*
 
->
+>vim
     colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 <
 
-
->
+>lua
     vim.cmd.colorscheme "catppuccin"
 <
 
@@ -68,7 +78,7 @@ Table of Contents                               *catppuccin-table-of-contents*
 There is no need to call `setup` if you don’t want to change the default
 options and settings.
 
->
+>lua
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
         background = { -- :h background
@@ -76,6 +86,7 @@ options and settings.
             dark = "mocha",
         },
         transparent_background = false,
+        show_end_of_buffer = false, -- show the '~' characters after the end of buffers
         term_colors = false,
         dim_inactive = {
             enabled = false,
@@ -115,11 +126,11 @@ options and settings.
     vim.cmd.colorscheme "catppuccin"
 <
 
-
 Although settings already have self-explanatory names, here is where you can
 find info about each one of them and their classifications!
 
-GENERAL                                                   *catppuccin-general*
+
+GENERAL                                     *catppuccin-configuration-general*
 
 This settings are unrelated to any group and are independent.
 
@@ -129,7 +140,7 @@ This settings are unrelated to any group and are independent.
 - `transparent_background`: (Boolean) if true, disables setting the background color.
 
 
-DIM INACTIVE                                         *catppuccin-dim-inactive*
+DIM INACTIVE                           *catppuccin-configuration-dim-inactive*
 
 This setting manages the ability to dim the inactive splits/windows/buffers
 displayed.
@@ -140,7 +151,7 @@ displayed.
 - `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
 
 
-STYLES                                                     *catppuccin-styles*
+STYLES                                       *catppuccin-configuration-styles*
 
 Handles the style of general hi groups (see `:h highlight-args`):
 
@@ -155,24 +166,25 @@ Handles the style of general hi groups (see `:h highlight-args`):
 ==============================================================================
 5. Customize highlights                      *catppuccin-customize-highlights*
 
-GET CATPPUCCIN COLORS                       *catppuccin-get-catppuccin-colors*
 
->
+GET CATPPUCCIN COLORS  *catppuccin-customize-highlights-get-catppuccin-colors*
+
+>lua
     local latte = require("catppuccin.palettes").get_palette "latte"
     local frappe = require("catppuccin.palettes").get_palette "frappe"
     local macchiato = require("catppuccin.palettes").get_palette "macchiato"
     local mocha = require("catppuccin.palettes").get_palette "mocha"
 <
 
-
 Will returns a table where the key is the name of the color and the value is
 its hex value corresponding to each flavour.
 
-OVERWRITING COLORS                             *catppuccin-overwriting-colors*
+
+OVERWRITING COLORS        *catppuccin-customize-highlights-overwriting-colors*
 
 Colors can be overwritten using `color_overrides` in the setting, like so:
 
->
+>lua
     require("catppuccin").setup {
         color_overrides = {
             all = {
@@ -190,45 +202,69 @@ Colors can be overwritten using `color_overrides` in the setting, like so:
     }
 <
 
+Click here to see color palette document  ~
 
-<ins>
+  --------------------------------------------------------------------------
+  Name        Latte      Frappe     Macchiato   Mocha      Usage
+  ----------- ---------- ---------- ----------- ---------- -----------------
+  rosewater   #dc8a78    #F2D5CF    #F4DBD6     #F5E0DC    Winbar
 
-Click here to see color palette document <ins>
+  flamingo    #DD7878    #EEBEBE    #F0C6C6     #F2CDCD    Target word
 
-│  Name   │   Latte   │  Frappe   │ Macchiato │   Mocha   │     Usage     │
-│rosewater│#dc8a78    │#F2D5CF    │#F4DBD6    │#F5E0DC    │Winbar         │
-│flamingo │#DD7878    │#EEBEBE    │#F0C6C6    │#F2CDCD    │Target word    │
-│pink     │#ea76cb    │#F4B8E4    │#F5BDE6    │#F5C2E7    │Just pink      │
-│mauve    │#8839EF    │#CA9EE6    │#C6A0F6    │#CBA6F7    │Tag            │
-│red      │#D20F39    │#E78284    │#ED8796    │#F38BA8    │Error          │
-│maroon   │#E64553    │#EA999C    │#EE99A0    │#EBA0AC    │Lighter red    │
-│peach    │#FE640B    │#EF9F76    │#F5A97F    │#FAB387    │Number         │
-│yellow   │#df8e1d    │#E5C890    │#EED49F    │#F9E2AF    │Warning        │
-│green    │#40A02B    │#A6D189    │#A6DA95    │#A6E3A1    │Diff add       │
-│teal     │#179299    │#81C8BE    │#8BD5CA    │#94E2D5    │Hint           │
-│sky      │#04A5E5    │#99D1DB    │#91D7E3    │#89DCEB    │Operator       │
-│sapphire │#209FB5    │#85C1DC    │#7DC4E4    │#74C7EC    │Constructor    │
-│blue     │#1e66f5    │#8CAAEE    │#8AADF4    │#89B4FA    │Diff changed   │
-│lavender │#7287FD    │#BABBF1    │#B7BDF8    │#B4BEFE    │CursorLine Nr  │
-│text     │#4C4F69    │#c6d0f5    │#CAD3F5    │#CDD6F4    │Default fg     │
-│subtext1 │#5C5F77    │#b5bfe2    │#B8C0E0    │#BAC2DE    │Indicator      │
-│subtext0 │#6C6F85    │#a5adce    │#A5ADCB    │#A6ADC8    │Float title    │
-│overlay2 │#7C7F93    │#949cbb    │#939AB7    │#9399B2    │Popup fg       │
-│overlay1 │#8C8FA1    │#838ba7    │#8087A2    │#7F849C    │Conceal color  │
-│overlay0 │#9CA0B0    │#737994    │#6E738D    │#6C7086    │Fold color     │
-│surface2 │#ACB0BE    │#626880    │#5B6078    │#585B70    │Default comment│
-│surface1 │#BCC0CC    │#51576d    │#494D64    │#45475A    │Darker comment │
-│surface0 │#CCD0DA    │#414559    │#363A4F    │#313244    │Darkest comment│
-│base     │#EFF1F5    │#303446    │#24273A    │#1E1E2E    │Default bg     │
-│mantle   │#E6E9EF    │#292C3C    │#1E2030    │#181825    │Darker bg      │
-│crust    │#DCE0E8    │#232634    │#181926    │#11111B    │Darkest bg     │
+  pink        #ea76cb    #F4B8E4    #F5BDE6     #F5C2E7    Just pink
 
+  mauve       #8839EF    #CA9EE6    #C6A0F6     #CBA6F7    Tag
 
-OVERWRITING HIGHLIGHT GROUPS         *catppuccin-overwriting-highlight-groups*
+  red         #D20F39    #E78284    #ED8796     #F38BA8    Error
+
+  maroon      #E64553    #EA999C    #EE99A0     #EBA0AC    Lighter red
+
+  peach       #FE640B    #EF9F76    #F5A97F     #FAB387    Number
+
+  yellow      #df8e1d    #E5C890    #EED49F     #F9E2AF    Warning
+
+  green       #40A02B    #A6D189    #A6DA95     #A6E3A1    Diff add
+
+  teal        #179299    #81C8BE    #8BD5CA     #94E2D5    Hint
+
+  sky         #04A5E5    #99D1DB    #91D7E3     #89DCEB    Operator
+
+  sapphire    #209FB5    #85C1DC    #7DC4E4     #74C7EC    Constructor
+
+  blue        #1e66f5    #8CAAEE    #8AADF4     #89B4FA    Diff changed
+
+  lavender    #7287FD    #BABBF1    #B7BDF8     #B4BEFE    CursorLine Nr
+
+  text        #4C4F69    #c6d0f5    #CAD3F5     #CDD6F4    Default fg
+
+  subtext1    #5C5F77    #b5bfe2    #B8C0E0     #BAC2DE    Indicator
+
+  subtext0    #6C6F85    #a5adce    #A5ADCB     #A6ADC8    Float title
+
+  overlay2    #7C7F93    #949cbb    #939AB7     #9399B2    Popup fg
+
+  overlay1    #8C8FA1    #838ba7    #8087A2     #7F849C    Conceal color
+
+  overlay0    #9CA0B0    #737994    #6E738D     #6C7086    Fold color
+
+  surface2    #ACB0BE    #626880    #5B6078     #585B70    Default comment
+
+  surface1    #BCC0CC    #51576d    #494D64     #45475A    Darker comment
+
+  surface0    #CCD0DA    #414559    #363A4F     #313244    Darkest comment
+
+  base        #EFF1F5    #303446    #24273A     #1E1E2E    Default bg
+
+  mantle      #E6E9EF    #292C3C    #1E2030     #181825    Darker bg
+
+  crust       #DCE0E8    #232634    #181926     #11111B    Darkest bg
+  --------------------------------------------------------------------------
+
+OVERWRITING HIGHLIGHT GROUPS*catppuccin-customize-highlights-overwriting-highlight-groups*
 
 Global highlight groups can be overwritten in the setting like so:
 
->
+>lua
     custom_highlights = function(colors)
         return {
             <hl_group> = { <fields> }
@@ -236,10 +272,9 @@ Global highlight groups can be overwritten in the setting like so:
     end
 <
 
-
 Here is an example:
 
->
+>lua
     require("catppuccin").setup {
         custom_highlights = function(colors)
             return {
@@ -251,10 +286,9 @@ Here is an example:
     }
 <
 
-
 Per flavour highlight groups can be overwritten in the setting like so:
 
->
+>lua
     highlight_overrides = {
         all = function(colors) -- Global highlight, will be replaced with custom_highlights if exists
             return {
@@ -268,10 +302,9 @@ Per flavour highlight groups can be overwritten in the setting like so:
     }
 <
 
-
 Here is an example:
 
->
+>lua
     require("catppuccin").setup {
       highlight_overrides = {
             all = function(colors)
@@ -315,66 +348,120 @@ Below is a list of supported plugins and their corresponding integration
 module. (See Special integrations
 <https://github.com/catppuccin/nvim#special-integrations> for more.)
 
-│                                       Plugin                                       │      Module       │
-│aerial.nvim <https://github.com/stevearc/aerial.nvim>                               │aerial             │
-│barbar.nvim <https://github.com/romgrk/barbar.nvim>                                 │barbar             │
-│beacon.nvim <https://github.com/DanilaMihailov/beacon.nvim>                         │beacon             │
-│bufferline.nvim <https://github.com/akinsho/bufferline.nvim>                        │Special            │
-│dashboard-nvim <https://github.com/glepnir/dashboard-nvim>                          │dashboard          │
-│feline.nvim <https://github.com/feline-nvim/feline.nvim/>                           │Special            │
-│fern.vim <https://github.com/lambdalisue/fern.vim>                                  │fern               │
-│fidget.nvim <https://github.com/j-hui/fidget.nvim>                                  │Special            │
-│gitsigns.nvim <https://github.com/lewis6991/gitsigns.nvim>                          │gitsigns           │
-│harpoon <https://github.com/ThePrimeagen/harpoon>                                   │harpoon            │
-│hop.nvim <https://github.com/phaazon/hop.nvim>                                      │hop                │
-│indent-blankline.nvim <https://github.com/lukas-reineke/indent-blankline.nvim>      │Special            │
-│leap.nvim <https://github.com/ggandor/leap.nvim>                                    │leap               │
-│lightline.vim <https://github.com/itchyny/lightline.vim>                            │Special            │
-│lightspeed.nvim <https://github.com/ggandor/lightspeed.nvim>                        │lightspeed         │
-│lspsaga.nvim <https://github.com/glepnir/lspsaga.nvim/>                             │lsp_saga, Special  │
-│lualine.nvim <https://github.com/nvim-lualine/lualine.nvim>                         │Special            │
-│markdown <https://www.markdownguide.org/>                                           │markdown           │
-│mason <https://github.com/williamboman/mason.nvim>                                  │mason              │
-│mini.nvim <https://github.com/echasnovski/mini.nvim>                                │mini               │
-│neo-tree.nvim <https://github.com/nvim-neo-tree/neo-tree.nvim>                      │neotree            │
-│neogit <https://github.com/TimUntersberger/neogit>                                  │neogit             │
-│neotest <https://github.com/nvim-neotest/neotest>                                   │neotest            │
-│noice.nvim <https://github.com/folke/noice.nvim>                                    │noice              │
-│nvim-cmp <https://github.com/hrsh7th/nvim-cmp>                                      │cmp                │
-│nvim-dap-ui <https://github.com/rcarriga/nvim-dap-ui>                               │dap, Special       │
-│nvim-dap <https://github.com/mfussenegger/nvim-dap>                                 │dap, Special       │
-│nvim-lspconfig <https://github.com/neovim/nvim-lspconfig>                           │native_lsp, Special│
-│nvim-navic <https://github.com/SmiteshP/nvim-navic/>                                │navic, Special     │
-│nvim-notify <https://github.com/rcarriga/nvim-notify>                               │notify             │
-│nvim-semantic-tokens <https://github.com/theHamsta/nvim-semantic-tokens>            │semantic_tokens    │
-│nvim-tree.lua <https://github.com/kyazdani42/nvim-tree.lua>                         │nvimtree           │
-│nvim-treesitter-context <https://github.com/nvim-treesitter/nvim-treesitter-context>│treesitter_context │
-│nvim-treesitter <https://github.com/nvim-treesitter/nvim-treesitter>                │treesitter         │
-│nvim-ts-rainbow <https://github.com/p00f/nvim-ts-rainbow>                           │ts_rainbow         │
-│overseer.nvim <https://github.com/stevearc/overseer.nvim>                           │overseer           │
-│pounce.nvim <https://github.com/rlane/pounce.nvim>                                  │pounce             │
-│symbols-outline.nvim <https://github.com/simrat39/symbols-outline.nvim>             │symbols_outline    │
-│telekasten.nvim <https://github.com/renerocksai/telekasten.nvim>                    │telekasten         │
-│telescope.nvim <https://github.com/nvim-telescope/telescope.nvim>                   │telescope          │
-│trouble.nvim <https://github.com/folke/trouble.nvim>                                │lsp_trouble        │
-│vim-airline <https://github.com/vim-airline/vim-airline>                            │Special            │
-│vim-clap <https://github.com/liuchengxu/vim-clap>                                   │Special            │
-│vim-gitgutter <https://github.com/airblade/vim-gitgutter>                           │gitgutter          │
-│vim-illuminate <https://github.com/RRethy/vim-illuminate>                           │illuminate         │
-│vim-sneak <https://github.com/justinmk/vim-sneak>                                   │vim_sneak          │
-│vimwiki <https://github.com/vimwiki/vimwiki>                                        │vimwiki            │
-│which-key.nvim <https://github.com/folke/which-key.nvim>                            │which_key          │
+  -------------------------------------------------------------------------------
+  Plugin                                                     Module
+  ---------------------------------------------------------- --------------------
+  aerial.nvim                                                aerial
 
+  barbar.nvim                                                barbar
 
+  barbecue.nvim                                              barbecue, Special
+
+  beacon.nvim                                                beacon
+
+  bufferline.nvim                                            Special
+
+  coc.nvim                                                   coc_nvim, Special
+
+  dashboard-nvim                                             dashboard
+
+  feline.nvim                                                Special
+
+  fern.vim                                                   fern
+
+  fidget.nvim                                                Special
+
+  gitsigns.nvim                                              gitsigns
+
+  harpoon                                                    harpoon
+
+  hop.nvim                                                   hop
+
+  indent-blankline.nvim                                      Special
+
+  leap.nvim                                                  leap
+
+  lightline.vim                                              Special
+
+  lightspeed.nvim                                            lightspeed
+
+  lspsaga.nvim                                               lsp_saga, Special
+
+  lualine.nvim                                               Special
+
+  markdown                                                   markdown
+
+  mason                                                      mason
+
+  mini.nvim                                                  mini
+
+  neo-tree.nvim                                              neotree
+
+  neogit                                                     neogit
+
+  neotest                                                    neotest
+
+  noice.nvim                                                 noice
+
+  nvim-cmp                                                   cmp
+
+  nvim-dap-ui                                                dap, Special
+
+  nvim-dap                                                   dap, Special
+
+  nvim-lspconfig                                             native_lsp, Special
+
+  nvim-navic                                                 navic, Special
+
+  nvim-notify                                                notify
+
+  nvim-semantic-tokens                                       semantic_tokens
+
+  nvim-tree.lua                                              nvimtree
+
+  nvim-treesitter-context                                    treesitter_context
+
+  nvim-treesitter                                            treesitter
+
+  nvim-ts-rainbow                                            ts_rainbow
+
+  nvim-ts-rainbow2                                           ts_rainbow2
+
+  overseer.nvim                                              overseer
+
+  pounce.nvim                                                pounce
+
+  symbols-outline.nvim                                       symbols_outline
+
+  telekasten.nvim                                            telekasten
+
+  telescope.nvim                                             telescope
+
+  trouble.nvim                                               lsp_trouble
+
+  vim-airline                                                Special
+
+  vim-clap                                                   Special
+
+  vim-gitgutter                                              gitgutter
+
+  vim-illuminate                                             illuminate
+
+  vim-sandwich                                               sandwich
+
+  vim-sneak                                                  vim_sneak
+
+  vimwiki                                                    vimwiki
+
+  which-key.nvim                                             which_key
+  -------------------------------------------------------------------------------
 
   "Special" module means Special integrations, see
-  https://github.com/catppuccin/nvim#special-integrations for more details
-
-
+  <https://github.com/catppuccin/nvim#special-integrations> for more details
 These integrations allow catppuccin to set the theme of various plugins. To
 enable an integration you just need to set it to `true`, for example:
 
->
+>lua
     require("catppuccin").setup({
         integrations = {
             <module> = <boolean>
@@ -382,14 +469,9 @@ enable an integration you just need to set it to `true`, for example:
     })
 <
 
+Click here to see an example config ~
 
-<ins>
-
-Click here to see an example config
-
-</ins>
-
->
+>lua
     require("catppuccin").setup({
         integrations = {
             aerial = false,
@@ -420,6 +502,7 @@ Click here to see an example config
             nvimtree = true,
             overseer = false,
             pounce = false,
+            sandwich = false,
             semantic_tokens = false,
             symbols_outline = false,
             telekasten = false,
@@ -427,11 +510,15 @@ Click here to see an example config
             treesitter = true,
             treesitter_context = false,
             ts_rainbow = false,
+            ts_rainbow2 = false,
             vim_sneak = false,
             vimwiki = false,
             which_key = false,
     
             -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
+            barbecue = {
+                dim_dirname = true,
+            },
             dap = {
                 enabled = false,
                 enable_ui = false,
@@ -464,18 +551,38 @@ Click here to see an example config
 <
 
 
-SPECIAL INTEGRATIONS                         *catppuccin-special-integrations*
+SPECIAL INTEGRATIONS            *catppuccin-integrations-special-integrations*
 
-bufferline.nvim
+barbecue.nvim ~
+
+Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It
+will pick the one set in your config):
+
+>lua
+    require("barbecue").setup {
+      theme = "catppuccin",
+    }
+<
+
+The directory name color shown is dimmed by default, you can customize this
+setting.
+
+>lua
+    integrations = {
+      barbecue = {
+        dim_dirname = true,
+      }
+    }
+<
+
+bufferline.nvim ~
 
 Update your bufferline config to use the Catppuccin components:
 
 
   **Note**: bufferline needs to be loaded after setting up catppuccin or it will
   highlight incorrectly
-
-
->
+>lua
     use "akinsho/bufferline.nvim" {
       after = "catppuccin",
       config = function()
@@ -486,11 +593,10 @@ Update your bufferline config to use the Catppuccin components:
     }
 <
 
-
 Configurations are self-explanatory, see `:h bufferline-highlights` for
 detailed explanations:
 
->
+>lua
     local mocha = require("catppuccin.palettes").get_palette "mocha"
     bufferline.setup {
         highlights = require("catppuccin.groups.integrations.bufferline").get {
@@ -510,14 +616,44 @@ detailed explanations:
     }
 <
 
+coc.nvim ~
 
-feline.nvim
+Setting `enabled` to `true` enables this integration.
 
-First make sure that the kyazdani42/nvim-web-devicons
-<https://github.com/kyazdani42/nvim-web-devicons/> plugin is installed. Then
-update your Feline config to use the Catppuccin components:
+>lua
+    coc_nvim = true,
+<
+
+
+  **Note**: coc.nvim by default link to native lsp highlight groups so config
+  from `native_lsp` will also apply to coc
+In the inners tables you can set the style for the diagnostics, both
+`virtual_text` (what you see on the side) and `underlines` (what points
+directly at the thing (e.g. an error)).
 
 >
+    native_lsp = {
+        enabled = true,
+        virtual_text = {
+            errors = { "italic" },
+            hints = { "italic" },
+            warnings = { "italic" },
+            information = { "italic" },
+        },
+        underlines = {
+            errors = { "underline" },
+            hints = { "underline" },
+            warnings = { "underline" },
+            information = { "underline" },
+        },
+    },
+<
+
+feline.nvim ~
+
+Update your Feline config to use the Catppuccin components:
+
+>lua
     local ctp_feline = require('catppuccin.groups.integrations.feline')
     
     ctp_feline.setup()
@@ -527,13 +663,12 @@ update your Feline config to use the Catppuccin components:
     })
 <
 
-
 Notice that calling `setup()` is optional. You may pass a lua table in order to
 change assets, settings and the colors per vim mode.
 
 Here are the defaults:
 
->
+>lua
     local clrs = require("catppuccin.palettes").get_palette()
     local ctp_feline = require('catppuccin.groups.integrations.feline')
     local U = require "catppuccin.utils.colors"
@@ -542,22 +677,21 @@ Here are the defaults:
         assets = {
             left_separator = "",
             right_separator = "",
-            bar = "█",
             mode_icon = "",
-            dir = "  ",
-            file = "   ",
+            dir = "",
+            file = "",
             lsp = {
-                server = "  ",
-                error = "  ",
-                warning = "  ",
-                info = "  ",
-                hint = "  ",
+                server = "",
+                error = "",
+                warning = "",
+                info = "",
+                hint = "",
             },
             git = {
-                branch = "  ",
-                added = "  ",
-                changed = "  ",
-                removed = "  ",
+                branch = "",
+                added = "",
+                changed = "",
+                removed = "",
             },
         },
         sett = {
@@ -595,13 +729,10 @@ Here are the defaults:
 <
 
 
-
   **Note**: Currently feline doesn’t officially support custom themes
   <https://github.com/feline-nvim/feline.nvim/issues/302>. In order for
   `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
-
-
->
+>lua
     vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "*",
         callback = function()
@@ -614,19 +745,17 @@ Here are the defaults:
     })
 <
 
-
-fidget.nvim
+fidget.nvim ~
 
 Set fidget module to `true`
 
->
+>lua
     fidget = true
 <
 
-
 Then set `window.blend` to `0`:
 
->
+>lua
     require("fidget").setup {
         window = {
             blend = 0,
@@ -635,49 +764,47 @@ Then set `window.blend` to `0`:
     }
 <
 
-
-indent-blankline.nvim
+indent-blankline.nvim ~
 
 Setting `enabled` to `true` enables this integration. `colored_indent_levels`
 enables char highlights per indent level. Follow the instructions here
 <https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list>
 to set the latter up.
 
->
+>lua
     indent_blankline = {
         enabled = true,
         colored_indent_levels = false,
     },
 <
 
-
-lightline.vim
+lightline.vim ~
 
 Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme
 name. It will pick the one set in your config):
 
->
+>vim
     let g:lightline = {'colorscheme': 'catppuccin'}
 <
 
-
-lspsaga.nvim
+lspsaga.nvim ~
 
 For custom Lsp Kind Icon and Color
 
->
-    require("lspsaga").init_lsp_saga {
-        custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+>lua
+    require("lspsaga").setup {
+        ui = {
+            kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+        },
     }
 <
 
-
-lualine.nvim
+lualine.nvim ~
 
 Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It
 will pick the one set in your config):
 
->
+>lua
     require('lualine').setup {
         options = {
             theme = "catppuccin"
@@ -686,12 +813,11 @@ will pick the one set in your config):
     }
 <
 
-
-nvim-dap</a> & nvim-dap-ui</a>
+nvim-dap & nvim-dap-ui ~
 
 Setting `enabled` to `true`:
 
->
+>lua
     integration = {
         dap = {
             enabled = true,
@@ -700,8 +826,7 @@ Setting `enabled` to `true`:
     }
 <
 
-
->
+>lua
     -- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
     require("dap")
     
@@ -712,14 +837,13 @@ Setting `enabled` to `true`:
     sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 <
 
-
-nvim-lspconfig
+nvim-lspconfig ~
 
 Setting `enabled` to `true` enables this integration. In the inners tables you
 can set the style for the diagnostics, both `virtual_text` (what you see on the
 side) and `underlines` (what points directly at the thing (e.g. an error)).
 
->
+>lua
     native_lsp = {
         enabled = true,
         virtual_text = {
@@ -737,49 +861,45 @@ side) and `underlines` (what points directly at the thing (e.g. an error)).
     },
 <
 
-
-nvim-navic
+nvim-navic ~
 
 Setting `enabled` to `true`:
 
->
+>lua
     navic = {
         enabled = false,
         custom_bg = "NONE",
     },
 <
 
-
->
+>lua
     -- You NEED to enable highlight in nvim-navic setting or it won't work
     require("nvim-navic").setup {
         highlight = true
     }
 <
 
-
-vim-airline
+vim-airline ~
 
 Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme
 name. It will pick the one set in your config):
 
->
+>vim
     let g:airline_theme = 'catppuccin'
 <
 
-
-vim-clap
+vim-clap ~
 
 Use this to set it up:
 
->
+>vim
     let g:clap_theme = 'catppuccin'
 <
-
 
 If you’d like to know which highlight groups are being affected by
 catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
 <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
+
 
 ==============================================================================
 7. Compile                                                *catppuccin-compile*
@@ -787,8 +907,6 @@ catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
 
   **Note**: As of 7/10/2022, catppuccin should be able to automatically recompile
   when the setup table changed.
-
-
 Catppuccin is a highly customizable and configurable colorscheme. This does
 however come at the cost of complexity and execution time.
 
@@ -796,43 +914,42 @@ Catppuccin can pre compute the results of your configuration and store the
 results in a compiled lua file. We use these precached values to set it’s
 highlights.
 
-CONFIG                                                     *catppuccin-config*
+
+CONFIG                                             *catppuccin-compile-config*
 
 By default catppuccin writes the compiled results into the system’s cache
 directory. You can change the cache dir using:
 
->
+>lua
     require("catppuccin").setup({ -- Note: On windows we replace `/` with `\` by default
         compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
     })
 <
 
 
-COMPILE COMMANDS                                 *catppuccin-compile-commands*
+COMPILE COMMANDS                         *catppuccin-compile-compile-commands*
 
->
+>vim
     :CatppuccinCompile " Create/update the compile file
 <
 
-
->
+>lua
     
     require('catppuccin').compile() -- Catppuccin also provide a function to work with the catppuccin compiler.
 <
 
 
-HOOKS                                                       *catppuccin-hooks*
+HOOKS                                               *catppuccin-compile-hooks*
 
 Use them to execute code at certain events. These are the ones available:
 
-│     Autocmd      │        Description         │
-│ColorSchemePre    │Before loading a colorscheme│
-│ColorScheme       │After loading a colorscheme │
-
-
+  Autocmd          Description
+  ---------------- ------------------------------
+  ColorSchemePre   Before loading a colorscheme
+  ColorScheme      After loading a colorscheme
 They can be used like so:
 
->
+>lua
     vim.api.nvim_create_autocmd("ColorSchemePre", {
         pattern = "*",
         callback = function()
@@ -853,28 +970,26 @@ They can be used like so:
 ==============================================================================
 8. FAQ                                                        *catppuccin-faq*
 
-SWITCH CATPPUCCIN FLAVOUR ON THE FLY*catppuccin-switch-catppuccin-flavour-on-the-fly*
 
->
+SWITCH CATPPUCCIN FLAVOUR ON THE FLY*catppuccin-faq-switch-catppuccin-flavour-on-the-fly*
+
+>lua
     :Catppuccin mocha/macchiato/frappe/latte
 <
-
 
 
   **Note**: the command has autocompletion enabled, so you can just press tab to
   cycle through the flavours
 
+LOAD OTHER CUSTOM HIGHLIGHTS LATER*catppuccin-faq-load-other-custom-highlights-later*
 
-LOAD OTHER CUSTOM HIGHLIGHTS LATER*catppuccin-load-other-custom-highlights-later*
-
->
+>lua
     require("catppuccin.lib.highlighter").syntax()
 <
 
-
 For example:
 
->
+>lua
     local colors = require("catppuccin.palettes").get_palette() -- fetch colors from palette
     require("catppuccin.lib.highlighter").syntax({
         Comment = { fg = colors.surface0 }
@@ -882,16 +997,14 @@ For example:
 <
 
 
-
   **Note**: Unlike the `:highlight` command which can update a highlight group,
   this function completely replaces the definition. (`:h nvim_set_hl`)
 
-
-WRONG TREESITTER HIGHLIGHTS           *catppuccin-wrong-treesitter-highlights*
+WRONG TREESITTER HIGHLIGHTS       *catppuccin-faq-wrong-treesitter-highlights*
 
 Please disable `additional_vim_regex_highlighting`
 
->
+>lua
     require("nvim-treesitter.configs").setup {
         highlight = {
             enable = true,
@@ -901,7 +1014,7 @@ Please disable `additional_vim_regex_highlighting`
 <
 
 
-COLORS DOESN’T MATCH PREVIEW SCREENSHOTS*catppuccin-colors-doesn’t-match-preview-screenshots*
+COLORS DOESN’T MATCH PREVIEW SCREENSHOTS*catppuccin-faq-colors-doesn’t-match-preview-screenshots*
 
 Catppuccin requires true color support AKA terminals support the full range of
 16 million colors
@@ -909,26 +1022,22 @@ Catppuccin requires true color support AKA terminals support the full range of
 
 - Supported: iterm2 (macOS), kitty, wezterm, alacritty, tmux, …
 
-
 Full list of support terminals can be found here:
-https://github.com/termstandard/colors#truecolor-support-in-output-devices
+<https://github.com/termstandard/colors#truecolor-support-in-output-devices>
 
 
 - Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, …
 
-
 Full list of Unsupported terminals can be found here:
-https://github.com/termstandard/colors#not-supporting-truecolor
+<https://github.com/termstandard/colors#not-supporting-truecolor>
+
 
 ==============================================================================
 9. Thanks to                                            *catppuccin-thanks-to*
 
 
 - Pocco81 <https://github.com/Pocco81>
-- Null Chilly <https://github.com/nullchilly>
-
-
-
+- nullchilly <https://github.com/nullchilly>
 
 Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
 

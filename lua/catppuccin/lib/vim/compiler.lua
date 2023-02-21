@@ -9,7 +9,7 @@ function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
 		[[
-require("catppuccin").compiled = string.dump(function()
+return string.dump(function()
 vim.command[[
 if exists("colors_name")
 	hi clear
@@ -17,7 +17,7 @@ endif
 set termguicolors
 let g:colors_name = "catppuccin"]],
 	}
-	table.insert(lines, "set background=" .. (flavour == "latte" and [["light"]] or [["dark"]]))
+	table.insert(lines, "set background=" .. (flavour == "latte" and [[light]] or [[dark]]))
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
@@ -59,8 +59,15 @@ let g:colors_name = "catppuccin"]],
 	end
 	table.insert(lines, "]]end)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-	local file = io.open(O.compile_path .. path_sep .. flavour .. "_compiled.lua", "wb")
+	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 	local ls = load or loadstring
+
+	if vim.g.catppuccin_debug then -- Debugging purpose
+		local deb = io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb")
+		deb:write(table.concat(lines, "\n"))
+		deb:close()
+	end
+
 	local f = ls(table.concat(lines, "\n"), "=")
 	if not f then
 		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
@@ -80,10 +87,9 @@ Below is the error message that we captured:
 		dofile(err_path)
 		return
 	end
-	f()
 
 	if file then
-		file:write(require("catppuccin").compiled)
+		file:write(f())
 		file:close()
 	else
 		print(

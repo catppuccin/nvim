@@ -36,6 +36,9 @@ function M.get()
 			bg = U.darken(C.blue, 0.300, C.base),
 			fg = U.lighten(C.blue, 0.800, C.text),
 		},
+		NeogitNotificationInfo = { fg = C.blue },
+		NeogitNotificationWarning = { fg = C.yellow },
+		NeogitNotificationError = { fg = C.red },
 	}
 end
 

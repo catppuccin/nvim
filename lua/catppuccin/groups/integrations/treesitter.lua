@@ -44,7 +44,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@function.builtin"] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
 		["@function.call"] = { link = "@function" }, -- function calls
 		["@function.macro"] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
-		["@method"] = { fg = C.blue, style = O.styles.functions or {} }, -- For method calls and definitions.
+		["@method"] = { fg = C.peach, style = O.styles.functions or {} }, -- For method calls and definitions.
 
 		["@method.call"] = { link = "@method" }, -- method calls
 
@@ -53,7 +53,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a fuction.
+		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
 		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
 		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
 		-- JS & derivative
@@ -75,19 +75,19 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		["@storageclass"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@field"] = { fg = C.teal }, -- For fields.
-		["@property"] = { fg = C.teal, style = O.styles.properties or {} }, -- Same as TSField.
+		["@field"] = { fg = C.lavender }, -- For fields.
+		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- Same as TSField.
 
 		-- Identifiers
 
-		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlighC.
+		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { fg = C.red }, -- Variable names that are defined by the languages, like this or self.
 
 		["@constant"] = { fg = C.peach }, -- For constants
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		["@namespace"] = { fg = C.blue, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
+		["@namespace"] = { fg = C.lavender, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
 		["@symbol"] = { fg = C.flamingo },
 
 		-- Text
@@ -120,6 +120,18 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@tag.attribute"] = { fg = C.teal, style = { "italic" } }, -- Tags like html tag names.
 		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
 
+		-- Semantic tokens
+		["@class"] = { fg = C.blue },
+		["@struct"] = { fg = C.blue },
+		["@enum"] = { fg = C.teal },
+		["@enumMember"] = { fg = C.flamingo },
+		["@event"] = { fg = C.flamingo },
+		["@interface"] = { fg = C.flamingo },
+		["@modifier"] = { fg = C.flamingo },
+		["@regexp"] = { fg = C.pink },
+		["@typeParameter"] = { fg = C.yellow },
+		["@decorator"] = { fg = C.flamingo },
+
 		-- Language specific:
 
 		-- css
@@ -138,7 +150,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@label.json"] = { fg = C.blue }, -- For labels: label: in C and :label: in Lua.
 
 		-- lua
-		["@field.lua"] = { fg = C.lavender },
 		["@constructor.lua"] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
 		-- typescript
@@ -158,7 +169,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@symbol.ruby"] = { fg = C.flamingo },
 
 		-- PHP
-		["@type.qualifier.php"] = { fg = C.pink, style = O.styles.properties }, -- type qualifiers (e.g. `const`)
+		["@type.qualifier.php"] = { link = "Keyword" }, -- type qualifiers (e.g. `const`)
+		["@method.php"] = { link = "Function" },
+		["@method.call.php"] = { link = "Function" },
 	}
 end
 

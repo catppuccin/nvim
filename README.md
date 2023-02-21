@@ -14,94 +14,65 @@
 </p>
 
 <p align="center">
-This port of Catppuccin is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the
-<a href="https://github.com/catppuccin/nvim/tree/v0.1">v0.1</a> tag
+This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special because it was the first one and the one that originated the project itself. Given this, it's important to acknowledge that it all didn't come to be what it is now out of nowhere. So, if you are interested in knowing more about the initial stages of the theme, you can find it under the <a href="https://github.com/catppuccin/nvim/tree/v0.1">v0.1</a> tag
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56817415/197354846-7a5e0bdf-342e-42f1-8c67-9f1aeac587dc.png"/>
+  <img src="https://user-images.githubusercontent.com/56817415/213472445-091e54fb-091f-4448-a631-fa6b2ba7d8a5.png"/>
 </p>
 
-# Previews
+# Flavours
 
 <details>
-<summary>Mocha</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197354842-579a829f-dbd5-4bed-9100-82e82bcf341c.png"/>
-</details>
-<details>
-<summary>Macchiato</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197354840-1f3cbe2b-a763-4080-8f86-21b12c5a7e59.png"/>
+<summary>Latte</summary>
+<img src="https://user-images.githubusercontent.com/56817415/213473391-603bdc68-68f4-4877-a15a-b469040928b5.png"/>
 </details>
 <details>
 <summary>Frappe</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197349424-6ef5be0d-bf5b-429a-8e36-44dc43707066.png"/>
+<img src="https://user-images.githubusercontent.com/56817415/213473368-16931b70-fd84-4a89-a698-1b1bca1f82de.png"/>
 </details>
 <details>
-<summary>Latte</summary>
-<img src="https://user-images.githubusercontent.com/56817415/197354833-4d2c3b33-95bd-4979-a3f5-df3e426dfc50.png"/>
+<summary>Macchiato</summary>
+<img src="https://user-images.githubusercontent.com/56817415/213473285-7bd858be-6947-4d9e-8c01-2573cbc7e76c.png"/>
 </details>
+<<<<<<< HEAD
 
 **[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
 
 <details>
-<summary>Amoled</summary>
-
-`#000000`! [Configuration can be found here](https://github.com/nullchilly/nvim/blob/nvim/lua/config/catppuccin.lua)
-
-<img src="https://user-images.githubusercontent.com/56817415/197349645-af9243e0-044b-4c08-9928-c359e7500eba.png"/>
-
-Here is a subset of it:
-
-```lua
-require("catppuccin").setup {
-    flavour = "mocha",
-    color_overrides = {
-        mocha = {
-            base = "#000000",
-        },
-    },
-    integrations = {
-        nvimtree = true,
-    },
-    highlight_overrides = {
-        mocha = function(mocha)
-            return {
-                NvimTreeNormal = { bg = mocha.none },
-            }
-        end,
-    },
-}
-```
-
+<summary>Mocha</summary>
+<img src="https://user-images.githubusercontent.com/56817415/213471997-34837219-88cc-4db2-baca-e25813a89789.png"/>
 </details>
 
-<details>
+**[Bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors)** Here are some **[config from our community](https://github.com/catppuccin/nvim/discussions/323)**: <a href="https://www.pixiv.net/en/artworks/101554989"><sub><sup>(background source)</sup></sub></a>
+</p>
 
-An attempt to restore the original theme based on Mocha! [Configuration can be found here](https://github.com/ayamir/nvimdots/blob/61fe5b7f5374beaee18c0c730441d55ad5911604/lua/modules/ui/config.lua#L125)
-
-<summary>Catppuccino</summary>
-<img src="https://user-images.githubusercontent.com/50296129/197518223-bcf0aade-b12a-45c4-a024-dc46c9fee948.png"/>
-
-</details>
-
-</details>
-
-Share your custom flavour here! <https://github.com/catppuccin/nvim/discussions/323>
+![nvimwalk-custom](https://user-images.githubusercontent.com/56817415/213480149-6ba92b81-1ada-46a4-89bd-4e2bb25d19c3.png)
+<p align="center">
 
 <!-- panvimdoc-ignore-end -->
 
 # Features
 
-- Highly configurable with 4 different flavours and ability to create [many more](https://github.com/catppuccin/nvim/discussions/323)
+- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 with [lua](https://github.com/lua/lua) >= 5.1)
+- Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
 - [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
-- Integrations with [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
+- Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
+- Supports for [many other applications](https://github.com/catppuccin/catppuccin)
 
 # Installation
 
+[lazy.nvim](https://github.com/folke/lazy.nvim)
+```lua
+{ "catppuccin/nvim", name = "catppuccin" }
+```
+
+[packer.nvim](https://github.com/wbthomason/packer.nvim)
 ```lua
 use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
+[vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 ```
@@ -128,6 +99,7 @@ require("catppuccin").setup({
         dark = "mocha",
     },
     transparent_background = false,
+    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
     term_colors = false,
     dim_inactive = {
         enabled = false,
@@ -351,8 +323,10 @@ Below is a list of supported plugins and their corresponding integration module.
 | ------------------------------------------------------------------------------------- | ------------------- |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | aerial              |
 | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                                  | barbar              |
+| [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | barbecue, Special   |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                          | beacon              |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | Special             |
+| [coc.nvim](https://github.com/neoclide/coc.nvim)                                      | coc_nvim, Special   |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard           |
 | [feline.nvim](https://github.com/feline-nvim/feline.nvim/)                            | Special             |
 | [fern.vim](https://github.com/lambdalisue/fern.vim)                                   | fern                |
@@ -384,6 +358,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context  |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter          |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                            | ts_rainbow          |
+| [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)                       | ts_rainbow2         |
 | [overseer.nvim](https://github.com/stevearc/overseer.nvim)                            | overseer            |
 | [pounce.nvim](https://github.com/rlane/pounce.nvim)                                   | pounce              |
 | [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)              | symbols_outline     |
@@ -394,6 +369,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [vim-clap](https://github.com/liuchengxu/vim-clap)                                    | Special             |
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                            | gitgutter           |
 | [vim-illuminate](https://github.com/RRethy/vim-illuminate)                            | illuminate          |
+| [vim-sandwich](https://github.com/machakann/vim-sandwich)                             | sandwich            |
 | [vim-sneak](https://github.com/justinmk/vim-sneak)                                    | vim_sneak           |
 | [vimwiki](https://github.com/vimwiki/vimwiki)                                         | vimwiki             |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | which_key           |
@@ -443,6 +419,7 @@ require("catppuccin").setup({
         nvimtree = true,
         overseer = false,
         pounce = false,
+        sandwich = false,
         semantic_tokens = false,
         symbols_outline = false,
         telekasten = false,
@@ -450,11 +427,15 @@ require("catppuccin").setup({
         treesitter = true,
         treesitter_context = false,
         ts_rainbow = false,
+        ts_rainbow2 = false,
         vim_sneak = false,
         vimwiki = false,
         which_key = false,
 
         -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
+        barbecue = {
+            dim_dirname = true,
+        },
         dap = {
             enabled = false,
             enable_ui = false,
@@ -489,6 +470,28 @@ require("catppuccin").setup({
 </details>
 
 ## Special integrations
+
+
+<details> <summary>barbecue.nvim</summary>
+
+Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It will pick the one set in your config):
+
+```lua
+require("barbecue").setup {
+  theme = "catppuccin",
+}
+```
+
+The directory name color shown is dimmed by default, you can customize this setting.
+
+```lua
+integrations = {
+  barbecue = {
+    dim_dirname = true,
+  }
+}
+```
+</details>
 
 <details> <summary>bufferline.nvim</summary>
 
@@ -531,9 +534,40 @@ bufferline.setup {
 
 </details>
 
+<details> <summary>coc.nvim</summary>
+
+Setting `enabled` to `true` enables this integration.
+
+```lua
+coc_nvim = true,
+```
+> **Note**: coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
+
+In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
+
+```
+native_lsp = {
+    enabled = true,
+    virtual_text = {
+        errors = { "italic" },
+        hints = { "italic" },
+        warnings = { "italic" },
+        information = { "italic" },
+    },
+    underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+    },
+},
+```
+
+</details>
+
 <details> <summary>feline.nvim</summary>
 
-First make sure that the [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) plugin is installed. Then update your Feline config to use the Catppuccin components:
+Update your Feline config to use the Catppuccin components:
 
 ```lua
 local ctp_feline = require('catppuccin.groups.integrations.feline')
@@ -558,22 +592,21 @@ ctp_feline.setup({
     assets = {
         left_separator = "",
         right_separator = "",
-        bar = "█",
         mode_icon = "",
-        dir = "  ",
-        file = "   ",
+        dir = "",
+        file = "",
         lsp = {
-            server = "  ",
-            error = "  ",
-            warning = "  ",
-            info = "  ",
-            hint = "  ",
+            server = "",
+            error = "",
+            warning = "",
+            info = "",
+            hint = "",
         },
         git = {
-            branch = "  ",
-            added = "  ",
-            changed = "  ",
-            removed = "  ",
+            branch = "",
+            added = "",
+            changed = "",
+            removed = "",
         },
     },
     sett = {
@@ -671,13 +704,16 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 
 </details>
 
+
 <details> <summary>lspsaga.nvim</summary>
 
 For custom Lsp Kind Icon and Color
 
 ```lua
-require("lspsaga").init_lsp_saga {
-    custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+require("lspsaga").setup {
+    ui = {
+        kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+    },
 }
 ```
 
@@ -907,7 +943,7 @@ Full list of Unsupported terminals can be found here: <https://github.com/termst
 # Thanks to
 
 - [Pocco81](https://github.com/Pocco81)
-- [Null Chilly](https://github.com/nullchilly)
+- [nullchilly](https://github.com/nullchilly)
 
 <!-- panvimdoc-ignore-start -->
 

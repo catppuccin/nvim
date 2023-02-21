@@ -25,8 +25,9 @@ hsluv.hexChars = "0123456789abcdef"
 
 local distance_line_from_origin = function(line) return math.abs(line.intercept) / math.sqrt((line.slope ^ 2) + 1) end
 
-local length_of_ray_until_intersect =
-	function(theta, line) return line.intercept / (math.sin(theta) - line.slope * math.cos(theta)) end
+local length_of_ray_until_intersect = function(theta, line)
+	return line.intercept / (math.sin(theta) - line.slope * math.cos(theta))
+end
 
 hsluv.get_bounds = function(l)
 	local result = {}
