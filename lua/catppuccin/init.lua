@@ -7,7 +7,7 @@ local M = {
 			light = "latte",
 			dark = "mocha",
 		},
-		compile_path = debug.getinfo(1).source:sub(2, -24) .. "compiled",
+		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
 		transparent_background = false,
 		show_end_of_buffer = false,
 		term_colors = false,
@@ -128,17 +128,8 @@ function M.setup(user_conf)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 	M.flavour = get_flavour(M.options.flavour or vim.g.catppuccin_flavour)
 
-	-- Caching configuration
-	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
-	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
-
-	if git == -1 then -- no .git in /nix/store
-		M.options.compile_path = user_conf.compile_path or (vim.fn.stdpath "cache" .. "/catppuccin")
-		git = git_path
-	end
-
+	-- Get cached hash
 	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
-
 	local file = io.open(cached_path)
 	local cached = nil
 	if file then
@@ -146,11 +137,15 @@ function M.setup(user_conf)
 		file:close()
 	end
 
+	-- Get current hash
+	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
+	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
 	local hash = require("catppuccin.lib.hashing").hash(user_conf)
-		.. git
+		.. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
 		.. (vim.o.winblend == 0 and 1 or 0) -- :h winblend
 		.. (vim.o.pumblend == 0 and 1 or 0) -- :h pumblend
 
+	-- Recompile if hash changed
 	if cached ~= hash then
 		M.compile()
 		file = io.open(cached_path, "wb")
