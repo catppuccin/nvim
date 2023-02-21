@@ -1,20 +1,18 @@
-local is_vim = vim.fn.has("nvim") ~= 1
-if is_vim then
-	require("catppuccin.lib.vim")
-end
+local is_vim = vim.fn.has "nvim" ~= 1
+if is_vim then require "catppuccin.lib.vim" end
 
 local M = {
 	options = {
 		background = {
 			light = "latte",
-			dark = "frappe",
+			dark = "mocha",
 		},
-		compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
 		transparent_background = false,
 		show_end_of_buffer = false,
 		term_colors = false,
 		dim_inactive = {
-			enabled = true,
+			enabled = false,
 			shade = "dark",
 			percentage = 0.15,
 		},
@@ -109,9 +107,7 @@ end
 local lock = false -- Avoid g:colors_name reloading
 
 function M.load(flavour)
-	if lock then
-		return
-	end
+	if lock then return end
 	M.flavour = get_flavour(flavour)
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour
 	lock = true
@@ -144,9 +140,9 @@ function M.setup(user_conf)
 	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
 	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
 	local hash = require("catppuccin.lib.hashing").hash(user_conf)
-		.. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
-		.. (vim.o.winblend == 0 and 1 or 0) -- :h winblend
-		.. (vim.o.pumblend == 0 and 1 or 0) -- :h pumblend
+		 .. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
+		 .. (vim.o.winblend == 0 and 1 or 0) -- :h winblend
+		 .. (vim.o.pumblend == 0 and 1 or 0) -- :h pumblend
 
 	-- Recompile if hash changed
 	if cached ~= hash then
@@ -159,30 +155,26 @@ function M.setup(user_conf)
 	end
 end
 
-if is_vim then
-	return M
-end
+if is_vim then return M end
 
-vim.api.nvim_create_user_command("Catppuccin", function(inp)
-	vim.api.nvim_command("colorscheme catppuccin-" .. get_flavour(inp.args))
-end, {
-	nargs = 1,
-	complete = function(line)
-		return vim.tbl_filter(function(val)
-			return vim.startswith(val, line)
-		end, vim.tbl_keys(M.flavours))
-	end,
-})
+vim.api.nvim_create_user_command(
+	"Catppuccin",
+	function(inp) vim.api.nvim_command("colorscheme catppuccin-" .. get_flavour(inp.args)) end,
+	{
+		nargs = 1,
+		complete = function(line)
+			return vim.tbl_filter(function(val) return vim.startswith(val, line) end, vim.tbl_keys(M.flavours))
+		end,
+	}
+)
 
 vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	for name, _ in pairs(package.loaded) do
-		if name:match("^catppuccin") and name ~= "catppuccin" then
-			package.loaded[name] = nil
-		end
+		if name:match "^catppuccin" and name ~= "catppuccin" then package.loaded[name] = nil end
 	end
 	M.compile()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
-	vim.api.nvim_command("colorscheme catppuccin")
+	vim.api.nvim_command "colorscheme catppuccin"
 end, {})
 
 return M
