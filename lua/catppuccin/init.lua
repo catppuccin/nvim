@@ -101,7 +101,7 @@ local function get_flavour(default)
 		)
 		flavour = nil
 	end
-	return flavour or "mocha"
+	return flavour or M.options.background[vim.o.background]
 end
 
 local lock = false -- Avoid g:colors_name reloading
