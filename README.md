@@ -35,10 +35,6 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 <summary>Macchiato</summary>
 <img src="https://user-images.githubusercontent.com/56817415/213473285-7bd858be-6947-4d9e-8c01-2573cbc7e76c.png"/>
 </details>
-<<<<<<< HEAD
-
-**[You can bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors) Here are some from our community:**
-
 <details>
 <summary>Mocha</summary>
 <img src="https://user-images.githubusercontent.com/56817415/213471997-34837219-88cc-4db2-baca-e25813a89789.png"/>
@@ -233,7 +229,6 @@ require("catppuccin").setup {
 | base      | `#EFF1F5` | `#303446` | `#24273A` | `#1E1E2E` | Default bg      |
 | mantle    | `#E6E9EF` | `#292C3C` | `#1E2030` | `#181825` | Darker bg       |
 | crust     | `#DCE0E8` | `#232634` | `#181926` | `#11111B` | Darkest bg      |
-
 </details>
 
 ## Overwriting highlight groups
@@ -536,7 +531,7 @@ bufferline.setup {
 
 <details> <summary>coc.nvim</summary>
 
-Setting `enabled` to `true` enables this integration.
+Setting `enabled` to `true` enables this integration. 
 
 ```lua
 coc_nvim = true,
@@ -857,6 +852,7 @@ require("catppuccin").setup({ -- Note: On windows we replace `/` with `\` by def
 ```
 
 ```lua
+
 require('catppuccin').compile() -- Catppuccin also provide a function to work with the catppuccin compiler.
 ```
 
