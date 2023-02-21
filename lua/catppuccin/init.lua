@@ -129,6 +129,14 @@ function M.setup(user_conf)
 	M.flavour = get_flavour(M.options.flavour or vim.g.catppuccin_flavour)
 
 	-- Caching configuration
+	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
+	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
+
+	if git == -1 then -- no .git in /nix/store
+		M.options.compile_path = user_conf.compile_path or (vim.fn.stdpath "cache" .. "/catppuccin")
+		git = git_path
+	end
+
 	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
 
 	local file = io.open(cached_path)
@@ -138,10 +146,8 @@ function M.setup(user_conf)
 		file:close()
 	end
 
-	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
-	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
 	local hash = require("catppuccin.lib.hashing").hash(user_conf)
-		.. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
+		.. git
 		.. (vim.o.winblend == 0 and 1 or 0) -- :h winblend
 		.. (vim.o.pumblend == 0 and 1 or 0) -- :h pumblend
 
