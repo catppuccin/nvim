@@ -14,8 +14,7 @@ local function inspect(t)
 	return fmt([[{ %s }]], table.concat(list, ", "))
 end
 
-function M.compile(_flavour)
-	local flavour = "frappe"
+function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
 		[[
@@ -24,7 +23,7 @@ if vim.g.colors_name then vim.cmd("hi clear") end
 vim.o.termguicolors = true
 vim.g.colors_name = "catppuccin"]],
 	}
-	--table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
+	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
 	if path_sep == "\\" then O.compile_path = O.compile_path:gsub("/", "\\") end
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
@@ -54,7 +53,10 @@ vim.g.colors_name = "catppuccin"]],
 	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 
 	if vim.g.catppuccin_debug then -- Debugging purpose
-		local deb = io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb")
+		local deb = assert(
+			io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb"),
+			"failed to open `" .. O.compile_path .. path_sep .. flavour .. ".lua`"
+		)
 		deb:write(table.concat(lines, "\n"))
 		deb:close()
 	end
@@ -72,7 +74,7 @@ Below is the error message that we captured:
 			err_path,
 			err_path
 		))
-		local err = io.open(err_path, "wb")
+		local err = assert(io.open(err_path, "wb"), "failed to open `" .. err_path .. "`")
 		err:write(table.concat(lines, "\n"))
 		err:close()
 		dofile(err_path)
@@ -85,10 +87,10 @@ Below is the error message that we captured:
 	else
 		print(
 			"Permission denied while writing compiled file to "
-				.. O.compile_path
-				.. path_sep
-				.. flavour
-				.. "_compiled.lua"
+			.. O.compile_path
+			.. path_sep
+			.. flavour
+			.. "_compiled.lua"
 		)
 	end
 end
