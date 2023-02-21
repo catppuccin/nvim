@@ -837,7 +837,7 @@ Catppuccin can pre compute the results of your configuration and store the resul
 
 ## Config
 
-By default catppuccin writes the compiled results into this repo's root directory. You can change the cache dir using:
+By default catppuccin writes the compiled results into the system's cache directory. You can change the cache dir using:
 
 ```lua
 require("catppuccin").setup({ -- Note: On windows we replace `/` with `\` by default
