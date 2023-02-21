@@ -25,7 +25,9 @@ vim.o.termguicolors = true
 vim.g.colors_name = "catppuccin"]],
 	}
 	--table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
-	if path_sep == "\\" then O.compile_path = O.compile_path:gsub("/", "\\") end
+	if path_sep == "\\" then
+		O.compile_path = O.compile_path:gsub("/", "\\")
+	end
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
@@ -39,8 +41,12 @@ vim.g.colors_name = "catppuccin"]],
 		if color.style then
 			for _, style in pairs(color.style) do
 				color[style] = true
-				if O.no_italic and style == "italic" then color[style] = false end
-				if O.no_bold and style == "bold" then color[style] = false end
+				if O.no_italic and style == "italic" then
+					color[style] = false
+				end
+				if O.no_bold and style == "bold" then
+					color[style] = false
+				end
 			end
 		end
 		color.style = nil
@@ -50,7 +56,9 @@ vim.g.colors_name = "catppuccin"]],
 		table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
 	end
 	table.insert(lines, "end)")
-	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
+	if vim.fn.isdirectory(O.compile_path) == 0 then
+		vim.fn.mkdir(O.compile_path, "p")
+	end
 	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 
 	if vim.g.catppuccin_debug then -- Debugging purpose
@@ -61,7 +69,7 @@ vim.g.colors_name = "catppuccin"]],
 
 	local f = loadstring(table.concat(lines, "\n"), "=")
 	if not f then
-		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
+		local err_path = (path_sep == "/" and "/tmp" or os.getenv("TMP")) .. "/catppuccin_error.lua"
 		print(string.format(
 			[[Catppuccin (error): Most likely some mistake made in your catppuccin config
 You can open %s for debugging
@@ -85,10 +93,10 @@ Below is the error message that we captured:
 	else
 		print(
 			"Permission denied while writing compiled file to "
-			.. O.compile_path
-			.. path_sep
-			.. flavour
-			.. "_compiled.lua"
+				.. O.compile_path
+				.. path_sep
+				.. flavour
+				.. "_compiled.lua"
 		)
 	end
 end

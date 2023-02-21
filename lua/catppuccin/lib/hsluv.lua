@@ -23,7 +23,9 @@ local hsluv = {}
 
 hsluv.hexChars = "0123456789abcdef"
 
-local distance_line_from_origin = function(line) return math.abs(line.intercept) / math.sqrt((line.slope ^ 2) + 1) end
+local distance_line_from_origin = function(line)
+	return math.abs(line.intercept) / math.sqrt((line.slope ^ 2) + 1)
+end
 
 local length_of_ray_until_intersect = function(theta, line)
 	return line.intercept / (math.sin(theta) - line.slope * math.cos(theta))
@@ -60,7 +62,9 @@ hsluv.max_safe_chroma_for_l = function(l)
 
 	for i = 1, 6 do
 		local length = distance_line_from_origin(bounds[i])
-		if length >= 0 then min = math.min(min, length) end
+		if length >= 0 then
+			min = math.min(min, length)
+		end
 	end
 	return min
 end
@@ -73,7 +77,9 @@ hsluv.max_safe_chroma_for_lh = function(l, h)
 	for i = 1, 6 do
 		local bound = bounds[i]
 		local length = length_of_ray_until_intersect(hrad, bound)
-		if length >= 0 then min = math.min(min, length) end
+		if length >= 0 then
+			min = math.min(min, length)
+		end
 	end
 	return min
 end
@@ -149,7 +155,9 @@ hsluv.xyz_to_luv = function(tuple)
 		varV = 0
 	end
 	local L = hsluv.y_to_l(Y)
-	if L == 0 then return { 0, 0, 0 } end
+	if L == 0 then
+		return { 0, 0, 0 }
+	end
 	return { L, 13 * L * (varU - hsluv.refU), 13 * L * (varV - hsluv.refV) }
 end
 
@@ -157,7 +165,9 @@ hsluv.luv_to_xyz = function(tuple)
 	local L = tuple[1]
 	local U = tuple[2]
 	local V = tuple[3]
-	if L == 0 then return { 0, 0, 0 } end
+	if L == 0 then
+		return { 0, 0, 0 }
+	end
 	local varU = U / (13 * L) + hsluv.refU
 	local varV = V / (13 * L) + hsluv.refV
 	local Y = hsluv.l_to_y(L)
@@ -175,7 +185,9 @@ hsluv.luv_to_lch = function(tuple)
 		H = 0
 	else
 		H = math.atan2(V, U) * 180.0 / 3.1415926535897932
-		if H < 0 then H = 360 + H end
+		if H < 0 then
+			H = 360 + H
+		end
 	end
 	return { L, C, H }
 end
@@ -191,8 +203,12 @@ hsluv.hsluv_to_lch = function(tuple)
 	local H = tuple[1]
 	local S = tuple[2]
 	local L = tuple[3]
-	if L > 99.9999999 then return { 100, 0, H } end
-	if L < 0.00000001 then return { 0, 0, H } end
+	if L > 99.9999999 then
+		return { 100, 0, H }
+	end
+	if L < 0.00000001 then
+		return { 0, 0, H }
+	end
 	return { L, hsluv.max_safe_chroma_for_lh(L, H) / 100 * S, H }
 end
 
@@ -201,8 +217,12 @@ hsluv.lch_to_hsluv = function(tuple)
 	local C = tuple[2]
 	local H = tuple[3]
 	local max_chroma = hsluv.max_safe_chroma_for_lh(L, H)
-	if L > 99.9999999 then return { H, 0, 100 } end
-	if L < 0.00000001 then return { H, 0, 0 } end
+	if L > 99.9999999 then
+		return { H, 0, 100 }
+	end
+	if L < 0.00000001 then
+		return { H, 0, 0 }
+	end
 
 	return { H, C / max_chroma * 100, L }
 end
@@ -211,8 +231,12 @@ hsluv.hpluv_to_lch = function(tuple)
 	local H = tuple[1]
 	local S = tuple[2]
 	local L = tuple[3]
-	if L > 99.9999999 then return { 100, 0, H } end
-	if L < 0.00000001 then return { 0, 0, H } end
+	if L > 99.9999999 then
+		return { 100, 0, H }
+	end
+	if L < 0.00000001 then
+		return { 0, 0, H }
+	end
 	return { L, hsluv.max_safe_chroma_for_l(L) / 100 * S, H }
 end
 
@@ -220,8 +244,12 @@ hsluv.lch_to_hpluv = function(tuple)
 	local L = tuple[1]
 	local C = tuple[2]
 	local H = tuple[3]
-	if L > 99.9999999 then return { H, 0, 100 } end
-	if L < 0.00000001 then return { H, 0, 0 } end
+	if L > 99.9999999 then
+		return { H, 0, 100 }
+	end
+	if L < 0.00000001 then
+		return { H, 0, 0 }
+	end
 	return { H, C / hsluv.max_safe_chroma_for_l(L) * 100, L }
 end
 
@@ -251,25 +279,45 @@ hsluv.hex_to_rgb = function(hex)
 	return ret
 end
 
-hsluv.lch_to_rgb = function(tuple) return hsluv.xyz_to_rgb(hsluv.luv_to_xyz(hsluv.lch_to_luv(tuple))) end
+hsluv.lch_to_rgb = function(tuple)
+	return hsluv.xyz_to_rgb(hsluv.luv_to_xyz(hsluv.lch_to_luv(tuple)))
+end
 
-hsluv.rgb_to_lch = function(tuple) return hsluv.luv_to_lch(hsluv.xyz_to_luv(hsluv.rgb_to_xyz(tuple))) end
+hsluv.rgb_to_lch = function(tuple)
+	return hsluv.luv_to_lch(hsluv.xyz_to_luv(hsluv.rgb_to_xyz(tuple)))
+end
 
-hsluv.hsluv_to_rgb = function(tuple) return hsluv.lch_to_rgb(hsluv.hsluv_to_lch(tuple)) end
+hsluv.hsluv_to_rgb = function(tuple)
+	return hsluv.lch_to_rgb(hsluv.hsluv_to_lch(tuple))
+end
 
-hsluv.rgb_to_hsluv = function(tuple) return hsluv.lch_to_hsluv(hsluv.rgb_to_lch(tuple)) end
+hsluv.rgb_to_hsluv = function(tuple)
+	return hsluv.lch_to_hsluv(hsluv.rgb_to_lch(tuple))
+end
 
-hsluv.hpluv_to_rgb = function(tuple) return hsluv.lch_to_rgb(hsluv.hpluv_to_lch(tuple)) end
+hsluv.hpluv_to_rgb = function(tuple)
+	return hsluv.lch_to_rgb(hsluv.hpluv_to_lch(tuple))
+end
 
-hsluv.rgb_to_hpluv = function(tuple) return hsluv.lch_to_hpluv(hsluv.rgb_to_lch(tuple)) end
+hsluv.rgb_to_hpluv = function(tuple)
+	return hsluv.lch_to_hpluv(hsluv.rgb_to_lch(tuple))
+end
 
-hsluv.hsluv_to_hex = function(tuple) return hsluv.rgb_to_hex(hsluv.hsluv_to_rgb(tuple)) end
+hsluv.hsluv_to_hex = function(tuple)
+	return hsluv.rgb_to_hex(hsluv.hsluv_to_rgb(tuple))
+end
 
-hsluv.hpluv_to_hex = function(tuple) return hsluv.rgb_to_hex(hsluv.hpluv_to_rgb(tuple)) end
+hsluv.hpluv_to_hex = function(tuple)
+	return hsluv.rgb_to_hex(hsluv.hpluv_to_rgb(tuple))
+end
 
-hsluv.hex_to_hsluv = function(s) return hsluv.rgb_to_hsluv(hsluv.hex_to_rgb(s)) end
+hsluv.hex_to_hsluv = function(s)
+	return hsluv.rgb_to_hsluv(hsluv.hex_to_rgb(s))
+end
 
-hsluv.hex_to_hpluv = function(s) return hsluv.rgb_to_hpluv(hsluv.hex_to_rgb(s)) end
+hsluv.hex_to_hpluv = function(s)
+	return hsluv.rgb_to_hpluv(hsluv.hex_to_rgb(s))
+end
 
 hsluv.m = {
 	{ 3.240969941904521, -1.537383177570093, -0.498610760293 },

@@ -1,6 +1,8 @@
 local M = {}
 -- Backwards compatibility
-if type(O.integrations.navic) == "boolean" then O.integrations.navic = { custom_bg = C.mantle } end
+if type(O.integrations.navic) == "boolean" then
+	O.integrations.navic = { custom_bg = C.mantle }
+end
 
 local background = O.integrations.navic.custom_bg and O.integrations.navic.custom_bg or C.none
 
