@@ -1,7 +1,7 @@
 local M = {}
 
 local C = require("catppuccin.palettes").get_palette()
-local lsp = require("feline.providers.lsp")
+local lsp = require "feline.providers.lsp"
 
 local assets = {
 	left_separator = "",
@@ -35,14 +35,12 @@ local sett = {
 }
 
 if require("catppuccin").flavour == "latte" then
-	local latte = require("catppuccin.palettes").get_palette("latte")
+	local latte = require("catppuccin.palettes").get_palette "latte"
 	sett.text = latte.base
 	sett.bkg = latte.crust
 end
 
-if require("catppuccin").options.transparent_background then
-	sett.bkg = "NONE"
-end
+if require("catppuccin").options.transparent_background then sett.bkg = "NONE" end
 
 local mode_colors = {
 	["n"] = { "NORMAL", C.lavender },
@@ -89,9 +87,7 @@ function M.get()
 	}
 
 	local function is_enabled(min_width)
-		if shortline then
-			return true
-		end
+		if shortline then return true end
 
 		return vim.api.nvim_win_get_width(0) > min_width
 	end
@@ -144,9 +140,7 @@ function M.get()
 	}
 
 	components.active[1][2] = {
-		provider = function()
-			return mode_colors[vim.fn.mode()][1] .. " "
-		end,
+		provider = function() return mode_colors[vim.fn.mode()][1] .. " " end,
 		hl = vi_mode_hl,
 	}
 
@@ -165,9 +159,7 @@ function M.get()
 				bg = sett.bkg,
 			}
 		end,
-		enabled = function()
-			return not any_git_changes()
-		end,
+		enabled = function() return not any_git_changes() end,
 	}
 
 	-- enable if git diffs are available
@@ -179,9 +171,7 @@ function M.get()
 				bg = sett.diffs,
 			}
 		end,
-		enabled = function()
-			return any_git_changes()
-		end,
+		enabled = function() return any_git_changes() end,
 	}
 	-- Current vi mode ------>
 
@@ -219,9 +209,7 @@ function M.get()
 			fg = sett.bkg,
 			bg = sett.diffs,
 		},
-		enabled = function()
-			return any_git_changes()
-		end,
+		enabled = function() return any_git_changes() end,
 	}
 
 	components.active[1][9] = {
@@ -230,9 +218,7 @@ function M.get()
 			fg = sett.diffs,
 			bg = sett.bkg,
 		},
-		enabled = function()
-			return any_git_changes()
-		end,
+		enabled = function() return any_git_changes() end,
 	}
 	-- Diffs ------>
 
@@ -241,12 +227,12 @@ function M.get()
 	-- file progess
 	components.active[1][10] = {
 		provider = function()
-			local current_line = vim.fn.line(".")
-			local total_line = vim.fn.line("$")
+			local current_line = vim.fn.line "."
+			local total_line = vim.fn.line "$"
 
 			if current_line == 1 then
 				return "Top"
-			elseif current_line == vim.fn.line("$") then
+			elseif current_line == vim.fn.line "$" then
 				return "Bot"
 			end
 			local result, _ = math.modf((current_line / total_line) * 100)
@@ -278,9 +264,7 @@ function M.get()
 	-- macro
 	components.active[1][12] = {
 		provider = "macro",
-		enabled = function()
-			return vim.api.nvim_get_option("cmdheight") == 0
-		end,
+		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -291,9 +275,7 @@ function M.get()
 	-- search count
 	components.active[1][13] = {
 		provider = "search_count",
-		enabled = function()
-			return vim.api.nvim_get_option("cmdheight") == 0
-		end,
+		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -315,9 +297,7 @@ function M.get()
 			if Lsp then
 				local msg = Lsp.message or ""
 				local percentage = Lsp.percentage
-				if not percentage then
-					return ""
-				end
+				if not percentage then return "" end
 				local title = Lsp.title or ""
 				local spinners = {
 					"",
@@ -351,9 +331,7 @@ function M.get()
 	-- genral diagnostics (errors, warnings. info and hints)
 	components.active[2][2] = {
 		provider = "diagnostic_errors",
-		enabled = function()
-			return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR)
-		end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR) end,
 
 		hl = {
 			fg = C.red,
@@ -364,9 +342,7 @@ function M.get()
 
 	components.active[2][3] = {
 		provider = "diagnostic_warnings",
-		enabled = function()
-			return lsp.diagnostics_exist(vim.diagnostic.severity.WARN)
-		end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.WARN) end,
 		hl = {
 			fg = C.yellow,
 			bg = sett.bkg,
@@ -376,9 +352,7 @@ function M.get()
 
 	components.active[2][4] = {
 		provider = "diagnostic_info",
-		enabled = function()
-			return lsp.diagnostics_exist(vim.diagnostic.severity.INFO)
-		end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.INFO) end,
 		hl = {
 			fg = C.sky,
 			bg = sett.bkg,
@@ -388,9 +362,7 @@ function M.get()
 
 	components.active[2][5] = {
 		provider = "diagnostic_hints",
-		enabled = function()
-			return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
-		end,
+		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.HINT) end,
 		hl = {
 			fg = C.rosewater,
 			bg = sett.bkg,
@@ -431,8 +403,8 @@ function M.get()
 
 	components.active[3][3] = {
 		provider = function()
-			local filename = vim.fn.expand("%:t")
-			local extension = vim.fn.expand("%:e")
+			local filename = vim.fn.expand "%:t"
+			local extension = vim.fn.expand "%:e"
 			local present, icons = pcall(require, "nvim-web-devicons")
 			local icon = present and icons.get_icon(filename, extension) or assets.file
 			return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "
@@ -473,9 +445,7 @@ function M.get()
 
 	-- Inanctive components
 	components.inactive[1][1] = {
-		provider = function()
-			return " " .. string.upper(vim.bo.ft) .. " "
-		end,
+		provider = function() return " " .. string.upper(vim.bo.ft) .. " " end,
 		hl = {
 			fg = C.overlay2,
 			bg = C.mantle,

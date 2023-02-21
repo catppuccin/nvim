@@ -7,13 +7,9 @@ local function get_integrations()
 	for integration in pairs(integrations) do
 		local cot = false
 		if type(integrations[integration]) == "table" then
-			if integrations[integration]["enabled"] == true then
-				cot = true
-			end
+			if integrations[integration]["enabled"] == true then cot = true end
 		else
-			if integrations[integration] == true then
-				cot = true
-			end
+			if integrations[integration] == true then cot = true end
 		end
 
 		if cot then
@@ -37,7 +33,7 @@ function M.apply(flavour)
 
 	_G.O = require("catppuccin").options
 	_G.C = require("catppuccin.palettes").get_palette(flavour)
-	_G.U = require("catppuccin.utils.colors")
+	_G.U = require "catppuccin.utils.colors"
 
 	C.none = "NONE"
 
@@ -58,9 +54,7 @@ function M.apply(flavour)
 	theme.integrations = get_integrations() -- plugins
 	theme.terminal = require("catppuccin.groups.terminal").get() -- terminal colors
 	local user_highlights = require("catppuccin").options.highlight_overrides
-	if type(user_highlights[flavour]) == "function" then
-		user_highlights[flavour] = user_highlights[flavour](C)
-	end
+	if type(user_highlights[flavour]) == "function" then user_highlights[flavour] = user_highlights[flavour](C) end
 	theme.custom_highlights = vim.tbl_deep_extend(
 		"keep",
 		user_highlights[flavour] or {},

@@ -37,21 +37,13 @@ let g:colors_name = "catppuccin"]],
 			if color.style then
 				local rstyle = {}
 				for _, style in pairs(color.style) do
-					if O.no_italic and style == "italic" then
-						style = nil
-					end
-					if O.no_bold and style == "bold" then
-						style = nil
-					end
-					if style then
-						rstyle[#rstyle + 1] = style
-					end
+					if O.no_italic and style == "italic" then style = nil end
+					if O.no_bold and style == "bold" then style = nil end
+					if style then rstyle[#rstyle + 1] = style end
 				end
 				color.style = table.concat(rstyle, ",")
 			end
-			if color.style == "" then
-				color.style = nil
-			end
+			if color.style == "" then color.style = nil end
 			table.insert(
 				lines,
 				fmt(
@@ -66,9 +58,7 @@ let g:colors_name = "catppuccin"]],
 		end
 	end
 	table.insert(lines, "]]end)")
-	if vim.fn.isdirectory(O.compile_path) == 0 then
-		vim.fn.mkdir(O.compile_path, "p")
-	end
+	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
 	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 	local ls = load or loadstring
 
@@ -80,7 +70,7 @@ let g:colors_name = "catppuccin"]],
 
 	local f = ls(table.concat(lines, "\n"), "=")
 	if not f then
-		local err_path = (path_sep == "/" and "/tmp" or os.getenv("TMP")) .. "/catppuccin_error.lua"
+		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
 		print(string.format(
 			[[Catppuccin (error): Most likely some mistake made in your catppuccin config
 You can open %s for debugging
