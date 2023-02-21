@@ -133,7 +133,7 @@ function M.setup(user_conf)
 	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
 
 	if git == -1 then -- no .git in /nix/store
-		M.options.compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
+		M.options.compile_path = user_conf.compile_path or (vim.fn.stdpath "cache" .. "/catppuccin")
 		git = git_path
 	end
 
