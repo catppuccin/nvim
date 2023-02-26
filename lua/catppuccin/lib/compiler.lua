@@ -8,8 +8,9 @@ local fmt = string.format
 local function inspect(t)
 	local list = {}
 	for k, v in pairs(t) do
-		local q = type(v) == "string" and [["]] or ""
-		table.insert(list, fmt([[%s = %s%s%s]], k, q, tostring(v), q))
+		local tv = type(v)
+		local q = tv == "string" and [["]] or ""
+		table.insert(list, fmt([[%s = %s%s%s]], k, q, tv == "table" and inspect(v) or tostring(v), q))
 	end
 	return fmt([[{ %s }]], table.concat(list, ", "))
 end
