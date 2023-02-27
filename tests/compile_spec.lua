@@ -1,0 +1,5 @@
+describe("compile", function()
+	it("should work", function()
+		assert.equals(pcall(function() require("catppuccin").compile() end), true)
+	end)
+end)
