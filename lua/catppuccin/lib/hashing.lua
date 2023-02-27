@@ -4,7 +4,7 @@ local B = bit or bit32 or require "catppuccin.lib.vim.bit"
 local hash_str = function(str) -- djb2, https://stackoverflow.com/questions/7666509/hash-function-for-string
 	local hash = 5381
 	for i = 1, #str do
-		hash = B.lshift(hash, 5) + string.byte(str, i)
+		hash = B.lshift(hash, 5) + hash + string.byte(str, i)
 	end
 	return hash
 end
