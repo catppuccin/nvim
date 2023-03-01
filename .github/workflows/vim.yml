@@ -1,0 +1,54 @@
+---
+name: Vim
+on:
+  pull_request: ~
+  push:
+    paths-ignore:
+      - "*.md"
+    branches:
+      - main
+
+jobs:
+  ubuntu:
+    name: Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Vim
+        shell: bash
+        run: |
+          sudo apt-get install vim-gtk lua5.4
+          curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      - name: Run vim
+        run: |
+          vim --version
+          vim -u tests/init.vim
+  macos:
+    name: Macos
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Vim
+        run: |
+          brew install vim
+          curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      - name: Run vim
+        run: |
+          vim --version
+          vim -u tests/init.vim
+  # windows:
+  #   name: Windows
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Install Vim
+  #       run: |
+  #         choco install vim
+  #         iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+  #           ni $HOME/vimfiles/autoload/plug.vim -Force
+  #     - name: Run vim
+  #       run: |
+  #         vim --version
+  #         vim -u tests/init.vim
