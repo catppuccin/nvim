@@ -1,0 +1,56 @@
+---
+name: Neovim
+on:
+  pull_request: ~
+  push:
+    paths-ignore:
+      - "*.md"
+    branches:
+      - main
+
+jobs:
+  ubuntu:
+    name: Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Neovim
+        shell: bash
+        run: |
+          wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb -O /tmp/nvim.deb
+          sudo dpkg -i /tmp/nvim.deb
+      - name: Run neovim
+        run: |
+          nvim --version
+          nvim --headless -u tests/init.lua +q
+  macos:
+    name: Macos
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Neovim
+        run: |
+          wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+          xattr -c ./nvim-macos.tar.gz
+          tar xzvf nvim-macos.tar.gz &> /dev/null
+          ln -s $(pwd)/nvim-macos/bin/nvim /usr/local/bin/nvim
+      - name: Run neovim
+        run: |
+          nvim --version
+          nvim --headless -u tests/init.lua +q
+  windows:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Neovim
+        run: |
+          C:\msys64\usr\bin\wget.exe -q https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip
+          7z x nvim-win64.zip
+          Add-Content $env:GITHUB_PATH ".\nvim-win64\bin\"
+      - name: Run neovim
+        run: |
+          nvim --version
+          nvim --headless -u tests/init.lua +q
