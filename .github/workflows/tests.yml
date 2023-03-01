@@ -69,5 +69,5 @@ jobs:
       - name: Run tests
         run: |
           nvim --version
-          nvim --headless -c "1cq" +q # PLENNARY DOESN'T WORK ON WINDOWS
+          nvim --headless -c "0cq" +q # PLENNARY DOESN'T WORK ON WINDOWS
           # nvim --headless -u tests/init.lua -c "PlenaryBustedDirectory tests/ {minimal_init = 'tests/minimal_init.vim', sequential = true}"
