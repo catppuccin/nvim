@@ -38,17 +38,20 @@ jobs:
         run: |
           vim --version
           vim -u tests/init.vim
-  # windows:
-  #   name: Windows
-  #   runs-on: windows-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Install Vim
-  #       run: |
-  #         choco install vim
-  #         iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-  #           ni $HOME/vimfiles/autoload/plug.vim -Force
-  #     - name: Run vim
-  #       run: |
-  #         vim --version
-  #         vim -u tests/init.vim
+  windows:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Vim
+        run: |
+          choco install vim
+          C:\msys64\usr\bin\wget.exe -q https://downloads.sourceforge.net/project/luabinaries/5.4.2/Tools%20Executables/lua-5.4.2_Win64_bin.zip
+          7z x lua-5.4.2_Win64_bin.zip
+          move lua54.dll C:\Windows\System32\
+          iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+            ni $HOME/vimfiles/autoload/plug.vim -Force
+      - name: Run vim
+        run: |
+          vim --version
+          gvim -u tests/init.vim
