@@ -30,7 +30,7 @@ function M.get()
 		OctoBubbleRed = { fg = C.base, bg = C.red },
 		OctoUser = { link = "OctoBubble" },
 		OctoUserViewer = { link = "OctoViewer" },
-		OctoReaction = { fg = C.text, bg = C.mantle },
+		OctoReaction = { link = "OctoBubble" },
 		OctoReactionViewer = { link = "OctoViewer" },
 		OctoPassingTest = { link = "OctoGreen" },
 		OctoFailingTest = { link = "OctoRed" },
