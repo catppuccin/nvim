@@ -413,6 +413,7 @@ require("catppuccin").setup({
         noice = false,
         notify = false,
         nvimtree = true,
+        octo = false,
         overseer = false,
         pounce = false,
         sandwich = false,
