@@ -23,13 +23,17 @@ end
 function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
-		[[
+		string.format(
+			[[
 return string.dump(function()
-if vim.g.colors_name then vim.cmd("hi clear") end
 vim.o.termguicolors = true
-vim.g.colors_name = "catppuccin"]],
+if vim.g.colors_name then vim.cmd("hi clear") end
+vim.o.background = "%s"
+vim.g.colors_name = "catppuccin"
+local h = vim.api.nvim_set_hl]],
+			flavour == "latte" and "light" or "dark"
+		),
 	}
-	table.insert(lines, "vim.o.background = " .. (flavour == "latte" and [["light"]] or [["dark"]]))
 	if path_sep == "\\" then O.compile_path = O.compile_path:gsub("/", "\\") end
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
@@ -52,9 +56,9 @@ vim.g.colors_name = "catppuccin"]],
 		if color.link and (theme.custom_highlights[group] and not theme.custom_highlights[group].link) then
 			color.link = nil
 		end
-		table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], group, inspect(color)))
+		table.insert(lines, fmt([[h(0, "%s", %s)]], group, inspect(color)))
 	end
-	table.insert(lines, "end)")
+	table.insert(lines, "end, true)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
 	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 
@@ -64,7 +68,7 @@ vim.g.colors_name = "catppuccin"]],
 		deb:close()
 	end
 
-	local f = loadstring(table.concat(lines, "\n"), "=")
+	local f = loadstring(table.concat(lines, "\n"))
 	if not f then
 		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
 		print(string.format(
