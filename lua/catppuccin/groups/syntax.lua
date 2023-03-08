@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	return {
-		Comment = { fg = C.surface2, style = O.styles.comments }, -- just comments
+		Comment = { fg = C.overlay0, style = O.styles.comments }, -- just comments
 		SpecialComment = { link = "Special" }, -- special things inside a comment
 		Constant = { fg = C.peach }, -- (preferred) any constant
 		String = { fg = C.green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
