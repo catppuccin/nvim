@@ -8,16 +8,19 @@ local fmt = string.format
 function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
-		[[
+		string.format(
+			[[
 return string.dump(function()
 vim.command[[
 if exists("colors_name")
 	hi clear
 endif
 set termguicolors
+set background=%s
 let g:colors_name = "catppuccin"]],
+			(flavour == "latte" and "light" or "dark")
+		),
 	}
-	table.insert(lines, "set background=" .. (flavour == "latte" and [[light]] or [[dark]]))
 
 	local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
@@ -57,7 +60,7 @@ let g:colors_name = "catppuccin"]],
 			)
 		end
 	end
-	table.insert(lines, "]]end)")
+	table.insert(lines, "]]end, true)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
 	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 	local ls = load or loadstring
@@ -68,7 +71,7 @@ let g:colors_name = "catppuccin"]],
 		deb:close()
 	end
 
-	local f = ls(table.concat(lines, "\n"), "=")
+	local f = ls(table.concat(lines, "\n"))
 	if not f then
 		local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/catppuccin_error.lua"
 		print(string.format(

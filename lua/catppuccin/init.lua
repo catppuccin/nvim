@@ -104,20 +104,15 @@ local function get_flavour(default)
 	return flavour or M.options.background[vim.o.background]
 end
 
-local lock = false -- Avoid g:colors_name reloading
-
 function M.load(flavour)
-	if lock then return end
 	M.flavour = get_flavour(flavour)
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour
-	lock = true
 	local f = loadfile(compiled_path)
 	if not f then
 		M.compile()
 		f = assert(loadfile(compiled_path), "could not load cache")
 	end
 	f()
-	lock = false
 end
 
 function M.setup(user_conf)

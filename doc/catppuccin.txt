@@ -427,6 +427,8 @@ module. (See Special integrations
 
   nvim-ts-rainbow2                                           ts_rainbow2
 
+  octo.nvim                                                  octo
+
   overseer.nvim                                              overseer
 
   pounce.nvim                                                pounce
@@ -500,6 +502,7 @@ Click here to see an example config ~
             noice = false,
             notify = false,
             nvimtree = true,
+            octo = false,
             overseer = false,
             pounce = false,
             sandwich = false,
