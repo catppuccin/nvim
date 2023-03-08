@@ -62,13 +62,14 @@ let g:colors_name = "catppuccin"]],
 	end
 	table.insert(lines, "]]end, true)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-	local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
 	local ls = load or loadstring
 
 	if vim.g.catppuccin_debug then -- Debugging purpose
 		local deb = io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb")
-		deb:write(table.concat(lines, "\n"))
-		deb:close()
+		if deb then
+			deb:write(table.concat(lines, "\n"))
+			deb:close()
+		end
 	end
 
 	local f = ls(table.concat(lines, "\n"))
@@ -85,24 +86,20 @@ Below is the error message that we captured:
 			err_path
 		))
 		local err = io.open(err_path, "wb")
-		err:write(table.concat(lines, "\n"))
-		err:close()
+		if err then
+			err:write(table.concat(lines, "\n"))
+			err:close()
+		end
 		dofile(err_path)
 		return
 	end
 
-	if file then
-		file:write(f())
-		file:close()
-	else
-		print(
-			"Permission denied while writing compiled file to "
-				.. O.compile_path
-				.. path_sep
-				.. flavour
-				.. "_compiled.lua"
-		)
-	end
+	local file = assert(
+		io.open(O.compile_path .. path_sep .. flavour, "wb"),
+		"Permission denied while writing compiled file to " .. O.compile_path .. path_sep .. flavour
+	)
+	file:write(f())
+	file:close()
 end
 
 return M

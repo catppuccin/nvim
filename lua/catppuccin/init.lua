@@ -110,9 +110,8 @@ function M.load(flavour)
 	local f = loadfile(compiled_path)
 	if not f then
 		M.compile()
-		f = loadfile(compiled_path)
+		f = assert(loadfile(compiled_path), "could not load cache")
 	end
-	---@diagnostic disable-next-line: need-check-nil
 	f()
 end
 
