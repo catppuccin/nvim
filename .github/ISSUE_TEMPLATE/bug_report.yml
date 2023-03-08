@@ -27,7 +27,6 @@ body:
       required: true
   - type: markdown
     attributes:
-      label: "Tmux"
       value: |
         If you use tmux I strongly recommend following these before opening an issue:
         Enable true color support: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
