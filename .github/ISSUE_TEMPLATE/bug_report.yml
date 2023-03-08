@@ -2,10 +2,6 @@ name: Bug report
 description: Report a problem with Catppuccin
 labels: [bug]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Before reporting: Read [Announcement and breaking changes](https://github.com/catppuccin/nvim/issues/260) and PLEASE UPDATE if you use neovim nightly.
   - type: textarea
     attributes:
       label: "Description"
@@ -18,21 +14,25 @@ body:
       description: "Output of `nvim --version` (Catppuccin requires neovim >= 0.8)"
       render: markdown
       placeholder: |
-        NVIM v0.8.0-dev-1025-gfb39bba5a6
+        NVIM v0.8.3
         Build type: Release
         LuaJIT 2.1.0-beta3
     validations:
       required: true
   - type: input
     attributes:
-      label: "Operating system and version"
-      placeholder: "macOS 11.5"
+      label: "Terminal and version"
+      description: >
+        If you use tmux I strongly recommend these links before opening this issue:
+        Enable true color support: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
+        Enable italic font support: https://gist.github.com/gutoyr/4192af1aced7a1b555df06bd3781a722
+      placeholder: "kitty 0.27.1"
     validations:
       required: true
   - type: input
     attributes:
       label: "Catppuccin version / branch / rev"
-      placeholder: "catppuccin v0.2"
+      placeholder: "catppuccin v1.1.0"
     validations:
       required: true
   - type: textarea
@@ -40,7 +40,7 @@ body:
       label: "Steps to reproduce"
       description: "Steps to reproduce using the minimal config provided below."
       placeholder: |
-        1. `nvim -nu minimal.lua`
+        1. `nvim -u repro.lua`
         2. ...
     validations:
       required: true
@@ -48,6 +48,8 @@ body:
     attributes:
       label: "Expected behavior"
       description: "A description of the behavior you expected:"
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: "Actual behavior"
@@ -86,5 +88,3 @@ body:
         vim.cmd.colorscheme("catppuccin")
         -- add anything else here
       render: Lua
-    validations:
-      required: true
