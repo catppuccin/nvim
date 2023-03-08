@@ -21,14 +21,17 @@ body:
       required: true
   - type: input
     attributes:
-      label: "Terminal and version"
-      description: >
-        If you use tmux I strongly recommend these links before opening this issue:
-        Enable true color support: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
-        Enable italic font support: https://gist.github.com/gutoyr/4192af1aced7a1b555df06bd3781a722
-      placeholder: "kitty 0.27.1"
+      label: "Terminal and multiplexer"
+      placeholder: "kitty 0.27.1 with tmux 3.3"
     validations:
       required: true
+  - type: markdown
+    attributes:
+      label: "Tmux"
+      value: |
+        If you use tmux I strongly recommend following these before opening an issue:
+        Enable true color support: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
+        Enable italic font support: https://gist.github.com/gutoyr/4192af1aced7a1b555df06bd3781a722
   - type: input
     attributes:
       label: "Catppuccin version / branch / rev"
