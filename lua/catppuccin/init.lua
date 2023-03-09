@@ -64,6 +64,7 @@ local M = {
 					information = { "underline" },
 				},
 			},
+			semantic_tokens = true,
 		},
 		color_overrides = {},
 		highlight_overrides = {},
