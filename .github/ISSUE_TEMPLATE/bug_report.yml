@@ -28,9 +28,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        If you use tmux I strongly recommend following these before opening an issue:
-        Enable true color support: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
-        Enable italic font support: https://gist.github.com/gutoyr/4192af1aced7a1b555df06bd3781a722
+        # FOR TMUX USERS
+        FOLLOW THESE GIST BEFORE OPENING THE ISSUE
+        - [Enable true color support](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to fix the [abnormal colors](https://github.com/catppuccin/nvim/issues/415)
+        - [Enable italic font support](https://gist.github.com/gutoyr/4192af1aced7a1b555df06bd3781a722) to fix the [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428)
   - type: input
     attributes:
       label: "Catppuccin version / branch / rev"
