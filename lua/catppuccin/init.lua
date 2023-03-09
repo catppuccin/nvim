@@ -64,6 +64,7 @@ local M = {
 					information = { "underline" },
 				},
 			},
+			semantic_tokens = vim.fn.has "nvim-0.9" == 1,
 		},
 		color_overrides = {},
 		highlight_overrides = {},
