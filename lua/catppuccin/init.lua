@@ -133,7 +133,7 @@ function M.setup(user_conf)
 	end
 
 	-- Get current hash
-	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git" .. M.path_sep .. "ORIG_HEAD"
+	local git_path = debug.getinfo(1).source:sub(2, -24) .. ".git"
 	local git = vim.fn.getftime(git_path) -- 2x faster vim.loop.fs_stat
 	local hash = require("catppuccin.lib.hashing").hash(user_conf)
 		.. (git == -1 and git_path or git) -- no .git in /nix/store -> cache path
