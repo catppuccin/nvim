@@ -60,7 +60,7 @@ function M.get()
 		StatusLine = { fg = C.text, bg = O.transparent_background and C.none or C.mantle }, -- status line of current window
 		StatusLineNC = { fg = C.surface1, bg = O.transparent_background and C.none or C.mantle }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine = { bg = C.mantle, fg = C.surface1 }, -- tab pages line, not active tab page label
-		TabLineFill = { bg = C.black }, -- tab pages line, where there are no labels
+		TabLineFill = {}, -- tab pages line, where there are no labels
 		TabLineSel = { fg = C.green, bg = C.surface1 }, -- tab pages line, active tab page label
 		Title = { fg = C.blue, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etC.
 		Visual = { bg = C.surface1, style = { "bold" } }, -- Visual mode selection
