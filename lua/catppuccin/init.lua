@@ -108,8 +108,8 @@ end
 local did_setup = false
 
 function M.load(flavour)
-	M.flavour = get_flavour(flavour)
 	if not did_setup then M.setup() end
+	M.flavour = get_flavour(flavour)
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour
 	local f = loadfile(compiled_path)
 	if not f then

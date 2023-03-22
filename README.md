@@ -50,7 +50,7 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 # Features
 
-- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 with [lua](https://github.com/lua/lua) >= 5.1)
+- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
 - Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
 - [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
 - Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
@@ -642,7 +642,7 @@ ctp_feline.setup({
 })
 ```
 
-> **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
+> **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a workaround:
 
 ```lua
 vim.api.nvim_create_autocmd("ColorScheme", {
