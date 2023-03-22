@@ -375,6 +375,8 @@ module. (See Special integrations
 
   harpoon                                                    harpoon
 
+  headlines.nvim                                             headlines
+
   hop.nvim                                                   hop
 
   indent-blankline.nvim                                      Special
@@ -487,6 +489,7 @@ Click here to see an example config ~
             gitgutter = false,
             gitsigns = true,
             harpoon = false,
+            headlines = false,
             hop = false,
             illuminate = false,
             leap = false,
