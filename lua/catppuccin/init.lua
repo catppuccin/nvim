@@ -105,8 +105,11 @@ local function get_flavour(default)
 	return flavour or M.options.background[vim.o.background]
 end
 
+local did_setup = false
+
 function M.load(flavour)
 	M.flavour = get_flavour(flavour)
+	if not did_setup then M.setup() end
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour
 	local f = loadfile(compiled_path)
 	if not f then
@@ -117,6 +120,7 @@ function M.load(flavour)
 end
 
 function M.setup(user_conf)
+	did_setup = true
 	-- Parsing user config
 	user_conf = user_conf or {}
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
