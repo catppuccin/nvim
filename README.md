@@ -328,6 +328,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                   | Special             |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                           | gitsigns            |
 | [harpoon](https://github.com/ThePrimeagen/harpoon)                                    | harpoon             |
+| [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)                     | headlines           |
 | [hop.nvim](https://github.com/phaazon/hop.nvim)                                       | hop                 |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)       | Special             |
 | [leap.nvim](https://github.com/ggandor/leap.nvim)                                     | leap                |
@@ -398,6 +399,7 @@ require("catppuccin").setup({
         gitgutter = false,
         gitsigns = true,
         harpoon = false,
+        headlines = false,
         hop = false,
         illuminate = false,
         leap = false,
