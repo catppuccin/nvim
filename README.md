@@ -434,6 +434,8 @@ require("catppuccin").setup({
         -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
         barbecue = {
             dim_dirname = true,
+            bold_basename = true,
+            dim_context = false,
         },
         dap = {
             enabled = false,
@@ -487,6 +489,8 @@ The directory name color shown is dimmed by default, you can customize this sett
 integrations = {
   barbecue = {
     dim_dirname = true,
+    bold_basename = true,
+    dim_context = false,
   }
 }
 ```

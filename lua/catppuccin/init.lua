@@ -45,6 +45,8 @@ local M = {
 			ts_rainbow2 = true,
 			barbecue = {
 				dim_dirname = true,
+				bold_basename = true,
+				dim_context = false,
 			},
 			indent_blankline = {
 				enabled = true,
