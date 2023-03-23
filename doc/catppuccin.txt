@@ -524,6 +524,8 @@ Click here to see an example config ~
             -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
             barbecue = {
                 dim_dirname = true,
+                bold_basename = true,
+                dim_context = false,
             },
             dap = {
                 enabled = false,
@@ -577,6 +579,8 @@ setting.
     integrations = {
       barbecue = {
         dim_dirname = true,
+        bold_basename = true,
+        dim_context = false,
       }
     }
 <
