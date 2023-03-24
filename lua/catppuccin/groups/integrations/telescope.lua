@@ -1,8 +1,14 @@
 local M = {}
 
+local helper = require("catppuccin.lib.helper")
+local O = require("catppuccin").options
+
+local border = helper.is_floating_border({auto = true})
+
 function M.get()
-	return {
-		TelescopeBorder = { fg = C.blue },
+  local telescope = O.integrations.telescope
+
+  local opts = {
 		TelescopeSelectionCaret = { fg = C.flamingo },
 		TelescopeSelection = {
 			fg = O.transparent_background and C.flamingo or C.text,
@@ -10,17 +16,50 @@ function M.get()
 			style = { "bold" },
 		},
 		TelescopeMatching = { fg = C.blue },
-		-- TelescopePromptPrefix = { bg = C.crust },
-		-- TelescopePromptNormal = { bg = C.crust },
-		-- TelescopeResultsNormal = { bg = C.mantle },
-		-- TelescopePreviewNormal = { bg = C.crust },
-		-- TelescopePromptBorder = { bg = C.crust, fg = C.crust },
-		-- TelescopeResultsBorder = { bg = C.mantle, fg = C.crust },
-		-- TelescopePreviewBorder = { bg = C.crust, fg = C.crust },
-		-- TelescopePromptTitle = { fg = C.crust },
-		-- TelescopeResultsTitle = { fg = C.text },
-		-- TelescopePreviewTitle = { fg = C.crust },
-	}
+		TelescopeNormal = { bg = C.mantle },
+  }
+
+  if type(telescope) == "table"
+    and telescope.border ~= nil then
+    border = telescope.border
+  end
+
+  if border then
+    opts.TelescopeBorder = { default = true, link = "FloatBorder" }
+  else
+    opts.TelescopeBorder = { fg = C.mantle, bg = C.mantle }
+
+    opts.TelescopePromptTitle = { fg = C.base, bg = C.red }
+    opts.TelescopePromptBorder = { fg = C.surface0, bg = C.surface0 }
+    opts.TelescopePromptNormal = { bg = C.surface0 }
+
+    opts.TelescopeResultsTitle = { fg = C.base, bg = C.yellow }
+    opts.TelescopeResultsBorder = { fg = C.mantle, bg = C.mantle }
+    opts.TelescopeResultsNormal = { bg = C.mantle }
+
+    opts.TelescopePreviewTitle = { fg = C.base, bg = C.green }
+    opts.TelescopePreviewBorder = { fg = C.mantle, bg = C.mantle }
+    opts.TelescopePreviewNormal = { bg = C.mantle }
+  end
+
+  return opts
+end
+
+function M.get_opts(opts)
+  local telescope = O.integrations.telescope
+
+  if not helper.is_option_enabled(telescope) then
+    return opts
+  end
+
+  local defaults = {
+    defaults = {
+      border = true,
+      borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+    }
+  }
+
+  return vim.tbl_deep_extend("keep", opts or {}, defaults)
 end
 
 return M

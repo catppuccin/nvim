@@ -1,5 +1,11 @@
 local M = {}
 
+local helper = require("catppuccin.lib.helper")
+local O = require("catppuccin").options
+
+local completion_border = helper.is_floating_border({auto = true})
+local documentation_border = helper.is_floating_border({auto = false})
+
 function M.get()
 	return {
 		CmpItemAbbr = { fg = C.overlay2 },
@@ -37,6 +43,39 @@ function M.get()
 		CmpItemKindTypeParameter = { fg = C.blue },
 		CmpItemKindCopilot = { fg = C.teal },
 	}
+end
+
+function M.get_opts(opts)
+  local cmp = O.integrations.cmp
+
+  if not helper.is_option_enabled(cmp) then
+    return opts
+  end
+
+  if type(cmp) == "table"
+    and cmp.border.completion ~= nil then
+    completion_border = cmp.border.completion
+  end
+
+  if type(cmp) == "table"
+    and cmp.border.documentation ~= nil then
+    documentation_border = cmp.border.documentation
+  end
+
+  local defaults = {
+    window = {
+      completion = {
+        border = completion_border and { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        winhighlight = "FloatBorder:FloatBorder",
+      },
+      documentation = {
+        border = documentation_border and { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        winhighlight = "FloatBorder:FloatBorder",
+      },
+    },
+  }
+
+  return vim.tbl_deep_extend("keep", opts or {}, defaults)
 end
 
 return M
