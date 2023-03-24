@@ -50,7 +50,7 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 # Features
 
-- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 with [lua](https://github.com/lua/lua) >= 5.1)
+- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
 - Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
 - [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
 - Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
@@ -328,6 +328,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                   | Special             |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                           | gitsigns            |
 | [harpoon](https://github.com/ThePrimeagen/harpoon)                                    | harpoon             |
+| [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)                     | headlines           |
 | [hop.nvim](https://github.com/phaazon/hop.nvim)                                       | hop                 |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)       | Special             |
 | [leap.nvim](https://github.com/ggandor/leap.nvim)                                     | leap                |
@@ -398,6 +399,7 @@ require("catppuccin").setup({
         gitgutter = false,
         gitsigns = true,
         harpoon = false,
+        headlines = false,
         hop = false,
         illuminate = false,
         leap = false,
@@ -432,6 +434,8 @@ require("catppuccin").setup({
         -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
         barbecue = {
             dim_dirname = true,
+            bold_basename = true,
+            dim_context = false,
         },
         dap = {
             enabled = false,
@@ -485,6 +489,8 @@ The directory name color shown is dimmed by default, you can customize this sett
 integrations = {
   barbecue = {
     dim_dirname = true,
+    bold_basename = true,
+    dim_context = false,
   }
 }
 ```
@@ -640,7 +646,7 @@ ctp_feline.setup({
 })
 ```
 
-> **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:Catppuccin <flavour>` to work you could add this autocmd as a workaround:
+> **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a workaround:
 
 ```lua
 vim.api.nvim_create_autocmd("ColorScheme", {

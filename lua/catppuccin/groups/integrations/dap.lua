@@ -28,7 +28,7 @@ function M.get()
 		DapUIBreakpointsPath = { fg = C.sky },
 		DapUIBreakpointsInfo = { fg = C.green },
 		DapUIBreakpointsCurrentLine = { fg = C.green, style = { "bold" } },
-		DapUIBreakpointsDisabledLine = { fg = C.gray0 },
+		DapUIBreakpointsDisabledLine = { fg = C.surface2 },
 
 		DapUIStepOver = { fg = C.blue },
 		DapUIStepInto = { fg = C.blue },
