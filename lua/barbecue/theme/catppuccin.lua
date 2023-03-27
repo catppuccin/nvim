@@ -2,6 +2,8 @@ local C = require("catppuccin.palettes").get_palette()
 local O = require("catppuccin").options
 
 local dirname_color = O.integrations.barbecue.dim_dirname and C.overlay1 or C.text
+local basename_bold = O.integrations.barbecue.bold_basename
+local context_color = O.integrations.barbecue.dim_context and C.overlay1 or C.text
 
 local M = {
 	normal = { fg = C.text, bg = "none" },
@@ -11,8 +13,8 @@ local M = {
 	modified = { fg = C.peach },
 
 	dirname = { fg = dirname_color },
-	basename = { fg = C.text, bold = true },
-	context = { fg = C.text },
+	basename = { fg = C.text, bold = basename_bold },
+	context = { fg = context_color },
 
 	-- Same keys as navic
 	context_file = { fg = C.blue },
