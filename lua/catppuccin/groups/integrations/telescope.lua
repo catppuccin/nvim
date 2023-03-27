@@ -45,21 +45,4 @@ function M.get()
   return opts
 end
 
-function M.get_opts(opts)
-  local telescope = O.integrations.telescope
-
-  if not helper.is_option_enabled(telescope) then
-    return opts
-  end
-
-  local defaults = {
-    defaults = {
-      border = true,
-      borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
-    }
-  }
-
-  return vim.tbl_deep_extend("keep", opts or {}, defaults)
-end
-
 return M

@@ -48,7 +48,7 @@ end
 function M.get_opts(opts)
   local cmp = O.integrations.cmp
 
-  if not helper.is_option_enabled(cmp) then
+  if not helper.is_option_enabled(cmp) and not helper.is_catppucin_selected() then
     return opts
   end
 

@@ -516,7 +516,10 @@ Click here to see an example config ~
             ts_rainbow2 = false,
             vim_sneak = false,
             vimwiki = false,
-            which_key = false,
+            which_key = {
+                enabled = false,
+		border = false,
+	    },
     
             -- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
             barbecue = {

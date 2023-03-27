@@ -26,7 +26,10 @@ function M.is_option_enabled(opt)
   if type(opt) == "table" then
     return opt.enabled
   end
+end
 
+function M.is_catppucin_selected()
+  return vim.g.colors_name == "catppuccin"
 end
 
 return M
