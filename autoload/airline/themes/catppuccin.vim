@@ -22,6 +22,9 @@ let s:RE = [ s:c.mantle, s:c.red, 59, 203 ] " guifg guibg ctermfg ctermbg
 " Warning section
 let s:WR = [s:c.mantle, s:c.peach, 232, 166 ]
 
+" Error section
+let s:ER = [s:c.mantle, s:c.red, 232, 166 ]
+
 let g:airline#themes#catppuccin#palette = {}
 
 let g:airline#themes#catppuccin#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
@@ -41,3 +44,11 @@ let g:airline#themes#catppuccin#palette.inactive = airline#themes#generate_color
 let g:airline#themes#catppuccin#palette.normal.airline_warning = s:WR
 let g:airline#themes#catppuccin#palette.insert.airline_warning = s:WR
 let g:airline#themes#catppuccin#palette.visual.airline_warning = s:WR
+
+let g:airline#themes#catppuccin#palette.normal.airline_warning_to_airline_error = s:WR
+let g:airline#themes#catppuccin#palette.insert.airline_warning_to_airline_error = s:WR
+let g:airline#themes#catppuccin#palette.visual.airline_warning_to_airline_error = s:WR
+
+let g:airline#themes#catppuccin#palette.normal.airline_error = s:ER
+let g:airline#themes#catppuccin#palette.insert.airline_error = s:ER
+let g:airline#themes#catppuccin#palette.visual.airline_error = s:ER
