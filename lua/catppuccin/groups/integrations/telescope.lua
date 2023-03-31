@@ -2,8 +2,9 @@ local M = {}
 
 function M.get()
 	return {
-		TelescopeBorder = { fg = C.blue },
-		TelescopeSelectionCaret = { fg = C.flamingo },
+    TelescopeNormal = { link = "NormalFloat"},
+    TelescopeBorder = { link = "FloatBorder"},
+    TelescopeSelectionCaret = { fg = C.flamingo },
 		TelescopeSelection = {
 			fg = O.transparent_background and C.flamingo or C.text,
 			bg = O.transparent_background and C.none or C.surface0,
