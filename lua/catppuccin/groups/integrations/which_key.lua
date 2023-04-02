@@ -3,7 +3,7 @@ local M = {}
 function M.get()
 	return {
 		WhichKey = { link = "NormalFloat" },
-    WhichKeyBorder = { link = "FloatBorder"},
+		WhichKeyBorder = { link = "FloatBorder" },
 
     WhichKeyGroup = { fg = C.blue },
 		WhichKeySeperator = { fg = C.overlay0 },
