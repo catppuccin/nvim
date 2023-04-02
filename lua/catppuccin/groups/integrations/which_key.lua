@@ -5,7 +5,7 @@ function M.get()
 		WhichKey = { link = "NormalFloat" },
 		WhichKeyBorder = { link = "FloatBorder" },
 
-    WhichKeyGroup = { fg = C.blue },
+		WhichKeyGroup = { fg = C.blue },
 		WhichKeySeperator = { fg = C.overlay0 },
 		WhichKeyDesc = { fg = C.pink },
 		WhichKeyValue = { fg = C.overlay0 },
