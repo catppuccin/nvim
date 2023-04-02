@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	return {
-    WhichKey = { link = "NormalFloat"},
+		WhichKey = { link = "NormalFloat" },
     WhichKeyBorder = { link = "FloatBorder"},
 
     WhichKeyGroup = { fg = C.blue },
