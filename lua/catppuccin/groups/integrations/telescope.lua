@@ -3,7 +3,7 @@ local M = {}
 function M.get()
 	return {
 		TelescopeNormal = { link = "NormalFloat" },
-    TelescopeBorder = { link = "FloatBorder"},
+		TelescopeBorder = { link = "FloatBorder" },
     TelescopeSelectionCaret = { fg = C.flamingo },
 		TelescopeSelection = {
 			fg = O.transparent_background and C.flamingo or C.text,
