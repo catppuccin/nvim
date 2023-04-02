@@ -4,7 +4,7 @@ function M.get()
 	return {
 		TelescopeNormal = { link = "NormalFloat" },
 		TelescopeBorder = { link = "FloatBorder" },
-    TelescopeSelectionCaret = { fg = C.flamingo },
+		TelescopeSelectionCaret = { fg = C.flamingo },
 		TelescopeSelection = {
 			fg = O.transparent_background and C.flamingo or C.text,
 			bg = O.transparent_background and C.none or C.surface0,
