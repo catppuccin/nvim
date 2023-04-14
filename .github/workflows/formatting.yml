@@ -1,4 +1,4 @@
-name: stylua
+name: StyLua
 on:
   pull_request: ~
   push:
@@ -9,6 +9,7 @@ on:
 
 jobs:
   stylua:
+    name: StyLua
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
