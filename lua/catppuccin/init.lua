@@ -67,6 +67,10 @@ local M = {
 					information = { "underline" },
 				},
 			},
+			navic = {
+				enabled = false,
+				custom_bg = "NONE",
+			},
 		},
 		color_overrides = {},
 		highlight_overrides = {},
