@@ -1,5 +1,11 @@
 name: stylua
-on: push
+on:
+  pull_request: ~
+  push:
+    paths-ignore:
+      - "*.md"
+    branches:
+      - main
 
 jobs:
   stylua:
