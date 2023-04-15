@@ -1,0 +1,21 @@
+name: Selene
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - "*.md"
+    branches:
+      - main
+
+jobs:
+  selene:
+    name: Selene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run selene
+        uses: NTBBloodbath/selene-action@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --display-style=quiet .
