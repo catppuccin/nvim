@@ -1,6 +1,6 @@
 name: StyLua
 on:
-  pull_request: ~
+  pull_request:
   push:
     paths-ignore:
       - "*.md"
