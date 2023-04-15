@@ -1,8 +1,15 @@
-name: stylua
-on: push
+name: StyLua
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - "*.md"
+    branches:
+      - main
 
 jobs:
   stylua:
+    name: StyLua
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
