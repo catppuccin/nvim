@@ -84,7 +84,7 @@ function M.get()
 		LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = info }, -- Used to underline "Information" diagnostics
 		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
 		LspCodeLens = { fg = C.overlay0 }, -- virtual text of the codelens
-		LspInfoBorder = { fg = C.blue }, -- LspInfo border
+		LspInfoBorder = { link = "FloatBorder" }, -- LspInfo border
 	}
 end
 
