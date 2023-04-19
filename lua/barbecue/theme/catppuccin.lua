@@ -5,8 +5,10 @@ local dirname_color = O.integrations.barbecue.dim_dirname and C.overlay1 or C.te
 local basename_bold = O.integrations.barbecue.bold_basename
 local context_color = O.integrations.barbecue.dim_context and C.overlay1 or C.text
 
+local transparent_bg = O.transparent_background and "NONE" or C.mantle
+
 local M = {
-	normal = { fg = C.text, bg = "none" },
+	normal = { fg = C.text, bg = transparent_bg },
 
 	ellipsis = { fg = C.overlay1 },
 	separator = { fg = C.overlay1 },
