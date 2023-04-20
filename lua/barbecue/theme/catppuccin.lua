@@ -1,14 +1,15 @@
 local C = require("catppuccin.palettes").get_palette()
 local O = require("catppuccin").options
 
+local transparent_bg = O.transparent_background and C.none or C.mantle
+
 local dirname_color = O.integrations.barbecue.dim_dirname and C.overlay1 or C.text
 local basename_bold = O.integrations.barbecue.bold_basename
 local context_color = O.integrations.barbecue.dim_context and C.overlay1 or C.text
-
-local transparent_bg = O.transparent_background and "NONE" or C.mantle
+local background_color = O.integrations.barbecue.alt_background and transparent_bg or C.none
 
 local M = {
-	normal = { fg = C.text, bg = transparent_bg },
+	normal = { fg = C.text, bg = background_color },
 
 	ellipsis = { fg = C.overlay1 },
 	separator = { fg = C.overlay1 },
