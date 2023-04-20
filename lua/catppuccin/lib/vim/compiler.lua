@@ -17,8 +17,9 @@ if exists("colors_name")
 endif
 set termguicolors
 set background=%s
-let g:colors_name = "catppuccin"]],
-			(flavour == "latte" and "light" or "dark")
+let g:colors_name = "catppuccin-%s"]],
+			(flavour == "latte" and "light" or "dark"),
+			flavour
 		),
 	}
 
