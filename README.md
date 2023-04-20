@@ -436,6 +436,7 @@ require("catppuccin").setup({
             dim_dirname = true,
             bold_basename = true,
             dim_context = false,
+            alt_background = false,
         },
         dap = {
             enabled = false,

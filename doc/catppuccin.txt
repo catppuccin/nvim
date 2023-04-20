@@ -526,6 +526,7 @@ Click here to see an example config ~
                 dim_dirname = true,
                 bold_basename = true,
                 dim_context = false,
+                alt_background = false,
             },
             dap = {
                 enabled = false,
