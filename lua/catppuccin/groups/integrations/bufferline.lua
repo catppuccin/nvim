@@ -34,7 +34,7 @@ function M.get(user_config)
 			tab = { fg = C.surface1, bg = inactive_bg },
 			tab_selected = { fg = C.sky, bg = active_bg, bold = true },
 			tab_separator = { fg = separator_fg, bg = inactive_bg },
-			tab_separator_selected = { fg = C.maroon, bg = active_bg },
+			tab_separator_selected = { fg = separator_fg, bg = active_bg },
 
 			tab_close = { fg = C.red, bg = inactive_bg },
 			indicator_selected = { fg = C.peach, bg = active_bg, style = styles },
