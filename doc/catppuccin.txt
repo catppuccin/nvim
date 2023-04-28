@@ -351,6 +351,8 @@ module. (See Special integrations
   -------------------------------------------------------------------------------
   Plugin                                                     Module
   ---------------------------------------------------------- --------------------
+  alpha-nvim                                                 alpha
+
   aerial.nvim                                                aerial
 
   barbar.nvim                                                barbar
