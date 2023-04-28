@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get()
-	return {
+    return {
         AlphaShortcut = { fg = C.green },
         AlphaHeader = { fg = C.blue },
         AlphaButtons = { fg = C.pink },
