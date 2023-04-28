@@ -2,10 +2,10 @@ local M = {}
 
 function M.get()
 	return {
-        AlphaShortcut = { fg = colors.pink },
-        AlphaHeader = { fg = colors.blue },
-        DashboardCenter = { fg = colors.green },
-        AlphaFooter = { fg = colors.yellow, style = { "italic" } },
+        AlphaShortcut = { fg = C.pink },
+        AlphaHeader = { fg = C.blue },
+        DashboardCenter = { fg = C.green },
+        AlphaFooter = { fg = C.yellow, style = { "italic" } },
 	}
 end
 
