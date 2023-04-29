@@ -41,7 +41,7 @@ function M.get(user_config)
 			-- separators
 			separator = { fg = separator_fg, bg = inactive_bg },
 			separator_visible = { fg = separator_fg, bg = inactive_bg },
-			separator_selected = { fg = separator_fg, bg = active_bg },
+			separator_selected = { fg = separator_fg, bg = inactive_bg },
 			offset_separator = { fg = separator_fg, bg = active_bg },
 			-- close buttons
 			close_button = { fg = C.surface1, bg = inactive_bg },
