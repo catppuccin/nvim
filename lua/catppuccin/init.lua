@@ -92,12 +92,10 @@ end
 
 local function get_flavour(default)
 	local flavour
-	if default then
-		flavour = default
-	elseif vim.g.colors_name == "catppuccin" then -- after first time load
+	if default and default == M.flavour and vim.o.background ~= (M.flavour == "latte" and "light" or "dark") then
 		flavour = M.options.background[vim.o.background]
 	else
-		flavour = M.flavour -- first time load
+		flavour = default
 	end
 
 	if flavour and not M.flavours[flavour] then
@@ -110,7 +108,7 @@ local function get_flavour(default)
 		)
 		flavour = nil
 	end
-	return flavour or M.options.background[vim.o.background]
+	return flavour or M.options.flavour or vim.g.catppuccin_flavour or M.options.background[vim.o.background]
 end
 
 local did_setup = false
@@ -133,7 +131,6 @@ function M.setup(user_conf)
 	user_conf = user_conf or {}
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
-	M.flavour = get_flavour(M.options.flavour or vim.g.catppuccin_flavour)
 
 	-- Get cached hash
 	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
@@ -178,7 +175,7 @@ vim.api.nvim_create_user_command(
 
 vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	for name, _ in pairs(package.loaded) do
-		if name:match "^catppuccin" and name ~= "catppuccin" then package.loaded[name] = nil end
+		if name:match "^catppuccin." then package.loaded[name] = nil end
 	end
 	M.compile()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
