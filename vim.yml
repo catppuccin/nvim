@@ -209,6 +209,9 @@ globals:
   O.integrations.dashboard:
     type: bool
     property: read-only
+  O.integrations.alpha:
+    type: bool
+    property: read-only
   O.integrations.gitsigns:
     type: bool
     property: full-write

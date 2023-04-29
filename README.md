@@ -316,6 +316,7 @@ Below is a list of supported plugins and their corresponding integration module.
 
 | Plugin                                                                                | Module              |
 | ------------------------------------------------------------------------------------- | ------------------- |
+| [alpha-vim](https://github.com/goolord/alpha-nvim)                                    | alpha               |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | aerial              |
 | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                                  | barbar              |
 | [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | barbecue, Special   |

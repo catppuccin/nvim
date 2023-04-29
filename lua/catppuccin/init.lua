@@ -33,6 +33,7 @@ local M = {
 			operators = {},
 		},
 		integrations = {
+			alpha = true,
 			cmp = true,
 			dashboard = true,
 			gitsigns = true,
