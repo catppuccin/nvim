@@ -21,7 +21,7 @@ function M.get()
 		NeoTreeGitUntracked = { fg = C.blue },
 		NeoTreeGitStaged = { fg = C.green },
 
-		NeoTreeFloatBorder = { fg = C.blue },
+		NeoTreeFloatBorder = { link = "FloatBorder" },
 		NeoTreeFloatTitle = { fg = C.subtext0 },
 
 		NeoTreeFileNameOpened = { fg = C.pink },
