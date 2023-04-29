@@ -29,9 +29,10 @@ return string.dump(function()
 vim.o.termguicolors = true
 if vim.g.colors_name then vim.cmd("hi clear") end
 vim.o.background = "%s"
-vim.g.colors_name = "catppuccin"
+vim.g.colors_name = "catppuccin-%s"
 local h = vim.api.nvim_set_hl]],
-			flavour == "latte" and "light" or "dark"
+			flavour == "latte" and "light" or "dark",
+			flavour
 		),
 	}
 	if path_sep == "\\" then O.compile_path = O.compile_path:gsub("/", "\\") end
