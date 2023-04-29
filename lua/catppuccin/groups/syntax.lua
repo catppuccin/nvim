@@ -74,7 +74,7 @@ function M.get()
 		DiffAdd = { bg = U.darken(C.green, 0.18, C.base) }, -- diff mode: Added line |diff.txt|
 		DiffChange = { bg = U.darken(C.blue, 0.07, C.base) }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { bg = U.darken(C.red, 0.18, C.base) }, -- diff mode: Deleted line |diff.txt|
-		DiffText = { bg = U.darken(C.blue, 0.18, C.base) }, -- diff mode: Changed text within a changed line |diff.txt|
+		DiffText = { bg = U.darken(C.blue, 0.30, C.base) }, -- diff mode: Changed text within a changed line |diff.txt|
 		-- NeoVim
 		healthError = { fg = C.red },
 		healthSuccess = { fg = C.teal },
