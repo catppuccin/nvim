@@ -13,10 +13,10 @@ function M.get()
 		Identifier = { fg = C.flamingo, style = O.styles.variables or {} }, -- (preferred) any variable name
 		Function = { fg = C.blue, style = O.styles.functions or {} }, -- function name (also: methods for classes)
 		Statement = { fg = C.mauve }, -- (preferred) any statement
-		Conditional = { fg = C.mauve, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etC.
-		Repeat = { fg = C.mauve, style = O.styles.loops or {} }, --   for, do, while, etC.
-		Label = { fg = C.sapphire }, --    case, default, etC.
-		Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etC.
+		Conditional = { fg = C.mauve, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etc.
+		Repeat = { fg = C.mauve, style = O.styles.loops or {} }, --   for, do, while, etc.
+		Label = { fg = C.sapphire }, --    case, default, etc.
+		Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etc.
 		Keyword = { fg = C.mauve, style = O.styles.keywords or {} }, --  any other keyword
 		-- Exception     = { }, --  try, catch, throw
 
@@ -26,15 +26,14 @@ function M.get()
 		Macro = { fg = C.mauve }, -- same as Define
 		PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
 
-		StorageClass = { fg = C.yellow }, -- static, register, volatile, etC.
-		Structure = { fg = C.yellow }, --  struct, union, enum, etC.
+		StorageClass = { fg = C.yellow }, -- static, register, volatile, etc.
+		Structure = { fg = C.yellow }, --  struct, union, enum, etc.
 		Special = { fg = C.pink }, -- (preferred) any special symbol
-		Type = { fg = C.yellow, style = O.styles.types or {} }, -- (preferred) int, long, char, etC.
+		Type = { fg = C.yellow, style = O.styles.types or {} }, -- (preferred) int, long, char, etc.
 		Typedef = { link = "Type" }, --  A typedef
 		SpecialChar = { link = "Special" }, -- special character in a constant
 		Tag = { link = "Special" }, -- you can use CTRL-] on this
 		Delimiter = { link = "Special" }, -- character that needs attention
-		-- Specialoverlay0= { }, -- special things inside a overlay0
 		Debug = { link = "Special" }, -- debugging statements
 
 		Underlined = { style = { "underline" } }, -- (preferred) text that stands out, HTML links
