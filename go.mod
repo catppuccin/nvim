@@ -9,15 +9,16 @@ require (
 	github.com/DanilaMihailov/beacon.nvim v0.1.0
 	github.com/HiPhish/nvim-ts-rainbow2 v0.1.0
 	github.com/LazyVim/LazyVim v1.11.0
+	github.com/LunarVim/LunarVim v1.3.0
 	github.com/NvChad/NvChad v0.2.0
 	github.com/RRethy/vim-illuminate v0.1.0
-	github.com/SmiteshP/nvim-navic/ v0.1.0
+	github.com/SmiteshP/nvim-navic v0.1.0
 	github.com/ThePrimeagen/harpoon v0.1.0
 	github.com/TimUntersberger/neogit v0.1.0
 	github.com/airblade/vim-gitgutter v0.1.0
 	github.com/akinsho/bufferline.nvim v0.1.0
 	github.com/echasnovski/mini.nvim v0.1.0
-	github.com/feline-nvim/feline.nvim/ v0.1.0
+	github.com/feline-nvim/feline.nvim v0.1.0
 	github.com/folke/lazy.nvim v0.1.0
 	github.com/folke/noice.nvim v0.1.0
 	github.com/folke/trouble.nvim v0.1.0

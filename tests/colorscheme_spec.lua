@@ -79,7 +79,7 @@ describe("respect setup flavour =", function()
 	end)
 end)
 
-describe("respect vim.g.catppuccin_flavour =", function()
+describe("(deprecated) respect vim.g.catppuccin_flavour =", function()
 	before_each(function() reload() end)
 	it("latte", function()
 		vim.g.catppuccin_flavour = "latte"
