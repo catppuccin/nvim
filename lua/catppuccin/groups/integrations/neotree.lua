@@ -22,7 +22,7 @@ function M.get()
 		NeoTreeGitStaged = { fg = C.green },
 
 		NeoTreeFloatBorder = { link = "FloatBorder" },
-		NeoTreeFloatTitle = { fg = C.subtext0 },
+		NeoTreeFloatTitle = { link = "FloatTitle" },
 
 		NeoTreeFileNameOpened = { fg = C.pink },
 		NeoTreeDimText = { fg = C.overlay1 },
