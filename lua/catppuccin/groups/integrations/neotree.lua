@@ -7,6 +7,7 @@ function M.get()
 		NeoTreeDirectoryName = { fg = C.blue },
 		NeoTreeDirectoryIcon = { fg = C.blue },
 		NeoTreeNormal = { fg = C.text, bg = active_bg },
+		NeoTreeNormalNC = { fg = C.text, bg = active_bg },
 		NeoTreeExpander = { fg = C.overlay0 },
 		NeoTreeIndentMarker = { fg = C.overlay0 },
 		NeoTreeRootName = { fg = C.blue, style = { "bold" } },
