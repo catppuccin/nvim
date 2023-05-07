@@ -7,17 +7,17 @@ local assets = {
 	left_separator = "",
 	right_separator = "",
 	mode_icon = "",
-	dir = "",
-	file = "",
+	dir = "󰉖",
+	file = "󰈙",
 	lsp = {
-		server = "",
+		server = "󰅡",
 		error = "",
 		warning = "",
 		info = "",
 		hint = "",
 	},
 	git = {
-		branch = "",
+		branch = "",
 		added = "",
 		changed = "",
 		removed = "",
@@ -301,7 +301,7 @@ function M.get()
 				local title = Lsp.title or ""
 				local spinners = {
 					"",
-					"",
+					"󰀚",
 					"",
 				}
 				local success_icon = {
