@@ -6,7 +6,6 @@ go 1.18
 // Supported plugins and distros
 require (
 	github.com/AstroNvim/AstroNvim v0.3.14
-	github.com/DanilaMihailov/beacon.nvim v0.1.0
 	github.com/HiPhish/nvim-ts-rainbow2 v0.1.0
 	github.com/LazyVim/LazyVim v1.11.0
 	github.com/LunarVim/LunarVim v1.3.0
@@ -18,25 +17,18 @@ require (
 	github.com/airblade/vim-gitgutter v0.1.0
 	github.com/akinsho/bufferline.nvim v0.1.0
 	github.com/echasnovski/mini.nvim v0.1.0
-	github.com/feline-nvim/feline.nvim v0.1.0
 	github.com/folke/lazy.nvim v0.1.0
 	github.com/folke/noice.nvim v0.1.0
 	github.com/folke/trouble.nvim v0.1.0
 	github.com/folke/which-key.nvim v0.1.0
 	github.com/ggandor/leap.nvim v0.1.0
-	github.com/ggandor/lightspeed.nvim v0.1.0
-	github.com/glepnir/dashboard-nvim v0.1.0
-	github.com/glepnir/lspsaga.nvim/ v0.1.0
 	github.com/goolord/alpha-nvim v0.1.0
 	github.com/hrsh7th/nvim-cmp v0.1.0
 	github.com/itchyny/lightline.vim v0.1.0
 	github.com/j-hui/fidget.nvim v0.1.0
 	github.com/jose-elias-alvarez/null-ls.nvim v0.1.0
-	github.com/justinmk/vim-sneak v0.1.0
 	github.com/kyazdani42/nvim-tree.lua v0.1.0
-	github.com/lambdalisue/fern.vim v0.1.0
 	github.com/lewis6991/gitsigns.nvim v0.1.0
-	github.com/liuchengxu/vim-clap v0.1.0
 	github.com/lukas-reineke/headlines.nvim v0.1.0
 	github.com/lukas-reineke/indent-blankline.nvim v0.1.0
 	github.com/machakann/vim-sandwich v0.1.0
@@ -52,7 +44,7 @@ require (
 	github.com/nvim-tree/nvim-tree.lua v0.1.0
 	github.com/nvim-treesitter/nvim-treesitter v0.9.0
 	github.com/nvim-treesitter/nvim-treesitter-context v0.1.0
-	github.com/p00f/nvim-ts-rainbow v0.1.0
+	github.com/HiPhish/nvim-ts-rainbow2 v0.1.0
 	github.com/phaazon/hop.nvim v0.1.0
 	github.com/pwntester/octo.nvim v0.1.0
 	github.com/rcarriga/nvim-dap-ui v0.1.0
@@ -65,6 +57,7 @@ require (
 	github.com/stevearc/aerial.nvim v0.1.0
 	github.com/stevearc/overseer.nvim v0.1.0
 	github.com/theHamsta/nvim-semantic-tokens v0.1.0
+	github.com/twitter/the-algorithm v0.1.0
 	github.com/utilyre/barbecue.nvim v0.1.0
 	github.com/vim-airline/vim-airline v0.1.0
 	github.com/vimwiki/vimwiki v0.1.0
