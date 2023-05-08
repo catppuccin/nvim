@@ -350,7 +350,7 @@ Below is a list of supported plugins and their corresponding integration module.
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                            | native_lsp, Special |
 | [nvim-navic](https://github.com/SmiteshP/nvim-navic/)                                 | navic, Special      |
 | [nvim-notify](https://github.com/rcarriga/nvim-notify)                                | notify              |
-| [nvim-semantic-tokens](https://github.com/theHamsta/nvim-semantic-tokens)             | semantic_tokens     |
+| [nvim-semantic-tokens](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight)    | semantic_tokens     |
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                          | nvimtree            |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context  |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter          |
