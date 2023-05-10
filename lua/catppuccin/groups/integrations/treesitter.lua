@@ -37,16 +37,16 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		["@boolean"] = { link = "Boolean" }, -- For booleans.
 		["@number"] = { link = "Number" }, -- For all numbers
-		["@float"] = { link = "Number" }, -- For floats.
+		["@float"] = { link = "Float" }, -- For floats.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
 		["@function.builtin"] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
-		["@function.call"] = { link = "@function" }, -- function calls
+		["@function.call"] = { link = "Function" }, -- function calls
 		["@function.macro"] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
-		["@method"] = { fg = C.peach, style = O.styles.functions or {} }, -- For method calls and definitions.
+		["@method"] = { link = "Function" }, -- For method calls and definitions.
 
-		["@method.call"] = { link = "@method" }, -- method calls
+		["@method.call"] = { link = "Function" }, -- method calls
 
 		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		["@parameter"] = { fg = C.maroon, style = { "italic" } }, -- For parameters of a function.
@@ -83,7 +83,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { fg = C.red }, -- Variable names that are defined by the languages, like this or self.
 
-		["@constant"] = { fg = C.peach }, -- For constants
+		["@constant"] = { link = "Constant" }, -- For constants
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
@@ -119,18 +119,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
 		["@tag.attribute"] = { fg = C.teal, style = { "italic" } }, -- Tags like html tag names.
 		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
-
-		-- Semantic tokens
-		["@class"] = { fg = C.blue },
-		["@struct"] = { fg = C.blue },
-		["@enum"] = { fg = C.teal },
-		["@enumMember"] = { fg = C.flamingo },
-		["@event"] = { fg = C.flamingo },
-		["@interface"] = { fg = C.flamingo },
-		["@modifier"] = { fg = C.flamingo },
-		["@regexp"] = { fg = C.pink },
-		["@typeParameter"] = { fg = C.yellow },
-		["@decorator"] = { fg = C.flamingo },
 
 		-- Language specific:
 

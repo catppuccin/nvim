@@ -7,7 +7,7 @@ function M.get()
 		["@lsp.type.enumMember"] = { link = "@constant" },
 		["@lsp.type.escapeSequence"] = { link = "@string.escape" },
 		["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
-		["@lsp.type.interface"] = { link = "@interface" },
+		["@lsp.type.interface"] = { fg = C.flamingo },
 		["@lsp.type.keyword"] = { link = "@keyword" },
 		["@lsp.type.namespace"] = { link = "@namespace" },
 		["@lsp.type.operator"] = { link = "@operator" },
