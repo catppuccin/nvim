@@ -18,6 +18,7 @@ local M = {
 		},
 		no_italic = false,
 		no_bold = false,
+		no_underline = false,
 		styles = {
 			comments = { "italic" },
 			conditionals = { "italic" },

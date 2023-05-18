@@ -165,6 +165,9 @@ globals:
   O.no_bold:
     type: bool
     property: read-only
+  O.no_underline:
+    type: bool
+    property: read-only
 
   O.styles.comments:
     type: table
