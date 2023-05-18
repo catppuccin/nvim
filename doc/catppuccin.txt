@@ -30,7 +30,6 @@ Table of Contents                               *catppuccin-table-of-contents*
 ==============================================================================
 1. Features                                              *catppuccin-features*
 
-
 - Supports both vim and neovim (Requires neovim <https://github.com/neovim/neovim/> >= 0.8 or vim <https://github.com/vim/vim> >= 9 compiled with lua <https://github.com/lua/lua> >= 5.1)
 - Highly configurable with 4 different flavours and ability to create your own! <https://github.com/catppuccin/nvim/discussions/323>
 - Compile <https://github.com/catppuccin/nvim#Compile> user config for fastest startuptime <https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/>
@@ -95,6 +94,7 @@ options and settings.
         },
         no_italic = false, -- Force no italic
         no_bold = false, -- Force no bold
+        no_underline = false, -- Force no underline
         styles = {
             comments = { "italic" },
             conditionals = { "italic" },
@@ -134,7 +134,6 @@ GENERAL                                     *catppuccin-configuration-general*
 
 This settings are unrelated to any group and are independent.
 
-
 - `background`: (Table) Match :set background=light/dark with :Catppuccin background.light/dark
 - `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
 - `transparent_background`: (Boolean) if true, disables setting the background color.
@@ -145,7 +144,6 @@ DIM INACTIVE                           *catppuccin-configuration-dim-inactive*
 This setting manages the ability to dim the inactive splits/windows/buffers
 displayed.
 
-
 - `enabled`: (Boolean) if true, dims the background color of inactive window or buffer or split.
 - `shade`: (string) sets the shade to apply to the inactive split or window or buffer.
 - `percentage`: (number 0 < x < 1) percentage of the shade to apply to the inactive window, split or buffer.
@@ -154,7 +152,6 @@ displayed.
 STYLES                                       *catppuccin-configuration-styles*
 
 Handles the style of general hi groups (see `:h highlight-args`):
-
 
 - `comments`: (Table) changed the style of the comments.
 - `functions`: (Table) changed the style of the functions.
@@ -1033,12 +1030,10 @@ COLORS DOESN’T MATCH PREVIEW SCREENSHOTS*catppuccin-faq-colors-doesn’t-match
 Catppuccin requires true color support AKA terminals support the full range of
 16 million colors
 
-
 - Supported: iterm2 (macOS), kitty, wezterm, alacritty, tmux, …
 
 Full list of support terminals can be found here:
 <https://github.com/termstandard/colors#truecolor-support-in-output-devices>
-
 
 - Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, …
 
@@ -1048,7 +1043,6 @@ Full list of Unsupported terminals can be found here:
 
 ==============================================================================
 9. Thanks to                                            *catppuccin-thanks-to*
-
 
 - Pocco81 <https://github.com/Pocco81>
 - nullchilly <https://github.com/nullchilly>

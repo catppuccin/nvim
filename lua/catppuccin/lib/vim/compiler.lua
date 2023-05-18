@@ -43,6 +43,7 @@ let g:colors_name = "catppuccin-%s"]],
 				for _, style in pairs(color.style) do
 					if O.no_italic and style == "italic" then style = nil end
 					if O.no_bold and style == "bold" then style = nil end
+					if O.no_underline and style == "underline" then style = nil end
 					if style then rstyle[#rstyle + 1] = style end
 				end
 				color.style = table.concat(rstyle, ",")
