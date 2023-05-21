@@ -88,6 +88,14 @@ function M.get()
 		GlyphPalette6 = { fg = C.teal },
 		GlyphPalette7 = { fg = C.text },
 		GlyphPalette9 = { fg = C.red },
+
+		-- rainbow
+		rainbow1 = { fg = C.red },
+		rainbow2 = { fg = C.peach },
+		rainbow3 = { fg = C.yellow },
+		rainbow4 = { fg = C.green },
+		rainbow5 = { fg = C.sapphire },
+		rainbow6 = { fg = C.lavender },
 	}
 end
 

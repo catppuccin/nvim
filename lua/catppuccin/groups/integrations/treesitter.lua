@@ -122,6 +122,14 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Language specific:
 
+		-- markdown
+		["@text.title.2.markdown"] = { link = "rainbow2" },
+		["@text.title.1.markdown"] = { link = "rainbow1" },
+		["@text.title.3.markdown"] = { link = "rainbow3" },
+		["@text.title.4.markdown"] = { link = "rainbow4" },
+		["@text.title.5.markdown"] = { link = "rainbow5" },
+		["@text.title.6.markdown"] = { link = "rainbow6" },
+
 		-- css
 		["@property.css"] = { fg = C.lavender },
 		["@property.id.css"] = { fg = C.blue },
