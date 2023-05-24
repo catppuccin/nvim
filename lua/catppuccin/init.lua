@@ -1,6 +1,7 @@
 local is_vim = vim.fn.has "nvim" ~= 1
 if is_vim then require "catppuccin.lib.vim" end
 
+---@type Catppuccin
 local M = {
 	options = {
 		background = {
@@ -126,6 +127,7 @@ function M.load(flavour)
 	f()
 end
 
+---@type fun(user_conf: CatppuccinOptions?)
 function M.setup(user_conf)
 	did_setup = true
 	-- Parsing user config
