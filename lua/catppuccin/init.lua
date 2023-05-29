@@ -185,4 +185,13 @@ vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	vim.api.nvim_command "colorscheme catppuccin"
 end, {})
 
+if vim.g.catppuccin_debug then
+	vim.api.nvim_create_autocmd("BufWritePost", {
+		pattern = "*/catppuccin/*",
+		callback = function()
+			vim.schedule(function() vim.cmd "CatppuccinCompile" end)
+		end,
+	})
+end
+
 return M
