@@ -50,7 +50,7 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 # Features
 
-- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
+- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.7 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
 - Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
 - [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
 - Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
@@ -456,7 +456,7 @@ dashboard = true
 ```lua
 dropbar = {
     enabled = false,
-    color_mode = false, -- enable kind's 
+    color_mode = false, -- enable color for kind's texts, not just kind's icons
 },
 ```
 
