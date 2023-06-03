@@ -8,7 +8,9 @@
 
 ---@class CatppuccinOptions
 ---@field background { dark: CtpFlavor, light: CtpFlavor }
----@field compile_path string By default catppuccin writes the compiled results into the system's cache directory. You can change the cache dir by changing this value.
+---@field compile_path string
+-- By default catppuccin writes the compiled results into the system's cache directory.
+-- You can change the cache dir by changing this value.
 ---@field transparent_background boolean Whether to enable transparency.
 ---@field show_end_of_buffer boolean Toggle the '~' characters after the end of buffers.
 ---@field term_colors boolean If true, sets terminal colors (e.g. g:terminal_color_0).
@@ -48,6 +50,7 @@
 ---@field barbecue CtpIntegrationBarbecue
 ---@field cmp boolean
 ---@field dashboard boolean
+---@field dropbar CtpIntegrationDropbar
 ---@field gitsigns boolean
 ---@field indent_blankline CtpIntegrationIndentBlankline
 ---@field markdown boolean
@@ -65,6 +68,10 @@
 ---@field bold_basename boolean? Whether the basename should be bold.
 ---@field dim_context boolean? Whether the context should be dimmed.
 ---@field dim_dirname boolean? Whether the directory name should be dimmed.
+
+---@class CtpIntegrationDropbar
+---@field enabled boolean? Whether to enable the dropbar integration.
+---@field color_mode boolean? Set to true to apply color to the text in dropbar, false to only apply it to the icons.
 
 ---@class CtpIntegrationIndentBlankline
 ---@field enabled boolean? Whether to enable the integration.
