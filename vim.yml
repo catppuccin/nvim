@@ -297,6 +297,16 @@ globals:
     type: string
     property: read-only
 
+  O.integrations.dropbar:
+    type: table
+    property: read-only
+  O.integrations.dropbar.enabled:
+    type: bool
+    property: read-only
+  O.integrations.dropbar.color_mode:
+    type: bool
+    property: read-only
+
   O.color_overrides:
     type: table
     property: read-only
