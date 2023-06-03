@@ -18,6 +18,7 @@ function M.get()
 		Label = { fg = C.sapphire }, --    case, default, etc.
 		Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etc.
 		Keyword = { fg = C.mauve, style = O.styles.keywords or {} }, --  any other keyword
+		Array = { fg = C.lavender },
 		-- Exception     = { }, --  try, catch, throw
 
 		PreProc = { fg = C.pink }, -- (preferred) generic Preprocessor

@@ -317,14 +317,15 @@ Below is a list of supported plugins and their corresponding integration module.
 
 | Plugin                                                                                | Module              |
 | ------------------------------------------------------------------------------------- | ------------------- |
-| [alpha-vim](https://github.com/goolord/alpha-nvim)                                    | alpha               |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | aerial              |
+| [alpha-vim](https://github.com/goolord/alpha-nvim)                                    | alpha               |
 | [barbar.nvim](https://github.com/romgrk/barbar.nvim)                                  | barbar              |
 | [barbecue.nvim](https://github.com/utilyre/barbecue.nvim)                             | barbecue, Special   |
 | [beacon.nvim](https://github.com/DanilaMihailov/beacon.nvim)                          | beacon              |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | Special             |
 | [coc.nvim](https://github.com/neoclide/coc.nvim)                                      | coc_nvim, Special   |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                           | dashboard           |
+| [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim)                               | dropbar, Special    |
 | [feline.nvim](https://github.com/feline-nvim/feline.nvim/)                            | Special             |
 | [fern.vim](https://github.com/lambdalisue/fern.vim)                                   | fern                |
 | [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                   | Special             |
@@ -355,8 +356,8 @@ Below is a list of supported plugins and their corresponding integration module.
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                          | nvimtree            |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | treesitter_context  |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                 | treesitter          |
-| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                            | ts_rainbow          |
 | [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)                       | ts_rainbow2         |
+| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                            | ts_rainbow          |
 | [octo.nvim](https://github.com/pwntester/octo.nvim)                                   | octo                |
 | [overseer.nvim](https://github.com/stevearc/overseer.nvim)                            | overseer            |
 | [pounce.nvim](https://github.com/rlane/pounce.nvim)                                   | pounce              |

@@ -75,6 +75,10 @@ local M = {
 				enabled = false,
 				custom_bg = "NONE",
 			},
+			dropbar = {
+				enabled = false,
+				color_mode = false,
+			},
 		},
 		color_overrides = {},
 		highlight_overrides = {},
