@@ -348,9 +348,9 @@ module. (See Special integrations
   -------------------------------------------------------------------------------
   Plugin                                                     Module
   ---------------------------------------------------------- --------------------
-  alpha-vim                                                  alpha
-
   aerial.nvim                                                aerial
+
+  alpha-vim                                                  alpha
 
   barbar.nvim                                                barbar
 
@@ -363,6 +363,8 @@ module. (See Special integrations
   coc.nvim                                                   coc_nvim, Special
 
   dashboard-nvim                                             dashboard
+
+  dropbar.nvim                                               dropbar, Special
 
   feline.nvim                                                Special
 
@@ -424,9 +426,9 @@ module. (See Special integrations
 
   nvim-treesitter                                            treesitter
 
-  nvim-ts-rainbow                                            ts_rainbow
-
   nvim-ts-rainbow2                                           ts_rainbow2
+
+  nvim-ts-rainbow                                            ts_rainbow
 
   octo.nvim                                                  octo
 
