@@ -570,6 +570,19 @@ native_lsp = {
 },
 ```
 
+<details> <summary>dropbar.nvim</summary>
+
+Setting `enabled` to `true` to enable this integration. `color_mode` to `true` will highlight kind's text instead of just kind's icon
+
+```lua
+dropbar = {
+    enabled = false,
+    color_mode = false,
+},
+```
+
+</details>
+
 </details>
 
 <details> <summary>feline.nvim</summary>
