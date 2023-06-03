@@ -77,7 +77,7 @@ local M = {
 			},
 			dropbar = {
 				enabled = false,
-				color_mode = false,
+				color_mode = false, -- enable color for kind's texts, not just kind's icons
 			},
 		},
 		color_overrides = {},
