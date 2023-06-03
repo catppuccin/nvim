@@ -592,7 +592,7 @@ fern = false
 <td>
 
 ```lua
-fern = false
+fidget = false
 ```
 
 <details> <summary>Special</summary>
