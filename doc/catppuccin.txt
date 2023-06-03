@@ -661,6 +661,18 @@ directly at the thing (e.g. an error)).
     },
 <
 
+dropbar.nvim ~
+
+Setting `enabled` to `true` to enable this integration. `color_mode` to `true`
+will highlight kind’s text instead of just kind’s icon
+
+>lua
+    dropbar = {
+        enabled = false,
+        color_mode = false,
+    },
+<
+
 feline.nvim ~
 
 Update your Feline config to use the Catppuccin components:
