@@ -470,7 +470,7 @@ fern.vim>lua
 <
 
 fidget.nvim>lua
-    fern = false
+    fidget = false
 <
 
 Special ~
