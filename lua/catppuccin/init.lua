@@ -76,7 +76,7 @@ local M = {
 				custom_bg = "NONE",
 			},
 			dropbar = {
-				enabled = false,
+				enabled = true,
 				color_mode = false,
 			},
 		},

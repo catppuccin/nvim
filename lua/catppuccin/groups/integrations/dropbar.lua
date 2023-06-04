@@ -3,6 +3,9 @@ local M = {}
 function M.get()
 	local color = O.integrations.dropbar.color_mode
 	return {
+		DropBarMenuHoverEntry = { link = "Visual" },
+		DropBarMenuHoverIcon = { reverse = true },
+		DropBarMenuHoverSymbol = { bold = true },
 		DropBarIconUISeparator = { fg = C.overlay1 },
 		DropBarKindArray = color and { link = "DropBarIconKindArray" } or { fg = C.text },
 		DropBarKindBoolean = color and { link = "DropBarIconKindBoolean" } or { fg = C.text },
