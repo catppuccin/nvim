@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	if vim.treesitter.highlighter.hl_map then
-		vim.notify(
+		vim.notify_once(
 			[[Catppuccin (info):
 nvim-treesitter integration requires neovim 0.8
 If you want to stay on nvim 0.7, either disable the integration or pin catppuccin tag to v0.2.4 and nvim-treesitter commit to 4cccb6f494eb255b32a290d37c35ca12584c74d0.
