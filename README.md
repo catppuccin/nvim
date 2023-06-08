@@ -60,7 +60,7 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
-{ "catppuccin/nvim", name = "catppuccin" }
+{ "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 100 }
 ```
 
 [packer.nvim](https://github.com/wbthomason/packer.nvim)
