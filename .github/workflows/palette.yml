@@ -22,7 +22,7 @@ jobs:
             with open('lua/catppuccin/palettes/{flavour}.lua'.format(flavour = flavour), 'w') as f:
               f.write('return {\n')
               for accent in data[flavour]: f.write('\t{accent} = \"{hex}\",\n'.format(accent = accent, hex = data[flavour][accent]['hex']))
-              f.write('}')"
+              f.write('}\n')"
 
       - name: Create Pull Request
         id: cpr
