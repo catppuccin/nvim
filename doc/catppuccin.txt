@@ -34,7 +34,7 @@ Table of Contents                               *catppuccin-table-of-contents*
 lazy.nvim <https://github.com/folke/lazy.nvim>
 
 >lua
-    { "catppuccin/nvim", name = "catppuccin" }
+    { "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 100 }
 <
 
 packer.nvim <https://github.com/wbthomason/packer.nvim>
