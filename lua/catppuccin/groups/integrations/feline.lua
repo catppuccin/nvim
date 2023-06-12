@@ -292,7 +292,8 @@ function M.get()
 	-- workspace loader
 	components.active[2][1] = {
 		provider = function()
-			local Lsp = vim.lsp.util.get_progress_messages()[1]
+			-- local Lsp = vim.lsp.status()[1]
+			local Lsp = vim.fn.has "neovim-0.10" == 1 and vim.lsp.util.get_progress_messages()[1] or vim.lsp.status()[1]
 
 			if Lsp then
 				local msg = Lsp.message or ""
