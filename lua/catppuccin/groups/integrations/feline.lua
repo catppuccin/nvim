@@ -293,7 +293,7 @@ function M.get()
 	components.active[2][1] = {
 		provider = function()
 			local Lsp
-			if vim.fn.has "neovim-0.10" then
+			if vim.fn.has "nvim-0.10" == 0 then
 				Lsp = vim.lsp.util.get_progress_messages()[1]
 			else
 				Lsp = vim.lsp.status()[1]
