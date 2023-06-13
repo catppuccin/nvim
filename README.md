@@ -467,7 +467,7 @@ dropbar = {
 <!-- feline.nvim -->
 </tr>
 <tr>
-<td> <a href="https://github.com/feline-nvim/feline.nvim/">feline.nvim</a> </td>
+<td> <a href="https://github.com/freddiehaddad/feline.nvim/">feline.nvim</a> </td>
 <td>
 
 </details>
