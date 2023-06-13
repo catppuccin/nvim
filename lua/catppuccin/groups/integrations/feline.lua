@@ -292,7 +292,8 @@ function M.get()
 	-- workspace loader
 	components.active[2][1] = {
 		provider = function()
-			local Lsp = vim.lsp.status and vim.lsp.status() or vim.lsp.util.get_progress_messages()[1]
+			if vim.lsp.status then return "" end
+			local Lsp = vim.lsp.util.get_progress_messages()[1]
 
 			if Lsp then
 				local msg = Lsp.message or ""
