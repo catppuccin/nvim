@@ -12,6 +12,8 @@ If you want to stay on nvim 0.7, disable the integration.
 		return {}
 	end
 	return {
+		["@lsp.type.boolean"] = { link = "@boolean" },
+		["@lsp.type.builtinType"] = { link = "@type.builtin" },
 		["@lsp.type.comment"] = { link = "@comment" },
 		["@lsp.type.enum"] = { link = "@type" },
 		["@lsp.type.enumMember"] = { link = "@constant" },
@@ -20,11 +22,15 @@ If you want to stay on nvim 0.7, disable the integration.
 		["@lsp.type.interface"] = { fg = C.flamingo },
 		["@lsp.type.keyword"] = { link = "@keyword" },
 		["@lsp.type.namespace"] = { link = "@namespace" },
+		["@lsp.type.number"] = { link = "@number" },
 		["@lsp.type.operator"] = { link = "@operator" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
 		["@lsp.type.property"] = { link = "@property" },
 		["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
+		["@lsp.type.typeAlias"] = { link = "@type.definition" },
+		["@lsp.type.unresolvedReference"] = { link = "@error" },
 		["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
+		["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
