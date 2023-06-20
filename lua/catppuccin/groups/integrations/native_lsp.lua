@@ -11,7 +11,7 @@ function M.get()
 	local darkening_percentage = 0.095
 
 	return {
-		-- These groups are for the native LSP clienC. Some other LSP clients may
+		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 		LspReferenceText = { bg = C.surface1 }, -- used for highlighting "text" references
@@ -84,6 +84,7 @@ function M.get()
 		LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = info }, -- Used to underline "Information" diagnostics
 		LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
 		LspCodeLens = { fg = C.overlay0 }, -- virtual text of the codelens
+		LspInlayHint = { link = "LspDiagnosticsVirtualTextHint" }, -- virtual text of the inlay hints
 		LspInfoBorder = { link = "FloatBorder" }, -- LspInfo border
 	}
 end
