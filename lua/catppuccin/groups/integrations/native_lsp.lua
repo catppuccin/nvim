@@ -87,8 +87,9 @@ function M.get()
 		LspInlayHint = {
 			-- fg of `Comment`
 			fg = C.overlay0,
-			-- bg of `CursorLine`
-			bg = U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
+			bg = O.transparent_background and C.none
+				-- bg of `CursorLine`
+				or U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
 		}, -- virtual text of the inlay hints
 		LspInfoBorder = { link = "FloatBorder" }, -- LspInfo border
 	}
