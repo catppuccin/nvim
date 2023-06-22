@@ -274,6 +274,10 @@ globals:
     type: string
     property: read-only
 
+  O.integrations.native_lsp.inlay_hints.background:
+    type: bool
+    property: read-only
+
   O.integrations.native_lsp.underlines.errors:
     type: string
     property: read-only
