@@ -45,6 +45,9 @@
 ---@field warnings CtpHighlightArgs[] Change the style of LSP warnings.
 ---@field information CtpHighlightArgs[] Change the style of LSP information.
 
+---@class CtpNativeLspInlayHints
+---@field background boolean Toggle the background of inlay hints.
+
 ---@class CtpIntegrations
 ---@field alpha boolean
 ---@field barbecue CtpIntegrationBarbecue
@@ -81,6 +84,7 @@
 ---@field enabled boolean? Whether to enable the Native LSP integration.
 ---@field virtual_text CtpNativeLspStyles? Styles to apply to virtual text.
 ---@field underlines CtpNativeLspStyles? Styles to apply to underlines.
+---@field inlay_hints CtpNativeLspInlayHints? Inlay hints options.
 
 ---@class CtpIntegrationNavic
 ---@field enabled boolean? Whether to enable the navic integration.
