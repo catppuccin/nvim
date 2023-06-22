@@ -5,6 +5,7 @@ function M.get()
 	local bg_highlight = transparent_background and "NONE" or C.mantle
 	return {
 		TreesitterContext = { bg = bg_highlight, fg = C.text },
+		TreesitterContextBottom = { gui = "underline", guisp = C.dim },
 	}
 end
 
