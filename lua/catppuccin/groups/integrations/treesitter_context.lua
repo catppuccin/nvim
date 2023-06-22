@@ -1,12 +1,7 @@
 local M = {}
 
 function M.get()
-	local transparent_background = require("catppuccin").options.transparent_background
-	local bg_highlight = transparent_background and "NONE" or C.mantle
-	return {
-		TreesitterContext = { bg = bg_highlight, fg = C.text },
-		TreesitterContextBottom = { gui = "underline", guisp = C.dim },
-	}
+	return O.transparent_background and { TreesitterContextBottom = { sp = C.dim, style = { "underline" } } } or {}
 end
 
 return M
