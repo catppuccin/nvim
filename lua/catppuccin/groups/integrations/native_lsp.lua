@@ -90,8 +90,8 @@ function M.get()
 			fg = C.overlay0,
 			-- bg of `CursorLine`
 			bg = O.transparent_background
-					or not inlay_hints.background and C.none
-					or U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
+				or not inlay_hints.background and C.none
+				or U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
 		}, -- virtual text of the inlay hints
 		LspInfoBorder = { link = "FloatBorder" }, -- LspInfo border
 	}
