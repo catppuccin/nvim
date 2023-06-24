@@ -58,7 +58,7 @@
 ---@field navic CtpIntegrationNavic
 ---@field nvimtree boolean
 ---@field semantic_tokens boolean
----@field telescope boolean
+---@field telescope CtpIntegrationTelescope
 ---@field treesitter boolean
 ---@field ts_rainbow boolean
 ---@field ts_rainbow2 boolean
@@ -85,6 +85,10 @@
 ---@class CtpIntegrationNavic
 ---@field enabled boolean? Whether to enable the navic integration.
 ---@field custom_bg string? Override the background color for navic.
+
+---@class CtpIntegrationTelescope
+---@field enabled boolean? Whether to enable the telescope integration
+---@field style string? The style of Telescope "classic" | "flat"
 
 ---@alias CtpHighlightArgs "bold" | "underline" | "undercurl" | "underdouble" | "underdotted" | "underdashed" | "strikethrough" | "reverse" | "inverse" | "italic" | "standout" | "altfont" | "nocombine" | "NONE"
 ---@alias CtpHighlightOverrideFn fun(colors: CtpColors<string>): { [string]: CtpHighlight}
