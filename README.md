@@ -409,7 +409,7 @@ coc_nvim = true,
 
 In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 
-```lua
+```
 native_lsp = {
     enabled = true,
     virtual_text = {
@@ -423,9 +423,6 @@ native_lsp = {
         hints = { "underline" },
         warnings = { "underline" },
         information = { "underline" },
-    },
-    inlay_hints = {
-        background = true,
     },
 },
 ```
@@ -933,9 +930,6 @@ native_lsp = {
         hints = { "underline" },
         warnings = { "underline" },
         information = { "underline" },
-    },
-    inlay_hints = {
-        background = true,
     },
 },
 ```
