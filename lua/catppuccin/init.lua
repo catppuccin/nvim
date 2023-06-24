@@ -44,7 +44,7 @@ local M = {
 			semantic_tokens = not is_vim,
 			telescope = {
 				enabled = true,
-				style = "flat",
+				style = "classic",
 			},
 			treesitter = not is_vim,
 			ts_rainbow = true,

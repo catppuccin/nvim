@@ -1,5 +1,20 @@
 local M = {}
 
+-- Backwards compatibility
+if type(O.integrations.telescope) == "boolean" then
+	O.integrations.telescope = {
+		-- TelescopeNormal = { link = "NormalFloat" }, -- Respect telescope's default float bg
+		TelescopeBorder = { link = "FloatBorder" },
+		TelescopeSelectionCaret = { fg = C.flamingo },
+		TelescopeSelection = {
+			fg = O.transparent_background and C.flamingo or C.text,
+			bg = O.transparent_background and C.none or C.surface0,
+			style = { "bold" },
+		},
+		TelescopeMatching = { fg = C.blue },
+	}
+end
+
 function M.get()
 	if O.integrations.telescope.style == 'classic' then
 		-- Classic look
@@ -16,7 +31,7 @@ function M.get()
 		}
 	end
 
-	if O.integrations.telescope.style == 'flat' then
+	if O.integrations.telescope.style == 'nvchad' then
 		-- Flat look
 		return {
 			TelescopePromptPrefix = {

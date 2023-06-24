@@ -88,7 +88,7 @@
 
 ---@class CtpIntegrationTelescope
 ---@field enabled boolean? Whether to enable the telescope integration
----@field style string? The style of Telescope "classic" | "flat"
+---@field style string? The style of Telescope "classic" | "nvchad"
 
 ---@alias CtpHighlightArgs "bold" | "underline" | "undercurl" | "underdouble" | "underdotted" | "underdashed" | "strikethrough" | "reverse" | "inverse" | "italic" | "standout" | "altfont" | "nocombine" | "NONE"
 ---@alias CtpHighlightOverrideFn fun(colors: CtpColors<string>): { [string]: CtpHighlight}
