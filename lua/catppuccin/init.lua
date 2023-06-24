@@ -73,9 +73,6 @@ local M = {
 					warnings = { "underline" },
 					information = { "underline" },
 				},
-				inlay_hints = {
-					background = true,
-				},
 			},
 			navic = {
 				enabled = false,
