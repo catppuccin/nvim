@@ -704,7 +704,10 @@ telekasten.nvim>lua
 <
 
 telescope.nvim>lua
-    telescope = true
+    telescope = {
+	enabled = true,
+	style = "classic" | "nvchad",
+    }
 <
 
 trouble.nvim>lua

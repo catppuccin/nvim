@@ -42,7 +42,10 @@ local M = {
 			markdown = true,
 			nvimtree = true,
 			semantic_tokens = not is_vim,
-			telescope = true,
+			telescope = {
+				enabled = true,
+				style = "classic",
+			},
 			treesitter = not is_vim,
 			ts_rainbow = true,
 			ts_rainbow2 = true,
