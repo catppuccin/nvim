@@ -24,7 +24,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Punctuation
 		["@punctuation.delimiter"] = { fg = C.overlay2 }, -- For delimiters ie: .
 		["@punctuation.bracket"] = { fg = C.overlay2 }, -- For brackets and parenthesis.
-		["@punctuation.special"] = { fg = C.sky, style = O.styles.operators or {} }, -- For special punctutation that does not fall in the catagories before.
+		["@punctuation.special"] = { fg = C.sky, style = O.styles.operators or {} }, -- For special punctutation that does not fall in the categories before.
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.

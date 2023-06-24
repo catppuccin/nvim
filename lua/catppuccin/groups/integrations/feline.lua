@@ -144,7 +144,7 @@ function M.get()
 		hl = vi_mode_hl,
 	}
 
-	-- there is a dilema: we need to hide Diffs if ther is no git info. We can do that, but this will
+	-- there is a dilemma: we need to hide Diffs if there is no git info. We can do that, but this will
 	-- leave the right_separator colored with purple, and since we can't change the color conditonally
 	-- then the solution is to create two right_separators: one with a mauve sett.bkg and the other one normal
 	-- sett.bkg; both have the same fg (vi mode). The mauve one appears if there is git info, else the one with
@@ -224,7 +224,7 @@ function M.get()
 
 	-- Extras ------>
 
-	-- file progess
+	-- file progress
 	components.active[1][10] = {
 		provider = function()
 			local current_line = vim.fn.line "."
@@ -329,7 +329,7 @@ function M.get()
 		},
 	}
 
-	-- genral diagnostics (errors, warnings. info and hints)
+	-- general diagnostics (errors, warnings. info and hints)
 	components.active[2][2] = {
 		provider = "diagnostic_errors",
 		enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR) end,

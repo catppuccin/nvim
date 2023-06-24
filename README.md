@@ -171,7 +171,7 @@ require("catppuccin").setup {
 }
 ```
 
-**Note**: For more informations check out our [style-guide](https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md)
+**Note**: For more information check out our [style-guide](https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md)
 
 ## Overwriting highlight groups
 

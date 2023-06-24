@@ -17,7 +17,7 @@ function M.get()
 		LspReferenceText = { bg = C.surface1 }, -- used for highlighting "text" references
 		LspReferenceRead = { bg = C.surface1 }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = C.surface1 }, -- used for highlighting "write" references
-		-- hightlight diagnostics in numberline
+		-- highlight diagnostics in numberline
 
 		DiagnosticVirtualTextError = {
 			bg = O.transparent_background and C.none or U.darken(error, darkening_percentage, C.base),

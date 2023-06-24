@@ -52,7 +52,7 @@ lshift = function(a, disp) -- Lua5.2 inspired
 	return (a * 2 ^ disp) % 2 ^ 32
 end
 
-rshift = function(a, disp) -- Lua5.2 insipred
+rshift = function(a, disp) -- Lua5.2 inspired
 	if disp < 0 then return lshift(a, -disp) end
 	return floor(a % 2 ^ 32 / 2 ^ disp)
 end
