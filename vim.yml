@@ -227,9 +227,14 @@ globals:
   O.integrations.semantic_tokens:
     type: bool
     property: read-only
-  O.integrations.telescope:
+
+  O.integrations.telescope.enabled:
     type: bool
     property: read-only
+  O.integrations.telescope.style:
+    type: string
+    property: read-only
+
   O.integrations.treesitter:
     type: bool
     property: read-only
