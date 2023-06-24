@@ -1,9 +1,7 @@
 local M = {}
 
 function M.get()
-	return {
-		TreesitterContext = { bg = C.mantle, fg = C.text },
-	}
+	return O.transparent_background and { TreesitterContextBottom = { sp = C.dim, style = { "underline" } } } or {}
 end
 
 return M
