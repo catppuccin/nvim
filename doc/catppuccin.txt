@@ -158,7 +158,7 @@ https://github.com/catppuccin/nvim/discussions/323 for inspirations:
     }
 <
 
-**Note**: For more informations check out our style-guide
+**Note**: For more information check out our style-guide
 <https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md>
 
 
