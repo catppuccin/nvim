@@ -55,4 +55,4 @@ jobs:
       - name: Run vim
         run: |
           vim --version
-          gvim -u tests/init.vim
+          vim -u tests/init.vim
