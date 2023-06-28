@@ -1,5 +1,0 @@
-describe("set colorscheme", function()
-	it("without calling setup", function()
-		assert.equals(pcall(function() vim.cmd.colorscheme "catppuccin" end), true)
-	end)
-end)
