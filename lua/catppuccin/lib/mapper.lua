@@ -40,10 +40,10 @@ function M.apply(flavour)
 
 		local dim_percentage = O.dim_inactive.percentage
 		C.dim = O.dim_inactive.shade == "dark"
-			and U.vary_color(
-				{ latte = U.darken(C.base, dim_percentage, C.mantle) },
-				U.darken(C.base, dim_percentage, C.mantle)
-			)
+				and U.vary_color(
+					{ latte = U.darken(C.base, dim_percentage, C.mantle) },
+					U.darken(C.base, dim_percentage, C.mantle)
+				)
 			or U.vary_color(
 				{ latte = U.lighten("#FBFCFD", dim_percentage, C.base) },
 				U.lighten(C.surface0, dim_percentage, C.base)
@@ -52,7 +52,7 @@ function M.apply(flavour)
 		local theme = {}
 		theme.syntax = require("catppuccin.groups.syntax").get()
 		theme.editor = require("catppuccin.groups.editor").get()
-		theme.integrations = get_integrations()                -- plugins
+		theme.integrations = get_integrations() -- plugins
 		theme.terminal = require("catppuccin.groups.terminal").get() -- terminal colors
 		local user_highlights = require("catppuccin").options.highlight_overrides
 		if type(user_highlights[flavour]) == "function" then user_highlights[flavour] = user_highlights[flavour](C) end
