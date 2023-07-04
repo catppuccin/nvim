@@ -37,6 +37,13 @@ globals:
     args:
       - type: function
 
+  C:
+    property: full-write
+  O:
+    property: full-write
+  U:
+    property: full-write
+
   C.rosewater:
     type: string
     property: read-only
