@@ -1118,6 +1118,20 @@ pounce = false
 </tr>
 <!-- pounce.nvim -->
 
+<!-- rainbow-delimiters.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/HiPhish/rainbow-delimiters.nvim">rainbow-delimiters.nvim</a> </td>
+<td>
+
+```lua
+rainbow_delimiters = true
+```
+
+</td>
+</tr>
+<!-- rainbow-delimiters.nvim -->
+
 <!-- symbols-outline.nvim -->
 </tr>
 <tr>

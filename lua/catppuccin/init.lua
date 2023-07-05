@@ -41,6 +41,7 @@ local M = {
 			gitsigns = true,
 			markdown = true,
 			nvimtree = true,
+			rainbow_delimiters = true,
 			semantic_tokens = not is_vim,
 			telescope = {
 				enabled = true,

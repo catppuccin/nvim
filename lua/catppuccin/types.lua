@@ -60,6 +60,7 @@
 ---@field native_lsp CtpIntegrationNativeLsp
 ---@field navic CtpIntegrationNavic
 ---@field nvimtree boolean
+---@field rainbow_delimiters boolean
 ---@field semantic_tokens boolean
 ---@field telescope CtpIntegrationTelescope
 ---@field treesitter boolean

@@ -701,6 +701,10 @@ pounce.nvim>lua
     pounce = false
 <
 
+rainbow-delimiters.nvim>lua
+    rainbow_delimiters = true
+<
+
 symbols-outline.nvim>lua
     symbols_outline = false
 <
