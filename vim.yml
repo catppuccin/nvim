@@ -251,6 +251,9 @@ globals:
   O.integrations.ts_rainbow2:
     type: bool
     property: read-only
+  O.integrations.rainbow_delimiters:
+    type: bool
+    property: read-only
 
   O.integrations.barbecue.dim_dirname:
     type: bool
