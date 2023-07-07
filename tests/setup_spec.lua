@@ -371,7 +371,6 @@ local configs = {
 		end,
 	},
 	mrtnvgr = {
-		-- CR01
 		Pmenu = { bg = "" },
 		PmenuSbar = { bg = "" },
 		NormalFloat = { bg = "" },
