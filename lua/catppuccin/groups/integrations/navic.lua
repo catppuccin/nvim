@@ -32,7 +32,7 @@ function M.get()
 		NavicIconsEvent = { fg = C.blue, bg = background },
 		NavicIconsOperator = { fg = C.sky, bg = background },
 		NavicIconsTypeParameter = { fg = C.blue, bg = background },
-		NavicText = { fg = C.teal, bg = background },
+		NavicText = { fg = C.sapphire, bg = background },
 		NavicSeparator = { fg = C.text, bg = background },
 	}
 end
