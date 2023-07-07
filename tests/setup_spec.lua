@@ -149,7 +149,7 @@ local configs = {
 		},
 		custom_highlights = function(colors)
 			local utils = require "catppuccin.utils.colors"
-			local tint = function(tint) return utils.blend(tint, colors.base, 0.2) end
+			local tint = function(color) return utils.blend(color, colors.base, 0.2) end
 
 			return {
 				--
