@@ -524,6 +524,34 @@ local configs = {
 			WhichKeySeparator = { fg = "#cdd6f4" },
 		},
 	},
+	LordMZTE = {
+		flavour = "mocha",
+		integrations = {
+			aerial = true,
+			harpoon = true,
+			gitsigns = true,
+			neogit = true,
+			noice = true,
+			cmp = true,
+			dap = { enabled = true, enable_ui = true },
+			native_lsp = { enabled = true },
+			notify = true,
+			nvimtree = true,
+			treesitter = true,
+			treesitter_context = true,
+			ts_rainbow2 = true,
+			telescope = true,
+		},
+	},
+	Stonks3141 = {
+		flavour = "macchiato",
+		integrations = {
+			leap = true,
+			neogit = true,
+			notify = true,
+			neotest = true,
+		},
+	},
 }
 
 describe("setup", function()
