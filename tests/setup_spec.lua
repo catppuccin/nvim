@@ -552,6 +552,12 @@ local configs = {
 			neotest = true,
 		},
 	},
+	aimestereo = {
+		telescope = true,
+		harpoon = true,
+		mason = true,
+		neotest = true,
+	},
 }
 
 describe("setup", function()
