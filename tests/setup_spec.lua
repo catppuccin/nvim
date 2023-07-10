@@ -126,7 +126,7 @@ local configs = {
 		},
 	},
 	backwardspy = {
-		flavour = os.getenv "appearance" == "light" and "latte" or "mocha",
+		flavour = os.getenv("appearance") == "light" and "latte" or "mocha",
 		integrations = {
 			gitsigns = true,
 			indent_blankline = { enabled = true },
@@ -148,8 +148,10 @@ local configs = {
 			},
 		},
 		custom_highlights = function(colors)
-			local utils = require "catppuccin.utils.colors"
-			local tint = function(color) return utils.blend(color, colors.base, 0.2) end
+			local utils = require("catppuccin.utils.colors")
+			local tint = function(color)
+				return utils.blend(color, colors.base, 0.2)
+			end
 
 			return {
 				--
@@ -484,7 +486,9 @@ local configs = {
 				TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
 			}
 
-			if not true then return vim.tbl_extend("keep", default, telescope) end
+			if not true then
+				return vim.tbl_extend("keep", default, telescope)
+			end
 
 			return default
 		end,
@@ -558,12 +562,20 @@ local configs = {
 		mason = true,
 		neotest = true,
 	},
+	haunt98 = {
+		flavour = "mocha",
+		integrations = {
+			mini = true,
+		},
+	},
 }
 
 describe("setup", function()
 	before_each(function()
 		for name, _ in pairs(package.loaded) do
-			if name:match "^catppuccin" and name ~= "catppuccin" then package.loaded[name] = nil end
+			if name:match("^catppuccin") and name ~= "catppuccin" then
+				package.loaded[name] = nil
+			end
 		end
 	end)
 	for name, config in pairs(configs) do
@@ -572,7 +584,7 @@ describe("setup", function()
 			assert.equals(
 				pcall(function()
 					require("catppuccin").compile()
-					vim.cmd.colorscheme "catppuccin"
+					vim.cmd.colorscheme("catppuccin")
 				end),
 				true
 			)
