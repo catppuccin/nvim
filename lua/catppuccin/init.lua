@@ -91,6 +91,8 @@ local M = {
 	path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
 }
 
+M.options = M.default_options
+
 function M.compile()
 	local user_flavour = M.flavour
 	for flavour, _ in pairs(M.flavours) do
