@@ -22,15 +22,15 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
 
 		-- Punctuation
-		["@punctuation.delimiter"] = { fg = C.overlay2 }, -- For delimiters ie: .
+		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters ie: .
 		["@punctuation.bracket"] = { fg = C.overlay2 }, -- For brackets and parenthesis.
-		["@punctuation.special"] = { fg = C.sky, style = O.styles.operators or {} }, -- For special punctutation that does not fall in the categories before.
+		["@punctuation.special"] = { link = "Special" }, -- For special punctutation that does not fall in the categories before.
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
 		["@string.regex"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = C.pink, style = O.styles.strings }, -- For escape characters within a string.
-		["@string.special"] = { fg = C.blue }, -- other special strings (e.g. dates)
+		["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
 
 		["@character"] = { link = "Character" }, -- character literals
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
@@ -64,7 +64,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- @debug            ; keywords related to debugging
 		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
 		["@include"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-		["@exception"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For exception related keywords.
+		["@exception"] = { link = "Exception" }, -- For exception related keywords.
 
 		-- Types
 
