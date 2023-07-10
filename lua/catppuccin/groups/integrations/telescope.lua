@@ -32,7 +32,7 @@ function M.get()
 			},
 			TelescopeResultsTitle = {
 				fg = C.mantle,
-				bg = O.transparent_background and C.none or C.mantle,
+				bg = O.transparent_background and C.none or C.lavender,
 			},
 			TelescopeSelection = {
 				fg = O.transparent_background and C.subtext0 or C.text,
