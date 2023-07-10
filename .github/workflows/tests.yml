@@ -16,7 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          path: nvim
+      - uses: actions/checkout@v3
+        with:
+          ref: user-configs
+          path: user-configs
+      - run: |
+          mv user-configs/tests/* nvim/tests/
+          cd nvim
       - name: Install Neovim
         uses: MunifTanjim/setup-neovim-action@v1
         with:
