@@ -15,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Install Neovim
         uses: MunifTanjim/setup-neovim-action@v1
         with:
