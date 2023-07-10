@@ -27,4 +27,5 @@ jobs:
         run: |
           nvim --version
           [ ! -d tests ] && exit 0
+          git checkout user-configs tests/setup_spec.lua
           nvim --headless -u tests/minimal_init.vim -c "PlenaryBustedDirectory tests/ {minimal_init = 'tests/minimal_init.vim', sequential = true}"
