@@ -764,7 +764,7 @@ local configs = {
 			}
 
 			-- NvChad Telescope theme (adapted from https://github.com/olimorris/onedarkpro.nvim/issues/31#issue-1160545258)
-			if require("axie.utils.config").nvchad_theme then
+			if true then
 				local telescope_results = colours.base
 				-- local telescope_prompt = cp.surface0
 				local telescope_prompt = "#302D41" -- black3 from original palette
