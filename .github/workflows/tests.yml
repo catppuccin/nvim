@@ -7,6 +7,9 @@ on:
       - "*.md"
     branches:
       - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # Run every day at midnight UTC
 
 jobs:
   ubuntu:
