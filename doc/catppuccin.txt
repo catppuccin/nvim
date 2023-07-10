@@ -106,7 +106,7 @@ options and settings.
             cmp = true,
             gitsigns = true,
             nvimtree = true,
-            telescope = true,
+            treesitter = true,
             notify = false,
             mini = false,
             -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
@@ -231,7 +231,7 @@ example:
             cmp = true,
             gitsigns = true,
             nvimtree = true,
-            telescope = true,
+            treesitter = true,
             notify = false,
             mini = false,
         }
@@ -648,7 +648,7 @@ directly at the thing (e.g. an error)).
 navic>lua
     navic = {
         enabled = false,
-        custom_bg = "NONE",
+        custom_bg = "NONE", -- "lualine" will set background to mantle
     },
 <
 
@@ -714,7 +714,10 @@ telekasten.nvim>lua
 <
 
 telescope.nvim>lua
-    telescope = true
+    telescope = {
+        enabled = true,
+        -- style = "nvchad"
+    }
 <
 
 trouble.nvim>lua
