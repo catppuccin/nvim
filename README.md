@@ -125,7 +125,7 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        telescope = true,
+        treesitter = true,
         notify = false,
         mini = false,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
@@ -237,7 +237,7 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        telescope = true,
+        treesitter = true,
         notify = false,
         mini = false,
     }
@@ -959,7 +959,7 @@ In the inners tables you can set the style for the diagnostics, both `virtual_te
 ```lua
 navic = {
     enabled = false,
-    custom_bg = "NONE",
+    custom_bg = "NONE", -- "lualine" will set background to mantle
 },
 
 ```
@@ -1167,7 +1167,10 @@ telekasten = false
 <td>
 
 ```lua
-telescope = true
+telescope = {
+    enabled = true,
+    -- style = "nvchad"
+}
 ```
 
 </td>
