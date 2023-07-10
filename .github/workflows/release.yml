@@ -1,5 +1,9 @@
 name: release
 
+on:
+  push:
+  pull_request:
+
 jobs:
   release:
     name: release
