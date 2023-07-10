@@ -7,6 +7,10 @@ function M.get()
 				fg = O.transparent_background and C.blue or C.mantle,
 				bg = O.transparent_background and C.none or C.mantle,
 			},
+			TelescopeMatching = { fg = C.blue },
+			TelescopeNormal = {
+				bg = O.transparent_background and C.none or C.mantle,
+			},
 			TelescopePromptBorder = {
 				fg = O.transparent_background and C.blue or C.surface0,
 				bg = O.transparent_background and C.none or C.surface0,
@@ -18,9 +22,6 @@ function M.get()
 			TelescopePromptPrefix = {
 				fg = C.flamingo,
 				bg = O.transparent_background and C.none or C.surface0,
-			},
-			TelescopeNormal = {
-				bg = O.transparent_background and C.none or C.mantle,
 			},
 			TelescopePreviewTitle = {
 				fg = O.transparent_background and C.green or C.base,
@@ -37,7 +38,9 @@ function M.get()
 			TelescopeSelection = {
 				fg = O.transparent_background and C.subtext0 or C.text,
 				bg = O.transparent_background and C.none or C.surface0,
+				style = { "bold" },
 			},
+			TelescopeSelectionCaret = { fg = C.flamingo },
 		}
 	end
 
