@@ -2,19 +2,42 @@ local M = {}
 
 function M.get()
 	if O.integrations.telescope.style == "nvchad" then
-		-- Flat look
 		return {
-			TelescopePromptPrefix = { bg = C.crust },
-			TelescopeSelectionCaret = { fg = C.rosewater, bg = C.surface1, bold = true },
-			TelescopePromptNormal = { bg = C.crust },
-			TelescopeResultsNormal = { bg = C.mantle },
-			TelescopePreviewNormal = { bg = C.mantle },
-			TelescopePromptBorder = { bg = C.crust, fg = C.crust },
-			TelescopeResultsBorder = { bg = C.mantle, fg = C.mantle },
-			TelescopePreviewBorder = { bg = C.mantle, fg = C.mantle },
-			TelescopePromptTitle = { bg = C.rosewater, fg = C.base, bold = true },
-			TelescopeResultsTitle = { bg = C.rosewater, fg = C.base, bold = true },
-			TelescopePreviewTitle = { bg = C.lavender, fg = C.base, bold = true },
+			TelescopeBorder = {
+				fg = O.transparent_background and C.blue or C.mantle,
+				bg = O.transparent_background and C.none or C.mantle,
+			},
+			TelescopePromptBorder = {
+				fg = O.transparent_background and C.blue or C.surface0,
+				bg = O.transparent_background and C.none or C.surface0,
+			},
+			TelescopePromptNormal = {
+				fg = C.text,
+				bg = O.transparent_background and C.none or C.surface0,
+			},
+			TelescopePromptPrefix = {
+				fg = C.flamingo,
+				bg = O.transparent_background and C.none or C.surface0,
+			},
+			TelescopeNormal = {
+				bg = O.transparent_background and C.none or C.mantle,
+			},
+			TelescopePreviewTitle = {
+				fg = O.transparent_background and C.green or C.base,
+				bg = O.transparent_background and C.none or C.green,
+			},
+			TelescopePromptTitle = {
+				fg = O.transparent_background and C.red or C.base,
+				bg = O.transparent_background and C.none or C.red,
+			},
+			TelescopeResultsTitle = {
+				fg = C.mantle,
+				bg = O.transparent_background and C.none or C.lavender,
+			},
+			TelescopeSelection = {
+				fg = O.transparent_background and C.subtext0 or C.text,
+				bg = O.transparent_background and C.none or C.surface0,
+			},
 		}
 	end
 
