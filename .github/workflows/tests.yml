@@ -7,6 +7,9 @@ on:
       - "*.md"
     branches:
       - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # Run every day at midnight UTC
 
 jobs:
   ubuntu:
@@ -15,6 +18,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          path: nvim
+      - uses: actions/checkout@v3
+        with:
+          ref: user-configs
+          path: user-configs
+      - run: |
+          mv user-configs/tests/* nvim/tests/
       - name: Install Neovim
         uses: MunifTanjim/setup-neovim-action@v1
         with:
@@ -24,6 +35,7 @@ jobs:
           git clone --depth 1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/site/pack/vendor/start/plenary.nvim
           ln -s $(pwd) ~/.local/share/nvim/site/pack/vendor/start
       - name: Run tests
+        working-directory: ./nvim
         run: |
           nvim --version
           [ ! -d tests ] && exit 0
