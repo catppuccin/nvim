@@ -1,10 +1,9 @@
 local M = {}
--- Backwards compatibility
-if type(O.integrations.navic) == "boolean" then O.integrations.navic = { custom_bg = C.mantle } end
-
-local background = O.integrations.navic.custom_bg and O.integrations.navic.custom_bg or C.none
 
 function M.get()
+	local background = O.integrations.navic.custom_bg and O.integrations.navic.custom_bg or C.none
+	if O.integrations.navic.custom_bg == "lualine" then background = C.mantle end
+
 	return {
 		NavicIconsFile = { fg = C.blue, bg = background },
 		NavicIconsModule = { fg = C.blue, bg = background },

@@ -1,35 +1,7 @@
 local M = {}
 
 function M.get()
-	-- Backwards compatibility
-	if type(O.integrations.telescope) == "boolean" then
-		return {
-			-- TelescopeNormal = { link = "NormalFloat" }, -- Respect telescope's default float bg
-			TelescopeBorder = { link = "FloatBorder" },
-			TelescopeSelectionCaret = { fg = C.flamingo },
-			TelescopeSelection = {
-				fg = O.transparent_background and C.flamingo or C.text,
-				bg = O.transparent_background and C.none or C.surface0,
-				style = { "bold" },
-			},
-			TelescopeMatching = { fg = C.blue },
-		}
-	end
-
-	if O.integrations.telescope.style == "classic" then
-		-- Classic look
-		return {
-			-- TelescopeNormal = { link = "NormalFloat" }, -- Respect telescope's default float bg
-			TelescopeBorder = { link = "FloatBorder" },
-			TelescopeSelectionCaret = { fg = C.flamingo },
-			TelescopeSelection = {
-				fg = O.transparent_background and C.flamingo or C.text,
-				bg = O.transparent_background and C.none or C.surface0,
-				style = { "bold" },
-			},
-			TelescopeMatching = { fg = C.blue },
-		}
-	elseif O.integrations.telescope.style == "nvchad" then
+	if O.integrations.telescope.style == "nvchad" then
 		-- Flat look
 		return {
 			TelescopePromptPrefix = { bg = C.crust },
@@ -45,6 +17,18 @@ function M.get()
 			TelescopePreviewTitle = { bg = C.lavender, fg = C.base, bold = true },
 		}
 	end
+
+	return {
+		-- TelescopeNormal = { link = "NormalFloat" }, -- Respect telescope's default float bg
+		TelescopeBorder = { link = "FloatBorder" },
+		TelescopeSelectionCaret = { fg = C.flamingo },
+		TelescopeSelection = {
+			fg = O.transparent_background and C.flamingo or C.text,
+			bg = O.transparent_background and C.none or C.surface0,
+			style = { "bold" },
+		},
+		TelescopeMatching = { fg = C.blue },
+	}
 end
 
 return M
