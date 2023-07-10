@@ -35,8 +35,8 @@
 ---@field color_overrides CtpColors | CtpFlavors<CtpColors<string>>
 -- Catppuccin highlights can be overwritten here.
 ---@field highlight_overrides CtpHighlightOverrides
--- deprecated: use highlight_overrides instead.
----@field custom_highlights CtpHighlightOverrideFn
+-- Global highlight overrides.
+---@field custom_highlights CtpHighlightOverrideFn | {[string]: CtpHighlight}
 -- The default flavor to use on startup.
 ---@field flavour CtpFlavor
 
