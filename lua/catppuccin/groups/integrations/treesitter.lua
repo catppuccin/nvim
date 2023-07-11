@@ -22,9 +22,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
 
 		-- Punctuation
-		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters ie: .
+		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters (e.g. `;` / `.` / `,`).
 		["@punctuation.bracket"] = { fg = C.overlay2 }, -- For brackets and parenthesis.
-		["@punctuation.special"] = { link = "Special" }, -- For special punctutation that does not fall in the categories before.
+		["@punctuation.special"] = { link = "Special" }, -- For special punctuation that does not fall in the categories before (e.g. `{}` in string interpolation).
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
@@ -43,21 +43,20 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
 		["@function.builtin"] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
 		["@function.call"] = { link = "Function" }, -- function calls
-		["@function.macro"] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
-		["@method"] = { link = "Function" }, -- For method calls and definitions.
-
-		["@method.call"] = { link = "Function" }, -- method calls
+		["@function.macro"] = { link = "Constant" }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
+		["@method"] = { link = "Function" }, -- For method definitions.
+		["@method.call"] = { link = "Function" }, -- For method calls.
 
 		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		["@parameter"] = { fg = C.maroon, style = { "italic" } }, -- For parameters of a function.
+		["@parameter"] = { fg = C.rosewater, style = O.styles.variables or {} }, -- For parameters of a function.
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
-		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
-		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
+		["@keyword.function"] = { fg = C.maroon, style = O.styles.keywords or {} }, -- For keywords used to define a function.
+		["@keyword.operator"] = { link = "Operator" }, -- For new keyword operator
+		["@keyword.return"] = { fg = C.pink, style = O.styles.keywords or {} },
 		-- JS & derivative
-		["@keyword.export"] = { fg = C.sky, style = { "bold" } },
+		["@keyword.export"] = { fg = C.sky, style = O.styles.keywords },
 
 		["@conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
 		["@repeat"] = { link = "Repeat" }, -- For keywords related to loops.
@@ -67,31 +66,28 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@exception"] = { link = "Exception" }, -- For exception related keywords.
 
 		-- Types
-
 		["@type"] = { link = "Type" }, -- For types.
-		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or "italic" }, -- For builtin types.
-		["@type.definition"] = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
-		["@type.qualifier"] = { link = "@type" }, -- type qualifiers (e.g. `const`)
+		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or { "italic" } }, -- For builtin types.
+		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
+		["@type.qualifier"] = { link = "Keyword" }, -- type qualifiers (e.g. `const`)
 
 		["@storageclass"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@field"] = { fg = C.lavender }, -- For fields.
-		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- Same as TSField.
+		["@field"] = { fg = C.rosewater }, -- For fields.
+		["@property"] = { fg = C.rosewater, style = O.styles.properties or {} }, -- Same as TSField.
 
 		-- Identifiers
-
-		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"] = { fg = C.red }, -- Variable names that are defined by the languages, like this or self.
+		["@variable"] = { link = "Identifier" }, -- Any variable name that does not have another highlight.
+		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
 
 		["@constant"] = { link = "Constant" }, -- For constants
-		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
+		["@constant.builtin"] = { fg = C.lavender, style = O.styles.properties or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		["@namespace"] = { fg = C.lavender, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
+		["@namespace"] = { fg = C.rosewater }, -- For identifiers referring to modules and namespaces.
 		["@symbol"] = { fg = C.flamingo },
 
 		-- Text
-
 		["@text"] = { fg = C.text }, -- For strings considerated text in a markup language.
 		["@text.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
 		["@text.emphasis"] = { fg = C.maroon, style = { "italic" } }, -- italic
@@ -103,7 +99,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@text.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
 		["@text.environment"] = { fg = C.pink }, -- text environments of markup languages
 		["@text.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
-		["@text.reference"] = { fg = C.lavender, style = { "bold" } }, -- references
+		["@text.reference"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
 
 		["@text.todo"] = { fg = C.base, bg = C.yellow }, -- todo notes
 		["@text.todo.checked"] = { fg = C.green }, -- todo notes
@@ -121,6 +117,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
 
 		-- Language specific:
+		-- bash
+		["@function.builtin.bash"] = { fg = C.red, style = { "italic" } },
 
 		-- markdown
 		["@text.title.2.markdown"] = { link = "rainbow2" },
@@ -139,6 +137,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@string.plain.css"] = { fg = C.peach },
 		["@number.css"] = { fg = C.peach },
 
+		-- java
+		["@constant.java"] = { fg = C.teal },
+
 		-- toml
 		["@property.toml"] = { fg = C.blue }, -- Differentiates between string and properties
 
@@ -146,17 +147,16 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@label.json"] = { fg = C.blue }, -- For labels: label: in C and :label: in Lua.
 
 		-- lua
-		["@constructor.lua"] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@constructor.lua"] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua.
+		["@field.lua"] = { fg = C.lavender },
 
 		-- typescript
+		["@property.typescript"] = { fg = C.lavender, style = O.styles.properties or {} },
 		["@constructor.typescript"] = { fg = C.lavender },
 
 		-- TSX (Typescript React)
 		["@constructor.tsx"] = { fg = C.lavender },
 		["@tag.attribute.tsx"] = { fg = C.mauve, style = { "italic" } },
-
-		-- cpp
-		["@property.cpp"] = { fg = C.rosewater },
 
 		-- yaml
 		["@field.yaml"] = { fg = C.blue }, -- For fields.
@@ -165,9 +165,17 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@symbol.ruby"] = { fg = C.flamingo },
 
 		-- PHP
-		["@type.qualifier.php"] = { link = "Keyword" }, -- type qualifiers (e.g. `const`)
 		["@method.php"] = { link = "Function" },
 		["@method.call.php"] = { link = "Function" },
+
+		-- C/CPP
+		["@type.builtin.c"] = { style = {} },
+		["@property.cpp"] = { fg = C.text },
+		["@type.builtin.cpp"] = { style = {} },
+
+		-- Misc
+		gitcommitSummary = { fg = C.rosewater, style = { "italic" } },
+		zshKSHFunction = { link = "Function" },
 	}
 end
 
