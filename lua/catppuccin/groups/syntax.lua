@@ -8,7 +8,7 @@ function M.get()
 		String = { fg = C.green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
 		Character = { fg = C.teal }, --  a character constant: 'c', '\n'
 		Number = { fg = C.peach, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
-		Float = { fg = C.peach, style = O.styles.numbers or {} }, --    a floating point constant: 2.3e10
+		Float = { link = "Number" }, --    a floating point constant: 2.3e10
 		Boolean = { fg = C.peach, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
 		Identifier = { fg = C.flamingo, style = O.styles.variables or {} }, -- (preferred) any variable name
 		Function = { fg = C.blue, style = O.styles.functions or {} }, -- function name (also: methods for classes)
@@ -19,7 +19,7 @@ function M.get()
 		Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etc.
 		Keyword = { fg = C.mauve, style = O.styles.keywords or {} }, --  any other keyword
 		Array = { fg = C.lavender },
-		-- Exception     = { }, --  try, catch, throw
+		Exception = { fg = C.mauve, style = O.styles.keywords or {} }, --  try, catch, throw
 
 		PreProc = { fg = C.pink }, -- (preferred) generic Preprocessor
 		Include = { fg = C.mauve, style = O.styles.keywords or {} }, --  preprocessor #include
@@ -34,7 +34,7 @@ function M.get()
 		Typedef = { link = "Type" }, --  A typedef
 		SpecialChar = { link = "Special" }, -- special character in a constant
 		Tag = { link = "Special" }, -- you can use CTRL-] on this
-		Delimiter = { link = "Special" }, -- character that needs attention
+		Delimiter = { fg = C.overlay2 }, -- character that needs attention
 		Debug = { link = "Special" }, -- debugging statements
 
 		Underlined = { style = { "underline" } }, -- (preferred) text that stands out, HTML links
