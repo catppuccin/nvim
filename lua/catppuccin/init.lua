@@ -45,8 +45,6 @@ local M = {
 			semantic_tokens = not is_vim,
 			telescope = { enabled = true },
 			treesitter = not is_vim,
-			ts_rainbow = true,
-			ts_rainbow2 = true,
 			barbecue = {
 				dim_dirname = true,
 				bold_basename = true,
