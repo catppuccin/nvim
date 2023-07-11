@@ -809,6 +809,583 @@ local configs = {
 			},
 		},
 	},
+	johnallen3d = {
+		integrations = {
+			treesitter = true,
+			native_lsp = {
+				enabled = true,
+				virtual_text = {
+					errors = { "italic" },
+					hints = { "italic" },
+					warnings = { "italic" },
+					information = { "italic" },
+				},
+				underlines = {
+					errors = { "underline" },
+					hints = { "underline" },
+					warnings = { "underline" },
+					information = { "underline" },
+				},
+			},
+			coc_nvim = false,
+			lsp_trouble = false,
+			cmp = true,
+			lsp_saga = true,
+			gitgutter = false,
+			gitsigns = false,
+			telescope = true,
+			nvimtree = false,
+			dap = {
+				enabled = false,
+				enable_ui = false,
+			},
+			neotree = {
+				enabled = false,
+				show_root = true,
+				transparent_panel = false,
+			},
+			which_key = false,
+			indent_blankline = {
+				enabled = true,
+				colored_indent_levels = false,
+			},
+			dashboard = false,
+			neogit = false,
+			vim_sneak = false,
+			fern = false,
+			barbar = false,
+			markdown = true,
+			lightspeed = false,
+			leap = false,
+			ts_rainbow = false,
+			hop = false,
+			notify = true,
+			telekasten = false,
+			symbols_outline = false,
+			mini = false,
+			aerial = false,
+			vimwiki = false,
+			beacon = false,
+			overseer = false,
+			fidget = true,
+			treesitter_context = false,
+		},
+
+		custom_highlights = function(C)
+			return {
+				CmpItemKindSnippet = { fg = C.base, bg = C.mauve },
+				CmpItemKindKeyword = { fg = C.base, bg = C.red },
+				CmpItemKindText = { fg = C.base, bg = C.teal },
+				CmpItemKindMethod = { fg = C.base, bg = C.blue },
+				CmpItemKindConstructor = { fg = C.base, bg = C.blue },
+				CmpItemKindFunction = { fg = C.base, bg = C.blue },
+				CmpItemKindFolder = { fg = C.base, bg = C.blue },
+				CmpItemKindModule = { fg = C.base, bg = C.blue },
+				CmpItemKindConstant = { fg = C.base, bg = C.peach },
+				CmpItemKindField = { fg = C.base, bg = C.green },
+				CmpItemKindProperty = { fg = C.base, bg = C.green },
+				CmpItemKindEnum = { fg = C.base, bg = C.green },
+				CmpItemKindUnit = { fg = C.base, bg = C.green },
+				CmpItemKindClass = { fg = C.base, bg = C.yellow },
+				CmpItemKindVariable = { fg = C.base, bg = C.flamingo },
+				CmpItemKindFile = { fg = C.base, bg = C.blue },
+				CmpItemKindInterface = { fg = C.base, bg = C.yellow },
+				CmpItemKindColor = { fg = C.base, bg = C.red },
+				CmpItemKindReference = { fg = C.base, bg = C.red },
+				CmpItemKindEnumMember = { fg = C.base, bg = C.red },
+				CmpItemKindStruct = { fg = C.base, bg = C.blue },
+				CmpItemKindValue = { fg = C.base, bg = C.peach },
+				CmpItemKindEvent = { fg = C.base, bg = C.blue },
+				CmpItemKindOperator = { fg = C.base, bg = C.blue },
+				CmpItemKindTypeParameter = { fg = C.base, bg = C.blue },
+				CmpItemKindCopilot = { fg = C.base, bg = C.teal },
+			}
+		end,
+	},
+	calvinludwig = {
+		flavour = "latte",
+		term_colors = true,
+		color_overrides = {
+			latte = {
+				base = "#FFFFFF",
+				mantle = "#EFF1F5",
+				crust = "#E6E9EF",
+			},
+		},
+		integrations = {
+			cmp = true,
+			gitsigns = true,
+			notify = true,
+			telescope = true,
+			alpha = true,
+			harpoon = true,
+			mason = true,
+			neotree = true,
+			treesitter_context = true,
+			which_key = true,
+			illuminate = true,
+		},
+	},
+	thanhvule0310 = {
+		background = {
+			light = "latte",
+			dark = "mocha",
+		},
+		color_overrides = {
+			mocha = {
+				rosewater = "#EA6962",
+				flamingo = "#EA6962",
+				pink = "#D3869B",
+				mauve = "#D3869B",
+				red = "#EA6962",
+				maroon = "#EA6962",
+				peach = "#BD6F3E",
+				yellow = "#D8A657",
+				green = "#A9B665",
+				teal = "#89B482",
+				sky = "#89B482",
+				sapphire = "#89B482",
+				blue = "#7DAEA3",
+				lavender = "#7DAEA3",
+				text = "#D4BE98",
+				subtext1 = "#BDAE8B",
+				subtext0 = "#A69372",
+				overlay2 = "#8C7A58",
+				overlay1 = "#735F3F",
+				overlay0 = "#5A4525",
+				surface2 = "#4B4F51",
+				surface1 = "#2A2D2E",
+				surface0 = "#232728",
+				base = "#1D2021",
+				mantle = "#191C1D",
+				crust = "#151819",
+			},
+			latte = {
+				rosewater = "#c14a4a",
+				flamingo = "#c14a4a",
+				pink = "#945e80",
+				mauve = "#945e80",
+				red = "#c14a4a",
+				maroon = "#c14a4a",
+				peach = "#c35e0a",
+				yellow = "#a96b2c",
+				green = "#6c782e",
+				teal = "#4c7a5d",
+				sky = "#4c7a5d",
+				sapphire = "#4c7a5d",
+				blue = "#45707a",
+				lavender = "#45707a",
+				text = "#654735",
+				subtext1 = "#7b5d44",
+				subtext0 = "#8f6f56",
+				overlay2 = "#a28368",
+				overlay1 = "#b6977a",
+				overlay0 = "#c9aa8c",
+				surface2 = "#A79C86",
+				surface1 = "#C9C19F",
+				surface0 = "#DFD6B1",
+				base = "#fbf1c7",
+				mantle = "#F3EAC1",
+				crust = "#E7DEB7",
+			},
+		},
+		styles = {
+			comments = { "italic" },
+			conditionals = { "italic" },
+			loops = { "bold" },
+			functions = { "bold" },
+			keywords = { "bold" },
+			strings = {},
+			variables = {},
+			numbers = { "bold" },
+			booleans = { "bold" },
+			properties = {},
+			types = { "bold" },
+			operators = {},
+		},
+		transparent_background = false,
+		show_end_of_buffer = false,
+		custom_highlights = function(colors)
+			return {
+				NormalFloat = { bg = colors.crust },
+				FloatBorder = { bg = colors.crust, fg = colors.crust },
+				VertSplit = { bg = colors.base, fg = colors.surface0 },
+				CursorLineNr = { fg = colors.mauve, style = { "bold" } },
+				Pmenu = { bg = colors.crust, fg = "" },
+				PmenuSel = { bg = colors.surface0, fg = "" },
+				TelescopeSelection = { bg = colors.surface0 },
+				TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },
+				TelescopePromptPrefix = { bg = colors.surface0 },
+				TelescopePromptNormal = { bg = colors.surface0 },
+				TelescopeResultsNormal = { bg = colors.mantle },
+				TelescopePreviewNormal = { bg = colors.crust },
+				TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+				TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+				TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+				TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
+				TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
+				TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
+				IndentBlanklineChar = { fg = colors.surface0 },
+				IndentBlanklineContextChar = { fg = colors.surface2 },
+				GitSignsChange = { fg = colors.peach },
+				NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
+				NvimTreeExecFile = { fg = colors.text },
+			}
+		end,
+	},
+	cxzhou35 = {
+		flavour = "mocha", -- Can be one of: latte, frappe, macchiato, mocha
+		background = { light = "latte", dark = "mocha" },
+		dim_inactive = {
+			enabled = false,
+			shade = "dark",
+			percentage = 0.15,
+		},
+		transparent_background = true,
+		show_end_of_buffer = false,
+		term_colors = true,
+		compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+		styles = {
+			comments = { "italic" },
+			functions = { "bold" },
+			keywords = { "italic" },
+			operators = { "bold" },
+			conditionals = { "bold" },
+			loops = { "bold" },
+			booleans = { "bold", "italic" },
+			numbers = {},
+			types = {},
+			strings = {},
+			variables = {},
+			properties = {},
+		},
+		integrations = {
+			treesitter = true,
+			native_lsp = {
+				enabled = true,
+				virtual_text = {
+					errors = { "italic" },
+					hints = { "italic" },
+					warnings = { "italic" },
+					information = { "italic" },
+				},
+				underlines = {
+					errors = { "underline" },
+					hints = { "underline" },
+					warnings = { "underline" },
+					information = { "underline" },
+				},
+			},
+			alpha = true,
+			barbar = false,
+			beacon = false,
+			cmp = true,
+			dap = { enabled = true, enable_ui = true },
+			gitsigns = true,
+			hop = true,
+			indent_blankline = { enabled = true, colored_indent_levels = false },
+			lsp_saga = true,
+			lsp_trouble = true,
+			markdown = true,
+			mason = true,
+			mini = false,
+			neogit = false,
+			neotree = { enabled = true, show_root = true, transparent_panel = true },
+			noice = false,
+			notify = true,
+			telescope = true,
+			treesitter_context = false,
+			ts_rainbow = true,
+			which_key = true,
+		},
+		color_overrides = {
+			mocha = {
+				rosewater = "#F5E0DC",
+				flamingo = "#F2CDCD",
+				mauve = "#DDB6F2",
+				pink = "#F5C2E7",
+				red = "#F28FAD",
+				maroon = "#E8A2AF",
+				peach = "#F8BD96",
+				yellow = "#FAE3B0",
+				green = "#ABE9B3",
+				blue = "#96CDFB",
+				sky = "#89DCEB",
+				teal = "#B5E8E0",
+				lavender = "#C9CBFF",
+				text = "#D9E0EE",
+				subtext1 = "#BAC2DE",
+				subtext0 = "#A6ADC8",
+				overlay2 = "#C3BAC6",
+				overlay1 = "#988BA2",
+				overlay0 = "#6E6C7E",
+				surface2 = "#6E6C7E",
+				surface1 = "#575268",
+				surface0 = "#302D41",
+				base = "#1E1E2E",
+				mantle = "#1A1826",
+				crust = "#161320",
+			},
+		},
+		custom_highlights = function(C)
+			return {
+				TreesitterContext = { bg = C.mantle, fg = C.text },
+			}
+		end,
+	},
+	saumyajyoti = {
+		-- flavour = "macchiato", -- latte, frappe, macchiato, mocha
+		background = {
+			-- :h background
+			light = "latte",
+			dark = "mocha",
+		},
+		transparent_background = false,
+		show_end_of_buffer = true, -- show the '~' characters after the end of buffer
+		term_colors = false,
+		dim_inactive = {
+			enabled = false,
+			shade = "dark",
+			percentage = 0.15,
+		},
+		no_italic = false, -- Force no italic
+		no_bold = false, -- Force no bold
+		no_underline = false, -- Force no underline
+		styles = {
+			comments = { "italic" },
+			conditionals = { "italic" },
+			loops = { "italic" },
+			functions = { "bold" },
+			keywords = { "italic" },
+			strings = {},
+			variables = {},
+			numbers = { "bold" },
+			booleans = { "italic" },
+			properties = {},
+			types = {},
+			operators = {},
+		},
+		-- Mocha - Labels	Hex
+		--
+		-- Rosewater	#f5e0dc
+		-- Flamingo 	#f2cdcd
+		-- Pink     	#f5c2e7
+		-- Mauve    	#cba6f7
+		-- Red	      #f38ba8
+		-- Maroon	    #eba0ac
+		-- Peach	    #fab387
+		-- Yellow   	#f9e2af
+		-- Green    	#a6e3a1
+		-- Teal     	#94e2d5
+		-- Sky      	#89dceb
+		-- Sapphire 	#74c7ec
+		-- Blue	      #89b4fa
+		-- Lavender  	#b4befe
+		-- Text     	#cdd6f4
+		-- Subtext1 	#bac2de
+		-- Subtext0 	#a6adc8
+		-- Overlay2	  #9399b2
+		-- Overlay1	  #7f849c
+		-- Overlay0	  #6c7086
+		-- Surface2	  #585b70
+		-- Surface1	  #45475a
+		-- Surface0	  #313244
+		-- Base   	  #1e1e2e
+		-- Mantle 	  #181825
+		-- Crust  	  #11111b
+
+		-- gruvbox mix material
+		--   \ 'bg_dim':           ['#1b1b1b',   '233'],
+		--   \ 'bg0':              ['#282828',   '235'],
+		--   \ 'bg1':              ['#32302f',   '236'],
+		--   \ 'bg2':              ['#32302f',   '236'],
+		--   \ 'bg3':              ['#45403d',   '237'],
+		--   \ 'bg4':              ['#45403d',   '237'],
+		--   \ 'bg5':              ['#5a524c',   '239'],
+		--   \ 'bg_statusline1':   ['#32302f',   '236'],
+		--   \ 'bg_statusline2':   ['#3a3735',   '236'],
+		--   \ 'bg_statusline3':   ['#504945',   '240'],
+		--   \ 'bg_diff_green':    ['#34381b',   '22'],
+		--   \ 'bg_visual_green':  ['#3b4439',   '22'],
+		--   \ 'bg_diff_red':      ['#402120',   '52'],
+		--   \ 'bg_visual_red':    ['#4c3432',   '52'],
+		--   \ 'bg_diff_blue':     ['#0e363e',   '17'],
+		--   \ 'bg_visual_blue':   ['#374141',   '17'],
+		--   \ 'bg_visual_yellow': ['#4f422e',   '94'],
+		--   \ 'bg_current_word':  ['#3c3836',   '237']
+		--
+		--   \ 'fg0':              ['#e2cca9',   '223'],
+		--   \ 'fg1':              ['#e2cca9',   '223'],
+		--   \ 'red':              ['#f2594b',   '167'],
+		--   \ 'orange':           ['#f28534',   '208'],
+		--   \ 'yellow':           ['#e9b143',   '214'],
+		--   \ 'green':            ['#b0b846',   '142'],
+		--   \ 'aqua':             ['#8bba7f',   '108'],
+		--   \ 'blue':             ['#80aa9e',   '109'],
+		--   \ 'purple':           ['#d3869b',   '175'],
+		--   \ 'bg_red':           ['#db4740',   '167'],
+		--   \ 'grey0':            ['#7c6f64',   '243'],
+		--   \ 'grey1':            ['#928374',   '245'],
+		--   \ 'grey2':            ['#a89984',   '246'],
+		--
+		color_overrides = {
+			mocha = {
+				-- Gruvbox_mix-medium from https://github.com/sainnhe/gruvbox-material
+				-- gruvbox -- alternate (https://github.com/thanhvule0310) -- Catppuccin
+				--                                         current    alt     catp    gruv_mat
+				rosewater = "#ffc6be", -- #ffc6be  #EA6962  #F5E0DC
+				flamingo = "#fb4934", -- #fb4934  #F38BA8  #F2CDCD
+				pink = "#ff75a0", --#f4bce4 #ffd3e2  #ff75a0  #F5C2E7
+				mauve = "#d3869b", --          #D3869B" #CBA6F7
+				red = "#ec6b64", -- #f2594b  #EA6962  #F38BA8
+				maroon = "#fe8019", -- #e78a4e  #fe8019  #EA6962  #EBA0AC
+				peach = "#FAB387", -- #b57614  #c68e6b  #FAB387
+				yellow = "#d79921", -- #e9b143 #e0c080 #D8A657  #F9E2AF
+				green = "#a9b665", -- #a9b665           #A6E3A1
+				teal = "#8ec07c", --                   #94E2D5
+				sky = "#7daea3", --          #89B482  #89DCEB
+				sapphire = "#689d6a", -- #82b3a8  #8ec07c  #74C7EC
+				blue = "#6d8dad", --          #7DAEA3  #87B0F9
+				lavender = "#b16286", -- #b39ddb           #B4BEFE
+				text = BaseColor.gruvbox.light1, -- #ebdbb2  #D4BE98  #C6D0F5
+				subtext1 = BaseColor.gruvbox.light0_soft, -- #f2e5bc  #BDAE8B  #B3BCDF
+				subtext0 = BaseColor.gruvbox.light2, -- #d5c4a1  #A69372  #A1A8C9
+				overlay2 = BaseColor.gruvbox.light3, -- #bdae93  #8C7A58  #8E95B3
+				overlay1 = BaseColor.gruvbox.light4, -- #a89984  #735F3F  #7B819D
+				overlay0 = BaseColor.gruvbox.gray, -- #928374  #806234  #696D86
+				surface2 = BaseColor.gruvbox.dark3, -- #6E7477  #4B4F51  #565970
+				surface1 = BaseColor.gruvbox.dark1, -- #2A2D2E           #43465A
+				surface0 = BaseColor.gruvbox.dark0_soft, -- #232728           #313244
+				base = "#282828", -- #1D2021           #1E1E2E
+				mantle = "#1d2021", -- #191C1D           #181825
+				crust = "#1b1b1b", --                   #11111B
+			},
+		},
+		custom_highlights = function(colors)
+			return {
+				NormalFloat = { bg = colors.surface0 },
+				FloatBorder = { fg = colors.overlay0 },
+				VertSplit = { bg = colors.base, fg = colors.surface1 },
+				FoldColumn = { fg = colors.overlay0, bg = colors.mantle },
+				LineNr = { fg = colors.overlay0, bg = colors.mantle },
+				CursorLineNr = { fg = colors.mauve, bg = colors.surface0, style = {} },
+				CursorLineSign = { bg = colors.surface0 },
+				CursorLineFold = { bg = colors.surface0 },
+				-- SignColumn = { bg = colors.mantle },
+				Pmenu = { bg = colors.mantle, fg = "" },
+				PmenuSel = { bg = colors.surface0, fg = colors.subtext0 },
+				TelescopeSelection = { bg = colors.surface0 },
+				TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },
+				TelescopePromptPrefix = { bg = colors.surface0 },
+				TelescopePromptNormal = { bg = colors.surface0 },
+				TelescopeResultsNormal = { bg = colors.mantle },
+				TelescopePreviewNormal = { bg = colors.crust },
+				TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+				TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+				TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+				TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
+				TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
+				TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
+				-- IndentBlanklineChar = { fg = colors.surface0 },
+				-- IndentBlanklineContextChar = { fg = colors.surface2 },
+				GitSignsChange = { fg = colors.peach },
+				-- Blamer = { fg = colors.overlay1, bg = colors.base },
+				-- NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
+				-- NvimTreeExecFile = { fg = colors.text },
+				Function = { fg = colors.sky, style = { "bold", "italic" } },
+				Type = { fg = colors.blue },
+				Structure = { fg = colors.teal },
+				Comment = { fg = colors.surface2 },
+				cTypedef = { fg = colors.pink, style = { "italic" } },
+				cDefine = { fg = colors.pink, style = { "italic" } },
+				cStructure = { fg = colors.yellow },
+				StorageClass = { fg = colors.pink, style = { "italic" } },
+				cStorageclass = { fg = colors.pink, style = { "italic" } },
+				PreProc = { fg = colors.maroon, style = { "italic" } },
+				Keyword = { fg = colors.flamingo },
+				Conditional = { fg = colors.red },
+				Repeat = { fg = colors.red },
+				["@keyword.return"] = { fg = colors.flamingo, style = { "italic" } },
+				["@parameter"] = { fg = colors.overlay1, style = { "italic" } },
+				["@property"] = { fg = colors.yellow },
+				WinBar = { fg = colors.overlay2, bg = colors.mantle },
+				-- TabLineSel = { bg = colors.pink },
+				-- CmpBorder = { fg = colors.surface2 },
+				--  Pmenu = { bg = C.none },
+			}
+		end,
+		highlight_overrides = {
+			all = function(colors)
+				return {
+					-- Comment = { fg = colors.flamingo },
+					-- NvimTreeNormal = { fg = colors.none },
+					-- CmpBorder = { fg = "#3e4145" },
+				}
+			end,
+		},
+		-- custom_highlights = {},
+		integrations = {
+			alpha = true,
+			sandwich = false,
+			noice = true,
+			mini = true,
+			leap = true,
+			markdown = true,
+			neotest = true,
+			cmp = true,
+			overseer = true,
+			lsp_trouble = true,
+			ts_rainbow2 = true,
+			mason = true,
+			neotree = true,
+			notify = true,
+			which_key = true,
+			treesitter = true,
+			-- treesitter_context = true,
+			aerial = true,
+			semantic_tokens = true,
+			-- symbols_outline = true,
+			telescope = true,
+			dap = { enabled = true, enable_ui = true },
+			gitsigns = true,
+			indent_blankline = {
+				enabled = true,
+				colored_indent_levels = false,
+			},
+		},
+	},
+	s1m0000n = {
+		color_overrides = {
+			mocha = {
+				rosewater = "#ffc9c9",
+				flamingo = "#ff9f9a",
+				pink = "#ffa9c9",
+				lavender = "#df95cf",
+				mauve = "#a990c9",
+				red = "#ff6960",
+				maroon = "#f98080",
+				peach = "#f9905f",
+				yellow = "#f9bd69",
+				green = "#b0d080",
+				teal = "#a0dfa0",
+				sky = "#a0d0c0",
+				sapphire = "#95b9d0",
+				blue = "#89a0e0",
+				text = "#e0d0b0",
+				subtext1 = "#d5c4a1",
+				subtext0 = "#bdae93",
+				overlay2 = "#928374",
+				overlay1 = "#7c6f64",
+				overlay0 = "#665c54",
+				surface2 = "#504844",
+				surface1 = "#3a3634",
+				surface0 = "#252525",
+				base = "#151515",
+				mantle = "#0e0e0e",
+				crust = "#080808",
+			},
+		},
+	},
 }
 
 describe("user", function()
