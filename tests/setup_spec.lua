@@ -1547,6 +1547,8 @@ local configs = {
 			},
 		},
 		custom_highlights = function(colors)
+			local ucolors = require("catppuccin.utils.colors")
+			local mocha = require("catppuccin.palettes").get_palette("mocha")
 			return {
 				-- Cmp Menu
 				PmenuSel = { fg = colors.base, bg = colors.maroon, style = { "bold" } },
