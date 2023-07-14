@@ -8,7 +8,7 @@ function M.get()
 		SagaToggle = { fg = C.green },
 		SagaCount = { fg = C.overlay1 },
 		SagaBeacon = { bg = U.darken(C.surface0, 0.8, C.crust) },
-		SagaVirtLine = { fg = C.surface1 },
+		SagaVirtLine = { fg = C.surface2 },
 		SagaSpinner = { fg = C.mauve, style = { "bold" } },
 		SagaSpinnerTitle = { fg = C.mauve, style = { "bold" } },
 		SagaText = { fg = C.text },
@@ -25,6 +25,10 @@ function M.get()
 		RenameMatch = { link = "Search" },
 		DiagnosticText = { fg = C.text },
 		SagaWinbarSep = { fg = C.flamingo },
+		SagaDetail = { link = "Comment" },
+		SagaFileName = { fg = C.overlay2, style = { "bold" } },
+		SagaFolderName = { fg = C.overlay2, style = { "bold" } },
+		SagaInCurrent = { fg = C.peach },
 
 		-- Lspkind icons support
 		LspKindClass = { fg = C.yellow },
