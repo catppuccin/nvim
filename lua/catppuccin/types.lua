@@ -139,6 +139,7 @@
 -- }
 -- ```
 ---@field fidget boolean
+---@field flash boolean
 ---@field gitgutter boolean
 ---@field gitsigns boolean
 ---@field harpoon boolean
