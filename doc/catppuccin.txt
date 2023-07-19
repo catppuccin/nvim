@@ -489,6 +489,10 @@ Set `window.blend` to `0`:
     }
 <
 
+flash.nvim>lua
+    flash = true
+<
+
 gitsigns.nvim>lua
     gitsigns = true
 <
