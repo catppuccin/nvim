@@ -222,6 +222,9 @@ globals:
   O.integrations.alpha:
     type: bool
     property: read-only
+  O.integrations.flash:
+    type: bool
+    property: read-only
   O.integrations.gitsigns:
     type: bool
     property: full-write
