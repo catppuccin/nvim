@@ -5,6 +5,7 @@ Here are some guidelines:
 - New plugin integration should be added in alphabetical order:
   - to the [README](https://github.com/catppuccin/nvim#integrations) (vimdoc is auto-generated).
   - to [types.lua](https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/types.lua)
+  - to [vim.yml](https://github.com/catppuccin/nvim/blob/main/vim.yml)
 - Create a topic branch on your fork for your specific PR.
 - Use [conventionalcommits.org's](https://www.conventionalcommits.org/en/v1.0.0/) 
   rules for explicit and meaningful commit messages.
