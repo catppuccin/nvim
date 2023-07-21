@@ -50,7 +50,7 @@ function M.get()
 		LspKindPackage = { fg = C.blue },
 		LspKindProperty = { fg = C.teal },
 		LspKindStruct = { fg = C.yellow },
-		LspKindTypeParameter = { fg = C.maroon },
+		LspKindTypeParameter = { fg = C.blue },
 		LspKindVariable = { fg = C.peach },
 		LspKindArray = { fg = C.peach },
 		LspKindBoolean = { fg = C.peach },

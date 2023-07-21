@@ -31,7 +31,7 @@ If you want to stay on nvim 0.7, disable the integration.
 		["@lsp.type.regex"] = { link = "@string.regex" },
 		["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
 		["@lsp.type.struct"] = { link = "@type" },
-		["@lsp.type.typeParameter.cpp"] = { link = "@parameter" },
+		["@lsp.type.typeParameter"] = { link = "@type" },
 		["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
 		["@lsp.typemod.enum.defaultLibrary"] = { link = "@type" },
 		["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant" },
