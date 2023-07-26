@@ -29,6 +29,9 @@
 ---@field no_underline boolean
 -- Handles the style of general hl groups (see `:h highlight-groups`).
 ---@field styles CtpStyles
+-- Control default of integrations. `true` enables all integrations and `false` disables all integrations
+-- If `nil`, use the defaults provided by Catppuccin
+---@field integration_default boolean?
 -- Toggle integrations. Integrations allow Catppuccin to set the theme of various plugins.
 ---@field integrations CtpIntegrations
 -- Catppuccin colors can be overwritten here.
