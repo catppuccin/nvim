@@ -2,6 +2,10 @@ return function(flavour)
 	local C = require("catppuccin.palettes").get_palette(flavour)
 	local O = require("catppuccin").options
 
+	if not O.integrations.barbecue.enabled then
+		return require("barbecue.theme.default")
+	end
+
 	local transparent_bg = O.transparent_background and C.none or C.mantle
 
 	local dirname_color = O.integrations.barbecue.dim_dirname and C.overlay1 or C.text

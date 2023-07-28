@@ -258,6 +258,9 @@ globals:
     type: bool
     property: read-only
 
+  O.integrations.barbecue.enabled:
+    type: bool
+    property: read-only
   O.integrations.barbecue.dim_dirname:
     type: bool
     property: read-only

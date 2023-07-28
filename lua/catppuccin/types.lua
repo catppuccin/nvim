@@ -199,6 +199,8 @@
 ---@field which_key boolean
 
 ---@class CtpIntegrationBarbecue
+--Whether to use custom barbecue theme.
+---@field enabled boolean?
 --  Whether to use the alternative background.
 ---@field alt_background boolean?
 -- Whether the basename should be bold.

@@ -47,6 +47,7 @@ local M = {
 			telescope = { enabled = true },
 			treesitter = not is_vim,
 			barbecue = {
+				enabled = true,
 				dim_dirname = true,
 				bold_basename = true,
 				dim_context = false,
