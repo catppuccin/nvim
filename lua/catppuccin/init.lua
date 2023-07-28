@@ -145,7 +145,7 @@ function M.setup(user_conf)
 	if user_conf.integration_default ~= nil then
 		options = vim.deepcopy(M.default_options)
 		for key, _ in pairs(options.integrations) do
-			if type(options.integrations[key]) == "table" then
+			if options.integrations[key].enabled ~= nil then
 				options.integrations[key].enabled = user_conf.integration_default
 			else
 				options.integrations[key] = user_conf.integration_default
