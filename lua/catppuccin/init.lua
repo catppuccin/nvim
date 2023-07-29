@@ -122,6 +122,21 @@ local function get_flavour(default)
 	return flavour or M.options.flavour or vim.g.catppuccin_flavour or M.options.background[vim.o.background]
 end
 
+local function set_default_integration_values(options, value)
+	options = vim.deepcopy(M.default_options)
+
+	for key, _ in pairs(options.integrations) do
+		local integration = options.integrations[key]
+		if type(integration) == "table" and integration.enabled ~= nil then
+			options.integrations[key].enabled = value
+		elseif type(integration) == "boolean" then
+			options.integrations[key] = value
+		end
+	end
+
+	return options
+end
+
 local did_setup = false
 
 function M.load(flavour)
@@ -142,16 +157,11 @@ function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
 	local options = M.default_options
+
 	if user_conf.integration_default ~= nil then
-		options = vim.deepcopy(M.default_options)
-		for key, _ in pairs(options.integrations) do
-			if type(options.integrations[key]) == "table" and options.integrations[key].enabled ~= nil then
-				options.integrations[key].enabled = user_conf.integration_default
-			else
-				options.integrations[key] = user_conf.integration_default
-			end
-		end
+		options = set_default_integration_values(options, user_conf.integration_default)
 	end
+
 	M.options = vim.tbl_deep_extend("keep", user_conf, options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
