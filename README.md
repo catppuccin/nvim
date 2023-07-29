@@ -121,7 +121,6 @@ require("catppuccin").setup({
     },
     color_overrides = {},
     custom_highlights = {},
-    integration_default = nil, -- set to true/false to enable/disable integrations by default
     integrations = {
         cmp = true,
         gitsigns = true,

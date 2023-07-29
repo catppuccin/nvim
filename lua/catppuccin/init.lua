@@ -141,18 +141,7 @@ function M.setup(user_conf)
 	did_setup = true
 	-- Parsing user config
 	user_conf = user_conf or {}
-	local options = M.default_options
-	if user_conf.integration_default ~= nil then
-		options = vim.deepcopy(M.default_options)
-		for key, _ in pairs(options.integrations) do
-			if type(options.integrations[key]) == "table" and options.integrations[key].enabled ~= nil then
-				options.integrations[key].enabled = user_conf.integration_default
-			else
-				options.integrations[key] = user_conf.integration_default
-			end
-		end
-	end
-	M.options = vim.tbl_deep_extend("keep", user_conf, options)
+	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
 	-- Get cached hash
