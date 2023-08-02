@@ -10,7 +10,7 @@ function M.get()
 		NoiceCmdlinePopupBorder = { fg = C.lavender },
 		NoiceCmdlinePopupBorderSearch = { fg = C.yellow },
 		NoiceConfirmBorder = { fg = C.blue },
-		NoiceMini = { fg = C.text },
+		NoiceMini = { fg = C.text, blend = 0 },
 	}
 end
 

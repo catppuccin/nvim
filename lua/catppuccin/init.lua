@@ -38,6 +38,7 @@ local M = {
 			alpha = true,
 			cmp = true,
 			dashboard = true,
+			flash = true,
 			gitsigns = true,
 			markdown = true,
 			nvimtree = true,

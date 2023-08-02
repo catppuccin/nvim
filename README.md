@@ -616,6 +616,17 @@ require("fidget").setup {
 </tr>
 <!-- fidget.nvim -->
 
+<!-- flash.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/folke/flash.nvim">flash.nvim</a> </td>
+<td>
+
+```lua
+flash = true
+```
+<!-- flash.nvim -->
+
 <!-- gitsigns.nvim -->
 </tr>
 <tr>
