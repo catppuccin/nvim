@@ -258,6 +258,10 @@ globals:
     type: bool
     property: read-only
 
+  O.integrations.window_picker:
+    type: bool
+    property: read-only
+
   O.integrations.barbecue.dim_dirname:
     type: bool
     property: read-only
