@@ -194,6 +194,7 @@
 ---@field vim_sneak boolean?
 ---@field vimwiki boolean?
 ---@field which_key boolean?
+---@field window_picker boolean?
 
 ---@class CtpIntegrationBarbecue
 --  Whether to use the alternative background.

@@ -297,8 +297,8 @@ Update your bufferline config to use the Catppuccin components:
     }
 <
 
-Configurations are self-explanatory, see `:h bufferline-highlights` for
-detailed explanations:
+Configurations are self-explanatory, see |bufferline-highlights| for detailed
+explanations:
 
 >lua
     local mocha = require("catppuccin.palettes").get_palette "mocha"
@@ -691,6 +691,10 @@ nvim-ts-rainbow2>lua
 
 nvim-ts-rainbow>lua
     ts_rainbow = true
+<
+
+nvim-window-picker>lua
+    window_picker = false
 <
 
 octo.nvim>lua

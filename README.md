@@ -1087,6 +1087,16 @@ ts_rainbow = true
 </tr>
 <!-- nvim-ts-rainbow -->
 
+<!-- nvim-window-picker -->
+</tr>
+<tr>
+<td> <a href="https://github.com/s1n7ax/nvim-window-picker">nvim-window-picker</a> </td>
+<td>
+
+```lua
+window_picker = false
+```
+
 <!-- octo.nvim -->
 </tr>
 <tr>
