@@ -1094,7 +1094,7 @@ ts_rainbow = true
 <td>
 
 ```lua
-window_picker = true
+window_picker = false
 ```
 
 <!-- octo.nvim -->

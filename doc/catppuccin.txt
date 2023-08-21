@@ -694,7 +694,7 @@ nvim-ts-rainbow>lua
 <
 
 nvim-window-picker>lua
-    window_picker = true
+    window_picker = false
 <
 
 octo.nvim>lua
