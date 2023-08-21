@@ -843,7 +843,7 @@ neotree = false
 <td>
 
 ```lua
-neogit = false
+neogit = true
 ```
 
 </td>

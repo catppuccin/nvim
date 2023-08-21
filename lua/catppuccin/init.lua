@@ -41,6 +41,7 @@ local M = {
 			flash = true,
 			gitsigns = true,
 			markdown = true,
+			neogit = true,
 			nvimtree = true,
 			rainbow_delimiters = true,
 			semantic_tokens = not is_vim,
