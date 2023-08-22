@@ -13,16 +13,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Make changes to pull request
-        run: |
-          curl -o /tmp/palette.json https://raw.githubusercontent.com/catppuccin/palette/main/palette.json
-          python -c "import json
-          data = json.load(open('/tmp/palette.json'))
-
-          for flavour in data:
-            with open('lua/catppuccin/palettes/{flavour}.lua'.format(flavour = flavour), 'w') as f:
-              f.write('return {\n')
-              for accent in data[flavour]: f.write('\t{accent} = \"{hex}\",\n'.format(accent = accent, hex = data[flavour][accent]['hex']))
-              f.write('}\n')"
+        run: python3 ./.github/scripts/update-palette.py
 
       - name: Create Pull Request
         id: cpr
