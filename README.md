@@ -147,7 +147,7 @@ local macchiato = require("catppuccin.palettes").get_palette "macchiato"
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 ```
 
-Will returns a table where the key is the name of the color and the value is its hex value corresponding to each flavour.
+Returns a table where the key is the name of the color and the value is its hex value corresponding to each flavour.
 
 ## Overwriting colors
 
@@ -400,7 +400,7 @@ coc_nvim = false
 
 <details> <summary>Special</summary>
 
-Setting `enabled` to `true` enables this integration. 
+Setting `enabled` to `true` enables this integration.
 
 ```lua
 coc_nvim = true,
