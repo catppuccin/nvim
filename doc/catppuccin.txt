@@ -131,8 +131,8 @@ GET CATPPUCCIN COLORS  *catppuccin-customize-highlights-get-catppuccin-colors*
     local mocha = require("catppuccin.palettes").get_palette "mocha"
 <
 
-Will returns a table where the key is the name of the color and the value is
-its hex value corresponding to each flavour.
+Returns a table where the key is the name of the color and the value is its hex
+value corresponding to each flavour.
 
 
 OVERWRITING COLORS        *catppuccin-customize-highlights-overwriting-colors*
