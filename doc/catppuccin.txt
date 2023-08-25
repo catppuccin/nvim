@@ -598,6 +598,10 @@ noice.nvim>lua
     noice = false
 <
 
+notifier.nvim>lua
+    notifier = false
+<
+
 nvim-cmp>lua
     cmp = true
 <
