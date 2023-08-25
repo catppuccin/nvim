@@ -878,6 +878,20 @@ noice = false
 </tr>
 <!-- noice.nvim -->
 
+<!-- notifier.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/vigoux/notifier.nvim">notifier.nvim</a> </td>
+<td>
+
+```lua
+notifier = false
+```
+
+</td>
+</tr>
+<!-- notifier.nvim -->
+
 <!-- nvim-cmp -->
 </tr>
 <tr>
@@ -1096,6 +1110,7 @@ ts_rainbow = true
 ```lua
 window_picker = false
 ```
+<!-- nvim-window-picker -->
 
 <!-- octo.nvim -->
 </tr>
