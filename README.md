@@ -1273,7 +1273,10 @@ gitgutter = false
 <td>
 
 ```lua
-illuminate = false
+illuminate = {
+    enabled = true,
+    lsp = false
+}
 ```
 
 </td>

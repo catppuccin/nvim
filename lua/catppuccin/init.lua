@@ -53,6 +53,10 @@ local M = {
 				dim_context = false,
 				alt_background = false,
 			},
+			illuminate = {
+				enabled = true,
+				lsp = false,
+			},
 			indent_blankline = {
 				enabled = true,
 				colored_indent_levels = false,

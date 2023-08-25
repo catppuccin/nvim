@@ -754,7 +754,10 @@ vim-gitgutter>lua
 <
 
 vim-illuminate>lua
-    illuminate = false
+    illuminate = {
+        enabled = true,
+        lsp = false
+    }
 <
 
 vim-sandwich>lua
