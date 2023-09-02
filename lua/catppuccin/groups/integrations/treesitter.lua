@@ -69,7 +69,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Types
 
 		["@type"] = { link = "Type" }, -- For types.
-		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or "italic" }, -- For builtin types.
+		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or { "italic" } }, -- For builtin types.
 		["@type.definition"] = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
 		["@type.qualifier"] = { link = "@type" }, -- type qualifiers (e.g. `const`)
 
