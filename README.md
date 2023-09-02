@@ -1101,6 +1101,20 @@ ts_rainbow = true
 </tr>
 <!-- nvim-ts-rainbow -->
 
+<!-- nvim-ufo -->
+</tr>
+<tr>
+<td> <a href="https://github.com/kevinhwang91/nvim-ufo">nvim-ufo</a> </td>
+<td>
+
+```lua
+ufo = false
+```
+
+</td>
+</tr>
+<!-- nvim-ufo -->
+
 <!-- nvim-window-picker -->
 </tr>
 <tr>

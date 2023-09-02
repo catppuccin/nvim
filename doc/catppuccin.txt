@@ -697,6 +697,10 @@ nvim-ts-rainbow>lua
     ts_rainbow = true
 <
 
+nvim-ufo>lua
+    ufo = false
+<
+
 nvim-window-picker>lua
     window_picker = false
 <
