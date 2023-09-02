@@ -155,6 +155,9 @@ globals:
   O.term_colors:
     type: bool
     property: read-only
+  O.kitty:
+    type: bool
+    property: read-only
 
   O.dim_inactive.enabled:
     type: bool
