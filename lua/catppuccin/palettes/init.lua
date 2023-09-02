@@ -5,7 +5,7 @@ function M.get_palette(flavour)
 	local _, palette = pcall(require, "catppuccin.palettes." .. flvr)
 	local O = require("catppuccin").options
 	local ans = vim.tbl_deep_extend("keep", O.color_overrides.all or {}, O.color_overrides[flvr] or {}, palette or {})
-	if O.kitty then
+	if O.kitty then -- https://github.com/kovidgoyal/kitty/issues/2917
 		for accent, hex in pairs(ans) do
 			local int = hex:gsub("#", "0x")
 			int = tonumber(int)

@@ -97,7 +97,6 @@ require("catppuccin").setup({
     transparent_background = false, -- disables setting the background color.
     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
     term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
-    kitty = vim.env.KITTY_WINDOW_ID and true or false, -- https://github.com/kovidgoyal/kitty/issues/2917
     dim_inactive = {
         enabled = false, -- dims the background color of inactive window
         shade = "dark",
@@ -1114,7 +1113,7 @@ ufo = false
 
 </td>
 </tr>
-<!-- nvim-ts-rainbow -->
+<!-- nvim-ufo -->
 
 <!-- nvim-window-picker -->
 </tr>
