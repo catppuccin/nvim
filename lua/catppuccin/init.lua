@@ -12,6 +12,7 @@ local M = {
 		transparent_background = false,
 		show_end_of_buffer = false,
 		term_colors = false,
+		kitty = false,
 		dim_inactive = {
 			enabled = false,
 			shade = "dark",
