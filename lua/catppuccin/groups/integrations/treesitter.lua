@@ -140,9 +140,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@string.plain.css"] = { fg = C.peach },
 		["@number.css"] = { fg = C.peach },
 
-		-- java
-		["@constant.java"] = { fg = C.teal },
-
 		-- toml
 		["@property.toml"] = { fg = C.blue }, -- Differentiates between string and properties
 
