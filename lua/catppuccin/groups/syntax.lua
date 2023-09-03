@@ -18,7 +18,6 @@ function M.get()
 		Label = { fg = C.sapphire }, --    case, default, etc.
 		Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etc.
 		Keyword = { fg = C.mauve, style = O.styles.keywords or {} }, --  any other keyword
-		Array = { fg = C.lavender },
 		Exception = { fg = C.mauve, style = O.styles.keywords or {} }, --  try, catch, throw
 
 		PreProc = { fg = C.pink }, -- (preferred) generic Preprocessor
@@ -33,7 +32,7 @@ function M.get()
 		Type = { fg = C.yellow, style = O.styles.types or {} }, -- (preferred) int, long, char, etc.
 		Typedef = { link = "Type" }, --  A typedef
 		SpecialChar = { link = "Special" }, -- special character in a constant
-		Tag = { link = "Special" }, -- you can use CTRL-] on this
+		Tag = { fg = C.lavender, style = { "bold" } }, -- you can use CTRL-] on this
 		Delimiter = { fg = C.overlay2 }, -- character that needs attention
 		Debug = { link = "Special" }, -- debugging statements
 
