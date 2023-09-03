@@ -128,6 +128,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@text.title.5.markdown"] = { link = "rainbow5" },
 		["@text.title.6.markdown"] = { link = "rainbow6" },
 
+		-- java
+		["@constant.java"] = { fg = C.teal },
+
 		-- css
 		["@property.css"] = { fg = C.lavender },
 		["@property.id.css"] = { fg = C.blue },
