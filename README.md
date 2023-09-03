@@ -147,7 +147,7 @@ local macchiato = require("catppuccin.palettes").get_palette "macchiato"
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 ```
 
-Will returns a table where the key is the name of the color and the value is its hex value corresponding to each flavour.
+Returns a table where the key is the name of the color and the value is its hex value corresponding to each flavour.
 
 ## Overwriting colors
 
@@ -400,7 +400,7 @@ coc_nvim = false
 
 <details> <summary>Special</summary>
 
-Setting `enabled` to `true` enables this integration. 
+Setting `enabled` to `true` enables this integration.
 
 ```lua
 coc_nvim = true,
@@ -843,7 +843,7 @@ neotree = false
 <td>
 
 ```lua
-neogit = false
+neogit = true
 ```
 
 </td>
@@ -877,6 +877,20 @@ noice = false
 </td>
 </tr>
 <!-- noice.nvim -->
+
+<!-- notifier.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/vigoux/notifier.nvim">notifier.nvim</a> </td>
+<td>
+
+```lua
+notifier = false
+```
+
+</td>
+</tr>
+<!-- notifier.nvim -->
 
 <!-- nvim-cmp -->
 </tr>
@@ -1087,6 +1101,31 @@ ts_rainbow = true
 </tr>
 <!-- nvim-ts-rainbow -->
 
+<!-- nvim-ufo -->
+</tr>
+<tr>
+<td> <a href="https://github.com/kevinhwang91/nvim-ufo">nvim-ufo</a> </td>
+<td>
+
+```lua
+ufo = false
+```
+
+</td>
+</tr>
+<!-- nvim-ufo -->
+
+<!-- nvim-window-picker -->
+</tr>
+<tr>
+<td> <a href="https://github.com/s1n7ax/nvim-window-picker">nvim-window-picker</a> </td>
+<td>
+
+```lua
+window_picker = false
+```
+<!-- nvim-window-picker -->
+
 <!-- octo.nvim -->
 </tr>
 <tr>
@@ -1263,7 +1302,10 @@ gitgutter = false
 <td>
 
 ```lua
-illuminate = false
+illuminate = {
+    enabled = true,
+    lsp = false
+}
 ```
 
 </td>

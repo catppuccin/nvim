@@ -12,6 +12,7 @@ local M = {
 		transparent_background = false,
 		show_end_of_buffer = false,
 		term_colors = false,
+		kitty = vim.env.KITTY_WINDOW_ID and true or false,
 		dim_inactive = {
 			enabled = false,
 			shade = "dark",
@@ -41,6 +42,7 @@ local M = {
 			flash = true,
 			gitsigns = true,
 			markdown = true,
+			neogit = true,
 			nvimtree = true,
 			rainbow_delimiters = true,
 			semantic_tokens = not is_vim,
@@ -51,6 +53,10 @@ local M = {
 				bold_basename = true,
 				dim_context = false,
 				alt_background = false,
+			},
+			illuminate = {
+				enabled = true,
+				lsp = false,
 			},
 			indent_blankline = {
 				enabled = true,
