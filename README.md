@@ -878,6 +878,20 @@ noice = false
 </tr>
 <!-- noice.nvim -->
 
+<!-- NormalNvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/NormalNvim/NormalNvim">NormalNvim</a> </td>
+<td>
+
+```lua
+NormalNvim = false
+```
+
+</td>
+</tr>
+<!-- NormalNvim -->
+
 <!-- notifier.nvim -->
 </tr>
 <tr>
