@@ -1094,7 +1094,7 @@ treesitter = true
 <td>
 
 ```lua
-ts_rainbow2 = true
+ts_rainbow2 = false
 ```
 
 </td>
@@ -1108,7 +1108,7 @@ ts_rainbow2 = true
 <td>
 
 ```lua
-ts_rainbow = true
+ts_rainbow = false
 ```
 
 </td>
