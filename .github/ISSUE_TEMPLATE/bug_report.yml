@@ -22,7 +22,7 @@ body:
   - type: input
     attributes:
       label: "Terminal and multiplexer"
-      placeholder: "kitty 0.27.1 with tmux 3.3"
+      placeholder: "kitty 0.29.2 with tmux 3.3a"
     validations:
       required: true
   - type: markdown
@@ -31,11 +31,11 @@ body:
         # FOR TMUX USERS
         FOLLOW THESE GIST BEFORE OPENING THE ISSUE
         - [Enable true color support](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to fix the [abnormal colors](https://github.com/catppuccin/nvim/issues/415)
-        - [Enable italic font support](https://gist.github.com/gutoyr/4192af1aced7a1b555df06bd3781a722) to fix the [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428)
+        - [Enable italic font support](https://gist.github.com/gyribeiro/4192af1aced7a1b555df06bd3781a722) to fix the [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428)
   - type: input
     attributes:
       label: "Catppuccin version / branch / rev"
-      placeholder: "catppuccin v1.1.0"
+      placeholder: "catppuccin v1.4.0"
     validations:
       required: true
   - type: textarea
