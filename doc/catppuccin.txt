@@ -694,11 +694,11 @@ nvim-treesitter>lua
 <
 
 nvim-ts-rainbow2>lua
-    ts_rainbow2 = true
+    ts_rainbow2 = false
 <
 
 nvim-ts-rainbow>lua
-    ts_rainbow = true
+    ts_rainbow = false
 <
 
 nvim-ufo>lua
