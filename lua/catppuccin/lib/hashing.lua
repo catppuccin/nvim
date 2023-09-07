@@ -1,7 +1,7 @@
 local M = {}
 local B = bit or bit32 or require "catppuccin.lib.vim.bit"
 
-local hash_str = function(str) -- djb2, https://stackoverflow.com/a/7666577/12356622
+local hash_str = function(str) -- djb2, https://theartincode.stanis.me/008-djb2/
 	local hash = 5381
 	for i = 1, #str do
 		hash = B.lshift(hash, 5) + hash + string.byte(str, i)
@@ -19,9 +19,8 @@ function M.hash(v) -- Xor hashing: https://codeforces.com/blog/entry/85900
 		return hash
 	elseif t == "function" then
 		return hash_str(string.dump(v))
-	else
-		return tostring(v)
 	end
+	return tostring(v)
 end
 
 return M
