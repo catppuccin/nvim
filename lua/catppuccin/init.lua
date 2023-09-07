@@ -44,6 +44,7 @@ local M = {
 			markdown = true,
 			neogit = true,
 			nvimtree = true,
+			ufo = true,
 			rainbow_delimiters = true,
 			semantic_tokens = not is_vim,
 			telescope = { enabled = true },

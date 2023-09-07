@@ -1122,7 +1122,7 @@ ts_rainbow = true
 <td>
 
 ```lua
-ufo = false
+ufo = true
 ```
 
 </td>
