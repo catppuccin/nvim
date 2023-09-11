@@ -198,7 +198,7 @@ vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	end
 	M.compile()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
-	vim.api.nvim_command "colorscheme catppuccin"
+	vim.cmd.colorscheme "catppuccin"
 end, {})
 
 if vim.g.catppuccin_debug then
