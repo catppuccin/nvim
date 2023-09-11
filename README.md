@@ -1425,13 +1425,14 @@ Full list of support terminals can be found here: <https://github.com/termstanda
 
 Full list of Unsupported terminals can be found here: <https://github.com/termstandard/colors#not-supporting-truecolor>
 
-### FOR TMUX USERS
+### For tmux users
 
-FOLLOW THESE GIST BEFORE OPENING THE ISSUE
+- [Enable true color support](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to fix the following [abnormal colors](https://github.com/catppuccin/nvim/issues/415):
 
-- [Enable true color support](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to fix the [abnormal colors](https://github.com/catppuccin/nvim/issues/415)
+![image](https://user-images.githubusercontent.com/1941785/220280749-c3ab52fb-9b8a-4f04-ab98-f8c1bb41f84b.png)
 
-- [Enable italic font support](https://gist.github.com/gyribeiro/4192af1aced7a1b555df06bd3781a722) to fix the [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428)
+- [Enable italic font support](https://gist.github.com/gyribeiro/4192af1aced7a1b555df06bd3781a722) to fix the following [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428):
+![image](https://user-images.githubusercontent.com/13246770/224011118-dcf0f567-650a-4eb2-8be6-0af5cf435501.png)
 
 # Thanks to
 
