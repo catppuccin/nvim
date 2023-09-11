@@ -12,3 +12,6 @@ Here are some guidelines:
 - If it's your first time contributing to a project, then read 
   [About pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 
   on Github's docs.
+
+Here are some tips:
+- Use `vim.g.catppuccin_debug = true` to get live config re-loading
