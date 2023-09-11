@@ -844,6 +844,19 @@ Full list of Unsupported terminals can be found here:
 <https://github.com/termstandard/colors#not-supporting-truecolor>
 
 
+FOR TMUX USERS ~
+
+FOLLOW THESE GIST BEFORE OPENING THE ISSUE
+
+- Enable true color support
+    <https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6> to fix
+    the abnormal colors <https://github.com/catppuccin/nvim/issues/415>
+- Enable italic font support
+    <https://gist.github.com/gyribeiro/4192af1aced7a1b555df06bd3781a722> to fix the
+    incorrect if, then, else, end highlights
+    <https://github.com/catppuccin/nvim/issues/428>
+
+
 ==============================================================================
 9. Thanks to                                            *catppuccin-thanks-to*
 
