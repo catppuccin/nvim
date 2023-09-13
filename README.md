@@ -50,7 +50,7 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 # Features
 
-- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.7 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
+- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
 - Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
 - [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
 - Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
@@ -878,6 +878,20 @@ noice = false
 </tr>
 <!-- noice.nvim -->
 
+<!-- NormalNvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/NormalNvim/NormalNvim">NormalNvim</a> </td>
+<td>
+
+```lua
+NormalNvim = false
+```
+
+</td>
+</tr>
+<!-- NormalNvim -->
+
 <!-- notifier.nvim -->
 </tr>
 <tr>
@@ -1080,7 +1094,7 @@ treesitter = true
 <td>
 
 ```lua
-ts_rainbow2 = true
+ts_rainbow2 = false
 ```
 
 </td>
@@ -1094,7 +1108,7 @@ ts_rainbow2 = true
 <td>
 
 ```lua
-ts_rainbow = true
+ts_rainbow = false
 ```
 
 </td>
@@ -1108,7 +1122,7 @@ ts_rainbow = true
 <td>
 
 ```lua
-ufo = false
+ufo = true
 ```
 
 </td>
@@ -1410,6 +1424,16 @@ Full list of support terminals can be found here: <https://github.com/termstanda
 - Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, ...
 
 Full list of Unsupported terminals can be found here: <https://github.com/termstandard/colors#not-supporting-truecolor>
+
+### For tmux users
+
+- [Enable true color support](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to fix the following [abnormal colors](https://github.com/catppuccin/nvim/issues/415):
+
+![image](https://user-images.githubusercontent.com/1941785/220280749-c3ab52fb-9b8a-4f04-ab98-f8c1bb41f84b.png)
+
+- [Enable italic font support](https://gist.github.com/gyribeiro/4192af1aced7a1b555df06bd3781a722) to fix the following [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428):
+
+![image](https://user-images.githubusercontent.com/13246770/224011118-dcf0f567-650a-4eb2-8be6-0af5cf435501.png)
 
 # Thanks to
 
