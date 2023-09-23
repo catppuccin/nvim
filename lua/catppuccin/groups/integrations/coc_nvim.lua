@@ -7,7 +7,11 @@ function M.get()
 		CocMenuSel = { link = "PmenuSel" },
 		CocPumSearch = { fg = C.sky, style = { "bold" } },
 		-- InlayHints
-		CocInlayHint = { fg = C.teal },
+		CocInlayHint = {
+			-- fg of `Comment`
+			fg = C.overlay0,
+			style = { "italic" }
+		},
 	}
 end
 
