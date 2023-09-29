@@ -680,6 +680,7 @@ hop = false
 ```lua
 indent_blankline = {
     enabled = true,
+    scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
     colored_indent_levels = false,
 },
 
@@ -687,7 +688,7 @@ indent_blankline = {
 
 <details> <summary>Special</summary>
 
-`colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
+`colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#multiple-indent-colors) to set the latter up.
 
 </details>
 
