@@ -5,12 +5,13 @@ function M.get()
 		IblIndent = { fg = C.surface0 },
 	}
 
-	local scope_color = O.integrations.indent_blankline.scope_color
-	if C[scope_color] then
-		hi["IblScope"] = C[scope_color]
-	else
-		hi["IblScope"] = C.text
-	end
+	-- local scope_color = O.integrations.indent_blankline.scope_color
+	-- if C[scope_color] then
+	-- 	hi["IblScope"] = C[scope_color]
+	-- else
+	-- 	hi["IblScope"] = C.text
+	-- end
+	hi["IblScope"] = C.blue
 
 	if O.integrations.indent_blankline.colored_indent_levels then
 		hi["IndentBlanklineIndent6"] = { blend = 0, fg = C.yellow }
