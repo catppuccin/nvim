@@ -2,9 +2,9 @@ local M = {}
 
 function M.get()
 	local hi = {
-		IndentBlanklineChar = { fg = C.surface0 },
-		IndentBlanklineContextChar = { fg = C.text },
-		IndentBlanklineContextStart = { sp = C.text, style = { "underline" } },
+		IblIndent = { fg = C.surface0 },
+		IblScope = { fg = C.text },
+		-- IndentBlanklineContextStart = { sp = C.text, style = { "underline" } },
 	}
 
 	if O.integrations.indent_blankline.colored_indent_levels then
