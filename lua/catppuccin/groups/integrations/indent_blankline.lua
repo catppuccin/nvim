@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	local hi = {
-		IblIndent = { fg = C.blue },
+		IblIndent = { fg = C.surface0 },
 		IblScope = { fg = C.blue },
 	}
 
