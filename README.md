@@ -680,7 +680,7 @@ hop = false
 ```lua
 indent_blankline = {
     enabled = true,
-    scope_color = "", -- catppuccin color (eg. lavendar) Default: text
+    scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
     colored_indent_levels = false,
 },
 
