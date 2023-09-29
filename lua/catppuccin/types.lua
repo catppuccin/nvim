@@ -222,6 +222,8 @@
 ---@class CtpIntegrationIndentBlankline
 -- Whether to enable the integration.
 ---@field enabled boolean
+-- Sets the color of the scope line
+---@field scope_color string
 -- Enables char highlights per indent level.
 -- Follow the instructions on the plugins GitHub repo to set it up.
 ---@field colored_indent_levels boolean?
