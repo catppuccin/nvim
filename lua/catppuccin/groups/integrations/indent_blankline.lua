@@ -17,9 +17,9 @@ function M.get()
 		hi["RainbowYellow"] = { blend = 0, fg = C.yellow }
 		hi["RainbowBlue"] = { blend = 0, fg = C.blue }
 		hi["RainbowOrange"] = { blend = 0, fg = C.peach }
-		hi["RainbowGreen"] = { blend = 0, fg = C.teal }
-		hi["RainbowViolet"] = { blend = 0, fg = C.pink }
-		hi["RainbowCyan"] = { blend = 0, fg = C.sky }
+		hi["RainbowGreen"] = { blend = 0, fg = C.green }
+		hi["RainbowViolet"] = { blend = 0, fg = C.mauve }
+		hi["RainbowCyan"] = { blend = 0, fg = C.teal }
 	end
 
 	return hi
