@@ -512,7 +512,6 @@ hop.nvim>lua
 indent-blankline.nvim>lua
     indent_blankline = {
         enabled = true,
-	scope_color = "", -- catppuccin color (eg. lavendar) Default: text
         colored_indent_levels = false,
     },
 <
