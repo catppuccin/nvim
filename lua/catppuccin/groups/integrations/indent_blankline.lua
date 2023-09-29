@@ -13,12 +13,13 @@ function M.get()
 	end
 
 	if O.integrations.indent_blankline.colored_indent_levels then
-		hi["IndentBlanklineIndent6"] = { blend = 0, fg = C.yellow }
-		hi["IndentBlanklineIndent5"] = { blend = 0, fg = C.red }
-		hi["IndentBlanklineIndent4"] = { blend = 0, fg = C.teal }
-		hi["IndentBlanklineIndent3"] = { blend = 0, fg = C.peach }
-		hi["IndentBlanklineIndent2"] = { blend = 0, fg = C.blue }
-		hi["IndentBlanklineIndent1"] = { blend = 0, fg = C.pink }
+		hi["RainbowRed"] = { blend = 0, fg = C.red }
+		hi["RainbowYellow"] = { blend = 0, fg = C.yellow }
+		hi["RainbowBlue"] = { blend = 0, fg = C.blue }
+		hi["RainbowOrange"] = { blend = 0, fg = C.peach }
+		hi["RainbowGreen"] = { blend = 0, fg = C.teal }
+		hi["RainbowViolet"] = { blend = 0, fg = C.pink }
+		hi["RainbowCyan"] = { blend = 0, fg = C.sky }
 	end
 
 	return hi
