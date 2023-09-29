@@ -3,7 +3,7 @@ local M = {}
 function M.get()
 	local hi = {
 		IblIndent = { fg = C.surface0 },
-		IblScope = { fg = C.blue },
+		IblScope = { fg = C.text },
 	}
 
 	if O.integrations.indent_blankline.colored_indent_levels then
