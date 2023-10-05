@@ -23,7 +23,6 @@ function M.get()
 		OctoDetailsValue = { link = "Identifier" },
 		OctoDiffHunkPosition = { link = "NormalFloat" },
 		OctoCommentLine = { link = "TabLineSel" },
-		OctoEditable = { fg = C.text, bg = C.mantle },
 		OctoViewer = { fg = C.base, bg = C.blue },
 		OctoBubble = { fg = C.text, bg = C.mantle },
 		OctoBubbleGrey = { fg = C.text, bg = C.mantle },
