@@ -351,7 +351,7 @@ beacon = false
 
 Update your bufferline config to use the Catppuccin components:
 
-> **Note**:
+> **Note**
 > bufferline needs to be loaded after setting up catppuccin or it will highlight incorrectly
 
 ```lua
@@ -410,7 +410,7 @@ Setting `enabled` to `true` enables this integration.
 ```lua
 coc_nvim = true,
 ```
-> **Note**:
+> **Note**
 > coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
 
 In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
@@ -559,7 +559,7 @@ ctp_feline.setup({
 })
 ```
 
-> **Note**:
+> **Warning**
 > Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a workaround:
 
 ```lua
@@ -1388,7 +1388,7 @@ which_key = false
 
 # Compile
 
-> **Important**:
+> **Important**
 > As of 7/10/2022, catppuccin should be able to automatically recompile when the setup table changed.
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time. Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
