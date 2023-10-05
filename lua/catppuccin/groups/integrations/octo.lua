@@ -8,7 +8,7 @@ function M.get()
 		OctoGreen = { fg = C.green },
 		OctoRed = { fg = C.red },
 		OctoPurple = { fg = C.mauve },
-		OctoYelow = { fg = C.yellow },
+		OctoYellow = { fg = C.yellow },
 		-- highlight groups
 		OctoDirty = { link = "ErrorMsg" },
 		OctoIssueTitle = { link = "PreProc" },
