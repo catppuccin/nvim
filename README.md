@@ -171,7 +171,8 @@ require("catppuccin").setup {
 }
 ```
 
-**Note**: For more information check out our [style-guide](https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md)
+> **Note**
+> For more information check out our [style-guide](https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md)
 
 ## Overwriting highlight groups
 
@@ -244,7 +245,10 @@ require("catppuccin").setup({
 })
 ```
 
-Below is a list of supported plugins and their corresponding integration module. **Note**: If you'd like to know which highlight groups are being affected by catppuccin, check out this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
+Below is a list of supported plugins and their corresponding integration module.
+
+> **Important**
+> If you'd like to know which highlight groups are being affected by catppuccin, check out this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 <table>
 <tr>
@@ -347,7 +351,8 @@ beacon = false
 
 Update your bufferline config to use the Catppuccin components:
 
-> **Note**: bufferline needs to be loaded after setting up catppuccin or it will highlight incorrectly
+> **Note**:
+> bufferline needs to be loaded after setting up catppuccin or it will highlight incorrectly
 
 ```lua
 use "akinsho/bufferline.nvim" {
@@ -405,7 +410,8 @@ Setting `enabled` to `true` enables this integration.
 ```lua
 coc_nvim = true,
 ```
-> **Note**: coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
+> **Note**:
+> coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
 
 In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 
@@ -553,7 +559,8 @@ ctp_feline.setup({
 })
 ```
 
-> **Note**: Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a workaround:
+> **Note**:
+> Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a workaround:
 
 ```lua
 vim.api.nvim_create_autocmd("ColorScheme", {
@@ -713,8 +720,6 @@ leap = false
 
 <details> <summary>Special</summary>
 
-Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
-
 ```vim
 let g:lightline = {'colorscheme': 'catppuccin'}
 ```
@@ -765,8 +770,6 @@ require("lspsaga").setup {
 <td>
 
 <details> <summary>Special</summary>
-
-Use this to set it up (**Note**: `catppuccin` is the only valid theme name. It will pick the one set in your config):
 
 ```lua
 require('lualine').setup {
@@ -1264,8 +1267,6 @@ lsp_trouble = false
 
 <details> <summary>Special</summary>
 
-Use this to set it up (**Note**: `catppuccin` is the only valid colorscheme name. It will pick the one set in your config):
-
 ```vim
 let g:airline_theme = 'catppuccin'
 ```
@@ -1387,7 +1388,8 @@ which_key = false
 
 # Compile
 
-> **Note**: As of 7/10/2022, catppuccin should be able to automatically recompile when the setup table changed.
+> **Important**:
+> As of 7/10/2022, catppuccin should be able to automatically recompile when the setup table changed.
 
 Catppuccin is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and execution time. Catppuccin can pre compute the results of your configuration and store the results in a compiled lua file. We use these precached values to set it's highlights.
 
