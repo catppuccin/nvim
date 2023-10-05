@@ -285,7 +285,7 @@ bufferline.nvimSpecial ~
 Update your bufferline config to use the Catppuccin components:
 
 
-  **Note**: bufferline needs to be loaded after setting up catppuccin or it will
+  **Note** bufferline needs to be loaded after setting up catppuccin or it will
   highlight incorrectly
 >lua
     use "akinsho/bufferline.nvim" {
@@ -334,8 +334,8 @@ Setting `enabled` to `true` enables this integration.
 <
 
 
-  **Note**: coc.nvim by default link to native lsp highlight groups so config
-  from `native_lsp` will also apply to coc
+  **Note** coc.nvim by default link to native lsp highlight groups so config from
+  `native_lsp` will also apply to coc
 In the inners tables you can set the style for the diagnostics, both
 `virtual_text` (what you see on the side) and `underlines` (what points
 directly at the thing (e.g. an error)).
@@ -452,7 +452,7 @@ Here are the defaults:
 <
 
 
-  **Note**: Currently feline doesn’t officially support custom themes
+  **Warning** Currently feline doesn’t officially support custom themes
   <https://github.com/feline-nvim/feline.nvim/issues/302>. In order for
   `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a
   workaround:
@@ -786,7 +786,7 @@ which-key.nvim>lua
 7. Compile                                                *catppuccin-compile*
 
 
-  **Important**: As of 7/10/2022, catppuccin should be able to automatically
+  **Important** As of 7/10/2022, catppuccin should be able to automatically
   recompile when the setup table changed.
 Catppuccin is a highly customizable and configurable colorscheme. This does
 however come at the cost of complexity and execution time. Catppuccin can pre
