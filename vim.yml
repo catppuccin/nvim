@@ -285,6 +285,13 @@ globals:
     type: bool
     property: read-only
 
+  O.integrations.mini.enabled:
+    type: bool
+    property: read-only
+  O.integrations.mini.indentscope_color:
+    type: string
+    property: read-only
+
   O.integrations.native_lsp.enabled:
     type: bool
     property: read-only
