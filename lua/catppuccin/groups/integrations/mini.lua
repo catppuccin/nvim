@@ -6,13 +6,20 @@ function M.get()
 
 	local inactive_bg = transparent_background and "NONE" or C.mantle
 
+	local indentscope_color = O.integrations.mini.indentscope_color
+	if C[indentscope_color] then
+		indentscope_color = { fg = C[indentscope_color] }
+	else
+		indentscope_color = { fg = C.text }
+	end
+
 	return {
 		MiniCompletionActiveParameter = { style = { "underline" } },
 
 		MiniCursorword = { style = { "underline" } },
 		MiniCursorwordCurrent = { style = { "underline" } },
 
-		MiniIndentscopeSymbol = { fg = C.blue },
+		MiniIndentscopeSymbol = indentscope_color,
 		MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
 
 		MiniJump = { fg = C.overlay2, bg = C.pink },
