@@ -9,7 +9,7 @@ function M.get()
 		DashboardMruTitle = { fg = C.sky },
 		DashboardProjectTitle = { fg = C.sky },
 		DashboardFiles = { fg = C.lavender },
-		DashboardKey = { fg = C.orange },
+		DashboardKey = { fg = C.peach },
 		DashboardDesc = { fg = C.blue },
 		DashboardIcon = { fg = C.pink, bold = true },
 	}
