@@ -1,16 +1,12 @@
 local M = {}
 
 function M.get()
+	local scope_color = O.integrations.indent_blankline.scope_color
+
 	local hi = {
 		IblIndent = { fg = C.surface0 },
+		IblScope = { fg = C[scope_color] or C.text },
 	}
-
-	local scope_color = O.integrations.indent_blankline.scope_color
-	if C[scope_color] then
-		hi["IblScope"] = { fg = C[scope_color] }
-	else
-		hi["IblScope"] = { fg = C.text }
-	end
 
 	if O.integrations.indent_blankline.colored_indent_levels then
 		hi["RainbowRed"] = { blend = 0, fg = C.red }
