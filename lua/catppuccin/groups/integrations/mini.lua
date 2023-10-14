@@ -13,7 +13,7 @@ function M.get()
 		MiniCursorword = { style = { "underline" } },
 		MiniCursorwordCurrent = { style = { "underline" } },
 
-		MiniIndentscopeSymbol = { fg = C[indentscope_color] and C[indentscope_color] or C.text },
+		MiniIndentscopeSymbol = { fg = C[indentscope_color] or C.text },
 		MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
 
 		MiniJump = { fg = C.overlay2, bg = C.pink },
