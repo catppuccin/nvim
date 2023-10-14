@@ -7,12 +7,6 @@ function M.get()
 	local inactive_bg = transparent_background and "NONE" or C.mantle
 
 	local indentscope_color = O.integrations.mini.indentscope_color
-	if C[indentscope_color] then
-		indentscope_color = { fg = C[indentscope_color] }
-	else
-		indentscope_color = { fg = C.text }
-	end
-
 	return {
 		MiniCompletionActiveParameter = { style = { "underline" } },
 
