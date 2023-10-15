@@ -278,8 +278,18 @@ globals:
   O.integrations.indent_blankline.enabled:
     type: bool
     property: read-only
+  O.integrations.indent_blankline.scope_color:
+    type: string
+    property: read-only
   O.integrations.indent_blankline.colored_indent_levels:
     type: bool
+    property: read-only
+
+  O.integrations.mini.enabled:
+    type: bool
+    property: read-only
+  O.integrations.mini.indentscope_color:
+    type: string
     property: read-only
 
   O.integrations.native_lsp.enabled:

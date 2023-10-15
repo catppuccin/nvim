@@ -164,7 +164,6 @@
 ---@field lsp_trouble boolean?
 ---@field markdown boolean?
 ---@field mason boolean?
----@field mini boolean?
 ---@field native_lsp CtpIntegrationNativeLsp | boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
 --
@@ -222,9 +221,17 @@
 ---@class CtpIntegrationIndentBlankline
 -- Whether to enable the integration.
 ---@field enabled boolean
+-- Sets the color of the scope line
+---@field scope_color CtpColor?
 -- Enables char highlights per indent level.
 -- Follow the instructions on the plugins GitHub repo to set it up.
 ---@field colored_indent_levels boolean?
+
+---@class CtpIntegrationMini
+-- Whether to enable the integration.
+---@field enabled boolean
+-- Sets the color of the scope line
+---@field indentscope_color CtpColor?
 
 ---@class CtpIntegrationNativeLsp
 -- Whether to enable the Native LSP integration.

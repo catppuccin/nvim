@@ -8,7 +8,7 @@ function M.get()
 		OctoGreen = { fg = C.green },
 		OctoRed = { fg = C.red },
 		OctoPurple = { fg = C.mauve },
-		OctoYelow = { fg = C.yellow },
+		OctoYellow = { fg = C.yellow },
 		-- highlight groups
 		OctoDirty = { link = "ErrorMsg" },
 		OctoIssueTitle = { link = "PreProc" },
@@ -23,7 +23,6 @@ function M.get()
 		OctoDetailsValue = { link = "Identifier" },
 		OctoDiffHunkPosition = { link = "NormalFloat" },
 		OctoCommentLine = { link = "TabLineSel" },
-		OctoEditable = { fg = C.text, bg = C.mantle },
 		OctoViewer = { fg = C.base, bg = C.blue },
 		OctoBubble = { fg = C.text, bg = C.mantle },
 		OctoBubbleGrey = { fg = C.text, bg = C.mantle },
