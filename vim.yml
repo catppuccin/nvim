@@ -216,52 +216,13 @@ globals:
     type: table
     property: read-only
 
-  O.integrations.cmp:
-    type: bool
-    property: read-only
-  O.integrations.dashboard:
+  O.integrations.aerial:
     type: bool
     property: read-only
   O.integrations.alpha:
     type: bool
     property: read-only
-  O.integrations.flash:
-    type: bool
-    property: read-only
-  O.integrations.gitsigns:
-    type: bool
-    property: full-write
-  O.integrations.markdown:
-    type: bool
-    property: read-only
-  O.integrations.nvimtree:
-    type: bool
-    property: read-only
-  O.integrations.semantic_tokens:
-    type: bool
-    property: read-only
-
-  O.integrations.telescope.enabled:
-    type: bool
-    property: read-only
-  O.integrations.telescope.style:
-    type: string
-    property: read-only
-
-  O.integrations.treesitter:
-    type: bool
-    property: read-only
-  O.integrations.ts_rainbow:
-    type: bool
-    property: read-only
-  O.integrations.ts_rainbow2:
-    type: bool
-    property: read-only
-  O.integrations.rainbow_delimiters:
-    type: bool
-    property: read-only
-
-  O.integrations.window_picker:
+  O.integrations.barbar:
     type: bool
     property: read-only
 
@@ -274,6 +235,77 @@ globals:
   O.integrations.barbecue.dim_context:
     type: bool
     property: read-only
+  O.integrations.barbecue.alt_background:
+    type: bool
+    property: read-only
+
+  O.integrations.beacon:
+    type: bool
+    property: read-only
+
+  O.integrations.cmp:
+    type: bool
+    property: read-only
+
+  O.integrations.coc_nvim:
+    type: bool
+    property: read-only
+
+  O.integrations.dap.enabled:
+    type: bool
+    property: read-only
+  O.integrations.dap.enable_ui:
+    type: bool
+    property: read-only
+
+  O.integrations.dashboard:
+    type: bool
+    property: read-only
+
+  O.integrations.dropbar:
+    type: table
+    property: read-only
+  O.integrations.dropbar.enabled:
+    type: bool
+    property: read-only
+  O.integrations.dropbar.color_mode:
+    type: bool
+    property: read-only
+
+  O.integrations.feline:
+    type: bool
+    property: read-only
+  O.integrations.fern:
+    type: bool
+    property: read-only
+  O.integrations.fidget:
+    type: bool
+    property: read-only
+  O.integrations.flash:
+    type: bool
+    property: read-only
+  O.integrations.gitgutter:
+    type: bool
+    property: read-only
+  O.integrations.gitsigns:
+    type: bool
+    property: full-write
+  O.integrations.harpoon:
+    type: bool
+    property: read-only
+  O.integrations.headlines:
+    type: bool
+    property: read-only
+  O.integrations.hop:
+    type: bool
+    property: read-only
+
+  O.integrations.illuminate.enabled:
+    type: bool
+    property: read-only
+  O.integrations.illuminate.lsp:
+    type: bool
+    property: read-only
 
   O.integrations.indent_blankline.enabled:
     type: bool
@@ -282,6 +314,25 @@ globals:
     type: string
     property: read-only
   O.integrations.indent_blankline.colored_indent_levels:
+    type: bool
+    property: read-only
+
+  O.integrations.leap:
+    type: bool
+    property: read-only
+  O.integrations.lightspeed:
+    type: bool
+    property: read-only
+  O.integrations.lsp_saga:
+    type: bool
+    property: read-only
+  O.integrations.lsp_trouble:
+    type: bool
+    property: read-only
+  O.integrations.markdown:
+    type: bool
+    property: read-only
+  O.integrations.mason:
     type: bool
     property: read-only
 
@@ -336,13 +387,88 @@ globals:
     type: string
     property: read-only
 
-  O.integrations.dropbar:
-    type: table
-    property: read-only
-  O.integrations.dropbar.enabled:
+  O.integrations.neogit:
     type: bool
     property: read-only
-  O.integrations.dropbar.color_mode:
+  O.integrations.neotest:
+    type: bool
+    property: read-only
+  O.integrations.neotree:
+    type: bool
+    property: read-only
+  O.integrations.noice:
+    type: bool
+    property: read-only
+  O.integrations.NormalNvim:
+    type: bool
+    property: read-only
+  O.integrations.notifier:
+    type: bool
+    property: read-only
+  O.integrations.notify:
+    type: bool
+    property: read-only
+  O.integrations.nvimtree:
+    type: bool
+    property: read-only
+  O.integrations.octo:
+    type: bool
+    property: read-only
+  O.integrations.overseer:
+    type: bool
+    property: read-only
+  O.integrations.pounce:
+    type: bool
+    property: read-only
+  O.integrations.rainbow_delimiters:
+    type: bool
+    property: read-only
+  O.integrations.sandwich:
+    type: bool
+    property: read-only
+  O.integrations.semantic_tokens:
+    type: bool
+    property: read-only
+  O.integrations.symbols_outline:
+    type: bool
+    property: read-only
+  O.integrations.telekasten:
+    type: bool
+    property: read-only
+
+  O.integrations.telescope.enabled:
+    type: bool
+    property: read-only
+  O.integrations.telescope.style:
+    type: string
+    property: read-only
+
+  O.integrations.treesitter:
+    type: bool
+    property: read-only
+  O.integrations.treesitter_context:
+    type: bool
+    property: read-only
+  O.integrations.ts_rainbow:
+    type: bool
+    property: read-only
+  O.integrations.ts_rainbow2:
+    type: bool
+    property: read-only
+
+  O.integrations.ufo:
+    type: bool
+    property: read-only
+  O.integrations.vim_sneak:
+    type: bool
+    property: read-only
+  O.integrations.vimwiki:
+    type: bool
+    property: read-only
+  O.integrations.which_key:
+    type: bool
+    property: read-only
+  O.integrations.window_picker:
     type: bool
     property: read-only
 
