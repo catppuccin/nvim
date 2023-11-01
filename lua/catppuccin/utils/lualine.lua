@@ -7,33 +7,33 @@ return function(flavour)
 
 	catppuccin.normal = {
 		a = { bg = C.blue, fg = C.mantle, gui = "bold" },
-		b = { bg = C.surface1, fg = C.blue },
+		b = { bg = C.crust, fg = C.blue },
 		c = { bg = transparent_bg, fg = C.text },
 	}
 
 	catppuccin.insert = {
 		a = { bg = C.green, fg = C.base, gui = "bold" },
-		b = { bg = C.surface1, fg = C.green },
+		b = { bg = C.crust, fg = C.green },
 	}
 
 	catppuccin.terminal = {
 		a = { bg = C.green, fg = C.base, gui = "bold" },
-		b = { bg = C.surface1, fg = C.green },
+		b = { bg = C.crust, fg = C.green },
 	}
 
 	catppuccin.command = {
 		a = { bg = C.peach, fg = C.base, gui = "bold" },
-		b = { bg = C.surface1, fg = C.peach },
+		b = { bg = C.crust, fg = C.peach },
 	}
 
 	catppuccin.visual = {
 		a = { bg = C.mauve, fg = C.base, gui = "bold" },
-		b = { bg = C.surface1, fg = C.mauve },
+		b = { bg = C.crust, fg = C.mauve },
 	}
 
 	catppuccin.replace = {
 		a = { bg = C.red, fg = C.base, gui = "bold" },
-		b = { bg = C.surface1, fg = C.red },
+		b = { bg = C.crust, fg = C.red },
 	}
 
 	catppuccin.inactive = {
