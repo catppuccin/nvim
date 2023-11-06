@@ -13,12 +13,12 @@ return function(flavour)
 
 	catppuccin.insert = {
 		a = { bg = C.green, fg = C.base, gui = "bold" },
-		b = { bg = C.surface1, fg = C.teal },
+		b = { bg = C.surface1, fg = C.green },
 	}
 
 	catppuccin.terminal = {
 		a = { bg = C.green, fg = C.base, gui = "bold" },
-		b = { bg = C.surface1, fg = C.teal },
+		b = { bg = C.surface1, fg = C.green },
 	}
 
 	catppuccin.command = {

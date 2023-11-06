@@ -7,6 +7,7 @@ function M.get()
 		FlashLabel = { fg = C.green, bg = bg, style = { "bold" } },
 		FlashMatch = { fg = C.lavender, bg = bg },
 		FlashCurrent = { fg = C.peach, bg = bg },
+		FlashPrompt = { link = "NormalFloat" },
 	}
 end
 
