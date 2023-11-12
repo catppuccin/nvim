@@ -149,10 +149,10 @@ function M.get()
 			fg = C.blue,
 		},
 		NeogitGraphPurple = {
-			fg = C.purple,
+			fg = C.lavender,
 		},
 		NeogitGraphGray = {
-			fg = C.grey,
+			fg = C.subtext1,
 		},
 		NeogitGraphOrange = {
 			fg = C.peach,
@@ -182,11 +182,11 @@ function M.get()
 			style = { "bold" },
 		},
 		NeogitGraphBoldPurple = {
-			fg = C.purple,
+			fg = C.lavender,
 			style = { "bold" },
 		},
 		NeogitGraphBoldGray = {
-			fg = C.grey,
+			fg = C.subtext1,
 			style = { "bold" },
 		},
 		NeogitDiffContext = {
@@ -196,16 +196,16 @@ function M.get()
 			style = { "bold" },
 		},
 		NeogitPopupSwitchKey = {
-			fg = C.purple,
+			fg = C.lavender,
 		},
 		NeogitPopupOptionKey = {
-			fg = C.purple,
+			fg = C.lavender,
 		},
 		NeogitPopupConfigKey = {
-			fg = C.purple,
+			fg = C.lavender,
 		},
 		NeogitPopupActionKey = {
-			fg = C.purple,
+			fg = C.lavender,
 		},
 		NeogitFilePath = {
 			fg = C.blue,
