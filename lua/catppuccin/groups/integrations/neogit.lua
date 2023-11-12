@@ -229,8 +229,8 @@ function M.get()
 			bg = C.lavender,
 		},
 		NeogitFold = {
-			fg = "None",
-			bg = "None",
+			fg = C.none,
+			bg = C.none,
 		},
 		NeogitSectionHeader = {
 			fg = C.mauve,
