@@ -34,8 +34,8 @@ function M.get()
 			fg = C.blue,
 		},
 		NeogitDiffContextHighlight = {
-			bg = U.darken(C.blue, 0.065, C.base),
-			fg = C.text,
+			bg = U.darken(C.base, 0.345, C.base),
+			fg = U.lighten(C.base, 0.850, C.text),
 		},
 		NeogitDiffDeleteHighlight = {
 			bg = U.darken(C.red, 0.345, C.base),
