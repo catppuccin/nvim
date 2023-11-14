@@ -190,7 +190,7 @@ function M.get()
 			style = { "bold" },
 		},
 		NeogitDiffContext = {
-			bg = C.lavender,
+			bg = C.base,
 		},
 		NeogitPopupBold = {
 			style = { "bold" },
@@ -243,3 +243,4 @@ function M.get()
 end
 
 return M
+
