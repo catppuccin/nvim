@@ -225,9 +225,6 @@ function M.get()
 			fg = C.lavender,
 			style = { "bold" },
 		},
-		NeogitCursorLine = {
-			bg = C.lavender,
-		},
 		NeogitFold = {
 			fg = C.none,
 			bg = C.none,
