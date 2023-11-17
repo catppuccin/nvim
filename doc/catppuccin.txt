@@ -485,7 +485,7 @@ fidget.nvim>lua
 
 Special ~
 
-Set `window.blend` to `0`:
+Set `notification.window.winblend` to `0`:
 
 >lua
     require("fidget").setup {

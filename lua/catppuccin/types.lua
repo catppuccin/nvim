@@ -133,11 +133,13 @@
 ---@field dashboard boolean?
 ---@field dropbar CtpIntegrationDropbar | boolean?
 ---@field fern boolean?
--- Set `window.blend` to `0` in your `fidget` config:
+-- Set `notification.window.winblend` to `0` in your `fidget` config:
 --
 -- ```lua
 -- require("fidget").setup {
---   window = { blend = 0 },
+--   notification = {
+--     window = { winblend = 0 },
+--   }
 -- }
 -- ```
 ---@field fidget boolean?
