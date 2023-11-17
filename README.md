@@ -612,13 +612,15 @@ fidget = false
 ```
 
 <details> <summary>Special</summary>
-Set `window.blend` to `0`:
+Set `notification.window.winblend` to `0`:
 
 ```lua
 require("fidget").setup {
-    window = {
-        blend = 0,
-    },
+    notification = {
+        window = {
+            winblend = 0,
+        },
+    }
     -- ... the rest of your fidget config
 }
 ```
