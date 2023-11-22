@@ -174,7 +174,7 @@ require("catppuccin").setup {
 }
 ```
 
-> **Note**
+> [!Note]
 > For more information check out our [style-guide](https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md)
 
 ## Overwriting highlight groups
@@ -253,7 +253,7 @@ require("catppuccin").setup({
 
 Below is a list of supported plugins and their corresponding integration module.
 
-> **Important**
+> [!Important]
 > If you'd like to know which highlight groups are being affected by catppuccin, check out this directory: [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations).
 
 <table>
@@ -357,7 +357,7 @@ beacon = false
 
 Update your bufferline config to use the Catppuccin components:
 
-> **Note**
+> [!NOTE]
 > bufferline needs to be loaded after setting up catppuccin or it will highlight incorrectly
 
 ```lua
@@ -416,7 +416,7 @@ Setting `enabled` to `true` enables this integration.
 ```lua
 coc_nvim = true,
 ```
-> **Note**
+> [!Note]
 > coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
 
 In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
@@ -565,7 +565,7 @@ ctp_feline.setup({
 })
 ```
 
-> **Warning**
+> [!Warning]
 > Currently feline [doesn't officially support custom themes](https://github.com/feline-nvim/feline.nvim/issues/302). In order for `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a workaround:
 
 ```lua
