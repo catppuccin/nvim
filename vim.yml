@@ -251,10 +251,10 @@ globals:
     type: bool
     property: read-only
 
-  O.integrations.dap.enabled:
+  O.integrations.dap:
     type: bool
     property: read-only
-  O.integrations.dap.enable_ui:
+  O.integrations.dap_ui:
     type: bool
     property: read-only
 
