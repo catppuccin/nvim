@@ -118,18 +118,15 @@
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
 -- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
 ---@field coc_nvim boolean?
--- You **NEED** to override nvim-dap's default highlight groups, **AFTER** requiring nvim-dap:
---
 -- ```lua
--- require("dap")
---
 -- local sign = vim.fn.sign_define
 --
 -- sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
 -- sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
 -- sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 -- ```
----@field dap CtpIntegrationDAP | boolean?
+---@field dap boolean?
+---@field dap_ui boolean?
 ---@field dashboard boolean?
 ---@field dropbar CtpIntegrationDropbar | boolean?
 ---@field fern boolean?
@@ -208,11 +205,6 @@
 ---@field dim_context boolean?
 -- Whether the directory name should be dimmed.
 ---@field dim_dirname boolean?
-
----@class CtpIntegrationDAP
----@field enabled boolean
--- Enable `nvim-dap-ui`
----@field enable_ui boolean?
 
 ---@class CtpIntegrationDropbar
 -- Whether to enable the dropbar integration.
