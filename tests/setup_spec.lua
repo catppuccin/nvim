@@ -10,6 +10,38 @@ local configs = {
 			}
 		end,
 	},
+	dap_old = {
+		{
+			integrations = {
+				enabled = true,
+				enable_ui = true,
+			},
+		},
+	},
+	dap_old_disabled = {
+		{
+			integrations = {
+				enabled = false,
+				enable_ui = true,
+			},
+		},
+	},
+	dap = {
+		{
+			integrations = {
+				dap = true,
+				dap_ui = false,
+			},
+		},
+	},
+	dap_ui = {
+		{
+			integrations = {
+				dap = true,
+				dap_ui = true,
+			},
+		},
+	},
 
 	-- User configs
 	nullchilly = {
