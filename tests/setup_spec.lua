@@ -18,23 +18,7 @@ local configs = {
 			},
 		},
 	},
-	dap_old_disabled = {
-		{
-			integrations = {
-				enabled = false,
-				enable_ui = true,
-			},
-		},
-	},
 	dap = {
-		{
-			integrations = {
-				dap = true,
-				dap_ui = false,
-			},
-		},
-	},
-	dap_ui = {
 		{
 			integrations = {
 				dap = true,
