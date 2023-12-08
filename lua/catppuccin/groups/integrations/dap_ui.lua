@@ -31,6 +31,8 @@ function M.get()
 		DapUIPlayPause = { fg = C.green },
 		DapUIRestart = { fg = C.green },
 		DapUIUnavailable = { fg = C.surface1 },
+
+		DapUIWinSelect = { fg = C.peach },
 	}
 end
 
