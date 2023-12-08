@@ -938,22 +938,16 @@ cmp = true
 <!-- nvim-dap -->
 </tr>
 <tr>
-<td> <a href="https://github.com/mfussenegger/nvim-dap">nvim-dap</a> & <a href="https://github.com/rcarriga/nvim-dap-ui">nvim-dap-ui</a> </td>
+<td> <a href="https://github.com/mfussenegger/nvim-dap">nvim-dap</a> </td>
 <td>
 
 ```lua
-dap = {
-    enabled = true,
-    enable_ui = true, -- enable nvim-dap-ui
-}
+dap = true
 ```
 
 <details> <summary>Special</a> </summary>
 
 ```lua
--- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
-require("dap")
-
 local sign = vim.fn.sign_define
 
 sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
@@ -966,6 +960,20 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 </td>
 </tr>
 <!-- nvim-dap -->
+
+<!-- nvim-dap-ui -->
+</tr>
+<tr>
+<td> <a href="https://github.com/rcarriga/nvim-dap-ui">nvim-dap-ui</a> </td>
+<td>
+
+```lua
+dap_ui = true
+```
+
+</td>
+</tr>
+<!-- nvim-dap-ui -->
 
 <!-- nvim-lspconfig -->
 </tr>
