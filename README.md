@@ -968,7 +968,7 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 <td>
 
 ```lua
-dap_ui = true,
+dap_ui = true
 ```
 
 </td>
