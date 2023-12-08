@@ -2,10 +2,10 @@ local M = {}
 
 function M.get()
 	return {
-		DAPUIScope = { fg = C.sky },
-		DAPUIType = { fg = C.mauve },
-		DAPUIValue = { fg = C.sky },
-		DAPUIVariable = { fg = C.text },
+		DapUIScope = { fg = C.sky },
+		DapUIType = { fg = C.mauve },
+		DapUIValue = { fg = C.sky },
+		DapUIVariable = { fg = C.text },
 		DapUIModifiedValue = { fg = C.peach },
 		DapUIDecoration = { fg = C.sky },
 		DapUIThread = { fg = C.green },
