@@ -256,7 +256,7 @@ globals:
     property: read-only
   O.integrations.dap_ui:
     type: bool
-    property: read-only
+    property: full-write
 
   O.integrations.dashboard:
     type: bool

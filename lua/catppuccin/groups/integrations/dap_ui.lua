@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	if O.integrations.dap.enabled and O.integrations.dap.enable_ui ~= nil then
-	  O.integrations.dap_ui = O.integrations.dap.enable_ui
+		O.integrations.dap_ui = O.integrations.dap.enable_ui
 	end
 
 	return {
