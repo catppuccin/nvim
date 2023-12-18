@@ -12,7 +12,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		return {}
 	end
 
-	return { -- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
+	local colors = { -- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
 
 		-- Misc
 		["@comment"] = { link = "Comment" },
@@ -28,16 +28,18 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
-		["@string.regex"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
+		["@string.regexp"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = C.pink, style = O.styles.strings or {} }, -- For escape characters within a string.
 		["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
+		["@string.special.symbol"] = { fg = C.flamingo },
 
 		["@character"] = { link = "Character" }, -- character literals
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
 
 		["@boolean"] = { link = "Boolean" }, -- For booleans.
+
 		["@number"] = { link = "Number" }, -- For all numbers
-		["@float"] = { link = "Float" }, -- For floats.
+		["@number.float"] = { link = "Float" }, -- For floats.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
@@ -48,7 +50,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@method.call"] = { link = "Function" }, -- For method calls.
 
 		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		["@parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
@@ -80,37 +81,37 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
+		["@variable.parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
 
 		["@constant"] = { link = "Constant" }, -- For constants
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		["@namespace"] = { fg = C.lavender, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
-		["@symbol"] = { fg = C.flamingo },
+		["@module"] = { fg = C.lavender, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
 
 		-- Text
-		["@text"] = { fg = C.text }, -- For strings considerated text in a markup language.
-		["@text.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
-		["@text.emphasis"] = { fg = C.maroon, style = { "italic" } }, -- italic
-		["@text.underline"] = { link = "Underline" }, -- underlined text
-		["@text.strike"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
-		["@text.title"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
-		["@text.literal"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
-		["@text.uri"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
-		["@text.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
-		["@text.environment"] = { fg = C.pink }, -- text environments of markup languages
-		["@text.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
-		["@text.reference"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
+		["@markup"] = { fg = C.text }, -- For strings considerated text in a markup language.
+		["@markup.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
+		["@markup.emphasis"] = { fg = C.maroon, style = { "italic" } }, -- italic
+		["@markup.underline"] = { link = "Underline" }, -- underlined text
+		["@markup.strike"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
+		["@markup.headline"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
+		["@markup.raw"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
+		["@markup.link.uri"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
+		["@markup.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
+		["@markup.environment"] = { fg = C.pink }, -- text environments of markup languages
+		["@markup.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
+		["@markup.reference"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
 
-		["@text.todo"] = { fg = C.base, bg = C.yellow }, -- todo notes
-		["@text.todo.checked"] = { fg = C.green }, -- todo notes
-		["@text.todo.unchecked"] = { fg = C.overlay1 }, -- todo notes
-		["@text.note"] = { fg = C.base, bg = C.blue },
-		["@text.warning"] = { fg = C.base, bg = C.yellow },
-		["@text.danger"] = { fg = C.base, bg = C.red },
+		["@markup.todo"] = { fg = C.base, bg = C.yellow }, -- todo notes
+		["@markup.todo.checked"] = { fg = C.green }, -- todo notes
+		["@markup.todo.unchecked"] = { fg = C.overlay1 }, -- todo notes
+		["@markup.note"] = { fg = C.base, bg = C.blue },
+		["@markup.warning"] = { fg = C.base, bg = C.yellow },
+		["@markup.danger"] = { fg = C.base, bg = C.red },
 
-		["@text.diff.add"] = { link = "diffAdded" }, -- added text (for diff files)
-		["@text.diff.delete"] = { link = "diffRemoved" }, -- deleted text (for diff files)
+		["@markup.diff.add"] = { link = "diffAdded" }, -- added text (for diff files)
+		["@markup.diff.delete"] = { link = "diffRemoved" }, -- deleted text (for diff files)
 
 		-- Tags
 		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
@@ -162,7 +163,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@field.yaml"] = { fg = C.blue }, -- For fields.
 
 		-- Ruby
-		["@symbol.ruby"] = { fg = C.flamingo },
+		["@string.special.symbol.ruby"] = { fg = C.flamingo },
 
 		-- PHP
 		["@method.php"] = { link = "Function" },
@@ -177,6 +178,40 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		gitcommitSummary = { fg = C.rosewater, style = { "italic" } },
 		zshKSHFunction = { link = "Function" },
 	}
+
+	-- Legacy highlights
+	colors["@parameter"] = colors["@variable.parameter"]
+	colors["@namespace"] = colors["@module"]
+	colors["@float"] = colors["number.float"]
+	colors["@symbol"] = colors["@string.special.symbol"]
+	colors["@string.regex"] = colors["@string.regexp"]
+
+	colors["@text"] = colors["@markup"]
+	colors["@text.strong"] = colors["@markup.strong"]
+	colors["@text.emphasis"] = colors["@markup.emphasis"]
+	colors["@text.underline"] = colors["@markup.underline"]
+	colors["@text.strike"] = colors["@markup.strike"]
+	colors["@text.title"] = colors["@markup.headline"]
+	colors["@text.literal"] = colors["@markup.raw"]
+	colors["@text.uri"] = colors["@markup.link.uri"]
+	colors["@text.math"] = colors["@markup.math"]
+	colors["@text.environment"] = colors["@markup.environment"]
+	colors["@text.environment.name"] = colors["@markup.environment.name"]
+	colors["@text.reference"] = colors["@markup.reference"]
+
+	colors["@text.todo"] = colors["@markup.todo"]
+	colors["@text.todo.checked"] = colors["@markup.todo.checked"]
+	colors["@text.todo.unchecked"] = colors["@markup.todo.unchecked"]
+	colors["@text.note"] = colors["@markup.note"]
+	colors["@text.warning"] = colors["@markup.warning"]
+	colors["@text.danger"] = colors["@markup.danger"]
+
+	colors["@text.diff.add"] = colors["@markup.diff.add"]
+	colors["@text.diff.delete"] = colors["@markup.diff.delete"]
+
+	colors["@symbol.ruby"] = colors["@string.special.symbol.ruby"]
+
+	return colors
 end
 
 return M
