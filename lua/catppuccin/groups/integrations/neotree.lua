@@ -19,11 +19,12 @@ function M.get()
 		NeoTreeGitIgnored = { fg = C.overlay0 },
 		NeoTreeGitModified = { fg = C.yellow },
 		NeoTreeGitUnstaged = { fg = C.red },
-		NeoTreeGitUntracked = { fg = C.blue },
+		NeoTreeGitUntracked = { fg = C.mauve },
 		NeoTreeGitStaged = { fg = C.green },
 
 		NeoTreeFloatBorder = { link = "FloatBorder" },
 		NeoTreeFloatTitle = { link = "FloatTitle" },
+		NeoTreeTitleBar = { fg = C.mantle, bg = C.blue },
 
 		NeoTreeFileNameOpened = { fg = C.pink },
 		NeoTreeDimText = { fg = C.overlay1 },

@@ -2,6 +2,8 @@ local M = {}
 
 function M.get()
 	return {
+		NotifyBackground = { bg = (O.transparent_background and vim.o.winblend == 0) and "#000000" or C.mantle },
+
 		NotifyERRORBorder = { fg = C.red },
 		NotifyERRORIcon = { fg = C.red },
 		NotifyERRORTitle = { fg = C.red, style = { "italic" } },

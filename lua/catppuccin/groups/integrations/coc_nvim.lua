@@ -6,8 +6,13 @@ function M.get()
 		-- Custom popup menu since coc v0.0.82
 		CocMenuSel = { link = "PmenuSel" },
 		CocPumSearch = { fg = C.sky, style = { "bold" } },
-		-- InlayHints
-		CocInlayHint = { fg = C.teal },
+
+		-- Inlay hints
+		CocInlayHint = {
+			-- fg of `Comment`
+			fg = C.overlay0,
+			style = { "italic" },
+		},
 	}
 end
 

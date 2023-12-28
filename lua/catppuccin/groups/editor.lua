@@ -69,6 +69,8 @@ function M.get()
 		Whitespace = { fg = C.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu = { bg = C.overlay0 }, -- current match in 'wildmenu' completion
 		WinBar = { fg = C.rosewater },
+		WinBarNC = { link = "WinBar" },
+		WinSeparator = { fg = O.transparent_background and C.surface1 or C.crust },
 	}
 end
 

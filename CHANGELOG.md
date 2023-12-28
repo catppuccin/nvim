@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.5.0](https://github.com/catppuccin/nvim/compare/v1.4.0...v1.5.0) (2023-09-29)
+
+
+### Features
+
+* add kitty detection ([d3da439](https://github.com/catppuccin/nvim/commit/d3da43907d1896ba3e68a62f18820d1d12574317))
+* add ufo integration ([1f53686](https://github.com/catppuccin/nvim/commit/1f536869b1a2ca1710fc892db84d7e8bbc6ad8d9))
+* add workaround for kitty transparent issue ([#579](https://github.com/catppuccin/nvim/issues/579)) ([f36fa5c](https://github.com/catppuccin/nvim/commit/f36fa5cdce162450df88298a16631eeed16b68a3))
+* **compile:** use indexed cmd ([85e9360](https://github.com/catppuccin/nvim/commit/85e93601e0f0b48aa2c6bbfae4d0e9d7a1898280))
+* **illuminate:** enabled by default and optional lsp option ([5b44baa](https://github.com/catppuccin/nvim/commit/5b44baa4aff0ff45c042620ee960d283a79807a1)), closes [#571](https://github.com/catppuccin/nvim/issues/571)
+* **indent-blankline:** update to v3, add scope color ([#585](https://github.com/catppuccin/nvim/issues/585)) ([f04336b](https://github.com/catppuccin/nvim/commit/f04336ba4a2400ee2c5250068b39541652c0962f))
+* **integrations:** add NormalNvim ([0e3c128](https://github.com/catppuccin/nvim/commit/0e3c128eea8a7de692778d52b8429817df5c9040)), closes [#580](https://github.com/catppuccin/nvim/issues/580)
+* **integrations:** add notifier.nvim ([d029098](https://github.com/catppuccin/nvim/commit/d029098e124f6201a07298c0c1c499ed8d5aef76)), closes [#574](https://github.com/catppuccin/nvim/issues/574)
+* **lib:** soft deprecate highlighter ([8202348](https://github.com/catppuccin/nvim/commit/82023485fec1703d6f700a4b2a92fd431d4882f4))
+* **syntax:** respect style guide part 3 ([#576](https://github.com/catppuccin/nvim/issues/576)) ([81096ca](https://github.com/catppuccin/nvim/commit/81096cabe67f360acb06d64c0f7db8dd840afeba))
+
+
+### Bug Fixes
+
+* **coc:** improve inlay hints ([#582](https://github.com/catppuccin/nvim/issues/582)) ([3d9a5ed](https://github.com/catppuccin/nvim/commit/3d9a5ed556e289bce6c1fb0af89ec838360641b2))
+* **editor:** invisible fold with transparent ([1c15c5e](https://github.com/catppuccin/nvim/commit/1c15c5e51a998c9198d63c6d2b75e9d1e4a84541)), closes [#577](https://github.com/catppuccin/nvim/issues/577)
+* **template:** broken tmux italic gist link ([128e0d2](https://github.com/catppuccin/nvim/commit/128e0d27946491da979e2e04f5a4acf330ccdefd))
+* **treesitter:** invalid string in type builtin ([135f9b0](https://github.com/catppuccin/nvim/commit/135f9b01386fa18da6d75c16ceb83e1aa3669430))
+* **ufo:** use folded ellipsis ([846388d](https://github.com/catppuccin/nvim/commit/846388d137590e653390ce2f84fea5351a7516ac))
+* **vim:** add vim.env index ([1786287](https://github.com/catppuccin/nvim/commit/17862877792db104d48c3260aec0ace92d55f863))
+
+
+### Performance Improvements
+
+* **compile:** reduce else statement ([a937d54](https://github.com/catppuccin/nvim/commit/a937d546f4783a1ff67f84043d2d7871ad4ecd83))
+
 ## [1.4.0](https://github.com/catppuccin/nvim/compare/v1.3.0...v1.4.0) (2023-08-21)
 
 

@@ -14,7 +14,7 @@ function M.get()
 		AerialNamespaceIcon = { link = "@namespace" },
 		AerialNumberIcon = { link = "@number" },
 		AerialOperatorIcon = { link = "@operator" },
-		AerialTypeParameterIcon = { link = "@parameter" },
+		AerialTypeParameterIcon = { link = "@type" },
 		AerialPropertyIcon = { link = "@property" },
 		AerialStringIcon = { link = "@string" },
 		AerialVariableIcon = { link = "@constant" },

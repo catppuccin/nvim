@@ -16,6 +16,10 @@ vim.fn.stdpath = function(what)
 	end
 end
 
+vim.env = setmetatable({}, {
+	__index = function(_, k) return os.getenv(k) end,
+})
+
 -- Reference: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/shared.lua
 local function tbl_isempty(t)
 	assert(type(t) == "table", string.format("Expected table, got %s", type(t)))

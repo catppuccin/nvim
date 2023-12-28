@@ -26,6 +26,12 @@ function M.apply(flavour)
 	theme.editor = require("catppuccin.groups.editor").get()
 	local final_integrations = {}
 
+	-- https://github.com/catppuccin/nvim/pull/624
+	if type(O.integrations.dap) == "table" and O.integrations.dap.enable_ui ~= nil then
+		O.integrations.dap_ui = O.integrations.dap.enable_ui
+		O.integrations.dap.enable_ui = nil
+	end
+
 	for integration in pairs(O.integrations) do
 		local cot = false
 		if type(O.integrations[integration]) == "table" then
@@ -46,6 +52,7 @@ function M.apply(flavour)
 			)
 		end
 	end
+
 	theme.integrations = final_integrations -- plugins
 	theme.terminal = require("catppuccin.groups.terminal").get() -- terminal colors
 	local user_highlights = O.highlight_overrides

@@ -19,6 +19,8 @@
 ---@field show_end_of_buffer boolean?
 -- If true, sets terminal colors (e.g. `g:terminal_color_0`).
 ---@field term_colors boolean?
+-- Workaround for kitty transparency issue: https://github.com/kovidgoyal/kitty/issues/2917
+---@field kitty boolean?
 -- Settings for dimming of inactive windows.
 ---@field dim_inactive CtpDimInactive?
 -- Disables all italic styles.
@@ -116,26 +118,25 @@
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
 -- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
 ---@field coc_nvim boolean?
--- You **NEED** to override nvim-dap's default highlight groups, **AFTER** requiring nvim-dap:
---
 -- ```lua
--- require("dap")
---
 -- local sign = vim.fn.sign_define
 --
 -- sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
 -- sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
 -- sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 -- ```
----@field dap CtpIntegrationDAP | boolean?
+---@field dap boolean?
+---@field dap_ui boolean?
 ---@field dashboard boolean?
 ---@field dropbar CtpIntegrationDropbar | boolean?
 ---@field fern boolean?
--- Set `window.blend` to `0` in your `fidget` config:
+-- Set `notification.window.winblend` to `0` in your `fidget` config:
 --
 -- ```lua
 -- require("fidget").setup {
---   window = { blend = 0 },
+--   notification = {
+--     window = { winblend = 0 },
+--   }
 -- }
 -- ```
 ---@field fidget boolean?
@@ -162,7 +163,6 @@
 ---@field lsp_trouble boolean?
 ---@field markdown boolean?
 ---@field mason boolean?
----@field mini boolean?
 ---@field native_lsp CtpIntegrationNativeLsp | boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
 --
@@ -206,11 +206,6 @@
 -- Whether the directory name should be dimmed.
 ---@field dim_dirname boolean?
 
----@class CtpIntegrationDAP
----@field enabled boolean
--- Enable `nvim-dap-ui`
----@field enable_ui boolean?
-
 ---@class CtpIntegrationDropbar
 -- Whether to enable the dropbar integration.
 ---@field enabled boolean
@@ -220,9 +215,17 @@
 ---@class CtpIntegrationIndentBlankline
 -- Whether to enable the integration.
 ---@field enabled boolean
+-- Sets the color of the scope line
+---@field scope_color CtpColor?
 -- Enables char highlights per indent level.
 -- Follow the instructions on the plugins GitHub repo to set it up.
 ---@field colored_indent_levels boolean?
+
+---@class CtpIntegrationMini
+-- Whether to enable the integration.
+---@field enabled boolean
+-- Sets the color of the scope line
+---@field indentscope_color CtpColor?
 
 ---@class CtpIntegrationNativeLsp
 -- Whether to enable the Native LSP integration.

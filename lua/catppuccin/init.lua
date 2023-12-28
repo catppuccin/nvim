@@ -12,6 +12,7 @@ local M = {
 		transparent_background = false,
 		show_end_of_buffer = false,
 		term_colors = false,
+		kitty = vim.env.KITTY_WINDOW_ID and true or false,
 		dim_inactive = {
 			enabled = false,
 			shade = "dark",
@@ -37,12 +38,15 @@ local M = {
 		integrations = {
 			alpha = true,
 			cmp = true,
+			dap = true,
+			dap_ui = true,
 			dashboard = true,
 			flash = true,
 			gitsigns = true,
 			markdown = true,
 			neogit = true,
 			nvimtree = true,
+			ufo = true,
 			rainbow_delimiters = true,
 			semantic_tokens = not is_vim,
 			telescope = { enabled = true },
@@ -53,8 +57,13 @@ local M = {
 				dim_context = false,
 				alt_background = false,
 			},
+			illuminate = {
+				enabled = true,
+				lsp = false,
+			},
 			indent_blankline = {
 				enabled = true,
+				scope_color = "",
 				colored_indent_levels = false,
 			},
 			native_lsp = {
@@ -192,7 +201,7 @@ vim.api.nvim_create_user_command("CatppuccinCompile", function()
 	end
 	M.compile()
 	vim.notify("Catppuccin (info): compiled cache!", vim.log.levels.INFO)
-	vim.api.nvim_command "colorscheme catppuccin"
+	vim.cmd.colorscheme "catppuccin"
 end, {})
 
 if vim.g.catppuccin_debug then

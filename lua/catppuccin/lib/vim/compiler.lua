@@ -9,7 +9,7 @@ function M.compile(flavour)
 	local theme = require("catppuccin.lib.mapper").apply(flavour)
 	local lines = {
 		string.format(
-			[[
+			[=[
 return string.dump(function()
 vim.command[[
 if exists("colors_name")
@@ -17,7 +17,7 @@ if exists("colors_name")
 endif
 set termguicolors
 set background=%s
-let g:colors_name = "catppuccin-%s"]],
+let g:colors_name = "catppuccin-%s"]=],
 			(flavour == "latte" and "light" or "dark"),
 			flavour
 		),
@@ -64,7 +64,7 @@ let g:colors_name = "catppuccin-%s"]],
 	end
 	table.insert(lines, "]]end, true)")
 	if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-	local ls = load or loadstring
+	local ls = loadstring or load
 
 	if vim.g.catppuccin_debug then -- Debugging purpose
 		local deb = io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb")

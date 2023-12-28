@@ -1,3 +1,4 @@
+-- DEPRECATED MODULE
 local M = {}
 
 function M.highlight(group, color)
