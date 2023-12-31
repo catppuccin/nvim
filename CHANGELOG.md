@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.6.0](https://github.com/catppuccin/nvim/compare/v1.5.0...v1.6.0) (2023-12-28)
+
+
+### Features
+
+* add `WinSeperator` highlight group ([#623](https://github.com/catppuccin/nvim/issues/623)) ([988c0b2](https://github.com/catppuccin/nvim/commit/988c0b2dde4140572ed37c6b8b5d5deac0219f9f))
+* **bufferline:** support `no_underline` option ([#601](https://github.com/catppuccin/nvim/issues/601)) ([f7638a1](https://github.com/catppuccin/nvim/commit/f7638a1a65cbffdd01a9ddac0018a20ec4be29e2))
+* **dashboard:** add highlight groups for `doom` theme ([#593](https://github.com/catppuccin/nvim/issues/593)) ([3bdd5e8](https://github.com/catppuccin/nvim/commit/3bdd5e8296971f8c7ba5e499dac8247c3d621508))
+* **integrations:** enable dap & dap_ui by default ([64dc309](https://github.com/catppuccin/nvim/commit/64dc309bc157779691be38bbfc5123584e0a4a85))
+* **lualine:** darken lualine `b` section for better readability ([#606](https://github.com/catppuccin/nvim/issues/606)) ([32ee05d](https://github.com/catppuccin/nvim/commit/32ee05d014a4611555c7f56a73283efb4718d9c5))
+* **mini.indentscope:** add scope color ([#592](https://github.com/catppuccin/nvim/issues/592)) ([795f639](https://github.com/catppuccin/nvim/commit/795f639ac50d6b8400c1d5868fca54844d579f37))
+* **neogit:** support new highlight groups ([#610](https://github.com/catppuccin/nvim/issues/610)) ([f90c7c0](https://github.com/catppuccin/nvim/commit/f90c7c0c467722dc7acacbae3c3904720e09efb6))
+* **notify:** add `NotifyBackground` hl group ([#637](https://github.com/catppuccin/nvim/issues/637)) ([c7cf3af](https://github.com/catppuccin/nvim/commit/c7cf3afe2eb6d9058eec4abb3ace2c1da006478a))
+
+
+### Bug Fixes
+
+* **airline:** missing refresh function ([dcef0a0](https://github.com/catppuccin/nvim/commit/dcef0a062de380885193fb0f919217d58b979753)), closes [#594](https://github.com/catppuccin/nvim/issues/594)
+* **dashboard:** `orange` -&gt; `peach` ([54002a1](https://github.com/catppuccin/nvim/commit/54002a1adfd543f54352b3ec79d4e62c4163e9ee))
+* **flash:** link `FlashPrompt` to `NormalFloat` ([#605](https://github.com/catppuccin/nvim/issues/605)) ([40dc9f0](https://github.com/catppuccin/nvim/commit/40dc9f0621c55bd40da4ad0731fac44d15bb393a))
+* **lualine:** match lualine mode colors for insert and terminal ([#597](https://github.com/catppuccin/nvim/issues/597)) ([ea52fe8](https://github.com/catppuccin/nvim/commit/ea52fe8a0b1e4a820df0d0cf9a6a5a0e18c3eaa0))
+* **neogit:** remove `NeogitCursorLine` from integration ([#613](https://github.com/catppuccin/nvim/issues/613)) ([5e4be43](https://github.com/catppuccin/nvim/commit/5e4be43e1a6acb044d5c55cd10f22461c40656ed))
+* **neogit:** remove diff context highlight fg ([1b40f07](https://github.com/catppuccin/nvim/commit/1b40f072305be71b73c730ff5c7d881e638fd040)), closes [#627](https://github.com/catppuccin/nvim/issues/627)
+* **neogit:** tweak diff context highlighting ([#614](https://github.com/catppuccin/nvim/issues/614)) ([cc717ac](https://github.com/catppuccin/nvim/commit/cc717acba29259d578548973c41448b092453c52))
+* **neotree:** change color of untracked files ([#608](https://github.com/catppuccin/nvim/issues/608)) ([d7521f6](https://github.com/catppuccin/nvim/commit/d7521f6050b94cb0e23067f63829d86886f870fe))
+* **neotree:** make popup titlebar text visible ([#618](https://github.com/catppuccin/nvim/issues/618)) ([919d1f7](https://github.com/catppuccin/nvim/commit/919d1f786338ebeced798afbf28cd085cd54542a))
+* **noice:** respect transparency ([#632](https://github.com/catppuccin/nvim/issues/632)) ([4fbab1f](https://github.com/catppuccin/nvim/commit/4fbab1f01488718c3d54034a473d0346346b90e3))
+* **selene:** allow mixed tables ([#611](https://github.com/catppuccin/nvim/issues/611)) ([9f3c13b](https://github.com/catppuccin/nvim/commit/9f3c13bbcf16fcaec3a429c03743a13e5923f3e3))
+* sync focused and unfocused winbars ([#628](https://github.com/catppuccin/nvim/issues/628)) ([079500a](https://github.com/catppuccin/nvim/commit/079500a625f3ae5aa6efb758f1a17fe4c7a57e52))
+* **vim:** resolve deprecation of nested [[ ([7a4bcda](https://github.com/catppuccin/nvim/commit/7a4bcdadafc59a5bedbd866c643fa486d8cca4a1))
+
 ## [1.5.0](https://github.com/catppuccin/nvim/compare/v1.4.0...v1.5.0) (2023-09-29)
 
 
