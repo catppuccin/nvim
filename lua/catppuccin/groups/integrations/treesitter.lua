@@ -16,7 +16,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Misc
 		["@error"] = { link = "Error" },
-		["@define"] = { link = "Define" }, -- preprocessor definition directives
 		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
 
 		-- Comment
@@ -63,15 +62,16 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
 		["@keyword.storage"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
 		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
+		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
+		["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
+		["@keyword.exception"] = { link = "Exception" }, -- For exception related keywords.
+		["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+		["@keyword.conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
 		-- JS & derivative
 		["@keyword.export"] = { fg = C.sky, style = O.styles.keywords },
 
-		["@conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
-		["@repeat"] = { link = "Repeat" }, -- For keywords related to loops.
 		-- @debug            ; keywords related to debugging
 		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
-		["@include"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-		["@exception"] = { link = "Exception" }, -- For exception related keywords.
 
 		-- Types
 		["@type"] = { link = "Type" }, -- For types.
@@ -98,16 +98,16 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Text
 		["@markup"] = { fg = C.text }, -- For strings considerated text in a markup language.
 		["@markup.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
-		["@markup.emphasis"] = { fg = C.maroon, style = { "italic" } }, -- italic
+		["@markup.italic"] = { fg = C.maroon, style = { "italic" } }, -- italic
 		["@markup.underline"] = { link = "Underline" }, -- underlined text
-		["@markup.strike"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
+		["@markup.strikethrough"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
 		["@markup.heading"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
 		["@markup.raw"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
 		["@markup.link.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
 		["@markup.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
 		["@markup.environment"] = { fg = C.pink }, -- text environments of markup languages
 		["@markup.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
-		["@markup.reference"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
+		["@markup.link"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
 
 		["@markup.list"] = { link = "Special" },
 		["@markup.list.checked"] = { fg = C.green }, -- todo notes
@@ -194,9 +194,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 	colors["@text"] = colors["@markup"]
 	colors["@text.strong"] = colors["@markup.strong"]
-	colors["@text.emphasis"] = colors["@markup.emphasis"]
+	colors["@text.emphasis"] = colors["@markup.italic"]
 	colors["@text.underline"] = colors["@markup.underline"]
-	colors["@text.strike"] = colors["@markup.strike"]
+	colors["@text.strike"] = colors["@markup.strikethrough"]
 	colors["@text.uri"] = colors["@markup.link.url"]
 	colors["@text.math"] = colors["@markup.math"]
 	colors["@text.environment"] = colors["@markup.environment"]
@@ -204,7 +204,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 	colors["@text.title"] = colors["@markup.heading"]
 	colors["@text.literal"] = colors["@markup.raw"]
-	colors["@text.reference"] = colors["@markup.reference"]
+	colors["@text.reference"] = colors["@markup.link"]
 
 	colors["@text.todo.checked"] = colors["@markup.list.checked"]
 	colors["@text.todo.unchecked"] = colors["@markup.list.unchecked"]
@@ -226,8 +226,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	colors["@text.diff.add"] = colors["@diff.plus"]
 	colors["@text.diff.delete"] = colors["@diff.minus"]
 
+	colors["@define"] = colors["@keyword.directive.define"]
 	colors["@preproc"] = colors["@keyword.directive"]
 	colors["@storageclass"] = colors["@keyword.storage"]
+	colors["@conditional"] = colors["@keyword.conditional"]
+	colors["exception"] = colors["@keyword.exception"]
+	colors["@include"] = colors["@keyword.import"]
+	colors["@repeat"] = colors["@keyword.repeat"]
 
 	colors["@symbol.ruby"] = colors["@string.special.symbol.ruby"]
 
