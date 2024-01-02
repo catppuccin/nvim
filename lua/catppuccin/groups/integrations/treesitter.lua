@@ -13,21 +13,18 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	end
 
 	local colors = { -- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
+		-- Identifiers
+		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
+		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
+		["@variable.parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
+		["@variable.member"] = { fg = C.lavender }, -- For fields.
 
-		-- Misc
-		["@error"] = { link = "Error" },
-		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
+		["@constant"] = { link = "Constant" }, -- For constants
+		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
+		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		-- Comment
-		["@comment"] = { link = "Comment" },
-		["comment.note"] = { fg = C.base, bg = C.blue },
-		["comment.warning"] = { fg = C.base, bg = C.yellow },
-		["comment.error"] = { fg = C.base, bg = C.red },
-
-		-- Punctuation
-		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters (e.g. `;` / `.` / `,`).
-		["@punctuation.bracket"] = { fg = C.overlay2 }, -- For brackets and parenthesis.
-		["@punctuation.special"] = { link = "Special" }, -- For special punctuation that does not fall in the categories before (e.g. `{}` in string interpolation).
+		["@module"] = { fg = C.lavender, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
+		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
@@ -41,37 +38,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
 
 		["@boolean"] = { link = "Boolean" }, -- For booleans.
-
 		["@number"] = { link = "Number" }, -- For all numbers
 		["@number.float"] = { link = "Float" }, -- For floats.
-
-		-- Functions
-		["@function"] = { link = "Function" }, -- For function (calls and definitions).
-		["@function.builtin"] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
-		["@function.call"] = { link = "Function" }, -- function calls
-		["@function.macro"] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Rust.
-		["@function.method"] = { link = "Function" }, -- For method definitions.
-		["@function.method.call"] = { link = "Function" }, -- For method calls.
-
-		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-
-		-- Keywords
-		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
-		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
-		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
-		["@keyword.storage"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
-		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
-		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
-		["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
-		["@keyword.exception"] = { link = "Exception" }, -- For exception related keywords.
-		["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-		["@keyword.conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
-		-- JS & derivative
-		["@keyword.export"] = { fg = C.sky, style = O.styles.keywords },
-
-		-- @debug            ; keywords related to debugging
-		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
 
 		-- Types
 		["@type"] = { link = "Type" }, -- For types.
@@ -82,32 +50,64 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
 		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- Same as TSField.
 
-		-- Identifiers
+		-- Functions
+		["@function"] = { link = "Function" }, -- For function (calls and definitions).
+		["@function.builtin"] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
+		["@function.call"] = { link = "Function" }, -- function calls
+		["@function.macro"] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Rust.
 
-		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
-		["@variable.parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
-		["@variable.member"] = { fg = C.lavender }, -- For fields.
+		["@function.method"] = { link = "Function" }, -- For method definitions.
+		["@function.method.call"] = { link = "Function" }, -- For method calls.
 
-		["@constant"] = { link = "Constant" }, -- For constants
-		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
-		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
+		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
 
-		["@module"] = { fg = C.lavender, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
+		-- Keywords
+		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
+		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
+		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
+		["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+		["@keyword.storage"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
+		["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
+		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
+		["@keyword.exception"] = { link = "Exception" }, -- For exception related keywords.
 
-		-- Text
+		["@keyword.conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
+
+		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
+		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
+		-- JS & derivative
+		["@keyword.export"] = { fg = C.sky, style = O.styles.keywords },
+
+		-- Punctuation
+		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters (e.g. `;` / `.` / `,`).
+		["@punctuation.bracket"] = { fg = C.overlay2 }, -- For brackets and parenthesis.
+		["@punctuation.special"] = { link = "Special" }, -- For special punctuation that does not fall in the categories before (e.g. `{}` in string interpolation).
+
+		-- Comment
+		["@comment"] = { link = "Comment" },
+
+		["comment.error"] = { fg = C.base, bg = C.red },
+		["comment.warning"] = { fg = C.base, bg = C.yellow },
+		["comment.note"] = { fg = C.base, bg = C.blue },
+
+		-- Markup
 		["@markup"] = { fg = C.text }, -- For strings considerated text in a markup language.
 		["@markup.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
 		["@markup.italic"] = { fg = C.maroon, style = { "italic" } }, -- italic
-		["@markup.underline"] = { link = "Underline" }, -- underlined text
 		["@markup.strikethrough"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
+		["@markup.underline"] = { link = "Underline" }, -- underlined text
+
 		["@markup.heading"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
-		["@markup.raw"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
-		["@markup.link.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
+
 		["@markup.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
 		["@markup.environment"] = { fg = C.pink }, -- text environments of markup languages
 		["@markup.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
+
 		["@markup.link"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
+		["@markup.link.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
+
+		["@markup.raw"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
 
 		["@markup.list"] = { link = "Special" },
 		["@markup.list.checked"] = { fg = C.green }, -- todo notes
@@ -122,6 +122,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
 		["@tag.attribute"] = { fg = C.teal, style = { "italic" } }, -- Tags like html tag names.
 		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
+
+		-- Misc
+		["@error"] = { link = "Error" },
 
 		-- Language specific:
 		-- bash
