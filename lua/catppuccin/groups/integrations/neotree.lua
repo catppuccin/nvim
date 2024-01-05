@@ -24,6 +24,7 @@ function M.get()
 
 		NeoTreeFloatBorder = { link = "FloatBorder" },
 		NeoTreeFloatTitle = { link = "FloatTitle" },
+		NeoTreeTitleBar = { fg = C.mantle, bg = C.blue },
 
 		NeoTreeFileNameOpened = { fg = C.pink },
 		NeoTreeDimText = { fg = C.overlay1 },

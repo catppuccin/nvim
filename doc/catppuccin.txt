@@ -162,7 +162,7 @@ https://github.com/catppuccin/nvim/discussions/323 for inspirations:
 <
 
 
-  **Note** For more information check out our style-guide
+  [!Note] For more information check out our style-guide
   <https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md>
 
 OVERWRITING HIGHLIGHT GROUPS*catppuccin-customize-highlights-overwriting-highlight-groups*
@@ -248,7 +248,7 @@ Below is a list of supported plugins and their corresponding integration
 module.
 
 
-  **Important** If you’d like to know which highlight groups are being affected
+  [!Important] If you’d like to know which highlight groups are being affected
   by catppuccin, check out this directory: `lua/catppuccin/groups/integrations/`
   <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>.
 PluginDefaultaerial.nvim>lua
@@ -291,7 +291,7 @@ bufferline.nvimSpecial ~
 Update your bufferline config to use the Catppuccin components:
 
 
-  **Note** bufferline needs to be loaded after setting up catppuccin or it will
+  [!NOTE] bufferline needs to be loaded after setting up catppuccin or it will
   highlight incorrectly
 >lua
     use "akinsho/bufferline.nvim" {
@@ -340,7 +340,7 @@ Setting `enabled` to `true` enables this integration.
 <
 
 
-  **Note** coc.nvim by default link to native lsp highlight groups so config from
+  [!Note] coc.nvim by default link to native lsp highlight groups so config from
   `native_lsp` will also apply to coc
 In the inners tables you can set the style for the diagnostics, both
 `virtual_text` (what you see on the side) and `underlines` (what points
@@ -458,7 +458,7 @@ Here are the defaults:
 <
 
 
-  **Warning** Currently feline doesn’t officially support custom themes
+  [!Warning] Currently feline doesn’t officially support custom themes
   <https://github.com/feline-nvim/feline.nvim/issues/302>. In order for
   `:colorscheme catppuccin-<flavour>` to work you could add this autocmd as a
   workaround:
@@ -485,13 +485,15 @@ fidget.nvim>lua
 
 Special ~
 
-Set `window.blend` to `0`:
+Set `notification.window.winblend` to `0`:
 
 >lua
     require("fidget").setup {
-        window = {
-            blend = 0,
-        },
+        notification = {
+            window = {
+                winblend = 0,
+            },
+        }
         -- ... the rest of your fidget config
     }
 <
@@ -615,24 +617,22 @@ nvim-cmp>lua
     cmp = true
 <
 
-nvim-dap & nvim-dap-ui>lua
-    dap = {
-        enabled = true,
-        enable_ui = true, -- enable nvim-dap-ui
-    }
+nvim-dap>lua
+    dap = true
 <
 
 Special ~
 
 >lua
-    -- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap
-    require("dap")
-    
     local sign = vim.fn.sign_define
     
     sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
     sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
     sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
+<
+
+nvim-dap-ui>lua
+    dap_ui = true
 <
 
 nvim-lspconfig>lua

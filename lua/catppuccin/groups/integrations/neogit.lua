@@ -34,8 +34,7 @@ function M.get()
 			fg = C.blue,
 		},
 		NeogitDiffContextHighlight = {
-			bg = U.darken(C.blue, 0.065, C.base),
-			fg = C.text,
+			bg = C.surface0,
 		},
 		NeogitDiffDeleteHighlight = {
 			bg = U.darken(C.red, 0.345, C.base),
@@ -61,7 +60,10 @@ function M.get()
 			fg = C.blue,
 			style = { "bold" },
 		},
-
+		NeogitChangeDeleted = {
+			fg = C.red,
+			style = { "bold" },
+		},
 		NeogitChangeAdded = {
 			fg = C.green,
 			style = { "bold" },
@@ -118,9 +120,124 @@ function M.get()
 			fg = C.mauve,
 			style = { "bold" },
 		},
-		NeogitNotificationInfo = { fg = C.blue },
-		NeogitNotificationWarning = { fg = C.yellow },
-		NeogitNotificationError = { fg = C.red },
+		NeogitNotificationInfo = {
+			fg = C.blue,
+		},
+		NeogitNotificationWarning = {
+			fg = C.yellow,
+		},
+		NeogitNotificationError = {
+			fg = C.red,
+		},
+		NeogitGraphRed = {
+			fg = C.red,
+		},
+		NeogitGraphWhite = {
+			fg = C.base,
+		},
+		NeogitGraphYellow = {
+			fg = C.yellow,
+		},
+		NeogitGraphGreen = {
+			fg = C.green,
+		},
+		NeogitGraphCyan = {
+			fg = C.blue,
+		},
+		NeogitGraphBlue = {
+			fg = C.blue,
+		},
+		NeogitGraphPurple = {
+			fg = C.lavender,
+		},
+		NeogitGraphGray = {
+			fg = C.subtext1,
+		},
+		NeogitGraphOrange = {
+			fg = C.peach,
+		},
+		NeogitGraphBoldRed = {
+			fg = C.red,
+			style = { "bold" },
+		},
+		NeogitGraphBoldWhite = {
+			fg = C.white,
+			style = { "bold" },
+		},
+		NeogitGraphBoldYellow = {
+			fg = C.yellow,
+			style = { "bold" },
+		},
+		NeogitGraphBoldGreen = {
+			fg = C.green,
+			style = { "bold" },
+		},
+		NeogitGraphBoldCyan = {
+			fg = C.blue,
+			style = { "bold" },
+		},
+		NeogitGraphBoldBlue = {
+			fg = C.blue,
+			style = { "bold" },
+		},
+		NeogitGraphBoldPurple = {
+			fg = C.lavender,
+			style = { "bold" },
+		},
+		NeogitGraphBoldGray = {
+			fg = C.subtext1,
+			style = { "bold" },
+		},
+		NeogitDiffContext = {
+			bg = C.base,
+		},
+		NeogitPopupBold = {
+			style = { "bold" },
+		},
+		NeogitPopupSwitchKey = {
+			fg = C.lavender,
+		},
+		NeogitPopupOptionKey = {
+			fg = C.lavender,
+		},
+		NeogitPopupConfigKey = {
+			fg = C.lavender,
+		},
+		NeogitPopupActionKey = {
+			fg = C.lavender,
+		},
+		NeogitFilePath = {
+			fg = C.blue,
+			style = { "italic" },
+		},
+		NeogitDiffHeader = {
+			bg = C.base,
+			fg = C.blue,
+			style = { "bold" },
+		},
+		NeogitDiffHeaderHighlight = {
+			bg = C.base,
+			fg = C.peach,
+			style = { "bold" },
+		},
+		NeogitUnpushedTo = {
+			fg = C.lavender,
+			style = { "bold" },
+		},
+		NeogitFold = {
+			fg = C.none,
+			bg = C.none,
+		},
+		NeogitSectionHeader = {
+			fg = C.mauve,
+			style = { "bold" },
+		},
+		NeogitTagName = {
+			fg = C.yellow,
+		},
+		NeogitTagDistance = {
+			fg = C.blue,
+		},
 	}
 end
 
