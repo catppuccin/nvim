@@ -87,9 +87,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Comment
 		["@comment"] = { link = "Comment" },
 
-		["comment.error"] = { fg = C.base, bg = C.red },
-		["comment.warning"] = { fg = C.base, bg = C.yellow },
-		["comment.note"] = { fg = C.base, bg = C.blue },
+		["@comment.error"] = { fg = C.base, bg = C.red },
+		["@comment.warning"] = { fg = C.base, bg = C.yellow },
+		["@comment.note"] = { fg = C.base, bg = C.blue },
 
 		-- Markup
 		["@markup"] = { fg = C.text }, -- For strings considerated text in a markup language.
