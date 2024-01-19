@@ -90,6 +90,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@comment.error"] = { fg = C.base, bg = C.red },
 		["@comment.warning"] = { fg = C.base, bg = C.yellow },
 		["@comment.note"] = { fg = C.base, bg = C.blue },
+		["@comment.todo"] = { fg = C.base, bg = C.flamingo },
 
 		-- Markup
 		["@markup"] = { fg = C.text }, -- For strings considerated text in a markup language.
@@ -213,7 +214,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	colors["@text.todo.unchecked"] = colors["@markup.list.unchecked"]
 
 	-- @text.todo is now for todo comments, not todo notes like in markdown
-	colors["@text.todo"] = colors["comment.warning"]
+	colors["@text.todo"] = colors["comment.todo"]
 	colors["@text.warning"] = colors["comment.warning"]
 	colors["@text.note"] = colors["comment.note"]
 	colors["@text.danger"] = colors["comment.error"]
