@@ -12,6 +12,7 @@ function M.get()
 		NeoTreeIndentMarker = { fg = C.overlay0 },
 		NeoTreeRootName = { fg = C.blue, style = { "bold" } },
 		NeoTreeSymbolicLinkTarget = { fg = C.pink },
+		NeoTreeModified = { fg = C.peach },
 
 		NeoTreeGitAdded = { fg = C.green },
 		NeoTreeGitConflict = { fg = C.red },
