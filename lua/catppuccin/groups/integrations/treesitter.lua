@@ -89,7 +89,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		["@comment.error"] = { fg = C.base, bg = C.red },
 		["@comment.warning"] = { fg = C.base, bg = C.yellow },
-		["@comment.note"] = { fg = C.base, bg = C.blue },
+		["@comment.hint"] = { fg = C.base, bg = C.blue },
 		["@comment.todo"] = { fg = C.base, bg = C.flamingo },
 
 		-- Markup
@@ -251,6 +251,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 	colors["@method.php"] = colors["@function.method.php"]
 	colors["@method.call.php"] = colors["@function.method.call.php"]
+
+	colors["@comment.note"] = colors["@comment.hint"]
 
 	return colors
 end
