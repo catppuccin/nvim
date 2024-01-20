@@ -213,11 +213,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	colors["@text.todo.checked"] = colors["@markup.list.checked"]
 	colors["@text.todo.unchecked"] = colors["@markup.list.unchecked"]
 
+	colors["@comment.note"] = colors["@comment.hint"]
+
 	-- @text.todo is now for todo comments, not todo notes like in markdown
-	colors["@text.todo"] = colors["comment.todo"]
-	colors["@text.warning"] = colors["comment.warning"]
-	colors["@text.note"] = colors["comment.note"]
-	colors["@text.danger"] = colors["comment.error"]
+	colors["@text.todo"] = colors["@comment.todo"]
+	colors["@text.warning"] = colors["@comment.warning"]
+	colors["@text.note"] = colors["@comment.note"]
+	colors["@text.danger"] = colors["@comment.error"]
 
 	-- @text.uri is now
 	-- @markup.link.url in markup links
@@ -251,8 +253,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 	colors["@method.php"] = colors["@function.method.php"]
 	colors["@method.call.php"] = colors["@function.method.call.php"]
-
-	colors["@comment.note"] = colors["@comment.hint"]
 
 	return colors
 end
