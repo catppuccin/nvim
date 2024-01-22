@@ -1225,6 +1225,9 @@ rainbow_delimiters = true
 <td> <a href="https://github.com/simrat39/symbols-outline.nvim">symbols-outline.nvim</a> </td>
 <td>
 
+> [!NOTE]
+> This plugin has been archived by the author, consider using [outline.nvim](https://github.com/hedyhli/outline.nvim)
+
 ```lua
 symbols_outline = false
 ```
