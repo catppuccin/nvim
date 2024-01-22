@@ -43,7 +43,7 @@ function M.get()
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
 		Error = { fg = C.red }, -- (preferred) any erroneous construct
-		Todo = { bg = C.yellow, fg = C.base, style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { bg = C.flamingo, fg = C.base, style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		qfLineNr = { fg = C.yellow },
 		qfFileName = { fg = C.blue },
 		htmlH1 = { fg = C.pink, style = { "bold" } },
