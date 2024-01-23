@@ -192,7 +192,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	colors["@parameter"] = colors["@variable.parameter"]
 	colors["@field"] = colors["@variable.member"]
 	colors["@namespace"] = colors["@module"]
-	colors["@float"] = colors["number.float"]
+	colors["@float"] = colors["@number.float"]
 	colors["@symbol"] = colors["@string.special.symbol"]
 	colors["@string.regex"] = colors["@string.regexp"]
 
@@ -222,9 +222,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	colors["@text.danger"] = colors["@comment.error"]
 
 	-- @text.uri is now
-	-- @markup.link.url in markup links
-	-- @string.special.url outside of markup
-	colors["text.uri"] = colors["@markup.link.uri"]
+	-- > @markup.link.url in markup links
+	-- > @string.special.url outside of markup
+	colors["@text.uri"] = colors["@markup.link.uri"]
 
 	colors["@method"] = colors["@function.method"]
 	colors["@method.call"] = colors["@function.method.call"]
@@ -236,7 +236,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	colors["@preproc"] = colors["@keyword.directive"]
 	colors["@storageclass"] = colors["@keyword.storage"]
 	colors["@conditional"] = colors["@keyword.conditional"]
-	colors["exception"] = colors["@keyword.exception"]
+	colors["@exception"] = colors["@keyword.exception"]
 	colors["@include"] = colors["@keyword.import"]
 	colors["@repeat"] = colors["@keyword.repeat"]
 
