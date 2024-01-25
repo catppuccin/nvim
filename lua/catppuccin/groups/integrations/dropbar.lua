@@ -31,7 +31,7 @@ function M.get()
 		DropBarKindIdentifier = color and { link = "DropBarIconKindIdentifier" } or { fg = C.text },
 		DropBarKindIfStatement = color and { link = "DropBarIconKindIfStatement" } or { fg = C.text },
 		DropBarKindInterface = color and { link = "DropBarIconKindInterface" } or { fg = C.text },
-		DropBarKindKeyword = color and { link = "DropBarKindIconKeyword" } or { fg = C.text },
+		DropBarKindKeyword = color and { link = "DropBarIconKindKeyword" } or { fg = C.text },
 		DropBarKindList = color and { link = "DropBarIconKindList" } or { fg = C.text },
 		DropBarKindMacro = color and { link = "DropBarIconKindMacro" } or { fg = C.text },
 		DropBarKindMarkdownH1 = color and { link = "DropBarIconKindMarkdownH1" } or { fg = C.text },
