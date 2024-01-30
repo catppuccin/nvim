@@ -38,7 +38,8 @@ function M.apply(flavour)
 			if O.integrations[integration].enabled == true then cot = true end
 		else
 			if O.integrations[integration] == true then
-				O.integrations[integration] = require("catppuccin").default_options[integration] or {}
+				local default = require("catppuccin").default_options.integrations[integration]
+				O.integrations[integration] = type(default) == "table" and default or {}
 				O.integrations[integration].enabled = true
 				cot = true
 			end
