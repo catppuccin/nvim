@@ -730,6 +730,20 @@ rainbow-delimiters.nvim>lua
     rainbow_delimiters = true
 <
 
+reactive.nvimSpecial ~
+
+There’re 2 available presets (`cursor` and `cursorline`) for every flavour.
+
+Here is how you can use them.
+
+>lua
+    require('reactive').setup {
+      load = { 'catppuccin-mocha-cursor', 'catppuccin-mocha-cursorline' }
+    }
+<
+
+To use another flavour just replace `mocha` with the one you want to use.
+
 symbols-outline.nvim
   [!NOTE] This plugin has been archived by the author, consider using
   outline.nvim <https://github.com/hedyhli/outline.nvim>
