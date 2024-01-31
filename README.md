@@ -1240,6 +1240,9 @@ require('reactive').setup {
 To use another flavour just replace `mocha` with the one you want to use.
 
 </details>
+
+</td>
+</tr>
 <!-- reactive.nvim -->
 
 <!-- symbols-outline.nvim -->

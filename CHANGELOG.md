@@ -5,7 +5,7 @@
 
 ### Features
 
-* add `WinSeperator` highlight group ([#623](https://github.com/catppuccin/nvim/issues/623)) ([988c0b2](https://github.com/catppuccin/nvim/commit/988c0b2dde4140572ed37c6b8b5d5deac0219f9f))
+* add `WinSeparator` highlight group ([#623](https://github.com/catppuccin/nvim/issues/623)) ([988c0b2](https://github.com/catppuccin/nvim/commit/988c0b2dde4140572ed37c6b8b5d5deac0219f9f))
 * **bufferline:** support `no_underline` option ([#601](https://github.com/catppuccin/nvim/issues/601)) ([f7638a1](https://github.com/catppuccin/nvim/commit/f7638a1a65cbffdd01a9ddac0018a20ec4be29e2))
 * **dashboard:** add highlight groups for `doom` theme ([#593](https://github.com/catppuccin/nvim/issues/593)) ([3bdd5e8](https://github.com/catppuccin/nvim/commit/3bdd5e8296971f8c7ba5e499dac8247c3d621508))
 * **integrations:** enable dap & dap_ui by default ([64dc309](https://github.com/catppuccin/nvim/commit/64dc309bc157779691be38bbfc5123584e0a4a85))
