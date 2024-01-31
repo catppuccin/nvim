@@ -1219,6 +1219,29 @@ rainbow_delimiters = true
 </tr>
 <!-- rainbow-delimiters.nvim -->
 
+<!-- reactive.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/rasulomaroff/reactive.nvim">reactive.nvim</a> </td>
+<td>
+
+<details> <summary>Special</summary>
+
+There're 2 available presets (`cursor` and `cursorline`) for every flavour.
+
+Here is how you can use them.
+
+```lua
+require('reactive').setup {
+  load = { 'catppuccin-mocha-cursor', 'catppuccin-mocha-cursorline' }
+}
+```
+
+To use another flavour just replace `mocha` with the one you want to use.
+
+</details>
+<!-- reactive.nvim -->
+
 <!-- symbols-outline.nvim -->
 </tr>
 <tr>
