@@ -1229,34 +1229,15 @@ rainbow_delimiters = true
 
 There're 2 available presets (`cursor` and `cursorline`) for every flavour.
 
-You can just load them **after** you setup catppuccin and apply the theme.
+Here is how you can use them.
 
 ```lua
-require('catppuccin').setup(opts)
-vim.cmd 'colorscheme catppuccin'
-
-local flavour = require('catppuccin').flavour
-require('reactive').load_preset('catppuccin-' .. flavour .. '-cursorline')
-require('reactive').load_preset('catppuccin-' .. flavour .. '-cursor')
-
+require('reactive').setup {
+  load = { 'catppuccin-mocha-cursor', 'catppuccin-mocha-cursorline' }
+}
 ```
 
-or alternatively you can create an autocmd **before** applying the theme and load presets
-
-```lua
-local reactive = vim.api.nvim_create_augroup("reactive", { clear = true })
-vim.api.nvim_create_autocmd("ColorScheme", {
-  once = true,
-  group = reactive,
-  callback = function()
-    local flavour = require('catppuccin').flavour
-    require('reactive').load_preset('catppuccin-' .. flavour .. '-cursorline')
-    require('reactive').load_preset('catppuccin-' .. flavour .. '-cursor')
-  end
-})
-
-vim.cmd 'colorscheme catppuccin'
-```
+To use another flavour just replace `mocha` with the one you want to use.
 
 </details>
 <!-- reactive.nvim -->
