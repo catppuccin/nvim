@@ -1219,6 +1219,48 @@ rainbow_delimiters = true
 </tr>
 <!-- rainbow-delimiters.nvim -->
 
+<!-- reactive.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/rasulomaroff/reactive.nvim">reactive.nvim</a> </td>
+<td>
+
+<details> <summary>Special</summary>
+
+There're 2 available presets (`cursor` and `cursorline`) for every flavour.
+
+You can just load them **after** you setup catppuccin and apply the theme.
+
+```lua
+require('catppuccin').setup(opts)
+vim.cmd 'colorscheme catppuccin'
+
+local flavour = require('catppuccin').flavour
+require('reactive').load_preset('catppuccin-' .. flavour .. '-cursorline')
+require('reactive').load_preset('catppuccin-' .. flavour .. '-cursor')
+
+```
+
+or alternatively you can create an autocmd **before** applying the theme and load presets
+
+```lua
+local reactive = vim.api.nvim_create_augroup("reactive", { clear = true })
+vim.api.nvim_create_autocmd("ColorScheme", {
+  once = true,
+  group = reactive,
+  callback = function()
+    local flavour = require('catppuccin').flavour
+    require('reactive').load_preset('catppuccin-' .. flavour .. '-cursorline')
+    require('reactive').load_preset('catppuccin-' .. flavour .. '-cursor')
+  end
+})
+
+vim.cmd 'colorscheme catppuccin'
+```
+
+</details>
+<!-- reactive.nvim -->
+
 <!-- symbols-outline.nvim -->
 </tr>
 <tr>
