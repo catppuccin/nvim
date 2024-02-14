@@ -23,7 +23,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		["@module"] = { fg = C.lavender, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
+		-- This is difficult to avoid hardcoding, as there is no user option for this (yet).
+		-- For now, binding to `conditionals` because it is italic by default.
+		["@module"] = { fg = C.lavender, style = O.styles.conditionals or { "italic" } }, -- For identifiers referring to modules and namespaces.
 		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
 
 		-- Literals
@@ -121,7 +123,11 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Tags
 		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
-		["@tag.attribute"] = { fg = C.teal, style = { "italic" } }, -- Tags like html tag names.
+		-- God I have no idea what to label this as… Well, for now, I’ll just
+		-- label everything as `conditionals`, to keep them italic by default.
+		-- If someone wants to, they can create more user options and solve
+		-- the problem that way. This is really just a cheap quick fix.
+		["@tag.attribute"] = { fg = C.teal, style = O.styles.conditionals or { "italic" } }, -- Tags like html tag names.
 		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
 
 		-- Misc
@@ -129,7 +135,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Language specific:
 		-- bash
-		["@function.builtin.bash"] = { fg = C.red, style = { "italic" } },
+		["@function.builtin.bash"] = { fg = C.red, style = O.styles.conditionals or { "italic" } },
 
 		-- markdown
 		["@markup.heading.1.markdown"] = { link = "rainbow1" },
@@ -166,7 +172,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- TSX (Typescript React)
 		["@constructor.tsx"] = { fg = C.lavender },
-		["@tag.attribute.tsx"] = { fg = C.mauve, style = { "italic" } },
+		["@tag.attribute.tsx"] = { fg = C.mauve, style = O.styles.conditionals or { "italic" } },
 
 		-- yaml
 		["@variable.member.yaml"] = { fg = C.blue }, -- For fields.
@@ -179,12 +185,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@function.method.call.php"] = { link = "Function" },
 
 		-- C/CPP
+		-- THIS IS WEIRD, why are they hardcoded to not have styles???
 		["@type.builtin.c"] = { fg = C.yellow, style = {} },
 		["@property.cpp"] = { fg = C.text },
 		["@type.builtin.cpp"] = { fg = C.yellow, style = {} },
 
 		-- Misc
-		gitcommitSummary = { fg = C.rosewater, style = { "italic" } },
+		gitcommitSummary = { fg = C.rosewater, style = O.styles.comments or { "italic" } },
 		zshKSHFunction = { link = "Function" },
 	}
 
