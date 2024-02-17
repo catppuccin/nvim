@@ -97,7 +97,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@markup.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
 		["@markup.italic"] = { fg = C.maroon, style = { "italic" } }, -- italic
 		["@markup.strikethrough"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
-		["@markup.underline"] = { link = "Underline" }, -- underlined text
+		["@markup.underline"] = { link = "Underlined" }, -- underlined text
 
 		["@markup.heading"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
 
