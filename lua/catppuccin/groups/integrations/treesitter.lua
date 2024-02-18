@@ -172,7 +172,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- TSX (Typescript React)
 		["@constructor.tsx"] = { fg = C.lavender },
-		["@tag.attribute.tsx"] = { fg = C.mauve, style = O.styles.conditionals or { "italic" } },
+
+		["@tag.attribute.tsx"] = { fg = C.teal, style = O.styles.conditionals or { "italic" } },
 
 		-- yaml
 		["@variable.member.yaml"] = { fg = C.blue }, -- For fields.
