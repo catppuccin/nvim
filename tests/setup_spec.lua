@@ -275,10 +275,8 @@ local configs = {
 		compile = {
 			enabled = true,
 		},
-		custom_highlights = function()
-			local palette = C
-			local utils = U
-
+		custom_highlights = function(palette)
+			local utils = require("catppuccin.utils.colors")
 			return {
 				NormalFloat = { bg = palette.base },
 				FloatBorder = { fg = palette.mauve },
