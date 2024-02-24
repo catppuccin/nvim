@@ -18,7 +18,7 @@ function M.hash(v) -- Xor hashing: https://codeforces.com/blog/entry/85900
 		end
 		return hash
 	elseif t == "function" then
-		return hash_str(string.dump(v))
+		return M.hash(v(require("catppuccin.palettes").get_palette()))
 	end
 	return tostring(v)
 end
