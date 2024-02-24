@@ -81,6 +81,8 @@
 ---@field types CtpHighlightArgs[]?
 -- Change the style of operators.
 ---@field operators CtpHighlightArgs[]?
+-- Change the style of miscs.
+---@field miscs CtpHighlightArgs[]?
 
 ---@class CtpNativeLspStyles
 -- Change the style of LSP errors.
