@@ -183,6 +183,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@property.cpp"] = { fg = C.text },
 		["@type.builtin.cpp"] = { fg = C.yellow, style = {} },
 
+		-- gitcommit
+		["@comment.warning.gitcommit"] = { fg = C.yellow },
+
 		-- Misc
 		gitcommitSummary = { fg = C.rosewater, style = O.styles.miscs or { "italic" } },
 		zshKSHFunction = { link = "Function" },
