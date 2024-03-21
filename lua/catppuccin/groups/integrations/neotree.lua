@@ -35,6 +35,10 @@ function M.get()
 		NeoTreeTabSeparatorActive = { fg = active_bg, bg = active_bg },
 		NeoTreeTabSeparatorInactive = { fg = inactive_bg, bg = inactive_bg },
 		NeoTreeVertSplit = { fg = C.base, bg = inactive_bg },
+		NeoTreeWinSeparator = {
+			fg = O.transparent_background and C.surface1 or C.base,
+			bg = O.transparent_background and C.none or C.base,
+		},
 		NeoTreeStatusLineNC = { fg = C.mantle, bg = C.mantle },
 	}
 end
