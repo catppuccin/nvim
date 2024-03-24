@@ -135,6 +135,13 @@ end
 local did_setup = false
 
 function M.load(flavour)
+	if M.options.flavour == "auto" then -- set colorscheme based on o:background
+		M.options.flavour = nil -- ensure that this will only run once on startup
+		if not vim.api.nvim_get_option_info2("background", {}).was_set then -- wait for terminal to set o:background
+			vim.g.colors_name = "catppuccin"
+			return
+		end
+	end
 	if not did_setup then M.setup() end
 	M.flavour = get_flavour(flavour)
 	local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour

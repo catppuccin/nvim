@@ -71,6 +71,7 @@ options and settings.
 >lua
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
+        -- flavour = "auto" -- will respect terminal's background
         background = { -- :h background
             light = "latte",
             dark = "mocha",
