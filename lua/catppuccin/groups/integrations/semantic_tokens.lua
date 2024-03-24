@@ -21,7 +21,7 @@ If you want to stay on nvim 0.7, disable the integration.
 		["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
 		["@lsp.type.interface"] = { fg = C.flamingo },
 		["@lsp.type.keyword"] = { link = "@keyword" },
-		["@lsp.type.namespace"] = { link = "@namespace" },
+		["@lsp.type.namespace"] = { link = "@module" },
 		["@lsp.type.number"] = { link = "@number" },
 		["@lsp.type.operator"] = { link = "@operator" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
