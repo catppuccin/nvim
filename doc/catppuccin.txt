@@ -693,7 +693,7 @@ nvim-tree.lua>lua
 <
 
 nvim-treesitter-context>lua
-    treesitter_context = false
+    treesitter_context = true
 <
 
 nvim-treesitter>lua

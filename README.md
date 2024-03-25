@@ -1091,7 +1091,7 @@ nvimtree = true
 <td>
 
 ```lua
-treesitter_context = false
+treesitter_context = true
 ```
 
 </td>
