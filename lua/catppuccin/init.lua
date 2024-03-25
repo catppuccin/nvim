@@ -45,6 +45,7 @@ local M = {
 			gitsigns = true,
 			markdown = true,
 			neogit = true,
+			neotree = true,
 			nvimtree = true,
 			ufo = true,
 			rainbow_delimiters = true,

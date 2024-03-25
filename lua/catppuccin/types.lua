@@ -2,7 +2,7 @@
 ---@field options CatppuccinOptions
 ---@field setup fun(opts: CatppuccinOptions?)
 
----@alias CtpFlavor "mocha" | "macchiato" | "frappe" | "latte"
+---@alias CtpFlavor "mocha" | "macchiato" | "frappe" | "latte" | "auto"
 ---@alias CtpColor "rosewater" | "flamingo" | "pink" | "mauve" | "red" | "maroon" | "peach" | "yellow" | "green" | "teal" | "sky" | "sapphire" | "blue" | "lavender" | "text" | "subtext1" | "subtext0" | "overlay2" | "overlay1" | "overlay0" | "surface2" | "surface1" | "surface0" | "base" | "mantle" | "crust"
 ---@class CtpFlavors<T>: {all: T, mocha: T, macchiato: T, frappe: T, latte: T }
 ---@class CtpColors<T>: {rosewater: T, flamingo: T, pink: T, mauve: T, red: T, maroon: T, peach: T, yellow: T, green: T, teal: T, sky: T, sapphire: T, blue: T, lavender: T, text: T, subtext1: T, subtext0: T, overlay2: T, overlay1: T, overlay0: T, surface2: T, surface1: T, surface0: T, base: T, mantle: T, crust: T, none: T }
