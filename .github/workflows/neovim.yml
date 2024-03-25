@@ -31,10 +31,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Neovim
         run: |
-          wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz -O nvim-macos.tar.gz
-          xattr -c ./nvim-macos.tar.gz
-          tar xzvf nvim-macos.tar.gz &> /dev/null
-          ln -s $(pwd)/nvim-macos/bin/nvim /usr/local/bin/nvim
+          wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz
+          xattr -c ./nvim-macos-x86_64.tar.gz
+          tar xzvf nvim-macos-x86_64.tar.gz &> /dev/null
+          ln -s $(pwd)/nvim-macos-x86_64/bin/nvim /usr/local/bin/nvim
       - name: Run neovim
         run: |
           nvim --version
