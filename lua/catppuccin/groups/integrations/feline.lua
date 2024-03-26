@@ -26,7 +26,7 @@ local assets = {
 
 local sett = {
 	text = C.mantle,
-	bkg = C.surface0,
+	bkg = C.crust,
 	diffs = C.mauve,
 	extras = C.overlay1,
 	curr_file = C.maroon,
