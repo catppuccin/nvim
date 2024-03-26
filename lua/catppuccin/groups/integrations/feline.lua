@@ -26,7 +26,7 @@ local assets = {
 
 local sett = {
 	text = C.mantle,
-	bkg = C.mantle,
+	bkg = C.surface0,
 	diffs = C.mauve,
 	extras = C.overlay1,
 	curr_file = C.maroon,
@@ -71,7 +71,11 @@ function M.setup(opts)
 		opts.sett = opts.sett or {}
 		opts.mode_colors = opts.mode_colors or {}
 	else
-		opts = {}
+		opts = {
+			assets = {},
+			sett = {},
+			mode_colors = {},
+		}
 	end
 	assets = vim.tbl_deep_extend("force", assets, opts.assets)
 	sett = vim.tbl_deep_extend("force", sett, opts.sett)
