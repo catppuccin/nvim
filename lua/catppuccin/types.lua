@@ -31,6 +31,8 @@
 ---@field no_underline boolean?
 -- Handles the style of general hl groups (see `:h highlight-groups`).
 ---@field styles CtpStyles?
+-- Should default integrations be used.
+---@field default_integrations boolean?
 -- Toggle integrations. Integrations allow Catppuccin to set the theme of various plugins.
 ---@field integrations CtpIntegrations?
 -- Catppuccin colors can be overwritten here.
@@ -41,8 +43,6 @@
 ---@field custom_highlights CtpHighlightOverrideFn | {[string]: CtpHighlight} | nil
 -- The default flavor to use on startup.
 ---@field flavour CtpFlavor?
--- Should default integrations be used.
----@field no_defaults boolean?
 
 ---@class CtpBackground
 -- Catppuccin flavor to use when `:set background=dark` is set.
