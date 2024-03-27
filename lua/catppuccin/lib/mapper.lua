@@ -56,6 +56,16 @@ function M.apply(flavour)
 
 	theme.integrations = final_integrations -- plugins
 	theme.terminal = require("catppuccin.groups.terminal").get() -- terminal colors
+
+	local user_terminal = O.terminal_overrides
+	if type(user_terminal[flavour]) == "function" then user_terminal[flavour] = user_terminal[flavour](C) end
+	theme.terminal = vim.tbl_deep_extend(
+		"keep",
+		user_terminal[flavour] or {},
+		type(user_terminal.all) == "function" and user_terminal.all(C) or user_terminal.all or {},
+		theme.terminal
+	)
+
 	local user_highlights = O.highlight_overrides
 	if type(user_highlights[flavour]) == "function" then user_highlights[flavour] = user_highlights[flavour](C) end
 	theme.custom_highlights = vim.tbl_deep_extend(

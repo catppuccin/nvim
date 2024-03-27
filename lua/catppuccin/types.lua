@@ -37,6 +37,8 @@
 ---@field integrations CtpIntegrations?
 -- Catppuccin colors can be overwritten here.
 ---@field color_overrides CtpColors | CtpFlavors<CtpColors<string>> | nil
+-- Catppuccin terminal colors can be overwritten here.
+---@field terminal_overrides CtpColors | CtpFlavors<CtpColors<string>> | nil
 -- Catppuccin highlights can be overwritten here.
 ---@field highlight_overrides CtpHighlightOverrides?
 -- Global highlight overrides.
