@@ -65,21 +65,40 @@ local mode_colors = {
 	["!"] = { "SHELL", C.green },
 }
 
+local view = {
+	lsp = {
+		progress = true,
+		name = false,
+		exclude_lsp_names = {},
+		separator = "|",
+	},
+}
+
+local is_lsp_in_excluded_list = function(lsp_name)
+	for _, excluded_lsp in ipairs(view.lsp.exclude_lsp_names) do
+		if lsp_name == excluded_lsp then return true end
+	end
+	return false
+end
+
 function M.setup(opts)
 	if opts then
 		opts.assets = opts.assets or {}
 		opts.sett = opts.sett or {}
 		opts.mode_colors = opts.mode_colors or {}
+		opts.view = opts.view or {}
 	else
 		opts = {
 			assets = {},
 			sett = {},
 			mode_colors = {},
+			view = {},
 		}
 	end
 	assets = vim.tbl_deep_extend("force", assets, opts.assets)
 	sett = vim.tbl_deep_extend("force", sett, opts.sett)
 	mode_colors = vim.tbl_deep_extend("force", mode_colors, opts.mode_colors)
+	view = vim.tbl_deep_extend("force", view, opts.view)
 end
 
 function M.get()
@@ -326,7 +345,7 @@ function M.get()
 
 			return ""
 		end,
-		enabled = is_enabled(80),
+		enabled = is_enabled(80) and view.lsp.progress == true,
 		hl = {
 			fg = C.rosewater,
 			bg = sett.bkg,
@@ -393,16 +412,33 @@ function M.get()
 
 	components.active[3][2] = {
 		provider = function()
-			if next(vim.lsp.buf_get_clients()) ~= nil then
-				return assets.lsp.server .. " " .. "Lsp"
-			else
-				return ""
+			local active_clients = vim.lsp.get_active_clients()
+
+			-- show an indicator that we have running lsps
+			if view.lsp.name == false and next(active_clients) ~= nil then return assets.lsp.server .. " " .. "Lsp" end
+
+			-- show the actual name of the runing lsps
+			local lsp_names = ""
+			for index, lsp_config in ipairs(active_clients) do
+				if is_lsp_in_excluded_list(lsp_config.name) then goto continue end
+
+				if index == 1 then
+					lsp_names = assets.lsp.server .. " " .. lsp_config.name
+				else
+					lsp_names = lsp_names .. view.lsp.separator .. lsp_config.name
+				end
+
+				::continue::
 			end
+
+			return lsp_names
 		end,
+
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
 		},
+
 		right_sep = invi_sep,
 	}
 
