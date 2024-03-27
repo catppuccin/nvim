@@ -167,9 +167,7 @@ function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
 
-	if user_conf.default_integrations == false then
-		M.default_options.integrations = nil
-	end
+	if user_conf.default_integrations == false then M.default_options.integrations = nil end
 
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
