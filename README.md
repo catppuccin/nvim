@@ -123,6 +123,7 @@ require("catppuccin").setup({
     },
     color_overrides = {},
     custom_highlights = {},
+    default_integrations = true,
     integrations = {
         cmp = true,
         gitsigns = true,
@@ -250,6 +251,14 @@ require("catppuccin").setup({
             indentscope_color = "",
         },
     }
+})
+```
+
+Some integrations are enabled by default, you can control this behaviour with `default_integrations` option.
+
+```lua
+require("catppuccin").setup({
+    default_integrations = false,
 })
 ```
 
