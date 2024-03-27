@@ -41,6 +41,8 @@
 ---@field custom_highlights CtpHighlightOverrideFn | {[string]: CtpHighlight} | nil
 -- The default flavor to use on startup.
 ---@field flavour CtpFlavor?
+-- Should default integrations be used.
+---@field no_defaults boolean?
 
 ---@class CtpBackground
 -- Catppuccin flavor to use when `:set background=dark` is set.
