@@ -150,7 +150,7 @@
 ---@field harpoon boolean?
 ---@field headlines boolean?
 ---@field hop boolean?
----@field illuminate boolean?
+---@field illuminate CtpIntegrationIlluminate | boolean?
 ---@field indent_blankline CtpIntegrationIndentBlankline | boolean?
 ---@field leap boolean?
 ---@field lightspeed boolean?
@@ -252,6 +252,12 @@
 ---@field enabled boolean?
 -- The style of Telescope
 ---@field style "classic" | "nvchad" | nil
+
+---@class CtpIntegrationIlluminate
+-- Whether to enable the vim-illuminate integration
+---@field enabled boolean?
+-- Whether to standout IlluminatedWordWrite hl group
+---@field lsp boolean?
 
 ---@alias CtpHighlightArgs "bold" | "underline" | "undercurl" | "underdouble" | "underdotted" | "underdashed" | "strikethrough" | "reverse" | "inverse" | "italic" | "standout" | "altfont" | "nocombine" | "NONE"
 ---@alias CtpHighlightOverrideFn fun(colors: CtpColors<string>): { [string]: CtpHighlight}
