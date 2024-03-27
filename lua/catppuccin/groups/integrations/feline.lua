@@ -412,7 +412,7 @@ function M.get()
 
 	components.active[3][2] = {
 		provider = function()
-			local active_clients = vim.lsp.get_active_clients()
+			local active_clients = vim.lsp.get_active_clients { bufnr = 0 }
 
 			-- show an indicator that we have running lsps
 			if view.lsp.name == false and next(active_clients) ~= nil then return assets.lsp.server .. " " .. "Lsp" end
