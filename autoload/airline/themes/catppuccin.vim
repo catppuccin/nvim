@@ -23,6 +23,10 @@ function! airline#themes#catppuccin#refresh()
 	let s:R1 = [ s:c.mantle, s:c.red, 59, 203 ] " guifg guibg ctermfg ctermbg
 	let s:R2 = [ s:c.red, s:c.surface0, 203, 59 ] " guifg guibg ctermfg ctermbg
 
+	" Command mode
+	let s:C1 = [ s:c.base, s:c.peach, 59, 166 ] " guifg guibg ctermfg ctermbg
+	let s:C2 = [ s:c.peach, s:c.surface0, 166, 59 ] " guifg guibg ctermfg ctermbg
+
 	" Warning section
 	let s:WR = [s:c.mantle, s:c.peach, 232, 166 ]
 
@@ -55,6 +59,14 @@ function! airline#themes#catppuccin#refresh()
 	let g:airline#themes#catppuccin#palette.replace = copy(g:airline#themes#catppuccin#palette.insert)
 	let g:airline#themes#catppuccin#palette.replace.airline_a = [ s:R1[0], s:R1[1], s:R1[2], s:R1[3], '' ]
 	let g:airline#themes#catppuccin#palette.replace.airline_b = [ s:R2[0], s:R2[1], s:R2[2], s:R2[3], '' ]
+
+	" Terminal mode is same as insert mode
+	let g:airline#themes#catppuccin#palette.terminal = copy(g:airline#themes#catppuccin#palette.insert)
+
+	" Fork command mode from normal mode
+	let g:airline#themes#catppuccin#palette.commandline = copy(g:airline#themes#catppuccin#palette.normal)
+	let g:airline#themes#catppuccin#palette.commandline.airline_a = [ s:C1[0], s:C1[1], s:C1[2], s:C1[3], '' ]
+	let g:airline#themes#catppuccin#palette.commandline.airline_b = [ s:C2[0], s:C2[1], s:C2[2], s:C2[3], '' ]
 endfunction
 
 call airline#themes#catppuccin#refresh()
