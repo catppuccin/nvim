@@ -20,7 +20,8 @@ function! airline#themes#catppuccin#refresh()
 	let s:V3 = [ s:c.text, s:c.mantle, 145, 16	] " guifg guibg ctermfg ctermbg
 
 	" Replace mode
-	let s:RE = [ s:c.mantle, s:c.red, 59, 203 ] " guifg guibg ctermfg ctermbg
+	let s:R1 = [ s:c.mantle, s:c.red, 59, 203 ] " guifg guibg ctermfg ctermbg
+	let s:R2 = [ s:c.red, s:c.surface0, 203, 59 ] " guifg guibg ctermfg ctermbg
 
 	" Warning section
 	let s:WR = [s:c.mantle, s:c.peach, 232, 166 ]
@@ -32,13 +33,8 @@ function! airline#themes#catppuccin#refresh()
 	let g:airline#themes#catppuccin#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 
 	let g:airline#themes#catppuccin#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
-	let g:airline#themes#catppuccin#palette.insert_replace = {
-		\ 'airline_a': [ s:RE[0], s:I1[1], s:RE[1], s:I1[3], '' ] }
 
 	let g:airline#themes#catppuccin#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
-
-	let g:airline#themes#catppuccin#palette.replace = copy(g:airline#themes#catppuccin#palette.normal)
-	let g:airline#themes#catppuccin#palette.replace.airline_a = [ s:RE[0], s:RE[1], s:RE[2], s:RE[3], '' ]
 
 	let s:IA = [ s:N1[1], s:N3[1], s:N1[3], s:N3[3], '' ]
 	let g:airline#themes#catppuccin#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
@@ -54,6 +50,11 @@ function! airline#themes#catppuccin#refresh()
 	let g:airline#themes#catppuccin#palette.normal.airline_error = s:ER
 	let g:airline#themes#catppuccin#palette.insert.airline_error = s:ER
 	let g:airline#themes#catppuccin#palette.visual.airline_error = s:ER
+
+	" Fork replace mode from insert mode
+	let g:airline#themes#catppuccin#palette.replace = copy(g:airline#themes#catppuccin#palette.insert)
+	let g:airline#themes#catppuccin#palette.replace.airline_a = [ s:R1[0], s:R1[1], s:R1[2], s:R1[3], '' ]
+	let g:airline#themes#catppuccin#palette.replace.airline_b = [ s:R2[0], s:R2[1], s:R2[2], s:R2[3], '' ]
 endfunction
 
 call airline#themes#catppuccin#refresh()
