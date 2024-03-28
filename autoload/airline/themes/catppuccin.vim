@@ -6,17 +6,17 @@ function! airline#themes#catppuccin#refresh()
 	" Normal mode
 	" (Dark)
 	let s:N1 = [ s:c.mantle, s:c.blue, 59, 149 ] " guifg guibg ctermfg ctermbg
-	let s:N2 = [ s:c.blue, s:c.mantle, 149, 59	] " guifg guibg ctermfg ctermbg
+	let s:N2 = [ s:c.blue, s:c.surface0, 149, 59	] " guifg guibg ctermfg ctermbg
 	let s:N3 = [ s:c.text, s:c.mantle, 145, 16	] " guifg guibg ctermfg ctermbg
 
 	" Insert mode
 	let s:I1 = [ s:c.mantle, s:c.teal, 59, 74 ] " guifg guibg ctermfg ctermbg
-	let s:I2 = [ s:c.teal, s:c.mantle, 74, 59 ] " guifg guibg ctermfg ctermbg
+	let s:I2 = [ s:c.teal, s:c.surface0, 74, 59 ] " guifg guibg ctermfg ctermbg
 	let s:I3 = [ s:c.text, s:c.mantle, 145, 16 ] " guifg guibg ctermfg ctermbg
 
 	" Visual mode
 	let s:V1 = [ s:c.mantle, s:c.mauve, 59, 209 ] " guifg guibg ctermfg ctermbg
-	let s:V2 = [ s:c.mauve, s:c.mantle, 209, 59 ] " guifg guibg ctermfg ctermbg
+	let s:V2 = [ s:c.mauve, s:c.surface0, 209, 59 ] " guifg guibg ctermfg ctermbg
 	let s:V3 = [ s:c.text, s:c.mantle, 145, 16	] " guifg guibg ctermfg ctermbg
 
 	" Replace mode
