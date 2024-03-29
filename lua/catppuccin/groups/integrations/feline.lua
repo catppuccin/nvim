@@ -418,10 +418,12 @@ function M.get()
 			if view.lsp.name == false and next(active_clients) ~= nil then return assets.lsp.server .. " " .. "Lsp" end
 
 			-- show the actual name of the runing lsps
+			local index = 0
 			local lsp_names = ""
-			for index, lsp_config in ipairs(active_clients) do
+			for _, lsp_config in ipairs(active_clients) do
 				if is_lsp_in_excluded_list(lsp_config.name) then goto continue end
 
+				index = index + 1
 				if index == 1 then
 					lsp_names = assets.lsp.server .. " " .. lsp_config.name
 				else
