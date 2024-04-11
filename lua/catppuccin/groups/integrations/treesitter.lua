@@ -28,10 +28,12 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
+		["@string.documentation"] = { fg = C.teal, style = O.styles.strings or {} }, -- For strings documenting code (e.g. Python docstrings).
 		["@string.regexp"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = C.pink, style = O.styles.strings or {} }, -- For escape characters within a string.
 		["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
-		["@string.special.symbol"] = { fg = C.flamingo },
+		["@string.special.path"] = { link = "Special" }, -- filenames
+		["@string.special.symbol"] = { fg = C.flamingo }, -- symbols or atoms
 		["@string.special.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
 
 		["@character"] = { link = "Character" }, -- character literals
@@ -45,7 +47,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@type"] = { link = "Type" }, -- For types.
 		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or { "italic" } }, -- For builtin types.
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
-		["@type.qualifier"] = { link = "Keyword" }, -- type qualifiers (e.g. `const`)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
 		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- Same as TSField.
@@ -64,15 +65,19 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
+		["@keyword.modifier"] = { link = "Keyword" }, -- For keywords modifying other constructs (e.g. `const`, `static`, `public`)
+		["@keyword.type"] = { link = "Keyword" }, -- For keywords describing composite types (e.g. `struct`, `enum`)
+		["@keyword.coroutine"] = { link = "Keyword" }, -- For keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
 		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
-		["@keyword.operator"] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
+		["@keyword.operator"] = { link = "Operator" }, -- For new keyword operator
 		["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-		["@keyword.storage"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
 		["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
 		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
+		["@keyword.debug"] = { link = "Exception" }, -- For keywords related to debugging
 		["@keyword.exception"] = { link = "Exception" }, -- For exception related keywords.
 
 		["@keyword.conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
+		["@keyword.conditional.ternary"] = { link = "Operator" }, -- For ternary operators (e.g. `?` / `:`)
 
 		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
 		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
@@ -86,11 +91,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Comment
 		["@comment"] = { link = "Comment" },
+		["@comment.documentation"] = { fg = C.teal, style = O.styles.strings or {} }, -- For comments documenting code
 
 		["@comment.error"] = { fg = C.base, bg = C.red },
 		["@comment.warning"] = { fg = C.base, bg = C.yellow },
 		["@comment.hint"] = { fg = C.base, bg = C.blue },
 		["@comment.todo"] = { fg = C.base, bg = C.flamingo },
+		["@comment.note"] = { fg = C.base, bg = C.rosewater },
 
 		-- Markup
 		["@markup"] = { fg = C.text }, -- For strings considerated text in a markup language.
@@ -102,10 +109,12 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@markup.heading"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
 
 		["@markup.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
+		["@markup.quote"] = { fg = C.maroon, style = { "bold" } }, -- block quotes
 		["@markup.environment"] = { fg = C.pink }, -- text environments of markup languages
 		["@markup.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
 
 		["@markup.link"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
+		["@markup.link.label"] = { link = "Label" }, -- link, reference descriptions
 		["@markup.link.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
 
 		["@markup.raw"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
@@ -235,6 +244,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 	colors["@text.diff.add"] = colors["@diff.plus"]
 	colors["@text.diff.delete"] = colors["@diff.minus"]
 
+	colors["@type.qualifier"] = colors["@keyword.modifier"]
+	colors["@keyword.storage"] = colors["@keyword.modifier"]
 	colors["@define"] = colors["@keyword.directive.define"]
 	colors["@preproc"] = colors["@keyword.directive"]
 	colors["@storageclass"] = colors["@keyword.storage"]

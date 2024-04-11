@@ -3,7 +3,7 @@ local M = {}
 function M.get()
 	return {
 		Dash = { fg = C.overlay2, style = { "bold" } },
-		Quote = { link = "@text.strong" },
+		Quote = { link = "@markup.strong" },
 		CodeBlock = { bg = C.mantle },
 		Headline = { link = "Headline1" },
 		Headline1 = { bg = C.surface0, fg = C.red },
