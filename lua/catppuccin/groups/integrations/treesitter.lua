@@ -91,7 +91,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Comment
 		["@comment"] = { link = "Comment" },
-		["@comment.documentation"] = { link = "@comment" }, -- For comments documenting code
+		["@comment.documentation"] = { link = "Comment" }, -- For comments documenting code
 
 		["@comment.error"] = { fg = C.base, bg = C.red },
 		["@comment.warning"] = { fg = C.base, bg = C.yellow },
