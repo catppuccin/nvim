@@ -4,6 +4,7 @@ if is_vim then require "catppuccin.lib.vim" end
 ---@type Catppuccin
 local M = {
 	default_options = {
+		flavour = "auto",
 		background = {
 			light = "latte",
 			dark = "mocha",
@@ -125,7 +126,7 @@ local function get_flavour(default)
 	if flavour and not M.flavours[flavour] then
 		vim.notify(
 			string.format(
-				"Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+				"Catppuccin (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato', 'mocha' or 'auto'",
 				flavour
 			),
 			vim.log.levels.ERROR
@@ -140,15 +141,6 @@ local did_setup = false
 function M.load(flavour)
 	if M.options.flavour == "auto" then -- set colorscheme based on o:background
 		M.options.flavour = nil -- ensure that this will only run once on startup
-		if not vim.api.nvim_get_option_info2("background", {}).was_set then -- wait for terminal to set o:background
-			vim.api.nvim_create_autocmd("OptionSet", { -- https://github.com/neovim/neovim/pull/26284
-				once = true,
-				nested = true,
-				pattern = "background",
-				callback = function() M.load(flavour) end,
-			})
-			return
-		end
 	end
 	if not did_setup then M.setup() end
 	M.flavour = get_flavour(flavour)
@@ -158,7 +150,7 @@ function M.load(flavour)
 		M.compile()
 		f = assert(loadfile(compiled_path), "could not load cache")
 	end
-	f()
+	f(flavour or M.options.flavour)
 end
 
 ---@type fun(user_conf: CatppuccinOptions?)

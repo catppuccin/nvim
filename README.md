@@ -89,8 +89,7 @@ There is no need to call `setup` if you don't want to change the default options
 
 ```lua
 require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    -- flavour = "auto" -- will respect terminal's background
+    flavour = "auto", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
         dark = "mocha",
