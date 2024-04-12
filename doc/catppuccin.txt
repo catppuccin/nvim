@@ -17,6 +17,7 @@ Table of Contents                               *catppuccin-table-of-contents*
   - Wrong treesitter highlights   |catppuccin-faq-wrong-treesitter-highlights|
   - Colors doesn’t match preview screenshots|catppuccin-faq-colors-doesn’t-match-preview-screenshots|
 9. Thanks to                                            |catppuccin-thanks-to|
+10. Links                                                   |catppuccin-links|
 
 ==============================================================================
 1. Features                                              *catppuccin-features*
@@ -70,8 +71,7 @@ options and settings.
 
 >lua
     require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        -- flavour = "auto" -- will respect terminal's background
+        flavour = "auto", -- latte, frappe, macchiato, mocha
         background = { -- :h background
             light = "latte",
             dark = "mocha",

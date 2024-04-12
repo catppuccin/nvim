@@ -25,10 +25,10 @@ function M.compile(flavour)
 	local lines = {
 		string.format(
 			[[
-return string.dump(function()
+return string.dump(function(flavour)
 vim.o.termguicolors = true
 if vim.g.colors_name then vim.cmd("hi clear") end
-vim.o.background = "%s"
+if flavour then vim.o.background = "%s" end
 vim.g.colors_name = "catppuccin-%s"
 local h = vim.api.nvim_set_hl]],
 			flavour == "latte" and "light" or "dark",
