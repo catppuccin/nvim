@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.7.0](https://github.com/catppuccin/nvim/compare/v1.6.0...v1.7.0) (2024-04-13)
+
+
+### Features
+
+* add ability to toggle default integrations ([#687](https://github.com/catppuccin/nvim/issues/687)) ([e60e400](https://github.com/catppuccin/nvim/commit/e60e400c411519f29e203185ddda121d4ec8ef57))
+* add support for `outline.nvim` plugin ([#647](https://github.com/catppuccin/nvim/issues/647)) ([048c18f](https://github.com/catppuccin/nvim/commit/048c18fc531703815f5e10765ea46ce9b2c75ae4))
+* **defaults:** enable neotree ([c536623](https://github.com/catppuccin/nvim/commit/c536623eac60f8443c93ae4ca0e03b51574b5f50))
+* **defaults:** enable treesitter context ([dc392c0](https://github.com/catppuccin/nvim/commit/dc392c067739326c3cff380a8c52b0f31319e6dd)), closes [#683](https://github.com/catppuccin/nvim/issues/683)
+* **feline:** fix feline integration ([#685](https://github.com/catppuccin/nvim/issues/685)) ([07679af](https://github.com/catppuccin/nvim/commit/07679af1af4f446655682ee2557b5840ac551504))
+* **feline:** improve feline lsp display ([#688](https://github.com/catppuccin/nvim/issues/688)) ([f66654d](https://github.com/catppuccin/nvim/commit/f66654d5d5190865333e8e46474c1593302c558e))
+* **integration:** add reactive.nvim integration ([#654](https://github.com/catppuccin/nvim/issues/654)) ([151e478](https://github.com/catppuccin/nvim/commit/151e478edf8108cfd451a3cbd44d0a20503e7b42))
+* **lsp:** add highlight for `LspCodeLensSeparator` ([#693](https://github.com/catppuccin/nvim/issues/693)) ([02bdd74](https://github.com/catppuccin/nvim/commit/02bdd749931a5d739063562e57531c118e081882))
+* set `[@comment](https://github.com/comment).warning` that does not affect readability in gitcommit ([#675](https://github.com/catppuccin/nvim/issues/675)) ([045e349](https://github.com/catppuccin/nvim/commit/045e3499d9ec8d84635fb08877ae44fd33f6a38d))
+* **treesitter:** add styles.miscs to disable hardcoded italics ([#659](https://github.com/catppuccin/nvim/issues/659)) ([c0de3b4](https://github.com/catppuccin/nvim/commit/c0de3b46811fe1ce3912e2245a9dfbea6b41c300))
+* **treesitter:** follow upstream captures ([#630](https://github.com/catppuccin/nvim/issues/630)) ([f288876](https://github.com/catppuccin/nvim/commit/f288876c6d05d3bb91b0e72b8031fe9e26ef05b8))
+* **treesitter:** follow upstream captures ([#694](https://github.com/catppuccin/nvim/issues/694)) ([08c6417](https://github.com/catppuccin/nvim/commit/08c6417bdc3b29e5f8c53e2cfe4067f288d49a54))
+* use a more distinguishable color for todos ([#645](https://github.com/catppuccin/nvim/issues/645)) ([657cc4f](https://github.com/catppuccin/nvim/commit/657cc4f35cf193cadac7e5471eb802c97e7a1b59))
+
+
+### Bug Fixes
+
+* **compile:** string.dump isn't deterministic ([836de8b](https://github.com/catppuccin/nvim/commit/836de8bc1898250b69332e66cbe993058870f849)), closes [#664](https://github.com/catppuccin/nvim/issues/664)
+* **dropbar:** correct keyword highlight link ([#652](https://github.com/catppuccin/nvim/issues/652)) ([afab7ec](https://github.com/catppuccin/nvim/commit/afab7ec2a79c7127627dede79c0018b6e45663d0))
+* ensure consistency between JSX and HTML markup ([#660](https://github.com/catppuccin/nvim/issues/660)) ([9703f22](https://github.com/catppuccin/nvim/commit/9703f227bfab20d04bcee62d2f08f1795723b4ae))
+* **flavour:** g:catppuccin_flavour backwards compatibility ([fc98570](https://github.com/catppuccin/nvim/commit/fc98570d85ae772e56dc42cf8d7d6a497a909bdb))
+* **flavour:** respect terminal's background ([#696](https://github.com/catppuccin/nvim/issues/696)) ([d5760c5](https://github.com/catppuccin/nvim/commit/d5760c53ae3b48f0f539298ec4165adc5c0afb19))
+* **illuminate:** update type ([#690](https://github.com/catppuccin/nvim/issues/690)) ([30930f9](https://github.com/catppuccin/nvim/commit/30930f9656cffd068bcf52ced70cdfffd1e83a44))
+* **integrations:** respect default options ([c2e6f8e](https://github.com/catppuccin/nvim/commit/c2e6f8e7eb8d0ebf55700c89bdf842809aeecf09))
+* **neotree:** add `NeoTreeModified` ([#642](https://github.com/catppuccin/nvim/issues/642)) ([6853cc8](https://github.com/catppuccin/nvim/commit/6853cc8e6efc76e85e10ec153d05fc2520653508))
+* **neotree:** blend sidebar with win separator ([56fb982](https://github.com/catppuccin/nvim/commit/56fb98218d22d5c326387bf9e4076227e7372e6b)), closes [#670](https://github.com/catppuccin/nvim/issues/670)
+* repair treesitter underlined text (`Underline` -&gt; `Underlined`) ([#663](https://github.com/catppuccin/nvim/issues/663)) ([42b687c](https://github.com/catppuccin/nvim/commit/42b687c42a35633366ed45e562bf921fb914048b))
+* respect background variable on startup ([6b7a4df](https://github.com/catppuccin/nvim/commit/6b7a4dfdf241c8be0af6ec691b302e85cce03cab))
+* **semantic_tokens:** namespace -&gt; module ([196f301](https://github.com/catppuccin/nvim/commit/196f301de06090c40d7f98297675ac38ae7d6675))
+* **treesitter:** some captures missing leading `@` ([#650](https://github.com/catppuccin/nvim/issues/650)) ([bc1f215](https://github.com/catppuccin/nvim/commit/bc1f2151f23227ba02ac203c2c59ad693352a741))
+* use external index for lsp counting ([c3572a9](https://github.com/catppuccin/nvim/commit/c3572a968a79b64bd0ef16f2c3e93014f112e66d))
+* wrong color shown when using color_overrides ([#658](https://github.com/catppuccin/nvim/issues/658)) ([b76ada8](https://github.com/catppuccin/nvim/commit/b76ada82bf2019d5e343018b4104cc9266900c16)), closes [#657](https://github.com/catppuccin/nvim/issues/657)
+
 ## [1.6.0](https://github.com/catppuccin/nvim/compare/v1.5.0...v1.6.0) (2023-12-28)
 
 
