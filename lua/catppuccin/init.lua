@@ -150,7 +150,7 @@ function M.load(flavour)
 		M.compile()
 		f = assert(loadfile(compiled_path), "could not load cache")
 	end
-	f(flavour or M.options.flavour)
+	f(flavour or M.options.flavour or vim.g.catppuccin_flavour)
 end
 
 ---@type fun(user_conf: CatppuccinOptions?)
