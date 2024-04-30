@@ -383,6 +383,10 @@ dashboard-nvim>lua
     dashboard = true
 <
 
+diffview.nvim>lua
+    diffview = false
+
+
 dropbar.nvim>lua
     dropbar = {
         enabled = false,

@@ -132,6 +132,7 @@
 ---@field dap boolean?
 ---@field dap_ui boolean?
 ---@field dashboard boolean?
+---@field diffview boolean?
 ---@field dropbar CtpIntegrationDropbar | boolean?
 ---@field fern boolean?
 -- Set `notification.window.winblend` to `0` in your `fidget` config:

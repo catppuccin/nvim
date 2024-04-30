@@ -472,6 +472,20 @@ dashboard = true
 </tr>
 <!-- dashboard-nvim -->
 
+<!-- diffview.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/sindrets/diffview.nvim">diffview.nvim</a> </td>
+<td>
+
+```lua
+diffview = true
+```
+
+</td>
+</tr>
+<!-- diffview.nvim -->
+
 <!-- dropbar.nvim -->
 </tr>
 <tr>

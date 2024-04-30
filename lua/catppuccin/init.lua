@@ -43,6 +43,7 @@ local M = {
 			dap = true,
 			dap_ui = true,
 			dashboard = true,
+			diffview = false,
 			flash = true,
 			gitsigns = true,
 			markdown = true,
