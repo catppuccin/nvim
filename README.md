@@ -458,6 +458,23 @@ native_lsp = {
 </tr>
 <!-- coc.nvim -->
 
+<!-- colorful-winsep.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/nvim-zh/colorful-winsep.nvim">colorful-winsep.nvim</a>
+</td>
+<td>
+
+```lua
+colorful_winsep = {
+    enabled = false,
+    color = "red",
+}
+```
+</td>
+</tr>
+<!-- colorful_winsep.nvim -->
+
 <!-- dashboard-nvim -->
 </tr>
 <tr>
