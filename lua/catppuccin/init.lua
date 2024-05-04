@@ -96,6 +96,10 @@ local M = {
 				enabled = true,
 				color_mode = false,
 			},
+			colorful_winsep = {
+				enabled = false,
+				color = "red",
+			},
 		},
 		color_overrides = {},
 		highlight_overrides = {},
