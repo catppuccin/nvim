@@ -343,13 +343,6 @@ coc.nvim>lua
     coc_nvim = false
 <
 
-colorful-winsep>lua
-    colorful_winsep = {
-	enabled = false,
-	color = 'red' -- a catpuccin color to use for the window separator
-    },
-<
-
 Special ~
 
 Setting `enabled` to `true` enables this integration.
@@ -384,6 +377,13 @@ directly at the thing (e.g. an error)).
             background = true,
         },
     },
+<
+
+colorful-winsep.nvim>lua
+    colorful_winsep = {
+        enabled = false,
+        color = "red",
+    }
 <
 
 dashboard-nvim>lua
