@@ -479,7 +479,7 @@ dashboard = true
 <td>
 
 ```lua
-diffview = true
+diffview = false
 ```
 
 </td>
