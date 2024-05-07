@@ -6,16 +6,10 @@ function M.get()
 		DiffviewPrimary = { fg = C.blue },
 		DiffviewSecondary = { fg = C.green },
 		DiffviewNormal = { fg = C.text, bg = O.transparent_background and C.none or C.mantle },
-		DiffviewNonText = { link = "NonText" },
-		DiffviewCursorLine = { link = "CursorLine" },
 		DiffviewWinSeparator = {
 			fg = O.transparent_background and C.surface1 or C.base,
 			bg = O.transparent_background and C.none or C.base,
 		},
-		DiffviewSignColumn = { link = "Normal" },
-		DiffviewStatusLine = { link = "StatusLine" },
-		DiffviewStatusLineNC = { link = "StatusLineNC" },
-		DiffviewEndOfBuffer = { link = "EndOfBuffer" },
 		DiffviewFilePanelTitle = { fg = C.blue, style = { "bold" } },
 		DiffviewFilePanelCounter = { fg = C.text },
 		DiffviewFilePanelRootPath = { fg = C.lavender, style = { "bold" } },
@@ -41,10 +35,6 @@ function M.get()
 		DiffviewStatusDeleted = { fg = C.red },
 		DiffviewStatusBroken = { fg = C.red },
 		DiffviewStatusIgnored = { fg = C.overlay0 },
-		DiffviewDiffAdd = { link = "DiffAdd" },
-		DiffviewDiffDelete = { link = "DiffDelete" },
-		DiffviewDiffChange = { link = "DiffChange" },
-		DiffviewDiffText = { link = "DiffText" },
 	}
 end
 
