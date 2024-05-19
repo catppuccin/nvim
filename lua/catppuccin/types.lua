@@ -158,6 +158,7 @@
 ---@field indent_blankline CtpIntegrationIndentBlankline | boolean?
 ---@field leap boolean?
 ---@field lightspeed boolean?
+---@field lir CtpIntegrationLir | boolean?
 -- For custom Lsp kind icon and colors, adjust your `lspsaga` config:
 --
 -- ```lua
@@ -234,6 +235,12 @@
 -- Enables char highlights per indent level.
 -- Follow the instructions on the plugins GitHub repo to set it up.
 ---@field colored_indent_levels boolean?
+
+---@class CtpIntegrationLir
+-- Whether to enable the integration.
+---@field enabled boolean
+-- Sets lir-git-status.nvim highlight groups
+---@field git_status boolean
 
 ---@class CtpIntegrationMini
 -- Whether to enable the integration.
