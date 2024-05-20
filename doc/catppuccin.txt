@@ -366,12 +366,14 @@ directly at the thing (e.g. an error)).
             hints = { "italic" },
             warnings = { "italic" },
             information = { "italic" },
+            ok = { "italic" },
         },
         underlines = {
             errors = { "underline" },
             hints = { "underline" },
             warnings = { "underline" },
             information = { "underline" },
+            ok = { "underline" },
         },
         inlay_hints = {
             background = true,
@@ -674,12 +676,14 @@ nvim-lspconfig>lua
             hints = { "italic" },
             warnings = { "italic" },
             information = { "italic" },
+            ok = { "italic" },
         },
         underlines = {
             errors = { "underline" },
             hints = { "underline" },
             warnings = { "underline" },
             information = { "underline" },
+            ok = { "underline" },
         },
         inlay_hints = {
             background = true,
