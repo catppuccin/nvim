@@ -9,6 +9,7 @@ function M.get()
 	local warning = C.yellow
 	local info = C.sky
 	local hint = C.teal
+	local ok = C.green
 	local darkening_percentage = 0.095
 
 	return {
@@ -40,27 +41,35 @@ function M.get()
 			fg = hint,
 			style = virtual_text.hints,
 		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticVirtualTextOk = {
+			bg = O.transparent_background and C.none or U.darken(hint, darkening_percentage, C.base),
+			fg = ok,
+			style = virtual_text.ok,
+		}, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 
 		DiagnosticError = { bg = C.none, fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn = { bg = C.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticInfo = { bg = C.none, fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticHint = { bg = C.none, fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticOk = { bg = C.none, fg = ok, style = virtual_text.ok }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
 
-		-- for nvim nightly
 		DiagnosticUnderlineError = { style = underlines.errors, sp = error }, -- Used to underline "Error" diagnostics
 		DiagnosticUnderlineWarn = { style = underlines.warnings, sp = warning }, -- Used to underline "Warn" diagnostics
 		DiagnosticUnderlineInfo = { style = underlines.information, sp = info }, -- Used to underline "Info" diagnostics
 		DiagnosticUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineOk = { style = underlines.ok, sp = ok }, -- Used to underline "Ok" diagnostics
 
 		DiagnosticFloatingError = { fg = error }, -- Used to color "Error" diagnostic messages in diagnostics float
 		DiagnosticFloatingWarn = { fg = warning }, -- Used to color "Warn" diagnostic messages in diagnostics float
 		DiagnosticFloatingInfo = { fg = info }, -- Used to color "Info" diagnostic messages in diagnostics float
 		DiagnosticFloatingHint = { fg = hint }, -- Used to color "Hint" diagnostic messages in diagnostics float
+		DiagnosticFloatingOk = { fg = ok }, -- Used to color "Ok" diagnostic messages in diagnostics float
 
 		DiagnosticSignError = { fg = error }, -- Used for "Error" signs in sign column
 		DiagnosticSignWarn = { fg = warning }, -- Used for "Warn" signs in sign column
 		DiagnosticSignInfo = { fg = info }, -- Used for "Info" signs in sign column
 		DiagnosticSignHint = { fg = hint }, -- Used for "Hint" signs in sign column
+		DiagnosticSignOk = { fg = ok }, -- Used for "Ok" signs in sign column
 
 		LspDiagnosticsDefaultError = { fg = error }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		LspDiagnosticsDefaultWarning = { fg = warning }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)

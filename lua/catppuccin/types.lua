@@ -87,14 +87,16 @@
 ---@field miscs CtpHighlightArgs[]?
 
 ---@class CtpNativeLspStyles
--- Change the style of LSP errors.
+-- Change the style of LSP error diagnostics.
 ---@field errors CtpHighlightArgs[]?
--- Change the style of LSP hints.
+-- Change the style of LSP hint diagnostics.
 ---@field hints CtpHighlightArgs[]?
--- Change the style of LSP warnings.
+-- Change the style of LSP warning diagnostics.
 ---@field warnings CtpHighlightArgs[]?
--- Change the style of LSP information.
+-- Change the style of LSP information diagnostics.
 ---@field information CtpHighlightArgs[]?
+-- Change the style of LSP ok diagnostics.
+---@field ok CtpHighlightArgs[]?
 
 ---@class CtpNativeLspInlayHints
 -- Toggle the background of inlay hints.
