@@ -238,6 +238,9 @@ function M.get()
 		NeogitTagDistance = {
 			fg = C.blue,
 		},
+		NeogitWinSeparator = {
+			link = "WinSeparator",
+		},
 	}
 end
 
