@@ -417,7 +417,7 @@ function M.get()
 			-- show an indicator that we have running lsps
 			if view.lsp.name == false and next(active_clients) ~= nil then return assets.lsp.server .. " " .. "Lsp" end
 
-			-- show the actual name of the runing lsps
+			-- show the actual name of the running lsps
 			local index = 0
 			local lsp_names = ""
 			for _, lsp_config in ipairs(active_clients) do
