@@ -96,6 +96,17 @@ function M.get()
 		rainbow4 = { fg = C.green },
 		rainbow5 = { fg = C.sapphire },
 		rainbow6 = { fg = C.lavender },
+
+		-- csv
+		csvCol0 = { fg = C.red },
+		csvCol1 = { fg = C.peach },
+		csvCol2 = { fg = C.yellow },
+		csvCol3 = { fg = C.green },
+		csvCol4 = { fg = C.sky },
+		csvCol5 = { fg = C.blue },
+		csvCol6 = { fg = C.lavender },
+		csvCol7 = { fg = C.mauve },
+		csvCol8 = { fg = C.pink },
 	}
 end
 
