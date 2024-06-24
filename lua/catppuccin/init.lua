@@ -103,6 +103,10 @@ local M = {
 				enabled = false,
 				color = "red",
 			},
+			mini = {
+				enabled = true,
+				indentscope_color = "text",
+			},
 		},
 		color_overrides = {},
 		highlight_overrides = {},
