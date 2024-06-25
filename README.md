@@ -72,6 +72,16 @@ use { "catppuccin/nvim", as = "catppuccin" }
 ```vim
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 ```
+### Installation on Gentoo
+To install catppuccin-neovim on gentoo, add the GURU repository first.
+```bash
+sudo eselect repository enable 151
+```
+Sync the repository, then merge ``catppuccin-neovim``
+```bash
+sudo emerge --sync guru
+sudo emerge --ask catppuccin-neovim
+```
 
 # Usage
 
