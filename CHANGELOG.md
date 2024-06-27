@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.0.0](https://github.com/catppuccin/nvim/compare/v1.7.0...v2.0.0) (2024-06-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **defaults:** Enable mini integration by default ([#718](https://github.com/catppuccin/nvim/issues/718))
+
+### Features
+
+* **bufferline:** add `indicator_visible` and `modified_visible` ([#716](https://github.com/catppuccin/nvim/issues/716)) ([cc8e290](https://github.com/catppuccin/nvim/commit/cc8e290d4c0d572171243087f8541e49be2c8764))
+* **csv:** built-in rainbow highlighting ([#720](https://github.com/catppuccin/nvim/issues/720)) ([67565cd](https://github.com/catppuccin/nvim/commit/67565cd353fa543fa30cb738570c2e4c87da3e9c))
+* **diffview:** add diffview integrations ([#700](https://github.com/catppuccin/nvim/issues/700)) ([182f256](https://github.com/catppuccin/nvim/commit/182f25640f85a3da2f1f22b088848d896a50fcce))
+* **integration:** add colorful-winsep.nvim ([#701](https://github.com/catppuccin/nvim/issues/701)) ([30481d6](https://github.com/catppuccin/nvim/commit/30481d659b6524e6bcae0756201d737e5bc1f209))
+* **mini:** add new highlight groups ([#721](https://github.com/catppuccin/nvim/issues/721)) ([6827a67](https://github.com/catppuccin/nvim/commit/6827a6763888f73df686f32c0e5ffb5b6b754d7b))
+* **treesitter-content:** highlight line number ([#709](https://github.com/catppuccin/nvim/issues/709)) ([4edca6b](https://github.com/catppuccin/nvim/commit/4edca6bed2ccc2715317725985c692ef0a992a50))
+
+
+### Bug Fixes
+
+* color float window border background ([#722](https://github.com/catppuccin/nvim/issues/722)) ([31fcfb0](https://github.com/catppuccin/nvim/commit/31fcfb02c47952d5c75aec893b93b2878abe5fbb))
+* **defaults:** Enable mini integration by default ([#718](https://github.com/catppuccin/nvim/issues/718)) ([894efb5](https://github.com/catppuccin/nvim/commit/894efb557728e532aa98b98029d16907a214ec05))
+* **neogit:** link WinSeparator ([#713](https://github.com/catppuccin/nvim/issues/713)) ([afccb3d](https://github.com/catppuccin/nvim/commit/afccb3d2377a3d6f0f65405899c9c23b1fd7cc28))
+* small typo in feline.lua file ([#719](https://github.com/catppuccin/nvim/issues/719)) ([c0bea77](https://github.com/catppuccin/nvim/commit/c0bea773a09e49e123136b099bce9ddc1bf395d2))
+
 ## [1.7.0](https://github.com/catppuccin/nvim/compare/v1.6.0...v1.7.0) (2024-04-13)
 
 
