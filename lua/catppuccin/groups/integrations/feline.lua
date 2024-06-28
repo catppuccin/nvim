@@ -305,6 +305,24 @@ function M.get()
 		},
 		left_sep = invi_sep,
 	}
+
+	-- lazy.nvim plugin updates
+	components.active[1][14] = {
+		provider = require("lazy.status").updates,
+		enabled = function()
+			local lazypath = vim.fn.isdirectory(vim.fn.stdpath "data" .. "/lazy/lazy.nvim")
+			if lazypath then
+				return require("lazy.status").has_updates()
+			else
+				return ""
+			end
+		end,
+		hl = {
+			fg = sett.extras,
+			bg = sett.bkg,
+		},
+		left_sep = invi_sep,
+	}
 	-- Extras ------>
 
 	-- ######## Left
