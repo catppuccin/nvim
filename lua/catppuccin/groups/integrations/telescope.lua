@@ -46,7 +46,7 @@ function M.get()
 
 	return {
 		-- TelescopeNormal = { link = "NormalFloat" }, -- Respect telescope's default float bg
-		TelescopeBorder = { link = "FloatBorder" },
+		TelescopeBorder = { fg = C.blue },
 		TelescopeSelectionCaret = { fg = C.flamingo },
 		TelescopeSelection = {
 			fg = O.transparent_background and C.flamingo or C.text,
