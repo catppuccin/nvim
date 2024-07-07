@@ -38,7 +38,7 @@ function M.get()
 		}, -- normal text in non-current windows
 		NormalSB = { fg = C.text, bg = C.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = C.text, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle }, -- Normal text in floating windows.
-		FloatBorder = { fg = C.blue, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
+		FloatBorder = { fg = C.blue },
 		FloatTitle = { fg = C.subtext0 }, -- Title of floating windows
 		Pmenu = {
 			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or U.darken(C.surface0, 0.8, C.crust),
