@@ -306,12 +306,12 @@ function M.get()
 		left_sep = invi_sep,
 	}
 
-	-- lazy.nvim plugin updates
+	-- lazy.nvim updates
 	components.active[1][14] = {
 		provider = require("lazy.status").updates,
 		enabled = function()
-			local lazypath = vim.fn.isdirectory(vim.fn.stdpath "data" .. "/lazy/lazy.nvim")
-			if lazypath then
+			local lazy_installed, _ = pcall(require, "lazy")
+			if lazy_installed then
 				return require("lazy.status").has_updates()
 			else
 				return ""
