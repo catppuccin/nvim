@@ -293,7 +293,7 @@ function M.get()
 	-- macro
 	components.active[1][12] = {
 		provider = "macro",
-		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
+		enabled = function() return vim.api.nvim_get_option_value("cmdheight", { scope = "global" }) == 0 end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -304,7 +304,7 @@ function M.get()
 	-- search count
 	components.active[1][13] = {
 		provider = "search_count",
-		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
+		enabled = function() return vim.api.nvim_get_option_value("cmdheight", { scope = "global" }) == 0 end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -441,7 +441,7 @@ function M.get()
 
 	components.active[3][2] = {
 		provider = function()
-			local active_clients = vim.lsp.get_active_clients { bufnr = 0 }
+			local active_clients = vim.lsp.get_clients { bufnr = 0 }
 
 			-- show an indicator that we have running lsps
 			if view.lsp.name == false and next(active_clients) ~= nil then return assets.lsp.server .. " " .. "Lsp" end
