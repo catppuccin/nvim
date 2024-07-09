@@ -139,6 +139,12 @@ function M.get()
 		return false
 	end
 
+	-- Check if lazy.nvim is installed
+	local has_lazy = function()
+		local lazy_installed, _ = pcall(require, "lazy")
+		return lazy_installed
+	end
+
 	-- #################### STATUSLINE ->
 
 	-- ######## Left
@@ -308,13 +314,18 @@ function M.get()
 
 	-- lazy.nvim updates
 	components.active[1][14] = {
-		provider = require("lazy.status").updates,
+		provider = function()
+			if has_lazy() then
+				return require("lazy.status").updates()
+			else
+				return " "
+			end
+		end,
 		enabled = function()
-			local lazy_installed, _ = pcall(require, "lazy")
-			if lazy_installed then
+			if has_lazy() then
 				return require("lazy.status").has_updates()
 			else
-				return ""
+				return false
 			end
 		end,
 		hl = {
