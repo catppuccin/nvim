@@ -11,6 +11,10 @@ function M.get()
 			GitSignsChange = { fg = C.yellow }, -- diff mode: Changed line |diff.txt|
 			GitSignsDelete = { fg = C.red }, -- diff mode: Deleted line |diff.txt|
 
+			GitSignsStagedAdd = { fg = U.darken(C.green, 0.5, C.base) },
+			GitSignsStagedChange = { fg = U.darken(C.yellow, 0.5, C.base) },
+			GitSignsStagedDelete = { fg = U.darken(C.red, 0.5, C.base) }
+
 			GitSignsCurrentLineBlame = { fg = C.surface1 },
 
 			GitSignsAddPreview = O.transparent_background and { fg = U.darken(C.green, 0.72, C.base), bg = C.none }
@@ -41,6 +45,10 @@ function M.get()
 			GitSignsAdd = { fg = C.green }, -- diff mode: Added line |diff.txt|
 			GitSignsChange = { fg = C.yellow }, -- diff mode: Changed line |diff.txt|
 			GitSignsDelete = { fg = C.red }, -- diff mode: Deleted line |diff.txt|
+
+			GitSignsStagedAdd = { fg = U.darken(C.green, 0.5, C.base) },
+			GitSignsStagedChange = { fg = U.darken(C.yellow, 0.5, C.base) },
+			GitSignsStagedDelete = { fg = U.darken(C.red, 0.5, C.base) }
 
 			GitSignsCurrentLineBlame = { fg = C.surface1 },
 
