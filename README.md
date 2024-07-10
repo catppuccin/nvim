@@ -581,7 +581,8 @@ ctp_feline.setup({
         extras = clrs.overlay1,
         curr_file = clrs.maroon,
         curr_dir = clrs.flamingo,
-        show_modified = true -- show if the file has been modified
+        show_modified = false -- show if the file has been modified
+        show_lazy_updates = true -- show the count of updatable plugins from lazy.nvim
     },
     mode_colors = {
         ["n"] = { "NORMAL", clrs.lavender },
