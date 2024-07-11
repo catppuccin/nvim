@@ -582,7 +582,9 @@ ctp_feline.setup({
         curr_file = clrs.maroon,
         curr_dir = clrs.flamingo,
         show_modified = false -- show if the file has been modified
-        show_lazy_updates = true -- show the count of updatable plugins from lazy.nvim
+        show_lazy_updates = false -- show the count of updatable plugins from lazy.nvim
+                                  -- need to set checker.enabled = true in lazy.nvim first
+                                  -- the icon is set in ui.icons.plugin in lazy.nvim
     },
     mode_colors = {
         ["n"] = { "NORMAL", clrs.lavender },

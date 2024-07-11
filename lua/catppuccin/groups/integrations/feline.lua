@@ -32,7 +32,7 @@ local sett = {
 	curr_file = C.maroon,
 	curr_dir = C.flamingo,
 	show_modified = false,
-	show_lazy_updates = true,
+	show_lazy_updates = false,
 }
 
 if require("catppuccin").flavour == "latte" then
