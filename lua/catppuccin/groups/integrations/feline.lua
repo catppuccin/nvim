@@ -32,6 +32,7 @@ local sett = {
 	curr_file = C.maroon,
 	curr_dir = C.flamingo,
 	show_modified = false,
+	show_lazy_updates = false,
 }
 
 if require("catppuccin").flavour == "latte" then
@@ -137,12 +138,6 @@ function M.get()
 			end
 		end
 		return false
-	end
-
-	-- Check if lazy.nvim is installed
-	local has_lazy = function()
-		local lazy_installed, _ = pcall(require, "lazy")
-		return lazy_installed
 	end
 
 	-- #################### STATUSLINE ->
@@ -314,15 +309,9 @@ function M.get()
 
 	-- lazy.nvim updates
 	components.active[1][14] = {
-		provider = function()
-			if has_lazy() then
-				return require("lazy.status").updates()
-			else
-				return " "
-			end
-		end,
+		provider = function() return require("lazy.status").updates() end,
 		enabled = function()
-			if has_lazy() then
+			if sett.show_lazy_updates and pcall(require, "lazy") then
 				return require("lazy.status").has_updates()
 			else
 				return false
