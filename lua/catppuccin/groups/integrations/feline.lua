@@ -311,7 +311,7 @@ function M.get()
 	components.active[1][14] = {
 		provider = function() return require("lazy.status").updates() end,
 		enabled = function()
-			if has_lazy() and sett.show_lazy_updates then
+			if sett.show_lazy_updates and pcall(require, "lazy") then
 				return require("lazy.status").has_updates()
 			else
 				return false
