@@ -185,6 +185,7 @@
 ---@field neotree boolean?
 ---@field noice boolean?
 ---@field notify boolean?
+---@field nvim_surround boolean?
 ---@field nvimtree boolean?
 ---@field octo boolean?
 ---@field overseer boolean?
