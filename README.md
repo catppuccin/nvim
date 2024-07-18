@@ -1131,7 +1131,7 @@ semantic_tokens = true
 <td>
 
 ```lua
-nvim_surround = true
+nvim_surround = false
 ```
 
 </td>
@@ -1145,7 +1145,7 @@ nvim_surround = true
 <td>
 
 ```lua
-nvimtree = false
+nvimtree = true
 ```
 
 </td>
