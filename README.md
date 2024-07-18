@@ -1124,6 +1124,20 @@ semantic_tokens = true
 </tr>
 <!-- nvim-semantic-tokens -->
 
+<!-- nvim-surround -->
+</tr>
+<tr>
+<td> <a href="https://github.com/kylechui/nvim-surround">nvim-surround</a> </td>
+<td>
+
+```lua
+nvim_surround = false
+```
+
+</td>
+</tr>
+<!-- nvim-surround -->
+
 <!-- nvim-tree.lua -->
 </tr>
 <tr>
