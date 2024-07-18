@@ -1145,7 +1145,7 @@ nvim_surround = true
 <td>
 
 ```lua
-nvimtree = true
+nvimtree = false
 ```
 
 </td>
