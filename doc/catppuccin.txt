@@ -542,6 +542,10 @@ gitsigns.nvim>lua
     gitsigns = true
 <
 
+grug-far.nvim>lua
+    grug_far = false
+<
+
 harpoon>lua
     harpoon = false
 <
