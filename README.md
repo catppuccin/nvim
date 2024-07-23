@@ -707,6 +707,17 @@ gitsigns = true
 ```
 <!-- gitsigns.nvim -->
 
+<!-- grug-far.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/MagicDuck/grug-far.nvim">grug-far.nvim</a> </td>
+<td>
+
+```lua
+grug_far = false
+```
+<!-- grug-far.nvim -->
+
 <!-- harpoon -->
 </tr>
 <tr>
