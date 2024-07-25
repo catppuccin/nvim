@@ -196,7 +196,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@comment.warning.gitcommit"] = { fg = C.yellow },
 
 		-- gitignore
-		["@string.special.path.gitignore"] = { fg = C.mauve },
+		["@string.special.path.gitignore"] = { fg = C.text },
 
 		-- Misc
 		gitcommitSummary = { fg = C.rosewater, style = O.styles.miscs or { "italic" } },
