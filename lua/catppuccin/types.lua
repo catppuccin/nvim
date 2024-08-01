@@ -192,6 +192,7 @@
 ---@field overseer boolean?
 ---@field pounce boolean?
 ---@field rainbow_delimiters boolean?
+---@field render_markdown boolean?
 ---@field sandwich boolean?
 ---@field semantic_tokens boolean?
 ---@field symbols_outline boolean?
