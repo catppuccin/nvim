@@ -1329,7 +1329,7 @@ To use another flavour just replace `mocha` with the one you want to use.
 <!-- markdown.nvim -->
 </tr>
 <tr>
-<td> <a href="https://github.com/MeanderingProgrammer/markdown.nvim">markdown.nvim</a> </td>
+<td> <a href="https://github.com/MeanderingProgrammer/markdown.nvim">render-markdown (markdown.nvim)</a> </td>
 <td>
 
 ```lua
