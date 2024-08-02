@@ -790,6 +790,10 @@ Here is how you can use them.
 
 To use another flavour just replace `mocha` with the one you want to use.
 
+render-markdown (markdown.nvim)>lua
+    render_markdown = true
+<
+
 symbols-outline.nvim
   [!NOTE] This plugin has been archived by the author, consider using
   outline.nvim <https://github.com/hedyhli/outline.nvim>
