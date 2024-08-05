@@ -1,7 +1,7 @@
 local M = {}
 
--- markdown.nvim highlight groups:
--- https://github.com/MeanderingProgrammer/markdown.nvim?tab=readme-ov-file#colors
+-- render-markdown.nvim highlight groups:
+-- https://github.com/MeanderingProgrammer/render-markdown.nvim?tab=readme-ov-file#colors
 
 function M.get()
 	local groups = {
