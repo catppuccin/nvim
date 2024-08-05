@@ -1326,10 +1326,10 @@ To use another flavour just replace `mocha` with the one you want to use.
 </tr>
 <!-- reactive.nvim -->
 
-<!-- markdown.nvim -->
+<!-- render-markdown.nvim -->
 </tr>
 <tr>
-<td> <a href="https://github.com/MeanderingProgrammer/markdown.nvim">render-markdown (markdown.nvim)</a> </td>
+<td> <a href="https://github.com/MeanderingProgrammer/render-markdown.nvim">render-markdown.nvim</a> </td>
 <td>
 
 ```lua
@@ -1338,7 +1338,7 @@ render_markdown = true
 
 </td>
 </tr>
-<!-- markdown.nvim -->
+<!-- render-markdown.nvim -->
 
 <!-- symbols-outline.nvim -->
 </tr>
