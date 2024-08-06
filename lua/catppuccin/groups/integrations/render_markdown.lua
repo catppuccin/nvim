@@ -10,6 +10,11 @@ function M.get()
 		RenderMarkdownBullet = { fg = C.sky },
 		RenderMarkdownTableHead = { fg = C.blue },
 		RenderMarkdownTableRow = { fg = C.lavender },
+		RenderMarkdownSuccess = { fg = C.green },
+		RenderMarkdownInfo = { fg = C.sky },
+		RenderMarkdownHint = { fg = C.teal },
+		RenderMarkdownWarn = { fg = C.yellow },
+		RenderMarkdownError = { fg = C.red },
 	}
 
 	local syntax = require("catppuccin.groups.syntax").get()
