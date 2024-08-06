@@ -587,6 +587,13 @@ lightspeed.nvim>lua
     lightspeed = false
 <
 
+lir.nvim>lua
+    lir = {
+      enabled = false,
+      git_status = false
+    }
+<
+
 lspsaga.nvim>lua
     lsp_saga = false
 <

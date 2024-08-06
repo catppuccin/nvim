@@ -811,6 +811,20 @@ lightspeed = false
 ```
 <!-- lightspeed.nvim -->
 
+<!-- lir.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/tamago324/lir.nvim">lir.nvim</a> </td>
+<td>
+
+```lua
+lir = {
+    enabled = false,
+    git_status = false
+}
+```
+<!-- lir.nvim -->
+
 <!-- lspsaga.nvim -->
 </tr>
 <tr>
