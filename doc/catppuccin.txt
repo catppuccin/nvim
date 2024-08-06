@@ -589,8 +589,8 @@ lightspeed.nvim>lua
 
 lir.nvim>lua
     lir = {
-      enabled = false,
-      git_status = false
+        enabled = false,
+        git_status = false
     }
 <
 
