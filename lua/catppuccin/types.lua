@@ -151,6 +151,7 @@
 ---@field flash boolean?
 ---@field gitgutter boolean?
 ---@field gitsigns boolean?
+---@field grug_far boolean?
 ---@field harpoon boolean?
 ---@field headlines boolean?
 ---@field hop boolean?
@@ -186,11 +187,13 @@
 ---@field neotree boolean?
 ---@field noice boolean?
 ---@field notify boolean?
+---@field nvim_surround boolean?
 ---@field nvimtree boolean?
 ---@field octo boolean?
 ---@field overseer boolean?
 ---@field pounce boolean?
 ---@field rainbow_delimiters boolean?
+---@field render_markdown boolean?
 ---@field sandwich boolean?
 ---@field semantic_tokens boolean?
 ---@field symbols_outline boolean?

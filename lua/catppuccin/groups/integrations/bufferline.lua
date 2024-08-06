@@ -37,6 +37,7 @@ function M.get(user_config)
 			tab_separator_selected = { fg = separator_fg, bg = active_bg },
 
 			tab_close = { fg = C.red, bg = inactive_bg },
+			indicator_visible = { fg = C.peach, bg = inactive_bg, style = styles },
 			indicator_selected = { fg = C.peach, bg = active_bg, style = styles },
 			-- separators
 			separator = { fg = separator_fg, bg = inactive_bg },
@@ -87,6 +88,7 @@ function M.get(user_config)
 			diagnostic_selected = { fg = C.subtext0, bg = active_bg, style = styles },
 			-- Modified
 			modified = { fg = C.peach, bg = inactive_bg },
+			modified_visible = { fg = C.peach, bg = inactive_bg },
 			modified_selected = { fg = C.peach, bg = active_bg },
 		}
 

@@ -455,7 +455,10 @@ Here are the defaults:
             extras = clrs.overlay1,
             curr_file = clrs.maroon,
             curr_dir = clrs.flamingo,
-            show_modified = true -- show if the file has been modified
+            show_modified = false -- show if the file has been modified
+            show_lazy_updates = false -- show the count of updatable plugins from lazy.nvim
+                                      -- need to set checker.enabled = true in lazy.nvim first
+                                      -- the icon is set in ui.icons.plugin in lazy.nvim
         },
         mode_colors = {
             ["n"] = { "NORMAL", clrs.lavender },
@@ -537,6 +540,10 @@ flash.nvim>lua
 
 gitsigns.nvim>lua
     gitsigns = true
+<
+
+grug-far.nvim>lua
+    grug_far = false
 <
 
 harpoon>lua
@@ -728,6 +735,10 @@ nvim-semantic-tokens>lua
     semantic_tokens = true
 <
 
+nvim-surround>lua
+    nvim_surround = false
+<
+
 nvim-tree.lua>lua
     nvimtree = true
 <
@@ -785,6 +796,10 @@ Here is how you can use them.
 <
 
 To use another flavour just replace `mocha` with the one you want to use.
+
+render-markdown.nvim>lua
+    render_markdown = true
+<
 
 symbols-outline.nvim
   [!NOTE] This plugin has been archived by the author, consider using

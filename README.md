@@ -581,7 +581,10 @@ ctp_feline.setup({
         extras = clrs.overlay1,
         curr_file = clrs.maroon,
         curr_dir = clrs.flamingo,
-        show_modified = true -- show if the file has been modified
+        show_modified = false -- show if the file has been modified
+        show_lazy_updates = false -- show the count of updatable plugins from lazy.nvim
+                                  -- need to set checker.enabled = true in lazy.nvim first
+                                  -- the icon is set in ui.icons.plugin in lazy.nvim
     },
     mode_colors = {
         ["n"] = { "NORMAL", clrs.lavender },
@@ -703,6 +706,17 @@ flash = true
 gitsigns = true
 ```
 <!-- gitsigns.nvim -->
+
+<!-- grug-far.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/MagicDuck/grug-far.nvim">grug-far.nvim</a> </td>
+<td>
+
+```lua
+grug_far = false
+```
+<!-- grug-far.nvim -->
 
 <!-- harpoon -->
 </tr>
@@ -1135,6 +1149,20 @@ semantic_tokens = true
 </tr>
 <!-- nvim-semantic-tokens -->
 
+<!-- nvim-surround -->
+</tr>
+<tr>
+<td> <a href="https://github.com/kylechui/nvim-surround">nvim-surround</a> </td>
+<td>
+
+```lua
+nvim_surround = false
+```
+
+</td>
+</tr>
+<!-- nvim-surround -->
+
 <!-- nvim-tree.lua -->
 </tr>
 <tr>
@@ -1311,6 +1339,20 @@ To use another flavour just replace `mocha` with the one you want to use.
 </td>
 </tr>
 <!-- reactive.nvim -->
+
+<!-- render-markdown.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/MeanderingProgrammer/render-markdown.nvim">render-markdown.nvim</a> </td>
+<td>
+
+```lua
+render_markdown = true
+```
+
+</td>
+</tr>
+<!-- render-markdown.nvim -->
 
 <!-- symbols-outline.nvim -->
 </tr>

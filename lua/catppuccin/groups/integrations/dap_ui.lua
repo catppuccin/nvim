@@ -12,7 +12,7 @@ function M.get()
 		DapUIStoppedThread = { fg = C.sky },
 		DapUISource = { fg = C.lavender },
 		DapUILineNumber = { fg = C.sky },
-		DapUIFloatBorder = { fg = C.sky },
+		DapUIFloatBorder = { link = "FloatBorder" },
 
 		DapUIWatchesEmpty = { fg = C.maroon },
 		DapUIWatchesValue = { fg = C.green },

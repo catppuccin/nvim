@@ -52,6 +52,7 @@ local M = {
 			nvimtree = true,
 			ufo = true,
 			rainbow_delimiters = true,
+			render_markdown = true,
 			semantic_tokens = not is_vim,
 			telescope = { enabled = true },
 			treesitter = not is_vim,
@@ -102,6 +103,10 @@ local M = {
 			colorful_winsep = {
 				enabled = false,
 				color = "red",
+			},
+			mini = {
+				enabled = true,
+				indentscope_color = "text",
 			},
 		},
 		color_overrides = {},
