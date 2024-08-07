@@ -149,6 +149,7 @@
 -- ```
 ---@field fidget boolean?
 ---@field flash boolean?
+---@field fzf boolean?
 ---@field gitgutter boolean?
 ---@field gitsigns boolean?
 ---@field grug_far boolean?

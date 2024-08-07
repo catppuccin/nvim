@@ -696,6 +696,20 @@ flash = true
 ```
 <!-- flash.nvim -->
 
+<!-- fzf-lua -->
+</tr>
+<tr>
+<td> <a href="https://github.com/ibhagwan/fzf-lua">fzf-lua</a> </td>
+<td>
+
+```lua
+fzf = true
+```
+
+</td>
+</tr>
+<!-- fzf-lua -->
+
 <!-- gitsigns.nvim -->
 </tr>
 <tr>

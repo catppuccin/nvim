@@ -538,6 +538,10 @@ flash.nvim>lua
     flash = true
 <
 
+fzf-lua>lua
+    fzf = true
+<
+
 gitsigns.nvim>lua
     gitsigns = true
 <
