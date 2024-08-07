@@ -35,7 +35,6 @@
 ---@field default_integrations boolean?
 -- Toggle integrations. Integrations allow Catppuccin to set the theme of various plugins.
 ---@field integrations CtpIntegrations?
----p>
 -- Catppuccin colors can be overwritten here.
 ---@field color_overrides CtpColors | CtpFlavors<CtpColors<string>> | nil
 -- Catppuccin highlights can be overwritten here.
