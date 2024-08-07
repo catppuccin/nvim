@@ -132,6 +132,7 @@
 -- sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
 -- sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 -- ```
+---@field dadbod_ui boolean?
 ---@field dap boolean?
 ---@field dap_ui boolean?
 ---@field dashboard boolean?

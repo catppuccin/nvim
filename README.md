@@ -477,6 +477,20 @@ colorful_winsep = {
 </tr>
 <!-- colorful_winsep.nvim -->
 
+<!-- dadbod-ui -->
+</tr>
+<tr>
+<td> <a href="https://github.com/kristijanhusak/vim-dadbod-ui">dadbod-ui</a> </td>
+<td>
+
+```lua
+dadbod_ui = true
+```
+
+</td>
+</tr>
+<!-- dadbod-ui -->
+
 <!-- dashboard-nvim -->
 </tr>
 <tr>
