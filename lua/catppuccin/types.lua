@@ -35,6 +35,7 @@
 ---@field default_integrations boolean?
 -- Toggle integrations. Integrations allow Catppuccin to set the theme of various plugins.
 ---@field integrations CtpIntegrations?
+---p>
 -- Catppuccin colors can be overwritten here.
 ---@field color_overrides CtpColors | CtpFlavors<CtpColors<string>> | nil
 -- Catppuccin highlights can be overwritten here.
@@ -149,6 +150,7 @@
 -- ```
 ---@field fidget boolean?
 ---@field flash boolean?
+---@field fzf boolean?
 ---@field gitgutter boolean?
 ---@field gitsigns boolean?
 ---@field grug_far boolean?
