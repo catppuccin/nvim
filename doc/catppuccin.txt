@@ -389,7 +389,7 @@ colorful-winsep.nvim>lua
 <
 
 dadbod-ui>lua
-    dadbod_ui = true
+    dadbod_ui = false
 <
 
 dashboard-nvim>lua

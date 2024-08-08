@@ -484,7 +484,7 @@ colorful_winsep = {
 <td>
 
 ```lua
-dadbod_ui = true
+dadbod_ui = false
 ```
 
 </td>
