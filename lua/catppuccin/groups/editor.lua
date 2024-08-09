@@ -62,8 +62,6 @@ function M.get()
 		TabLine = { bg = C.mantle, fg = C.surface1 }, -- tab pages line, not active tab page label
 		TabLineFill = {}, -- tab pages line, where there are no labels
 		TabLineSel = { fg = C.green, bg = C.surface1 }, -- tab pages line, active tab page label
-		TermCursor = { fg = C.base, bg = C.red }, -- cursor in a focused terminal
-		TermCursorNC = { fg = C.base, bg = C.overlay2 }, -- cursor in unfocused terminals
 		Title = { fg = C.blue, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = C.surface1, style = { "bold" } }, -- Visual mode selection
 		VisualNOS = { bg = C.surface1, style = { "bold" } }, -- Visual mode selection when vim is "Not Owning the Selection".
