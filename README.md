@@ -1468,6 +1468,20 @@ let g:clap_theme = 'catppuccin'
 </tr>
 <!-- vim-clap -->
 
+<!-- vim-dadbod-ui -->
+</tr>
+<tr>
+<td> <a href="https://github.com/kristijanhusak/vim-dadbod-ui">vim-dadbod-ui</a> </td>
+<td>
+
+```lua
+dadbod_ui = false
+```
+
+</td>
+</tr>
+<!-- vim-dadbod-ui -->
+
 <!-- vim-gitgutter -->
 </tr>
 <tr>
