@@ -477,20 +477,6 @@ colorful_winsep = {
 </tr>
 <!-- colorful_winsep.nvim -->
 
-<!-- dadbod-ui -->
-</tr>
-<tr>
-<td> <a href="https://github.com/kristijanhusak/vim-dadbod-ui">dadbod-ui</a> </td>
-<td>
-
-```lua
-dadbod_ui = false
-```
-
-</td>
-</tr>
-<!-- dadbod-ui -->
-
 <!-- dashboard-nvim -->
 </tr>
 <tr>
@@ -1481,6 +1467,20 @@ let g:clap_theme = 'catppuccin'
 </td>
 </tr>
 <!-- vim-clap -->
+
+<!-- vim-dadbod-ui -->
+</tr>
+<tr>
+<td> <a href="https://github.com/kristijanhusak/vim-dadbod-ui">vim-dadbod-ui</a> </td>
+<td>
+
+```lua
+dadbod_ui = false
+```
+
+</td>
+</tr>
+<!-- vim-dadbod-ui -->
 
 <!-- vim-gitgutter -->
 </tr>
