@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.0](https://github.com/catppuccin/nvim/compare/v1.8.0...v1.9.0) (2024-08-09)
+
+
+### Features
+
+* add fzf-lua integration ([#746](https://github.com/catppuccin/nvim/issues/746)) ([05206bb](https://github.com/catppuccin/nvim/commit/05206bbb6d500a339cd55a9486532c3871a4455e))
+* add lir.nvim and lir-git-status.nvim integration ([#705](https://github.com/catppuccin/nvim/issues/705)) ([d3907de](https://github.com/catppuccin/nvim/commit/d3907deedf74d1d5bd3bb990bff2db2ebc916c56))
+* add markdown.nvim integration ([ba41328](https://github.com/catppuccin/nvim/commit/ba413282677e1027a42d6ff585115d3e1df12b66))
+* add vim-dadbod-ui integration ([#747](https://github.com/catppuccin/nvim/issues/747)) ([4db4c77](https://github.com/catppuccin/nvim/commit/4db4c77cc17d23aa90b393f3e550ce99b9e903d5))
+* **render-markdown:** add highlights for callouts ([03a2f35](https://github.com/catppuccin/nvim/commit/03a2f354456373c199eb7829fd14120cc2099108))
+* **terminal:** highlight `TermCursor` and `TermCursorNC` ([#749](https://github.com/catppuccin/nvim/issues/749)) ([548b2a2](https://github.com/catppuccin/nvim/commit/548b2a25415bb60e05c536b7658aa8ffbfeb3e45))
+
 ## [1.8.0](https://github.com/catppuccin/nvim/compare/v1.7.0...v1.8.0) (2024-07-25)
 
 
