@@ -2,7 +2,10 @@ local M = {}
 
 function M.get()
 	return {
-		NvimSeparator = { bg = C.base, fg = C[O.integrations.colorful_winsep.color] },
+		NvimSeparator = {	
+			fg = C[O.integrations.colorful_winsep.color],
+			bg = O.transparent_background and C.none or C.base
+		},
 	}
 end
 
