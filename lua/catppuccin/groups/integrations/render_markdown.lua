@@ -5,8 +5,8 @@ local M = {}
 
 function M.get()
 	local groups = {
-		RenderMarkdownCode = { bg = C.surface0 },
-		RenderMarkdownCodeInline = { bg = C.surface1 },
+		RenderMarkdownCode = { bg = C.mantle },
+		RenderMarkdownCodeInline = { bg = C.surface0 },
 		RenderMarkdownBullet = { fg = C.sky },
 		RenderMarkdownTableHead = { fg = C.blue },
 		RenderMarkdownTableRow = { fg = C.lavender },
