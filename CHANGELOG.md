@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.10.0](https://github.com/catppuccin/nvim/compare/v1.9.0...v1.10.0) (2024-10-05)
+
+
+### Features
+
+* **render-markdown:** change code block background to `mantle` ([#774](https://github.com/catppuccin/nvim/issues/774)) ([7be452e](https://github.com/catppuccin/nvim/commit/7be452ee067978cdc8b2c5f3411f0c71ffa612b9))
+
+
+### Bug Fixes
+
+* **colorful-winsep:** respect transparent_background configuration ([#775](https://github.com/catppuccin/nvim/issues/775)) ([9e6ec28](https://github.com/catppuccin/nvim/commit/9e6ec281f58038e5b30ce9a8828e6f9f9d744a27))
+* **editor:** add missing background for `TabLineFill` ([#757](https://github.com/catppuccin/nvim/issues/757)) ([bfdd6b3](https://github.com/catppuccin/nvim/commit/bfdd6b3833e991fa45c3d5931ffed853dca60fab))
+* **editor:** make TabLine more readable ([#760](https://github.com/catppuccin/nvim/issues/760)) ([4fd72a9](https://github.com/catppuccin/nvim/commit/4fd72a9ab64b393c2c22b168508fd244877fec96))
+* **syntax:** use `overlay2` for comments ([#768](https://github.com/catppuccin/nvim/issues/768)) ([147e7cf](https://github.com/catppuccin/nvim/commit/147e7cfb5b7ec05702468c332cf7e378d935abd3))
+
 ## [1.9.0](https://github.com/catppuccin/nvim/compare/v1.8.0...v1.9.0) (2024-08-09)
 
 
