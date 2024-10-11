@@ -59,9 +59,9 @@ function M.get()
 		SpellRare = { sp = C.green, style = { "undercurl" } }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = C.text, bg = O.transparent_background and C.none or C.mantle }, -- status line of current window
 		StatusLineNC = { fg = C.surface1, bg = O.transparent_background and C.none or C.mantle }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { bg = C.mantle, fg = C.overlay0 }, -- tab pages line, not active tab page label
+		TabLine = { bg = C.crust, fg = C.overlay0 }, -- tab pages line, not active tab page label
 		TabLineFill = { bg = O.transparent_background and C.none or C.mantle }, -- tab pages line, where there are no labels
-		TabLineSel = { fg = C.green, bg = C.surface1 }, -- tab pages line, active tab page label
+		TabLineSel = { link = "Normal" }, -- tab pages line, active tab page label
 		TermCursor = { fg = C.base, bg = C.rosewater }, -- cursor in a focused terminal
 		TermCursorNC = { fg = C.base, bg = C.overlay2 }, -- cursor in unfocused terminals
 		Title = { fg = C.blue, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etc.
