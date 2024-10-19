@@ -6,6 +6,7 @@ url = "https://github.com/catppuccin/palette/raw/main/palette.json"
 with urllib.request.urlopen(url) as response:
     flavors = json.loads(response.read().decode())
 
+flavors.pop("version", None)
 for flavor in flavors:
     with open(f"lua/catppuccin/palettes/{flavor}.lua", "w") as f:
         f.write("return {\n")
