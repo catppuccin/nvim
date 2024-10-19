@@ -1,0 +1,12 @@
+---
+whiskers:
+  version: 2.5.1
+  matrix:
+    - flavor
+  filename: "lua/catppuccin/palettes/{{flavor.identifier}}.lua"
+---
+return {
+{%- for id, color in flavor.colors %}
+	{{id}} = "#{{color.hex}}",
+{%- endfor %}
+}
