@@ -7,6 +7,6 @@ whiskers:
 ---
 return {
 {%- for id, color in flavor.colors %}
-  {{id}} = "#{{color.hex}}",
+	{{id}} = "#{{color.hex}}",
 {%- endfor %}
 }
