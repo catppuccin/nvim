@@ -3,7 +3,7 @@ return function(flavour)
 	local O = require("catppuccin").options
 	local catppuccin = {}
 
-	local transparent_bg = O.transparent_background and "NONE" or C.mantle
+	local transparent_bg = O.transparent_background and "NONE" or C.crust
 
 	catppuccin.normal = {
 		a = { bg = C.blue, fg = C.mantle, gui = "bold" },
