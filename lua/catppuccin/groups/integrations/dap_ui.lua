@@ -24,13 +24,21 @@ function M.get()
 		DapUIBreakpointsDisabledLine = { fg = C.surface2 },
 
 		DapUIStepOver = { fg = C.blue },
+		DapUIStepOverNC = { fg = C.blue },
 		DapUIStepInto = { fg = C.blue },
+		DapUIStepIntoNC = { fg = C.blue },
 		DapUIStepBack = { fg = C.blue },
+		DapUIStepBackNC = { fg = C.blue },
 		DapUIStepOut = { fg = C.blue },
+		DapUIStepOutNC = { fg = C.blue },
 		DapUIStop = { fg = C.red },
+		DapUIStopNC = { fg = C.red },
 		DapUIPlayPause = { fg = C.green },
+		DapUIPlayPauseNC = { fg = C.green },
 		DapUIRestart = { fg = C.green },
+		DapUIRestartNC = { fg = C.green },
 		DapUIUnavailable = { fg = C.surface1 },
+		DapUIUnavailableNC = { fg = C.surface1 },
 
 		DapUIWinSelect = { fg = C.peach },
 	}
