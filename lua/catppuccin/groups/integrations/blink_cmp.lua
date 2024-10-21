@@ -4,7 +4,7 @@ function M.get()
 	return {
 		BlinkCmpMenu = { bg = C.base },
 		BlinkCmpMenuBorder = { fg = C.overlay0, bg = C.base },
-		BlinkCmpMenuSelection = { bg = C.surface2 },
+		BlinkCmpMenuSelection = { bg = C.surface0 },
 		BlinkCmpLabel = { fg = C.text },
 		BlinkCmpLabelDeprecated = { fg = C.overlay0, style = { "strikethrough" } },
 		BlinkCmpDocBorder = { fg = C.overlay0, bg = C.base },
