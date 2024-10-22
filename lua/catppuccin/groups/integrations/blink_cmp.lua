@@ -2,13 +2,13 @@ local M = {}
 
 function M.get()
 	return {
-		BlinkCmpMenu = { bg = C.base },
-		BlinkCmpMenuBorder = { fg = C.overlay0, bg = C.base },
+		BlinkCmpMenu = { fg = C.text, bg = O.transparent_background and C.none or C.base },
+		BlinkCmpMenuBorder = { fg = C.overlay0, bg = O.transparent_background and C.none or C.base },
 		BlinkCmpMenuSelection = { bg = C.surface0 },
 		BlinkCmpLabel = { fg = C.text },
 		BlinkCmpLabelDeprecated = { fg = C.overlay0, style = { "strikethrough" } },
-		BlinkCmpDocBorder = { fg = C.overlay0, bg = C.base },
-		BlinkCmpDoc = { bg = C.base },
+		BlinkCmpDocBorder = { fg = C.overlay0, bg = O.transparent_background and C.none or C.base },
+		BlinkCmpDoc = { fg = C.text, bg = O.transparent_background and C.none or C.base },
 
 		BlinkCmpKindText = { fg = C.teal },
 		BlinkCmpKindMethod = { fg = C.blue },
