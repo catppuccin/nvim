@@ -120,6 +120,7 @@
 ---```
 ---@field barbecue CtpIntegrationBarbecue | boolean?
 ---@field beacon boolean?
+---@field blink_cmp boolean?
 ---@field colorful_winsep CtpIntegrationColorfulWinsep | boolean?
 ---@field cmp boolean?
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
