@@ -298,6 +298,10 @@ beacon.nvim>lua
     beacon = false
 <
 
+blink.cmp>lua
+    blink_cmp = false
+<
+
 bufferline.nvimSpecial ~
 
 Update your bufferline config to use the Catppuccin components:
