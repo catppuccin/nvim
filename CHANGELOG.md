@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.10.0](https://github.com/catppuccin/nvim/compare/v1.9.0...v1.10.0) (2024-10-26)
+
+
+### Features
+
+* add background highlight to LSP signature help ([#771](https://github.com/catppuccin/nvim/issues/771)) ([de096dd](https://github.com/catppuccin/nvim/commit/de096dd4bc88be563617db50594b2dabe7f1bd86))
+* **blink-cmp:** add integration ([#777](https://github.com/catppuccin/nvim/issues/777)) ([abceb64](https://github.com/catppuccin/nvim/commit/abceb64a223aaada38c21e744763d111e73aaf0a))
+* **render-markdown:** change code block background to `mantle` ([#774](https://github.com/catppuccin/nvim/issues/774)) ([7be452e](https://github.com/catppuccin/nvim/commit/7be452ee067978cdc8b2c5f3411f0c71ffa612b9))
+
+
+### Bug Fixes
+
+* **colorful-winsep:** respect transparent_background configuration ([#775](https://github.com/catppuccin/nvim/issues/775)) ([9e6ec28](https://github.com/catppuccin/nvim/commit/9e6ec281f58038e5b30ce9a8828e6f9f9d744a27))
+* **dap-ui:** add colors for *NC hlgroups of UI controls ([#783](https://github.com/catppuccin/nvim/issues/783)) ([d9ee9a3](https://github.com/catppuccin/nvim/commit/d9ee9a35f46f0a2bda9a15b5a763fee4095428fd))
+* **editor:** add missing background for `TabLineFill` ([#757](https://github.com/catppuccin/nvim/issues/757)) ([bfdd6b3](https://github.com/catppuccin/nvim/commit/bfdd6b3833e991fa45c3d5931ffed853dca60fab))
+* **editor:** make TabLine more readable ([#760](https://github.com/catppuccin/nvim/issues/760)) ([4fd72a9](https://github.com/catppuccin/nvim/commit/4fd72a9ab64b393c2c22b168508fd244877fec96))
+* **editor:** more "modern" tabline ([#776](https://github.com/catppuccin/nvim/issues/776)) ([5ea0888](https://github.com/catppuccin/nvim/commit/5ea0888e9003f1457d13685ac76f046af26a5524))
+* **kitty:** respect `transparent_background` option ([#786](https://github.com/catppuccin/nvim/issues/786)) ([08efbef](https://github.com/catppuccin/nvim/commit/08efbefa415fbe8ae48799cddc6a5783d2465375))
+* **syntax:** use `overlay2` for comments ([#768](https://github.com/catppuccin/nvim/issues/768)) ([147e7cf](https://github.com/catppuccin/nvim/commit/147e7cfb5b7ec05702468c332cf7e378d935abd3))
+
 ## [1.9.0](https://github.com/catppuccin/nvim/compare/v1.8.0...v1.9.0) (2024-08-09)
 
 
