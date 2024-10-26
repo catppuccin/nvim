@@ -364,7 +364,7 @@ beacon = false
 <td>
 
 ```lua
-blink_cmp = true
+blink_cmp = false
 ```
 
 </td>
