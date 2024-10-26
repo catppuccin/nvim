@@ -357,6 +357,20 @@ beacon = false
 </tr>
 <!-- beacon.nvim -->
 
+<!-- blink.cmp -->
+</tr>
+<tr>
+<td> <a href="https://github.com/Saghen/blink.cmp">blink.cmp</a> </td>
+<td>
+
+```lua
+blink_cmp = false
+```
+
+</td>
+</tr>
+<!-- blink.cmp -->
+
 <!-- bufferline.nvim -->
 </tr>
 <tr>
