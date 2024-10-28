@@ -645,7 +645,7 @@ mini.nvim>lua
 <
 
 neo-tree.nvim>lua
-    neotree = false
+    neotree = true
 <
 
 neogit>lua
