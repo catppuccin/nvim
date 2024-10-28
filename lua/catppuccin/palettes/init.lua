@@ -16,7 +16,7 @@ function M.get_palette(flavour)
 
 		ref: https://github.com/kovidgoyal/kitty/issues/2917
 	--]]
-	if O.kitty then -- 
+	if O.kitty then
 		for accent, hex in pairs(ans) do
 			local red_green_string = hex:sub(1, 5)
 			local blue_value = tonumber(hex:sub(6, 7), 16)
