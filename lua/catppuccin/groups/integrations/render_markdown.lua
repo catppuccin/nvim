@@ -23,7 +23,6 @@ function M.get()
 	for i = 1, 6 do
 		local color = syntax["rainbow" .. i].fg
 		groups["RenderMarkdownH" .. i] = { fg = color }
-		groups["RenderMarkdownH" .. i .. "Bg"] = { bg = U.darken(color, 0.30, base) }
 	end
 
 	return groups
