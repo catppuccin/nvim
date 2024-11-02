@@ -2,7 +2,6 @@ local M = {}
 
 function M.get()
 	return {
-		BlinkCmpMenu = { fg = C.text },
 		BlinkCmpLabel = { fg = C.overlay2 },
 		BlinkCmpLabelDeprecated = { fg = C.overlay0, style = { "strikethrough" } },
 
