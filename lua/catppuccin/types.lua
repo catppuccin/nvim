@@ -105,6 +105,7 @@
 ---@class CtpIntegrations
 ---@field aerial boolean?
 ---@field alpha boolean?
+---@field copilot_vim boolean?
 ---@field barbar boolean?
 -- Use this to set it up:
 --
