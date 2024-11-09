@@ -5,6 +5,7 @@ function M.get()
 		BlinkCmpLabel = { fg = C.overlay2 },
 		BlinkCmpLabelDeprecated = { fg = C.overlay0, style = { "strikethrough" } },
 
+		BlinkCmpLabelMatch = { fg = C.text, style = { "bold" } },
 		BlinkCmpKindText = { fg = C.green },
 		BlinkCmpKindMethod = { fg = C.blue },
 		BlinkCmpKindFunction = { fg = C.blue },
