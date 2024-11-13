@@ -105,7 +105,6 @@
 ---@class CtpIntegrations
 ---@field aerial boolean?
 ---@field alpha boolean?
----@field copilot_vim boolean?
 ---@field barbar boolean?
 -- Use this to set it up:
 --
@@ -122,11 +121,12 @@
 ---@field barbecue CtpIntegrationBarbecue | boolean?
 ---@field beacon boolean?
 ---@field blink_cmp boolean?
----@field colorful_winsep CtpIntegrationColorfulWinsep | boolean?
 ---@field cmp boolean?
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
 -- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
 ---@field coc_nvim boolean?
+---@field colorful_winsep CtpIntegrationColorfulWinsep | boolean?
+---@field copilot_vim boolean?
 -- ```lua
 -- local sign = vim.fn.sign_define
 --
