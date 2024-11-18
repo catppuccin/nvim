@@ -1047,6 +1047,20 @@ cmp = true
 </tr>
 <!-- nvim-cmp -->
 
+<!-- nvim-copilot-vim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/github/copilot.vim">copilot.vim</a> </td>
+<td>
+
+```lua
+copilot_vim = true,
+```
+
+</td>
+</tr>
+<!-- nvim-copilot-vim -->
+
 <!-- nvim-dap -->
 </tr>
 <tr>
