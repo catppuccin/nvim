@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	return {
-		CopilotSuggestion = { fg = C.subtext0 },
+		CopilotSuggestion = { fg = C.overlay0 },
 		CopilotAnnotation = { fg = C.blue },
 	}
 end
