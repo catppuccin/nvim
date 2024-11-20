@@ -1054,7 +1054,7 @@ cmp = true
 <td>
 
 ```lua
-copilot_vim = true,
+copilot_vim = false,
 ```
 
 </td>

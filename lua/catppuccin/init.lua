@@ -40,7 +40,6 @@ local M = {
 		integrations = {
 			alpha = true,
 			cmp = true,
-			copilot_vim = true,
 			dap = true,
 			dap_ui = true,
 			dashboard = true,
