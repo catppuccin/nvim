@@ -41,45 +41,39 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 </details>
 
 **[Bake your own flavour!](https://github.com/catppuccin/nvim/#overwriting-colors)** Here are some **[config from our community](https://github.com/catppuccin/nvim/discussions/323)**: <a href="https://www.pixiv.net/en/artworks/101554989"><sub><sup>(background source)</sup></sub></a>
-
 </p>
 
 ![nvimwalk-custom](https://user-images.githubusercontent.com/56817415/213480149-6ba92b81-1ada-46a4-89bd-4e2bb25d19c3.png)
-
 <p align="center">
 
 <!-- panvimdoc-ignore-end -->
 
 # Features
 
--   Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
--   Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
--   [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
--   Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
--   Supports for [many other applications](https://github.com/catppuccin/catppuccin)
+- Supports both vim and neovim (Requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
+- Highly configurable with 4 different flavours and [ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
+- [Compile](https://github.com/catppuccin/nvim#Compile) user config for [fastest startuptime](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
+- Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
+- Supports for [many other applications](https://github.com/catppuccin/catppuccin)
 
 # Installation
 
 [lazy.nvim](https://github.com/folke/lazy.nvim)
-
 ```lua
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 ```
 
 [mini.deps](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md)
-
 ```lua
 add({ source = "catppuccin/nvim", name = "catppuccin" })
 ```
 
 [packer.nvim](https://github.com/wbthomason/packer.nvim)
-
 ```lua
 use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
 [vim-plug](https://github.com/junegunn/vim-plug)
-
 ```vim
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 ```
@@ -348,7 +342,6 @@ require("barbecue").setup {
   theme = "catppuccin", -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 }
 ```
-
 </details>
 
 </td>
@@ -452,7 +445,6 @@ Setting `enabled` to `true` enables this integration.
 ```lua
 coc_nvim = true,
 ```
-
 > [!Note]
 > coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
 
@@ -500,7 +492,6 @@ colorful_winsep = {
     color = "red",
 }
 ```
-
 </td>
 </tr>
 <!-- colorful_winsep.nvim -->
@@ -722,7 +713,6 @@ require("fidget").setup {
 ```lua
 flash = true
 ```
-
 <!-- flash.nvim -->
 
 <!-- fzf-lua -->
@@ -748,7 +738,6 @@ fzf = true
 ```lua
 gitsigns = true
 ```
-
 <!-- gitsigns.nvim -->
 
 <!-- grug-far.nvim -->
@@ -760,7 +749,6 @@ gitsigns = true
 ```lua
 grug_far = false
 ```
-
 <!-- grug-far.nvim -->
 
 <!-- harpoon -->
@@ -772,7 +760,6 @@ grug_far = false
 ```lua
 harpoon = false
 ```
-
 <!-- harpoon -->
 
 <!-- headlines.nvim -->
@@ -784,7 +771,6 @@ harpoon = false
 ```lua
 headlines = false
 ```
-
 <!-- headlines.nvim -->
 
 <!-- hop.nvim -->
@@ -796,7 +782,6 @@ headlines = false
 ```lua
 hop = false
 ```
-
 <!-- hop.nvim -->
 
 <!-- indent-blankline.nvim -->
@@ -831,7 +816,6 @@ indent_blankline = {
 ```lua
 leap = false
 ```
-
 <!-- leap.nvim -->
 
 <!-- lightline.vim -->
@@ -858,7 +842,6 @@ let g:lightline = {'colorscheme': 'catppuccin'}
 ```lua
 lightspeed = false
 ```
-
 <!-- lightspeed.nvim -->
 
 <!-- lir.nvim -->
@@ -873,7 +856,6 @@ lir = {
     git_status = false
 }
 ```
-
 <!-- lir.nvim -->
 
 <!-- lspsaga.nvim -->
@@ -1157,7 +1139,6 @@ navic = {
 },
 
 ```
-
 <details> <summary>Special</summary>
 
 ```lua
@@ -1308,7 +1289,6 @@ ufo = true
 ```lua
 window_picker = false
 ```
-
 <!-- nvim-window-picker -->
 
 <!-- octo.nvim -->
@@ -1412,6 +1392,7 @@ render_markdown = true
 <tr>
 <td> <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a> </td>
 <td>
+
 
 ```lua
 snacks = false
@@ -1658,28 +1639,28 @@ require("nvim-treesitter.configs").setup {
 
 Catppuccin requires true color support AKA terminals support the full range of 16 million colors
 
--   Supported: iterm2 (macOS), kitty, wezterm, alacritty, tmux, ...
+- Supported: iterm2 (macOS), kitty, wezterm, alacritty, tmux, ...
 
 Full list of support terminals can be found here: <https://github.com/termstandard/colors#truecolor-support-in-output-devices>
 
--   Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, ...
+- Unsupported terminal: Terminal.app (macOS), Terminus, Terminology, ...
 
 Full list of Unsupported terminals can be found here: <https://github.com/termstandard/colors#not-supporting-truecolor>
 
 ### For tmux users
 
--   [Enable true color support](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to fix the following [abnormal colors](https://github.com/catppuccin/nvim/issues/415):
+- [Enable true color support](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to fix the following [abnormal colors](https://github.com/catppuccin/nvim/issues/415):
 
 ![image](https://user-images.githubusercontent.com/1941785/220280749-c3ab52fb-9b8a-4f04-ab98-f8c1bb41f84b.png)
 
--   [Enable italic font support](https://gist.github.com/gyribeiro/4192af1aced7a1b555df06bd3781a722) to fix the following [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428):
+- [Enable italic font support](https://gist.github.com/gyribeiro/4192af1aced7a1b555df06bd3781a722) to fix the following [incorrect if, then, else, end highlights](https://github.com/catppuccin/nvim/issues/428):
 
 ![image](https://user-images.githubusercontent.com/13246770/224011118-dcf0f567-650a-4eb2-8be6-0af5cf435501.png)
 
 # Thanks to
 
--   [Pocco81](https://github.com/Pocco81)
--   [nullchilly](https://github.com/nullchilly)
+- [Pocco81](https://github.com/Pocco81)
+- [nullchilly](https://github.com/nullchilly)
 
 <!-- panvimdoc-ignore-start -->
 
