@@ -679,6 +679,10 @@ nvim-cmp>lua
     cmp = true
 <
 
+copilot.vim>lua
+    copilot_vim = false,
+<
+
 nvim-dap>lua
     dap = true
 <
