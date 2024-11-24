@@ -820,6 +820,10 @@ render-markdown.nvim>lua
     render_markdown = true
 <
 
+snacks.nvim>lua
+    snacks = false
+<
+
 symbols-outline.nvim
   [!NOTE] This plugin has been archived by the author, consider using
   outline.nvim <https://github.com/hedyhli/outline.nvim>
