@@ -1401,6 +1401,21 @@ render_markdown = true
 </tr>
 <!-- render-markdown.nvim -->
 
+<!-- snacks.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a> </td>
+<td>
+
+
+```lua
+snacks = false
+```
+
+</td>
+</tr>
+<!-- snacks.nvim -->
+
 <!-- symbols-outline.nvim -->
 </tr>
 <tr>
