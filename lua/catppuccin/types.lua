@@ -121,11 +121,12 @@
 ---@field barbecue CtpIntegrationBarbecue | boolean?
 ---@field beacon boolean?
 ---@field blink_cmp boolean?
----@field colorful_winsep CtpIntegrationColorfulWinsep | boolean?
 ---@field cmp boolean?
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
 -- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
 ---@field coc_nvim boolean?
+---@field colorful_winsep CtpIntegrationColorfulWinsep | boolean?
+---@field copilot_vim boolean?
 -- ```lua
 -- local sign = vim.fn.sign_define
 --
@@ -199,6 +200,7 @@
 ---@field render_markdown boolean?
 ---@field sandwich boolean?
 ---@field semantic_tokens boolean?
+---@field snacks boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
 ---@field telescope CtpIntegrationTelescope | boolean?
