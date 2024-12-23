@@ -31,6 +31,7 @@ function M.get()
 		BlinkCmpKindEvent = { fg = C.blue },
 		BlinkCmpKindOperator = { fg = C.sky },
 		BlinkCmpKindTypeParameter = { fg = C.maroon },
+		BlinkCmpKindCopilot = { fg = C.teal },
 	}
 end
 
