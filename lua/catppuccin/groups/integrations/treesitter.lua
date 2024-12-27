@@ -17,13 +17,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
 		["@variable.parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
-		["@variable.member"] = { fg = C.lavender }, -- For fields.
+		["@variable.member"] = { fg = C.text }, -- For fields.
 
 		["@constant"] = { link = "Constant" }, -- For constants
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		["@module"] = { fg = C.lavender, style = O.styles.miscs or { "italic" } }, -- For identifiers referring to modules and namespaces.
+		["@module"] = { fg = C.yellow, style = O.styles.miscs or { "italic" } }, -- For identifiers referring to modules and namespaces.
 		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
 
 		-- Literals
@@ -45,11 +45,11 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Types
 		["@type"] = { link = "Type" }, -- For types.
-		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or { "italic" } }, -- For builtin types.
+		["@type.builtin"] = { fg = C.mauve, style = O.styles.properties or { "italic" } }, -- For builtin types.
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- Same as TSField.
+		["@property"] = { fg = C.blue, style = O.styles.properties or {} }, -- Same as TSField.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
@@ -69,7 +69,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.type"] = { link = "Keyword" }, -- For keywords describing composite types (e.g. `struct`, `enum`)
 		["@keyword.coroutine"] = { link = "Keyword" }, -- For keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
 		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
-		["@keyword.operator"] = { link = "Operator" }, -- For new keyword operator
+		["@keyword.operator"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For new keyword operator
 		["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
 		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
@@ -82,7 +82,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
 		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
 		-- JS & derivative
-		["@keyword.export"] = { fg = C.sky, style = O.styles.keywords },
+		["@keyword.export"] = { fg = C.mauve, style = O.styles.keywords },
 
 		-- Punctuation
 		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters (e.g. `;` / `.` / `,`).
@@ -129,9 +129,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@diff.delta"] = { link = "diffChanged" }, -- deleted text (for diff files)
 
 		-- Tags
-		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
-		["@tag.attribute"] = { fg = C.teal, style = O.styles.miscs or { "italic" } }, -- Tags like html tag names.
-		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
+		["@tag"] = { fg = C.blue }, -- Tags like html tag names.
+		["@tag.attribute"] = { fg = C.yellow, style = O.styles.miscs or { "italic" } }, -- Tags like html tag names.
+		["@tag.delimiter"] = { fg = C.teal }, -- Tag delimiter like < > /
 
 		-- Misc
 		["@error"] = { link = "Error" },
@@ -152,12 +152,12 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@constant.java"] = { fg = C.teal },
 
 		-- css
-		["@property.css"] = { fg = C.lavender },
-		["@property.id.css"] = { fg = C.blue },
+		["@property.css"] = { fg = C.blue },
+		["@property.id.css"] = { fg = C.yellow },
 		["@property.class.css"] = { fg = C.yellow },
 		["@type.css"] = { fg = C.lavender },
-		["@type.tag.css"] = { fg = C.mauve },
-		["@string.plain.css"] = { fg = C.peach },
+		["@type.tag.css"] = { fg = C.blue },
+		["@string.plain.css"] = { fg = C.text },
 		["@number.css"] = { fg = C.peach },
 
 		-- toml
