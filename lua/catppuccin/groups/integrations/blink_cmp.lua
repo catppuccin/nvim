@@ -9,6 +9,7 @@ function M.get()
 		BlinkCmpMenuBorder = { fg = C.blue },
 		BlinkCmpDocBorder = { fg = C.blue },
 		BlinkCmpSignatureHelpActiveParameter = { fg = C.mauve },
+		BlinkCmpSignatureHelpBorder = { fg = C.blue },
 
 		BlinkCmpLabelMatch = { fg = C.text, style = { "bold" } },
 		BlinkCmpKindText = { fg = C.green },
