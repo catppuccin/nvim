@@ -68,7 +68,6 @@ function M.get()
 		MiniIconsYellow = { fg = C.yellow },
 
 		MiniIndentscopeSymbol = { fg = C[indentscope_color] or C.text },
-		MiniIndentscopePrefix = { style = { "nocombine" } }, -- Make it invisible
 
 		MiniJump = { fg = C.overlay2, bg = C.pink },
 
