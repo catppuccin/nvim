@@ -67,7 +67,7 @@ function M.get()
 		MiniIconsRed = { fg = C.red },
 		MiniIconsYellow = { fg = C.yellow },
 
-		MiniIndentscopeSymbol = { fg = C[indentscope_color] or C.text },
+		MiniIndentscopeSymbol = { fg = C[indentscope_color] or C.overlay2 },
 
 		MiniJump = { fg = C.overlay2, bg = C.pink },
 
