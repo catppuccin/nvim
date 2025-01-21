@@ -729,6 +729,17 @@ fzf = true
 </tr>
 <!-- fzf-lua -->
 
+<!-- gitgraph.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/isakbm/gitgraph.nvim">gitgraph.nvim</a> </td>
+<td>
+
+```lua
+gitgraph = true
+```
+<!-- gitgraph.nvim -->
+
 <!-- gitsigns.nvim -->
 </tr>
 <tr>
