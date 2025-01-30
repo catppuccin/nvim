@@ -45,6 +45,7 @@ local M = {
 			dashboard = true,
 			diffview = false,
 			flash = true,
+			gitgraph = false,
 			gitsigns = true,
 			markdown = true,
 			neogit = true,
