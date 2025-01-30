@@ -39,6 +39,7 @@ local M = {
 		default_integrations = true,
 		integrations = {
 			alpha = true,
+			avante = false,
 			cmp = true,
 			dap = true,
 			dap_ui = true,
