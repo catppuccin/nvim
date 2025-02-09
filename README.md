@@ -1407,9 +1407,11 @@ render_markdown = true
 <td> <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a> </td>
 <td>
 
-
 ```lua
-snacks = false
+snacks = {
+    enabled = false,
+    indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+}
 ```
 
 </td>
