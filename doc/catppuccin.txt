@@ -667,10 +667,6 @@ noice.nvim>lua
     noice = false
 <
 
-NormalNvim>lua
-    NormalNvim = false
-<
-
 notifier.nvim>lua
     notifier = false
 <
