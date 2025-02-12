@@ -1,6 +1,8 @@
 local M = {}
 
 function M.get()
+	local indent_scope_color = O.integrations.snacks.indent_scope_color
+
 	return {
 		SnacksNormal = { link = "NormalFloat" },
 		SnacksWinBar = { link = "Title" },
@@ -45,6 +47,9 @@ function M.get()
 		SnacksDashboardTerminal = { link = "SnacksDashboardNormal" },
 		SnacksDashboardSpecial = { link = "Special" },
 		SnacksDashboardTitle = { link = "Title" },
+
+		SnacksIndent = { fg = C.surface0 },
+		SnacksIndentScope = { fg = C[indent_scope_color] or C.text },
 	}
 end
 
