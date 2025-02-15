@@ -554,7 +554,10 @@ fzf-lua>lua
 <
 
 gitsigns.nvim>lua
-    gitsigns = true
+    gitsigns = {
+      enabled = true,
+      transparent = true, -- Default: false
+    }
 <
 
 grug-far.nvim>lua
