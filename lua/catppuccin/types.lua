@@ -154,6 +154,7 @@
 ---@field flash boolean?
 ---@field fzf boolean?
 ---@field gitgutter boolean?
+---@field gitgraph boolean?
 ---@field gitsigns boolean?
 ---@field grug_far boolean?
 ---@field harpoon boolean?
