@@ -554,9 +554,8 @@ fzf-lua>lua
 <
 
 gitgraph.nvim>lua
-    gitgraph = false
+    gitgraph = true
 <
-
 
 gitsigns.nvim>lua
     gitsigns = true
