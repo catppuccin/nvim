@@ -105,6 +105,7 @@
 ---@class CtpIntegrations
 ---@field aerial boolean?
 ---@field alpha boolean?
+---@field avante CtpIntegratinAvant | boolean?
 ---@field barbar boolean?
 -- Use this to set it up:
 --
@@ -213,6 +214,11 @@
 ---@field vimwiki boolean?
 ---@field which_key boolean?
 ---@field window_picker boolean?
+
+---@class CtpIntegratinAvant
+--  Whether the opts.windows.sidebar_header.rounded option is set on Avante
+---@field enabled boolean
+---@field windows_sidebar_header_rounded boolean?
 
 ---@class CtpIntegrationBarbecue
 --  Whether to use the alternative background.
