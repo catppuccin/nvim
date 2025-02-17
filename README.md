@@ -736,7 +736,7 @@ fzf = true
 <td>
 
 ```lua
-gitgraph = true
+gitgraph = false
 ```
 <!-- gitgraph.nvim -->
 
