@@ -202,7 +202,7 @@
 ---@field render_markdown boolean?
 ---@field sandwich boolean?
 ---@field semantic_tokens boolean?
----@field snacks boolean?
+---@field snacks CtpIntegrationSnacks | boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
 ---@field telescope CtpIntegrationTelescope | boolean?
@@ -278,6 +278,12 @@
 ---@field enabled boolean
 -- Override the background color for navic.
 ---@field custom_bg CtpColor | "NONE" | "lualine" | nil
+
+---@class CtpIntegrationSnacks
+-- Whether to enable the snacks integration.
+---@field enabled boolean
+-- Sets the color of the indent scope line
+---@field indent_scope_color CtpColor?
 
 ---@class CtpIntegrationTelescope
 -- Whether to enable the telescope integration
