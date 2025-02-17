@@ -821,7 +821,10 @@ render-markdown.nvim>lua
 <
 
 snacks.nvim>lua
-    snacks = false
+    snacks = {
+        enabled = false,
+        indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+    }
 <
 
 symbols-outline.nvim
