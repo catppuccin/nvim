@@ -13,28 +13,31 @@ function M.get()
 
 			GitSignsCurrentLineBlame = { fg = C.surface1 },
 
-			GitSignsAddPreview = O.transparent_background and { fg = U.darken(C.green, 0.72, C.base), bg = C.none }
+			GitSignsAddPreview = O.integrations.gitsigns.transparent
+					and { fg = U.darken(C.green, 0.72, C.base), bg = C.none }
 				or { link = "DiffAdd" },
-			GitSignsDeletePreview = O.transparent_background and { fg = U.darken(C.red, 0.72, C.base), bg = C.none }
+			GitSignsDeletePreview = O.integrations.gitsigns.transparent
+					and { fg = U.darken(C.red, 0.72, C.base), bg = C.none }
 				or { link = "DiffDelete" },
 			-- for word diff in previews
-			GitSignsAddInline = O.transparent_background and {
+			GitSignsAddInline = O.integrations.gitsigns.transparent and {
 				fg = C.green,
 				bg = C.none,
 				style = { "bold" },
 			} or { link = "DiffAdd" },
-			GitSignsDeleteInline = O.transparent_background and {
+			GitSignsDeleteInline = O.integrations.gitsigns.transparent and {
 				fg = C.red,
 				bg = C.none,
 				style = { "bold" },
 			} or { link = "DiffDelete" },
-			GitSignsChangeInline = O.transparent_background and {
+			GitSignsChangeInline = O.integrations.gitsigns.transparent and {
 				fg = C.yellow,
 				bg = C.none,
 				style = { "bold" },
 			} or { link = "DiffChange" },
 
-			GitSignsDeleteVirtLn = O.transparent_background and { bg = C.none, fg = C.red } or { link = "DiffDelete" },
+			GitSignsDeleteVirtLn = O.integrations.gitsigns.transparent and { bg = C.none, fg = C.red }
+				or { link = "DiffDelete" },
 		}
 	else
 		return {
@@ -44,8 +47,10 @@ function M.get()
 
 			GitSignsCurrentLineBlame = { fg = C.surface1 },
 
-			GitSignsAddPreview = O.transparent_background and { fg = C.green, bg = C.none } or { link = "DiffAdd" },
-			GitSignsDeletePreview = O.transparent_background and { fg = C.red, bg = C.none } or { link = "DiffDelete" },
+			GitSignsAddPreview = O.integrations.gitsigns.transparent and { fg = C.green, bg = C.none }
+				or { link = "DiffAdd" },
+			GitSignsDeletePreview = O.integrations.gitsigns.transparent and { fg = C.red, bg = C.none }
+				or { link = "DiffDelete" },
 
 			GitSignsAddInline = { bg = U.darken(C.green, 0.36, C.base) },
 			GitSignsDeleteInline = { bg = U.darken(C.red, 0.36, C.base) },
