@@ -177,6 +177,7 @@
 -- ```
 ---@field lsp_saga boolean?
 ---@field lsp_trouble boolean?
+---@field lualine CtpIntegrationLualine?
 ---@field markdown boolean?
 ---@field mason boolean?
 ---@field native_lsp CtpIntegrationNativeLsp | boolean?
@@ -262,6 +263,22 @@
 ---@field enabled boolean
 -- Sets the color of the scope line
 ---@field indentscope_color CtpColor?
+
+---@alias CtpIntegrationLualine CtpFlavors<CtpIntegrationLualineOverride | CtpIntegrationLualineOverrideFn>
+---@alias CtpIntegrationLualineOverride CtpIntegrationLualineModes<CtpIntegrationLualineSectionOverrides>
+---@alias CtpIntegrationLualineOverrideFn fun(colors: CtpColors<string>): CtpIntegrationLualineOverride
+---@alias CtpIntegrationLualineMode "normal" | "insert" | "visual" | "replace" | "command" | "terminal" | "inactive" 
+---@class CtpIntegrationLualineModes<T>: { all: T, normal: T, insert: T, visual: T, replace: T, command: T, terminal: T, inactive: T } 
+---@alias CtpIntegrationLualineSectionOverrides CtpIntegrationLualineSections<CtpIntegrationLualineSectionOverride>
+---@alias CtpIntegrationLualineSection "a" | "b" | "c"
+---@class CtpIntegrationLualineSections<T>: { a: T, b: T, c: T }
+---@class CtpIntegrationLualineSectionOverride
+---Color string to use for both guifg and ctermfg
+---@field fg string?
+---Color string to use for both guibg and ctermbg
+---@field bg string?
+---`gui` argument to be used in vim `highlight!`, such as "italic,bold"
+---@field gui string?
 
 ---@class CtpIntegrationNativeLsp
 -- Whether to enable the Native LSP integration.
