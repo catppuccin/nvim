@@ -13,15 +13,21 @@ function M.get()
 			},
 			TelescopePromptBorder = {
 				fg = O.transparent_background and C.blue or C.surface0,
-				bg = O.transparent_background and C.none or C.surface0,
+				bg = O.transparent_background and O.integrations.telescope.style == "nvchad" and C.surface0
+					or C.none
+					or C.surface0,
 			},
 			TelescopePromptNormal = {
 				fg = C.text,
-				bg = O.transparent_background and C.none or C.surface0,
+				bg = O.transparent_background and O.integrations.telescope.style == "nvchad" and C.surface0
+					or C.none
+					or C.surface0,
 			},
 			TelescopePromptPrefix = {
 				fg = C.flamingo,
-				bg = O.transparent_background and C.none or C.surface0,
+				bg = O.transparent_background and O.integrations.telescope.style == "nvchad" and C.surface0
+					or C.none
+					or C.surface0,
 			},
 			TelescopePreviewTitle = {
 				fg = O.transparent_background and C.green or C.base,
