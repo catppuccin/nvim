@@ -558,9 +558,16 @@ gitgraph.nvim>lua
 <
 
 gitsigns.nvim>lua
+    gitsigns = true
+<
+
+Special ~
+
+>lua
     gitsigns = {
       enabled = true,
-      transparent = true, -- Default: false
+      -- align with the transparent_background option by default
+      transparent = false,
     }
 <
 
