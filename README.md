@@ -749,6 +749,18 @@ gitgraph = false
 ```lua
 gitsigns = true
 ```
+
+<details> <summary>Special</summary>
+
+```lua
+gitsigns = {
+  enabled = true,
+  -- align with the transparent_background option by default
+  transparent = false,
+}
+ ``` 
+
+</details>
 <!-- gitsigns.nvim -->
 
 <!-- grug-far.nvim -->
