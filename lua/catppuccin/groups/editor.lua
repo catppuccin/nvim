@@ -47,6 +47,8 @@ function M.get()
 		PmenuSel = { bg = C.surface1, style = { "bold" } }, -- Popup menu: selected item.
 		PmenuSbar = { bg = C.surface1 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
+		PmenuExtra = { fg = C.overlay0 }, -- Popup menu: normal item extra text.
+		PmenuExtraSel = { fg = C.overlay0 }, -- Popup menu: selected item extra text.
 		Question = { fg = C.blue }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = C.surface1, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = U.darken(C.sky, 0.30, C.base), fg = C.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
