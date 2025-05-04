@@ -6,13 +6,15 @@ local M = {}
 function M.get()
 	local darkening_percentage = 0.095
 
+	local blockquote_bg = not O.transparent_background and C.mantle or nil
+
 	local groups = {
 		MarkviewBlockQuoteDefault = { fg = C.overlay2, bg = C.mantle },
-		MarkviewBlockQuoteError = { fg = C.red, bg = C.mantle },
-		MarkviewBlockQuoteNote = { fg = C.blue, bg = C.mantle },
-		MarkviewBlockQuoteOk = { fg = C.green, bg = C.mantle },
-		MarkviewBlockQuoteSpecial = { fg = C.pink, bg = C.mantle },
-		MarkviewBlockQuoteWarn = { fg = C.yellow, bg = C.mantle },
+		MarkviewBlockQuoteError = { fg = C.red, bg = U.darken(C.red, darkening_percentage, blockquote_bg) },
+		MarkviewBlockQuoteNote = { fg = C.blue, bg = U.darken(C.blue, darkening_percentage, blockquote_bg) },
+		MarkviewBlockQuoteOk = { fg = C.green, bg = U.darken(C.green, darkening_percentage, blockquote_bg) },
+		MarkviewBlockQuoteSpecial = { fg = C.pink, bg = U.darken(C.pink, darkening_percentage, blockquote_bg) },
+		MarkviewBlockQuoteWarn = { fg = C.yellow, bg = U.darken(C.yellow, darkening_percentage, blockquote_bg) },
 
 		MarkviewHyperlink = { link = "@markup.link.url" },
 
