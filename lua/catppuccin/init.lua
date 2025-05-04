@@ -49,6 +49,7 @@ local M = {
 			flash = true,
 			gitsigns = true,
 			markdown = true,
+			markview = false,
 			neogit = true,
 			neotree = true,
 			nvimtree = true,
