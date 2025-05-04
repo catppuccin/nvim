@@ -13,7 +13,7 @@ function M.get()
 		MarkviewBlockQuoteError = { fg = C.red, bg = U.darken(C.red, darkening_percentage, blockquote_bg) },
 		MarkviewBlockQuoteNote = { fg = C.blue, bg = U.darken(C.blue, darkening_percentage, blockquote_bg) },
 		MarkviewBlockQuoteOk = { fg = C.green, bg = U.darken(C.green, darkening_percentage, blockquote_bg) },
-		MarkviewBlockQuoteSpecial = { fg = C.pink, bg = U.darken(C.pink, darkening_percentage, blockquote_bg) },
+		MarkviewBlockQuoteSpecial = { fg = C.mauve, bg = U.darken(C.pink, darkening_percentage, blockquote_bg) },
 		MarkviewBlockQuoteWarn = { fg = C.yellow, bg = U.darken(C.yellow, darkening_percentage, blockquote_bg) },
 
 		MarkviewHyperlink = { link = "@markup.link.url" },
