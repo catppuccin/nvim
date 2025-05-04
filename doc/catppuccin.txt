@@ -892,6 +892,10 @@ vim-sandwich>lua
     sandwich = false
 <
 
+vim-signify>lua
+    signify = false
+<
+
 vim-sneak>lua
     vim_sneak = false
 <
