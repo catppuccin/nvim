@@ -32,11 +32,10 @@ function M.get()
 	}
 
 	local syntax = require("catppuccin.groups.syntax").get()
-	local base = not O.transparent_background and C.base or C.crust
 
 	for i = 0, 7 do
 		local color = rainbow[i] or syntax["rainbow" .. i].fg
-		local bg = U.darken(color, darkening_percentage, base)
+		local bg = U.darken(color, darkening_percentage, C.base)
 		groups["MarkviewPalette" .. i] = { fg = color, bg = bg }
 		groups["MarkviewPalette" .. i .. "Fg"] = { fg = color }
 		groups["MarkviewPalette" .. i .. "Bg"] = { bg = bg }

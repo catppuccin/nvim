@@ -19,12 +19,11 @@ function M.get()
 
 	local syntax = require("catppuccin.groups.syntax").get()
 	local darkening_percentage = O.transparent_background and U.vary_color({ latte = 0.15 }, 0.28) or 0.095
-	local base = not O.transparent_background and C.base or C.crust
 
 	for i = 1, 6 do
 		local color = syntax["rainbow" .. i].fg
 		groups["RenderMarkdownH" .. i] = { fg = color }
-		groups["RenderMarkdownH" .. i .. "Bg"] = { bg = U.darken(color, darkening_percentage, base) }
+		groups["RenderMarkdownH" .. i .. "Bg"] = { bg = U.darken(color, darkening_percentage, C.base) }
 	end
 
 	return groups
