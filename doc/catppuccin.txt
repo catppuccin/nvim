@@ -350,6 +350,10 @@ explanations:
     }
 <
 
+buffon.nvim>lua
+    buffon = false
+
+
 coc.nvim>lua
     coc_nvim = false
 <

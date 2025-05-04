@@ -123,6 +123,7 @@
 ---@field beacon boolean?
 ---@field blink_cmp boolean?
 ---@field cmp boolean?
+---@field buffon boolean?
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
 -- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
 ---@field coc_nvim boolean?
