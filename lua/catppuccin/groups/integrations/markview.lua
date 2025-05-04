@@ -9,7 +9,7 @@ function M.get()
 	local groups = {
 		MarkviewBlockQuoteDefault = { fg = C.overlay2, bg = C.mantle },
 		MarkviewBlockQuoteError = { fg = C.red, bg = C.mantle },
-		MarkviewBlockQuoteNote = { fg = C.sky, bg = C.mantle },
+		MarkviewBlockQuoteNote = { fg = C.blue, bg = C.mantle },
 		MarkviewBlockQuoteOk = { fg = C.green, bg = C.mantle },
 		MarkviewBlockQuoteSpecial = { fg = C.pink, bg = C.mantle },
 		MarkviewBlockQuoteWarn = { fg = C.yellow, bg = C.mantle },
