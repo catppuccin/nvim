@@ -1,5 +1,8 @@
 local M = {}
 
+-- markview.nvim highlight groups:
+-- https://github.com/OXY2DEV/markview.nvim#-highlight-groups
+
 function M.get()
 	local darkening_percentage = 0.095
 
