@@ -107,15 +107,15 @@ function M.get()
 			bg = O.transparent_background and C.none or C.surface0,
 		} or {},
 		SnacksPickerPreviewTitle = nvchad_style and {
-			fg = O.transparent_background and C.green or C.base,
+			fg = O.transparent_background and C.green or C.crust,
 			bg = O.transparent_background and C.none or C.green,
 		} or {},
 		SnacksPickerInputTitle = nvchad_style and {
-			fg = O.transparent_background and C.red or C.base,
+			fg = O.transparent_background and C.red or C.crust,
 			bg = O.transparent_background and C.none or C.red,
 		} or {},
 		SnacksPickerListTitle = nvchad_style and {
-			fg = O.transparent_background and C.lavender or C.mantle,
+			fg = O.transparent_background and C.lavender or C.crust,
 			bg = O.transparent_background and C.none or C.lavender,
 		} or {},
 
