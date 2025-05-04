@@ -428,6 +428,20 @@ bufferline.setup {
 </tr>
 <!-- bufferline.nvim -->
 
+<!-- buffon.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/francescarpi/buffon.nvim">buffon.nvim</a> </td>
+<td>
+
+```lua
+buffon = false
+```
+
+</td>
+</tr>
+<!-- buffon.nvim -->
+
 <!-- coc.nvim -->
 </tr>
 <tr>
