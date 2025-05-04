@@ -203,6 +203,7 @@
 ---@field sandwich boolean?
 ---@field semantic_tokens boolean?
 ---@field snacks CtpIntegrationSnacks | boolean?
+---@field signify boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
 ---@field telescope CtpIntegrationTelescope | boolean?
