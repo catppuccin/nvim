@@ -1586,6 +1586,20 @@ sandwich = false
 </tr>
 <!-- vim-sandwich -->
 
+<!-- vim-signify -->
+</tr>
+<tr>
+<td> <a href="https://github.com/mhinz/vim-signify">vim-signify</a> </td>
+<td>
+
+```lua
+signify = true
+```
+
+</td>
+</tr>
+<!-- vim-signify -->
+
 <!-- vim-sneak -->
 </tr>
 <tr>

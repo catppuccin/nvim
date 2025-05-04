@@ -110,6 +110,7 @@ local M = {
 				enabled = true,
 				indentscope_color = "overlay2",
 			},
+			signify = true,
 		},
 		color_overrides = {},
 		highlight_overrides = {},
