@@ -20,7 +20,6 @@ function M.get()
 
 		MarkviewCode = { bg = C.mantle },
 		MarkviewCodeInfo = { fg = C.overlay2, bg = C.mantle },
-		MarkviewCodeFg = { fg = C.teal },
 		MarkviewInlineCode = { bg = C.surface0 },
 
 		MarkviewTableHeader = { fg = C.blue },
