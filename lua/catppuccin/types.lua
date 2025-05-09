@@ -178,6 +178,7 @@
 ---@field lsp_saga boolean?
 ---@field lsp_trouble boolean?
 ---@field markdown boolean?
+---@field markview boolean?
 ---@field mason boolean?
 ---@field native_lsp CtpIntegrationNativeLsp | boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
