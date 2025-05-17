@@ -654,6 +654,10 @@ markdown>lua
     markdown = true
 <
 
+markview.nvim>lua
+    markview = false
+<
+
 mason.nvim>lua
     mason = false
 <
