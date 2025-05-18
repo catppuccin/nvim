@@ -4,7 +4,7 @@ local M = {}
 -- https://github.com/OXY2DEV/markview.nvim#-highlight-groups
 
 function M.get()
-	local darkening_percentage = 0.095
+	local darkening_percentage = O.transparent_background and 0.28 or 0.095
 
 	local blockquote_bg = not O.transparent_background and C.mantle or nil
 
