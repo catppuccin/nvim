@@ -19,6 +19,7 @@ function M.get()
 		MarkviewHyperlink = { link = "@markup.link.url" },
 
 		MarkviewCode = { bg = C.mantle },
+		MarkviewCodeFg = { fg = C.mantle },
 		MarkviewCodeInfo = { fg = C.overlay2, bg = C.mantle },
 		MarkviewInlineCode = { bg = C.surface0 },
 
