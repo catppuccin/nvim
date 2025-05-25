@@ -18,7 +18,7 @@ function M.get()
 	}
 
 	local syntax = require("catppuccin.groups.syntax").get()
-	local base = not O.transparent_background and C.base or nil
+	local base = not O.transparent_background and C.base or C.crust
 
 	for i = 1, 6 do
 		local color = syntax["rainbow" .. i].fg
