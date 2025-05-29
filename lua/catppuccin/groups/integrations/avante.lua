@@ -51,6 +51,18 @@ function M.get()
 			bg = O.transparent_background and C.none or C.mantle,
 			fg = C.red,
 		},
+
+		AvanteSidebarWinSeparator = {
+			link = "WinSeparator",
+		},
+
+		AvantePromptInput = {
+			link = "FloatNormal",
+		},
+
+		AvantePromptInputBorder = {
+			link = "FloatBorder",
+		},
 	}
 end
 
