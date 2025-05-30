@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.11.0](https://github.com/catppuccin/nvim/compare/v1.10.0...v1.11.0) (2025-05-30)
+
+
+### Features
+
+* **markview:** add markview integration ([#854](https://github.com/catppuccin/nvim/issues/854)) ([961ec64](https://github.com/catppuccin/nvim/commit/961ec64a14e4b329475fc20226a59a28eb040303))
+* **snacks:** add snacks.picker support ([#853](https://github.com/catppuccin/nvim/issues/853)) ([be1e5e6](https://github.com/catppuccin/nvim/commit/be1e5e6308bb9d016bf5c1565e0f1d5e46400d7a))
+
+
+### Bug Fixes
+
+* **avante:** link background and border hl ([#865](https://github.com/catppuccin/nvim/issues/865)) ([387b4b1](https://github.com/catppuccin/nvim/commit/387b4b19568cbda82c1d6def9ded31fd6ae7fb99))
+* **markview:** adjust highlights ([#860](https://github.com/catppuccin/nvim/issues/860)) ([30b1a81](https://github.com/catppuccin/nvim/commit/30b1a81c9f7a5d1b5616da0afff1bfe9aa26e622))
+* **markview:** incorrect heading bg when using transparent bg ([56a9dfd](https://github.com/catppuccin/nvim/commit/56a9dfd1e05868cf3189369aad87242941396563))
+* **render-markdown:** incorrect heading bg when using transparent bg ([56a9dfd](https://github.com/catppuccin/nvim/commit/56a9dfd1e05868cf3189369aad87242941396563))
+
 ## [1.10.0](https://github.com/catppuccin/nvim/compare/v1.9.0...v1.10.0) (2025-05-04)
 
 
