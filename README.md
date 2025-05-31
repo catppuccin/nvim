@@ -1434,6 +1434,7 @@ render_markdown = true
 snacks = {
     enabled = false,
     indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+    -- picker_style = "nvchad",
 }
 ```
 
