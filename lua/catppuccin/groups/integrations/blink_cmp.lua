@@ -43,9 +43,9 @@ function M.get()
 		BlinkCmpKindCopilot = { fg = C.teal },
 	}
 
-	if border_style == 'bordered' then
-		highlights['BlinkCmpMenuBorder'] = { fg = C.blue }
-		highlights['BlinkCmpDocBorder'] = { fg = C.blue }
+	if border_style == "bordered" then
+		highlights["BlinkCmpMenuBorder"] = { fg = C.blue }
+		highlights["BlinkCmpDocBorder"] = { fg = C.blue }
 	end
 
 	return highlights
