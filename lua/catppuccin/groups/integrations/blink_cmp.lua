@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get()
-	local border_style = O.integrations.blink_cmp.border_style
+	local style = O.integrations.blink_cmp.style
 
 	local highlights = {
 		BlinkCmpLabel = { fg = C.overlay2 },
@@ -43,7 +43,7 @@ function M.get()
 		BlinkCmpKindCopilot = { fg = C.teal },
 	}
 
-	if border_style == "bordered" then
+	if style == "bordered" then
 		highlights["BlinkCmpMenuBorder"] = { fg = C.blue }
 		highlights["BlinkCmpDocBorder"] = { fg = C.blue }
 	end

@@ -234,7 +234,7 @@
 
 ---@class CtpIntegrationsBlinkCmp
 --- The border style for the completion menu
----@field border_style 'solid'|'bordered'
+---@field style 'solid'|'bordered'
 
 ---@class CtpIntegrationColorfulWinsep
 -- Whether to enable the colorful-winsep integration.

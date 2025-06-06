@@ -370,7 +370,7 @@ beacon = false
 
 ```lua
 blink_cmp = {
-    border_style = 'bordered',
+    style = 'bordered',
 }
 ```
 
