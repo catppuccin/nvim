@@ -307,7 +307,7 @@ beacon.nvim>lua
 
 blink.cmp>lua
     blink_cmp = {
-        border_style = 'bordered',
+        style = 'bordered',
     }
 <
 
