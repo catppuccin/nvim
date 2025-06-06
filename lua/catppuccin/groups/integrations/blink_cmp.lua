@@ -1,12 +1,13 @@
 local M = {}
 
 function M.get()
-	return {
+	local border_style = O.integrations.blink_cmp.border_style
+
+	local highlights = {
 		BlinkCmpLabel = { fg = C.overlay2 },
 		BlinkCmpLabelDeprecated = { fg = C.overlay0, style = { "strikethrough" } },
 		BlinkCmpKind = { fg = C.blue },
 		BlinkCmpMenu = { link = "Pmenu" },
-		BlinkCmpMenuBorder = { fg = C.blue },
 		BlinkCmpLabelMatch = { fg = C.text, style = { "bold" } },
 		BlinkCmpMenuSelection = { bg = C.surface1, style = { "bold" } },
 		BlinkCmpScrollBarGutter = { bg = C.surface1 },
@@ -41,6 +42,13 @@ function M.get()
 		BlinkCmpKindTypeParameter = { fg = C.maroon },
 		BlinkCmpKindCopilot = { fg = C.teal },
 	}
+
+	if border_style == 'bordered' then
+		highlights['BlinkCmpMenuBorder'] = { fg = C.blue }
+		highlights['BlinkCmpDocBorder'] = { fg = C.blue }
+	end
+
+	return highlights
 end
 
 return M

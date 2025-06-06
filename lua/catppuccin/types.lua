@@ -121,7 +121,7 @@
 ---```
 ---@field barbecue CtpIntegrationBarbecue | boolean?
 ---@field beacon boolean?
----@field blink_cmp boolean?
+---@field blink_cmp CtpIntegrationsBlinkCmp | boolean?
 ---@field cmp boolean?
 -- `coc.nvim` links to `native_lsp` highlight groups, so you can use
 -- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
@@ -231,6 +231,10 @@
 ---@field dim_context boolean?
 -- Whether the directory name should be dimmed.
 ---@field dim_dirname boolean?
+
+---@class CtpIntegrationsBlinkCmp
+--- The border style for the completion menu
+---@field border_style 'solid'|'bordered'
 
 ---@class CtpIntegrationColorfulWinsep
 -- Whether to enable the colorful-winsep integration.
