@@ -1,7 +1,47 @@
 local M = {}
 
+-- only applicable with `picker_style = "nvchad"`
+-- ```lua
+-- require("snacks").setup({
+--   picker = {
+--     layout = {
+--       layout = require("catppuccin.groups.integrations.snacks").get_layout(),
+--     },
+--   },
+-- })
+-- ```
+function M.get_layout()
+	return {
+		box = "horizontal",
+		border = "none",
+		{
+			box = "vertical",
+			{
+				win = "input",
+				title = " {source} {live} ",
+				title_pos = "center",
+				border = "solid",
+				height = 1,
+			},
+			{
+				win = "list",
+				title = "  Results  ",
+				title_pos = "center",
+				border = "solid",
+			},
+		},
+		{
+			win = "preview",
+			width = 0.45,
+			title_pos = "center",
+		},
+	}
+end
+
 function M.get()
 	local indent_scope_color = O.integrations.snacks.indent_scope_color
+	local picker_style = O.integrations.snacks.picker_style
+	local nvchad_style = picker_style == "nvchad"
 
 	return {
 		SnacksNormal = { link = "NormalFloat" },
@@ -51,10 +91,38 @@ function M.get()
 		SnacksIndent = { fg = C.surface0 },
 		SnacksIndentScope = { fg = C[indent_scope_color] or C.text },
 
-		SnacksPicker = { link = "NormalFloat" },
-		SnacksPickerInputBorder = { link = "SnacksPickerBorder" },
+		SnacksPicker = nvchad_style and {
+			bg = O.transparent_background and C.none or C.mantle,
+		} or { link = "NormalFloat" },
+		SnacksPickerInputBorder = nvchad_style and {
+			fg = O.transparent_background and C.blue or C.surface0,
+			bg = O.transparent_background and C.none or C.surface0,
+		} or { link = "SnacksPickerBorder" },
+		SnacksPickerInput = nvchad_style and {
+			fg = C.text,
+			bg = O.transparent_background and C.none or C.surface0,
+		} or {},
+		SnacksPickerPrompt = nvchad_style and {
+			fg = C.flamingo,
+			bg = O.transparent_background and C.none or C.surface0,
+		} or {},
+		SnacksPickerPreviewTitle = nvchad_style and {
+			fg = O.transparent_background and C.green or C.crust,
+			bg = O.transparent_background and C.none or C.green,
+		} or {},
+		SnacksPickerInputTitle = nvchad_style and {
+			fg = O.transparent_background and C.red or C.crust,
+			bg = O.transparent_background and C.none or C.red,
+		} or {},
+		SnacksPickerListTitle = nvchad_style and {
+			fg = O.transparent_background and C.lavender or C.crust,
+			bg = O.transparent_background and C.none or C.lavender,
+		} or {},
 
-		SnacksPickerBorder = { link = "FloatBorder" },
+		SnacksPickerBorder = nvchad_style and {
+			fg = O.transparent_background and C.blue or C.mantle,
+			bg = O.transparent_background and C.none or C.mantle,
+		} or { link = "FloatBorder" },
 		SnacksPickerSelected = {
 			fg = O.transparent_background and C.flamingo or C.text,
 			bg = O.transparent_background and C.none or C.surface0,
