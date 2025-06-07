@@ -369,7 +369,9 @@ beacon = false
 <td>
 
 ```lua
-blink_cmp = false
+blink_cmp = {
+    style = 'bordered',
+}
 ```
 
 </td>
