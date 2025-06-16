@@ -1,7 +1,7 @@
 local M = {}
 
 -- stylua: ignore
-M.integrations = {
+local integration_mappings = {
 	["aerial.nvim"]											= "aerial",
 	["alpha-nvim"]											= "alpha",
 	["barbar.nvim"]											= "barbar",
@@ -73,29 +73,34 @@ M.integrations = {
 	["which-key.nvim"]									=	"which_key",
 }
 
-local plugins = {}
+local installed_plugins = {}
 if pcall(require, "lazy") then
 	for plugin, _ in pairs(require("lazy.core.config").plugins) do
 		-- special case for the "mini" library, if one module is present, mark as if the whole library is there.
 		if plugin:match "mini.*" then
-			if not vim.tbl_contains(plugins, "mini.nvim") then table.insert(plugins, "mini.nvim") end
+			if not vim.tbl_contains(installed_plugins, "mini.nvim") then
+				table.insert(installed_plugins, "mini.nvim")
+			end
 		else
-			table.insert(plugins, plugin)
+			table.insert(installed_plugins, plugin)
 		end
 	end
 end
 
-M.apply = function(integrations_opts)
-	for _, plugin in ipairs(plugins) do
-		if M.integrations[plugin] ~= nil then
+function M.create_integrations_table()
+	local integrations = {}
+	for _, plugin in ipairs(installed_plugins) do
+		if integration_mappings[plugin] ~= nil then
 			-- print(plugin .. " - " .. M.integrations[plugin])
-			integrations_opts[M.integrations[plugin]] = true
+			local integration = integration_mappings[plugin]
+			integrations[integration] = true
 		end
 	end
+	return integrations
 end
 
 -- testing
--- M.apply()
--- print("final_integrations: " .. vim.inspect(final_integrations))
+local integrations = M.create_integrations_table()
+print("detected integrations: " .. vim.inspect(integrations))
 
 return M
