@@ -37,6 +37,7 @@ local M = {
 			operators = {},
 		},
 		default_integrations = true,
+		auto_integrations = false,
 		integrations = {
 			alpha = true,
 			blink_cmp = true,
@@ -173,10 +174,25 @@ function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
 
+	if user_conf.auto_integrations == true then
+		if user_conf.integrations ~= nil then
+			vim.tbl_deep_extend(
+				"keep",
+				user_conf.integrations,
+				require("catppuccin.lib.detect_integrations").create_integrations_table()
+			)
+		else
+			user_conf.integrations = require("catppuccin.lib.detect_integrations").create_integrations_table()
+		end
+	end
+
 	if user_conf.default_integrations == false then M.default_options.integrations = {} end
 
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
+
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
+
+	print(vim.inspect(M.options.integrations))
 
 	-- Get cached hash
 	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
