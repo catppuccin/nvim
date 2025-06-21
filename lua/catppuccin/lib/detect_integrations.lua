@@ -22,7 +22,7 @@ local integration_mappings = {
 	["grug-fur.nvim"]										= "grug-fur",
 	["harpoon"]													= "harpoon",
 	["headlines.nvim"]									= "headlines",
-	["hop"]															= "hop",
+	["hop.nvim"]												= "hop",
 	["indent-blankline.nvim"]						= "indent_blankline",
 	["leap.nvim"]												= "leap.nvim",
 	["lightspeed.nvim"]									= "lightspeed",
@@ -91,16 +91,15 @@ function M.create_integrations_table()
 	local integrations = {}
 	for _, plugin in ipairs(installed_plugins) do
 		if integration_mappings[plugin] ~= nil then
-			-- print(plugin .. " - " .. M.integrations[plugin])
 			local integration = integration_mappings[plugin]
-			integrations[integration] = true
+			integrations[integration] = require("catppuccin").default_options.integrations[integration]
 		end
 	end
 	return integrations
 end
 
 -- testing
-local integrations = M.create_integrations_table()
-print("detected integrations: " .. vim.inspect(integrations))
+-- local integrations = M.create_integrations_table()
+-- print("detected integrations: " .. vim.inspect(integrations))
 
 return M
