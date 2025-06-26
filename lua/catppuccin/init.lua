@@ -192,8 +192,6 @@ function M.setup(user_conf)
 
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
-	print(vim.inspect(M.options.integrations))
-
 	-- Get cached hash
 	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
 	local file = io.open(cached_path)
