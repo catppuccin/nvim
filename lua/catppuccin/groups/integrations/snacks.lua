@@ -52,9 +52,11 @@ function M.get()
 		SnacksIndentScope = { fg = C[indent_scope_color] or C.text },
 
 		SnacksPicker = { link = "NormalFloat" },
-		SnacksPickerInputBorder = { link = "SnacksPickerBorder" },
-
-		SnacksPickerBorder = { link = "FloatBorder" },
+		SnacksPickerInputBorder = { fg = C.blue, bg = C.mantle },
+		SnacksPickerInputTitle = { fg = C.blue, bg = C.mantle },
+		SnacksPickerBoxTitle = { fg = C.blue, bg = C.mantle },
+		SnacksPickerPreviewTitle = { fg = C.blue, bg = C.mantle },
+		SnacksPickerBorder = { fg = C.blue, bg = C.mantle },
 		SnacksPickerSelected = {
 			fg = O.transparent_background and C.flamingo or C.text,
 			bg = O.transparent_background and C.none or C.surface0,
