@@ -33,6 +33,8 @@
 ---@field styles CtpStyles?
 -- Should default integrations be used.
 ---@field default_integrations boolean?
+---@field auto_integrations boolean?
+-- Should detect integrations automatically
 -- Toggle integrations. Integrations allow Catppuccin to set the theme of various plugins.
 ---@field integrations CtpIntegrations?
 -- Catppuccin colors can be overwritten here.
