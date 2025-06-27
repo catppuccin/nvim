@@ -183,6 +183,18 @@ function M.setup(user_conf)
 	end
 
 	if user_conf.default_integrations == false then M.default_options.integrations = {} end
+	if user_conf.default_integrations == false then
+		M.default_options.integrations = vim.iter(pairs(M.default_options.integrations))
+			:fold({}, function(integrations, name, opts)
+				if type(opts) == "table" then
+					opts.enabled = false
+				else
+					opts = false
+				end
+				integrations[name] = opts
+				return integrations
+			end)
+	end
 
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
 
