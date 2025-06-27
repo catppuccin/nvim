@@ -175,15 +175,11 @@ function M.setup(user_conf)
 	user_conf = user_conf or {}
 
 	if user_conf.auto_integrations == true then
-		if user_conf.integrations ~= nil then
-			vim.tbl_deep_extend(
-				"keep",
-				user_conf.integrations,
-				require("catppuccin.lib.detect_integrations").create_integrations_table()
-			)
-		else
-			user_conf.integrations = require("catppuccin.lib.detect_integrations").create_integrations_table()
-		end
+		user_conf.integrations = vim.tbl_deep_extend(
+			"force",
+			require("catppuccin.lib.detect_integrations").create_integrations_table(),
+			user_conf.integrations or {}
+		)
 	end
 
 	if user_conf.default_integrations == false then M.default_options.integrations = {} end
