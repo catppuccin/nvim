@@ -197,7 +197,6 @@ function M.setup(user_conf)
 	end
 
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
-
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
 	-- Get cached hash
