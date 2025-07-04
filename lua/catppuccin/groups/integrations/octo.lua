@@ -65,6 +65,7 @@ function M.get()
 		OctoStateSubmittedBubble = { link = "OctoBubbleGreen" },
 		OctoFilePanelCounter = { fg = C.blue, style = { "bold" } },
 		OctoFilePanelTitle = { fg = C.blue, style = { "bold" } },
+		OctoFilePanelFileName = {},
 		OctoNormalFront = { fg = C.text },
 		OctoYellowFloat = { fg = C.yellow, bg = C.base },
 		OctoPurpleFloat = { fg = C.mauve, bg = C.base },
