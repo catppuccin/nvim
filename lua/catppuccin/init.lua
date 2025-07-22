@@ -37,6 +37,7 @@ local M = {
 			operators = {},
 		},
 		default_integrations = true,
+		auto_integrations = false,
 		integrations = {
 			alpha = true,
 			blink_cmp = true,
@@ -173,6 +174,15 @@ function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
 
+	if user_conf.auto_integrations == true then
+		user_conf.integrations = vim.tbl_deep_extend(
+			"force",
+			require("catppuccin.lib.detect_integrations").create_integrations_table(),
+			user_conf.integrations or {}
+		)
+	end
+
+	if user_conf.default_integrations == false then M.default_options.integrations = {} end
 	if user_conf.default_integrations == false then
 		M.default_options.integrations = vim.iter(pairs(M.default_options.integrations))
 			:fold({}, function(integrations, name, opts)
