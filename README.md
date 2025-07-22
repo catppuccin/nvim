@@ -774,7 +774,7 @@ gitsigns = {
   -- align with the transparent_background option by default
   transparent = false,
 }
- ``` 
+ ```
 
 </details>
 <!-- gitsigns.nvim -->
@@ -1497,7 +1497,7 @@ telekasten = false
 ```lua
 telescope = {
     enabled = true,
-    -- style = "nvchad"
+    -- style = "classic", "nvchad" or "nvchad_outlined"
 }
 ```
 
