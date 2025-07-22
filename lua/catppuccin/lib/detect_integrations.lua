@@ -8,6 +8,7 @@ local integration_mappings = {
 	["barbecue.nvim"]										= "barbecue",
 	["beacon.nvim"]											= "beacon",
 	["blink.cmp"]												= "blink_cmp",
+	["buffon.nvim"]												= "buffon",
 	["coc.nvim"]												= "coc_nvim",
 	["colorful-winsep.nvim"]						= "colorful_winsep",
 	["dashboard-nvim"]									= "dashboard",
