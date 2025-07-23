@@ -304,7 +304,7 @@
 -- Whether to enable the telescope integration
 ---@field enabled boolean?
 -- The style of Telescope
----@field style "classic" | "nvchad" | nil
+---@field style "classic" | "nvchad" | "nvchad_outlined" | nil
 
 ---@class CtpIntegrationIlluminate
 -- Whether to enable the vim-illuminate integration
