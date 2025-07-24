@@ -1,3 +1,4 @@
+-- feline.nvim
 local M = {}
 
 local C = require("catppuccin.palettes").get_palette()

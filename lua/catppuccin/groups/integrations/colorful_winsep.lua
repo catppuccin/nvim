@@ -1,3 +1,4 @@
+-- colorful_winsep.nvim
 local M = {}
 
 function M.get()

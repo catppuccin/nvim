@@ -1,3 +1,4 @@
+-- vim-illuminate
 local M = {}
 
 function M.get()

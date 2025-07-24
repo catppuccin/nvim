@@ -1,3 +1,4 @@
+-- fidget.nvim
 local M = {}
 
 function M.get()
