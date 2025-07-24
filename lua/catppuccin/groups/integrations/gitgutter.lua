@@ -1,3 +1,4 @@
+-- vim-gitgutter
 local M = {}
 
 function M.get()
