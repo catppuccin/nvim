@@ -2,9 +2,10 @@ local M = {}
 
 function M.get()
 	return {
-		-- FzfLuaNormal = { link = "NormalFloat" }, Respect fzf-lua's default float bg
-		FzfLuaBorder = { link = "FloatBorder" },
-		FzfLuaTitle = { link = "FloatBorder" },
+		-- Respect fzf-lua's default float bg. Do not set `bg` or link to a group that sets `bg`.
+		-- FzfLuaNormal = { link = "NormalFloat" },
+		FzfLuaBorder = { fg = C.blue }, -- Match `FloatBorder` `fg`
+		FzfLuaTitle = { fg = C.blue }, -- Match `FzfLuaBorder` `fg`
 		FzfLuaHeaderBind = { fg = C.yellow },
 		FzfLuaHeaderText = { fg = C.peach },
 		FzfLuaDirPart = { link = "NonText" },
