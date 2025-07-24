@@ -1,3 +1,4 @@
+-- fern.vim
 local M = {}
 
 function M.get()

@@ -1,3 +1,4 @@
+-- avante.nvim
 local M = {}
 
 function M.get()
