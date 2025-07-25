@@ -136,7 +136,7 @@ function M.get()
 			bg = C.lavender,
 		}
 
-		if picker_style == 'nvchad_outlined' then
+		if picker_style == "nvchad_outlined" then
 			hlgroups["SnacksPicker"] = {
 				bg = C.none,
 			}
