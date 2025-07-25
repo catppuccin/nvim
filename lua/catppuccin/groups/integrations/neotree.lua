@@ -1,3 +1,4 @@
+-- neo-tree.nvim
 local M = {}
 
 function M.get()

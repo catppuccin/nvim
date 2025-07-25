@@ -1,3 +1,4 @@
+-- rainbow-delimiters.nvim
 local M = {}
 
 function M.get()

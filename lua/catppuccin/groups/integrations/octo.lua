@@ -1,3 +1,4 @@
+-- octo.nvim
 local M = {}
 
 function M.get()
