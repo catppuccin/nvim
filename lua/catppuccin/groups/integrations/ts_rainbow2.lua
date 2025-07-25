@@ -1,3 +1,4 @@
+-- nvim-ts-rainbow2
 local M = {}
 
 function M.get()

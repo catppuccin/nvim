@@ -1,3 +1,4 @@
+-- vimwiki
 local M = {}
 
 function M.get()
