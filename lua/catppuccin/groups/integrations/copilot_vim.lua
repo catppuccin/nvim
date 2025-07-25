@@ -1,3 +1,4 @@
+-- copilot.vim
 local M = {}
 
 function M.get()

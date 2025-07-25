@@ -1,3 +1,4 @@
+-- nvim-lspconfig
 local M = {}
 
 function M.get()

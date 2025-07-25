@@ -1,3 +1,4 @@
+-- mini.nvim
 local M = {}
 
 function M.get()

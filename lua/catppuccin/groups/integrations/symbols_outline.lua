@@ -1,3 +1,4 @@
+-- symbols-outline.nvim
 local M = {}
 
 function M.get()

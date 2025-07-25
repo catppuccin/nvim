@@ -1,3 +1,4 @@
+-- nvim-tree
 local M = {}
 
 function M.get()

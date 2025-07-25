@@ -1,3 +1,4 @@
+-- navic
 local M = {}
 
 function M.get()

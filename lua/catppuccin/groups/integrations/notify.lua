@@ -1,3 +1,4 @@
+-- nvim-notify
 local M = {}
 
 function M.get()

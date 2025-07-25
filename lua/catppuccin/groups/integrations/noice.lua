@@ -1,3 +1,4 @@
+-- noice.nvim
 local M = {}
 
 local virtual_text = O.integrations.native_lsp.virtual_text

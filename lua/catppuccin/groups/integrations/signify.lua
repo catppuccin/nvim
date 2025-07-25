@@ -1,3 +1,4 @@
+-- vim-signify
 local M = {}
 
 function M.get()
