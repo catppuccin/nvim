@@ -1,7 +1,18 @@
 local M = {}
 
-local integration_mappings = require "catppuccin.utils.integration_mappings"
+local integration_mappings = nil
+
+if pcall(require, "catppuccin.utils.integration_mappings") then
+	integration_mappings = require "catppuccin.utils.integration_mappings"
+end
+
+assert(
+	integration_mappings ~= nil,
+	"before using integration_mappings generate it using the script: `./scripts/generate_integration_mappings_table.lua`"
+)
+
 local installed_plugins = {}
+
 if pcall(require, "lazy") then
 	for plugin, _ in pairs(require("lazy.core.config").plugins) do
 		-- special case for the "mini" library, if one module is present, mark as if the whole library is installed
@@ -32,9 +43,5 @@ function M.create_integrations_table()
 	end
 	return integrations
 end
-
--- testing
-local integrations = M.create_integrations_table()
-print("detected integrations: " .. vim.inspect(integrations))
 
 return M
