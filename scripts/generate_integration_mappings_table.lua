@@ -40,10 +40,6 @@ end
 local mappings = create_table()
 local lines = format_table(mappings)
 
--- create and write the table to target_file
-local target_file = io.open(target_path, "w+")
-assert(target_file ~= nil, "a target file must be specified")
-
 target_file:write "local M = {\n"
 for _, line in ipairs(lines) do
 	target_file:write(line)
