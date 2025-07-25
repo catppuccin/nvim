@@ -1,6 +1,6 @@
 local M = {}
 
--- only applicable with `picker_style = "nvchad"`
+-- only applicable with `picker_style = "nvchad" or "nvchad_outlined"`
 -- ```lua
 -- require("snacks").setup({
 --   picker = {
@@ -41,9 +41,9 @@ end
 function M.get()
 	local indent_scope_color = O.integrations.snacks.indent_scope_color
 	local picker_style = O.integrations.snacks.picker_style
-	local nvchad_style = picker_style == "nvchad"
+	local nvchad_style = picker_style == "nvchad" or picker_style == "nvchad_outlined"
 
-	return {
+	local hlgroups = {
 		SnacksNormal = { link = "NormalFloat" },
 		SnacksWinBar = { link = "Title" },
 		SnacksBackdrop = { fg = C.overlay0 },
@@ -91,38 +91,6 @@ function M.get()
 		SnacksIndent = { fg = C.surface0 },
 		SnacksIndentScope = { fg = C[indent_scope_color] or C.text },
 
-		SnacksPicker = nvchad_style and {
-			bg = O.transparent_background and C.none or C.mantle,
-		} or { link = "NormalFloat" },
-		SnacksPickerInputBorder = nvchad_style and {
-			fg = O.transparent_background and C.blue or C.surface0,
-			bg = O.transparent_background and C.none or C.surface0,
-		} or { link = "SnacksPickerBorder" },
-		SnacksPickerInput = nvchad_style and {
-			fg = C.text,
-			bg = O.transparent_background and C.none or C.surface0,
-		} or {},
-		SnacksPickerPrompt = nvchad_style and {
-			fg = C.flamingo,
-			bg = O.transparent_background and C.none or C.surface0,
-		} or {},
-		SnacksPickerPreviewTitle = nvchad_style and {
-			fg = O.transparent_background and C.green or C.crust,
-			bg = O.transparent_background and C.none or C.green,
-		} or {},
-		SnacksPickerInputTitle = nvchad_style and {
-			fg = O.transparent_background and C.red or C.crust,
-			bg = O.transparent_background and C.none or C.red,
-		} or {},
-		SnacksPickerListTitle = nvchad_style and {
-			fg = O.transparent_background and C.lavender or C.crust,
-			bg = O.transparent_background and C.none or C.lavender,
-		} or {},
-
-		SnacksPickerBorder = nvchad_style and {
-			fg = O.transparent_background and C.blue or C.mantle,
-			bg = O.transparent_background and C.none or C.mantle,
-		} or { link = "FloatBorder" },
 		SnacksPickerSelected = {
 			fg = O.transparent_background and C.flamingo or C.text,
 			bg = O.transparent_background and C.none or C.surface0,
@@ -130,6 +98,76 @@ function M.get()
 		},
 		SnacksPickerMatch = { fg = C.blue },
 	}
+
+	if nvchad_style then
+		hlgroups["SnacksPicker"] = {
+			bg = C.mantle,
+		}
+		hlgroups["SnacksPickerBorder"] = {
+			fg = C.mantle,
+			bg = C.mantle,
+		}
+		hlgroups["SnacksPickerInputBorder"] = {
+			fg = C.mantle,
+			bg = C.mantle,
+		}
+		hlgroups["SnacksPickerInput"] = {
+			fg = C.text,
+			bg = C.mantle,
+		}
+		hlgroups["SnacksPickerPrompt"] = {
+			fg = C.flamingo,
+			bg = C.none,
+		}
+		hlgroups["SnacksPickerTitle"] = {
+			fg = C.crust,
+			bg = C.mauve,
+		}
+		hlgroups["SnacksPickerPreviewTitle"] = {
+			fg = C.crust,
+			bg = C.green,
+		}
+		hlgroups["SnacksPickerInputTitle"] = {
+			fg = C.crust,
+			bg = C.red,
+		}
+		hlgroups["SnacksPickerListTitle"] = {
+			fg = C.crust,
+			bg = C.lavender,
+		}
+
+		if picker_style == 'nvchad_outlined' then
+			hlgroups["SnacksPicker"] = {
+				bg = C.none,
+			}
+			hlgroups["SnacksPickerBorder"] = {
+				fg = C.surface2,
+				bg = C.none,
+			}
+			hlgroups["SnacksPickerInputBorder"] = {
+				fg = C.surface2,
+				bg = C.none,
+			}
+			hlgroups["SnacksPickerInput"] = {
+				fg = C.text,
+				bg = C.none,
+			}
+		end
+	else
+		hlgroups["SnacksPicker"] = { link = "NormalFloat" }
+		hlgroups["SnacksPickerBorder"] = { link = "FloatBorder" }
+		hlgroups["SnacksPickerInputBorder"] = { link = "SnacksPickerBorder" }
+		hlgroups["SnacksPickerInput"] = {
+			fg = C.text,
+			bg = C.none,
+		}
+		hlgroups["SnacksPickerPrompt"] = {
+			fg = C.flamingo,
+			bg = C.none,
+		}
+	end
+
+	return hlgroups
 end
 
 return M

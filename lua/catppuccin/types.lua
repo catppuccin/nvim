@@ -300,7 +300,7 @@
 -- Sets the color of the indent scope line
 ---@field indent_scope_color CtpColor?
 -- The style of Snacks.picker
----@field picker_style "classic" | "nvchad" | nil
+---@field picker_style "classic" | "nvchad" | "nvchad_outlined" | nil
 
 ---@class CtpIntegrationTelescope
 -- Whether to enable the telescope integration
