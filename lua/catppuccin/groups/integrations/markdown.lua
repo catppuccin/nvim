@@ -1,3 +1,4 @@
+-- markdown
 local M = {}
 
 function M.get()

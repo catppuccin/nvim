@@ -1,3 +1,4 @@
+-- nvim-semantic-tokens
 local M = {}
 
 function M.get()

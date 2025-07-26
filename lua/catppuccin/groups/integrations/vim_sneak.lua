@@ -1,3 +1,4 @@
+-- vim-sneak
 local M = {}
 
 function M.get()

@@ -1,3 +1,4 @@
+-- snacks.nvim
 local M = {}
 
 -- only applicable with `picker_style = "nvchad" or "nvchad_outlined"`

@@ -1,3 +1,4 @@
+-- nvim-window-picker
 local M = {}
 
 function M.get()

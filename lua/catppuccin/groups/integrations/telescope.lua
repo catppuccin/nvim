@@ -1,3 +1,4 @@
+-- telescope.nvim
 local M = {}
 
 function M.get()

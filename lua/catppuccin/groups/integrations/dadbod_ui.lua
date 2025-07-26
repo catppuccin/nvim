@@ -1,3 +1,4 @@
+-- vim-dadbod-ui
 local M = {}
 
 function M.get()

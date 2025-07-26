@@ -1,3 +1,4 @@
+-- barbar.nvim
 local M = {}
 
 function M.get()

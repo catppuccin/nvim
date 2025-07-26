@@ -1,3 +1,4 @@
+-- neogit
 local M = {}
 
 function M.get()
