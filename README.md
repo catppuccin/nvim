@@ -267,7 +267,7 @@ require("catppuccin").setup({
 })
 ```
 
-If you use [lazy.nvim](https://github.com/folke/lazy.nvim) as your package manager, you can use the `auto_integrations` option to let catppuccin automatically detect installed plugins and enable their respective integrations automatically.
+If you use [lazy.nvim](https://github.com/folke/lazy.nvim) as your package manager, you can use the `auto_integrations` option to let catppuccin automatically detect installed plugins and enable their respective integrations.
 
 ```lua
 require("catppuccin").setup({
