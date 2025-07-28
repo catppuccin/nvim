@@ -4,9 +4,9 @@ function M.get()
 	return {
 		ColorColumn = { bg = C.surface0 }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = C.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = C.base, bg = C.text }, -- character under the cursor
-		lCursor = { fg = C.base, bg = C.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { fg = C.base, bg = C.text }, -- like Cursor, but used when in IME mode |CursorIM|
+		Cursor = { fg = C.base, bg = C.rosewater }, -- character under the cursor
+		lCursor = { fg = C.base, bg = C.rosewater }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM = { fg = C.base, bg = C.rosewater }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn = { bg = C.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorLine = {
 			bg = U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
@@ -38,8 +38,8 @@ function M.get()
 		}, -- normal text in non-current windows
 		NormalSB = { fg = C.text, bg = C.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = C.text, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle }, -- Normal text in floating windows.
-		FloatBorder = { fg = C.blue },
-		FloatTitle = { fg = C.subtext0 }, -- Title of floating windows
+		FloatBorder = { fg = C.blue, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
+		FloatTitle = { fg = C.subtext0, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle }, -- Title of floating windows
 		Pmenu = {
 			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or U.darken(C.surface0, 0.8, C.crust),
 			fg = C.overlay2,
@@ -47,6 +47,8 @@ function M.get()
 		PmenuSel = { bg = C.surface1, style = { "bold" } }, -- Popup menu: selected item.
 		PmenuSbar = { bg = C.surface1 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
+		PmenuExtra = { fg = C.overlay0 }, -- Popup menu: normal item extra text.
+		PmenuExtraSel = { fg = C.overlay0 }, -- Popup menu: selected item extra text.
 		Question = { fg = C.blue }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = C.surface1, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = U.darken(C.sky, 0.30, C.base), fg = C.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.

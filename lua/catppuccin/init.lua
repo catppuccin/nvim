@@ -37,8 +37,11 @@ local M = {
 			operators = {},
 		},
 		default_integrations = true,
+		auto_integrations = false,
 		integrations = {
 			alpha = true,
+			blink_cmp = true,
+			fzf = true,
 			cmp = true,
 			dap = true,
 			dap_ui = true,
@@ -106,7 +109,7 @@ local M = {
 			},
 			mini = {
 				enabled = true,
-				indentscope_color = "text",
+				indentscope_color = "overlay2",
 			},
 		},
 		color_overrides = {},
@@ -171,7 +174,27 @@ function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
 
+	if user_conf.auto_integrations == true then
+		user_conf.integrations = vim.tbl_deep_extend(
+			"force",
+			require("catppuccin.lib.detect_integrations").create_integrations_table(),
+			user_conf.integrations or {}
+		)
+	end
+
 	if user_conf.default_integrations == false then M.default_options.integrations = {} end
+	if user_conf.default_integrations == false then
+		M.default_options.integrations = vim.iter(pairs(M.default_options.integrations))
+			:fold({}, function(integrations, name, opts)
+				if type(opts) == "table" then
+					opts.enabled = false
+				else
+					opts = false
+				end
+				integrations[name] = opts
+				return integrations
+			end)
+	end
 
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all

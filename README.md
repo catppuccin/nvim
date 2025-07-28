@@ -57,6 +57,11 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 ```
 
+[mini.deps](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md)
+```lua
+add({ source = "catppuccin/nvim", name = "catppuccin" })
+```
+
 [packer.nvim](https://github.com/wbthomason/packer.nvim)
 ```lua
 use { "catppuccin/nvim", as = "catppuccin" }
@@ -117,6 +122,7 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = {},
     default_integrations = true,
+    auto_integrations = false,
     integrations = {
         cmp = true,
         gitsigns = true,
@@ -252,7 +258,15 @@ require("catppuccin").setup({
 })
 ```
 
-Below are a list of supported plugins and their corresponding integration module.
+If you use [lazy.nvim](https://github.com/folke/lazy.nvim) as your package manager, you can use the `auto_integrations` option to let catppuccin automatically detect installed plugins and enable their respective integrations.
+
+```lua
+require("catppuccin").setup({
+    auto_integrations = true,
+})
+```
+
+Below is a list of supported plugins and their corresponding integration module.
 
 > [!Important]
 > If you'd like to see the full list of highlight groups modified by Catppuccin, see the [`lua/catppuccin/groups/integrations/`](https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations) directory.
@@ -348,6 +362,22 @@ beacon = false
 </tr>
 <!-- beacon.nvim -->
 
+<!-- blink.cmp -->
+</tr>
+<tr>
+<td> <a href="https://github.com/Saghen/blink.cmp">blink.cmp</a> </td>
+<td>
+
+```lua
+blink_cmp = {
+    style = 'bordered',
+}
+```
+
+</td>
+</tr>
+<!-- blink.cmp -->
+
 <!-- bufferline.nvim -->
 </tr>
 <tr>
@@ -399,6 +429,20 @@ bufferline.setup {
 </td>
 </tr>
 <!-- bufferline.nvim -->
+
+<!-- buffon.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/francescarpi/buffon.nvim">buffon.nvim</a> </td>
+<td>
+
+```lua
+buffon = false
+```
+
+</td>
+</tr>
+<!-- buffon.nvim -->
 
 <!-- coc.nvim -->
 </tr>
@@ -572,7 +616,7 @@ ctp_feline.setup({
         extras = clrs.overlay1,
         curr_file = clrs.maroon,
         curr_dir = clrs.flamingo,
-        show_modified = false -- show if the file has been modified
+        show_modified = false, -- show if the file has been modified
         show_lazy_updates = false -- show the count of updatable plugins from lazy.nvim
                                   -- need to set checker.enabled = true in lazy.nvim first
                                   -- the icon is set in ui.icons.plugin in lazy.nvim
@@ -701,6 +745,17 @@ fzf = true
 </tr>
 <!-- fzf-lua -->
 
+<!-- gitgraph.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/isakbm/gitgraph.nvim">gitgraph.nvim</a> </td>
+<td>
+
+```lua
+gitgraph = false
+```
+<!-- gitgraph.nvim -->
+
 <!-- gitsigns.nvim -->
 </tr>
 <tr>
@@ -710,6 +765,18 @@ fzf = true
 ```lua
 gitsigns = true
 ```
+
+<details> <summary>Special</summary>
+
+```lua
+gitsigns = {
+  enabled = true,
+  -- align with the transparent_background option by default
+  transparent = false,
+}
+ ```
+
+</details>
 <!-- gitsigns.nvim -->
 
 <!-- grug-far.nvim -->
@@ -890,6 +957,20 @@ markdown = true
 </tr>
 <!-- markdown -->
 
+<!-- markview.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/OXY2DEV/markview.nvim">markview.nvim</a> </td>
+<td>
+
+```lua
+markview = false
+```
+
+</td>
+</tr>
+<!-- markview.nvim -->
+
 <!-- mason.nvim -->
 </tr>
 <tr>
@@ -928,7 +1009,7 @@ mini = {
 <td>
 
 ```lua
-neotree = false
+neotree = true
 ```
 
 </td>
@@ -977,20 +1058,6 @@ noice = false
 </tr>
 <!-- noice.nvim -->
 
-<!-- NormalNvim -->
-</tr>
-<tr>
-<td> <a href="https://github.com/NormalNvim/NormalNvim">NormalNvim</a> </td>
-<td>
-
-```lua
-NormalNvim = false
-```
-
-</td>
-</tr>
-<!-- NormalNvim -->
-
 <!-- notifier.nvim -->
 </tr>
 <tr>
@@ -1018,6 +1085,20 @@ cmp = true
 </td>
 </tr>
 <!-- nvim-cmp -->
+
+<!-- nvim-copilot-vim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/github/copilot.vim">copilot.vim</a> </td>
+<td>
+
+```lua
+copilot_vim = false,
+```
+
+</td>
+</tr>
+<!-- nvim-copilot-vim -->
 
 <!-- nvim-dap -->
 </tr>
@@ -1359,6 +1440,24 @@ render_markdown = true
 </tr>
 <!-- render-markdown.nvim -->
 
+<!-- snacks.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a> </td>
+<td>
+
+```lua
+snacks = {
+    enabled = false,
+    indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+    -- picker_style = "classic", "nvchad" or "nvchad_outlined",
+}
+```
+
+</td>
+</tr>
+<!-- snacks.nvim -->
+
 <!-- symbols-outline.nvim -->
 </tr>
 <tr>
@@ -1399,7 +1498,7 @@ telekasten = false
 ```lua
 telescope = {
     enabled = true,
-    -- style = "nvchad"
+    -- style = "classic", "nvchad" or "nvchad_outlined"
 }
 ```
 
@@ -1517,6 +1616,20 @@ sandwich = false
 </td>
 </tr>
 <!-- vim-sandwich -->
+
+<!-- vim-signify -->
+</tr>
+<tr>
+<td> <a href="https://github.com/mhinz/vim-signify">vim-signify</a> </td>
+<td>
+
+```lua
+signify = false
+```
+
+</td>
+</tr>
+<!-- vim-signify -->
 
 <!-- vim-sneak -->
 </tr>
