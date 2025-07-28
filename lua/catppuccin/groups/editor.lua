@@ -39,7 +39,7 @@ function M.get()
 		NormalSB = { fg = C.text, bg = C.crust }, -- normal text in non-current windows
 		NormalFloat = { fg = C.text, bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle }, -- Normal text in floating windows.
 		FloatBorder = O.float.solid
-				and ((O.float.transparent and vim.o.winblend == 0) and { fg = C.blue, bg = C.none } or {
+				and ((O.float.transparent and vim.o.winblend == 0) and { fg = C.surface2, bg = C.none } or {
 					fg = C.mantle,
 					bg = C.mantle,
 				})
