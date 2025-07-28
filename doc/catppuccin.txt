@@ -259,7 +259,8 @@ integrations.
     })
 <
 
-Below is a list of supported plugins and their corresponding integration module.
+Below is a list of supported plugins and their corresponding integration
+module.
 
 
   [!Important] If you’d like to see the full list of highlight groups modified
