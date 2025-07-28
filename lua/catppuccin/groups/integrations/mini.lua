@@ -50,7 +50,14 @@ function M.get()
 		MiniFilesFile = { fg = C.text },
 		MiniFilesNormal = { link = "NormalFloat" },
 		MiniFilesTitle = { link = "FloatTitle" },
-		MiniFilesTitleFocused = { fg = C.subtext0, style = { "bold" } },
+		MiniFilesTitleFocused = O.float.solid and {
+			fg = C.crust,
+			bg = C.mauve,
+		} or {
+			fg = C.subtext0,
+			bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle,
+			style = { "bold" },
+		},
 
 		MiniHipatternsFixme = { fg = C.base, bg = C.red, style = { "bold" } },
 		MiniHipatternsHack = { fg = C.base, bg = C.yellow, style = { "bold" } },

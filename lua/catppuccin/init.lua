@@ -11,6 +11,10 @@ local M = {
 		},
 		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
 		transparent_background = false,
+		float = {
+			transparent = false,
+			solid = false,
+		},
 		show_end_of_buffer = false,
 		term_colors = false,
 		kitty = vim.env.KITTY_WINDOW_ID and true or false,
