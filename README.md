@@ -128,6 +128,7 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = {},
     default_integrations = true,
+    auto_integrations = false,
     integrations = {
         cmp = true,
         gitsigns = true,
@@ -263,6 +264,14 @@ Some integrations are enabled by default, you can control this behaviour with `d
 ```lua
 require("catppuccin").setup({
     default_integrations = false,
+})
+```
+
+If you use [lazy.nvim](https://github.com/folke/lazy.nvim) as your package manager, you can use the `auto_integrations` option to let catppuccin automatically detect installed plugins and enable their respective integrations.
+
+```lua
+require("catppuccin").setup({
+    auto_integrations = true,
 })
 ```
 
