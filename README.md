@@ -128,7 +128,7 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = {},
     default_integrations = true,
-    auto_integrations = true,
+    auto_integrations = false,
     integrations = {
         cmp = true,
         gitsigns = true,
@@ -271,7 +271,7 @@ If you use [lazy.nvim](https://github.com/folke/lazy.nvim) as your package manag
 
 ```lua
 require("catppuccin").setup({
-    auto_integrations = false,
+    auto_integrations = true,
 })
 ```
 
