@@ -972,6 +972,7 @@ and #428 <https://github.com/catppuccin/nvim/issues/428>.
 **Current Maintainer(s)**
 
 - vollowx <https://github.com/vollowx>
+- robin <https://github.com/comfysage>
 
 **Previous Maintainer(s)**
 
