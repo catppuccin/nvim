@@ -1,5 +1,6 @@
--- vim-illuminate
 local M = {}
+
+M.url = "https://github.com/RRethy/vim-illuminate"
 
 function M.get()
 	return {

@@ -1,6 +1,8 @@
 -- vim-dadbod-ui
 local M = {}
 
+M.url = "https://github.com/kristijanhusak/vim-dadbod-ui"
+
 function M.get()
 	return {
 		NotificationInfo = { fg = C.blue, bg = C.mantle },

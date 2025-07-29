@@ -1,5 +1,6 @@
--- neotest
 local M = {}
+
+M.url = "https://github.com/nvim-neotest/neotest"
 
 function M.get()
 	return {

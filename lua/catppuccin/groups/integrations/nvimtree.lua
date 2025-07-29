@@ -1,5 +1,6 @@
--- nvim-tree
 local M = {}
+
+M.url = "https://github.com/nvim-tree/nvim-tree.lua"
 
 function M.get()
 	return {

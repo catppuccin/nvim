@@ -1,5 +1,6 @@
--- vim-sabdwich
 local M = {}
+
+M.url = "https://github.com/machakann/vim-sandwich"
 
 function M.get()
 	return {

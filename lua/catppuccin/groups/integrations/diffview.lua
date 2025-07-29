@@ -1,5 +1,6 @@
--- diffview.nvim
 local M = {}
+
+M.url = "https://github.com/sindrets/diffview.nvim"
 
 function M.get()
 	return {

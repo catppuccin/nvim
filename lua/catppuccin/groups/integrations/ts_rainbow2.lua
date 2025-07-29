@@ -1,5 +1,6 @@
--- nvim-ts-rainbow2
 local M = {}
+
+M.url = "https://github.com/HiPhish/nvim-ts-rainbow2"
 
 function M.get()
 	return {

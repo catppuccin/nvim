@@ -1,5 +1,6 @@
--- gitgraph.nvim
 local M = {}
+
+M.url = "https://github.com/isakbm/gitgraph.nvim"
 
 function M.get()
 	return {

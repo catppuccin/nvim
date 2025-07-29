@@ -1,5 +1,6 @@
--- fidget.nvim
 local M = {}
+
+M.url = "https://github.com/j-hui/fidget.nvim"
 
 function M.get()
 	return {

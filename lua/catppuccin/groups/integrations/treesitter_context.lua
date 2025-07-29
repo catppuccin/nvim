@@ -1,5 +1,6 @@
--- nvim-treesitter-context
 local M = {}
+
+M.url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
 
 function M.get()
 	return O.transparent_background

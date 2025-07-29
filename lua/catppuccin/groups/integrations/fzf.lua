@@ -1,5 +1,6 @@
--- fzf-lua
 local M = {}
+
+M.url = "https://github.com/ibhagwan/fzf-lua"
 
 function M.get()
 	return {

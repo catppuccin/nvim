@@ -1,5 +1,6 @@
--- lspsaga
 local M = {}
+
+M.url = "https://github.com/nvimdev/lspsaga.nvim"
 
 function M.get()
 	return {

@@ -1,6 +1,8 @@
 -- octo.nvim
 local M = {}
 
+M.url = "https://github.com/pwntester/octo.nvim"
+
 function M.get()
 	return {
 		-- colors

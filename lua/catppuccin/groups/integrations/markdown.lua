@@ -1,5 +1,6 @@
--- markdown
 local M = {}
+-- doesn't have a url.
+M.url = "markdown"
 
 function M.get()
 	return {

@@ -1,5 +1,6 @@
--- blink.cmp
 local M = {}
+
+M.url = "https://github.com/saghen/blink.cmp"
 
 function M.get()
 	local style = O.integrations.blink_cmp.style

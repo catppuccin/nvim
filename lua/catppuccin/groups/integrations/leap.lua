@@ -1,5 +1,6 @@
--- leap.nvim
 local M = {}
+
+M.url = "https://github.com/ggandor/leap.nvim"
 
 function M.get()
 	return {

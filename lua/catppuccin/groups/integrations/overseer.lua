@@ -1,5 +1,6 @@
--- overseer.nvim
 local M = {}
+
+M.url = "https://github.com/stevearc/overseer.nvim"
 
 function M.get()
 	return {

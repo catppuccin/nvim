@@ -1,5 +1,6 @@
--- lir.nvim
 local M = {}
+
+M.url = "https://github.com/tamago324/lir.nvim"
 
 function M.get()
 	return vim.tbl_deep_extend("force", {}, {
