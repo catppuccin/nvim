@@ -89,7 +89,10 @@ function M.get()
 
 		MiniPickBorder = { link = "FloatBorder" },
 		MiniPickBorderBusy = { link = "DiagnosticFloatingWarn" },
-		MiniPickBorderText = { fg = C.mauve, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
+		MiniPickBorderText = {
+			fg = C.mauve,
+			bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle,
+		},
 		MiniPickIconDirectory = { link = "Directory" },
 		MiniPickIconFile = { link = "MiniPickNormal" },
 		MiniPickHeader = { link = "DiagnosticFloatingHint" },
@@ -104,8 +107,14 @@ function M.get()
 		MiniPickPreviewLine = { link = "CursorLine" },
 		MiniPickPreviewRegion = { link = "IncSearch" },
 		MiniPickPrompt = { fg = C.text, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
-		MiniPickPromptCaret = { fg = C.flamingo, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
-		MiniPickPromptPrefix = { fg = C.flamingo, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
+		MiniPickPromptCaret = {
+			fg = C.flamingo,
+			bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle,
+		},
+		MiniPickPromptPrefix = {
+			fg = C.flamingo,
+			bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle,
+		},
 
 		MiniStarterCurrent = {},
 		MiniStarterFooter = { fg = C.yellow, style = { "italic" } },
