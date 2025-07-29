@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/hadronized/hop.nvim"
+
 function M.get()
 	local bg = O.transparent_background and C.none or C.base
 	return {

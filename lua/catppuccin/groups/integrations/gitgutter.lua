@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/airblade/vim-gitgutter"
+
 function M.get()
 	return {
 		GitGutterAdd = { fg = C.green },
