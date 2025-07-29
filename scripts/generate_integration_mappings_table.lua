@@ -1,38 +1,39 @@
--- TODO: shoud be changed to work in gh actions maybe to a realtive path?
 local catppuccin_path = vim.fn.getcwd() -- get to the root directory of the plugin
+local lua_path = catppuccin_path .. "/lua"
 
-local integrations_path = catppuccin_path .. "/lua/catppuccin/groups/integrations/"
-local target_path = catppuccin_path .. "/lua/catppuccin/utils/integration_mappings.lua"
+package.path = package.path .. string.format(";%s/?.lua", lua_path) .. string.format(";%s/?/init.lua", lua_path)
 
----gets the plugin name from the integration file.
----@param integration_file file*
----@return string plugin_name the plugin name embeded in the file.
-local function get_plugin_name(integration_file)
-	local plugin_name = integration_file:read "*line"
-	plugin_name = plugin_name:gsub("^%-%-%s*", "")
-	return plugin_name
-end
+local temp = require("catppuccin.groups.integrations.feline").url
+local integrations_path = lua_path .. "/catppuccin/groups/integrations/"
+local target_path = lua_path .. "/catppuccin/utils/integration_mappings.lua"
 
 ---comment
 ---@return table a table holding plugin to catppuccin name
 local function create_table()
 	local mappings = {}
 	for filename, _ in vim.fs.dir(integrations_path) do
-		local integration_file = io.open(integrations_path .. filename, "r")
-		assert(integration_file ~= nil, "integration_file must be opened valid file")
+		filename = vim.fn.fnamemodify(filename, ":r")
 
-		local plugin_name = get_plugin_name(integration_file)
-		integration_file:close()
+		local ok, mod = pcall(require, "catppuccin.groups.integrations." .. filename)
 
-		mappings[plugin_name] = vim.fn.fnamemodify(filename, ":r") -- remove extension
+		if ok then
+			---@type string
+			local plugin_name = mod.url
+			plugin_name = plugin_name:match ".*/(.-)/*$" or plugin_name -- extract the repo from the url. else use the url.
+			mappings[plugin_name] = filename
+		end
 	end
 	return mappings
 end
 
 local function format_table(mappings_table)
+	-- sort the table alphabetically
+	local keys = vim.tbl_keys(mappings_table)
+	table.sort(keys)
+
 	local lines = {}
-	for plugin_name, integration_name in pairs(mappings_table) do
-		table.insert(lines, string.format("\t['%s'] = '%s',\n", plugin_name, integration_name))
+	for _, plugin_name in pairs(keys) do
+		table.insert(lines, string.format("\t['%s'] = '%s',\n", plugin_name, mappings_table[plugin_name]))
 	end
 	return lines
 end
