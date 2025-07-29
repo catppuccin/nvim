@@ -97,6 +97,7 @@ function M.create_integrations_table()
 			local integration = integration_mappings[plugin]
 			if type(ctp_defaults[integration]) == "table" then
 				integrations[integration] = ctp_defaults[integration]
+				integrations[integration].enabled = true
 			else
 				integrations[integration] = true
 			end
