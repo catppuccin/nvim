@@ -1,5 +1,6 @@
--- pounce.nvim
 local M = {}
+
+M.url = "https://github.com/rlane/pounce.nvim"
 
 function M.get()
 	return {

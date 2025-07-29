@@ -1,5 +1,6 @@
--- aerial.nvim
 local M = {}
+
+M.url = "https://github.com/stevearc/aerial.nvim"
 
 function M.get()
 	return {

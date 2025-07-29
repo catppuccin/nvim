@@ -1,5 +1,6 @@
--- coc.nvim
 local M = {}
+
+M.url = "https://github.com/neoclide/coc.nvim"
 
 function M.get()
 	return {

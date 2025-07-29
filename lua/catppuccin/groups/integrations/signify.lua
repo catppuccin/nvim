@@ -1,5 +1,6 @@
--- vim-signify
 local M = {}
+
+M.url = "https://github.com/mhinz/vim-signify"
 
 function M.get()
 	return {

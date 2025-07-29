@@ -1,5 +1,6 @@
--- indent_blankline.nvim
 local M = {}
+
+M.url = "https://github.com/lukas-reineke/indent-blankline.nvim"
 
 function M.get()
 	local scope_color = O.integrations.indent_blankline.scope_color

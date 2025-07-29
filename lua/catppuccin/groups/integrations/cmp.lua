@@ -1,5 +1,6 @@
--- nvim-cmp
 local M = {}
+
+M.url = "https://github.com/hrsh7th/nvim-cmp"
 
 function M.get()
 	return {

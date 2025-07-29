@@ -1,6 +1,6 @@
--- nvim-semantic-tokens
 local M = {}
 
+M.url = "semantic_tokens"
 function M.get()
 	if vim.treesitter.highlighter.hl_map then
 		vim.notify_once(

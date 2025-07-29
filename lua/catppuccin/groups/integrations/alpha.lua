@@ -1,5 +1,6 @@
--- alpha-nvim
 local M = {}
+
+M.url = "https://github.com/goolord/alpha-nvim"
 
 function M.get()
 	return {

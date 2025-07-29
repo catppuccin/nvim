@@ -1,5 +1,6 @@
--- fern.vim
 local M = {}
+
+M.url = "https://github.com/lambdalisue/vim-fern"
 
 function M.get()
 	return {

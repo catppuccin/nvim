@@ -1,5 +1,6 @@
--- avante.nvim
 local M = {}
+
+M.url = "https://github.com/yetone/avante.nvim"
 
 function M.get()
 	local rounded = O.integrations.avante.windows_sidebar_header_rounded

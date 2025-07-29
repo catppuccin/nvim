@@ -1,5 +1,6 @@
--- mason.nvim
 local M = {}
+
+M.url = "https://github.com/mason-org/mason.nvim"
 
 function M.get()
 	local bg = O.transparent_background and C.none or C.lavender

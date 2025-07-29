@@ -1,5 +1,6 @@
--- harpoon
 local M = {}
+
+M.url = "https://github.com/ThePrimeagen/harpoon"
 
 function M.get()
 	return {

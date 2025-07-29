@@ -1,5 +1,6 @@
--- Which-key.nvim
 local M = {}
+
+M.url = "https://github.com/folke/which-key.nvim"
 
 function M.get()
 	return {

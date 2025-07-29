@@ -1,5 +1,6 @@
--- telekasten.nvim
 local M = {}
+
+M.url = "https://github.com/nvim-telekasten/telekasten.nvim"
 
 function M.get()
 	return {

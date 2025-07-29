@@ -1,5 +1,6 @@
--- vimwiki
 local M = {}
+
+M.url = "https://github.com/vimwiki/vimwiki"
 
 function M.get()
 	return {

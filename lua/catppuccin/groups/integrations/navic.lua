@@ -1,5 +1,6 @@
--- navic
 local M = {}
+
+M.url = "https://github.com/SmiteshP/nvim-navic"
 
 function M.get()
 	local background = O.integrations.navic.custom_bg and O.integrations.navic.custom_bg or C.none

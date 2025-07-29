@@ -1,5 +1,6 @@
--- neo-tree.nvim
 local M = {}
+
+M.url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
 
 function M.get()
 	local active_bg = O.transparent_background and C.none or C.mantle

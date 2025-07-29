@@ -1,5 +1,6 @@
--- lightspeed.nvim
 local M = {}
+
+M.url = "https://github.com/ggandor/lightspeed.nvim"
 
 function M.get()
 	return {

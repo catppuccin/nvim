@@ -1,5 +1,6 @@
--- dropbar.nvim
 local M = {}
+
+M.url = "https://github.com/Bekaboo/dropbar.nvim"
 
 function M.get()
 	local color = O.integrations.dropbar.color_mode

@@ -1,5 +1,6 @@
--- nvim-lspconfig
 local M = {}
+
+M.url = "https://github.com/neovim/nvim-lspconfig"
 
 function M.get()
 	local virtual_text = O.integrations.native_lsp.virtual_text

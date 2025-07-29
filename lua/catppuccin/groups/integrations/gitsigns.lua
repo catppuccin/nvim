@@ -1,5 +1,6 @@
--- gitsigns.nvim
 local M = {}
+
+M.url = "https://github.com/lewis6991/gitsigns.nvim"
 
 function M.get()
 	-- (a ~= nil) and a or b: Potential false-negative handling
