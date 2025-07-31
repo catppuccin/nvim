@@ -54,8 +54,8 @@
 ---@field light CtpFlavor?
 
 ---@class CtpFloatOpts
----@field transparent boolean enable transparent floating windows
----@field solid boolean use solid style floating windows, see |winborder|
+---@field transparent boolean transparency should follow `transparent_background`
+---@field solid boolean use nvchad style floating windows
 
 ---@class CtpDimInactive
 -- Whether to dim inactive windows.
