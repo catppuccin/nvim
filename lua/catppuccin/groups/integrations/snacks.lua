@@ -157,10 +157,6 @@ function M.get()
 		hlgroups["SnacksPicker"] = { link = "NormalFloat" }
 		hlgroups["SnacksPickerBorder"] = { link = "FloatBorder" }
 		hlgroups["SnacksPickerInputBorder"] = { link = "SnacksPickerBorder" }
-		hlgroups["SnacksPickerInput"] = {
-			fg = C.text,
-			bg = C.none,
-		}
 		hlgroups["SnacksPickerPrompt"] = {
 			fg = C.flamingo,
 			bg = C.none,
