@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.11.0](https://github.com/catppuccin/nvim/compare/v1.10.0...v1.11.0) (2025-07-31)
+
+
+### Features
+
+* automatic integration detection ([#871](https://github.com/catppuccin/nvim/issues/871)) ([44bd5ea](https://github.com/catppuccin/nvim/commit/44bd5ea20a1eccba71ee39e436d2fdf5017f1f80))
+* **blink-cmp:** add `style` option ([#867](https://github.com/catppuccin/nvim/issues/867)) ([fa42eb5](https://github.com/catppuccin/nvim/commit/fa42eb5e26819ef58884257d5ae95dd0552b9a66))
+* **blink-cmp:** improved support ([#862](https://github.com/catppuccin/nvim/issues/862)) ([d0972f1](https://github.com/catppuccin/nvim/commit/d0972f1de6fa771654bb881879afc27d3ddb7421))
+* **buffon:** add buffon.nvim integration ([#855](https://github.com/catppuccin/nvim/issues/855)) ([ae1bac4](https://github.com/catppuccin/nvim/commit/ae1bac4c8026f705ef54677c0353be922480bea5))
+* **buffon:** add to auto integration list ([#878](https://github.com/catppuccin/nvim/issues/878)) ([82f3dce](https://github.com/catppuccin/nvim/commit/82f3dcedc9acc242d2d4f98abca02e2f10a75248))
+* make bg of `FloatBorder` same as `NormalFloat` ([#877](https://github.com/catppuccin/nvim/issues/877)) ([aac17a6](https://github.com/catppuccin/nvim/commit/aac17a6b20931e6aa6ca036c63a6f59e8c92135a))
+* **markview:** add markview integration ([#854](https://github.com/catppuccin/nvim/issues/854)) ([961ec64](https://github.com/catppuccin/nvim/commit/961ec64a14e4b329475fc20226a59a28eb040303))
+* **snacks:** add nvchad style for snacks.picker ([#858](https://github.com/catppuccin/nvim/issues/858)) ([84336e0](https://github.com/catppuccin/nvim/commit/84336e08415858f6d835835e81a4f79e585463c6))
+* **snacks:** add snacks.picker support ([#853](https://github.com/catppuccin/nvim/issues/853)) ([be1e5e6](https://github.com/catppuccin/nvim/commit/be1e5e6308bb9d016bf5c1565e0f1d5e46400d7a))
+* **telescope:** add `nvchad_outlined` style ([aac17a6](https://github.com/catppuccin/nvim/commit/aac17a6b20931e6aa6ca036c63a6f59e8c92135a))
+
+
+### Bug Fixes
+
+* add missing table based integrations to fix auto integration detection ([#890](https://github.com/catppuccin/nvim/issues/890)) ([6d0d9ae](https://github.com/catppuccin/nvim/commit/6d0d9ae1907443be5dd89ca06875ac14ba3bb655))
+* adjust default integration settings ([#863](https://github.com/catppuccin/nvim/issues/863)) ([62dbc84](https://github.com/catppuccin/nvim/commit/62dbc841f48046dfe1be74179e92f53e1c33952c))
+* **avante:** link background and border hl ([#865](https://github.com/catppuccin/nvim/issues/865)) ([387b4b1](https://github.com/catppuccin/nvim/commit/387b4b19568cbda82c1d6def9ded31fd6ae7fb99))
+* **cursor:** update cursor color to rosewater / base ([#857](https://github.com/catppuccin/nvim/issues/857)) ([a0c769b](https://github.com/catppuccin/nvim/commit/a0c769bc7cd04bbbf258b3d5f01e2bdce744108d))
+* **editor:** link `FloatTitle` bg to `NormalFloat` ([#882](https://github.com/catppuccin/nvim/issues/882)) ([d7b413f](https://github.com/catppuccin/nvim/commit/d7b413fdc2c2dfcff1404c0ef1e16c6d8314b20f))
+* enable auto detected integrations with table options ([#886](https://github.com/catppuccin/nvim/issues/886)) ([5fa8d24](https://github.com/catppuccin/nvim/commit/5fa8d240944c47261f5e9172dc3dbc790fecaed2))
+* **fzf:** link normal and title to defaults ([#883](https://github.com/catppuccin/nvim/issues/883)) ([0cf15ba](https://github.com/catppuccin/nvim/commit/0cf15babf716ed56593da425a236245f709dcbfb))
+* **markview:** adjust highlights ([#860](https://github.com/catppuccin/nvim/issues/860)) ([30b1a81](https://github.com/catppuccin/nvim/commit/30b1a81c9f7a5d1b5616da0afff1bfe9aa26e622))
+* **markview:** incorrect heading bg when using transparent bg ([56a9dfd](https://github.com/catppuccin/nvim/commit/56a9dfd1e05868cf3189369aad87242941396563))
+* **mini.picker:** border and match styling ([#889](https://github.com/catppuccin/nvim/issues/889)) ([94f6e8a](https://github.com/catppuccin/nvim/commit/94f6e8a06b6bb7b8e5529cf9f93adb4654534241))
+* **octo:** clear OctoFilePanelFileName hl group ([#875](https://github.com/catppuccin/nvim/issues/875)) ([784e529](https://github.com/catppuccin/nvim/commit/784e529c790b451abd0c169f055fc5ae89af039f))
+* **render-markdown:** incorrect heading bg when using transparent bg ([56a9dfd](https://github.com/catppuccin/nvim/commit/56a9dfd1e05868cf3189369aad87242941396563))
+
 ## [1.10.0](https://github.com/catppuccin/nvim/compare/v1.9.0...v1.10.0) (2025-05-04)
 
 
