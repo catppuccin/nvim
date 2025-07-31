@@ -15,6 +15,7 @@
 ---@field compile_path string?
 -- Whether to enable transparency.
 ---@field transparent_background boolean?
+---@field float CtpFloatOpts
 -- Toggle the `~` characters after the end of buffers.
 ---@field show_end_of_buffer boolean?
 -- If true, sets terminal colors (e.g. `g:terminal_color_0`).
@@ -51,6 +52,10 @@
 ---@field dark CtpFlavor?
 -- Catppuccin flavor to use when `:set background=light` is set.
 ---@field light CtpFlavor?
+
+---@class CtpFloatOpts
+---@field transparent boolean transparency should follow `transparent_background`
+---@field solid boolean use nvchad style floating windows
 
 ---@class CtpDimInactive
 -- Whether to dim inactive windows.
@@ -299,14 +304,10 @@
 ---@field enabled boolean
 -- Sets the color of the indent scope line
 ---@field indent_scope_color CtpColor?
--- The style of Snacks.picker
----@field picker_style "classic" | "nvchad" | "nvchad_outlined" | nil
 
 ---@class CtpIntegrationTelescope
 -- Whether to enable the telescope integration
 ---@field enabled boolean?
--- The style of Telescope
----@field style "classic" | "nvchad" | "nvchad_outlined" | nil
 
 ---@class CtpIntegrationIlluminate
 -- Whether to enable the vim-illuminate integration
