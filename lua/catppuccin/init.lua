@@ -40,7 +40,7 @@ local M = {
 		auto_integrations = false,
 		integrations = {
 			alpha = true,
-			blink_cmp = true,
+			blink_cmp = { enabled = true, style = "bordered" },
 			fzf = true,
 			cmp = true,
 			dap = true,
@@ -111,6 +111,11 @@ local M = {
 				enabled = true,
 				indentscope_color = "overlay2",
 			},
+			lir = {
+				enabled = false,
+				git_status = false,
+			},
+			snacks = { enabled = false },
 		},
 		color_overrides = {},
 		highlight_overrides = {},
