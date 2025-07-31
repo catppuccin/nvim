@@ -94,6 +94,10 @@ require("catppuccin").setup({
         dark = "mocha",
     },
     transparent_background = false, -- disables setting the background color.
+    float = {
+        transparent = false, -- enables transparency on floating windows
+        solid = false, -- use nvchad styling for floating windows
+    },
     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
     term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
     dim_inactive = {
@@ -1450,7 +1454,6 @@ render_markdown = true
 snacks = {
     enabled = false,
     indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
-    -- picker_style = "classic", "nvchad" or "nvchad_outlined",
 }
 ```
 
@@ -1498,7 +1501,6 @@ telekasten = false
 ```lua
 telescope = {
     enabled = true,
-    -- style = "classic", "nvchad" or "nvchad_outlined"
 }
 ```
 

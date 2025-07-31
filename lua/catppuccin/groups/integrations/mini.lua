@@ -50,7 +50,14 @@ function M.get()
 		MiniFilesFile = { fg = C.text },
 		MiniFilesNormal = { link = "NormalFloat" },
 		MiniFilesTitle = { link = "FloatTitle" },
-		MiniFilesTitleFocused = { fg = C.subtext0, style = { "bold" } },
+		MiniFilesTitleFocused = O.float.solid and {
+			fg = C.crust,
+			bg = C.mauve,
+		} or {
+			fg = C.subtext0,
+			bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle,
+			style = { "bold" },
+		},
 
 		MiniHipatternsFixme = { fg = C.base, bg = C.red, style = { "bold" } },
 		MiniHipatternsHack = { fg = C.base, bg = C.yellow, style = { "bold" } },
@@ -91,7 +98,7 @@ function M.get()
 		MiniPickBorderBusy = { link = "DiagnosticFloatingWarn" },
 		MiniPickBorderText = {
 			fg = C.mauve,
-			bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle,
+			bg = O.float.transparent and C.none or C.mantle,
 		},
 		MiniPickIconDirectory = { link = "Directory" },
 		MiniPickIconFile = { link = "MiniPickNormal" },
@@ -106,14 +113,14 @@ function M.get()
 		MiniPickNormal = { link = "NormalFloat" },
 		MiniPickPreviewLine = { link = "CursorLine" },
 		MiniPickPreviewRegion = { link = "IncSearch" },
-		MiniPickPrompt = { fg = C.text, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
+		MiniPickPrompt = { fg = C.text, bg = O.float.transparent and C.none or C.mantle },
 		MiniPickPromptCaret = {
 			fg = C.flamingo,
-			bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle,
+			bg = O.float.transparent and C.none or C.mantle,
 		},
 		MiniPickPromptPrefix = {
 			fg = C.flamingo,
-			bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle,
+			bg = O.float.transparent and C.none or C.mantle,
 		},
 
 		MiniStarterCurrent = {},
