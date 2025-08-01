@@ -1,5 +1,120 @@
 # Changelog
 
+## [1.11.0](https://github.com/catppuccin/nvim/compare/v1.10.0...v1.11.0) (2025-07-31)
+
+
+### Features
+
+* automatic integration detection ([#871](https://github.com/catppuccin/nvim/issues/871)) ([44bd5ea](https://github.com/catppuccin/nvim/commit/44bd5ea20a1eccba71ee39e436d2fdf5017f1f80))
+* **blink-cmp:** add `style` option ([#867](https://github.com/catppuccin/nvim/issues/867)) ([fa42eb5](https://github.com/catppuccin/nvim/commit/fa42eb5e26819ef58884257d5ae95dd0552b9a66))
+* **blink-cmp:** improved support ([#862](https://github.com/catppuccin/nvim/issues/862)) ([d0972f1](https://github.com/catppuccin/nvim/commit/d0972f1de6fa771654bb881879afc27d3ddb7421))
+* **buffon:** add buffon.nvim integration ([#855](https://github.com/catppuccin/nvim/issues/855)) ([ae1bac4](https://github.com/catppuccin/nvim/commit/ae1bac4c8026f705ef54677c0353be922480bea5))
+* **buffon:** add to auto integration list ([#878](https://github.com/catppuccin/nvim/issues/878)) ([82f3dce](https://github.com/catppuccin/nvim/commit/82f3dcedc9acc242d2d4f98abca02e2f10a75248))
+* make bg of `FloatBorder` same as `NormalFloat` ([#877](https://github.com/catppuccin/nvim/issues/877)) ([aac17a6](https://github.com/catppuccin/nvim/commit/aac17a6b20931e6aa6ca036c63a6f59e8c92135a))
+* **markview:** add markview integration ([#854](https://github.com/catppuccin/nvim/issues/854)) ([961ec64](https://github.com/catppuccin/nvim/commit/961ec64a14e4b329475fc20226a59a28eb040303))
+* **snacks:** add nvchad style for snacks.picker ([#858](https://github.com/catppuccin/nvim/issues/858)) ([84336e0](https://github.com/catppuccin/nvim/commit/84336e08415858f6d835835e81a4f79e585463c6))
+* **snacks:** add snacks.picker support ([#853](https://github.com/catppuccin/nvim/issues/853)) ([be1e5e6](https://github.com/catppuccin/nvim/commit/be1e5e6308bb9d016bf5c1565e0f1d5e46400d7a))
+* **telescope:** add `nvchad_outlined` style ([aac17a6](https://github.com/catppuccin/nvim/commit/aac17a6b20931e6aa6ca036c63a6f59e8c92135a))
+
+
+### Bug Fixes
+
+* add missing table based integrations to fix auto integration detection ([#890](https://github.com/catppuccin/nvim/issues/890)) ([6d0d9ae](https://github.com/catppuccin/nvim/commit/6d0d9ae1907443be5dd89ca06875ac14ba3bb655))
+* adjust default integration settings ([#863](https://github.com/catppuccin/nvim/issues/863)) ([62dbc84](https://github.com/catppuccin/nvim/commit/62dbc841f48046dfe1be74179e92f53e1c33952c))
+* **avante:** link background and border hl ([#865](https://github.com/catppuccin/nvim/issues/865)) ([387b4b1](https://github.com/catppuccin/nvim/commit/387b4b19568cbda82c1d6def9ded31fd6ae7fb99))
+* **cursor:** update cursor color to rosewater / base ([#857](https://github.com/catppuccin/nvim/issues/857)) ([a0c769b](https://github.com/catppuccin/nvim/commit/a0c769bc7cd04bbbf258b3d5f01e2bdce744108d))
+* **editor:** link `FloatTitle` bg to `NormalFloat` ([#882](https://github.com/catppuccin/nvim/issues/882)) ([d7b413f](https://github.com/catppuccin/nvim/commit/d7b413fdc2c2dfcff1404c0ef1e16c6d8314b20f))
+* enable auto detected integrations with table options ([#886](https://github.com/catppuccin/nvim/issues/886)) ([5fa8d24](https://github.com/catppuccin/nvim/commit/5fa8d240944c47261f5e9172dc3dbc790fecaed2))
+* **fzf:** link normal and title to defaults ([#883](https://github.com/catppuccin/nvim/issues/883)) ([0cf15ba](https://github.com/catppuccin/nvim/commit/0cf15babf716ed56593da425a236245f709dcbfb))
+* **markview:** adjust highlights ([#860](https://github.com/catppuccin/nvim/issues/860)) ([30b1a81](https://github.com/catppuccin/nvim/commit/30b1a81c9f7a5d1b5616da0afff1bfe9aa26e622))
+* **markview:** incorrect heading bg when using transparent bg ([56a9dfd](https://github.com/catppuccin/nvim/commit/56a9dfd1e05868cf3189369aad87242941396563))
+* **mini.picker:** border and match styling ([#889](https://github.com/catppuccin/nvim/issues/889)) ([94f6e8a](https://github.com/catppuccin/nvim/commit/94f6e8a06b6bb7b8e5529cf9f93adb4654534241))
+* **octo:** clear OctoFilePanelFileName hl group ([#875](https://github.com/catppuccin/nvim/issues/875)) ([784e529](https://github.com/catppuccin/nvim/commit/784e529c790b451abd0c169f055fc5ae89af039f))
+* **render-markdown:** incorrect heading bg when using transparent bg ([56a9dfd](https://github.com/catppuccin/nvim/commit/56a9dfd1e05868cf3189369aad87242941396563))
+
+## [1.10.0](https://github.com/catppuccin/nvim/compare/v1.9.0...v1.10.0) (2025-05-04)
+
+
+### Features
+
+* add background highlight to LSP signature help ([#771](https://github.com/catppuccin/nvim/issues/771)) ([de096dd](https://github.com/catppuccin/nvim/commit/de096dd4bc88be563617db50594b2dabe7f1bd86))
+* **blink-cmp:** add integration ([#777](https://github.com/catppuccin/nvim/issues/777)) ([abceb64](https://github.com/catppuccin/nvim/commit/abceb64a223aaada38c21e744763d111e73aaf0a))
+* **blink-cmp:** support `BlinkCmpLabelMatch` hl ([#802](https://github.com/catppuccin/nvim/issues/802)) ([637d99e](https://github.com/catppuccin/nvim/commit/637d99e638bc6f1efedac582f6ccab08badac0c6))
+* **blink.cmp:** highlight `BlinkCmpKindCopilot` as `teal` ([#813](https://github.com/catppuccin/nvim/issues/813)) ([bd80c25](https://github.com/catppuccin/nvim/commit/bd80c256606770395b901f7c0b849517957da882))
+* **copilot:** add integration ([#803](https://github.com/catppuccin/nvim/issues/803)) ([b71eacb](https://github.com/catppuccin/nvim/commit/b71eacb06842c493a490d24730f0a7c1fe82b61c))
+* **gitgutter:** add LineNr highlights ([#833](https://github.com/catppuccin/nvim/issues/833)) ([4bb938b](https://github.com/catppuccin/nvim/commit/4bb938bbba41d306db18bf0eb0633a5f28fd7ba0))
+* **gitsign:** improve gitsign inline add and delete colors ([#808](https://github.com/catppuccin/nvim/issues/808)) ([4965db2](https://github.com/catppuccin/nvim/commit/4965db2d6155c25db4e8417465fc2703fdf4c2b7))
+* **integrations:** add support for gitgraph.nvim ([#822](https://github.com/catppuccin/nvim/issues/822)) ([58f1a92](https://github.com/catppuccin/nvim/commit/58f1a926a018b226ce2fd67e0878f1fc9bc45bb7))
+* **integrations:** remove normalnvim ([#828](https://github.com/catppuccin/nvim/issues/828)) ([be45e04](https://github.com/catppuccin/nvim/commit/be45e0456b8faf37bd0cfed3c26617cbdad4152b))
+* **integrations:** update mini.indentscope ([#821](https://github.com/catppuccin/nvim/issues/821)) ([0b2437b](https://github.com/catppuccin/nvim/commit/0b2437bcc12b4021614dc41fcea9d0f136d94063))
+* **PmenuExtra:** add support for PmenuExtra highlights ([#851](https://github.com/catppuccin/nvim/issues/851)) ([b01060e](https://github.com/catppuccin/nvim/commit/b01060ef9e0a9d39681d18eafd91bc4a88114681))
+* **reactive:** add cursor color for normal mode ([#834](https://github.com/catppuccin/nvim/issues/834)) ([5b5e3ae](https://github.com/catppuccin/nvim/commit/5b5e3aef9ad7af84f463d17b5479f06b87d5c429))
+* **render-markdown:** change code block background to `mantle` ([#774](https://github.com/catppuccin/nvim/issues/774)) ([7be452e](https://github.com/catppuccin/nvim/commit/7be452ee067978cdc8b2c5f3411f0c71ffa612b9))
+* **signify:** add vim-signify integration ([#850](https://github.com/catppuccin/nvim/issues/850)) ([54fb7f4](https://github.com/catppuccin/nvim/commit/54fb7f43e1eeadd2401a002d4856760c3f12a55c))
+* **snacks:** add indent highlights ([#827](https://github.com/catppuccin/nvim/issues/827)) ([57c4077](https://github.com/catppuccin/nvim/commit/57c4077c4c1eb8430de4ae001738aa55f0a79fd8))
+* **snacks:** add integration ([#807](https://github.com/catppuccin/nvim/issues/807)) ([f8a155a](https://github.com/catppuccin/nvim/commit/f8a155ab5891c5d2fb709b7e85627f1783d5a5d9))
+
+
+### Bug Fixes
+
+* **blink-cmp:** follow `Pmenu` highlights ([#799](https://github.com/catppuccin/nvim/issues/799)) ([35d8057](https://github.com/catppuccin/nvim/commit/35d8057137af463c9f41f169539e9b190d57d269))
+* **colorful-winsep:** respect transparent_background configuration ([#775](https://github.com/catppuccin/nvim/issues/775)) ([9e6ec28](https://github.com/catppuccin/nvim/commit/9e6ec281f58038e5b30ce9a8828e6f9f9d744a27))
+* **dap-ui:** add colors for *NC hlgroups of UI controls ([#783](https://github.com/catppuccin/nvim/issues/783)) ([d9ee9a3](https://github.com/catppuccin/nvim/commit/d9ee9a35f46f0a2bda9a15b5a763fee4095428fd))
+* **editor:** add missing background for `TabLineFill` ([#757](https://github.com/catppuccin/nvim/issues/757)) ([bfdd6b3](https://github.com/catppuccin/nvim/commit/bfdd6b3833e991fa45c3d5931ffed853dca60fab))
+* **editor:** make TabLine more readable ([#760](https://github.com/catppuccin/nvim/issues/760)) ([4fd72a9](https://github.com/catppuccin/nvim/commit/4fd72a9ab64b393c2c22b168508fd244877fec96))
+* **editor:** more "modern" tabline ([#776](https://github.com/catppuccin/nvim/issues/776)) ([5ea0888](https://github.com/catppuccin/nvim/commit/5ea0888e9003f1457d13685ac76f046af26a5524))
+* **gitsigns:** respect transparent option for gitsigns ([#844](https://github.com/catppuccin/nvim/issues/844)) ([2dfca93](https://github.com/catppuccin/nvim/commit/2dfca93e077a1568cc9d4a9d88eaabcf5fd4142c))
+* **kitty:** respect `transparent_background` option ([#786](https://github.com/catppuccin/nvim/issues/786)) ([08efbef](https://github.com/catppuccin/nvim/commit/08efbefa415fbe8ae48799cddc6a5783d2465375))
+* match fzf-lua highlights to telescope ([#812](https://github.com/catppuccin/nvim/issues/812)) ([f67b886](https://github.com/catppuccin/nvim/commit/f67b886d65a029f12ffa298701fb8f1efd89295d))
+* **nvim-surround:** bg conflicts with document highlight ([#800](https://github.com/catppuccin/nvim/issues/800)) ([a4c64d7](https://github.com/catppuccin/nvim/commit/a4c64d7605f6eb95674e322bbbedfaa00aab7904))
+* **octo:** incorrect highlight backgrounds ([#836](https://github.com/catppuccin/nvim/issues/836)) ([7ab1a6e](https://github.com/catppuccin/nvim/commit/7ab1a6ec70a664ecb95d84669efc20aaf4f4ed1b))
+* respect transparent option for gitsigns integration ([#826](https://github.com/catppuccin/nvim/issues/826)) ([ebfb647](https://github.com/catppuccin/nvim/commit/ebfb6471cc4faa107234def49c308e95e44fd056))
+* **syntax:** use `overlay2` for comments ([#768](https://github.com/catppuccin/nvim/issues/768)) ([147e7cf](https://github.com/catppuccin/nvim/commit/147e7cfb5b7ec05702468c332cf7e378d935abd3))
+
+
+### Reverts
+
+* fix(kitty): respect `transparent_background` option ([#794](https://github.com/catppuccin/nvim/issues/794)) ([65bf0b1](https://github.com/catppuccin/nvim/commit/65bf0b16f57a3db70d6a93ac68882dd9a31d0565))
+
+## [1.9.0](https://github.com/catppuccin/nvim/compare/v1.8.0...v1.9.0) (2024-08-09)
+
+
+### Features
+
+* add fzf-lua integration ([#746](https://github.com/catppuccin/nvim/issues/746)) ([05206bb](https://github.com/catppuccin/nvim/commit/05206bbb6d500a339cd55a9486532c3871a4455e))
+* add lir.nvim and lir-git-status.nvim integration ([#705](https://github.com/catppuccin/nvim/issues/705)) ([d3907de](https://github.com/catppuccin/nvim/commit/d3907deedf74d1d5bd3bb990bff2db2ebc916c56))
+* add markdown.nvim integration ([ba41328](https://github.com/catppuccin/nvim/commit/ba413282677e1027a42d6ff585115d3e1df12b66))
+* add vim-dadbod-ui integration ([#747](https://github.com/catppuccin/nvim/issues/747)) ([4db4c77](https://github.com/catppuccin/nvim/commit/4db4c77cc17d23aa90b393f3e550ce99b9e903d5))
+* **render-markdown:** add highlights for callouts ([03a2f35](https://github.com/catppuccin/nvim/commit/03a2f354456373c199eb7829fd14120cc2099108))
+* **terminal:** highlight `TermCursor` and `TermCursorNC` ([#749](https://github.com/catppuccin/nvim/issues/749)) ([548b2a2](https://github.com/catppuccin/nvim/commit/548b2a25415bb60e05c536b7658aa8ffbfeb3e45))
+
+## [1.8.0](https://github.com/catppuccin/nvim/compare/v1.7.0...v1.8.0) (2024-07-25)
+
+
+### Features
+
+* add `grug-far.nvim` integration ([#735](https://github.com/catppuccin/nvim/issues/735)) ([07f1ee8](https://github.com/catppuccin/nvim/commit/07f1ee861394c163d1f1d3e1926eb309e0c81027))
+* **bufferline:** add `indicator_visible` and `modified_visible` ([#716](https://github.com/catppuccin/nvim/issues/716)) ([cc8e290](https://github.com/catppuccin/nvim/commit/cc8e290d4c0d572171243087f8541e49be2c8764))
+* **csv:** built-in rainbow highlighting ([#720](https://github.com/catppuccin/nvim/issues/720)) ([67565cd](https://github.com/catppuccin/nvim/commit/67565cd353fa543fa30cb738570c2e4c87da3e9c))
+* **diffview:** add diffview integrations ([#700](https://github.com/catppuccin/nvim/issues/700)) ([182f256](https://github.com/catppuccin/nvim/commit/182f25640f85a3da2f1f22b088848d896a50fcce))
+* **feline:** add lazy.nvim updates module, replace deprecated API ([#725](https://github.com/catppuccin/nvim/issues/725)) ([47bd419](https://github.com/catppuccin/nvim/commit/47bd419c0cb776cb0a67ebb525891eca44020b59))
+* **feline:** allow to hide lazy.nvim updates ([#731](https://github.com/catppuccin/nvim/issues/731)) ([7946d1a](https://github.com/catppuccin/nvim/commit/7946d1a195c66fed38b3e34f9fa8e0c5a2da0700))
+* **integration:** add colorful-winsep.nvim ([#701](https://github.com/catppuccin/nvim/issues/701)) ([30481d6](https://github.com/catppuccin/nvim/commit/30481d659b6524e6bcae0756201d737e5bc1f209))
+* **mini:** add new highlight groups ([#721](https://github.com/catppuccin/nvim/issues/721)) ([6827a67](https://github.com/catppuccin/nvim/commit/6827a6763888f73df686f32c0e5ffb5b6b754d7b))
+* **nvim-surround:** add integration ([#733](https://github.com/catppuccin/nvim/issues/733)) ([3f16c6d](https://github.com/catppuccin/nvim/commit/3f16c6d1f25bcb641f7b59f7108b9f4533974c41))
+* support new "Ok" diagnostics ([5215ea5](https://github.com/catppuccin/nvim/commit/5215ea59df6d0a7e27da9a5cd1165e06d1b04cbe))
+* **treesitter-content:** highlight line number ([#709](https://github.com/catppuccin/nvim/issues/709)) ([4edca6b](https://github.com/catppuccin/nvim/commit/4edca6bed2ccc2715317725985c692ef0a992a50))
+
+
+### Bug Fixes
+
+* **dapui:** border match bg color ([#727](https://github.com/catppuccin/nvim/issues/727)) ([4ea0173](https://github.com/catppuccin/nvim/commit/4ea01738dc7b872f0081e7093e46d418d8d4c5a1))
+* **defaults:** Enable mini integration by default ([894efb5](https://github.com/catppuccin/nvim/commit/894efb557728e532aa98b98029d16907a214ec05))
+* **leap:** highlight group for LeapLabel ([2d3419c](https://github.com/catppuccin/nvim/commit/2d3419c2aead379b7d1854d32458f20ffaa58562))
+* **neogit:** link WinSeparator ([#713](https://github.com/catppuccin/nvim/issues/713)) ([afccb3d](https://github.com/catppuccin/nvim/commit/afccb3d2377a3d6f0f65405899c9c23b1fd7cc28))
+* small typo in feline.lua file ([#719](https://github.com/catppuccin/nvim/issues/719)) ([c0bea77](https://github.com/catppuccin/nvim/commit/c0bea773a09e49e123136b099bce9ddc1bf395d2))
+* **treesitter:** highlight paths in `.gitignore` as text ([#736](https://github.com/catppuccin/nvim/issues/736)) ([4374588](https://github.com/catppuccin/nvim/commit/4374588df4e99d403a359cda2ddececcf645d8a9))
+
 ## [1.7.0](https://github.com/catppuccin/nvim/compare/v1.6.0...v1.7.0) (2024-04-13)
 
 

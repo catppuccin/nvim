@@ -32,6 +32,7 @@ local sett = {
 	curr_file = C.maroon,
 	curr_dir = C.flamingo,
 	show_modified = false,
+	show_lazy_updates = false,
 }
 
 if require("catppuccin").flavour == "latte" then
@@ -287,7 +288,7 @@ function M.get()
 	-- macro
 	components.active[1][12] = {
 		provider = "macro",
-		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
+		enabled = function() return vim.api.nvim_get_option_value("cmdheight", { scope = "global" }) == 0 end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -298,7 +299,24 @@ function M.get()
 	-- search count
 	components.active[1][13] = {
 		provider = "search_count",
-		enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
+		enabled = function() return vim.api.nvim_get_option_value("cmdheight", { scope = "global" }) == 0 end,
+		hl = {
+			fg = sett.extras,
+			bg = sett.bkg,
+		},
+		left_sep = invi_sep,
+	}
+
+	-- lazy.nvim updates
+	components.active[1][14] = {
+		provider = function() return require("lazy.status").updates() end,
+		enabled = function()
+			if sett.show_lazy_updates and pcall(require, "lazy") then
+				return require("lazy.status").has_updates()
+			else
+				return false
+			end
+		end,
 		hl = {
 			fg = sett.extras,
 			bg = sett.bkg,
@@ -412,12 +430,12 @@ function M.get()
 
 	components.active[3][2] = {
 		provider = function()
-			local active_clients = vim.lsp.get_active_clients { bufnr = 0 }
+			local active_clients = vim.lsp.get_clients { bufnr = 0 }
 
 			-- show an indicator that we have running lsps
 			if view.lsp.name == false and next(active_clients) ~= nil then return assets.lsp.server .. " " .. "Lsp" end
 
-			-- show the actual name of the runing lsps
+			-- show the actual name of the running lsps
 			local index = 0
 			local lsp_names = ""
 			for _, lsp_config in ipairs(active_clients) do

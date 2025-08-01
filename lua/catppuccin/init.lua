@@ -11,6 +11,10 @@ local M = {
 		},
 		compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
 		transparent_background = false,
+		float = {
+			transparent = false,
+			solid = false,
+		},
 		show_end_of_buffer = false,
 		term_colors = false,
 		kitty = vim.env.KITTY_WINDOW_ID and true or false,
@@ -37,12 +41,16 @@ local M = {
 			operators = {},
 		},
 		default_integrations = true,
+		auto_integrations = false,
 		integrations = {
 			alpha = true,
+			blink_cmp = { enabled = true, style = "bordered" },
+			fzf = true,
 			cmp = true,
 			dap = true,
 			dap_ui = true,
 			dashboard = true,
+			diffview = false,
 			flash = true,
 			gitsigns = true,
 			markdown = true,
@@ -51,6 +59,7 @@ local M = {
 			nvimtree = true,
 			ufo = true,
 			rainbow_delimiters = true,
+			render_markdown = true,
 			semantic_tokens = not is_vim,
 			telescope = { enabled = true },
 			treesitter = not is_vim,
@@ -77,12 +86,14 @@ local M = {
 					hints = { "italic" },
 					warnings = { "italic" },
 					information = { "italic" },
+					ok = { "italic" },
 				},
 				underlines = {
 					errors = { "underline" },
 					hints = { "underline" },
 					warnings = { "underline" },
 					information = { "underline" },
+					ok = { "underline" },
 				},
 				inlay_hints = {
 					background = true,
@@ -96,6 +107,19 @@ local M = {
 				enabled = true,
 				color_mode = false,
 			},
+			colorful_winsep = {
+				enabled = false,
+				color = "red",
+			},
+			mini = {
+				enabled = true,
+				indentscope_color = "overlay2",
+			},
+			lir = {
+				enabled = false,
+				git_status = false,
+			},
+			snacks = { enabled = false },
 		},
 		color_overrides = {},
 		highlight_overrides = {},
@@ -159,7 +183,27 @@ function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
 
+	if user_conf.auto_integrations == true then
+		user_conf.integrations = vim.tbl_deep_extend(
+			"force",
+			require("catppuccin.lib.detect_integrations").create_integrations_table(),
+			user_conf.integrations or {}
+		)
+	end
+
 	if user_conf.default_integrations == false then M.default_options.integrations = {} end
+	if user_conf.default_integrations == false then
+		M.default_options.integrations = vim.iter(pairs(M.default_options.integrations))
+			:fold({}, function(integrations, name, opts)
+				if type(opts) == "table" then
+					opts.enabled = false
+				else
+					opts = false
+				end
+				integrations[name] = opts
+				return integrations
+			end)
+	end
 
 	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
 	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all

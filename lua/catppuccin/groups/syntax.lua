@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
 	return {
-		Comment = { fg = C.overlay0, style = O.styles.comments }, -- just comments
+		Comment = { fg = C.overlay2, style = O.styles.comments }, -- just comments
 		SpecialComment = { link = "Special" }, -- special things inside a comment
 		Constant = { fg = C.peach }, -- (preferred) any constant
 		String = { fg = C.green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
@@ -96,6 +96,17 @@ function M.get()
 		rainbow4 = { fg = C.green },
 		rainbow5 = { fg = C.sapphire },
 		rainbow6 = { fg = C.lavender },
+
+		-- csv
+		csvCol0 = { fg = C.red },
+		csvCol1 = { fg = C.peach },
+		csvCol2 = { fg = C.yellow },
+		csvCol3 = { fg = C.green },
+		csvCol4 = { fg = C.sky },
+		csvCol5 = { fg = C.blue },
+		csvCol6 = { fg = C.lavender },
+		csvCol7 = { fg = C.mauve },
+		csvCol8 = { fg = C.pink },
 	}
 end
 

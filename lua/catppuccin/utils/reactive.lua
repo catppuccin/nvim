@@ -5,6 +5,11 @@ function M.cursor(name, palette)
 		name = name,
 		init = function() vim.opt.guicursor:append "a:ReactiveCursor" end,
 		modes = {
+			n = {
+				hl = {
+					ReactiveCursor = { bg = palette.yellow },
+				},
+			},
 			i = {
 				hl = {
 					ReactiveCursor = { bg = palette.teal },
