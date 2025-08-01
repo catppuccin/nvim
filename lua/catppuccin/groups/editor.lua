@@ -37,9 +37,18 @@ function M.get()
 				or C.base,
 		}, -- normal text in non-current windows
 		NormalSB = { fg = C.text, bg = C.crust }, -- normal text in non-current windows
-		NormalFloat = { fg = C.text, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle }, -- Normal text in floating windows.
-		FloatBorder = { fg = C.blue, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle },
-		FloatTitle = { fg = C.subtext0, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.mantle }, -- Title of floating windows
+		NormalFloat = { fg = C.text, bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle }, -- Normal text in floating windows.
+		FloatBorder = O.float.solid
+				and ((O.float.transparent and vim.o.winblend == 0) and { fg = C.surface2, bg = C.none } or {
+					fg = C.mantle,
+					bg = C.mantle,
+				})
+			or { fg = C.blue, bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle },
+		FloatTitle = O.float.solid and {
+			fg = C.crust,
+			bg = C.lavender,
+		} or { fg = C.subtext0, bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle }, -- Title of floating windows
+		FloatShadow = { fg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.overlay0 },
 		Pmenu = {
 			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or U.darken(C.surface0, 0.8, C.crust),
 			fg = C.overlay2,
