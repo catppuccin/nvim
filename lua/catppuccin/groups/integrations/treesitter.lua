@@ -60,7 +60,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@function.method"] = { link = "Function" }, -- For method definitions.
 		["@function.method.call"] = { link = "Function" }, -- For method calls.
 
-		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@constructor"] = { fg = C.yellow }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
 
 		-- Keywords
@@ -170,14 +170,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@label.json"] = { fg = C.blue }, -- For labels: label: in C and :label: in Lua.
 
 		-- lua
-		["@constructor.lua"] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua.
-
-		-- typescript
-		["@property.typescript"] = { fg = C.lavender, style = O.styles.properties or {} },
-		["@constructor.typescript"] = { fg = C.lavender },
-
-		-- TSX (Typescript React)
-		["@constructor.tsx"] = { fg = C.lavender },
+		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
 		-- yaml
 		["@variable.member.yaml"] = { fg = C.blue }, -- For fields.
