@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/catppuccin/nvim/compare/v1.11.0...v2.0.0) (2025-08-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* align treesitter colors with vscode/updated style guide ([#804](https://github.com/catppuccin/nvim/issues/804))
+* add global floating window options ([#892](https://github.com/catppuccin/nvim/issues/892))
+
+### Features
+
+* add global floating window options ([#892](https://github.com/catppuccin/nvim/issues/892)) ([b313c96](https://github.com/catppuccin/nvim/commit/b313c962cf94416dc4b297ab517f47b0cd8272ad))
+
+
+### Bug Fixes
+
+* align treesitter colors with vscode/updated style guide ([#804](https://github.com/catppuccin/nvim/issues/804)) ([f67971c](https://github.com/catppuccin/nvim/commit/f67971cd3e30dd94061da8d61ee34742d43c632a))
+* **blink-cmp:** pmenu border bg ([#897](https://github.com/catppuccin/nvim/issues/897)) ([931a129](https://github.com/catppuccin/nvim/commit/931a129463ca09c8805d564a28b3d0090e536e1d))
+
 ## [1.11.0](https://github.com/catppuccin/nvim/compare/v1.10.0...v1.11.0) (2025-07-31)
 
 
