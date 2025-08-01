@@ -8,6 +8,7 @@ function M.get()
 		BlinkCmpLabelDeprecated = { fg = C.overlay0, style = { "strikethrough" } },
 		BlinkCmpKind = { fg = C.blue },
 		BlinkCmpMenu = { link = "Pmenu" },
+		BlinkCmpDoc = { link = "NormalFloat" },
 		BlinkCmpLabelMatch = { fg = C.text, style = { "bold" } },
 		BlinkCmpMenuSelection = { bg = C.surface1, style = { "bold" } },
 		BlinkCmpScrollBarGutter = { bg = C.surface1 },
@@ -44,8 +45,12 @@ function M.get()
 	}
 
 	if style == "bordered" then
-		highlights["BlinkCmpMenuBorder"] = { fg = C.blue }
-		highlights["BlinkCmpDocBorder"] = { fg = C.blue }
+		-- uses FloatBorder.fg and Pmenu.bg
+		highlights["BlinkCmpMenuBorder"] = {
+			fg = O.float.solid and ((O.float.transparent and vim.o.winblend == 0) and C.surface2 or C.mantle) or C.blue,
+			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or U.darken(C.surface0, 0.8, C.crust),
+		}
+		highlights["BlinkCmpDocBorder"] = { link = "FloatBorder" }
 	end
 
 	return highlights
