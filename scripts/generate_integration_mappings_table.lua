@@ -49,6 +49,6 @@ for _, line in ipairs(lines) do
 	target_file:write(line)
 end
 target_file:write "}\n"
-target_file:write "\nreturn M"
+target_file:write "\nreturn M\n"
 
 target_file:close()
