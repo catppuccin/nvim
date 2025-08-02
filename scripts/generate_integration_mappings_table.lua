@@ -3,7 +3,6 @@ local lua_path = catppuccin_path .. "/lua"
 
 package.path = package.path .. string.format(";%s/?.lua", lua_path) .. string.format(";%s/?/init.lua", lua_path)
 
-local temp = require("catppuccin.groups.integrations.feline").url
 local integrations_path = lua_path .. "/catppuccin/groups/integrations/"
 local target_path = lua_path .. "/catppuccin/utils/integration_mappings.lua"
 
