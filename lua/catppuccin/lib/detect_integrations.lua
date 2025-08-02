@@ -86,6 +86,7 @@ if vim.fn.has "nvim-0.12" then
 			end
 		end)
 		:totable()
+local installed_plugins = vim.iter {}
 end
 
 if pcall(require, "pckr") then
@@ -110,8 +111,7 @@ end
 function M.create_integrations_table()
 	local integrations = {}
 	local ctp_defaults = require("catppuccin").default_options.integrations
-
-	for _, plugin in ipairs(installed_plugins) do
+	installed_plugins:each(function(plugin)
 		if integration_mappings[plugin] ~= nil then
 			local integration = integration_mappings[plugin]
 			if type(ctp_defaults[integration]) == "table" then
@@ -121,12 +121,7 @@ function M.create_integrations_table()
 				integrations[integration] = true
 			end
 		end
-	end
+	end)
 	return integrations
 end
-
--- testing
--- local integrations = M.create_integrations_table()
--- print("detected integrations: " .. vim.inspect(integrations))
-
 return M
