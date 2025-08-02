@@ -75,6 +75,25 @@ local integration_mappings = {
 }
 
 local installed_plugins = {}
+if vim.fn.has "nvim-0.12" then
+	installed_plugins = vim.iter(vim.pack.get())
+		:map(function(plugin) return plugin.spec.name end)
+		:map(function(name)
+			if name:match "mini.*" then
+				return "mini.nvim"
+			else
+				return name
+			end
+		end)
+		:totable()
+end
+
+if pcall(require, "pckr") then
+	-- installed_plugins =
+end
+
+print(vim.inspect(installed_plugins))
+
 if pcall(require, "lazy") then
 	for plugin, _ in pairs(require("lazy.core.config").plugins) do
 		-- special case for the "mini" library, if one module is present, mark as if the whole library is installed
