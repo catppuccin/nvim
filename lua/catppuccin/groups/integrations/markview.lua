@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/OXY2DEV/markview.nvim"
+
 -- markview.nvim highlight groups:
 -- https://github.com/OXY2DEV/markview.nvim#-highlight-groups
 

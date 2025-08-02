@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/HiPhish/rainbow-delimiters.nvim"
+
 function M.get()
 	return {
 		RainbowDelimiterRed = { fg = C.red },

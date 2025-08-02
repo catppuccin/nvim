@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/vigoux/notifier.nvim"
+
 function M.get()
 	return {
 		NotifierIcon = { fg = C.mauve },

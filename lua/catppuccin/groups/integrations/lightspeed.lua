@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/ggandor/lightspeed.nvim"
+
 function M.get()
 	return {
 		LightspeedLabel = { fg = C.red, style = { "bold", "underline" } },

@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/goolord/alpha-nvim"
+
 function M.get()
 	return {
 		AlphaShortcut = { fg = C.green },

@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/rcarriga/nvim-dap-ui"
+
 function M.get()
 	return {
 		DapUIScope = { fg = C.sky },
