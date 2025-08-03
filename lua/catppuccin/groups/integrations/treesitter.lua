@@ -49,7 +49,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@property"] = { fg = C.blue, style = O.styles.properties or {} }, -- Same as TSField.
+		["@property"] = { fg = C.text, style = O.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
@@ -156,6 +156,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- css
 		["@property.css"] = { fg = C.blue },
+		["@property.scss"] = { fg = C.blue },
 		["@property.id.css"] = { fg = C.yellow },
 		["@property.class.css"] = { fg = C.yellow },
 		["@type.css"] = { fg = C.lavender },
@@ -164,17 +165,19 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@number.css"] = { fg = C.peach },
 
 		-- toml
-		["@property.toml"] = { fg = C.blue }, -- Differentiates between string and properties
+		["@property.toml"] = { fg = C.blue }, -- For fields.
 
 		-- json
-		["@label.json"] = { fg = C.blue }, -- For labels: label: in C and :label: in Lua.
+		["@property.json"] = { fg = C.blue }, -- For fields.
 
 		-- lua
 		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
 		-- yaml
-		["@variable.member.yaml"] = { fg = C.blue }, -- For fields.
-		["@variable.member.nix"] = { fg = C.blue },
+		["@property.yaml"] = { fg = C.blue }, -- For fields.
+
+		-- Nix
+		["@variable.member.nix"] = { fg = C.blue }, -- For fields.
 
 		-- Ruby
 		["@string.special.symbol.ruby"] = { fg = C.flamingo },
@@ -182,9 +185,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- PHP
 		["@function.method.php"] = { link = "Function" },
 		["@function.method.call.php"] = { link = "Function" },
-
-		-- C/CPP
-		["@property.cpp"] = { fg = C.text },
 
 		-- gitcommit
 		["@comment.warning.gitcommit"] = { fg = C.yellow },
