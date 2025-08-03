@@ -20,7 +20,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@variable.member"] = { fg = C.text }, -- For fields.
 
 		["@constant"] = { link = "Constant" }, -- For constants
-		["@constant.builtin"] = { fg = C.red, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
+		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
 		["@module"] = { fg = C.yellow, style = O.styles.miscs or { "italic" } }, -- For identifiers referring to modules and namespaces.
