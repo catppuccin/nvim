@@ -29,7 +29,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
 		["@string.documentation"] = { fg = C.teal, style = O.styles.strings or {} }, -- For strings documenting code (e.g. Python docstrings).
-		["@string.regexp"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
+		["@string.regexp"] = { fg = C.pink, style = O.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = C.pink, style = O.styles.strings or {} }, -- For escape characters within a string.
 		["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
 		["@string.special.path"] = { link = "Special" }, -- filenames
