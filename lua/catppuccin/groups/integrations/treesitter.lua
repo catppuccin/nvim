@@ -35,6 +35,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@string.special.path"] = { link = "Special" }, -- filenames
 		["@string.special.symbol"] = { fg = C.flamingo }, -- symbols or atoms
 		["@string.special.url"] = { fg = C.blue, style = { "italic", "underline" } }, -- urls, links and emails
+		["@punctuation.delimiter.regex"] = { link = "@string.regexp" },
 
 		["@character"] = { link = "Character" }, -- character literals
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
