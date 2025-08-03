@@ -81,7 +81,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
 		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
-		["@keyword.directive.css"] = { link = "Keyword" }, -- CSS at-rules: https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule.
 		-- JS & derivative
 		["@keyword.export"] = { fg = C.mauve, style = O.styles.keywords },
 
@@ -140,7 +139,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@error"] = { link = "Error" },
 
 		-- Language specific:
-		-- bash
+		-- Bash
 		["@function.builtin.bash"] = { fg = C.red, style = O.styles.miscs or { "italic" } },
 
 		-- markdown
@@ -151,10 +150,10 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@markup.heading.5.markdown"] = { link = "rainbow5" },
 		["@markup.heading.6.markdown"] = { link = "rainbow6" },
 
-		-- java
+		-- Java
 		["@constant.java"] = { fg = C.teal },
 
-		-- css
+		-- CSS
 		["@property.css"] = { fg = C.blue },
 		["@property.scss"] = { fg = C.blue },
 		["@property.id.css"] = { fg = C.yellow },
@@ -163,17 +162,18 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@type.tag.css"] = { fg = C.blue },
 		["@string.plain.css"] = { fg = C.text },
 		["@number.css"] = { fg = C.peach },
+		["@keyword.directive.css"] = { link = "Keyword" }, -- CSS at-rules: https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule.
 
-		-- toml
+		-- TOML
 		["@property.toml"] = { fg = C.blue }, -- For fields.
 
-		-- json
+		-- JSON
 		["@property.json"] = { fg = C.blue }, -- For fields.
 
-		-- lua
+		-- Lua
 		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
-		-- yaml
+		-- YAML
 		["@property.yaml"] = { fg = C.blue }, -- For fields.
 
 		-- Nix
