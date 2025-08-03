@@ -139,8 +139,10 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@error"] = { link = "Error" },
 
 		-- Language specific:
+
 		-- Bash
 		["@function.builtin.bash"] = { fg = C.red, style = O.styles.miscs or { "italic" } },
+		["@variable.parameter.bash"] = { fg = C.green },
 
 		-- markdown
 		["@markup.heading.1.markdown"] = { link = "rainbow1" },
@@ -164,6 +166,10 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@number.css"] = { fg = C.peach },
 		["@keyword.directive.css"] = { link = "Keyword" }, -- CSS at-rules: https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule.
 
+		-- HTML
+		["@string.special.url.html"] = { fg = C.green },
+		["@character.special.html"] = { fg = C.red },
+
 		-- TOML
 		["@property.toml"] = { fg = C.blue }, -- For fields.
 
@@ -173,8 +179,12 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- Lua
 		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
+		-- Python
+		["@constructor.python"] = { fg = C.sky }, -- For constructor calls and definitions: = { } in Lua.
+
 		-- YAML
 		["@property.yaml"] = { fg = C.blue }, -- For fields.
+		["@label.yaml"] = { fg = C.yellow },
 
 		-- Nix
 		["@variable.member.nix"] = { fg = C.blue }, -- For fields.
@@ -185,6 +195,13 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		-- PHP
 		["@function.method.php"] = { link = "Function" },
 		["@function.method.call.php"] = { link = "Function" },
+
+		-- C/CPP
+		["@keyword.import.c"] = { fg = C.yellow },
+		["@keyword.import.cpp"] = { fg = C.yellow },
+
+		-- C#
+		["@attribute.c_sharp"] = { fg = C.yellow },
 
 		-- gitcommit
 		["@comment.warning.gitcommit"] = { fg = C.yellow },
