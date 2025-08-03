@@ -9,7 +9,10 @@ If you want to stay on nvim 0.7, disable the integration.
 ]],
 			vim.log.levels.INFO
 		)
-		return {}
+		return {
+			-- https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight
+			-- Semantic tokens (@lsp.type.<...>) are no longer defined in this file, as Neovim links to already themed Tree-sitter captures by default.
+		}
 	end
 	return {}
 end
