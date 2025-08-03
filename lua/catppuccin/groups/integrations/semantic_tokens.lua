@@ -11,8 +11,7 @@ If you want to stay on nvim 0.7, disable the integration.
 		)
 		return {}
 	end
-	return {
-	}
+	return {}
 end
 
 return M
