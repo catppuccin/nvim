@@ -167,8 +167,9 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.directive.css"] = { link = "Keyword" }, -- CSS at-rules: https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule.
 
 		-- HTML
-		["@string.special.url.html"] = { fg = C.green },
-		["@character.special.html"] = { fg = C.red },
+		["@string.special.url.html"] = { fg = C.green }, -- Links in href, src attributes.
+		["@markup.link.label.html"] = { fg = C.text }, -- Text between <a></a> tags.
+		["@character.special.html"] = { fg = C.red }, -- Symbols such as &nbsp;.
 
 		-- TOML
 		["@property.toml"] = { fg = C.blue }, -- For fields.
@@ -180,14 +181,15 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
 		-- Python
-		["@constructor.python"] = { fg = C.sky }, -- For constructor calls and definitions: = { } in Lua.
+		["@constructor.python"] = { fg = C.sky }, -- __init__(), __new__().
 
 		-- YAML
 		["@property.yaml"] = { fg = C.blue }, -- For fields.
-		["@label.yaml"] = { fg = C.yellow },
+		["@label.yaml"] = { fg = C.yellow }, -- Anchor and alias names.
 
 		-- Nix
 		["@variable.member.nix"] = { fg = C.blue }, -- For fields.
+		["@property.nix"] = { fg = C.blue }, -- For fields also, from LSP.
 
 		-- Ruby
 		["@string.special.symbol.ruby"] = { fg = C.flamingo },
