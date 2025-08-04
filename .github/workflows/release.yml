@@ -6,8 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
-    name: release
+  release-please:
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v4
@@ -15,9 +14,16 @@ jobs:
         with:
           release-type: simple
           package-name: catppuccin
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ needs.release-please.outputs.release_created }}
+    steps:
       - uses: actions/checkout@v4
-      - name: tag stable versions
-        if: ${{ steps.release.outputs.release_created }}
+      - name: Update Latest Stable Tag
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
@@ -26,3 +32,10 @@ jobs:
           git push origin :stable || true
           git tag -a stable -m "Last Stable Release"
           git push origin stable
+      - name: Upload to LuaRocks
+        uses: nvim-neorocks/luarocks-tag-release@v7
+        env:
+          LUAROCKS_API_KEY: ${{ secrets.LUAROCKS_API_KEY }}
+        with:
+          name: catppuccin.nvim
+          version: ${{ needs.release-please.outputs.tag_name }}

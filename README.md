@@ -67,6 +67,11 @@ add({ source = "catppuccin/nvim", name = "catppuccin" })
 use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
+[rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim)
+```vim
+:Rocks install catppuccin.nvim
+```
+
 [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
