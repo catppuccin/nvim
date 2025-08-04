@@ -15,6 +15,7 @@ function M.get()
 		BlinkCmpScrollBarThumb = { bg = C.overlay0 },
 		BlinkCmpLabelDescription = { fg = C.overlay0 },
 		BlinkCmpLabelDetail = { fg = C.overlay0 },
+		BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
 
 		BlinkCmpKindText = { fg = C.green },
 		BlinkCmpKindMethod = { fg = C.blue },
