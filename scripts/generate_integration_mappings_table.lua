@@ -6,8 +6,7 @@ package.path = package.path .. string.format(";%s/?.lua", lua_path) .. string.fo
 local integrations_path = lua_path .. "/catppuccin/groups/integrations/"
 local target_path = lua_path .. "/catppuccin/utils/integration_mappings.lua"
 
----comment
----@return table a table holding plugin to catppuccin name
+---@return table mappings plugin to catppuccin integration name
 local function create_table()
 	local mappings = {}
 	for filename, _ in vim.fs.dir(integrations_path) do
@@ -25,6 +24,7 @@ local function create_table()
 	return mappings
 end
 
+---@return string[] lines lines written to target_file
 local function format_table(mappings_table)
 	-- sort the table alphabetically
 	local keys = vim.tbl_keys(mappings_table)
@@ -32,7 +32,7 @@ local function format_table(mappings_table)
 
 	local lines = {}
 	for _, plugin_name in pairs(keys) do
-		table.insert(lines, string.format("\t['%s'] = '%s',\n", plugin_name, mappings_table[plugin_name]))
+		table.insert(lines, string.format('\t["%s"] = "%s",\n', plugin_name, mappings_table[plugin_name]))
 	end
 	return lines
 end
