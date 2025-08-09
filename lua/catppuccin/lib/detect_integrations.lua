@@ -11,21 +11,11 @@ assert(
 	"before using integration_mappings generate it using the script: `./scripts/generate_integration_mappings_table.lua`"
 )
 
-local installed_plugins = {}
+local installed_plugins = nil
 
-if pcall(require, "lazy") then
-	for plugin, _ in pairs(require("lazy.core.config").plugins) do
-		-- special case for the "mini" library, if one module is present, mark as if the whole library is installed
-		if plugin:match "mini.*" then
-			if not vim.tbl_contains(installed_plugins, "mini.nvim") then
-				table.insert(installed_plugins, "mini.nvim")
-			end
-		else
-			table.insert(installed_plugins, plugin)
-		end
-	end
+if vim.fn.has "nvim-0.12.0" == 1 then
+	installed_plugins = vim.iter(vim.pack.get()):map(function(plugin) return plugin.spec.name end)
 end
-
 if pcall(require, "pckr") then installed_plugins = vim.iter(require("pckr.plugin").plugins_by_name) end
 
 if pcall(require, "lazy") then installed_plugins = vim.iter(require("lazy.core.config").plugins) end
