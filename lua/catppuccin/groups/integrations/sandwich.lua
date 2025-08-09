@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/machakann/vim-sandwich"
+
 function M.get()
 	return {
 		OperatorSandwichAdd = { bg = C.blue, fg = C.base },

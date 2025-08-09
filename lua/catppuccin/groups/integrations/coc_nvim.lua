@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/neoclide/coc.nvim"
+
 function M.get()
 	return {
 		-- These groups are for the coc.nvim, see ":h coc-highlights"

@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/folke/snacks.nvim"
+
 function M.get()
 	local indent_scope_color = O.integrations.snacks.indent_scope_color
 

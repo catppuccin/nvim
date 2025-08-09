@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/folke/trouble.nvim"
+
 function M.get()
 	return {
 		TroubleText = { fg = C.green },
