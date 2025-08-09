@@ -32,7 +32,7 @@ local function format_table(mappings_table)
 
 	local lines = {}
 	for _, plugin_name in pairs(keys) do
-		table.insert(lines, string.format("\t['%s'] = '%s',\n", plugin_name, mappings_table[plugin_name]))
+		table.insert(lines, string.format('\t["%s"] = "%s",\n', plugin_name, mappings_table[plugin_name]))
 	end
 	return lines
 end
@@ -40,11 +40,12 @@ end
 local mappings = create_table()
 local lines = format_table(mappings)
 
+local target_file = io.open(target_path, "w+")
 target_file:write "local M = {\n"
 for _, line in ipairs(lines) do
 	target_file:write(line)
 end
 target_file:write "}\n"
-target_file:write "\nreturn M"
+target_file:write "\nreturn M\n"
 
 target_file:close()
