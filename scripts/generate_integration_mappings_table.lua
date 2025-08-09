@@ -18,7 +18,7 @@ local function create_table()
 		if ok then
 			---@type string
 			local plugin_name = mod.url
-			plugin_name = plugin_name:match ".*/(.-)/*$" or plugin_name -- extract the repo from the url. else use the url.
+			plugin_name = plugin_name:match "([^/]+)$" or plugin_name -- extract the repo from the url. else use the url.
 			mappings[plugin_name] = filename
 		end
 	end
