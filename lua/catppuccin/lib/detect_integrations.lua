@@ -84,11 +84,25 @@ if pcall(require, "pckr") then installed_plugins = vim.iter(require("pckr.plugin
 if pcall(require, "lazy") then installed_plugins = vim.iter(require("lazy.core.config").plugins) end
 
 assert(installed_plugins ~= nil, "must be populated by one of supported plugin managers")
+local seen = {}
+installed_plugins
+	:map(function(plugin_name)
+		if plugin_name:match "mini.*" then
+			return "mini.nvim"
+		else
+			return plugin_name
+		end
+	end)
+	:filter(function(plugin_name)
+		if seen[plugin_name] then return false end
+		seen[plugin_name] = true
+		return true
+	end)
 function M.create_integrations_table()
 	local integrations = {}
 	local ctp_defaults = require("catppuccin").default_options.integrations
 
-	for _, plugin in ipairs(installed_plugins) do
+	for _, plugin in ipairs(installed_plugins:totable()) do
 		if integration_mappings[plugin] ~= nil then
 			local integration = integration_mappings[plugin]
 			if type(ctp_defaults[integration]) == "table" then
