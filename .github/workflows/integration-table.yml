@@ -1,4 +1,4 @@
-name: Integration Table Generation
+name: Generate Integration Table
 
 on:
   pull_request:
