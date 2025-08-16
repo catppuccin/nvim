@@ -10,19 +10,21 @@ local target_path = lua_path .. "/catppuccin/utils/integration_mappings.lua"
 
 ---@return table mappings table holding plugin to catppuccin name
 local function create_table()
-	local mappings = {}
-	for filename, _ in vim.fs.dir(integrations_path) do
+	local mappings = vim.iter(vim.fs.dir(integrations_path)):fold({}, function(m, filename, _)
 		filename = vim.fn.fnamemodify(filename, ":r")
 
 		local ok, mod = pcall(require, "catppuccin.groups.integrations." .. filename)
 
-		if ok then
-			---@type string
-			local plugin_name = mod.url
-			plugin_name = require("catppuccin.lib.detect_integrations").parse_url(plugin_name) or plugin_name
-			mappings[plugin_name] = filename
-		end
-	end
+		if not ok then return m end
+
+		---@type string
+		local plugin_url = mod.url
+		if not plugin_url then return m end
+		local plugin_name = require("catppuccin.lib.detect_integrations").parse_url(plugin_url)
+		m[plugin_name] = filename
+
+		return m
+	end)
 	return mappings
 end
 
