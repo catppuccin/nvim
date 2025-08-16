@@ -28,19 +28,16 @@ local seen = {}
 
 installed_plugins = vim.iter(installed_plugins)
 	:map(function(plugin_name)
-		if string.sub(plugin_name, 0, 5) == "mini." then
-			return "mini.nvim"
-		end
+		if string.sub(plugin_name, 0, 5) == "mini." then return "mini.nvim" end
 
 		return plugin_name
 	end)
 	:filter(function(plugin_name)
-		if seen[plugin_name] then
-			return false
-		end
+		if seen[plugin_name] then return false end
 		seen[plugin_name] = true
 		return true
-	end):totable()
+	end)
+	:totable()
 
 function M.create_integrations_table()
 	local integrations = {}
