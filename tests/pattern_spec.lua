@@ -1,5 +1,5 @@
 describe("parse url from", function()
-	local parse_url = require('catppuccin.lib.detect_integrations').parse_url
+	local parse_url = require("catppuccin.lib.detect_integrations").parse_url
 
 	it(
 		"word-word-word",
