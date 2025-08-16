@@ -13,18 +13,34 @@ assert(
 
 local installed_plugins = {}
 
-if pcall(require, "lazy") then
-	for plugin, _ in pairs(require("lazy.core.config").plugins) do
-		-- special case for the "mini" library, if one module is present, mark as if the whole library is installed
-		if plugin:match "mini.*" then
-			if not vim.tbl_contains(installed_plugins, "mini.nvim") then
-				table.insert(installed_plugins, "mini.nvim")
-			end
-		else
-			table.insert(installed_plugins, plugin)
-		end
-	end
+if vim.fn.has "nvim-0.12.0" == 1 then
+	vim.list_extend(
+		installed_plugins,
+		vim.iter(vim.pack.get()):map(function(plugin) return plugin.spec.name end):totable()
+	)
 end
+
+if pcall(require, "pckr") then vim.list_extend(installed_plugins, require("pckr.plugin").plugins_by_name) end
+
+if pcall(require, "lazy") then vim.list_extend(installed_plugins, require("lazy.core.config").plugins) end
+
+local seen = {}
+
+installed_plugins = vim.iter(installed_plugins)
+	:map(function(plugin_name)
+		if string.sub(plugin_name, 0, 5) == "mini." then
+			return "mini.nvim"
+		end
+
+		return plugin_name
+	end)
+	:filter(function(plugin_name)
+		if seen[plugin_name] then
+			return false
+		end
+		seen[plugin_name] = true
+		return true
+	end):totable()
 
 function M.create_integrations_table()
 	local integrations = {}
