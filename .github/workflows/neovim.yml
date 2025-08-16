@@ -17,8 +17,6 @@ jobs:
       - uses: actions/checkout@v5
       - name: Install Neovim
         uses: MunifTanjim/setup-neovim-action@v1
-        with:
-          tag: nightly
       - name: Run neovim
         run: |
           nvim --version

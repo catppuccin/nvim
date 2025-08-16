@@ -28,8 +28,6 @@ jobs:
           mv user-configs/tests/* nvim/tests/
       - name: Install Neovim
         uses: MunifTanjim/setup-neovim-action@v1
-        with:
-          tag: nightly
       - name: Fetch dependencies
         run: |
           git clone --depth 1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/site/pack/vendor/start/plenary.nvim
