@@ -9,10 +9,15 @@ on:
 
 jobs:
   docs:
-    runs-on: ubuntu-latest
     name: Update integration table
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
       - name: Install Neovim
         uses: MunifTanjim/setup-neovim-action@v1
         with:
@@ -23,4 +28,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: auto generate integration table"
-          branch: ${{ github.head_ref }}
+          branch: ${{ github.ref }}
