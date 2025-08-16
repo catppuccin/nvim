@@ -1,15 +1,9 @@
 local M = {}
 
-local integration_mappings = nil
-
-if pcall(require, "catppuccin.utils.integration_mappings") then
-	integration_mappings = require "catppuccin.utils.integration_mappings"
-end
-
-assert(
-	integration_mappings ~= nil,
-	"before using integration_mappings generate it using the script: `./scripts/generate_integration_mappings_table.lua`"
-)
+--- parses url to get the last part of it's path, without the `/`.
+---@param url string
+---@return any
+function M.parse_url(url) return string.match(url, "([^/]+)$") end
 
 function M.detect_plugins()
 	local installed_plugins = {}
@@ -46,6 +40,19 @@ end
 local installed_plugins = M.detect_plugins()
 
 function M.create_integrations_table()
+	local integration_mappings = nil
+
+	do
+		local ok, result = pcall(require, "catppuccin.utils.integration_mappings")
+		assert(ok, result)
+		integration_mappings = result
+	end
+
+	assert(
+		integration_mappings ~= nil,
+		"before using integration_mappings generate it using the script: `./scripts/generate_integration_mappings_table.lua`"
+	)
+
 	local integrations = {}
 	local ctp_defaults = require("catppuccin").default_options.integrations
 

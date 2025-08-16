@@ -8,11 +8,6 @@ package.path = package.path .. string.format(";%s/?.lua", lua_path) .. string.fo
 local integrations_path = lua_path .. "/catppuccin/groups/integrations/"
 local target_path = lua_path .. "/catppuccin/utils/integration_mappings.lua"
 
---- parses url to get the last part of it's path, without the `/`.
----@param url string
----@return any
-function M.parse_url(url) return url:match "([^/]+)$" end
-
 ---@return table mappings table holding plugin to catppuccin name
 local function create_table()
 	local mappings = {}
@@ -24,7 +19,7 @@ local function create_table()
 		if ok then
 			---@type string
 			local plugin_name = mod.url
-			plugin_name = M.parse_url(plugin_name) or plugin_name
+			plugin_name = require("catppuccin.lib.detect_integrations").parse_url(plugin_name) or plugin_name
 			mappings[plugin_name] = filename
 		end
 	end
