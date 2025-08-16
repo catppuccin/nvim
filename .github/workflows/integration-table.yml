@@ -1,6 +1,7 @@
 name: Generate Integration Table
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - 'lua/catppuccin/groups/integrations/**.lua'
