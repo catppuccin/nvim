@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/rlane/pounce.nvim"
+
 function M.get()
 	return {
 		PounceMatch = { bg = U.lighten(C.green, 0.7), fg = C.base, style = { "bold" } },

@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/nvimdev/lspsaga.nvim"
+
 function M.get()
 	return {
 		SagaTitle = { fg = C.teal, style = { "bold" } },

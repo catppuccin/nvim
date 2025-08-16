@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/nvim-treesitter/nvim-treesitter"
+
 function M.get()
 	if vim.treesitter.highlighter.hl_map then
 		vim.notify_once(

@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/rcarriga/nvim-notify"
+
 function M.get()
 	return {
 		NotifyBackground = { bg = (O.transparent_background and vim.o.winblend == 0) and "#000000" or C.mantle },

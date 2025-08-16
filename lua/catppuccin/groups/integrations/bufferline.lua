@@ -1,4 +1,7 @@
 local M = {}
+
+M.url = "https://github.com/akinsho/bufferline.nvim"
+
 local ctp = require "catppuccin"
 local O = ctp.options
 

@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+
 -- render-markdown.nvim highlight groups:
 -- https://github.com/MeanderingProgrammer/render-markdown.nvim?tab=readme-ov-file#colors
 
