@@ -1,3 +1,5 @@
+local M = {}
+
 local catppuccin_path = vim.fn.getcwd() -- get to the root directory of the plugin
 local lua_path = catppuccin_path .. "/lua"
 
@@ -6,8 +8,12 @@ package.path = package.path .. string.format(";%s/?.lua", lua_path) .. string.fo
 local integrations_path = lua_path .. "/catppuccin/groups/integrations/"
 local target_path = lua_path .. "/catppuccin/utils/integration_mappings.lua"
 
----comment
----@return table a table holding plugin to catppuccin name
+--- parses url to get the last part of it's path, without the `/`.
+---@param url string
+---@return any
+function M.parse_url(url) return url:match "([^/]+)$" end
+
+---@return table mappings table holding plugin to catppuccin name
 local function create_table()
 	local mappings = {}
 	for filename, _ in vim.fs.dir(integrations_path) do
@@ -18,13 +24,14 @@ local function create_table()
 		if ok then
 			---@type string
 			local plugin_name = mod.url
-			plugin_name = plugin_name:match "([^/]+)$" or plugin_name -- extract the repo from the url. else use the url.
+			plugin_name = M.parse_url(plugin_name) or plugin_name
 			mappings[plugin_name] = filename
 		end
 	end
 	return mappings
 end
 
+---@return string[] lines holding the lines to be written to `target_file`
 local function format_table(mappings_table)
 	-- sort the table alphabetically
 	local keys = vim.tbl_keys(mappings_table)
@@ -41,6 +48,8 @@ local mappings = create_table()
 local lines = format_table(mappings)
 
 local target_file = io.open(target_path, "w+")
+assert(target_file ~= nil)
+
 target_file:write "local M = {\n"
 for _, line in ipairs(lines) do
 	target_file:write(line)
@@ -49,3 +58,5 @@ target_file:write "}\n"
 target_file:write "\nreturn M\n"
 
 target_file:close()
+
+return M
