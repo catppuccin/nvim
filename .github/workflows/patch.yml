@@ -1,0 +1,50 @@
+name: Patch
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  integration-table-gen:
+    name: update integration table
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+      - name: Install Neovim
+        uses: MunifTanjim/setup-neovim-action@v1
+      - name: Update integration table
+        run: |
+          nvim -l scripts/generate_integration_mappings_table.lua
+      - uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "chore: auto generate integration table"
+          branch: ${{ github.ref }}
+  docs:
+    name: generate vimdoc
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+      - name: panvimdoc
+        uses: kdheepak/panvimdoc@main
+        with:
+          vimdoc: catppuccin
+          description: "Soothing pastel theme for NeoVim"
+          pandoc: "README.md"
+          toc: true
+          version: "nvim >= 0.8.0"
+          treesitter: true
+      - uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "docs: auto generate vimdoc"
+          branch: ${{ github.ref }}
