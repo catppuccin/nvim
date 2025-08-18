@@ -400,7 +400,7 @@ use "akinsho/bufferline.nvim" {
   after = "catppuccin",
   config = function()
     require("bufferline").setup {
-      highlights = require("catppuccin.groups.integrations.bufferline").get()
+      highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
     }
   end
 }
@@ -411,7 +411,7 @@ Configurations are self-explanatory, see `:h bufferline-highlights` for detailed
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 bufferline.setup {
-    highlights = require("catppuccin.groups.integrations.bufferline").get {
+    highlights = require("catppuccin.groups.integrations.bufferline").get_theme {
         styles = { "italic", "bold" },
         custom = {
             all = {
