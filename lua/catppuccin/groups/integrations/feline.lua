@@ -106,7 +106,7 @@ if ok then
 		view = vim.tbl_deep_extend("force", view, opts.view)
 	end
 
-	function M.get()
+	function M.get_statusline()
 		local shortline = false
 
 		local components = {

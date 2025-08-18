@@ -579,7 +579,7 @@ local ctp_feline = require('catppuccin.groups.integrations.feline')
 ctp_feline.setup()
 
 require("feline").setup({
-    components = ctp_feline.get(),
+    components = ctp_feline.get_statusline(),
 })
 ```
 
@@ -668,7 +668,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         package.loaded["feline"] = nil
         package.loaded["catppuccin.groups.integrations.feline"] = nil
         require("feline").setup {
-            components = require("catppuccin.groups.integrations.feline").get(),
+            components = require("catppuccin.groups.integrations.feline").get_statusline(),
         }
     end,
 })
