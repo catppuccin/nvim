@@ -18,9 +18,7 @@ function M.detect_plugins()
 	if pcall(require, "pckr") then vim.list_extend(installed_plugins, require("pckr.plugin").plugins_by_name) end
 
 	if pcall(require, "lazy") then
-		for plugin, _ in pairs(require("lazy.core.config").plugins) do
-			table.insert(installed_plugins, plugin)
-		end
+		vim.list_extend(installed_plugins, vim.tbl_keys(require("lazy.core.config").plugins))
 	end
 
 	local seen = {}
