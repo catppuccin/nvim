@@ -324,7 +324,7 @@ Update your bufferline config to use the Catppuccin components:
       after = "catppuccin",
       config = function()
         require("bufferline").setup {
-          highlights = require("catppuccin.groups.integrations.bufferline").get()
+          highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
         }
       end
     }
@@ -336,7 +336,7 @@ explanations:
 >lua
     local mocha = require("catppuccin.palettes").get_palette "mocha"
     bufferline.setup {
-        highlights = require("catppuccin.groups.integrations.bufferline").get {
+        highlights = require("catppuccin.groups.integrations.bufferline").get_theme {
             styles = { "italic", "bold" },
             custom = {
                 all = {
@@ -431,7 +431,7 @@ Update your Feline config to use the Catppuccin components:
     ctp_feline.setup()
     
     require("feline").setup({
-        components = ctp_feline.get(),
+        components = ctp_feline.get_statusline(),
     })
 <
 
@@ -523,7 +523,7 @@ Here are the defaults:
             package.loaded["feline"] = nil
             package.loaded["catppuccin.groups.integrations.feline"] = nil
             require("feline").setup {
-                components = require("catppuccin.groups.integrations.feline").get(),
+                components = require("catppuccin.groups.integrations.feline").get_statusline(),
             }
         end,
     })

@@ -45,12 +45,9 @@ function M.apply(flavour)
 			end
 		end
 
-		if cot then
-			final_integrations = vim.tbl_deep_extend(
-				"force",
-				final_integrations,
-				require("catppuccin.groups.integrations." .. integration).get()
-			)
+		local ok, result = pcall(require, "catppuccin.groups.integrations." .. integration)
+		if ok and result.get and cot then
+			final_integrations = vim.tbl_deep_extend("force", final_integrations, result.get())
 		end
 	end
 
