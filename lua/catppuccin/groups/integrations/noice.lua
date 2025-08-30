@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/folke/noice.nvim"
+
 local virtual_text = O.integrations.native_lsp.virtual_text
 
 function M.get()

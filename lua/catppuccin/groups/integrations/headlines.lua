@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/lukas-reineke/headlines.nvim"
+
 function M.get()
 	return {
 		Dash = { fg = C.overlay2, style = { "bold" } },

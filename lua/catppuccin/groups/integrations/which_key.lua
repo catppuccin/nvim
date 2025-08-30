@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/folke/which-key.nvim"
+
 function M.get()
 	return {
 		WhichKey = { link = "NormalFloat" },

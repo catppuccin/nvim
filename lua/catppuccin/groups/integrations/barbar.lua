@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/romgrk/barbar.nvim"
+
 function M.get()
 	return {
 		BufferCurrent = { bg = C.surface1, fg = C.text },

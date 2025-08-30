@@ -1,8 +1,11 @@
 local M = {}
+
+M.url = "https://github.com/akinsho/bufferline.nvim"
+
 local ctp = require "catppuccin"
 local O = ctp.options
 
-function M.get(user_config)
+function M.get_theme(user_config)
 	user_config = user_config or {}
 	-- Backward compatibility
 	if O.integrations.bufferline then return {} end

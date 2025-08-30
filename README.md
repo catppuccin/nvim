@@ -400,7 +400,7 @@ use "akinsho/bufferline.nvim" {
   after = "catppuccin",
   config = function()
     require("bufferline").setup {
-      highlights = require("catppuccin.groups.integrations.bufferline").get()
+      highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
     }
   end
 }
@@ -411,7 +411,7 @@ Configurations are self-explanatory, see `:h bufferline-highlights` for detailed
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 bufferline.setup {
-    highlights = require("catppuccin.groups.integrations.bufferline").get {
+    highlights = require("catppuccin.groups.integrations.bufferline").get_theme {
         styles = { "italic", "bold" },
         custom = {
             all = {
@@ -579,7 +579,7 @@ local ctp_feline = require('catppuccin.groups.integrations.feline')
 ctp_feline.setup()
 
 require("feline").setup({
-    components = ctp_feline.get(),
+    components = ctp_feline.get_statusline(),
 })
 ```
 
@@ -668,7 +668,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         package.loaded["feline"] = nil
         package.loaded["catppuccin.groups.integrations.feline"] = nil
         require("feline").setup {
-            components = require("catppuccin.groups.integrations.feline").get(),
+            components = require("catppuccin.groups.integrations.feline").get_statusline(),
         }
     end,
 })
