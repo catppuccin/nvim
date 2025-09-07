@@ -110,7 +110,7 @@
 ---@field background boolean?
 
 ---@class CtpNeoTreeIntegrations
----@field enable boolean?
+---@field enabled boolean?
 ---@field transparent boolean?
 
 ---@class CtpIntegrations

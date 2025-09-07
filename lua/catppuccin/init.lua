@@ -56,7 +56,7 @@ local M = {
 			markdown = true,
 			neogit = true,
 			neotree = {
-				enable = true,
+				enabled = true,
 				transparent = false,
 			},
 			nvimtree = true,
