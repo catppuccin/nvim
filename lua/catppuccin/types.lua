@@ -109,6 +109,10 @@
 -- Toggle the background of inlay hints.
 ---@field background boolean?
 
+---@class CtpNeoTreeIntegrations
+---@field enable boolean?
+---@field transparent boolean?
+
 ---@class CtpIntegrations
 ---@field aerial boolean?
 ---@field alpha boolean?
@@ -199,7 +203,7 @@
 ---@field navic CtpIntegrationNavic | boolean?
 ---@field neogit boolean?
 ---@field neotest boolean?
----@field neotree boolean?
+---@field neotree CtpNeoTreeIntegrations?
 ---@field noice boolean?
 ---@field notify boolean?
 ---@field nvim_surround boolean?

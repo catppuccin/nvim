@@ -1013,7 +1013,10 @@ mini = {
 <td>
 
 ```lua
-neotree = true
+neotree = {
+    enabled = true,
+    transparent = false,
+}
 ```
 
 </td>

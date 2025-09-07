@@ -677,7 +677,10 @@ mini.nvim>lua
 <
 
 neo-tree.nvim>lua
-    neotree = true
+    neotree = {
+        enabled = true,
+        transparent = false,
+    }
 <
 
 neogit>lua

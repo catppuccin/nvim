@@ -3,8 +3,8 @@ local M = {}
 M.url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
 
 function M.get()
-	local active_bg = O.transparent_background and C.none or C.mantle
-	local inactive_bg = O.transparent_background and C.none or C.base
+	local active_bg = O.neotree.transparent or and C.none or C.mantle
+	local inactive_bg = O.neotree.transparent or and C.none or C.base
 	return {
 		NeoTreeDirectoryName = { fg = C.blue },
 		NeoTreeDirectoryIcon = { fg = C.blue },
@@ -38,8 +38,8 @@ function M.get()
 		NeoTreeTabSeparatorInactive = { fg = inactive_bg, bg = inactive_bg },
 		NeoTreeVertSplit = { fg = C.base, bg = inactive_bg },
 		NeoTreeWinSeparator = {
-			fg = O.transparent_background and C.surface1 or C.base,
-			bg = O.transparent_background and C.none or C.base,
+			fg = O.neotree.transparent or and C.surface1 or C.base,
+			bg = O.neotree.transparent or and C.none or C.base,
 		},
 		NeoTreeStatusLineNC = { fg = C.mantle, bg = C.mantle },
 	}
