@@ -1023,7 +1023,7 @@ neotree = true
 <!-- neogit -->
 </tr>
 <tr>
-<td> <a href="https://github.com/TimUntersberger/neogit">neogit</a> </td>
+<td> <a href="https://github.com/NeogitOrg/neogit">neogit</a> </td>
 <td>
 
 ```lua

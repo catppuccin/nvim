@@ -1,6 +1,6 @@
 local M = {}
 
-M.url = "https://github.com/SmiteshP/nvim-navic"
+M.url = "https://github.com/NeogitOrg/neogit"
 
 function M.get()
 	return {
