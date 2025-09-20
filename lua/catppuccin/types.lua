@@ -32,6 +32,8 @@
 ---@field no_underline boolean?
 -- Handles the style of general hl groups (see `:h highlight-groups`).
 ---@field styles CtpStyles?
+-- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+---@field lsp_styles CtpLspStyles?
 -- Should default integrations be used.
 ---@field default_integrations boolean?
 -- Should detect integrations automatically
@@ -93,7 +95,7 @@
 -- Change the style of miscs.
 ---@field miscs CtpHighlightArgs[]?
 
----@class CtpNativeLspStyles
+---@class CtpLspStyles
 -- Change the style of LSP error diagnostics.
 ---@field errors CtpHighlightArgs[]?
 -- Change the style of LSP hint diagnostics.
@@ -188,7 +190,6 @@
 ---@field markdown boolean?
 ---@field markview boolean?
 ---@field mason boolean?
----@field native_lsp CtpIntegrationNativeLsp | boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
 --
 -- ```lua
@@ -283,13 +284,13 @@
 -- Sets the color of the scope line
 ---@field indentscope_color CtpColor?
 
----@class CtpIntegrationNativeLsp
+---@class CtpLspStyles
 -- Whether to enable the Native LSP integration.
 ---@field enabled boolean
 -- Styles to apply to virtual text.
----@field virtual_text CtpNativeLspStyles?
+---@field virtual_text CtpLspStyles?
 -- Styles to apply to underlines.
----@field underlines CtpNativeLspStyles?
+---@field underlines CtpLspStyles?
 -- Inlay hints options.
 ---@field inlay_hints CtpNativeLspInlayHints?
 

@@ -5,7 +5,7 @@ function M.get()
 		vim.notify_once(
 			[[Catppuccin (info):
 semantic_tokens integration requires neovim 0.8
-If you want to stay on nvim 0.7, disable the integration.
+If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitter commit to 4cccb6f494eb255b32a290d37c35ca12584c74d0.
 ]],
 			vim.log.levels.INFO
 		)
