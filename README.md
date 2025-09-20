@@ -466,13 +466,12 @@ Setting `enabled` to `true` enables this integration.
 coc_nvim = true,
 ```
 > [!Note]
-> coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
+> coc.nvim by default link to native lsp highlight groups so `lsp_styles` options will also apply to coc
 
 In the nested tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 
 ```lua
-native_lsp = {
-    enabled = true,
+lsp_styles = {
     virtual_text = {
         errors = { "italic" },
         hints = { "italic" },
@@ -1151,8 +1150,7 @@ dap_ui = true
 <td>
 
 ```lua
-native_lsp = {
-    enabled = true,
+lsp_styles = {
     virtual_text = {
         errors = { "italic" },
         hints = { "italic" },

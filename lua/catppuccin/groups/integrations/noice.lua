@@ -2,7 +2,7 @@ local M = {}
 
 M.url = "https://github.com/folke/noice.nvim"
 
-local virtual_text = O.integrations.native_lsp.virtual_text
+local virtual_text = O.lsp_styles.virtual_text
 
 function M.get()
 	return { -- Personally the default integration is already pretty good
