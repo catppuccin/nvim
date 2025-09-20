@@ -400,7 +400,7 @@ use "akinsho/bufferline.nvim" {
   after = "catppuccin",
   config = function()
     require("bufferline").setup {
-      highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
+      highlights = require("catppuccin.special.bufferline").get_theme()
     }
   end
 }
@@ -411,7 +411,7 @@ Configurations are self-explanatory, see `:h bufferline-highlights` for detailed
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 bufferline.setup {
-    highlights = require("catppuccin.groups.integrations.bufferline").get_theme {
+    highlights = require("catppuccin.special.bufferline").get_theme {
         styles = { "italic", "bold" },
         custom = {
             all = {
@@ -574,7 +574,7 @@ dropbar = {
 Update your Feline config to use the Catppuccin components:
 
 ```lua
-local ctp_feline = require('catppuccin.groups.integrations.feline')
+local ctp_feline = require('catppuccin.special.feline')
 
 ctp_feline.setup()
 
@@ -589,7 +589,7 @@ Here are the defaults:
 
 ```lua
 local clrs = require("catppuccin.palettes").get_palette()
-local ctp_feline = require('catppuccin.groups.integrations.feline')
+local ctp_feline = require('catppuccin.special.feline')
 local U = require "catppuccin.utils.colors"
 
 ctp_feline.setup({
@@ -666,9 +666,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
         package.loaded["feline"] = nil
-        package.loaded["catppuccin.groups.integrations.feline"] = nil
+        package.loaded["catppuccin.special.feline"] = nil
         require("feline").setup {
-            components = require("catppuccin.groups.integrations.feline").get_statusline(),
+            components = require("catppuccin.special.feline").get_statusline(),
         }
     end,
 })
