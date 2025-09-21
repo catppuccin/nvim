@@ -111,7 +111,6 @@ options and settings.
             cmp = true,
             gitsigns = true,
             nvimtree = true,
-            treesitter = true,
             notify = false,
             mini = {
                 enabled = true,
@@ -233,7 +232,6 @@ example:
             cmp = true,
             gitsigns = true,
             nvimtree = true,
-            treesitter = true,
             notify = false,
             mini = {
                 enabled = true,
@@ -656,10 +654,6 @@ lualine.nvimSpecial ~
     }
 <
 
-markdown>lua
-    markdown = true
-<
-
 markview.nvim>lua
     markview = false
 <
@@ -783,10 +777,6 @@ nvim-tree.lua>lua
 
 nvim-treesitter-context>lua
     treesitter_context = true
-<
-
-nvim-treesitter>lua
-    treesitter = true
 <
 
 nvim-ts-rainbow2>lua
