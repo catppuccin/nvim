@@ -52,7 +52,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@property"] = { fg = C.text, style = O.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
+		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
@@ -174,12 +174,6 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@markup.link.label.html"] = { fg = C.text }, -- Text between <a></a> tags.
 		["@character.special.html"] = { fg = C.red }, -- Symbols such as &nbsp;.
 
-		-- TOML
-		["@property.toml"] = { fg = C.blue }, -- For fields.
-
-		-- JSON
-		["@property.json"] = { fg = C.blue }, -- For fields.
-
 		-- Lua
 		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
@@ -187,12 +181,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@constructor.python"] = { fg = C.sky }, -- __init__(), __new__().
 
 		-- YAML
-		["@property.yaml"] = { fg = C.blue }, -- For fields.
 		["@label.yaml"] = { fg = C.yellow }, -- Anchor and alias names.
-
-		-- Nix
-		["@variable.member.nix"] = { fg = C.blue }, -- For fields.
-		["@lsp.type.property.nix"] = { fg = C.blue }, -- Also for fields, from LSP.
 
 		-- Ruby
 		["@string.special.symbol.ruby"] = { fg = C.flamingo },
