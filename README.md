@@ -131,7 +131,6 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        treesitter = true,
         notify = false,
         mini = {
             enabled = true,
@@ -244,7 +243,6 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        treesitter = true,
         notify = false,
         mini = {
             enabled = true,
@@ -946,20 +944,6 @@ require('lualine').setup {
 
 <!-- lualine.nvim -->
 
-<!-- markdown -->
-</tr>
-<tr>
-<td> <a href="https://www.markdownguide.org/">markdown</a> </td>
-<td>
-
-```lua
-markdown = true
-```
-
-</td>
-</tr>
-<!-- markdown -->
-
 <!-- markview.nvim -->
 </tr>
 <tr>
@@ -1278,20 +1262,6 @@ treesitter_context = true
 </td>
 </tr>
 <!-- nvim-treesitter-context -->
-
-<!-- nvim-treesitter -->
-</tr>
-<tr>
-<td> <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> </td>
-<td>
-
-```lua
-treesitter = true
-```
-
-</td>
-</tr>
-<!-- nvim-treesitter -->
 
 <!-- nvim-ts-rainbow2 -->
 </tr>
