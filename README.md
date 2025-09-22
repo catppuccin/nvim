@@ -1207,20 +1207,6 @@ notify = false
 </tr>
 <!-- nvim-notify -->
 
-<!-- nvim-semantic-tokens -->
-</tr>
-<tr>
-<td> <a href="https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight">nvim-semantic-tokens</a> </td>
-<td>
-
-```lua
-semantic_tokens = true
-```
-
-</td>
-</tr>
-<!-- nvim-semantic-tokens -->
-
 <!-- nvim-surround -->
 </tr>
 <tr>

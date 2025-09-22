@@ -79,9 +79,7 @@ local M = {
 			ufo = true,
 			rainbow_delimiters = true,
 			render_markdown = true,
-			semantic_tokens = not is_vim,
 			telescope = { enabled = true },
-			treesitter = not is_vim,
 			treesitter_context = true,
 			barbecue = {
 				dim_dirname = true,
