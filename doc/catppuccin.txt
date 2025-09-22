@@ -763,10 +763,6 @@ nvim-notify>lua
     notify = false
 <
 
-nvim-semantic-tokens>lua
-    semantic_tokens = true
-<
-
 nvim-surround>lua
     nvim_surround = false
 <
