@@ -22,8 +22,19 @@ function M.apply(flavour)
 		)
 
 	local theme = {}
-	theme.syntax = require("catppuccin.groups.syntax").get()
 	theme.editor = require("catppuccin.groups.editor").get()
+	theme.syntax = vim.tbl_deep_extend(
+		"force",
+		unpack(vim.iter(ipairs {
+			"lsp",
+			"markdown",
+			"semantic_tokens",
+			"syntax",
+			"treesitter",
+		})
+			:map(function(_, name) return require("catppuccin.groups." .. name).get() end)
+			:totable())
+	)
 	local final_integrations = {}
 
 	-- https://github.com/catppuccin/nvim/pull/624
