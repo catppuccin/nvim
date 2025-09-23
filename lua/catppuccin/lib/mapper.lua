@@ -23,15 +23,16 @@ function M.apply(flavour)
 
 	local theme = {}
 	theme.editor = require("catppuccin.groups.editor").get()
+	if vim.fn.has "nvim" == 1 then
+		theme.editor = vim.tbl_deep_extend("force", theme.editor, require("catppuccin.groups.lsp").get())
+	end
 
 	theme.syntax = {}
-	local syntax_modules = {
-		"lsp",
-		"markdown",
-		"semantic_tokens",
-		"syntax",
-		"treesitter",
-	}
+	local syntax_modules = { "syntax" }
+	if vim.fn.has "nvim" == 1 then
+		table.insert(syntax_modules, "semantic_tokens")
+		table.insert(syntax_modules, "treesitter")
+	end
 	for i = 1, #syntax_modules do
 		theme.syntax =
 			vim.tbl_deep_extend("force", theme.syntax, require("catppuccin.groups." .. syntax_modules[i]).get())
