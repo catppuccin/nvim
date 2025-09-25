@@ -96,8 +96,6 @@
 ---@field miscs CtpHighlightArgs[]?
 
 ---@class CtpLspStyles
--- Whether to enable the Native LSP integration.
----@field enabled boolean
 -- Styles to apply to virtual text.
 ---@field virtual_text CtpLspDiagnosticStyles?
 -- Styles to apply to underlines.
