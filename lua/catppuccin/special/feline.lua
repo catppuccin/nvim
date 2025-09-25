@@ -1,7 +1,5 @@
 local M = {}
 
-M.url = "https://github.com/freddiehaddad/feline.nvim"
-
 local C = require("catppuccin.palettes").get_palette()
 local ok, lsp = pcall(require, "feline.providers.lsp")
 local assets = nil

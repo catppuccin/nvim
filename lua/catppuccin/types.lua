@@ -32,6 +32,8 @@
 ---@field no_underline boolean?
 -- Handles the style of general hl groups (see `:h highlight-groups`).
 ---@field styles CtpStyles?
+-- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+---@field lsp_styles CtpLspStyles?
 -- Should default integrations be used.
 ---@field default_integrations boolean?
 -- Should detect integrations automatically
@@ -93,7 +95,17 @@
 -- Change the style of miscs.
 ---@field miscs CtpHighlightArgs[]?
 
----@class CtpNativeLspStyles
+---@class CtpLspStyles
+-- Whether to enable the Native LSP integration.
+---@field enabled boolean
+-- Styles to apply to virtual text.
+---@field virtual_text CtpLspDiagnosticStyles?
+-- Styles to apply to underlines.
+---@field underlines CtpLspDiagnosticStyles?
+-- Inlay hints options.
+---@field inlay_hints CtpLspStylesInlayHints?
+
+---@class CtpLspDiagnosticStyles
 -- Change the style of LSP error diagnostics.
 ---@field errors CtpHighlightArgs[]?
 -- Change the style of LSP hint diagnostics.
@@ -105,7 +117,7 @@
 -- Change the style of LSP ok diagnostics.
 ---@field ok CtpHighlightArgs[]?
 
----@class CtpNativeLspInlayHints
+---@class CtpLspStylesInlayHints
 -- Toggle the background of inlay hints.
 ---@field background boolean?
 
@@ -131,8 +143,8 @@
 ---@field blink_cmp CtpIntegrationsBlinkCmp | boolean?
 ---@field cmp boolean?
 ---@field buffon boolean?
--- `coc.nvim` links to `native_lsp` highlight groups, so you can use
--- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
+-- `coc.nvim` links to `lsp_styles` highlight groups, so you can use
+-- `lsp_styles.virtual_text` and `lsp_styles.underlines` to style diagnostics.
 ---@field coc_nvim boolean?
 ---@field colorful_winsep CtpIntegrationColorfulWinsep | boolean?
 ---@field copilot_vim boolean?
@@ -185,10 +197,8 @@
 -- ```
 ---@field lsp_saga boolean?
 ---@field lsp_trouble boolean?
----@field markdown boolean?
 ---@field markview boolean?
 ---@field mason boolean?
----@field native_lsp CtpIntegrationNativeLsp | boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
 --
 -- ```lua
@@ -210,13 +220,11 @@
 ---@field rainbow_delimiters boolean?
 ---@field render_markdown boolean?
 ---@field sandwich boolean?
----@field semantic_tokens boolean?
 ---@field snacks CtpIntegrationSnacks | boolean?
 ---@field signify boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
 ---@field telescope CtpIntegrationTelescope | boolean?
----@field treesitter boolean?
 ---@field treesitter_context boolean?
 ---@field ts_rainbow boolean?
 ---@field ts_rainbow2 boolean?
@@ -282,16 +290,6 @@
 ---@field enabled boolean
 -- Sets the color of the scope line
 ---@field indentscope_color CtpColor?
-
----@class CtpIntegrationNativeLsp
--- Whether to enable the Native LSP integration.
----@field enabled boolean
--- Styles to apply to virtual text.
----@field virtual_text CtpNativeLspStyles?
--- Styles to apply to underlines.
----@field underlines CtpNativeLspStyles?
--- Inlay hints options.
----@field inlay_hints CtpNativeLspInlayHints?
 
 ---@class CtpIntegrationNavic
 -- Whether to enable the navic integration.

@@ -1,14 +1,10 @@
 local M = {}
 
-M.url = "https://github.com/akinsho/bufferline.nvim"
-
 local ctp = require "catppuccin"
 local O = ctp.options
 
 function M.get_theme(user_config)
 	user_config = user_config or {}
-	-- Backward compatibility
-	if O.integrations.bufferline then return {} end
 	return function()
 		local C = require("catppuccin.palettes").get_palette()
 		local transparent_background = O.transparent_background
