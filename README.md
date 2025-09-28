@@ -52,6 +52,11 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 ## Installation
 
+[Neovim built-in plugin manager](https://neovim.io/doc/user/pack.html)
+```lua
+vim.pack.add { "https://github.com/catppuccin/nvim" }
+```
+
 [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
@@ -60,11 +65,6 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 [mini.deps](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md)
 ```lua
 add({ source = "catppuccin/nvim", name = "catppuccin" })
-```
-
-[packer.nvim](https://github.com/wbthomason/packer.nvim)
-```lua
-use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
 [vim-plug](https://github.com/junegunn/vim-plug)
