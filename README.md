@@ -123,6 +123,25 @@ require("catppuccin").setup({
         operators = {},
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
+    lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+        virtual_text = {
+            errors = { "italic" },
+            hints = { "italic" },
+            warnings = { "italic" },
+            information = { "italic" },
+            ok = { "italic" },
+        },
+        underlines = {
+            errors = { "underline" },
+            hints = { "underline" },
+            warnings = { "underline" },
+            information = { "underline" },
+            ok = { "underline" },
+        },
+        inlay_hints = {
+            background = true,
+        },
+    },
     color_overrides = {},
     custom_highlights = {},
     default_integrations = true,
@@ -1126,44 +1145,6 @@ dap_ui = true
 </td>
 </tr>
 <!-- nvim-dap-ui -->
-
-<!-- nvim-lspconfig -->
-</tr>
-<tr>
-<td> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> </td>
-<td>
-
-```lua
-lsp_styles = {
-    virtual_text = {
-        errors = { "italic" },
-        hints = { "italic" },
-        warnings = { "italic" },
-        information = { "italic" },
-        ok = { "italic" },
-    },
-    underlines = {
-        errors = { "underline" },
-        hints = { "underline" },
-        warnings = { "underline" },
-        information = { "underline" },
-        ok = { "underline" },
-    },
-    inlay_hints = {
-        background = true,
-    },
-},
-```
-
-<details> <summary>Special</summary>
-
-In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
-
-</details>
-
-</td>
-</tr>
-<!-- nvim-lspconfig -->
 
 <!-- navic -->
 </tr>
