@@ -17,7 +17,7 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
 		["@variable.parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
-		["@variable.member"] = { fg = C.text }, -- For fields.
+		["@variable.member"] = { fg = C.lavender }, -- For fields.
 
 		["@constant"] = { link = "Constant" }, -- For constants
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
