@@ -17,7 +17,7 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		["@variable"] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
 		["@variable.parameter"] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
-		["@variable.member"] = { fg = C.text }, -- For fields.
+		["@variable.member"] = { fg = C.lavender }, -- For fields.
 
 		["@constant"] = { link = "Constant" }, -- For constants
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
@@ -50,7 +50,7 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@property"] = { fg = C.text, style = O.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
+		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
@@ -172,12 +172,6 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		["@markup.link.label.html"] = { fg = C.text }, -- Text between <a></a> tags.
 		["@character.special.html"] = { fg = C.red }, -- Symbols such as &nbsp;.
 
-		-- TOML
-		["@property.toml"] = { fg = C.blue }, -- For fields.
-
-		-- JSON
-		["@property.json"] = { fg = C.blue }, -- For fields.
-
 		-- Lua
 		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
@@ -185,12 +179,7 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		["@constructor.python"] = { fg = C.sky }, -- __init__(), __new__().
 
 		-- YAML
-		["@property.yaml"] = { fg = C.blue }, -- For fields.
 		["@label.yaml"] = { fg = C.yellow }, -- Anchor and alias names.
-
-		-- Nix
-		["@variable.member.nix"] = { fg = C.blue }, -- For fields.
-		["@lsp.type.property.nix"] = { fg = C.blue }, -- Also for fields, from LSP.
 
 		-- Ruby
 		["@string.special.symbol.ruby"] = { fg = C.flamingo },
