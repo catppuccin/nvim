@@ -123,6 +123,25 @@ require("catppuccin").setup({
         operators = {},
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
+    lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+        virtual_text = {
+            errors = { "italic" },
+            hints = { "italic" },
+            warnings = { "italic" },
+            information = { "italic" },
+            ok = { "italic" },
+        },
+        underlines = {
+            errors = { "underline" },
+            hints = { "underline" },
+            warnings = { "underline" },
+            information = { "underline" },
+            ok = { "underline" },
+        },
+        inlay_hints = {
+            background = true,
+        },
+    },
     color_overrides = {},
     custom_highlights = {},
     default_integrations = true,
@@ -131,7 +150,6 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        treesitter = true,
         notify = false,
         mini = {
             enabled = true,
@@ -244,7 +262,6 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        treesitter = true,
         notify = false,
         mini = {
             enabled = true,
@@ -400,7 +417,7 @@ use "akinsho/bufferline.nvim" {
   after = "catppuccin",
   config = function()
     require("bufferline").setup {
-      highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
+      highlights = require("catppuccin.special.bufferline").get_theme()
     }
   end
 }
@@ -411,7 +428,7 @@ Configurations are self-explanatory, see `:h bufferline-highlights` for detailed
 ```lua
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 bufferline.setup {
-    highlights = require("catppuccin.groups.integrations.bufferline").get_theme {
+    highlights = require("catppuccin.special.bufferline").get_theme {
         styles = { "italic", "bold" },
         custom = {
             all = {
@@ -466,13 +483,12 @@ Setting `enabled` to `true` enables this integration.
 coc_nvim = true,
 ```
 > [!Note]
-> coc.nvim by default link to native lsp highlight groups so config from `native_lsp` will also apply to coc
+> coc.nvim by default link to native lsp highlight groups so `lsp_styles` options will also apply to coc
 
 In the nested tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
 
 ```lua
-native_lsp = {
-    enabled = true,
+lsp_styles = {
     virtual_text = {
         errors = { "italic" },
         hints = { "italic" },
@@ -574,7 +590,7 @@ dropbar = {
 Update your Feline config to use the Catppuccin components:
 
 ```lua
-local ctp_feline = require('catppuccin.groups.integrations.feline')
+local ctp_feline = require('catppuccin.special.feline')
 
 ctp_feline.setup()
 
@@ -589,7 +605,7 @@ Here are the defaults:
 
 ```lua
 local clrs = require("catppuccin.palettes").get_palette()
-local ctp_feline = require('catppuccin.groups.integrations.feline')
+local ctp_feline = require('catppuccin.special.feline')
 local U = require "catppuccin.utils.colors"
 
 ctp_feline.setup({
@@ -666,9 +682,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
         package.loaded["feline"] = nil
-        package.loaded["catppuccin.groups.integrations.feline"] = nil
+        package.loaded["catppuccin.special.feline"] = nil
         require("feline").setup {
-            components = require("catppuccin.groups.integrations.feline").get_statusline(),
+            components = require("catppuccin.special.feline").get_statusline(),
         }
     end,
 })
@@ -947,20 +963,6 @@ require('lualine').setup {
 
 <!-- lualine.nvim -->
 
-<!-- markdown -->
-</tr>
-<tr>
-<td> <a href="https://www.markdownguide.org/">markdown</a> </td>
-<td>
-
-```lua
-markdown = true
-```
-
-</td>
-</tr>
-<!-- markdown -->
-
 <!-- markview.nvim -->
 </tr>
 <tr>
@@ -1023,7 +1025,7 @@ neotree = true
 <!-- neogit -->
 </tr>
 <tr>
-<td> <a href="https://github.com/TimUntersberger/neogit">neogit</a> </td>
+<td> <a href="https://github.com/NeogitOrg/neogit">neogit</a> </td>
 <td>
 
 ```lua
@@ -1144,45 +1146,6 @@ dap_ui = true
 </tr>
 <!-- nvim-dap-ui -->
 
-<!-- nvim-lspconfig -->
-</tr>
-<tr>
-<td> <a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> </td>
-<td>
-
-```lua
-native_lsp = {
-    enabled = true,
-    virtual_text = {
-        errors = { "italic" },
-        hints = { "italic" },
-        warnings = { "italic" },
-        information = { "italic" },
-        ok = { "italic" },
-    },
-    underlines = {
-        errors = { "underline" },
-        hints = { "underline" },
-        warnings = { "underline" },
-        information = { "underline" },
-        ok = { "underline" },
-    },
-    inlay_hints = {
-        background = true,
-    },
-},
-```
-
-<details> <summary>Special</summary>
-
-In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
-
-</details>
-
-</td>
-</tr>
-<!-- nvim-lspconfig -->
-
 <!-- navic -->
 </tr>
 <tr>
@@ -1225,20 +1188,6 @@ notify = false
 </tr>
 <!-- nvim-notify -->
 
-<!-- nvim-semantic-tokens -->
-</tr>
-<tr>
-<td> <a href="https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight">nvim-semantic-tokens</a> </td>
-<td>
-
-```lua
-semantic_tokens = true
-```
-
-</td>
-</tr>
-<!-- nvim-semantic-tokens -->
-
 <!-- nvim-surround -->
 </tr>
 <tr>
@@ -1280,20 +1229,6 @@ treesitter_context = true
 </td>
 </tr>
 <!-- nvim-treesitter-context -->
-
-<!-- nvim-treesitter -->
-</tr>
-<tr>
-<td> <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> </td>
-<td>
-
-```lua
-treesitter = true
-```
-
-</td>
-</tr>
-<!-- nvim-treesitter -->
 
 <!-- nvim-ts-rainbow2 -->
 </tr>

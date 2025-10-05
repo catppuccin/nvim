@@ -40,6 +40,25 @@ local M = {
 			types = {},
 			operators = {},
 		},
+		lsp_styles = {
+			virtual_text = {
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
+				ok = { "italic" },
+			},
+			underlines = {
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
+				ok = { "underline" },
+			},
+			inlay_hints = {
+				background = true,
+			},
+		},
 		default_integrations = true,
 		auto_integrations = false,
 		integrations = {
@@ -60,9 +79,7 @@ local M = {
 			ufo = true,
 			rainbow_delimiters = true,
 			render_markdown = true,
-			semantic_tokens = not is_vim,
 			telescope = { enabled = true },
-			treesitter = not is_vim,
 			treesitter_context = true,
 			barbecue = {
 				dim_dirname = true,
@@ -78,26 +95,6 @@ local M = {
 				enabled = true,
 				scope_color = "",
 				colored_indent_levels = false,
-			},
-			native_lsp = {
-				enabled = true,
-				virtual_text = {
-					errors = { "italic" },
-					hints = { "italic" },
-					warnings = { "italic" },
-					information = { "italic" },
-					ok = { "italic" },
-				},
-				underlines = {
-					errors = { "underline" },
-					hints = { "underline" },
-					warnings = { "underline" },
-					information = { "underline" },
-					ok = { "underline" },
-				},
-				inlay_hints = {
-					background = true,
-				},
 			},
 			navic = {
 				enabled = false,
