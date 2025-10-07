@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/yetone/avante.nvim"
+
 function M.get()
 	local rounded = O.integrations.avante.windows_sidebar_header_rounded
 	return {
@@ -50,6 +52,18 @@ function M.get()
 		AvanteToBeDeleted = {
 			bg = O.transparent_background and C.none or C.mantle,
 			fg = C.red,
+		},
+
+		AvanteSidebarWinSeparator = {
+			link = "WinSeparator",
+		},
+
+		AvantePromptInput = {
+			link = "FloatNormal",
+		},
+
+		AvantePromptInputBorder = {
+			link = "FloatBorder",
 		},
 	}
 end

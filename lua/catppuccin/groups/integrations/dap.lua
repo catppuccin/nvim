@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/mfussenegger/nvim-dap"
+
 function M.get()
 	return {
 		DapBreakpoint = { fg = C.red },

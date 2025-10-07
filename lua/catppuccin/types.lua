@@ -15,6 +15,7 @@
 ---@field compile_path string?
 -- Whether to enable transparency.
 ---@field transparent_background boolean?
+---@field float CtpFloatOpts
 -- Toggle the `~` characters after the end of buffers.
 ---@field show_end_of_buffer boolean?
 -- If true, sets terminal colors (e.g. `g:terminal_color_0`).
@@ -31,8 +32,12 @@
 ---@field no_underline boolean?
 -- Handles the style of general hl groups (see `:h highlight-groups`).
 ---@field styles CtpStyles?
+-- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+---@field lsp_styles CtpLspStyles?
 -- Should default integrations be used.
 ---@field default_integrations boolean?
+-- Should detect integrations automatically
+---@field auto_integrations boolean?
 -- Toggle integrations. Integrations allow Catppuccin to set the theme of various plugins.
 ---@field integrations CtpIntegrations?
 -- Catppuccin colors can be overwritten here.
@@ -49,6 +54,10 @@
 ---@field dark CtpFlavor?
 -- Catppuccin flavor to use when `:set background=light` is set.
 ---@field light CtpFlavor?
+
+---@class CtpFloatOpts
+---@field transparent boolean enable transparent floating windows
+---@field solid boolean use solid style floating windows, see |winborder|
 
 ---@class CtpDimInactive
 -- Whether to dim inactive windows.
@@ -86,7 +95,15 @@
 -- Change the style of miscs.
 ---@field miscs CtpHighlightArgs[]?
 
----@class CtpNativeLspStyles
+---@class CtpLspStyles
+-- Styles to apply to virtual text.
+---@field virtual_text CtpLspDiagnosticStyles?
+-- Styles to apply to underlines.
+---@field underlines CtpLspDiagnosticStyles?
+-- Inlay hints options.
+---@field inlay_hints CtpLspStylesInlayHints?
+
+---@class CtpLspDiagnosticStyles
 -- Change the style of LSP error diagnostics.
 ---@field errors CtpHighlightArgs[]?
 -- Change the style of LSP hint diagnostics.
@@ -98,7 +115,7 @@
 -- Change the style of LSP ok diagnostics.
 ---@field ok CtpHighlightArgs[]?
 
----@class CtpNativeLspInlayHints
+---@class CtpLspStylesInlayHints
 -- Toggle the background of inlay hints.
 ---@field background boolean?
 
@@ -121,10 +138,11 @@
 ---```
 ---@field barbecue CtpIntegrationBarbecue | boolean?
 ---@field beacon boolean?
----@field blink_cmp boolean?
+---@field blink_cmp CtpIntegrationsBlinkCmp | boolean?
 ---@field cmp boolean?
--- `coc.nvim` links to `native_lsp` highlight groups, so you can use
--- `native_lsp.virtual_text` and `native_lsp.underlines` to style diagnostics.
+---@field buffon boolean?
+-- `coc.nvim` links to `lsp_styles` highlight groups, so you can use
+-- `lsp_styles.virtual_text` and `lsp_styles.underlines` to style diagnostics.
 ---@field coc_nvim boolean?
 ---@field colorful_winsep CtpIntegrationColorfulWinsep | boolean?
 ---@field copilot_vim boolean?
@@ -156,7 +174,7 @@
 ---@field fzf boolean?
 ---@field gitgutter boolean?
 ---@field gitgraph boolean?
----@field gitsigns boolean?
+---@field gitsigns CtpIntegrationGitsigns | boolean?
 ---@field grug_far boolean?
 ---@field harpoon boolean?
 ---@field headlines boolean?
@@ -179,8 +197,8 @@
 ---@field lsp_trouble boolean?
 ---@field lualine CtpIntegrationLualine?
 ---@field markdown boolean?
+---@field markview boolean?
 ---@field mason boolean?
----@field native_lsp CtpIntegrationNativeLsp | boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
 --
 -- ```lua
@@ -202,12 +220,11 @@
 ---@field rainbow_delimiters boolean?
 ---@field render_markdown boolean?
 ---@field sandwich boolean?
----@field semantic_tokens boolean?
 ---@field snacks CtpIntegrationSnacks | boolean?
+---@field signify boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
 ---@field telescope CtpIntegrationTelescope | boolean?
----@field treesitter boolean?
 ---@field treesitter_context boolean?
 ---@field ts_rainbow boolean?
 ---@field ts_rainbow2 boolean?
@@ -231,6 +248,10 @@
 -- Whether the directory name should be dimmed.
 ---@field dim_dirname boolean?
 
+---@class CtpIntegrationsBlinkCmp
+--- The border style for the completion menu
+---@field style 'solid'|'bordered'
+
 ---@class CtpIntegrationColorfulWinsep
 -- Whether to enable the colorful-winsep integration.
 ---@field enabled boolean
@@ -242,6 +263,12 @@
 ---@field enabled boolean
 -- Set to true to apply color to the text in dropbar, false to only apply it to the icons.
 ---@field color_mode boolean?
+
+---@class CtpIntegrationGitsigns
+--- Whether to enable the gitsigns integration
+---@field enabled boolean
+--- Whether to enabled transparent background option
+---@field transparent boolean?
 
 ---@class CtpIntegrationIndentBlankline
 -- Whether to enable the integration.
@@ -305,8 +332,6 @@
 ---@class CtpIntegrationTelescope
 -- Whether to enable the telescope integration
 ---@field enabled boolean?
--- The style of Telescope
----@field style "classic" | "nvchad" | nil
 
 ---@class CtpIntegrationIlluminate
 -- Whether to enable the vim-illuminate integration

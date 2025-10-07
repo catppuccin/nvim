@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: pandoc to vimdoc
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
@@ -20,7 +20,7 @@ jobs:
           toc: true
           version: "nvim >= 0.8.0"
           treesitter: true
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "docs: auto generate vimdoc"
           branch: ${{ github.head_ref }}

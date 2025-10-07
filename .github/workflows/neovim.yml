@@ -14,11 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Neovim
         uses: MunifTanjim/setup-neovim-action@v1
-        with:
-          tag: nightly
       - name: Run neovim
         run: |
           nvim --version
@@ -28,7 +26,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Neovim
         run: |
           wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz
@@ -43,7 +41,7 @@ jobs:
     name: Windows
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Neovim
         run: |
           C:\msys64\usr\bin\wget.exe -q https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip

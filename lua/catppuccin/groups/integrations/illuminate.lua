@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/RRethy/vim-illuminate"
+
 function M.get()
 	return {
 		IlluminatedWordText = { bg = U.darken(C.surface1, 0.7, C.base) },

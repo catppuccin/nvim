@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/echasnovski/mini.nvim"
+
 function M.get()
 	local transparent_background = require("catppuccin").options.transparent_background
 	local bg_highlight = transparent_background and "NONE" or C.base
@@ -50,7 +52,14 @@ function M.get()
 		MiniFilesFile = { fg = C.text },
 		MiniFilesNormal = { link = "NormalFloat" },
 		MiniFilesTitle = { link = "FloatTitle" },
-		MiniFilesTitleFocused = { fg = C.subtext0, style = { "bold" } },
+		MiniFilesTitleFocused = O.float.solid and {
+			fg = C.crust,
+			bg = C.mauve,
+		} or {
+			fg = C.subtext0,
+			bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle,
+			style = { "bold" },
+		},
 
 		MiniHipatternsFixme = { fg = C.base, bg = C.red, style = { "bold" } },
 		MiniHipatternsHack = { fg = C.base, bg = C.yellow, style = { "bold" } },
@@ -89,17 +98,32 @@ function M.get()
 
 		MiniPickBorder = { link = "FloatBorder" },
 		MiniPickBorderBusy = { link = "DiagnosticFloatingWarn" },
-		MiniPickBorderText = { fg = C.mauve },
+		MiniPickBorderText = O.float.solid and {
+			fg = C.crust,
+			bg = C.mauve,
+		} or { fg = C.mauve, bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle },
 		MiniPickIconDirectory = { link = "Directory" },
 		MiniPickIconFile = { link = "MiniPickNormal" },
 		MiniPickHeader = { link = "DiagnosticFloatingHint" },
-		MiniPickMatchCurrent = { link = "CursorLine" },
+		MiniPickMatchCurrent = {
+			fg = C.flamingo,
+			bg = C.surface0,
+			style = { "bold" },
+		},
 		MiniPickMatchMarked = { link = "Visual" },
 		MiniPickMatchRanges = { link = "DiagnosticFloatingHint" },
 		MiniPickNormal = { link = "NormalFloat" },
 		MiniPickPreviewLine = { link = "CursorLine" },
 		MiniPickPreviewRegion = { link = "IncSearch" },
-		MiniPickPrompt = { link = "DiagnosticFloatingInfo" },
+		MiniPickPrompt = { fg = C.text, bg = O.float.transparent and C.none or C.mantle },
+		MiniPickPromptCaret = {
+			fg = C.flamingo,
+			bg = O.float.transparent and C.none or C.mantle,
+		},
+		MiniPickPromptPrefix = {
+			fg = C.flamingo,
+			bg = O.float.transparent and C.none or C.mantle,
+		},
 
 		MiniStarterCurrent = {},
 		MiniStarterFooter = { fg = C.yellow, style = { "italic" } },

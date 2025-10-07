@@ -5,7 +5,7 @@ function M.get()
 		vim.notify_once(
 			[[Catppuccin (info):
 nvim-treesitter integration requires neovim 0.8
-If you want to stay on nvim 0.7, either disable the integration or pin catppuccin tag to v0.2.4 and nvim-treesitter commit to 4cccb6f494eb255b32a290d37c35ca12584c74d0.
+If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitter commit to 4cccb6f494eb255b32a290d37c35ca12584c74d0.
 ]],
 			vim.log.levels.INFO
 		)
@@ -23,18 +23,19 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@constant.builtin"] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
 		["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
 
-		["@module"] = { fg = C.lavender, style = O.styles.miscs or { "italic" } }, -- For identifiers referring to modules and namespaces.
+		["@module"] = { fg = C.yellow, style = O.styles.miscs or { "italic" } }, -- For identifiers referring to modules and namespaces.
 		["@label"] = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
 
 		-- Literals
 		["@string"] = { link = "String" }, -- For strings.
 		["@string.documentation"] = { fg = C.teal, style = O.styles.strings or {} }, -- For strings documenting code (e.g. Python docstrings).
-		["@string.regexp"] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
+		["@string.regexp"] = { fg = C.pink, style = O.styles.strings or {} }, -- For regexes.
 		["@string.escape"] = { fg = C.pink, style = O.styles.strings or {} }, -- For escape characters within a string.
 		["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
 		["@string.special.path"] = { link = "Special" }, -- filenames
 		["@string.special.symbol"] = { fg = C.flamingo }, -- symbols or atoms
-		["@string.special.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
+		["@string.special.url"] = { fg = C.blue, style = { "italic", "underline" } }, -- urls, links and emails
+		["@punctuation.delimiter.regex"] = { link = "@string.regexp" },
 
 		["@character"] = { link = "Character" }, -- character literals
 		["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
@@ -45,22 +46,22 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Types
 		["@type"] = { link = "Type" }, -- For types.
-		["@type.builtin"] = { fg = C.yellow, style = O.styles.properties or { "italic" } }, -- For builtin types.
+		["@type.builtin"] = { fg = C.mauve, style = O.styles.properties or { "italic" } }, -- For builtin types.
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- Same as TSField.
+		["@property"] = { fg = C.lavender, style = O.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- For function (calls and definitions).
 		["@function.builtin"] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
 		["@function.call"] = { link = "Function" }, -- function calls
-		["@function.macro"] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Rust.
+		["@function.macro"] = { fg = C.pink, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Rust.
 
 		["@function.method"] = { link = "Function" }, -- For method definitions.
 		["@function.method.call"] = { link = "Function" }, -- For method calls.
 
-		["@constructor"] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@constructor"] = { fg = C.yellow }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 		["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
 
 		-- Keywords
@@ -69,7 +70,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.type"] = { link = "Keyword" }, -- For keywords describing composite types (e.g. `struct`, `enum`)
 		["@keyword.coroutine"] = { link = "Keyword" }, -- For keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
 		["@keyword.function"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
-		["@keyword.operator"] = { link = "Operator" }, -- For new keyword operator
+		["@keyword.operator"] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For new keyword operator
 		["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
 		["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
 		["@keyword.return"] = { fg = C.mauve, style = O.styles.keywords or {} },
@@ -82,7 +83,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
 		["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
 		-- JS & derivative
-		["@keyword.export"] = { fg = C.sky, style = O.styles.keywords },
+		["@keyword.export"] = { fg = C.mauve, style = O.styles.keywords },
 
 		-- Punctuation
 		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters (e.g. `;` / `.` / `,`).
@@ -101,25 +102,26 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 
 		-- Markup
 		["@markup"] = { fg = C.text }, -- For strings considerated text in a markup language.
-		["@markup.strong"] = { fg = C.maroon, style = { "bold" } }, -- bold
-		["@markup.italic"] = { fg = C.maroon, style = { "italic" } }, -- italic
+		["@markup.strong"] = { fg = C.red, style = { "bold" } }, -- bold
+		["@markup.italic"] = { fg = C.red, style = { "italic" } }, -- italic
 		["@markup.strikethrough"] = { fg = C.text, style = { "strikethrough" } }, -- strikethrough text
 		["@markup.underline"] = { link = "Underlined" }, -- underlined text
 
-		["@markup.heading"] = { fg = C.blue, style = { "bold" } }, -- titles like: # Example
+		["@markup.heading"] = { fg = C.blue }, -- titles like: # Example
+		["@markup.heading.markdown"] = { style = { "bold" } }, -- bold headings in markdown, but not in HTML or other markup
 
 		["@markup.math"] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
-		["@markup.quote"] = { fg = C.maroon, style = { "bold" } }, -- block quotes
+		["@markup.quote"] = { fg = C.pink }, -- block quotes
 		["@markup.environment"] = { fg = C.pink }, -- text environments of markup languages
 		["@markup.environment.name"] = { fg = C.blue }, -- text indicating the type of an environment
 
-		["@markup.link"] = { link = "Tag" }, -- text references, footnotes, citations, etc.
-		["@markup.link.label"] = { link = "Label" }, -- link, reference descriptions
-		["@markup.link.url"] = { fg = C.rosewater, style = { "italic", "underline" } }, -- urls, links and emails
+		["@markup.link"] = { fg = C.lavender }, -- text references, footnotes, citations, etc.
+		["@markup.link.label"] = { fg = C.lavender }, -- link, reference descriptions
+		["@markup.link.url"] = { fg = C.blue, style = { "italic", "underline" } }, -- urls, links and emails
 
-		["@markup.raw"] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
+		["@markup.raw"] = { fg = C.green }, -- used for inline code in markdown and for doc in python (""")
 
-		["@markup.list"] = { link = "Special" },
+		["@markup.list"] = { fg = C.teal },
 		["@markup.list.checked"] = { fg = C.green }, -- todo notes
 		["@markup.list.unchecked"] = { fg = C.overlay1 }, -- todo notes
 
@@ -129,16 +131,19 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@diff.delta"] = { link = "diffChanged" }, -- deleted text (for diff files)
 
 		-- Tags
-		["@tag"] = { fg = C.mauve }, -- Tags like html tag names.
-		["@tag.attribute"] = { fg = C.teal, style = O.styles.miscs or { "italic" } }, -- Tags like html tag names.
-		["@tag.delimiter"] = { fg = C.sky }, -- Tag delimiter like < > /
+		["@tag"] = { fg = C.blue }, -- Tags like HTML tag names.
+		["@tag.builtin"] = { fg = C.blue }, -- JSX tag names.
+		["@tag.attribute"] = { fg = C.yellow, style = O.styles.miscs or { "italic" } }, -- XML/HTML attributes (foo in foo="bar").
+		["@tag.delimiter"] = { fg = C.teal }, -- Tag delimiter like < > /
 
 		-- Misc
 		["@error"] = { link = "Error" },
 
 		-- Language specific:
-		-- bash
+
+		-- Bash
 		["@function.builtin.bash"] = { fg = C.red, style = O.styles.miscs or { "italic" } },
+		["@variable.parameter.bash"] = { fg = C.green },
 
 		-- markdown
 		["@markup.heading.1.markdown"] = { link = "rainbow1" },
@@ -148,37 +153,33 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@markup.heading.5.markdown"] = { link = "rainbow5" },
 		["@markup.heading.6.markdown"] = { link = "rainbow6" },
 
-		-- java
+		-- Java
 		["@constant.java"] = { fg = C.teal },
 
-		-- css
-		["@property.css"] = { fg = C.lavender },
-		["@property.id.css"] = { fg = C.blue },
+		-- CSS
+		["@property.css"] = { fg = C.blue },
+		["@property.scss"] = { fg = C.blue },
+		["@property.id.css"] = { fg = C.yellow },
 		["@property.class.css"] = { fg = C.yellow },
 		["@type.css"] = { fg = C.lavender },
-		["@type.tag.css"] = { fg = C.mauve },
-		["@string.plain.css"] = { fg = C.peach },
+		["@type.tag.css"] = { fg = C.blue },
+		["@string.plain.css"] = { fg = C.text },
 		["@number.css"] = { fg = C.peach },
+		["@keyword.directive.css"] = { link = "Keyword" }, -- CSS at-rules: https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule.
 
-		-- toml
-		["@property.toml"] = { fg = C.blue }, -- Differentiates between string and properties
+		-- HTML
+		["@string.special.url.html"] = { fg = C.green }, -- Links in href, src attributes.
+		["@markup.link.label.html"] = { fg = C.text }, -- Text between <a></a> tags.
+		["@character.special.html"] = { fg = C.red }, -- Symbols such as &nbsp;.
 
-		-- json
-		["@label.json"] = { fg = C.blue }, -- For labels: label: in C and :label: in Lua.
+		-- Lua
+		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
-		-- lua
-		["@constructor.lua"] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua.
+		-- Python
+		["@constructor.python"] = { fg = C.sky }, -- __init__(), __new__().
 
-		-- typescript
-		["@property.typescript"] = { fg = C.lavender, style = O.styles.properties or {} },
-		["@constructor.typescript"] = { fg = C.lavender },
-
-		-- TSX (Typescript React)
-		["@constructor.tsx"] = { fg = C.lavender },
-		["@tag.attribute.tsx"] = { fg = C.teal, style = O.styles.miscs or { "italic" } },
-
-		-- yaml
-		["@variable.member.yaml"] = { fg = C.blue }, -- For fields.
+		-- YAML
+		["@label.yaml"] = { fg = C.yellow }, -- Anchor and alias names.
 
 		-- Ruby
 		["@string.special.symbol.ruby"] = { fg = C.flamingo },
@@ -188,9 +189,11 @@ If you want to stay on nvim 0.7, either disable the integration or pin catppucci
 		["@function.method.call.php"] = { link = "Function" },
 
 		-- C/CPP
-		["@type.builtin.c"] = { fg = C.yellow, style = {} },
-		["@property.cpp"] = { fg = C.text },
-		["@type.builtin.cpp"] = { fg = C.yellow, style = {} },
+		["@keyword.import.c"] = { fg = C.yellow },
+		["@keyword.import.cpp"] = { fg = C.yellow },
+
+		-- C#
+		["@attribute.c_sharp"] = { fg = C.yellow },
 
 		-- gitcommit
 		["@comment.warning.gitcommit"] = { fg = C.yellow },

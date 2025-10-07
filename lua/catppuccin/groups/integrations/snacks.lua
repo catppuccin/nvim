@@ -1,12 +1,14 @@
 local M = {}
 
+M.url = "https://github.com/folke/snacks.nvim"
+
 function M.get()
 	local indent_scope_color = O.integrations.snacks.indent_scope_color
 
-	return {
+	local hlgroups = {
 		SnacksNormal = { link = "NormalFloat" },
 		SnacksWinBar = { link = "Title" },
-		SnacksBackdrop = { fg = C.overlay0 },
+		SnacksBackdrop = { link = "FloatShadow" },
 		SnacksNormalNC = { link = "NormalFloat" },
 		SnacksWinBarNC = { link = "SnacksWinBar" },
 
@@ -50,7 +52,41 @@ function M.get()
 
 		SnacksIndent = { fg = C.surface0 },
 		SnacksIndentScope = { fg = C[indent_scope_color] or C.text },
+
+		SnacksPickerSelected = {
+			fg = O.float.transparent and C.flamingo or C.text,
+			bg = O.float.transparent and C.none or C.surface0,
+			style = { "bold" },
+		},
+		SnacksPickerMatch = { fg = C.blue },
+
+		SnacksPicker = { link = "NormalFloat" },
+		SnacksPickerBorder = { link = "FloatBorder" },
+		SnacksPickerInputBorder = { link = "SnacksPickerBorder" },
+		SnacksPickerInput = { link = "NormalFloat" },
+		SnacksPickerPrompt = { fg = C.flamingo },
 	}
+
+	if O.float.solid then
+		hlgroups["SnacksPickerTitle"] = {
+			fg = C.crust,
+			bg = C.mauve,
+		}
+		hlgroups["SnacksPickerPreviewTitle"] = {
+			fg = C.crust,
+			bg = C.green,
+		}
+		hlgroups["SnacksPickerInputTitle"] = {
+			fg = C.crust,
+			bg = C.red,
+		}
+		hlgroups["SnacksPickerListTitle"] = {
+			fg = C.crust,
+			bg = C.lavender,
+		}
+	end
+
+	return hlgroups
 end
 
 return M

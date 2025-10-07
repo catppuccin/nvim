@@ -1,11 +1,13 @@
 local M = {}
 
-function M.get()
-	if type(O.integrations.gitsigns) == "boolean" then
-		O.integrations.gitsigns = { enabled = true, transparent = false }
-	end
+M.url = "https://github.com/lewis6991/gitsigns.nvim"
 
-	if O.transparent_background then
+function M.get()
+	-- (a ~= nil) and a or b: Potential false-negative handling
+	local transparent = O.transparent_background
+	if type(O.integrations.gitsigns.transparent) == "boolean" then transparent = O.integrations.gitsigns.transparent end
+
+	if transparent then
 		return {
 			GitSignsAdd = { fg = C.green }, -- diff mode: Added line |diff.txt|
 			GitSignsChange = { fg = C.yellow }, -- diff mode: Changed line |diff.txt|
@@ -13,31 +15,15 @@ function M.get()
 
 			GitSignsCurrentLineBlame = { fg = C.surface1 },
 
-			GitSignsAddPreview = O.integrations.gitsigns.transparent
-					and { fg = U.darken(C.green, 0.72, C.base), bg = C.none }
-				or { link = "DiffAdd" },
-			GitSignsDeletePreview = O.integrations.gitsigns.transparent
-					and { fg = U.darken(C.red, 0.72, C.base), bg = C.none }
-				or { link = "DiffDelete" },
-			-- for word diff in previews
-			GitSignsAddInline = O.integrations.gitsigns.transparent and {
-				fg = C.green,
-				bg = C.none,
-				style = { "bold" },
-			} or { link = "DiffAdd" },
-			GitSignsDeleteInline = O.integrations.gitsigns.transparent and {
-				fg = C.red,
-				bg = C.none,
-				style = { "bold" },
-			} or { link = "DiffDelete" },
-			GitSignsChangeInline = O.integrations.gitsigns.transparent and {
-				fg = C.yellow,
-				bg = C.none,
-				style = { "bold" },
-			} or { link = "DiffChange" },
+			GitSignsAddPreview = { fg = C.green, bg = C.none },
+			GitSignsDeletePreview = { fg = C.red, bg = C.none },
 
-			GitSignsDeleteVirtLn = O.integrations.gitsigns.transparent and { bg = C.none, fg = C.red }
-				or { link = "DiffDelete" },
+			-- for word diff in previews
+			GitSignsAddInline = { fg = C.base, bg = C.green, style = { "bold" } },
+			GitSignsDeleteInline = { fg = C.base, bg = C.red, style = { "bold" } },
+			GitSignsChangeInline = { fg = C.base, bg = C.blue, style = { "bold" } },
+
+			GitSignsDeleteVirtLn = { bg = C.none, fg = C.red },
 		}
 	else
 		return {
@@ -47,12 +33,11 @@ function M.get()
 
 			GitSignsCurrentLineBlame = { fg = C.surface1 },
 
-			GitSignsAddPreview = O.integrations.gitsigns.transparent and { fg = C.green, bg = C.none }
-				or { link = "DiffAdd" },
-			GitSignsDeletePreview = O.integrations.gitsigns.transparent and { fg = C.red, bg = C.none }
-				or { link = "DiffDelete" },
+			GitSignsAddPreview = { link = "DiffAdd" },
+			GitSignsDeletePreview = { link = "DiffDelete" },
 
 			GitSignsAddInline = { bg = U.darken(C.green, 0.36, C.base) },
+			GitSignsChangeInline = { bg = U.darken(C.blue, 0.14, C.base) },
 			GitSignsDeleteInline = { bg = U.darken(C.red, 0.36, C.base) },
 		}
 	end

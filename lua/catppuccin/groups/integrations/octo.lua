@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/pwntester/octo.nvim"
+
 function M.get()
 	return {
 		-- colors
@@ -65,6 +67,7 @@ function M.get()
 		OctoStateSubmittedBubble = { link = "OctoBubbleGreen" },
 		OctoFilePanelCounter = { fg = C.blue, style = { "bold" } },
 		OctoFilePanelTitle = { fg = C.blue, style = { "bold" } },
+		OctoFilePanelFileName = {},
 		OctoNormalFront = { fg = C.text },
 		OctoYellowFloat = { fg = C.yellow, bg = C.base },
 		OctoPurpleFloat = { fg = C.mauve, bg = C.base },

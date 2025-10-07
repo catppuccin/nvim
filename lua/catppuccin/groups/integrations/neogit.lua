@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/NeogitOrg/neogit"
+
 function M.get()
 	return {
 		NeogitBranch = {
