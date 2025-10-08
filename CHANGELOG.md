@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.0.0](https://github.com/catppuccin/nvim/compare/v1.11.0...v2.0.0) (2025-10-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* move special and builtin integrations out of `groups/integrations/` ([#931](https://github.com/catppuccin/nvim/issues/931))
+* **integrations:** rename `get()` to `get_*()` on abnormal integrations ([#920](https://github.com/catppuccin/nvim/issues/920))
+* align treesitter colors with vscode/updated style guide ([#804](https://github.com/catppuccin/nvim/issues/804))
+* add global floating window options ([#892](https://github.com/catppuccin/nvim/issues/892))
+
+### Features
+
+* add global floating window options ([#892](https://github.com/catppuccin/nvim/issues/892)) ([b313c96](https://github.com/catppuccin/nvim/commit/b313c962cf94416dc4b297ab517f47b0cd8272ad))
+* **blink:** link signature help window border to `FloatBorder` ([#904](https://github.com/catppuccin/nvim/issues/904)) ([76a8d05](https://github.com/catppuccin/nvim/commit/76a8d0515024cc55d8bd26fc13f1af88faef3ebf))
+* **editor:** use `mantle` for pmenu background ([#899](https://github.com/catppuccin/nvim/issues/899)) ([55ad613](https://github.com/catppuccin/nvim/commit/55ad613dd0171a3460a8d4b0fea464c6c96e2f97))
+
+
+### Bug Fixes
+
+* align treesitter colors with vscode/updated style guide ([#804](https://github.com/catppuccin/nvim/issues/804)) ([f67971c](https://github.com/catppuccin/nvim/commit/f67971cd3e30dd94061da8d61ee34742d43c632a))
+* **blink-cmp:** pmenu border bg ([#897](https://github.com/catppuccin/nvim/issues/897)) ([931a129](https://github.com/catppuccin/nvim/commit/931a129463ca09c8805d564a28b3d0090e536e1d))
+* config `float` is optional in setup ([#938](https://github.com/catppuccin/nvim/issues/938)) ([af58927](https://github.com/catppuccin/nvim/commit/af58927c55c9f3272c940ff02b3cee94a1249f26))
+* **editor:** use `PmenuSel` bg for `PmenuExtraSel` ([#930](https://github.com/catppuccin/nvim/issues/930)) ([ff29b85](https://github.com/catppuccin/nvim/commit/ff29b85e2dd9ca8f88a9238dbe319b11956ac5b3))
+* **integrations/colorful_winsep:** update hl name ([#913](https://github.com/catppuccin/nvim/issues/913)) ([381e605](https://github.com/catppuccin/nvim/commit/381e605908efdf321887f962aca51b64f42bb401))
+* **integrations:** rename `get()` to `get_*()` on abnormal integrations ([#920](https://github.com/catppuccin/nvim/issues/920)) ([30fa4d1](https://github.com/catppuccin/nvim/commit/30fa4d122d9b22ad8b2e0ab1b533c8c26c4dde86))
+* **integrations:** update neogit url ([#928](https://github.com/catppuccin/nvim/issues/928)) ([f19cab1](https://github.com/catppuccin/nvim/commit/f19cab18ec4dc86d415512c7a572863b2adbcc18))
+* lazy plugins are in a dictionary rather than a list ([#918](https://github.com/catppuccin/nvim/issues/918)) ([9a9a875](https://github.com/catppuccin/nvim/commit/9a9a875e979fe9d2b42423d056f944dd286d0280))
+* misc tree-sitter and unset semantic tokens ([#902](https://github.com/catppuccin/nvim/issues/902)) ([8fd0915](https://github.com/catppuccin/nvim/commit/8fd0915ec0a2ad6376bfe895e6c4b3ffb5a5bad2))
+* **treesitter:** keep `[@property](https://github.com/property)` & `[@variable](https://github.com/variable).member` as `lavender` ([#905](https://github.com/catppuccin/nvim/issues/905)) ([e79d09f](https://github.com/catppuccin/nvim/commit/e79d09fa347b367e0e7f693bfe87dba932a8cbd1))
+
+
+### Code Refactoring
+
+* move special and builtin integrations out of `groups/integrations/` ([#931](https://github.com/catppuccin/nvim/issues/931)) ([5af9374](https://github.com/catppuccin/nvim/commit/5af9374957a65be8770696da295dc9016b96f241))
+
 ## [1.11.0](https://github.com/catppuccin/nvim/compare/v1.10.0...v1.11.0) (2025-07-31)
 
 
