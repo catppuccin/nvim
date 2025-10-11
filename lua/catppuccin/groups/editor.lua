@@ -54,6 +54,8 @@ function M.get()
 			fg = C.overlay2,
 		}, -- Popup menu: normal item.
 		PmenuSel = { bg = C.surface0, style = { "bold" } }, -- Popup menu: selected item.
+		PmenuMatch = { fg = C.text, style = { "bold" } }, -- Popup menu: matching text.
+		PmenuMatchSel = { style = { "bold" } }, -- Popup menu: matching text in selected item; is combined with |hl-PmenuMatch| and |hl-PmenuSel|.
 		PmenuSbar = { bg = C.surface0 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
 		PmenuExtra = { fg = C.overlay0 }, -- Popup menu: normal item extra text.
