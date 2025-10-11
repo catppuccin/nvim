@@ -62,6 +62,8 @@ function M.get()
 		illuminatedWord = { bg = C.surface1 },
 		illuminatedCurWord = { bg = C.surface1 },
 		-- diff
+		Added = { fg = C.green },
+		Changed = { fg = C.blue },
 		diffAdded = { fg = C.green },
 		diffRemoved = { fg = C.red },
 		diffChanged = { fg = C.blue },
