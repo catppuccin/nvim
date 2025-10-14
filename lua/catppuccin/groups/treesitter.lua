@@ -46,7 +46,7 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 
 		-- Types
 		["@type"] = { link = "Type" }, -- For types.
-		["@type.builtin"] = { fg = C.mauve, style = O.styles.properties or { "italic" } }, -- For builtin types.
+		["@type.builtin"] = { fg = C.mauve, style = O.styles.types or {} }, -- For builtin types.
 		["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
 		["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
