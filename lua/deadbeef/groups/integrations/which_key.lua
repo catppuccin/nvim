@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/folke/which-key.nvim"
 
 function M.get()
-	local normal_bg = O.transparent_background and C.none or C.base
+	local normal_bg = O.transparent_background and C.none or C.surface0
 	return {
 		WhichKey = { fg = C.blue },
 		WhichKeyGroup = { fg = C.mauve },

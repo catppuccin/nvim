@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/nvim-telescope/telescope.nvim"
 
 function M.get()
-	local normal_bg = O.transparent_background and C.none or C.base
+	local normal_bg = O.transparent_background and C.none or C.surface0
 	return {
 		TelescopeNormal = { fg = C.text, bg = normal_bg },
 		TelescopeBorder = { fg = C.overlay1, bg = normal_bg },
