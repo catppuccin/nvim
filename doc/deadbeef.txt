@@ -1,0 +1,307 @@
+*deadbeef.txt*  A vibrant dark colorscheme for Neovim and Vim
+
+==============================================================================
+Table of Contents                                    *deadbeef-contents*
+
+1. Introduction .......................... |deadbeef-introduction|
+2. Installation .......................... |deadbeef-installation|
+3. Usage ................................. |deadbeef-usage|
+4. Configuration ......................... |deadbeef-configuration|
+5. Customization ......................... |deadbeef-customization|
+6. Integrations .......................... |deadbeef-integrations|
+7. Compile ............................... |deadbeef-compile|
+8. License ............................... |deadbeef-license|
+
+==============================================================================
+1. Introduction                                  *deadbeef-introduction*
+
+DEADBEEF is a dark, vibrant colorscheme for Neovim and Vim with rich accent
+colors and excellent syntax highlighting. It provides:
+
+• Single focused theme - One carefully crafted dark colorscheme
+• Fast performance - Compiled theme for instant startup
+• Highly configurable - Extensive customization options
+• Rich integrations - Built-in support for popular plugins
+• Broad compatibility - Supports Neovim ≥ 0.8 and Vim ≥ 9 with Lua ≥ 5.1
+
+==============================================================================
+2. Installation                                  *deadbeef-installation*
+
+Using lazy.nvim: >lua
+    {
+      "sayo9394/deadbeef.nvim",
+      name = "deadbeef",
+      priority = 1000,
+      config = function()
+        vim.cmd.colorscheme "deadbeef"
+      end,
+    }
+<
+
+Using packer.nvim: >lua
+    use {
+      "sayo9394/deadbeef.nvim",
+      as = "deadbeef",
+      config = function()
+        vim.cmd.colorscheme "deadbeef"
+      end,
+    }
+<
+
+Using vim-plug: >vim
+    Plug 'sayo9394/deadbeef.nvim', { 'as': 'deadbeef' }
+<
+
+==============================================================================
+3. Usage                                         *deadbeef-usage*
+
+In Vimscript: >vim
+    colorscheme deadbeef
+<
+
+In Lua: >lua
+    vim.cmd.colorscheme "deadbeef"
+<
+
+==============================================================================
+4. Configuration                                 *deadbeef-configuration*
+                                                 *deadbeef-setup*
+                                                 *deadbeef.setup()*
+
+There is no need to call `setup()` if you don't want to change the default
+options.
+
+Example configuration: >lua
+    require("deadbeef").setup({
+        transparent_background = false,
+        show_end_of_buffer = false,
+        term_colors = true,
+        dim_inactive = {
+            enabled = false,
+            shade = "dark",
+            percentage = 0.15,
+        },
+        no_italic = false,
+        no_bold = false,
+        no_underline = false,
+        styles = {
+            comments = { "italic" },
+            conditionals = {},
+            loops = {},
+            functions = {},
+            keywords = {},
+            strings = {},
+            variables = {},
+            numbers = {},
+            booleans = {},
+            properties = {},
+            types = {},
+            operators = {},
+        },
+        lsp_styles = {
+            virtual_text = {
+                errors = {},
+                warnings = {},
+                information = {},
+                hints = {},
+            },
+            underlines = {
+                errors = { "underline" },
+                warnings = { "underline" },
+                information = { "underline" },
+                hints = { "underline" },
+            },
+            inlay_hints = {
+                background = false,
+            },
+        },
+        integrations = {
+            cmp = true,
+            gitsigns = true,
+            neotree = true,
+            nvimtree = true,
+            telescope = true,
+            treesitter = true,
+            lsp_trouble = true,
+            which_key = true,
+            mason = true,
+            lazy = true,
+            snacks = true,
+            oil = true,
+            indent_blankline = {
+                enabled = true,
+                scope_color = "",
+                colored_indent_levels = false,
+            },
+        },
+        color_overrides = {},
+        highlight_overrides = {},
+    })
+    
+    vim.cmd.colorscheme "deadbeef"
+<
+
+Configuration options:~
+
+                                            *deadbeef-config-transparent_background*
+transparent_background  (boolean, default: false)
+    Disables setting the background color.
+
+                                            *deadbeef-config-show_end_of_buffer*
+show_end_of_buffer      (boolean, default: false)
+    Shows the '~' characters after the end of buffers.
+
+                                            *deadbeef-config-term_colors*
+term_colors             (boolean, default: true)
+    Sets terminal colors (e.g. `g:terminal_color_0`).
+
+                                            *deadbeef-config-dim_inactive*
+dim_inactive            (table)
+    Configuration for dimming inactive windows.
+    • enabled: boolean (default: false)
+    • shade: "dark" | "light" (default: "dark")
+    • percentage: number (default: 0.15)
+
+                                            *deadbeef-config-styles*
+styles                  (table)
+    Configure styling for syntax highlight groups.
+    Available styles: "italic", "bold", "underline", "undercurl",
+    "strikethrough", "reverse"
+
+                                            *deadbeef-config-lsp_styles*
+lsp_styles              (table)
+    Configure styling for LSP diagnostic messages.
+    • virtual_text: table
+    • underlines: table
+    • inlay_hints: table
+
+                                            *deadbeef-config-integrations*
+integrations            (table)
+    Enable/disable plugin integrations. See |deadbeef-integrations|.
+
+                                            *deadbeef-config-color_overrides*
+color_overrides         (table)
+    Override specific colors from the palette. See |deadbeef-palette|.
+
+                                            *deadbeef-config-highlight_overrides*
+highlight_overrides     (table)
+    Override specific highlight groups.
+
+==============================================================================
+5. Customization                                 *deadbeef-customization*
+
+Getting the palette~
+                                                 *deadbeef-palette*
+
+>lua
+    local palette = require("deadbeef.palettes.deadbeef")
+    -- palette.blue, palette.green, palette.text, etc.
+<
+
+Available colors:~
+
+Accent colors:
+    rosewater, flamingo, pink, mauve, red, maroon, peach, yellow, green,
+    teal, sky, sapphire, blue, lavender
+
+Text hierarchy:
+    text, subtext1, subtext0, overlay2, overlay1, overlay0
+
+Background hierarchy:
+    surface2, surface1, surface0, base, mantle, crust
+
+Overwriting colors~
+
+>lua
+    require("deadbeef").setup({
+        color_overrides = {
+            text = "#ffffff",
+            base = "#000000",
+        },
+    })
+<
+
+Overwriting highlight groups~
+
+>lua
+    require("deadbeef").setup({
+        highlight_overrides = {
+            Comment = { fg = palette.flamingo },
+            ["@variable"] = { fg = palette.text, style = { "italic" } },
+            CmpBorder = { fg = palette.surface2 },
+        },
+    })
+<
+
+==============================================================================
+6. Integrations                                  *deadbeef-integrations*
+
+DEADBEEF has built-in support for the following plugins:
+
+• nvim-cmp
+• gitsigns.nvim
+• neo-tree.nvim
+• nvim-tree.lua
+• telescope.nvim
+• nvim-treesitter
+• trouble.nvim
+• which-key.nvim
+• mason.nvim
+• lazy.nvim
+• snacks.nvim
+• oil.nvim
+• indent-blankline.nvim
+
+All integrations are enabled by default. Disable specific integrations:
+
+>lua
+    require("deadbeef").setup({
+        integrations = {
+            cmp = false,
+        },
+    })
+<
+
+==============================================================================
+7. Compile                                       *deadbeef-compile*
+                                                 *:DeadbeefCompile*
+
+DEADBEEF is compiled by default for optimal performance. The theme is
+cached to ensure fast startup times.
+
+To manually recompile the theme (useful during development):
+
+>vim
+    :DeadbeefCompile
+<
+
+Or in Lua:
+
+>lua
+    require("deadbeef").compile()
+<
+
+The compiled theme is stored in your cache directory:
+`vim.fn.stdpath("cache") .. "/deadbeef"`
+
+Auto-compile on save (for development):~
+
+>lua
+    vim.g.deadbeef_debug = true
+<
+
+This will automatically recompile the theme when you save files in the
+`deadbeef/` directory.
+
+==============================================================================
+8. License                                       *deadbeef-license*
+
+MIT License
+
+Copyright (c) 2025 deadbeef.nvim
+
+This project was originally forked from catppuccin/nvim and has been
+adapted to provide a unique DEADBEEF colorscheme.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
