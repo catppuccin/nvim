@@ -1,6 +1,3 @@
-local is_vim = vim.fn.has "nvim" ~= 1
-if is_vim then require "catppuccin.lib.vim" end
-
 ---@type Catppuccin
 local M = {
 	default_options = {
@@ -131,7 +128,7 @@ function M.compile()
 	local user_flavour = M.flavour
 	for flavour, _ in pairs(M.flavours) do
 		M.flavour = flavour
-		require("catppuccin.lib." .. (is_vim and "vim." or "") .. "compiler").compile(flavour)
+		require("catppuccin.lib.compiler").compile(flavour)
 	end
 	M.flavour = user_flavour -- Restore user flavour after compile
 end
@@ -232,8 +229,6 @@ function M.setup(user_conf)
 		end
 	end
 end
-
-if is_vim then return M end
 
 vim.api.nvim_create_user_command(
 	"Catppuccin",

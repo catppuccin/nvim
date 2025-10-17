@@ -1,0 +1,1 @@
+require("catppuccin").load "macchiato"
