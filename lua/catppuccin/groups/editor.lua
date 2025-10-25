@@ -64,6 +64,10 @@ function M.get()
 			fg = C.overlay0,
 			style = { "bold" },
 		}, -- Popup menu: selected item extra text.
+		ComplMatchIns = { link = "PreInsert" }, -- Matched text of the currently inserted completion.
+		PreInsert = { fg = C.overlay2 }, -- Text inserted when "preinsert" is in 'completeopt'.
+		ComplHint = { fg = C.subtext0 }, -- Virtual text of the currently selected completion.
+		ComplHintMore = { link = "Question" }, -- The additional information of the virtual text.
 		Question = { fg = C.blue }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { bg = U.darken(C.surface1, 0.70, C.base), style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = U.darken(C.sky, 0.30, C.base), fg = C.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
