@@ -6,7 +6,7 @@ function M.get()
 	local indent_scope_color = O.integrations.snacks.indent_scope_color
 
 	local hlgroups = {
-		SnacksNormal = { link = "NormalFloat" },
+		SnacksNormal = { link = "Normal" },
 		SnacksWinBar = { link = "Title" },
 		SnacksBackdrop = { link = "FloatShadow" },
 		SnacksNormalNC = { link = "NormalFloat" },
