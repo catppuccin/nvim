@@ -1,4 +1,3 @@
---- Get the table of lualine colors if it is present (function or table)
 ---@param colors_override (CtpIntegrationLualineOverride | CtpIntegrationLualineOverrideFn)?
 ---@param colors CtpColors<string>
 local function get_colors(colors_override, colors)

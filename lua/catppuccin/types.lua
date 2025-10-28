@@ -196,7 +196,6 @@
 ---@field lsp_saga boolean?
 ---@field lsp_trouble boolean?
 ---@field lualine CtpIntegrationLualine?
----@field markdown boolean?
 ---@field markview boolean?
 ---@field mason boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
@@ -300,22 +299,9 @@
 ---@alias CtpIntegrationLualineSection "a" | "b" | "c"
 ---@class CtpIntegrationLualineSections<T>: { a: T, b: T, c: T }
 ---@class CtpIntegrationLualineSectionOverride
----Color string to use for both guifg and ctermfg
 ---@field fg string?
----Color string to use for both guibg and ctermbg
 ---@field bg string?
----`gui` argument to be used in vim `highlight!`, such as "italic,bold"
----@field gui string?
-
----@class CtpIntegrationNativeLsp
--- Whether to enable the Native LSP integration.
----@field enabled boolean
--- Styles to apply to virtual text.
----@field virtual_text CtpNativeLspStyles?
--- Styles to apply to underlines.
----@field underlines CtpNativeLspStyles?
--- Inlay hints options.
----@field inlay_hints CtpNativeLspInlayHints?
+---@field gui string? `gui` argument such as "italic,bold", see |highlight-gui|
 
 ---@class CtpIntegrationNavic
 -- Whether to enable the navic integration.

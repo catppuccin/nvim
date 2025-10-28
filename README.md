@@ -1018,7 +1018,7 @@ To setup lualine to find the catppuccin theme with default integration and any o
 -- Setup lualine 
 require('lualine').setup {
     options = {
-        -- lualine will integrate with catppuccin by name or automatically via vim.g.colors_name by setting this to "auto" 
+        -- lualine will integrate with catppuccin by name or automatically via `vim.g.colors_name` by setting this to "auto" 
         theme = "catppuccin"
         -- ... the rest of your lualine config
     }
