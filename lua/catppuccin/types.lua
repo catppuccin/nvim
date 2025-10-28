@@ -15,7 +15,7 @@
 ---@field compile_path string?
 -- Whether to enable transparency.
 ---@field transparent_background boolean?
----@field float CtpFloatOpts
+---@field float CtpFloatOpts?
 -- Toggle the `~` characters after the end of buffers.
 ---@field show_end_of_buffer boolean?
 -- If true, sets terminal colors (e.g. `g:terminal_color_0`).
