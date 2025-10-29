@@ -984,13 +984,14 @@ lualine = {
         b = { bg = transparent_bg, fg = C.surface1, gui = "bold" },
         c = { bg = transparent_bg, fg = C.overlay0 },
     },
-}
+},
 ```
 
 <details> <summary>Special</summary>
 
 To implement color overrides in the `integrations.lualine` spec:
 ```lua
+-- In your catppuccin config (integrations): 
 lualine = {
     -- lualine color overrides in the following hierarchy: Catppuccin Flavor -> Mode -> Lualine Section
     -- The Catppuccin flavor entry can be any Catpuccin flavor or "all" to apply to all flavors
@@ -1011,11 +1012,8 @@ lualine = {
             a = { bg = "#abcdef" },
         }
     },
-}
-```
-To setup lualine to find the catppuccin theme with default integration and any overrides:
-```lua
--- Setup lualine 
+},
+--  And in your lualine config:
 require('lualine').setup {
     options = {
         -- lualine will integrate with catppuccin by name or automatically via `vim.g.colors_name` by setting this to "auto" 
