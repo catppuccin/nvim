@@ -72,6 +72,13 @@ use { "catppuccin/nvim", as = "catppuccin" }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 ```
 
+[vim.pack](https://neovim.io/doc/user/pack.html#_plugin-manager)
+```lua
+vim.pack.add({
+    { src = "https://github.com/catppuccin/nvim", name = "catppuccin" }
+})
+```
+
 ## Usage
 
 ```vim
