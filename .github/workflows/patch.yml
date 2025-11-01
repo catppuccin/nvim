@@ -24,7 +24,7 @@ jobs:
           toc: true
           version: "nvim >= 0.8.0"
           treesitter: true
-      - uses: stefanzweifel/git-auto-commit-action@v6
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto generate vimdoc"
           branch: ${{ github.ref }}
@@ -44,7 +44,7 @@ jobs:
       - name: Update integration table
         run: |
           nvim -l scripts/generate_integration_mappings_table.lua
-      - uses: stefanzweifel/git-auto-commit-action@v6
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: auto generate integration table"
           branch: ${{ github.ref }}
