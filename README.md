@@ -399,6 +399,20 @@ blink_cmp = {
 </tr>
 <!-- blink.cmp -->
 
+<!-- blink.indent -->
+</tr>
+<tr>
+<td> <a href="https://github.com/saghen/blink.indent">blink.indent</a> </td>
+<td>
+
+```lua
+blink_indent = true
+```
+
+</td>
+</tr>
+<!-- blink.indent -->
+
 <!-- bufferline.nvim -->
 </tr>
 <tr>

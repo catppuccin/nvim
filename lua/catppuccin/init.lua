@@ -64,6 +64,7 @@ local M = {
 		integrations = {
 			alpha = true,
 			blink_cmp = { enabled = true, style = "bordered" },
+			blink_indent = true,
 			fzf = true,
 			cmp = true,
 			dap = true,
