@@ -153,6 +153,15 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		["@markup.heading.5.markdown"] = { link = "rainbow5" },
 		["@markup.heading.6.markdown"] = { link = "rainbow6" },
 
+		-- html
+		["@markup.heading.html"] = { link = "@markup" },
+		["@markup.heading.1.html"] = { link = "@markup" },
+		["@markup.heading.2.html"] = { link = "@markup" },
+		["@markup.heading.3.html"] = { link = "@markup" },
+		["@markup.heading.4.html"] = { link = "@markup" },
+		["@markup.heading.5.html"] = { link = "@markup" },
+		["@markup.heading.6.html"] = { link = "@markup" },
+
 		-- Java
 		["@constant.java"] = { fg = C.teal },
 
