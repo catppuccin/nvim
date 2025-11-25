@@ -140,6 +140,7 @@
 ---@field beacon boolean?
 ---@field blink_cmp CtpIntegrationsBlinkCmp | boolean?
 ---@field blink_indent boolean?
+---@field blink_pairs boolean?
 ---@field cmp boolean?
 ---@field buffon boolean?
 -- `coc.nvim` links to `lsp_styles` highlight groups, so you can use
