@@ -413,6 +413,20 @@ blink_indent = true
 </tr>
 <!-- blink.indent -->
 
+<!-- blink.pairs -->
+</tr>
+<tr>
+<td> <a href="https://github.com/saghen/blink.pairs">blink.pairs</a> </td>
+<td>
+    
+```lua
+blink_pairs = true
+```
+
+</td>
+</tr>
+<!-- blink.pairs -->
+
 <!-- bufferline.nvim -->
 </tr>
 <tr>
