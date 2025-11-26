@@ -18,8 +18,8 @@ function M.get_palette(flavour)
 	--]]
 	if O.kitty then
 		for accent, hex in pairs(ans) do
-			local red_green_string = hex:sub(1, 5)
-			local blue_value = tonumber(hex:sub(6, 7), 16)
+			local red_green_string = hex:sub(1, 4)
+			local blue_value = tonumber(hex:sub(5, 6), 16)
 
 			-- Slightly increase or decrease brightness of the blue channel
 			blue_value = blue_value == 255 and blue_value - 1 or blue_value + 1
