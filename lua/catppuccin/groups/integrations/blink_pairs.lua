@@ -12,7 +12,7 @@ function M.get()
 		BlinkPairsGreen = { fg = C.green },
 		BlinkPairsCyan = { fg = C.teal },
 		BlinkPairsUnmatched = { fg = C.red },
-		BlinkPairsMatchParen = { fg = C.yellow, style = { "bold" } },
+		BlinkPairsMatchParen = { link = "MatchParen" },
 	}
 end
 
