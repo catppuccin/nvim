@@ -418,10 +418,31 @@ blink_indent = true
 <tr>
 <td> <a href="https://github.com/saghen/blink.pairs">blink.pairs</a> </td>
 <td>
-    
+
 ```lua
 blink_pairs = true
 ```
+
+<details> <summary>Special</summary>
+
+Use this to set it up:
+
+```lua
+require("blink.pairs").setup {
+    highlights = {
+        groups = {
+            "BlinkPairsRed",
+            "BlinkPairsYellow",
+            "BlinkPairsBlue",
+            "BlinkPairsOrange",
+            "BlinkPairsGreen",
+            "BlinkPairsPurple",
+            "BlinkPairsCyan",
+        },
+    },
+}
+```
+</details>
 
 </td>
 </tr>
