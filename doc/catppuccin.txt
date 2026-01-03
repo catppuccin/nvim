@@ -662,11 +662,76 @@ For custom Lsp Kind Icon and Color
     }
 <
 
-lualine.nvimSpecial ~
+lualine.nvim>lua
+    -- transparent_bg = opts.transparent_background and "NONE" or C.mantle
+    lualine = {
+        normal = {
+            a = { bg = C.blue, fg = C.mantle, gui = "bold" },
+            b = { bg = C.surface0, fg = C.blue },
+            c = { bg = transparent_bg, fg = C.text },
+        },
+    
+        insert = {
+            a = { bg = C.green, fg = C.base, gui = "bold" },
+            b = { bg = C.surface0, fg = C.green },
+        },
+    
+        terminal = {
+            a = { bg = C.green, fg = C.base, gui = "bold" },
+            b = { bg = C.surface0, fg = C.green },
+        },
+    
+        command = {
+            a = { bg = C.peach, fg = C.base, gui = "bold" },
+            b = { bg = C.surface0, fg = C.peach },
+        },
+        visual = {
+            a = { bg = C.mauve, fg = C.base, gui = "bold" },
+            b = { bg = C.surface0, fg = C.mauve },
+        },
+        replace = {
+            a = { bg = C.red, fg = C.base, gui = "bold" },
+            b = { bg = C.surface0, fg = C.red },
+        },
+        inactive = {
+            a = { bg = transparent_bg, fg = C.blue },
+            b = { bg = transparent_bg, fg = C.surface1, gui = "bold" },
+            c = { bg = transparent_bg, fg = C.overlay0 },
+        },
+    },
+<
+
+Special ~
+
+To implement color overrides in the `integrations.lualine` spec:
 
 >lua
+    -- In your catppuccin config (integrations): 
+    lualine = {
+        -- lualine color overrides in the following hierarchy: Catppuccin Flavor -> Mode -> Lualine Section
+        -- The Catppuccin flavor entry can be any Catpuccin flavor or "all" to apply to all flavors
+        -- The flavor entry can be either a table or a function which consumes the current Catppuccin palette, just like custom_highlights and color_overrides
+        all = function(colors)
+            ---@type CtpIntegrationLualineOverride
+            return {
+                -- Specifying a normal-mode status line override for section a's background and b's foreground to use lavender like the main Catppuccin theme
+                normal = { 
+                    a = { bg = colors.lavender, gui = "italic" },
+                    b = { fg = colors.lavender },
+                }
+            }
+        end,
+        -- A macchiato-specific override, which takes priority over 'all'. Also using the direct table syntax instead of function in case you do not rely on dynamic palette colors
+        macchiato = { 
+            normal = { 
+                a = { bg = "#abcdef" },
+            }
+        },
+    },
+    --  And in your lualine config:
     require('lualine').setup {
         options = {
+            -- lualine will integrate with catppuccin by name or automatically via `vim.g.colors_name` by setting this to "auto" 
             theme = "catppuccin"
             -- ... the rest of your lualine config
         }

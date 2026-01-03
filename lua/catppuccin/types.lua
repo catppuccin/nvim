@@ -197,6 +197,7 @@
 -- ```
 ---@field lsp_saga boolean?
 ---@field lsp_trouble boolean?
+---@field lualine CtpIntegrationLualine?
 ---@field markview boolean?
 ---@field mason boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
@@ -290,6 +291,19 @@
 ---@field enabled boolean
 -- Sets the color of the scope line
 ---@field indentscope_color CtpColor?
+
+---@alias CtpIntegrationLualine CtpFlavors<CtpIntegrationLualineOverride | CtpIntegrationLualineOverrideFn>
+---@alias CtpIntegrationLualineOverride CtpIntegrationLualineModes<CtpIntegrationLualineSectionOverrides>
+---@alias CtpIntegrationLualineOverrideFn fun(colors: CtpColors<string>): CtpIntegrationLualineOverride
+---@alias CtpIntegrationLualineMode "normal" | "insert" | "visual" | "replace" | "command" | "terminal" | "inactive" 
+---@class CtpIntegrationLualineModes<T>: { all: T, normal: T, insert: T, visual: T, replace: T, command: T, terminal: T, inactive: T } 
+---@alias CtpIntegrationLualineSectionOverrides CtpIntegrationLualineSections<CtpIntegrationLualineSectionOverride>
+---@alias CtpIntegrationLualineSection "a" | "b" | "c"
+---@class CtpIntegrationLualineSections<T>: { a: T, b: T, c: T }
+---@class CtpIntegrationLualineSectionOverride
+---@field fg string?
+---@field bg string?
+---@field gui string? `gui` argument such as "italic,bold", see |highlight-gui|
 
 ---@class CtpIntegrationNavic
 -- Whether to enable the navic integration.
