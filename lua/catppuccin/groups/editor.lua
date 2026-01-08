@@ -48,7 +48,7 @@ function M.get()
 			fg = C.crust,
 			bg = C.lavender,
 		} or { fg = C.subtext0, bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle }, -- Title of floating windows
-		FloatShadow = { bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.overlay0 },
+		FloatShadow = { bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.overlay0, blend = 80 },
 		Pmenu = {
 			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or C.mantle,
 			fg = C.overlay2,
