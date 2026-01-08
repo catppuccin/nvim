@@ -15,11 +15,13 @@ Table of Contents                               *catppuccin-table-of-contents*
 
 FEATURES                                                 *catppuccin-features*
 
-- Supports both Vim and Neovim (requires neovim <https://github.com/neovim/neovim/> >= 0.8 or vim <https://github.com/vim/vim> >= 9 compiled with lua <https://github.com/lua/lua> >= 5.1)
-- Highly configurable with 4 different flavours and the ability to create your own! <https://github.com/catppuccin/nvim/discussions/323>
-- Compiled <https://github.com/catppuccin/nvim#Compile> configuration for fast startup time <https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/>
-- Integrations with lsp, treesitter and a bunch of plugins <https://github.com/catppuccin/nvim#integrations>
-- Support for many other applications <https://github.com/catppuccin/catppuccin>
+- Supports both Vim and Neovim
+  - **Neovim** version 0.8 or higher (<https://github.com/neovim/neovim>)
+  - **Vim** version 9.0 or higher, compiled with **Lua** 5.1 or higher (<https://github.com/vim/vim>)
+- Highly configurable with 4 pre-made styles and tools to create your own (<https://github.com/catppuccin/nvim/discussions/323>)
+- Uses pre-compiled configurations (<https://github.com/catppuccin/nvim#Compile>) for extremely fast startup times (<https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/>)
+- Integrates with LSP, Tree-sitter, and many popular plugins (<https://github.com/catppuccin/nvim#integrations>)
+- Also available for numerous other applications (<https://github.com/catppuccin/catppuccin>)
 
 
 INSTALLATION                                         *catppuccin-installation*
