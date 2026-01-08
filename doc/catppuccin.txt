@@ -15,7 +15,7 @@ Table of Contents                               *catppuccin-table-of-contents*
 
 FEATURES                                                 *catppuccin-features*
 
-- Supports both Vim and Neovim (requires neovim <https://github.com/neovim/neovim/> >= 0.8 or vim <https://github.com/vim/vim> >= 9 compiled with lua <https://github.com/lua/lua> >= 5.1)
+- Supports Neovim <https://github.com/neovim/neovim/> >= 0.8
 - Highly configurable with 4 different flavours and the ability to create your own! <https://github.com/catppuccin/nvim/discussions/323>
 - Compiled <https://github.com/catppuccin/nvim#Compile> configuration for fast startup time <https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/>
 - Integrations with lsp, treesitter and a bunch of plugins <https://github.com/catppuccin/nvim#integrations>
@@ -43,10 +43,10 @@ packer.nvim <https://github.com/wbthomason/packer.nvim>
     use { "catppuccin/nvim", as = "catppuccin" }
 <
 
-vim-plug <https://github.com/junegunn/vim-plug>
+with Neovim 0.12’s `vim.pack`
 
->vim
-    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+>lua
+    vim.pack.add({ src = "https://github.com/catppuccin/nvim", name = "catppuccin" })
 <
 
 
