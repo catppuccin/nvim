@@ -27,6 +27,7 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 		-- allow lsp to override treesitter
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.function.builtin"] = { link = "@function.builtin" },
+		["@lsp.typemod.variable.readonly"] = { link = "@constant" },
 	}
 end
 
