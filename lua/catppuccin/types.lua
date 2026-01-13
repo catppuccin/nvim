@@ -295,8 +295,8 @@
 ---@alias CtpIntegrationLualine CtpFlavors<CtpIntegrationLualineOverride | CtpIntegrationLualineOverrideFn>
 ---@alias CtpIntegrationLualineOverride CtpIntegrationLualineModes<CtpIntegrationLualineSectionOverrides>
 ---@alias CtpIntegrationLualineOverrideFn fun(colors: CtpColors<string>): CtpIntegrationLualineOverride
----@alias CtpIntegrationLualineMode "normal" | "insert" | "visual" | "replace" | "command" | "terminal" | "inactive" 
----@class CtpIntegrationLualineModes<T>: { all: T, normal: T, insert: T, visual: T, replace: T, command: T, terminal: T, inactive: T } 
+---@alias CtpIntegrationLualineMode "normal" | "insert" | "visual" | "replace" | "command" | "terminal" | "inactive"
+---@class CtpIntegrationLualineModes<T>: { all: T, normal: T, insert: T, visual: T, replace: T, command: T, terminal: T, inactive: T }
 ---@alias CtpIntegrationLualineSectionOverrides CtpIntegrationLualineSections<CtpIntegrationLualineSectionOverride>
 ---@alias CtpIntegrationLualineSection "a" | "b" | "c"
 ---@class CtpIntegrationLualineSections<T>: { a: T, b: T, c: T }
