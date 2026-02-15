@@ -3,7 +3,7 @@
 <h3 align="center">
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-    Catppuccin for <a href="https://github.com/neovim/neovim">(Neo)</a><a href="https://github.com/vim/vim">vim</a>
+    Catppuccin for <a href="https://github.com/neovim/neovim">Neovim</a>
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
@@ -44,7 +44,7 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 ## Features
 
-- Supports both Vim and Neovim (requires [neovim](https://github.com/neovim/neovim/) >= 0.8 or [vim](https://github.com/vim/vim) >= 9 compiled with [lua](https://github.com/lua/lua) >= 5.1)
+- Supports [Neovim](https://github.com/neovim/neovim/) >= 0.8
 - Highly configurable with 4 different flavours and [the ability to create your own!](https://github.com/catppuccin/nvim/discussions/323)
 - [Compiled](https://github.com/catppuccin/nvim#Compile) configuration for [fast startup time](https://www.reddit.com/r/neovim/comments/xxfpt3/catppuccinnvim_now_startup_in_1ms/)
 - Integrations with lsp, treesitter and [a bunch of plugins](https://github.com/catppuccin/nvim#integrations)
@@ -67,9 +67,10 @@ add({ source = "catppuccin/nvim", name = "catppuccin" })
 use { "catppuccin/nvim", as = "catppuccin" }
 ```
 
-[vim-plug](https://github.com/junegunn/vim-plug)
-```vim
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+with Neovim 0.12's `vim.pack`
+
+```lua
+vim.pack.add({ src = "https://github.com/catppuccin/nvim", name = "catppuccin" })
 ```
 
 ## Usage
