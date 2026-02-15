@@ -1,5 +1,54 @@
 # Changelog
 
+## [2.0.0](https://github.com/catppuccin/nvim/compare/v1.11.0...v2.0.0) (2026-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* move special and builtin integrations out of `groups/integrations/` ([#931](https://github.com/catppuccin/nvim/issues/931))
+* **integrations:** rename `get()` to `get_*()` on abnormal integrations ([#920](https://github.com/catppuccin/nvim/issues/920))
+* align treesitter colors with vscode/updated style guide ([#804](https://github.com/catppuccin/nvim/issues/804))
+* add global floating window options ([#892](https://github.com/catppuccin/nvim/issues/892))
+
+### Features
+
+* add global floating window options ([#892](https://github.com/catppuccin/nvim/issues/892)) ([b313c96](https://github.com/catppuccin/nvim/commit/b313c962cf94416dc4b297ab517f47b0cd8272ad))
+* **blink-indent:** add blink.indent integration ([#953](https://github.com/catppuccin/nvim/issues/953)) ([da33755](https://github.com/catppuccin/nvim/commit/da33755d00e09bff2473978910168ff9ea5dc453))
+* **blink-pairs:** add blink.pairs integration ([#958](https://github.com/catppuccin/nvim/issues/958)) ([193e123](https://github.com/catppuccin/nvim/commit/193e123cdbc4dd3e86db883d55349e9587f0ded6))
+* **blink:** link signature help window border to `FloatBorder` ([#904](https://github.com/catppuccin/nvim/issues/904)) ([76a8d05](https://github.com/catppuccin/nvim/commit/76a8d0515024cc55d8bd26fc13f1af88faef3ebf))
+* **editor:** add `Pmenu` missing highlights ([efeb06e](https://github.com/catppuccin/nvim/commit/efeb06e3b0a46fcf5573b1cd74d40baec7a4e267))
+* **editor:** completion ghost text ([25a0433](https://github.com/catppuccin/nvim/commit/25a0433df62fb973c1d7086d024ea60bfaa7235e))
+* **editor:** link `MsgSeparator` to `WinSeparator` ([b5f9826](https://github.com/catppuccin/nvim/commit/b5f9826ee7050da6ac0fc96825ab648bbd186704))
+* **editor:** use `mantle` for pmenu background ([#899](https://github.com/catppuccin/nvim/issues/899)) ([55ad613](https://github.com/catppuccin/nvim/commit/55ad613dd0171a3460a8d4b0fea464c6c96e2f97))
+* **lualine:** color overrides for lualine integration  ([#843](https://github.com/catppuccin/nvim/issues/843)) ([6efc53e](https://github.com/catppuccin/nvim/commit/6efc53e42cfc97700f19043105bf73ba83c4ae7d))
+* **syntax:** add missing `Added` and `Changed` groups ([19e63fb](https://github.com/catppuccin/nvim/commit/19e63fbcfa969d5672f2f2e2eb96a4c980ddf85a))
+
+
+### Bug Fixes
+
+* align treesitter colors with vscode/updated style guide ([#804](https://github.com/catppuccin/nvim/issues/804)) ([f67971c](https://github.com/catppuccin/nvim/commit/f67971cd3e30dd94061da8d61ee34742d43c632a))
+* **blink-cmp:** pmenu border bg ([#897](https://github.com/catppuccin/nvim/issues/897)) ([931a129](https://github.com/catppuccin/nvim/commit/931a129463ca09c8805d564a28b3d0090e536e1d))
+* config `float` is optional in setup ([#938](https://github.com/catppuccin/nvim/issues/938)) ([af58927](https://github.com/catppuccin/nvim/commit/af58927c55c9f3272c940ff02b3cee94a1249f26))
+* **editor:** editor items in visual selection issues ([d95260b](https://github.com/catppuccin/nvim/commit/d95260b3d61708362acf6d6d7f8b4a787c6abdfc))
+* **editor:** use `PmenuSel` bg for `PmenuExtraSel` ([#930](https://github.com/catppuccin/nvim/issues/930)) ([ff29b85](https://github.com/catppuccin/nvim/commit/ff29b85e2dd9ca8f88a9238dbe319b11956ac5b3))
+* **editor:** use bg for `FloatShadow` highlight ([#966](https://github.com/catppuccin/nvim/issues/966)) ([4420f0a](https://github.com/catppuccin/nvim/commit/4420f0a50dfde7ee79acf91ded8f97e02883a22a))
+* **integrations/colorful_winsep:** update hl name ([#913](https://github.com/catppuccin/nvim/issues/913)) ([381e605](https://github.com/catppuccin/nvim/commit/381e605908efdf321887f962aca51b64f42bb401))
+* **integrations:** rename `get()` to `get_*()` on abnormal integrations ([#920](https://github.com/catppuccin/nvim/issues/920)) ([30fa4d1](https://github.com/catppuccin/nvim/commit/30fa4d122d9b22ad8b2e0ab1b533c8c26c4dde86))
+* **integrations:** update neogit url ([#928](https://github.com/catppuccin/nvim/issues/928)) ([f19cab1](https://github.com/catppuccin/nvim/commit/f19cab18ec4dc86d415512c7a572863b2adbcc18))
+* lazy plugins are in a dictionary rather than a list ([#918](https://github.com/catppuccin/nvim/issues/918)) ([9a9a875](https://github.com/catppuccin/nvim/commit/9a9a875e979fe9d2b42423d056f944dd286d0280))
+* misc tree-sitter and unset semantic tokens ([#902](https://github.com/catppuccin/nvim/issues/902)) ([8fd0915](https://github.com/catppuccin/nvim/commit/8fd0915ec0a2ad6376bfe895e6c4b3ffb5a5bad2))
+* **snacks:** link `SnacksNormal` to `Normal` ([#951](https://github.com/catppuccin/nvim/issues/951)) ([8c4125e](https://github.com/catppuccin/nvim/commit/8c4125e3c746976ba025dc5d908fa22c6aa09486))
+* **treesitter_context:** context follows normal transparency ([#956](https://github.com/catppuccin/nvim/issues/956)) ([180e043](https://github.com/catppuccin/nvim/commit/180e0435707cf1fed09a98a9739e5807d92b69be))
+* **treesitter:** `[@type](https://github.com/type).builtin` styles ([#944](https://github.com/catppuccin/nvim/issues/944)) ([0a5de4d](https://github.com/catppuccin/nvim/commit/0a5de4da015a175f416d6ef1eda84661623e0500))
+* **treesitter:** keep `[@property](https://github.com/property)` & `[@variable](https://github.com/variable).member` as `lavender` ([#905](https://github.com/catppuccin/nvim/issues/905)) ([e79d09f](https://github.com/catppuccin/nvim/commit/e79d09fa347b367e0e7f693bfe87dba932a8cbd1))
+* **treesitter:** use text for html heading content ([#948](https://github.com/catppuccin/nvim/issues/948)) ([ce4a8e0](https://github.com/catppuccin/nvim/commit/ce4a8e0d5267e67056f9f4dcf6cb1d0933c8ca00))
+* **trouble:** link non-current trouble normal hl to trouble normal hl ([#961](https://github.com/catppuccin/nvim/issues/961)) ([ce8d176](https://github.com/catppuccin/nvim/commit/ce8d176faa4643e026e597ae3c31db59b63cef09))
+
+
+### Code Refactoring
+
+* move special and builtin integrations out of `groups/integrations/` ([#931](https://github.com/catppuccin/nvim/issues/931)) ([5af9374](https://github.com/catppuccin/nvim/commit/5af9374957a65be8770696da295dc9016b96f241))
+
 ## [1.11.0](https://github.com/catppuccin/nvim/compare/v1.10.0...v1.11.0) (2025-07-31)
 
 
