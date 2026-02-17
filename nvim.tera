@@ -1,6 +1,6 @@
 ---
 whiskers:
-  version: 2.5.1
+  version: 2.6.0
   matrix:
     - flavor
   filename: "lua/catppuccin/palettes/{{flavor.identifier}}.lua"
