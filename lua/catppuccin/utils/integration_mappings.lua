@@ -1,6 +1,7 @@
 local M = {
 	["aerial.nvim"] = "aerial",
 	["alpha-nvim"] = "alpha",
+	["artio.nvim"] = "artio",
 	["avante.nvim"] = "avante",
 	["barbar.nvim"] = "barbar",
 	["beacon.nvim"] = "beacon",
