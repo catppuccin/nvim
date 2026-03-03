@@ -73,6 +73,20 @@ with Neovim 0.12's `vim.pack`
 vim.pack.add({ src = "https://github.com/catppuccin/nvim", name = "catppuccin" })
 ```
 
+### vim support
+
+Support for vim is provided through the `vim` branch.
+
+```vim
+Plug 'catppuccin/nvim', { 'branch': 'vim', 'as': 'catppuccin' }
+```
+
+> ![NOTE]
+> Keep in mind that vim support has been dropped
+> ([#949](https://github.com/catppuccin/nvim/pull/949)) and this branch won't
+> receive further updates unless necessary. For full vim support see
+> [catppuccin/vim](https://github.com/catppuccin/vim)
+
 ## Usage
 
 ```vim
