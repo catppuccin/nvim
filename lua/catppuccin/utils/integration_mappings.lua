@@ -6,6 +6,7 @@ local M = {
 	["beacon.nvim"] = "beacon",
 	["blink.cmp"] = "blink_cmp",
 	["blink.indent"] = "blink_indent",
+	["blink.pairs"] = "blink_pairs",
 	["buffon.nvim"] = "buffon",
 	["coc.nvim"] = "coc_nvim",
 	["colorful-winsep.nvim"] = "colorful_winsep",

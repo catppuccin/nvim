@@ -329,6 +329,34 @@ blink.cmp>lua
     }
 <
 
+blink.indent>lua
+    blink_indent = true
+<
+
+blink.pairs>lua
+    blink_pairs = true
+<
+
+Special ~
+
+Use this to set it up:
+
+>lua
+    require("blink.pairs").setup {
+        highlights = {
+            groups = {
+                "BlinkPairsRed",
+                "BlinkPairsYellow",
+                "BlinkPairsBlue",
+                "BlinkPairsOrange",
+                "BlinkPairsGreen",
+                "BlinkPairsPurple",
+                "BlinkPairsCyan",
+            },
+        },
+    }
+<
+
 bufferline.nvimSpecial ~
 
 Update your bufferline config to use the Catppuccin components:
