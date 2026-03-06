@@ -1501,7 +1501,7 @@ render_markdown = true
 ```lua
 snacks = {
     enabled = false,
-    indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+    indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: overlay2
 }
 ```
 

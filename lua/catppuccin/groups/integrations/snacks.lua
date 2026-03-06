@@ -51,7 +51,7 @@ function M.get()
 		SnacksDashboardTitle = { link = "Title" },
 
 		SnacksIndent = { fg = C.surface0 },
-		SnacksIndentScope = { fg = C[indent_scope_color] or C.text },
+		SnacksIndentScope = { fg = C[indent_scope_color] or C.overlay2 },
 
 		SnacksPickerSelected = {
 			fg = O.float.transparent and C.flamingo or C.text,
