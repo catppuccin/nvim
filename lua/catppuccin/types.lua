@@ -122,6 +122,7 @@
 ---@class CtpIntegrations
 ---@field aerial boolean?
 ---@field alpha boolean?
+---@field artio boolean?
 ---@field avante CtpIntegratinAvant | boolean?
 ---@field barbar boolean?
 -- Use this to set it up:

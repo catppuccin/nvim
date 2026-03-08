@@ -325,6 +325,22 @@ alpha = true
 </tr>
 <!-- alpha.nvim -->
 
+<!-- artio.nvim -->
+</tr>
+<tr
+<tr>
+<td> <a href="https://github.com/comfysage/artio.nvim">artio.nvim</a> </td>
+<td>
+
+```lua
+artio = true
+```
+
+</td>
+
+</tr>
+<!-- artio.nvim -->
+
 <!-- barbar.nvim -->
 </tr>
 <tr>
