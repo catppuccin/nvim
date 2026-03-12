@@ -53,11 +53,11 @@ vim-plug <https://github.com/junegunn/vim-plug>
 USAGE                                                       *catppuccin-usage*
 
 >vim
-    colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+    colorscheme catppuccin-nvim " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 <
 
 >lua
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme "catppuccin-nvim"
 <
 
 
@@ -140,7 +140,7 @@ options and settings.
     })
     
     -- setup must be called before loading
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme "catppuccin-nvim"
 <
 
 
