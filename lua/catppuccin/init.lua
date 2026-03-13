@@ -63,7 +63,6 @@ local M = {
 		auto_integrations = false,
 		integrations = {
 			alpha = true,
-			artio = true,
 			blink_cmp = { enabled = true, style = "bordered" },
 			blink_indent = true,
 			fzf = true,
