@@ -391,7 +391,7 @@ Use this to set it up:
 
 ```lua
 require("barbecue").setup {
-  theme = "catppuccin", -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+  theme = "catppuccin-nvim", -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 }
 ```
 </details>
@@ -1097,7 +1097,7 @@ lualine = {
 require('lualine').setup {
     options = {
         -- lualine will integrate with catppuccin by name or automatically via `vim.g.colors_name` by setting this to "auto" 
-        theme = "catppuccin"
+        theme = "catppuccin-nvim"
         -- ... the rest of your lualine config
     }
 }
