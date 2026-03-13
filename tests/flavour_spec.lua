@@ -9,7 +9,7 @@ end
 describe("set background to", function()
 	before_each(function()
 		reload()
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 	end)
 	it("light", function()
 		vim.o.background = "light"
@@ -25,12 +25,12 @@ describe("respect vim.o.background =", function()
 	before_each(function() reload() end)
 	it("light", function()
 		vim.o.background = "light"
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-latte", vim.g.colors_name)
 	end)
 	it("dark", function()
 		vim.o.background = "dark"
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-mocha", vim.g.colors_name)
 	end)
 end)
@@ -59,22 +59,22 @@ describe("respect setup flavour =", function()
 	before_each(function() reload() end)
 	it("latte", function()
 		require("catppuccin").setup { flavour = "latte" }
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-latte", vim.g.colors_name)
 	end)
 	it("frappe", function()
 		require("catppuccin").setup { flavour = "frappe" }
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-frappe", vim.g.colors_name)
 	end)
 	it("macchiato", function()
 		require("catppuccin").setup { flavour = "macchiato" }
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-macchiato", vim.g.colors_name)
 	end)
 	it("mocha", function()
 		require("catppuccin").setup { flavour = "mocha" }
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-mocha", vim.g.colors_name)
 	end)
 end)
@@ -83,22 +83,22 @@ describe("(deprecated) respect vim.g.catppuccin_flavour =", function()
 	before_each(function() reload() end)
 	it("latte", function()
 		vim.g.catppuccin_flavour = "latte"
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-latte", vim.g.colors_name)
 	end)
 	it("frappe", function()
 		vim.g.catppuccin_flavour = "frappe"
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-frappe", vim.g.colors_name)
 	end)
 	it("macchiato", function()
 		vim.g.catppuccin_flavour = "macchiato"
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-macchiato", vim.g.colors_name)
 	end)
 	it("mocha", function()
 		vim.g.catppuccin_flavour = "mocha"
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "catppuccin-nvim"
 		assert.equals("catppuccin-mocha", vim.g.colors_name)
 	end)
 end)

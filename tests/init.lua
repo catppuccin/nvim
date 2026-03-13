@@ -20,7 +20,7 @@ local status, error = pcall(function()
 	})
 
 	require("catppuccin").setup()
-	vim.cmd.colorscheme "catppuccin"
+	vim.cmd.colorscheme "catppuccin-nvim"
 end)
 
 if error then print(error) end

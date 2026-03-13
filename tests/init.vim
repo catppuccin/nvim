@@ -4,7 +4,7 @@ try
 	call plug#end()
 
 	lua require("catppuccin").setup {}
-	colorscheme catppuccin
+  colorscheme catppuccin-nvim
 catch
 	echo v:exception
 	1cq

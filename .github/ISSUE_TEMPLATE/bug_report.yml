@@ -88,6 +88,6 @@ body:
           root = root .. "/plugins",
         })
 
-        vim.cmd.colorscheme("catppuccin")
+        vim.cmd.colorscheme("catppuccin-nvim")
         -- add anything else here
       render: Lua
