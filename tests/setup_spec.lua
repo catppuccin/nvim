@@ -1615,7 +1615,7 @@ describe("user", function()
 			assert.equals(
 				pcall(function()
 					require("catppuccin").compile()
-					vim.cmd.colorscheme("catppuccin")
+					vim.cmd.colorscheme("catppuccin-nvim")
 				end),
 				true
 			)
