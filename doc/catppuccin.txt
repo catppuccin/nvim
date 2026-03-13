@@ -54,6 +54,8 @@ VIM SUPPORT ~
 
 Support for vim is provided through the `vim` branch.
 
+vim-plug <https://github.com/junegunn/vim-plug>
+
 >vim
     Plug 'catppuccin/nvim', { 'branch': 'vim', 'as': 'catppuccin' }
 <
@@ -302,19 +304,27 @@ module.
   by Catppuccin, see the `lua/catppuccin/groups/integrations/`
   <https://github.com/catppuccin/nvim/tree/main/lua/catppuccin/groups/integrations>
   directory.
-PluginDefaultaerial.nvim>lua
+aerial.nvim
+
+>lua
     aerial = false
 <
 
-alpha-nvim>lua
+alpha-nvim
+
+>lua
     alpha = true
 <
 
-barbar.nvim>lua
+barbar.nvim
+
+>lua
     barbar = false
 <
 
-barbecue.nvim>lua
+barbecue.nvim
+
+>lua
     barbecue = {
         dim_dirname = true, -- directory name is dimmed by default
         bold_basename = true,
@@ -333,21 +343,29 @@ Use this to set it up:
     }
 <
 
-beacon.nvim>lua
+beacon.nvim
+
+>lua
     beacon = false
 <
 
-blink.cmp>lua
+blink.cmp
+
+>lua
     blink_cmp = {
         style = 'bordered',
     }
 <
 
-blink.indent>lua
+blink.indent
+
+>lua
     blink_indent = true
 <
 
-blink.pairs>lua
+blink.pairs
+
+>lua
     blink_pairs = true
 <
 
@@ -371,7 +389,9 @@ Use this to set it up:
     }
 <
 
-bufferline.nvimSpecial ~
+bufferline.nvim
+
+Special ~
 
 Update your bufferline config to use the Catppuccin components:
 
@@ -412,11 +432,15 @@ explanations:
     }
 <
 
-buffon.nvim>lua
+buffon.nvim
+
+>lua
     buffon = false
 <
 
-coc.nvim>lua
+coc.nvim
+
+>lua
     coc_nvim = false
 <
 
@@ -457,29 +481,39 @@ directly at the thing (e.g. an error)).
     },
 <
 
-colorful-winsep.nvim>lua
+colorful-winsep.nvim
+
+>lua
     colorful_winsep = {
         enabled = false,
         color = "red",
     }
 <
 
-dashboard-nvim>lua
+dashboard-nvim
+
+>lua
     dashboard = true
 <
 
-diffview.nvim>lua
+diffview.nvim
+
+>lua
     diffview = false
 <
 
-dropbar.nvim>lua
+dropbar.nvim
+
+>lua
     dropbar = {
         enabled = false,
         color_mode = false, -- enable color for kind's texts, not just kind's icons
     },
 <
 
-feline.nvimSpecial ~
+feline.nvim
+
+Special ~
 
 Update your Feline config to use the Catppuccin components:
 
@@ -587,11 +621,15 @@ Here are the defaults:
     })
 <
 
-fern.vim>lua
+fern.vim
+
+>lua
     fern = false
 <
 
-fidget.nvim>lua
+fidget.nvim
+
+>lua
     fidget = false
 <
 
@@ -610,19 +648,27 @@ Set `notification.window.winblend` to `0`:
     }
 <
 
-flash.nvim>lua
+flash.nvim
+
+>lua
     flash = true
 <
 
-fzf-lua>lua
+fzf-lua
+
+>lua
     fzf = true
 <
 
-gitgraph.nvim>lua
+gitgraph.nvim
+
+>lua
     gitgraph = false
 <
 
-gitsigns.nvim>lua
+gitsigns.nvim
+
+>lua
     gitsigns = true
 <
 
@@ -636,23 +682,33 @@ Special ~
     }
 <
 
-grug-far.nvim>lua
+grug-far.nvim
+
+>lua
     grug_far = false
 <
 
-harpoon>lua
+harpoon
+
+>lua
     harpoon = false
 <
 
-headlines.nvim>lua
+headlines.nvim
+
+>lua
     headlines = false
 <
 
-hop.nvim>lua
+hop.nvim
+
+>lua
     hop = false
 <
 
-indent-blankline.nvim>lua
+indent-blankline.nvim
+
+>lua
     indent_blankline = {
         enabled = true,
         scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
@@ -667,28 +723,38 @@ instructions here
 <https://github.com/lukas-reineke/indent-blankline.nvim#multiple-indent-colors>
 to set the latter up.
 
-leap.nvim>lua
+leap.nvim
+
+>lua
     leap = false
 <
 
-lightline.vimSpecial ~
+lightline.vim
+
+Special ~
 
 >vim
     let g:lightline = {'colorscheme': 'catppuccin'}
 <
 
-lightspeed.nvim>lua
+lightspeed.nvim
+
+>lua
     lightspeed = false
 <
 
-lir.nvim>lua
+lir.nvim
+
+>lua
     lir = {
         enabled = false,
         git_status = false
     }
 <
 
-lspsaga.nvim>lua
+lspsaga.nvim
+
+>lua
     lsp_saga = false
 <
 
@@ -704,7 +770,9 @@ For custom Lsp Kind Icon and Color
     }
 <
 
-lualine.nvim>lua
+lualine.nvim
+
+>lua
     -- transparent_bg = opts.transparent_background and "NONE" or C.mantle
     lualine = {
         normal = {
@@ -748,7 +816,7 @@ Special ~
 To implement color overrides in the `integrations.lualine` spec:
 
 >lua
-    -- In your catppuccin config (integrations): 
+    -- In your catppuccin config (integrations):
     lualine = {
         -- lualine color overrides in the following hierarchy: Catppuccin Flavor -> Mode -> Lualine Section
         -- The Catppuccin flavor entry can be any Catpuccin flavor or "all" to apply to all flavors
@@ -757,15 +825,15 @@ To implement color overrides in the `integrations.lualine` spec:
             ---@type CtpIntegrationLualineOverride
             return {
                 -- Specifying a normal-mode status line override for section a's background and b's foreground to use lavender like the main Catppuccin theme
-                normal = { 
+                normal = {
                     a = { bg = colors.lavender, gui = "italic" },
                     b = { fg = colors.lavender },
                 }
             }
         end,
         -- A macchiato-specific override, which takes priority over 'all'. Also using the direct table syntax instead of function in case you do not rely on dynamic palette colors
-        macchiato = { 
-            normal = { 
+        macchiato = {
+            normal = {
                 a = { bg = "#abcdef" },
             }
         },
@@ -773,57 +841,79 @@ To implement color overrides in the `integrations.lualine` spec:
     --  And in your lualine config:
     require('lualine').setup {
         options = {
-            -- lualine will integrate with catppuccin by name or automatically via `vim.g.colors_name` by setting this to "auto" 
+            -- lualine will integrate with catppuccin by name or automatically via `vim.g.colors_name` by setting this to "auto"
             theme = "catppuccin-nvim"
             -- ... the rest of your lualine config
         }
     }
 <
 
-markview.nvim>lua
+markview.nvim
+
+>lua
     markview = false
 <
 
-mason.nvim>lua
+mason.nvim
+
+>lua
     mason = false
 <
 
-mini.nvim>lua
+mini.nvim
+
+>lua
     mini = {
         enabled = true,
         indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
     },
 <
 
-neo-tree.nvim>lua
+neo-tree.nvim
+
+>lua
     neotree = true
 <
 
-neogit>lua
+neogit
+
+>lua
     neogit = true
 <
 
-neotest>lua
+neotest
+
+>lua
     neotest = false
 <
 
-noice.nvim>lua
+noice.nvim
+
+>lua
     noice = false
 <
 
-notifier.nvim>lua
+notifier.nvim
+
+>lua
     notifier = false
 <
 
-nvim-cmp>lua
+nvim-cmp
+
+>lua
     cmp = true
 <
 
-copilot.vim>lua
+copilot.vim
+
+>lua
     copilot_vim = false,
 <
 
-nvim-dap>lua
+nvim-dap
+
+>lua
     dap = true
 <
 
@@ -837,11 +927,15 @@ Special ~
     sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 <
 
-nvim-dap-ui>lua
+nvim-dap-ui
+
+>lua
     dap_ui = true
 <
 
-navic>lua
+navic
+
+>lua
     navic = {
         enabled = false,
         custom_bg = "NONE", -- "lualine" will set background to mantle
@@ -857,55 +951,81 @@ Special ~
     }
 <
 
-nvim-notify>lua
+nvim-notify
+
+>lua
     notify = false
 <
 
-nvim-surround>lua
+nvim-surround
+
+>lua
     nvim_surround = false
 <
 
-nvim-tree.lua>lua
+nvim-tree.lua
+
+>lua
     nvimtree = true
 <
 
-nvim-treesitter-context>lua
+nvim-treesitter-context
+
+>lua
     treesitter_context = true
 <
 
-nvim-ts-rainbow2>lua
+nvim-ts-rainbow2
+
+>lua
     ts_rainbow2 = false
 <
 
-nvim-ts-rainbow>lua
+nvim-ts-rainbow
+
+>lua
     ts_rainbow = false
 <
 
-nvim-ufo>lua
+nvim-ufo
+
+>lua
     ufo = true
 <
 
-nvim-window-picker>lua
+nvim-window-picker
+
+>lua
     window_picker = false
 <
 
-octo.nvim>lua
+octo.nvim
+
+>lua
     octo = false
 <
 
-overseer.nvim>lua
+overseer.nvim
+
+>lua
     overseer = false
 <
 
-pounce.nvim>lua
+pounce.nvim
+
+>lua
     pounce = false
 <
 
-rainbow-delimiters.nvim>lua
+rainbow-delimiters.nvim
+
+>lua
     rainbow_delimiters = true
 <
 
-reactive.nvimSpecial ~
+reactive.nvim
+
+Special ~
 
 There’re 2 available presets (`cursor` and `cursorline`) for every flavour.
 
@@ -919,11 +1039,15 @@ Here is how you can use them.
 
 To use another flavour just replace `mocha` with the one you want to use.
 
-render-markdown.nvim>lua
+render-markdown.nvim
+
+>lua
     render_markdown = true
 <
 
-snacks.nvim>lua
+snacks.nvim
+
+>lua
     snacks = {
         enabled = false,
         indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: overlay2
@@ -931,33 +1055,45 @@ snacks.nvim>lua
 <
 
 symbols-outline.nvim
+
+
   [!NOTE] This plugin has been archived by the author, consider using
   outline.nvim <https://github.com/hedyhli/outline.nvim>
 >lua
     symbols_outline = false
 <
 
-telekasten.nvim>lua
+telekasten.nvim
+
+>lua
     telekasten = false
 <
 
-telescope.nvim>lua
+telescope.nvim
+
+>lua
     telescope = {
         enabled = true,
     }
 <
 
-trouble.nvim>lua
+trouble.nvim
+
+>lua
     lsp_trouble = false
 <
 
-vim-airlineSpecial ~
+vim-airline
+
+Special ~
 
 >vim
     let g:airline_theme = 'catppuccin'
 <
 
-vim-clapSpecial ~
+vim-clap
+
+Special ~
 
 Use this to set it up:
 
@@ -965,38 +1101,54 @@ Use this to set it up:
     let g:clap_theme = 'catppuccin'
 <
 
-vim-dadbod-ui>lua
+vim-dadbod-ui
+
+>lua
     dadbod_ui = false
 <
 
-vim-gitgutter>lua
+vim-gitgutter
+
+>lua
     gitgutter = false
 <
 
-vim-illuminate>lua
+vim-illuminate
+
+>lua
     illuminate = {
         enabled = true,
         lsp = false
     }
 <
 
-vim-sandwich>lua
+vim-sandwich
+
+>lua
     sandwich = false
 <
 
-vim-signify>lua
+vim-signify
+
+>lua
     signify = false
 <
 
-vim-sneak>lua
+vim-sneak
+
+>lua
     vim_sneak = false
 <
 
-vimwiki>lua
+vimwiki
+
+>lua
     vimwiki = false
 <
 
-which-key.nvim>lua
+which-key.nvim
+
+>lua
     which_key = false
 <
 
