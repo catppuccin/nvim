@@ -16,8 +16,6 @@
 -- Whether to enable transparency.
 ---@field transparent_background boolean?
 ---@field float CtpFloatOpts?
--- Toggle the `~` characters after the end of buffers.
----@field show_end_of_buffer boolean?
 -- If true, sets terminal colors (e.g. `g:terminal_color_0`).
 ---@field term_colors boolean?
 -- Workaround for kitty transparency issue: https://github.com/kovidgoyal/kitty/issues/2917
