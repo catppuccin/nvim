@@ -78,7 +78,7 @@ vim.pack.add({ src = "https://github.com/catppuccin/nvim", name = "catppuccin" }
 
 ### Vim support
 
-Support for vim is provided through the `vim` branch.
+Support for Vim is provided through the `vim` branch.
 
 [vim-plug](https://github.com/junegunn/vim-plug)
 
