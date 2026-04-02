@@ -52,28 +52,22 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 
 ## Installation
 
+with Neovim 0.12's `vim.pack`
+
+```lua
+vim.pack.add({ src = "https://github.com/catppuccin/nvim", name = "catppuccin" })
+```
+
 [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
 { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 ```
 
-[mini.deps](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md)
-
-```lua
-add({ source = "catppuccin/nvim", name = "catppuccin" })
-```
-
 [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use { "catppuccin/nvim", as = "catppuccin" }
-```
-
-with Neovim 0.12's `vim.pack`
-
-```lua
-vim.pack.add({ src = "https://github.com/catppuccin/nvim", name = "catppuccin" })
 ```
 
 [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim)
