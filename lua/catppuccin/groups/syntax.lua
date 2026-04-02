@@ -62,6 +62,8 @@ function M.get()
 		illuminatedWord = { bg = C.surface1 },
 		illuminatedCurWord = { bg = C.surface1 },
 		-- diff
+		Added = { fg = C.green },
+		Changed = { fg = C.blue },
 		diffAdded = { fg = C.green },
 		diffRemoved = { fg = C.red },
 		diffChanged = { fg = C.blue },
@@ -107,6 +109,18 @@ function M.get()
 		csvCol6 = { fg = C.lavender },
 		csvCol7 = { fg = C.mauve },
 		csvCol8 = { fg = C.pink },
+
+		-- markdown
+		markdownHeadingDelimiter = { fg = C.peach, style = { "bold" } },
+		markdownCode = { fg = C.flamingo },
+		markdownCodeBlock = { fg = C.flamingo },
+		markdownLinkText = { fg = C.blue, style = { "underline" } },
+		markdownH1 = { link = "rainbow1" },
+		markdownH2 = { link = "rainbow2" },
+		markdownH3 = { link = "rainbow3" },
+		markdownH4 = { link = "rainbow4" },
+		markdownH5 = { link = "rainbow5" },
+		markdownH6 = { link = "rainbow6" },
 	}
 end
 

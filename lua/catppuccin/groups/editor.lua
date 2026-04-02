@@ -12,7 +12,7 @@ function M.get()
 			bg = U.vary_color({ latte = U.lighten(C.mantle, 0.70, C.base) }, U.darken(C.surface0, 0.64, C.base)),
 		}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if forecrust (ctermfg OR guifg) is not set.
 		Directory = { fg = C.blue }, -- directory names (and other special names in listings)
-		EndOfBuffer = { fg = O.show_end_of_buffer and C.surface1 or C.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		EndOfBuffer = { fg = C.surface1 }, -- filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
 		ErrorMsg = { fg = C.red, style = { "bold", "italic" } }, -- error messages on the command line
 		VertSplit = { fg = O.transparent_background and C.surface1 or C.crust }, -- the column separating vertically split windows
 		Folded = { fg = C.blue, bg = O.transparent_background and C.none or C.surface1 }, -- line used for closed folds
@@ -22,10 +22,10 @@ function M.get()
 		Substitute = { bg = C.surface1, fg = U.vary_color({ latte = C.red }, C.pink) }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = C.surface1 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr = { fg = C.lavender }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
-		MatchParen = { fg = C.peach, bg = C.surface1, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen = { fg = C.peach, bg = U.darken(C.surface1, 0.70, C.base), style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = C.text, style = { "bold" } }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MsgArea = { fg = C.text }, -- Area for messages and cmdline, don't set this highlight because of https://github.com/neovim/neovim/issues/17832
-		MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
+		MsgSeparator = { link = "WinSeparator" }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg = { fg = C.blue }, -- |more-prompt|
 		NonText = { fg = C.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = C.text, bg = O.transparent_background and C.none or C.base }, -- normal text
@@ -48,18 +48,32 @@ function M.get()
 			fg = C.crust,
 			bg = C.lavender,
 		} or { fg = C.subtext0, bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.mantle }, -- Title of floating windows
-		FloatShadow = { fg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.overlay0 },
+		FloatShadow = { bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.overlay0, blend = 80 },
+		FloatShadowThrough = {
+			bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.overlay0,
+			blend = 100,
+		},
 		Pmenu = {
-			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or U.darken(C.surface0, 0.8, C.crust),
+			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or C.mantle,
 			fg = C.overlay2,
 		}, -- Popup menu: normal item.
-		PmenuSel = { bg = C.surface1, style = { "bold" } }, -- Popup menu: selected item.
-		PmenuSbar = { bg = C.surface1 }, -- Popup menu: scrollbar.
+		PmenuSel = { bg = C.surface0, style = { "bold" } }, -- Popup menu: selected item.
+		PmenuMatch = { fg = C.text, style = { "bold" } }, -- Popup menu: matching text.
+		PmenuMatchSel = { style = { "bold" } }, -- Popup menu: matching text in selected item; is combined with |hl-PmenuMatch| and |hl-PmenuSel|.
+		PmenuSbar = { bg = C.surface0 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
 		PmenuExtra = { fg = C.overlay0 }, -- Popup menu: normal item extra text.
-		PmenuExtraSel = { fg = C.overlay0 }, -- Popup menu: selected item extra text.
+		PmenuExtraSel = {
+			bg = C.surface0,
+			fg = C.overlay0,
+			style = { "bold" },
+		}, -- Popup menu: selected item extra text.
+		ComplMatchIns = { link = "PreInsert" }, -- Matched text of the currently inserted completion.
+		PreInsert = { fg = C.overlay2 }, -- Text inserted when "preinsert" is in 'completeopt'.
+		ComplHint = { fg = C.subtext0 }, -- Virtual text of the currently selected completion.
+		ComplHintMore = { link = "Question" }, -- The additional information of the virtual text.
 		Question = { fg = C.blue }, -- |hit-enter| prompt and yes/no questions
-		QuickFixLine = { bg = C.surface1, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { bg = U.darken(C.surface1, 0.70, C.base), style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search = { bg = U.darken(C.sky, 0.30, C.base), fg = C.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		IncSearch = { bg = U.darken(C.sky, 0.90, C.base), fg = C.mantle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		CurSearch = { bg = C.red, fg = C.mantle }, -- 'cursearch' highlighting: highlights the current search you're on differently

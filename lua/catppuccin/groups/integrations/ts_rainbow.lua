@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/HiPhish/nvim-ts-rainbow"
+
 function M.get()
 	return {
 		rainbowcol1 = { fg = C.red },

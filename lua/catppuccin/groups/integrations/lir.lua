@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/tamago324/lir.nvim"
+
 function M.get()
 	return vim.tbl_deep_extend("force", {}, {
 		LirFloatNormal = { fg = C.text, bg = O.transparent_background and C.none or C.mantle },

@@ -22,8 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.release_created }}
     steps:
-      - uses: actions/checkout@v4
-      - name: Update Latest Stable Tag
+      - uses: actions/checkout@v6
+      - name: tag stable versions
+        if: ${{ steps.release.outputs.release_created }}
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com

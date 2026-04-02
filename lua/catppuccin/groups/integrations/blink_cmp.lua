@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/saghen/blink.cmp"
+
 function M.get()
 	local style = O.integrations.blink_cmp.style
 
@@ -9,12 +11,13 @@ function M.get()
 		BlinkCmpKind = { fg = C.blue },
 		BlinkCmpMenu = { link = "Pmenu" },
 		BlinkCmpDoc = { link = "NormalFloat" },
-		BlinkCmpLabelMatch = { fg = C.text, style = { "bold" } },
+		BlinkCmpLabelMatch = { link = "PmenuMatch" },
 		BlinkCmpMenuSelection = { bg = C.surface1, style = { "bold" } },
 		BlinkCmpScrollBarGutter = { bg = C.surface1 },
 		BlinkCmpScrollBarThumb = { bg = C.overlay0 },
-		BlinkCmpLabelDescription = { fg = C.overlay0 },
-		BlinkCmpLabelDetail = { fg = C.overlay0 },
+		BlinkCmpLabelDescription = { link = "PmenuExtra" },
+		BlinkCmpLabelDetail = { link = "PmenuExtra" },
+		BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
 
 		BlinkCmpKindText = { fg = C.green },
 		BlinkCmpKindMethod = { fg = C.blue },
@@ -48,7 +51,7 @@ function M.get()
 		-- uses FloatBorder.fg and Pmenu.bg
 		highlights["BlinkCmpMenuBorder"] = {
 			fg = O.float.solid and ((O.float.transparent and vim.o.winblend == 0) and C.surface2 or C.mantle) or C.blue,
-			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or U.darken(C.surface0, 0.8, C.crust),
+			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or C.mantle,
 		}
 		highlights["BlinkCmpDocBorder"] = { link = "FloatBorder" }
 	end

@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/sindrets/diffview.nvim"
+
 function M.get()
 	return {
 		DiffviewDim1 = { link = "Comment" },

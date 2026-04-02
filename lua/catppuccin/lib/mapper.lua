@@ -22,8 +22,15 @@ function M.apply(flavour)
 		)
 
 	local theme = {}
-	theme.syntax = require("catppuccin.groups.syntax").get()
-	theme.editor = require("catppuccin.groups.editor").get()
+	theme.editor =
+		vim.tbl_deep_extend("force", require("catppuccin.groups.editor").get(), require("catppuccin.groups.lsp").get())
+
+	theme.syntax = {}
+	local syntax_modules = { "syntax", "semantic_tokens", "treesitter" }
+	for i = 1, #syntax_modules do
+		theme.syntax =
+			vim.tbl_deep_extend("force", theme.syntax, require("catppuccin.groups." .. syntax_modules[i]).get())
+	end
 	local final_integrations = {}
 
 	-- https://github.com/catppuccin/nvim/pull/624
@@ -45,12 +52,9 @@ function M.apply(flavour)
 			end
 		end
 
-		if cot then
-			final_integrations = vim.tbl_deep_extend(
-				"force",
-				final_integrations,
-				require("catppuccin.groups.integrations." .. integration).get()
-			)
+		local ok, result = pcall(require, "catppuccin.groups.integrations." .. integration)
+		if ok and result.get and cot then
+			final_integrations = vim.tbl_deep_extend("force", final_integrations, result.get())
 		end
 	end
 

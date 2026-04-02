@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/nvim-telescope/telescope.nvim"
+
 function M.get()
 	local hlgroups = {
 		TelescopeBorder = { link = "FloatBorder" },

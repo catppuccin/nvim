@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/echasnovski/mini.nvim"
+
 function M.get()
 	local transparent_background = require("catppuccin").options.transparent_background
 	local bg_highlight = transparent_background and "NONE" or C.base

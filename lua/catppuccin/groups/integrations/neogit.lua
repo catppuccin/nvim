@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/NeogitOrg/neogit"
+
 function M.get()
 	return {
 		NeogitBranch = {
@@ -48,9 +50,17 @@ function M.get()
 			bg = U.darken(C.red, 0.095, C.base),
 			fg = U.darken(C.red, 0.800, C.base),
 		},
+		NeogitDiffDeleteInline = {
+			bg = U.darken(C.red, 0.500, C.base),
+			style = { "bold" },
+		},
 		NeogitDiffAdd = {
 			bg = U.darken(C.green, 0.095, C.base),
 			fg = U.darken(C.green, 0.800, C.base),
+		},
+		NeogitDiffAddInline = {
+			bg = U.darken(C.green, 0.500, C.base),
+			style = { "bold" },
 		},
 		NeogitCommitViewHeader = {
 			bg = U.darken(C.blue, 0.300, C.base),

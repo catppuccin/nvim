@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/vimwiki/vimwiki"
+
 function M.get()
 	return {
 		VimwikiLink = { fg = C.sky, bg = C.none },

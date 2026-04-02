@@ -1,5 +1,7 @@
 local M = {}
 
+M.url = "https://github.com/isakbm/gitgraph.nvim"
+
 function M.get()
 	return {
 		GitGraphHash = { fg = C.mauve },
