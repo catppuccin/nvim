@@ -2,6 +2,7 @@
 
 ## [2.0.0](https://github.com/catppuccin/nvim/compare/v1.11.0...v2.0.0) (2026-04-02)
 
+See the official [v2.0.0](https://github.com/catppuccin/nvim/releases/tag/v2.0.0) release for a friendly guide on upgrading!
 
 ### ⚠ BREAKING CHANGES
 
