@@ -76,6 +76,12 @@ with Neovim 0.12's `vim.pack`
 vim.pack.add({ src = "https://github.com/catppuccin/nvim", name = "catppuccin" })
 ```
 
+[rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim)
+
+```vim
+:Rocks install catppuccin.nvim
+```
+
 ### Vim support
 
 Support for Vim is provided through the `vim` branch.
