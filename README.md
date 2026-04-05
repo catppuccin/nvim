@@ -55,7 +55,7 @@ This port of <a href="https://github.com/catppuccin/">Catppuccin</a> is special 
 with Neovim 0.12's `vim.pack`
 
 ```lua
-vim.pack.add({{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" }})
+vim.pack.add { { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }
 ```
 
 [lazy.nvim](https://github.com/folke/lazy.nvim)
