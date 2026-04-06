@@ -9,10 +9,16 @@ function M.detect_plugins()
 	local installed_plugins = {}
 
 	if vim.fn.has "nvim-0.12.0" == 1 then
-		vim.list_extend(
-			installed_plugins,
-			vim.iter(vim.pack.get()):map(function(plugin) return plugin.spec.name end):totable()
-		)
+		-- NOTE: `info = false` prevents vim.pack from trying to use git to get additional info
+		local ok, plugins = pcall(vim.pack.get, nil, { info = false })
+		if not ok then
+			vim.notify("unable to detect plugins using vim.pack: " .. (plugins or ""), vim.log.levels.WARN)
+		else
+			vim.list_extend(
+				installed_plugins,
+				vim.iter(plugins):map(function(plugin) return plugin.spec.name end):totable()
+			)
+		end
 	end
 
 	if pcall(require, "pckr") then vim.list_extend(installed_plugins, require("pckr.plugin").plugins_by_name) end
