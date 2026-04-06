@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/catppuccin/nvim/compare/v2.0.0...v2.1.0) (2026-04-06)
+
+
+### Features
+
+* luarocks/rocks.nvim support ([#697](https://github.com/catppuccin/nvim/issues/697)) ([29fd8bd](https://github.com/catppuccin/nvim/commit/29fd8bdc8e1b189a9a6aece58a99850fdeb13d5d))
+
+
+### Bug Fixes
+
+* **vim.pack:** error if git is not installed ([#995](https://github.com/catppuccin/nvim/issues/995)) ([0de2b6d](https://github.com/catppuccin/nvim/commit/0de2b6d98954c5db2a0dba28c18f489ab7fe0827))
+
 ## [2.0.0](https://github.com/catppuccin/nvim/compare/v1.11.0...v2.0.0) (2026-04-02)
 
 See the official [v2.0.0](https://github.com/catppuccin/nvim/releases/tag/v2.0.0) release for a friendly guide on upgrading!
