@@ -1,4 +1,5 @@
 *catppuccin.txt*                              Soothing pastel theme for NeoVim
+                               For nvim >= 0.8.0    Last change: 2026 April 29
 
 ==============================================================================
 Table of Contents                               *catppuccin-table-of-contents*
@@ -460,7 +461,7 @@ Setting `enabled` to `true` enables this integration.
   options will also apply to coc
 In the nested tables you can set the style for the diagnostics, both
 `virtual_text` (what you see on the side) and `underlines` (what points
-directly at the thing (e.g. an error)).
+directly at the thing (e.g. an error)).
 
 >lua
     lsp_styles = {
