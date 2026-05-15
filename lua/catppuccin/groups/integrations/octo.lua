@@ -75,6 +75,8 @@ function M.get()
 		OctoGreenFloat = { fg = C.green, bg = C.base },
 		OctoGreyFloat = { fg = C.text, bg = C.base },
 		OctoBlueFloat = { fg = C.blue, bg = C.base },
+		OctoReviewDiffAddText = { bg = U.darken(C.green, 0.30, C.base) },
+		OctoReviewDiffDeleteText = { bg = U.darken(C.red, 0.30, C.base) },
 	}
 end
 
