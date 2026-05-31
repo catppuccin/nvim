@@ -71,6 +71,11 @@ function M.get()
 		PmenuMatchSel = { style = { "bold" } }, -- Popup menu: matching text in selected item; is combined with |hl-PmenuMatch| and |hl-PmenuSel|.
 		PmenuSbar = { bg = C.surface0 }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
+		PmenuKind = {
+			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or C.mantle,
+			fg = C.blue,
+		}, -- Popup menu: item kind. Background and style must match `Pmenu`.
+		PmenuKindSel = { bg = C.surface0, fg = C.blue, style = { "bold" } }, -- Popup menu: selected item kind. Background and style must match `PmenuSel`.
 		PmenuExtra = { fg = C.overlay0 }, -- Popup menu: normal item extra text.
 		PmenuExtraSel = {
 			bg = C.surface0,
