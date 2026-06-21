@@ -1,5 +1,5 @@
 *catppuccin.txt*                              Soothing pastel theme for NeoVim
-                                 For nvim >= 0.8.0    Last change: 2026 May 20
+                                For nvim >= 0.8.0    Last change: 2026 June 21
 
 ==============================================================================
 Table of Contents                               *catppuccin-table-of-contents*
