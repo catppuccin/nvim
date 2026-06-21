@@ -57,6 +57,7 @@ function M.get()
 			bg = (O.float.transparent and vim.o.winblend == 0) and C.none or C.overlay0,
 			blend = 100,
 		},
+		OkMsg = { fg = C.green }, -- success messages on the command line
 		Pmenu = {
 			bg = (O.transparent_background and vim.o.pumblend == 0) and C.none or C.mantle,
 			fg = C.overlay2,
