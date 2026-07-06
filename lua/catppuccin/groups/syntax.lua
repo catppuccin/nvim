@@ -109,6 +109,7 @@ function M.get()
 		csvCol6 = { fg = C.lavender },
 		csvCol7 = { fg = C.mauve },
 		csvCol8 = { fg = C.pink },
+		escCsvCol0 = { link = "csvCol0" },
 
 		-- markdown
 		markdownHeadingDelimiter = { fg = C.peach, style = { "bold" } },
