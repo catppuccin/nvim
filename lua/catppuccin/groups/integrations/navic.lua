@@ -3,8 +3,11 @@ local M = {}
 M.url = "https://github.com/SmiteshP/nvim-navic"
 
 function M.get()
-	local background = O.integrations.navic.custom_bg and O.integrations.navic.custom_bg or C.none
+	local background = O.integrations.navic.custom_bg or C.none
 	if O.integrations.navic.custom_bg == "lualine" then background = C.mantle end
+	if background ~= C.none and string.sub(background, 0, 1) ~= "#" then
+		background = U.select_color(background, "none")
+	end
 
 	return {
 		NavicIconsFile = { fg = C.blue, bg = background },

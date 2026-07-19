@@ -3,9 +3,7 @@ local M = {}
 M.url = "https://github.com/lewis6991/gitsigns.nvim"
 
 function M.get()
-	-- (a ~= nil) and a or b: Potential false-negative handling
-	local transparent = O.transparent_background
-	if type(O.integrations.gitsigns.transparent) == "boolean" then transparent = O.integrations.gitsigns.transparent end
+	local transparent = U.nonnil(O.integrations.gitsigns.transparent, O.transparent_background)
 
 	if transparent then
 		return {

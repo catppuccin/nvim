@@ -3,12 +3,12 @@ local M = {}
 M.url = "https://github.com/echasnovski/mini.nvim"
 
 function M.get()
-	local transparent_background = require("catppuccin").options.transparent_background
+	local transparent_background = O.transparent_background
 	local bg_highlight = transparent_background and "NONE" or C.base
 
 	local inactive_bg = transparent_background and "NONE" or C.mantle
 
-	local indentscope_color = O.integrations.mini.indentscope_color
+	local indentscope_color = U.select_color(O.integrations.mini.indentscope_color, "overlay2")
 	return {
 		MiniAnimateCursor = { style = { "reverse", "nocombine" } },
 		MiniAnimateNormalFloat = { link = "NormalFloat" },
@@ -76,7 +76,7 @@ function M.get()
 		MiniIconsRed = { fg = C.red },
 		MiniIconsYellow = { fg = C.yellow },
 
-		MiniIndentscopeSymbol = { fg = C[indentscope_color] or C.overlay2 },
+		MiniIndentscopeSymbol = { fg = indentscope_color },
 
 		MiniJump = { fg = C.overlay2, bg = C.pink },
 

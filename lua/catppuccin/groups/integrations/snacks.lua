@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/folke/snacks.nvim"
 
 function M.get()
-	local indent_scope_color = O.integrations.snacks.indent_scope_color
+	local indent_scope_color = U.select_color(O.integrations.snacks.indent_scope_color, "overlay2")
 
 	local hlgroups = {
 		SnacksNormal = { link = "Normal" },
@@ -51,7 +51,7 @@ function M.get()
 		SnacksDashboardTitle = { link = "Title" },
 
 		SnacksIndent = { fg = C.surface0 },
-		SnacksIndentScope = { fg = C[indent_scope_color] or C.overlay2 },
+		SnacksIndentScope = { fg = indent_scope_color },
 
 		SnacksPickerSelected = {
 			fg = O.float.transparent and C.flamingo or C.text,

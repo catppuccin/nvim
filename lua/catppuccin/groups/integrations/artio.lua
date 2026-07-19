@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/comfysage/artio.nvim"
 
 function M.get()
-	local transparent_background = require("catppuccin").options.transparent_background
+	local transparent_background = O.transparent_background
 
 	return {
 		ArtioNormal = {

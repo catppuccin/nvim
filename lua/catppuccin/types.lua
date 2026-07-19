@@ -32,8 +32,6 @@
 ---@field styles CtpStyles?
 -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
 ---@field lsp_styles CtpLspStyles?
--- Should default integrations be used.
----@field default_integrations boolean?
 -- Should detect integrations automatically
 ---@field auto_integrations boolean?
 -- Toggle integrations. Integrations allow Catppuccin to set the theme of various plugins.
@@ -224,7 +222,7 @@
 ---@field signify boolean?
 ---@field symbols_outline boolean?
 ---@field telekasten boolean?
----@field telescope CtpIntegrationTelescope | boolean?
+---@field telescope boolean?
 ---@field treesitter_context boolean?
 ---@field ts_rainbow boolean?
 ---@field ts_rainbow2 boolean?
@@ -315,10 +313,6 @@
 ---@field enabled boolean
 -- Sets the color of the indent scope line
 ---@field indent_scope_color CtpColor?
-
----@class CtpIntegrationTelescope
--- Whether to enable the telescope integration
----@field enabled boolean?
 
 ---@class CtpIntegrationIlluminate
 -- Whether to enable the vim-illuminate integration

@@ -3,11 +3,11 @@ local M = {}
 M.url = "https://github.com/lukas-reineke/indent-blankline.nvim"
 
 function M.get()
-	local scope_color = O.integrations.indent_blankline.scope_color
+	local scope_color = U.select_color(O.integrations.indent_blankline.scope_color, "overlay2")
 
 	local hi = {
 		IblIndent = { fg = C.surface0 },
-		IblScope = { fg = C[scope_color] or C.text },
+		IblScope = { fg = scope_color },
 	}
 
 	if O.integrations.indent_blankline.colored_indent_levels then
