@@ -279,12 +279,11 @@ example:
     })
 <
 
-If you use `vim.pack` for managing your plugins, or if you lazy.nvim
-<https://github.com/folke/lazy.nvim> or pckr.nvim
-<https://github.com/lewis6991/pckr.nvim> as plugin managers, you can use the
-`auto_integrations` option to let catppuccin automatically detect installed
-plugins and enable their respective integrations (this option is enabled by
-default).
+If you use `vim.pack`, lazy.nvim <https://github.com/folke/lazy.nvim> or
+pckr.nvim <https://github.com/lewis6991/pckr.nvim> to manage your plugins, you
+can use the `auto_integrations` option to let catppuccin automatically detect
+installed plugins and enable their respective integrations (this option is
+enabled by default).
 
 >lua
     require("catppuccin").setup({
