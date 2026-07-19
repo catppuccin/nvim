@@ -106,23 +106,21 @@ function M.vary_color(palettes, default)
 	return default
 end
 
-M.nonnil = vim.nonnil or vim.F.if_nil or function(...)
-  local nargs = select('#', ...)
-  for i = 1, nargs do
-    local v = select(i, ...)
-    if v ~= nil then
-      return v
-    end
-  end
-  return nil
-end
+M.nonnil = vim.nonnil
+	or vim.F.if_nil
+	or function(...)
+		local nargs = select("#", ...)
+		for i = 1, nargs do
+			local v = select(i, ...)
+			if v ~= nil then return v end
+		end
+		return nil
+	end
 
 ---@param color (Color|string)?
 ---@param default Color
 ---@return string
-function M.select_color(color, default)
-	return C[M.nonnil(color, default)] or C[default]
-end
+function M.select_color(color, default) return C[M.nonnil(color, default)] or C[default] end
 
 local function rgb2Hex(rgb)
 	local hexadecimal = "#"
