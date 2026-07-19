@@ -56,7 +56,37 @@ local M = {
 			},
 		},
 		auto_integrations = true,
-		integrations = {},
+		integrations = {
+			blink_cmp = { style = "bordered" },
+			barbecue = {
+				dim_dirname = true,
+				bold_basename = true,
+				dim_context = false,
+				alt_background = false,
+			},
+			illuminate = {
+				lsp = false,
+			},
+			indent_blankline = {
+				scope_color = "",
+				colored_indent_levels = false,
+			},
+			navic = {
+				custom_bg = "NONE",
+			},
+			dropbar = {
+				color_mode = false,
+			},
+			colorful_winsep = {
+				color = "red",
+			},
+			mini = {
+				indentscope_color = "overlay2",
+			},
+			lir = {
+				git_status = false,
+			},
+		},
 		color_overrides = {},
 		highlight_overrides = {},
 	},
