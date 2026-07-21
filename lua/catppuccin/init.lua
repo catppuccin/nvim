@@ -149,16 +149,16 @@ function M.setup(user_conf)
 	-- Parsing user config
 	user_conf = user_conf or {}
 
-	if user_conf.auto_integrations == true then
-		user_conf.integrations = vim.tbl_deep_extend(
+	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
+	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
+
+	if M.options.auto_integrations == true then
+		M.options.integrations = vim.tbl_deep_extend(
 			"force",
 			require("catppuccin.lib.detect_integrations").create_integrations_table(),
 			user_conf.integrations or {}
 		)
 	end
-
-	M.options = vim.tbl_deep_extend("keep", user_conf, M.default_options)
-	M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
 
 	-- Get cached hash
 	local cached_path = M.options.compile_path .. M.path_sep .. "cached"
