@@ -156,7 +156,7 @@ function M.setup(user_conf)
 		M.options.integrations = vim.tbl_deep_extend(
 			"force",
 			require("catppuccin.lib.detect_integrations").create_integrations_table(),
-			user_conf.integrations or {}
+			M.options.integrations or {}
 		)
 	end
 
