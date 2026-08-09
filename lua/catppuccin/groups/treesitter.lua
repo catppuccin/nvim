@@ -178,7 +178,6 @@ If you want to stay on nvim 0.7, pin catppuccin tag to v0.2.4 and nvim-treesitte
 
 		-- HTML
 		["@string.special.url.html"] = { fg = C.green }, -- Links in href, src attributes.
-		["@markup.link.label.html"] = { fg = C.text }, -- Text between <a></a> tags.
 		["@character.special.html"] = { fg = C.red }, -- Symbols such as &nbsp;.
 
 		-- Lua
