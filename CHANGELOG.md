@@ -1,5 +1,29 @@
 # Changelog
 
+## [3.0.0](https://github.com/catppuccin/nvim/compare/v2.0.0...v3.0.0) (2026-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove `default_integrations` ([#1019](https://github.com/catppuccin/nvim/issues/1019))
+
+### Features
+
+* **csv:** highlight escaped column ([#1015](https://github.com/catppuccin/nvim/issues/1015)) ([05e8787](https://github.com/catppuccin/nvim/commit/05e8787020dcfdb937bf2ff23855ea2415b4e072))
+* **editor:** add highlights for PmenuKind and PmenuKindSel ([#1011](https://github.com/catppuccin/nvim/issues/1011)) ([edefef7](https://github.com/catppuccin/nvim/commit/edefef779ab08ce1a4a404713e3012b0d202bd35))
+* **editor:** add PmenuBorder hl ([#1010](https://github.com/catppuccin/nvim/issues/1010)) ([0303a72](https://github.com/catppuccin/nvim/commit/0303a7208dba448c459767486a38a6ec05c4216b))
+* **hl/editor:** add `OkMsg` ([#1014](https://github.com/catppuccin/nvim/issues/1014)) ([e068ab5](https://github.com/catppuccin/nvim/commit/e068ab5f8261f23f6f71ffd8791ae40315b77b9c))
+* **hl/editor:** add Dimmed hl ([#1007](https://github.com/catppuccin/nvim/issues/1007)) ([8edd468](https://github.com/catppuccin/nvim/commit/8edd468af4d63212b84d69b2ddb5ffc9023ef5eb))
+* luarocks/rocks.nvim support ([#697](https://github.com/catppuccin/nvim/issues/697)) ([29fd8bd](https://github.com/catppuccin/nvim/commit/29fd8bdc8e1b189a9a6aece58a99850fdeb13d5d))
+* **octo:** support inline highlights ([#1004](https://github.com/catppuccin/nvim/issues/1004)) ([946d189](https://github.com/catppuccin/nvim/commit/946d189ba5a905c163b3a6d472d79f1f5442c5d5))
+
+
+### Bug Fixes
+
+* check if `auto_integrations` was explicitly disabled ([#1023](https://github.com/catppuccin/nvim/issues/1023)) ([c7c692a](https://github.com/catppuccin/nvim/commit/c7c692a0ad3080710893abbae100171819a3e4be))
+* remove `default_integrations` ([#1019](https://github.com/catppuccin/nvim/issues/1019)) ([058e83d](https://github.com/catppuccin/nvim/commit/058e83dc009e4dd62f30807054de9cc849699e27))
+* **vim.pack:** error if git is not installed ([#995](https://github.com/catppuccin/nvim/issues/995)) ([0de2b6d](https://github.com/catppuccin/nvim/commit/0de2b6d98954c5db2a0dba28c18f489ab7fe0827))
+
 ## [2.0.0](https://github.com/catppuccin/nvim/compare/v1.11.0...v2.0.0) (2026-04-02)
 
 See the official [v2.0.0](https://github.com/catppuccin/nvim/releases/tag/v2.0.0) release for a friendly guide on upgrading!
